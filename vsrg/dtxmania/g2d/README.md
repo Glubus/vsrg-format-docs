@@ -1,7 +1,7 @@
 # DTXMania older chart format (`.g2d`)
 Kind: chart
 
-Doc status: stub · ROX: no · Category: vsrg · Encoding: text
+Doc status: partial · ROX: decode only · Category: vsrg · Encoding: text
 
 ## Overview
 `.g2d` is the sibling of [`.gda`](../gda/README.md): `CDTX.tRead` maps `.g2d` to `EType.G2D`, and `tInput_LineAnalysis_ChipLocation` handles G2D and GDA in one branch (GDA 2-letter channel names translated with `STGDAPARAM`). What distinguishes G2D from GDA is Unknown. The original README only says "older format" and links `CDTXInputOutput.cs`, where `GDA` and `G2D` are separate enum members (`E種別`) with the same line analysis (`tDTX入力_行解析_チャンネル_GDAチャンネル文字列２桁をチャンネル番号にして返す`).
@@ -31,7 +31,7 @@ Only DTXMania's loader serves as reference.
 [observed] e.g. samples/KAIRU_Drum3rd-Classic_Party_2_1_classic2_BAS.g2d (CP932, CRLF) shows the same text grammar as `.gda`; the AOiRO_Manbow pack even names its g2d `_GDA.g2d`.
 
 ## ROX support
-Not read by ROX.
+Decode only, as a [`.gda`](../gda/README.md) (`GdaDecoder`, `DetectedFormat::Gda`). The 6 committed `.g2d` decode, each with drums, guitar and bass. `#BPM ???` (a literal, in the KAIRU files) gives no BPM: 120 until the first `TC` line.
 
 ## Parsers & tools
 DTXmaniaNX / DTXCreator: https://github.com/limyz/DTXmaniaNX

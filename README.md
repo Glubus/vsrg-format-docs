@@ -84,8 +84,8 @@ Archives that carry charts with their audio and images. No page or sample of the
 | [`.xmk`](vsrg/dj-hero/xmk/) DJ Hero chart (xmk) | DJ Hero / DJ Hero 2 | vsrg | partial | Decode only (5 columns; `.fsgmub` too) | [`vsrg/dj-hero/xmk`](vsrg/dj-hero/xmk/) |
 | [`.pt`](vsrg/djmax/pt/) DJMAX pattern (PTFF) | DJMAX Online / DJMAX Technika (arcade, Technika Q) | vsrg | partial | No | [`vsrg/djmax/pt`](vsrg/djmax/pt/) |
 | [`.dtx`](vsrg/dtxmania/dtx/) DTXMania chart | DTXMania (GuitarFreaks/DrumMania simulator) | vsrg | complete | Decode only | [`vsrg/dtxmania/dtx`](vsrg/dtxmania/dtx/) |
-| [`.g2d`](vsrg/dtxmania/g2d/) DTXMania older chart (G2D) | GuitarFreaks/DrumMania via DTXMania | vsrg | stub | No | [`vsrg/dtxmania/g2d`](vsrg/dtxmania/g2d/) |
-| [`.gda`](vsrg/dtxmania/gda/) DTXMania older chart (GDA) | GuitarFreaks/DrumMania via DTXMania | vsrg | stub | No | [`vsrg/dtxmania/gda`](vsrg/dtxmania/gda/) |
+| [`.g2d`](vsrg/dtxmania/g2d/) DTXMania older chart (G2D) | GuitarFreaks/DrumMania via DTXMania | vsrg | partial | Decode only (as GDA) | [`vsrg/dtxmania/g2d`](vsrg/dtxmania/g2d/) |
+| [`.gda`](vsrg/dtxmania/gda/) DTXMania older chart (GDA) | GuitarFreaks/DrumMania via DTXMania | vsrg | partial | Decode only (DTX with GDA channel names) | [`vsrg/dtxmania/gda`](vsrg/dtxmania/gda/) |
 | [`set.def`](vsrg/dtxmania/set-def/) DTXMania song set descriptor | DTXMania | vsrg | complete | No | [`vsrg/dtxmania/set-def`](vsrg/dtxmania/set-def/) |
 | [`.dwi`](vsrg/dwi/dwi/) Dance With Intensity step file | Dance With Intensity | vsrg | complete | Decode only | [`vsrg/dwi/dwi`](vsrg/dwi/dwi/) |
 | [`.ett`](vsrg/etterna/ett/) Etterna song file (write-only) | Etterna | vsrg | partial | No | [`vsrg/etterna/ett`](vsrg/etterna/ett/) |

@@ -1,7 +1,7 @@
 # DTXMania older chart format (`.gda`)
 Kind: chart
 
-Doc status: stub · ROX: no · Category: vsrg · Encoding: text
+Doc status: partial · ROX: decode only · Category: vsrg · Encoding: text
 
 ## Overview
 `.gda` is an older text chart format for GuitarFreaks/DrumMania that DTXMania still loads. `CDTX.tRead` sets `EType.GDA` for the extension and parses it with the DTX line parser, looking the 2-letter/2-digit channel name up in a table instead of reading 2 hex digits. The GDAmania blog converted its GDA charts to DTX ("Changed all format to DTX files"). No public spec; origin of the layout: Unknown.
@@ -45,7 +45,7 @@ Behaviour is known only through DTXMania's code.
 Excerpt, samples/mitchi_Happy_man_BSC.gda (CP932, CRLF): `;Created by GDA Creator Professional Ver.0.14` / `#TITLE HAPPY MAN BASIC` / `#ARTIST ...` / `#BPM 180` / `#GLEVEL 18` / `#WAV02 Happy man.wav` / `#002G2:0001` / `#002G4:0100` / `#003G1:0100000000000000`. A hand-written file built from the loader table is also in [samples/](samples/SOURCES.md).
 
 ## ROX support
-Not read by ROX.
+Decode only, `rox::formats::dtx` (`GdaDecoder`, `DetectedFormat::Gda`, `.gda` and `.g2d`): the `.dtx` reader with the GDA channel names translated by `DTXMania`'s `STGDAPARAM` table (`TC` BPM, `BL` bar length, `HH SD BD HT LT CY` drums, `G0`..`G7`/`GW` guitar, `B0`..`B7`/`BW` bass, `01`..`20` sound effects SE01..SE32); every rule of the `.dtx` reader follows (instruments as variants, holds, audio plan). All 19 committed `.gda` decode: drum charts on 4 or 6 columns, guitar charts on 4.
 
 ## Parsers & tools
 DTXmaniaNX CDTX.cs and DTXCreator `CDTXInputOutput.cs` (https://github.com/limyz/DTXmaniaNX).
