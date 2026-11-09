@@ -1,7 +1,7 @@
 # Codename Engine chart JSON (`charts/<difficulty>.json` + `meta.json`)
 Kind: chart
 
-Doc status: partial · ROX: no · Category: vsrg · Encoding: json
+Doc status: partial · ROX: decode only · Category: vsrg · Encoding: json
 
 ## Overview
 
@@ -87,7 +87,7 @@ Hand-built from the `ChartData` typedefs above (the MeguminBOT engine-difference
 
 ## ROX support
 
-Not read. The `.json` extension goes to the legacy FNF codec, which expects `song.notes[].sectionNotes`; a Codename chart has no `song` object and fails. A decoder would map each `strumLine` to `keyCount` columns (8 columns for two 4K strumlines).
+Decode only (`rox::formats::fnf_codename`): a `.json` that sets `codenameChart` to `true` (searched over the whole file). Columns = the player strumlines (`type` 1) side by side, `keyCount` each (default 4); opponent and extra lines counted, not read. `sLen` > 0 is a hold; custom note types are normal notes, counted by name. Tempo: `meta.bpm` (default 100) and `beatsPerMeasure`, then `BPM Change` and `Time Signature Change` events (chart and `events.json`); `Continuous BPM Change` counted, not read. Read from disk, the song folder (parent of `charts`) gives the meta (`meta-<variant>-<difficulty>.json`, `meta-<variant>.json`, `meta-<difficulty>.json`, `meta.json`), `events[-<variant>].json` and the instrumental `song/Inst<instSuffix>[-<difficulty>].ogg`; the vocals are not mixed. All 6 corpus charts decode alone (4K, the synthetic one 6K).
 
 ## Observed in real files
 
