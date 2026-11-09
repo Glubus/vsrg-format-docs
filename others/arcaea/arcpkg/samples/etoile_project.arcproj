@@ -1,0 +1,107 @@
+lastOpenedChartPath: 2.aff
+charts:
+- chartPath: 0.aff
+  audioPath: base.ogg
+  jacketPath: base.jpg
+  baseBpm: 100
+  bpmText: 100
+  syncBaseBpm: true
+  title: Untitled
+  composer: N/A
+  difficulty: Past ?
+  chartConstant: 1
+  difficultyColor: '#3A6B78FF'
+  skin:
+    side: conflict
+    note: ''
+    particle: miraiconflict
+    track: finale
+    accent: light
+    singleLine: none
+  previewEnd: 5000
+- chartPath: 1.aff
+  audioPath: base.ogg
+  jacketPath: base.jpg
+  baseBpm: 100
+  bpmText: 100
+  syncBaseBpm: true
+  title: Untitled
+  composer: N/A
+  difficulty: Present ?
+  chartConstant: 1
+  difficultyColor: '#566947FF'
+  skin:
+    side: conflict
+    note: ''
+    particle: miraiconflict
+    track: pentiment
+    accent: conflict
+    singleLine: light
+  previewEnd: 5000
+- chartPath: 2.aff
+  audioPath: base.ogg
+  jacketPath: base.jpg
+  baseBpm: 100
+  bpmText: 100
+  syncBaseBpm: true
+  title: Untitled
+  composer: N/A
+  difficulty: Future ?
+  chartConstant: 1
+  difficultyColor: '#482B54FF'
+  skin:
+    side: conflict
+    note: ''
+    particle: miraiconflict
+    track: arcana
+    accent: dynamix
+    singleLine: conflict
+  lastWorkingTiming: 1050
+  previewEnd: 5000
+- chartPath: 3.aff
+  audioPath: base.ogg
+  jacketPath: base.jpg
+  baseBpm: 100
+  bpmText: 100
+  syncBaseBpm: true
+  title: Untitled
+  composer: composer
+  charter: charter
+  alias: charter_alias
+  illustrator: illuster
+  difficulty: Beyond ?
+  chartConstant: 1
+  difficultyColor: '#7C1C30FF'
+  skin:
+    side: conflict
+    note: ''
+    particle: mirailight
+    track: colorless
+    accent: colorless
+    singleLine: neo
+  lastWorkingTiming: 450
+  previewEnd: 5000
+  searchTags: search_keywords
+- chartPath: 4.aff
+  audioPath: base.ogg
+  jacketPath: base.jpg
+  baseBpm: 100
+  bpmText: 100
+  syncBaseBpm: true
+  title: Untitled
+  composer: N/A
+  difficulty: Eternal ?
+  chartConstant: 1
+  difficultyColor: '#433455FF'
+  skin:
+    side: colorless
+    note: ''
+    particle: ''
+    track: finale
+    accent: ''
+    singleLine: none
+  lastWorkingTiming: 3300
+  previewEnd: 5000
+editorSettings:
+  lastUsedPublisher: sn
+  lastUsedPackageName: test

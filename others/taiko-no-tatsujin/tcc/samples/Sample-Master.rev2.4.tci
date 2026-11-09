@@ -1,0 +1,25 @@
+{
+  "title": "The Sample M@ster",
+  "subtitle": "Sample Song",
+  "artist": [ "Tanaka Ichiro", "Tanaka Jiro", "Tanaka Saburo"],
+  "creator": [ "Suzuki Ichiro" ],
+  "audio": "Audio-Source.wav",
+  "songpreview": 68.2,
+  "background": "Background-Image.png",
+  "bpm": 160,
+  "offset": 2.416,
+  "courses":
+  [
+    {
+      "difficulty": "oni",
+      "level": 9,
+      "single": "Oni.tcc"
+    },
+    {
+      "difficulty": "edit",
+      "level": 10,
+      "single": "Edit.tcc",
+      "multiple": [ "Edit_1P.tcc", "Edit_2P.tcc" ]
+    }
+  ]
+}

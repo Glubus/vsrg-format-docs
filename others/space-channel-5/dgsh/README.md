@@ -49,6 +49,10 @@ Not read by ROX.
 
 [wigwoo1/Noizemaker-V2](https://github.com/wigwoo1/Noizemaker-V2) (Lua/LÖVE), [Hyonk-Tea/Noizemaker](https://github.com/Hyonk-Tea/Noizemaker).
 
+## Getting samples
+
+Nothing committed (SEGA game data, no licence in the repo). The manifest lists three `fixtures/*SH.BIN` files from wigwoo1/Noizemaker-V2 pinned to a commit (the repo also holds an edited-expected set). How to get more: install Space Channel 5 Part 2 (PC), whose files sit in AFS archives (`afs_english` per Noizemaker V2's README); open an `R*_SH.BIN` file with Noizemaker / Noizemaker V2 (Hyonk-Tea/Noizemaker). The layout itself is still undocumented in this repository.
+
 ## Sources
 
 - <https://github.com/wigwoo1/Noizemaker-V2> README (read)

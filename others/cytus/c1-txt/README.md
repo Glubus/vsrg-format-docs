@@ -31,7 +31,7 @@ Header (4 lines) then `NOTE` lines then `LINK` lines:
 
 ## Timing model
 
-Absolute seconds, no tempo map: `NOTE` timing and duration are in seconds from the start of the music; tempo changes are baked into the times. `PAGE_SIZE` sets the page (scan sweep) length and `PAGE_SHIFT` the first page's shift, so the page of a note is derived from `timing`, `PAGE_SHIFT` and `PAGE_SIZE` [inference: the exact page-boundary formula is not stated]. The scanner reverses direction at each page boundary.
+Absolute seconds, no tempo map: `NOTE` timing and duration are in seconds from the start of the music; tempo changes are baked into the times. `PAGE_SIZE` sets the page (scan sweep) length and `PAGE_SHIFT` the first page's shift. Cytoid's loader (`Chart.cs`, `FromLegacyChart`) converts it to C2 ticks with `time_base` 480 and one tempo entry of `PAGE_SIZE * 1000000` microseconds per 480 ticks: `shift = PAGE_SHIFT + PAGE_SIZE` (plus `2 * PAGE_SIZE` if negative), `tick = time / PAGE_SIZE * 480 + shift / PAGE_SIZE * 480`, `page_index = floor(tick / 480)`, the first page's scan direction is -1 and alternates every page [observed in https://github.com/Cytoid/Cytoid, engines/unity/Assets/Scripts/Game/Chart/Chart.cs; the loader does not read an `OFFSET` line]. The scanner reverses direction at each page boundary.
 
 ## Notes
 
@@ -79,6 +79,12 @@ Not read by ROX.
 - PCtyx editor: <https://github.com/XionUzuki/PCtyx>; Cytunity (editor)
 - Converters: <https://gist.github.com/TigerHix/edf9933ce98da7ce92b9a70364ba4935> (Cytus -> Cytus II), <https://github.com/ky-reflection/cyl_package_tool> (C2 -> C1), <https://github.com/CenTdemeern1/Cytofu> (-> osu!)
 - Make_Cytus2: <https://github.com/we684123/Make_Cytus2>
+
+## Getting samples
+
+- **Committed**: 4 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
+- **Manifest**: none.
+- **More samples**: the original Cytus chart text; real examples were found in ky-reflection/cyl_package_tool (`tests/resources/test_cytus1_chart.txt`, `test_c1.txt`, MIT) and we684123/Make_Cytus2 (`trytoc2*.txt`, MIT; VERSION 3 with extra tool-specific lines). The Cytoid wiki "b. Chart formats" page has a shortened sample. Official Cytus files are game data (not collected).
 
 ## Sources
 

@@ -55,6 +55,8 @@ Not referenced by the XML (the `.dy` bundle embeds music and background; see `..
 - `.dy`: JSON `{CMap, remix:{music, bg}}` (see `../dy/`).
 - DyNode project `.dyn` is DyNode's own project file (format not read).
 
+[observed in samples/dynode-old-xml-import-test.xml] A dialect B file: `<DynamixMap MapID="m_map_songname_H" BarPerMinute="130" TimeOffset="0.15">` with `Center`, `Left Type="PAD"`, `Right Type="MIXER"` children; DyNode's legacy importer derives title and difficulty from `MapID` (title = the part between the 5-character prefix and the last 2 characters; a `f` prefix is also handled).
+
 ## Quirks & pitfalls
 
 - Position is the left edge in the XML, the centre in the editor.
@@ -89,6 +91,15 @@ Not read by ROX.
 - Dynamaker-modified (JS/Electron): <https://github.com/jmakxd/dynamaker-modified>
 - DyNode (GameMaker): <https://github.com/NagaseIori/DyNode>, <https://dyn.iorinn.moe/en/>
 - Dynamaker guide: <https://tlchicken.github.io/dynamaker-guide/>
+
+## Getting samples
+
+**Committed** ([`samples/`](samples/SOURCES.md)): `dynode-old-xml-import-test.xml` (dialect B `DynamixMap`, the MIT-licensed test fixture of DyNode) and `synthetic-cmap.xml` (dialect A `CMap`, hand-written, CC0, checked against DyNode's importer). **Manifest:** none. No real song chart of either dialect was found under a redistributable licence; the two committed files are test/synthetic charts, not Dynamix song charts.
+
+**How to get more**
+- Write them: the Dynamaker editor saves `<MapID> <date>.xml` ("Save as XML", versus "Save as .DY" for the bundle; dialect A) [dynamaker-modified `function.js`, Dynamaker guide `Old Guide v1.0.txt`]. DyNode imports `.xml`, `.dyn`, `.dy` and `.osu` and exports `.xml` (DyNode `DyCore/src/project/format/xml.cpp`, <https://dyn.iorinn.moe/en/guide/import.html>), so any chart opened in DyNode can be exported to dialect A (and, with its "dym" option, to the form with `m_argument/m_bpmchange`).
+- Fan charts: the Dynamix wiki lists the community "Dynamix Fanmade" scene and charters (<https://dynamixc4cat.fandom.com/wiki/Charters>, search result, not opened); fan charts are normally shared as `.xml`/`.dy` together with copyrighted music, so they are not redistributable here. Search terms: `Dynamix fanmade chart xml`, `Dynamaker chart download`.
+- Official in-game charts: where the Dynamix app stores them was not found in any source read. Unknown.
 
 ## Sources
 

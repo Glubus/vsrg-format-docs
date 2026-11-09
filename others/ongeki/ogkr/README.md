@@ -15,6 +15,8 @@ Text, line-based; each line = command name followed by arguments (tab-separated 
 
 ## Structure / metadata
 
+[observed in manifest sample ongeki-editor-bench_22860_04.ogkr, `VERSION 1 7 0`] The real files are divided into bracketed section lines: `[HEADER]` (the header commands below, plus `T_*` counters), `[B_PALETTE]` (`BPL` bullet palette), `[COMPOSITION]` (`BPM`, `MET`), `[LANE]` (lane/wall chains), `[LANE_BLOCK]`, `[BULLET]` (`BLT`), `[BEAM]`, `[BELL]` (`BEL`), `[FLICK]` (`FLK`), `[NOTES]` (`TAP`, `HLD`, ...), `[COMMENT]` and `[SoflanGroupWrapItem]` with a `[SGWI]	default	0` line; older `VERSION 1 6 0` files end with a `[TOTAL]` section instead. The tick-resolution header line is named `TRESOLUTION` there.
+
 ### Header commands
 
 | Command | Arguments |
@@ -112,6 +114,12 @@ Not read by ROX 0.8.1.
 - [fairywreath/ogkr](https://github.com/fairywreath/ogkr) (Rust)
 - [MikiraSora/OngekiFumenEditor](https://github.com/MikiraSora/OngekiFumenEditor) (C#, editor)
 - MuNET-OSS tool "OGKR parse/generate" (C#) (search snippet)
+
+## Getting samples
+
+**Committed:** none. **Manifest:** five files: four charts from the benchmark data of OngekiFumenEditor (MIT repository, charts' own rights not stated) and the example chart of MikiraSora's OngekiFumianDescription (no LICENSE). Not committed because they are game or fan charts with unclear rights.
+
+**How to get more**: OngekiFumenEditor (<https://github.com/MikiraSora/OngekiFumenEditor>) reads and writes `.ogkr` and has ~138 more benchmark charts in `Avalonia/benchmarks/OngekiFumenEditor.Avalonia.Benchmark/Data/FumenSamples/`; the description repo shows the game's data layout (`option/A690/music/music2861/2861_4.ogkr`, i.e. `music<ID>/<ID>_<difficulty>.ogkr`), so official files come from an ONGEKI data dump (commercial). fairywreath/ogkr references charts under `charts/` that are not in its public tree.
 
 ## Sources
 

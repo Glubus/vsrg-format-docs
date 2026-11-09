@@ -39,5 +39,11 @@ Not read by ROX.
 ## Parsers & tools
 DMTQ-Tools https://github.com/CHN-WolF/DMTQ-Tools ; upstream https://github.com/samnyan/DMTQ-Tools ; technika_q https://github.com/oliverchang/technika_q
 
+## Getting samples
+
+- **Committed**: none.
+- **Manifest**: none.
+- **More samples**: nothing could be obtained legally: the charts are game data of DJMAX Technika Q (mobile). How a person could get one: with the game files, the patterns are `<song>_<diff>_.bytes` files next to the song `.ogg` files (oliverchang/technika_q README: "the directory with all the .ogg files (and the corresponding songname_e_.bytes file)"); `.fpk` packs are unpacked with `fpk_tool` from DMTQ-Tools (https://github.com/samnyan/DMTQ-Tools), and `bytes_to_text` converts `.bytes` to text; `pt_to_text` converts Arcade `.pt` charts and the README says combining both ports an Arcade song. How the files come out of the Android/iOS package (e.g. `.unity3d` bundles) was not read in a source [inference]. The repos contain no sample `.bytes` file.
+
 ## Sources
 - https://raw.githubusercontent.com/CHN-WolF/DMTQ-Tools/master/bytes-format.md

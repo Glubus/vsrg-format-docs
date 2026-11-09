@@ -1,0 +1,134 @@
+{
+ "format_version": 0,
+ "time_base": 480,
+ "music_offset": 0.0,
+ "tempo_list": [
+  {
+   "tick": 0,
+   "value": 500000
+  }
+ ],
+ "page_list": [
+  {
+   "start_tick": 0,
+   "end_tick": 480,
+   "scan_line_direction": -1
+  },
+  {
+   "start_tick": 480,
+   "end_tick": 960,
+   "scan_line_direction": 1
+  },
+  {
+   "start_tick": 960,
+   "end_tick": 1440,
+   "scan_line_direction": -1
+  },
+  {
+   "start_tick": 1440,
+   "end_tick": 1920,
+   "scan_line_direction": 1
+  }
+ ],
+ "note_list": [
+  {
+   "page_index": 0,
+   "type": 0,
+   "id": 0,
+   "tick": 240,
+   "x": 0.25,
+   "has_sibling": true,
+   "hold_tick": 0,
+   "next_id": 0,
+   "is_forward": false
+  },
+  {
+   "page_index": 0,
+   "type": 0,
+   "id": 1,
+   "tick": 240,
+   "x": 0.75,
+   "has_sibling": true,
+   "hold_tick": 0,
+   "next_id": 0,
+   "is_forward": false
+  },
+  {
+   "page_index": 1,
+   "type": 1,
+   "id": 2,
+   "tick": 600,
+   "x": 0.5,
+   "has_sibling": false,
+   "hold_tick": 240,
+   "next_id": 0,
+   "is_forward": false
+  },
+  {
+   "page_index": 1,
+   "type": 3,
+   "id": 3,
+   "tick": 840,
+   "x": 0.2,
+   "has_sibling": false,
+   "hold_tick": 0,
+   "next_id": 4,
+   "is_forward": false
+  },
+  {
+   "page_index": 2,
+   "type": 4,
+   "id": 4,
+   "tick": 1080,
+   "x": 0.4,
+   "has_sibling": false,
+   "hold_tick": 0,
+   "next_id": 5,
+   "is_forward": false
+  },
+  {
+   "page_index": 2,
+   "type": 4,
+   "id": 5,
+   "tick": 1200,
+   "x": 0.6,
+   "has_sibling": false,
+   "hold_tick": 0,
+   "next_id": -1,
+   "is_forward": false
+  },
+  {
+   "page_index": 2,
+   "type": 5,
+   "id": 6,
+   "tick": 1320,
+   "x": 0.5,
+   "has_sibling": false,
+   "hold_tick": 0,
+   "next_id": 0,
+   "is_forward": false
+  },
+  {
+   "page_index": 3,
+   "type": 2,
+   "id": 7,
+   "tick": 1500,
+   "x": 0.5,
+   "has_sibling": false,
+   "hold_tick": 600,
+   "next_id": 0,
+   "is_forward": false
+  }
+ ],
+ "event_order_list": [
+  {
+   "tick": 960,
+   "event_list": [
+    {
+     "type": 0,
+     "args": "R"
+    }
+   ]
+  }
+ ]
+}

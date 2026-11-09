@@ -79,6 +79,10 @@ Not read by ROX. Beat-timed 3D track script; not a chart in the column sense.
 - Thumper Custom Level Editor (C#, WinForms): https://github.com/CocoaMix86/Thumper-Custom-Level-Editor
 - Thumper-Modding-Tool-resharp (mod loader): https://github.com/CocoaMix86/Thumper-Modding-Tool-resharp
 
+## Getting samples
+
+Nothing committed. The manifest lists six community text files from RainbowUnicorn7297/thumper-modding-tool (no LICENSE in that repo), pinned to a commit: leaf, level, config and master objects in the tool's Python-literal text form. Real binary `.pc` object libraries are the game's data: copy them from `<Thumper>/cache` (hash-named `.pc`, e.g. `25d1009d.pc`, per the fiche) after installing the game. Level editors: CocoaMix86's Thumper Custom Level Editor (no LICENSE seen).
+
 ## Sources
 - https://github.com/RainbowUnicorn7297/thumper-modding-tool (`README.md`, `src/levels.py`, `src/common.py`, `examples/playable_objects/*.txt`, `levels/testlevel/*.txt`, `templates/*.txt`)
 - https://github.com/CocoaMix86/Thumper-Custom-Level-Editor (README only; project not examined)

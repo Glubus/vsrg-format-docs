@@ -59,7 +59,24 @@ Official-game BMS-like data differs per game version (scene count grows; "the ne
 
 ## Example
 
-Unknown.
+Real excerpt from a hand-made test chart (CloneDash `TestCharts/test1-alltypes-labeled/map2.bms`, MIT; first measures of the main data, header trimmed) [observed in samples/clonedash-alltypes-labeled_map2.bms]:
+
+```
+*---------------------- HEADER FIELD
+#PLAYER 3
+#GENRE scene_01
+#BPM 120
+#LNTYPE 1
+#WAV01 Small
+#WAV0F Hold
+*---------------------- MAIN DATA FIELD
+#00015:00002I2J
+#00053:0000000F
+#00114:01020304
+#00115:2K002J2K
+```
+
+(The file starts with a UTF-8 BOM and defines about 116 `#WAVxx` object ids; `#WAVxx` names are only labels, the object id in the data is what matters. Channels `53`/`54` are the alternate layers listed above; channel `55` also occurs in this file although it is not in the channel table above, and channel `15` carries boss/event ids such as `1A`..`1H`.)
 
 ## ROX support
 
@@ -68,6 +85,12 @@ Not read by ROX.
 ## Parsers & tools
 
 CustomAlbums (C#, `BmsLoader.cs`): <https://github.com/MDMods/CustomAlbums>; MDBMSC editor; iBMSC (generic BMS editor); chart_manager: <https://github.com/taypexx/chart_manager>.
+
+## Getting samples
+
+**Committed** ([`samples/`](samples/SOURCES.md)): three hand-made MIT-licensed test charts from CloneDash (`TestCharts/`), covering every object id and effect channel. **Manifest:** none.
+
+**How to get more**: MDMC publishes custom charts at <https://mdmc.moe/charts> (listing page seen in a search; downloads are `.mdm` zips with copyrighted music, so not listed); rename an `.mdm` to `.zip` and take `map1.bms`..`map5.bms`. The chart_manager template (`template/main/map2.bms`, <https://github.com/taypexx/chart_manager>, MIT) gives an empty header-only skeleton with `%s` placeholders; editors are MDBMSC and iBMSC. The official in-game charts are Unity assets, not BMS files.
 
 ## Sources
 

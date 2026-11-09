@@ -1,0 +1,14 @@
+#index 0
+#start 0
+
+beat = 0x30
+
+engine 0
+rest beat * 4
+0x100 beat, 0
+rest beat
+0x100 beat * 2, 1
+rest beat * 2
+0x100 beat, 2
+rest beat * 2
+0x101 1

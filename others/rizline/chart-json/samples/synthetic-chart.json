@@ -1,0 +1,336 @@
+{
+  "fileVersion": 0,
+  "songsName": "",
+  "themes": [
+    {
+      "colorsList": [
+        {
+          "r": 255,
+          "g": 255,
+          "b": 255,
+          "a": 255
+        },
+        {
+          "r": 185,
+          "g": 229,
+          "b": 255,
+          "a": 255
+        },
+        {
+          "r": 115,
+          "g": 162,
+          "b": 225,
+          "a": 255
+        }
+      ]
+    },
+    {
+      "colorsList": [
+        {
+          "r": 212,
+          "g": 237,
+          "b": 254,
+          "a": 255
+        },
+        {
+          "r": 115,
+          "g": 162,
+          "b": 225,
+          "a": 255
+        },
+        {
+          "r": 142,
+          "g": 136,
+          "b": 203,
+          "a": 255
+        }
+      ]
+    }
+  ],
+  "challengeTimes": [
+    {
+      "checkPoint": 16.0,
+      "start": 16.0,
+      "end": 24.0,
+      "transTime": 0.5
+    }
+  ],
+  "bPM": 120.0,
+  "bpmShifts": [
+    {
+      "time": 0.0,
+      "value": 1.0,
+      "easeType": 0,
+      "floorPosition": 0.0
+    },
+    {
+      "time": 24.0,
+      "value": 1.5,
+      "easeType": 0,
+      "floorPosition": 0.0
+    }
+  ],
+  "offset": 0.0,
+  "lines": [
+    {
+      "linePoints": [
+        {
+          "time": 4.0,
+          "xPosition": -0.25,
+          "color": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "easeType": 0,
+          "canvasIndex": 0,
+          "floorPosition": 2.0
+        },
+        {
+          "time": 20.0,
+          "xPosition": 0.25,
+          "color": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "easeType": 2,
+          "canvasIndex": 0,
+          "floorPosition": 12.0
+        },
+        {
+          "time": 32.0,
+          "xPosition": 0.0,
+          "color": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "easeType": 3,
+          "canvasIndex": 0,
+          "floorPosition": 24.0
+        }
+      ],
+      "notes": [
+        {
+          "type": 0,
+          "time": 8.0,
+          "floorPosition": 4.0,
+          "otherInformations": []
+        },
+        {
+          "type": 1,
+          "time": 12.0,
+          "floorPosition": 6.0,
+          "otherInformations": []
+        },
+        {
+          "type": 2,
+          "time": 18.0,
+          "floorPosition": 10.0,
+          "otherInformations": [
+            22.0,
+            0.0,
+            14.0
+          ]
+        }
+      ],
+      "judgeRingColor": [
+        {
+          "startColor": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "endColor": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "time": 0.0
+        },
+        {
+          "startColor": {
+            "r": 255,
+            "g": 200,
+            "b": 200,
+            "a": 255
+          },
+          "endColor": {
+            "r": 255,
+            "g": 200,
+            "b": 200,
+            "a": 255
+          },
+          "time": 32.0
+        }
+      ],
+      "lineColor": [
+        {
+          "startColor": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "endColor": {
+            "r": 120,
+            "g": 160,
+            "b": 255,
+            "a": 255
+          },
+          "time": 0.0
+        },
+        {
+          "startColor": {
+            "r": 120,
+            "g": 160,
+            "b": 255,
+            "a": 255
+          },
+          "endColor": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "time": 32.0
+        }
+      ]
+    },
+    {
+      "linePoints": [
+        {
+          "time": 4.0,
+          "xPosition": 0.3,
+          "color": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "easeType": 0,
+          "canvasIndex": 0,
+          "floorPosition": 2.0
+        },
+        {
+          "time": 32.0,
+          "xPosition": -0.3,
+          "color": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "easeType": 1,
+          "canvasIndex": 0,
+          "floorPosition": 24.0
+        }
+      ],
+      "notes": [
+        {
+          "type": 0,
+          "time": 10.0,
+          "floorPosition": 5.0,
+          "otherInformations": []
+        },
+        {
+          "type": 0,
+          "time": 26.0,
+          "floorPosition": 18.0,
+          "otherInformations": []
+        }
+      ],
+      "judgeRingColor": [
+        {
+          "startColor": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "endColor": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "time": 0.0
+        }
+      ],
+      "lineColor": [
+        {
+          "startColor": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "endColor": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "time": 0.0
+        }
+      ]
+    }
+  ],
+  "canvasMoves": [
+    {
+      "index": 0,
+      "xPositionKeyPoints": [
+        {
+          "time": 0.0,
+          "value": 0.0,
+          "easeType": 0,
+          "floorPosition": 0.0
+        },
+        {
+          "time": 8.0,
+          "value": 0.1,
+          "easeType": 2,
+          "floorPosition": 0.0
+        }
+      ],
+      "speedKeyPoints": [
+        {
+          "time": 0.0,
+          "value": 1.0,
+          "easeType": 0,
+          "floorPosition": 0.0
+        },
+        {
+          "time": 16.0,
+          "value": 2.0,
+          "easeType": 0,
+          "floorPosition": 8.0
+        }
+      ]
+    }
+  ],
+  "cameraMove": {
+    "scaleKeyPoints": [
+      {
+        "time": 0.0,
+        "value": 1.0,
+        "easeType": 0,
+        "floorPosition": 0.0
+      }
+    ],
+    "xPositionKeyPoints": [
+      {
+        "time": 0.0,
+        "value": 0.0,
+        "easeType": 0,
+        "floorPosition": 0.0
+      }
+    ]
+  }
+}

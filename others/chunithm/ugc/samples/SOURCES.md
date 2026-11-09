@@ -1,0 +1,10 @@
+# Samples: UGC (`.ugc`, UMIGURI Chart v8)
+
+## Committed
+
+| File | Origin (URL, pinned commit if any) | Author | Licence | What it exercises |
+|---|---|---|---|---|
+| `muconvert_Example_basic.ugc` | https://github.com/MuNET-OSS/MuConvert/blob/520798c06a377c072f511cb940ebd95fce50d767/tests/chu/testset/%E8%87%AA%E5%88%B6%E8%B0%B1/Example/basic.ugc | inonote (`@DESIGN inonote`; this is the example project of the Margrete editor) | LGPL-3.0-or-later (repo LICENSE); community-made charts of copyrighted songs inside the test set (see doubts) | Margrete v1.5.0.1 file with `@VER 6`; small example chart (4.7 KB) |
+| `muconvert_Mobius_mas.ugc` | https://github.com/MuNET-OSS/MuConvert/blob/520798c06a377c072f511cb940ebd95fce50d767/tests/chu/testset/%E8%87%AA%E5%88%B6%E8%B0%B1/Mobius/mas.ugc | community charters (names not recorded in the test set) | LGPL-3.0-or-later (repo LICENSE); community-made charts of copyrighted songs inside the test set (see doubts) | "Created with Margrete v1.8.0" file, `@VER 8`, MASTER-style chart (82 KB) |
+| `muconvert_Terminal_terminal.ugc` | https://github.com/MuNET-OSS/MuConvert/blob/520798c06a377c072f511cb940ebd95fce50d767/tests/chu/testset/%E8%87%AA%E5%88%B6%E8%B0%B1/Terminal/terminal.ugc | community charters (names not recorded in the test set) | LGPL-3.0-or-later (repo LICENSE); community-made charts of copyrighted songs inside the test set (see doubts) | "Created with Margrete v1.7.8.1" file, `@VER 8` (30 KB) |
+| `muconvert_sabi.ugc` | https://github.com/MuNET-OSS/MuConvert/blob/520798c06a377c072f511cb940ebd95fce50d767/tests/chu/testset/%E8%87%AA%E5%88%B6%E8%B0%B1/sabi/sabi%20%20-%20true%20DJ%20MAG%20top%20ranker%27s%20song%20%E5%89%8D%E7%B7%A8%20%28%E3%81%8B%E3%81%9F%E3%81%8E%E3%82%8A%20Remix%29%20%5BKEMOMIMI%20EDM%20SQUAD%5D.ugc | community charters (names not recorded in the test set) | LGPL-3.0-or-later (repo LICENSE); community-made charts of copyrighted songs inside the test set (see doubts) | "Created with Margrete v1.8.0" file, `@VER 8` (7 KB); original file name contains spaces and non-ASCII characters (renamed) |

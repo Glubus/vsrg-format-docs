@@ -1,0 +1,1 @@
+[{"time":0,"angle":360,"type":"block"},{"time":1,"angle":45,"type":"block"},{"time":2,"angle":90,"type":"inverse"},{"time":3,"angle":135,"type":"side"},{"time":4,"angle":180,"angle2":270,"duration":2,"type":"hold"},{"time":7,"angle":225,"type":"mine"},{"time":8,"angle":270,"type":"extraTap"},{"time":9.5,"angle":315,"type":"block"}]

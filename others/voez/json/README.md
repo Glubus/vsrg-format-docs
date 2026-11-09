@@ -62,6 +62,10 @@ Not read by ROX.
 
 VoezEditor (C#, Unity): <https://github.com/AndrewFM/VoezEditor>; VOEZ JSON parser by the same author discussed on GBAtemp.
 
+## Getting samples
+
+Committed: a synthetic mini song (info, config, hard + extra notes/tracks) built from the VoezEditor writer code ([`samples/`](samples/)). Real data: VoezEditor has no LICENSE file and no sample project; official charts are copyrighted (Rayark). To get real files: use VoezEditor's export (`README/export.html`, `usage.html` in its repository) on the Switch assets, or dump the game's AssetBundle `songs/<name>` as described in the fiche; see also the GBAtemp thread cited in Sources.
+
 ## Sources
 
 - <https://cdn.jsdelivr.net/gh/AndrewFM/VoezEditor@master/Assets/Scripts/ProjectData.cs>

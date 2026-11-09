@@ -43,6 +43,10 @@ Not read by ROX.
 - Sound Space Plus loader (GDScript): https://github.com/Rhythia/sound-space-plus
 - pysspm-rhythia `NOTES2TEXT`: https://github.com/David-Jed/pysspm-rhythia
 
+## Getting samples
+
+Committed: three single-line maps bundled with Sound Space Plus (MIT) in [`samples/`](samples/) [observed: first item is a numeric id, then `x|y|ms` triples]. More: the Roblox-era Sound Space community archives (GitHub lists named in the Overview) and any `.sspm` converted with pysspm `NOTES2TEXT`.
+
 ## Sources
 - https://raw.githubusercontent.com/Rhythia/sound-space-plus/HEAD/scripts/content/game/Song.gd
 - https://raw.githubusercontent.com/David-Jed/pysspm-rhythia/main/pysspm_rhythia/pysspm.py

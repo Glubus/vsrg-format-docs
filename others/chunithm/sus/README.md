@@ -89,6 +89,12 @@ Read by ROX as a Project SEKAI chart (`rox::formats::sekai::SusDecoder`, see [`.
 
 [mkpoli/sus-io](https://github.com/mkpoli/sus-io) (Python + npm `sus-io`, `sus-parse`, `sus-stringify`), ched (Windows editor), Seaurchin, UMIGURI, Project Sekai charting tools.
 
+## Getting samples
+
+- **Committed**: 1 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
+- **Manifest**: 2 entries in `samples.manifest.json` (downloaded by `tools/fetch-samples.sh` into `samples-local/`; listed in [`samples/SOURCES.md`](samples/SOURCES.md))
+- **More samples**: SUS files are produced by Ched and read by Project Sekai tooling; the repos found with real fixtures are PurplePalette/sonolus-pjsekai-engine-extended (MIT, one file committed) and UntitledCharts/sonolus-level-converters (GPL-3.0, `test_files/*.sus`, two listed in the manifest). UMIGURI can import SUS (https://umgr.inonote.jp/docs/others/chart-sus).
+
 ## Sources
 
 - <https://gist.github.com/YumYummity/49935bf74367712b6ba240474cb7ce22> (read; derivative of the v2.7 spec by waki285)

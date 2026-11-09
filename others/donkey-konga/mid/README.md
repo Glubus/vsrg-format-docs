@@ -65,6 +65,12 @@ Not read by ROX.
 
 [kongamidtotja](https://codeberg.org/hapaxant/kongamidtotja) (Donkey Konga 2/3 → TJA, C#), REAPER project templates, Dolphin (extraction), Konga Beat (custom track editor, ResetEra thread).
 
+## Getting samples
+
+- **Committed**: 1 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
+- **Manifest**: none.
+- **More samples**: nothing could be obtained legally: the charts are inside the GameCube game image (`files/Score/*.mid`, per the Donkey Konga 2 modding guide https://gist.github.com/ImJustSpirit/67626bbc3844703c2cc202e54cffdcc9). How: dump your own disc/ISO and extract the filesystem (the fiche lists Dolphin for extraction), then copy the `.mid` files named by `FILENAME=` in `Resource/SongInfo.res`. Custom charts are made with REAPER or the Konga Beat editor (https://kongabeat.com); no public custom-chart file with a licence was found. The committed MIDI is hand-built from the documented note numbers and not validated in the game.
+
 ## Sources
 
 - <https://gist.github.com/ImJustSpirit/67626bbc3844703c2cc202e54cffdcc9> (read)

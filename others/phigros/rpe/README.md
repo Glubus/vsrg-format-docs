@@ -95,6 +95,12 @@ Not read by ROX.
 - Phichain (Rust, converts RPE <-> Phichain/official): <https://github.com/Ivan-1f/phichain>
 - PhiFanmade common chart docs: <https://docs.nuanr-mxi.com/en/>
 
+## Getting samples
+
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): three synthetic RPE charts (`RPEVersion` 113, 160, 170) from the MIT-licensed `rpechart` fixtures: layered events, extended events, father lines, fake notes, all four note types.
+- Manifest (`samples.manifest.json`): nothing. A real `.pez` zip with an RPE chart is in [../pez/samples/](../pez/samples/).
+- More: Re:PhiEdit writes `chart.json`; Phira imports it inside a `.pez`; `rpechart` can generate charts from a small `spec.json` (https://github.com/kamilhzn/rpechart).
+
 ## Sources
 
 - <https://github.com/TeamFlos/phira-docs/tree/main/src/chart-standard/chart-format/rpe> (root, beat, judgeLine, event, extend, extendEvent, controls, note pages; raw markdown)

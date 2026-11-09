@@ -1,0 +1,11 @@
+# Samples: SRT / SZT / SCT / SDT (maimai classic)
+
+## Committed
+
+| File | Origin (URL, pinned commit if any) | Author | Licence | What it exercises |
+|---|---|---|---|---|
+| `synthetic-srt.srt` | hand-written for this repository from the column layout of `../README.md` (donmai, "The Four Chart Formats of Maimai Classic"); every file parses without error with the SXT reader of donmai-me/MaiConverter (`MaiSxt.open`, MIT) run in scratch | vsrg-format-docs contributors | CC0-1.0 / public domain (synthetic) | SRT (7 columns, 6-decimal fractions): taps, hold, break tap (type 4), slides as tap-with-slide-id + end slide (128): straight (pattern 0), ring CW (1), ring CCW (2); LF endings, no header (528 bytes) |
+| `synthetic-szt.szt` | hand-written for this repository from the column layout of `../README.md` (donmai, "The Four Chart Formats of Maimai Classic"); every file parses without error with the SXT reader of donmai-me/MaiConverter (`MaiSxt.open`, MIT) run in scratch | vsrg-format-docs contributors | CC0-1.0 / public domain (synthetic) | SZT (7 columns): tap 1, hold 2, break tap 3, star 4, break star 5, start slide 0 / end slide 128 with ids and patterns 1 (straight), 3 (ring CW), 13 (fan), 7 (zigzag Z, 180 degrees apart) (750 bytes) |
+| `synthetic-sct.sct` | hand-written for this repository from the column layout of `../README.md` (donmai, "The Four Chart Formats of Maimai Classic"); every file parses without error with the SXT reader of donmai-me/MaiConverter (`MaiSxt.open`, MIT) run in scratch | vsrg-format-docs contributors | CC0-1.0 / public domain (synthetic) | SCT (8 columns): as SZT plus the slide-amount column; a break star launching two slides (ids 2 and 5, patterns 3 and 8) (895 bytes) |
+| `synthetic-sdt.sdt` | hand-written for this repository from the column layout of `../README.md` (donmai, "The Four Chart Formats of Maimai Classic"); every file parses without error with the SXT reader of donmai-me/MaiConverter (`MaiSxt.open`, MIT) run in scratch | vsrg-format-docs contributors | CC0-1.0 / public domain (synthetic) | SDT (9 columns, 4-decimal fractions, slide delay in the last column): as SCT, delays 0.25 / 0.125 measure, a break star launching two slides (ring CW and via-centre), fan slide, EACH taps, long hold (1031 bytes) |
+

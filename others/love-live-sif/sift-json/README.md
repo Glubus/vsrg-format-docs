@@ -58,6 +58,12 @@ Not read by ROX.
 
 SIFTrain (kbz): <https://github.com/kbz/SIFTrain>; livesim2 (Lua/LOVE): <https://github.com/DarkEnergyProcessor/livesim2_async>; LLBeatmapConvert (Lua): <https://github.com/DarkEnergyProcessor/LLBeatmapConvert>; LLP2ST: <https://github.com/Piranhaplant/LLP2ST>.
 
+## Getting samples
+
+**Committed** ([`samples/`](samples/SOURCES.md)): `synthetic-siftrain.json` (hand-written from the SIFTrain wiki description, CC0). **Manifest:** none: no repository with real SIFTrain beatmaps under a clear licence was found (SIFTrain is MIT but its tree contains no beatmap files).
+
+**How to get more**: SIFTrain (<https://github.com/kbz/SIFTrain>) reads beatmaps from `/beatmaps` with songs in `/beatmaps/soundfiles`; LLP2ST (<https://github.com/Piranhaplant/LLP2ST>) converts LLPractice charts into SIFTrain beatmaps; livesim2 (<https://github.com/DarkEnergyProcessor/livesim2_async>, zlib licence) loads many beatmap formats and documents its own in `docs/livesim2_beatmap_format.txt`; LLBeatmapConvert (<https://github.com/DarkEnergyProcessor/LLBeatmapConvert>, MIT) converts between formats. The SIF game's own live JSON is game data and not redistributable. The SKUFES! project (<https://github.com/skufes>) collects SIF in-game data (search result, not opened).
+
 ## Sources
 
 - <https://github-wiki-see.page/m/kbz/SIFTrain/wiki/Beatmap-Format>

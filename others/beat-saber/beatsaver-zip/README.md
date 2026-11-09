@@ -12,7 +12,7 @@ Custom Beat Saber levels are shared as a ZIP archive containing a map folder: `I
 - Chart format inside: [`.dat`](../dat/README.md); metadata: [`Info.dat`](../info-dat/README.md).
 
 ## Container & encoding
-Standard ZIP. Contents: files referenced by Info with names relative to `Info.dat`'s directory (BSMG: "All filename references are assumed to be located in the same relative directory as the info file"). The Info file must be named `Info.dat`. Recommended audio `ogg`; cover png/jpg, square, >= 256 px for BeatSaver (BSMG). No top-level mandatory folder structure documented in the sources read; Unknown beyond that.
+Standard ZIP. Contents: files referenced by Info with names relative to `Info.dat`'s directory (BSMG: "All filename references are assumed to be located in the same relative directory as the info file"). The Info file must be named `Info.dat`. Recommended audio `ogg`; cover png/jpg, square, >= 256 px for BeatSaver (BSMG). No top-level mandatory folder structure documented in the sources read; Unknown beyond that. [observed in the BeatSaver zips listed in samples/SOURCES.md: old maps are flat zips (no wrapper folder) with a lowercase `info.dat`, audio named `song.egg` and `cover.jpg`; newer ones use `Info.dat`.]
 
 ## Structure / metadata
 Unknown / not applicable beyond the files listed. BeatSaver stores its own metadata (id, hash, stats) in its API, not in the package.
@@ -40,6 +40,12 @@ Not read by ROX.
 - BeatSaber-Deno: https://github.com/KivalEvan/BeatSaber-Deno
 - ChroMapper exports/imports BeatSaver zips: https://github.com/Caeden117/ChroMapper [inference]
 - Song loader plugin (legacy, folder layout `info.json`): https://github.com/xyonico/BeatSaberSongLoader
+
+## Getting samples
+
+- **Committed**: 1 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
+- **Manifest**: 3 entries in `samples.manifest.json` (downloaded by `tools/fetch-samples.sh` into `samples-local/`; listed in [`samples/SOURCES.md`](samples/SOURCES.md))
+- **More samples**: download any map from BeatSaver (see the `dat` fiche for the API). The committed zip is an audio-less rebuild of the CC0 map "Spine" (3171); the manifest holds three original zips (Spine, Cowtown by goldcray with CC0 mapping per their description, and "Le Grand Chase" by awagi, whose description states CC BY for the Kevin MacLeod music). ChroMapper and the in-game editor also produce such zips [inference].
 
 ## Sources
 - https://bsmg.wiki/mapping/map-format.html

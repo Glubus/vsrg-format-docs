@@ -90,6 +90,12 @@ Not read by ROX.
 - Cy2Gen (practice chart generator): <https://github.com/davis0178/Cy2Gen>
 - Chart decryption notes: <https://gist.github.com/HoLLy-HaCKeR/84bda48aa565c6214d1803a49fd6f5b7>
 
+## Getting samples
+
+- **Committed**: 6 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
+- **Manifest**: none.
+- **More samples**: charts come from Cytoid levels (`chart.json`, `chart-extreme.json`; `.txt` names also occur: the bundled 8bit_adventurer level stores C2 JSON in `ez.txt`/`hd.txt`/`ex.txt`), from the editors Cytoid Chart Editor and PCtyx, or from cyl_package_tool's test resources (MIT). Official Cytus II charts are encrypted (decryption notes: https://gist.github.com/HoLLy-HaCKeR/84bda48aa565c6214d1803a49fd6f5b7) and were not collected.
+
 ## Sources
 
 - <https://cytoid.wiki/en/reference/chart/c2-format>

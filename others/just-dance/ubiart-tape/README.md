@@ -85,6 +85,12 @@ Not read by ROX. A clip timeline of scored full-body moves; at most the beat gri
 - JD Timeline Studio: https://github.com/MaximJDTOOLS/Just-dance-2017-timeline-studio
 - OpenDance (GameMaker recreation): https://github.com/WodsonKun/OpenDance
 
+## Getting samples
+
+**Committed** ([`samples/`](samples/SOURCES.md)): `synthetic_tml_dance.dtape.ckd` and `synthetic_tml_karaoke.ktape.ckd` (hand-written from the documented fields, CC0). **Manifest:** none. No real tape could be redistributed: Ferris Dancing's real test files live in a private submodule (`ubiart_toolkit_test_files`), tape2json's `input/*.json` are empty `{}` placeholders, json2tape is PolyForm Strict, and real tapes are Ubisoft data.
+
+**How to get real ones**: from a game install (Just Dance 2016 and later use JSON tapes with a trailing NUL), extract the `.ipk` bundles with IpkTool (<https://github.com/nkrapivin/JustDanceModTools>) or Ferris Dancing's `ipk` module (<https://github.com/Kriskras99/ferris_dancing>); the tapes are under `world/maps/<map>/timeline/` as `<map>_tml_dance.dtape.ckd` and `<map>_tml_karaoke.ktape.ckd` (paths from the README sources). Just Dance Now JSON maps can be turned into tapes with json2tape (<https://github.com/matty0004/json2tape>) or BlueStar (<https://github.com/MZommer/BlueStar>); `tape2json` converts back. Fan-made tapes for JD 2017 are edited with JD Timeline Studio.
+
 ## Sources
 - https://github.com/Kriskras99/ferris_dancing (`ubiart_toolkit/src/cooked/tape/mod.rs`, `ubiart_toolkit/src/utils/json.rs`, `ubiart_toolkit/src/cooked/tpl/types.rs`, `ubiart_toolkit/src/msm/types.rs`, `scratchpad.md`)
 - https://github.com/matty0004/json2tape (`j2t.js`)

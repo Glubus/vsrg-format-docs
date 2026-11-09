@@ -1,0 +1,38 @@
+{
+    "title": "サンプル メドレー",
+    "subtitle": "サンプルのメドレーです。",
+    "albumart": "albumart.png",
+    "exams":
+    [
+        {
+          "type": "gauge",
+          "range": "more",
+          "value": [ 95, 100 ]
+        },
+        {
+          "type": "combo",
+          "range": "more",
+          "value": [ 400, 450 ]
+        },
+        {
+          "type": "judgebad",
+          "range": "less",
+          "value": [ 20, 10 ]
+        }
+    ],
+    "charts":
+    [
+        {
+          "file": "Song-1\\Sample-Master.tci",
+          "difficulty": "oni"
+        },
+        {
+          "file": "Song-2\\Sample-Theme-Song.tci",
+          "difficulty": "oni"
+        },
+        {
+          "file": "Song-3\\Sample-Boss-Song.tci",
+          "difficulty": "edit"
+        }
+    ]
+}

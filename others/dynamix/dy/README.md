@@ -36,6 +36,8 @@ Embedded as base64 data URLs (`remix.music`, `remix.bg`).
 
 Unknown.
 
+[observed in dynamaker-modified `app/src/Script/function.js`] Dynamaker writes the bundle with `JSON.stringify({CMap, remix})` (`saveAsDynaMaker`); `saveAsMinimal` writes the same shape with `remix.isMinimal: true`. The loader also accepts a plain JSON file whose name ends in `JSON` with only `{CMap}` (`loadingScene.js`).
+
 ## Quirks & pitfalls
 
 Large files because of base64 audio; loaded with `eval` by Dynamaker (not strict JSON in practice) [inference].
@@ -51,6 +53,12 @@ Not read by ROX.
 ## Parsers & tools
 
 Dynamaker-modified: <https://github.com/jmakxd/dynamaker-modified>; DyNode: <https://dyn.iorinn.moe/en/>.
+
+## Getting samples
+
+**Committed** ([`samples/`](samples/SOURCES.md)): `synthetic-minimal.dy`, a hand-written bundle whose `remix.music` is a generated 0.1 s silent WAV (no copyrighted audio). **Manifest:** none (a real `.dy` embeds the song as base64, so real ones are not redistributable).
+
+**How to get more**: open or create a chart in Dynamaker / dynamaker-modified (<https://github.com/jmakxd/dynamaker-modified>) and use "Save as .DY" (`saveAsDynaMaker()`, and `saveAsMinimal()` which adds `remix.isMinimal: true`; both in `app/src/Script/function.js`) or DyNode's `.dy` import/export. The Dynamaker guide documents the export (<https://github.com/TLChicken/dynamaker-guide>). Real bundles circulate in the Dynamix fanmade community with their music inside.
 
 ## Sources
 

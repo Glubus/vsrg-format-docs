@@ -77,6 +77,12 @@ Not read by ROX. A decoder could map the 6 drum colors to 6 columns, with double
 - drumsrockmidiparser (Python, mido; MIDI notes 60..65 to colors): https://github.com/daredevil28/drumsrockmidiparser
 - Official Google Sheets template (Demons March Hard) linked from the instructions page.
 
+## Getting samples
+
+- **Committed**: 2 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
+- **Manifest**: none.
+- **More samples**: Steam Workshop items (Drums Rock supports custom songs; `notes.csv` + `info.csv` + `.ogg`) and the official template folder `TemplateSong` created by the game in `C:\Users\<you>/AppData/LocalLow/Garage 51/Drums Rock/CustomSongs` (official page https://garage51.es/drumsrock/custom_songs.html); the official Google Drive folders linked on that page (not downloadable without a browser session) hold the template spreadsheet. Editor on Fire (C; `src/dr.c`) exports the folder from a chart; drumsrockmidiparser converts MIDI. No real notes.csv with a licence was found, so the committed files are synthetic.
+
 ## Sources
 - https://garage51.es/drumsrock/custom_songs.html
 - https://steamcommunity.com/sharedfiles/filedetails/?id=2989549859

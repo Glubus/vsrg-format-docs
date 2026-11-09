@@ -13,7 +13,7 @@ JSON (UTF-8), one object per difficulty. The `$id`/`$ref` keys look like Json.NE
 
 ## Structure / metadata
 
-Root: `notes` (array) and `links` (array). Other root fields (e.g. speed or BPM data) were not found in the consulted parsers.
+Root: `notes` (array) and `links` (array). Other root fields (e.g. speed or BPM data) were not found in the consulted parsers. [observed in the Deenote test charts listed in samples/SOURCES.md (manifest): the root also carries `speed` (e.g. 6.0, 10.0) and, in `finale.hard.json`, `oriVMin`, `oriVMax`, `remapVMin`, `remapVMax`; notes there also carry `speed`, `eventID` and a duplicate `time` next to `_time`.]
 
 Note (`DSNote` in sonolus-deemo-engine):
 
@@ -73,6 +73,12 @@ Not read by ROX.
 - deemo-to-midi (Python): <https://github.com/water-vapor/deemo-to-midi>
 - deemo-extract (Python, MIDI): <https://github.com/Bigstool/deemo-extract>
 - sonolus-deemo-engine (TypeScript, `dsToDC`, `dcToLevelData`): <https://www.npmjs.com/package/sonolus-deemo-engine>
+
+## Getting samples
+
+- **Committed**: 1 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
+- **Manifest**: 4 entries in `samples.manifest.json` (downloaded by `tools/fetch-samples.sh` into `samples-local/`; listed in [`samples/SOURCES.md`](samples/SOURCES.md))
+- **More samples**: extracted game charts circulate: https://github.com/LibrarristShalinward/Deemo-I-Charts (JSON per song and difficulty, manifest) and the Deenote editor test charts (Chlorie/Deenote, `Assets/Dev/TestCharts/`, manifest). To extract them yourself use deemo-extract / disunity as listed in the fiche. No licence was found for any, so only a synthetic file is committed.
 
 ## Sources
 

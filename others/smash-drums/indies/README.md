@@ -107,5 +107,9 @@ Not read by ROX. A decoder could map Ids 0..5 to six columns (BPM from `SongTimi
 - Smash Drums Editor (TypeScript, read/write `.indies`, `meta.json`, `.chart`, `.rlrr`): https://github.com/JStillxSKS/SmashDrumsEditor
 - Paradiddle-format cross-reference: [`../../paradiddle/rlrr/README.md`](../../paradiddle/rlrr/README.md), Clone Hero [`chart`](../../../vsrg/clone-hero/chart/README.md)
 
+## Getting samples
+
+Committed: one synthetic standalone `meta.json` ([`samples/`](samples/)). The manifest lists the author's 746-byte synthetic `.indies` test fixture from JStillxSKS/Indies-DB (no LICENSE file in that repo, so not committed). Real `.indies` packages contain full songs: get them from the community database Indies-DB (`indies-db.vercel.app`, named by the editor project; live, not hashable) or create one with the Smash Drums Editor (<https://github.com/JStillxSKS/SmashDrumsEditor>) which exports `.indies`; the game imports them via its Indies update.
+
 ## Sources
 - https://github.com/JStillxSKS/SmashDrumsEditor (`README.md`, `docs/FILE_FORMATS.md`)

@@ -97,6 +97,12 @@ Not read by ROX.
 - adofai-lib (npm): https://npm.io/package/adofai-lib
 - ADOFAI Music Converter (MIDI/WAV to level): https://maicy0609.github.io/ADOFAI_Converter
 
+## Getting samples
+
+- **Committed**: 3 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
+- **Manifest**: 2 entries in `samples.manifest.json` (downloaded by `tools/fetch-samples.sh` into `samples-local/`; listed in [`samples/SOURCES.md`](samples/SOURCES.md))
+- **More samples**: levels are produced by the game's level editor (community levels are shared on the Steam Workshop [inference]); open tools that write the format and ship or generate levels: adofai-cli (`examples/demo.adofai`, MIT), ADOFAI-JS, adofaipy, SharpFAI, RhythmBase.Adofai (see Parsers & tools). The ADOFAI Expansion docs (https://learn.modrift.org/libs/level-format) show fragments only. Real levels circulate in GitHub repos (e.g. the GPL-3.0 AngleData-PathData repo has two in its build folder, listed in the manifest) but most are third-party and unlicensed, so they were not committed. Search terms: `adofai level`, `angleData`, `eventType`.
+
 ## Sources
 - https://learn.modrift.org/libs/level-format
 - https://raw.githubusercontent.com/adofaiex/ADOFAI-JS/main/README.md

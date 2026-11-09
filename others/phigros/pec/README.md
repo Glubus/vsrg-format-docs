@@ -85,6 +85,12 @@ Not read by ROX.
 
 Phira (Rust): <https://github.com/TeamFlos/phira>; prpr (`format: pec`): <https://github.com/Mivik/prpr>; Phichain converts PEC.
 
+## Getting samples
+
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): `synthetic-all-records.pec` (hand-written from the record table above, CC0).
+- Manifest (`samples.manifest.json`): three real fan charts of yuameshi/phigros-charts-repo (`TSLove_chart.pec`, `All_the_time.pec`, `Tempestissimo.pec`), no licence file, hence not committed. [observed in the files: the first line is the offset (150, -50, -80), then `bp` lines, then `n1` records each followed by `#` and `&` lines]
+- More: that repository holds more `.pec` charts (`grievousLady`, `materializeAnything`, `ouroVoros`, `terrasphere`, `theRailway`, ... by file name); PhiEdit is the editor that writes the format; Phira loads it with `format: pec` in `info.yml`.
+
 ## Sources
 
 - <https://github.com/TeamFlos/phira-docs/tree/main/src/chart-standard/chart-format/pe> (basic, event, note pages)

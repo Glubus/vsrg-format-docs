@@ -1,0 +1,27 @@
+TITLE:Synthetic Double Play
+SUBTITLE:--hand-written for vsrg-format-docs (CC0)
+BPM:130
+WAVE:synthetic.ogg
+OFFSET:-1.500
+MAKER:vsrg-format-docs
+
+COURSE:Oni
+LEVEL:7
+STYLE:Double
+BALLOON:3
+SCOREINIT:1000
+SCOREDIFF:200
+
+#START P1
+1020,
+3000,
+AB00,
+7008,
+#END
+
+#START P2
+2010,
+0004,
+BA00,
+7008,
+#END

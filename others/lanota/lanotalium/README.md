@@ -13,7 +13,7 @@ Unknown.
 
 ## Structure / metadata
 
-Unknown. The tool exposes Ring/Angleline concepts (per release notes), tap/hold/slide notes.
+[observed in the source of Lanotalium, `Assets/Scripts/Schwarzer/Chart/Lanota/LanotaChartHandler.cs`, class `LnmReadJson`; no sample file seen] The chart text is JSON with the root keys `events` (array), `eos` (float, song length), `bpm` (array) and `scroll` (array of `{speed, timing}`). An `events` entry has `Id`, `Type`, `Timing`, `Duration`, `ctp`, `ctp1`, `ctp2`, `cfmi`, `cflg`, `Degree`, `Size`, `Critical`, `Combination`, `Bpm` and `joints` (`{j_count, j: [{idx, d_deg, d_time, d_e}]}`). The reader dispatches on `Type`: 0, 2, 3, 4 tap-like notes; 5 hold note with joints; 8 and 11 camera XZ events; 10 camera Y events; 12 default camera values (`ctp`, `ctp1`, `ctp2`, `Degree`); 13 camera rotation events. If `bpm` is missing the tempo defaults to 100, and if `scroll` is missing the speed defaults to 1. The meaning of the individual `Type` numbers beyond this dispatch, the units of `Timing`/`Duration` and the file extension were not determined. The tool exposes Ring/Angleline concepts (per release notes), tap/hold/slide notes.
 
 ## Timing model
 
@@ -46,6 +46,12 @@ Not read by ROX.
 ## Parsers & tools
 
 Lanotalium (C#): <https://github.com/cnSchwarzer/Lanotalium> (mirror <https://github.com/reitowo/Lanotalium>); Layesta (closed source).
+
+## Getting samples
+
+**Committed:** none. **Manifest:** none. The Lanotalium repository carries the notice "No License - Commercial use, Distribution is not permitted" and no sample chart (its tree, at `77a44cf5`, holds code, prefabs and language packs only), so nothing can be committed or listed.
+
+**How to get one yourself**: install Lanotalium (<http://www.lanotalium.cn>, <https://github.com/cnSchwarzer/Lanotalium>) and create a chart, or load one from the in-app ChartZone (`LimChartZone` scripts, `Assets/Scripts/LimChartZone/` in the repository). Fan charts are shared through the Lanotalium/Layesta Discord servers linked in the README. Official Lanota charts are inside the game's Unity bundles (undocumented here). From the source (`Assets/Scripts/Schwarzer/Chart/Lanota/LanotaChartHandler.cs`), a chart is a JSON object with the keys `events`, `eos`, `bpm`, `scroll`; see the fiche.
 
 ## Sources
 

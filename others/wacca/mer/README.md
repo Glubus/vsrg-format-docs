@@ -83,7 +83,7 @@ Touch, snap (forward/backward), slides CW/CCW, hold (start + segments + end link
 
 - **MER** (game-like, numeric IDs).
 - **MercuryMapper `.map`** (editor-saved Mercury text), **SAT v2** (`@COMMENTS`, `@GIMMICKS`, `@OBJECTS`; symbolic types; also supports comments and trace/damage notes).
-- Official arcade data is not plaintext/accessible in the sources opened.
+- Official-game `.mer` files exist as plaintext in the MercuryPlayer repository (1247 files, `MusicData/Sxx-nnn/Sxx-nnn_0d.mer`): same `#BODY` layout, header values filled (`#MUSIC_SCORE_ID 1`, `#MUSIC_FILE_PATH MER_BGM_S00_003`, `#OFFSET 0.003200`), note ids 1-14 and 16, R-note ids 20-26 in newer songs, object id 5 (hi-speed) lines [observed in samples-manifest entries `others/wacca/mer`, https://github.com/frozenpandaman/MercuryPlayer/tree/ceab443b15891c182e27ce670b73b760494e5835/MusicData].
 
 ## Quirks & pitfalls
 
@@ -123,6 +123,10 @@ Not read by ROX 0.8.1.
 - [Yasu3D/MercuryMapper](https://github.com/Yasu3D/MercuryMapper) (C#/Avalonia; `Data/FormatHandler.cs`, `Enums/NoteType.cs`, `Enums/GimmickType.cs`, `Data/ChartElement.cs`)
 - [WenqiOfficial/MercuryPlayerPlus](https://github.com/WenqiOfficial/MercuryPlayerPlus) (map player)
 - BAKKA / BAKKA-Avalonia (earlier editors), Saturn (SAT) tools
+
+## Getting samples
+
+Nothing committed (WACCA charts are Marvelous Inc. data). The manifest lists eight real `.mer` files pinned to a commit of frozenpandaman/MercuryPlayer (MIT code; charts under `MusicData/Sxx-nnn/Sxx-nnn_0d.mer`, 1247 files, difficulties `_00`-`_03`). Observed in them [observed in the downloaded files]: official files use the same `#BODY` layout as the fiche but header values are filled (`#MUSIC_SCORE_ID 1`, `#MUSIC_FILE_PATH MER_BGM_S00_003`, offsets like `0.003200`); note type ids 1-14 and 16 occur, R-note ids 20-26 occur in newer songs (`S02-2xx`/`S03-xxx`), and hi-speed lines (object id 5) appear in `S03-061_02`. This contradicts the fiche statement that official data was not plaintext in the sources opened. Other sources: MercuryMapper exports `.mer`; WenqiOfficial/MercuryPlayerPlus is a player.
 
 ## Sources
 

@@ -20,6 +20,8 @@ Only what the TJAPlayer3 article says is documented here; the authoritative desc
 - no `8` terminator: a roll/balloon's duration is written by repeating its head symbol, the last repeat corresponds to TJA `8` (TJF `5555` = TJA `5558`);
 - command `#GOMUSIC` starts the music at that position (there is no `OFFSET`; the author states offsets must be adjusted with `#GOMUSIC` and BPM changes — similar to the absence of `GAP` in DWI/MSD).
 
+Per the Taikosan readme: headers `TITLE`, `LEVEL` (1-10), `BPM`, `WAVE`; chart between `#START` and `#END`; digit `7` (gekirenda/balloon) shows graphics only; commands `#GOMUSIC`, `#BPMCHANGE n`, `#ONESYOSETU` (next line is one measure whatever its length) [observed in https://iepiweidieng.github.io/TJAPlayer3/taiko-sim-readmes/utf-8/Readme-taikosan-plusedit.txt].
+
 Unknown: full header list, complete command set, difficulty/course handling.
 
 ## Timing model
@@ -53,6 +55,12 @@ Not read by ROX.
 ## Parsers & tools
 
 TaikoJiro (reads `.tjf`), Taikosan, TJF EDIT; no open-source parser identified.
+
+## Getting samples
+
+Committed: one hand-written synthetic file built strictly from the Taikosan readme ([`samples/`](samples/)). Real files: the Taikosan "nicover" / plusedit package by VIL ships with the charts of the author's video ("動画内で使っていた譜面もそのまんま入ってます。サンプル代わりにどうぞ", Taikosan readme); pointers to the archive are on <https://w.atwiki.jp/laser_bm/pages/72.html> and <https://wikiwiki.jp/taiko/> (listed by the TJAPlayer3 documentation, not opened). TJF EDIT writes `.tjf`; TaikoJiro 1 also reads it.
+
+Facts from the readme [Readme-taikosan-plusedit.txt, via the TJAPlayer3 docs mirror]: headers `TITLE`, `LEVEL` (1-10), `BPM`, `WAVE`; chart between `#START` and `#END`, one digit per 1/16 note (0 rest, 1 don, 2 ka, 3 big don, 4 big ka, 5 roll, 6 big roll, 7 "gekirenda"/balloon, graphics only); commands `#GOMUSIC`, `#BPMCHANGE n`, `#ONESYOSETU` (next line is one measure whatever its length).
 
 ## Sources
 

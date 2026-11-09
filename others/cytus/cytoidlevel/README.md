@@ -67,6 +67,12 @@ Not read by ROX.
 
 Cytoid (C#, Unity): <https://github.com/Cytoid/Cytoid>; PCtyx can generate `level.json`; Cytoid Chart Editor: <https://github.com/CatalinTermure/Cytoid-Chart-Editor>; CytoidDB: <https://cytoid.io>.
 
+## Getting samples
+
+- **Committed**: 2 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
+- **Manifest**: 1 entry in `samples.manifest.json` (downloaded by `tools/fetch-samples.sh` into `samples-local/`; listed in [`samples/SOURCES.md`](samples/SOURCES.md))
+- **More samples**: Cytoid levels are published on https://cytoid.io (CytoidDB) as `.cytoidlevel` zips (a zip with `level.json`, charts, audio, images, optional storyboard). The Cytoid repo bundles `io.cytoid.8bit_adventurer.cytoidlevel` (9.7 MB, manifest). Community level licences vary (Cytoid content rules: https://cytoid.wiki/en/reference/community/content-rule); the committed package is an audio-less build of the editor test level by chovvy (GPL-3.0 repo).
+
 ## Sources
 
 - <https://raw.githubusercontent.com/wiki/Cytoid/Cytoid/a.-Creating-a-level.md>

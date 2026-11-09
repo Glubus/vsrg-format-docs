@@ -1,0 +1,482 @@
+{
+    "version": 0.7,
+    "authoringTool": "synthetic (hand-written for vsrg-format-docs)",
+    "recordingMetadata": {
+        "title": "Synthetic Example",
+        "description": "Synthetic test chart, CC0",
+        "coverImagePath": "",
+        "artist": "Nobody",
+        "author": "vsrg-format-docs",
+        "creator": "vsrg-format-docs",
+        "length": 7.7,
+        "complexity": 3
+    },
+    "audioFileData": {
+        "songTracks": [
+            "song.ogg"
+        ],
+        "drumTracks": [],
+        "songPreview": "",
+        "calibrationOffset": 0
+    },
+    "instruments": [
+        {
+            "name": "BP_HiHat_C_1",
+            "class": "BP_HiHat_C",
+            "location": [
+                0.0,
+                0.0,
+                100.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "class": "BP_Kick_C",
+            "location": [
+                10.0,
+                0.0,
+                100.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "BP_Crash15_C_1",
+            "class": "BP_Crash15_C",
+            "location": [
+                20.0,
+                0.0,
+                100.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "BP_Ride17_C_1",
+            "class": "BP_Ride17_C",
+            "location": [
+                30.0,
+                0.0,
+                100.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "class": "BP_Snare_C",
+            "location": [
+                40.0,
+                0.0,
+                100.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "BP_Tom1_C_1",
+            "class": "BP_Tom1_C",
+            "location": [
+                50.0,
+                0.0,
+                100.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "BP_Tom2_C_1",
+            "class": "BP_Tom2_C",
+            "location": [
+                60.0,
+                0.0,
+                100.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "BP_FloorTom_C_1",
+            "class": "BP_FloorTom_C",
+            "location": [
+                70.0,
+                0.0,
+                100.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    ],
+    "bpmEvents": [
+        {
+            "bpm": 120.0,
+            "time": 0.0
+        },
+        {
+            "bpm": 150.0,
+            "time": 4.0
+        }
+    ],
+    "events": [
+        {
+            "name": "BP_Crash15_C",
+            "vel": 127,
+            "loc": 0,
+            "time": "0.0000"
+        },
+        {
+            "name": "BP_HiHat_C",
+            "vel": 100,
+            "loc": 0,
+            "time": "0.0000"
+        },
+        {
+            "name": "BP_Kick_C",
+            "vel": 115,
+            "loc": 0,
+            "time": "0.0000"
+        },
+        {
+            "name": "BP_HiHat_C",
+            "vel": 80,
+            "loc": 0,
+            "time": "0.2500"
+        },
+        {
+            "name": "BP_HiHat_C",
+            "vel": 100,
+            "loc": 0,
+            "time": "0.5000"
+        },
+        {
+            "name": "BP_Snare_C",
+            "vel": 110,
+            "loc": 0,
+            "time": "0.5000"
+        },
+        {
+            "name": "BP_HiHat_C",
+            "vel": 80,
+            "loc": 0,
+            "time": "0.7500"
+        },
+        {
+            "name": "BP_HiHat_C",
+            "vel": 100,
+            "loc": 0,
+            "time": "1.0000"
+        },
+        {
+            "name": "BP_Kick_C",
+            "vel": 115,
+            "loc": 0,
+            "time": "1.0000"
+        },
+        {
+            "name": "BP_HiHat_C",
+            "vel": 80,
+            "loc": 0,
+            "time": "1.2500"
+        },
+        {
+            "name": "BP_Kick_C",
+            "vel": 115,
+            "loc": 0,
+            "time": "1.2500"
+        },
+        {
+            "name": "BP_HiHat_C",
+            "vel": 100,
+            "loc": 0,
+            "time": "1.5000"
+        },
+        {
+            "name": "BP_Snare_C",
+            "vel": 110,
+            "loc": 0,
+            "time": "1.5000"
+        },
+        {
+            "name": "BP_HiHat_C",
+            "vel": 80,
+            "loc": 0,
+            "time": "1.7500"
+        },
+        {
+            "name": "BP_HiHat_C",
+            "vel": 100,
+            "loc": 0,
+            "time": "2.0000"
+        },
+        {
+            "name": "BP_Kick_C",
+            "vel": 115,
+            "loc": 0,
+            "time": "2.0000"
+        },
+        {
+            "name": "BP_HiHat_C",
+            "vel": 80,
+            "loc": 0,
+            "time": "2.2500"
+        },
+        {
+            "name": "BP_HiHat_C",
+            "vel": 100,
+            "loc": 0,
+            "time": "2.5000"
+        },
+        {
+            "name": "BP_Snare_C",
+            "vel": 110,
+            "loc": 0,
+            "time": "2.5000"
+        },
+        {
+            "name": "BP_HiHat_C",
+            "vel": 80,
+            "loc": 0,
+            "time": "2.7500"
+        },
+        {
+            "name": "BP_HiHat_C",
+            "vel": 100,
+            "loc": 0,
+            "time": "3.0000"
+        },
+        {
+            "name": "BP_Kick_C",
+            "vel": 115,
+            "loc": 0,
+            "time": "3.0000"
+        },
+        {
+            "name": "BP_HiHat_C",
+            "vel": 80,
+            "loc": 0,
+            "time": "3.2500"
+        },
+        {
+            "name": "BP_Kick_C",
+            "vel": 115,
+            "loc": 0,
+            "time": "3.2500"
+        },
+        {
+            "name": "BP_HiHat_C",
+            "vel": 100,
+            "loc": 0,
+            "time": "3.5000"
+        },
+        {
+            "name": "BP_Snare_C",
+            "vel": 110,
+            "loc": 0,
+            "time": "3.5000"
+        },
+        {
+            "name": "BP_HiHat_C",
+            "vel": 80,
+            "loc": 0,
+            "time": "3.7500"
+        },
+        {
+            "name": "BP_Ride17_C",
+            "vel": 100,
+            "loc": 0,
+            "time": "4.0000"
+        },
+        {
+            "name": "BP_Kick_C",
+            "vel": 112,
+            "loc": 0,
+            "time": "4.0000"
+        },
+        {
+            "name": "BP_Ride17_C",
+            "vel": 85,
+            "loc": 0,
+            "time": "4.2000"
+        },
+        {
+            "name": "BP_Ride17_C",
+            "vel": 100,
+            "loc": 0,
+            "time": "4.4000"
+        },
+        {
+            "name": "BP_Snare_C",
+            "vel": 108,
+            "loc": 0,
+            "time": "4.4000"
+        },
+        {
+            "name": "BP_Ride17_C",
+            "vel": 85,
+            "loc": 0,
+            "time": "4.6000"
+        },
+        {
+            "name": "BP_Ride17_C",
+            "vel": 100,
+            "loc": 0,
+            "time": "4.8000"
+        },
+        {
+            "name": "BP_Kick_C",
+            "vel": 112,
+            "loc": 0,
+            "time": "4.8000"
+        },
+        {
+            "name": "BP_Ride17_C",
+            "vel": 85,
+            "loc": 0,
+            "time": "5.0000"
+        },
+        {
+            "name": "BP_Ride17_C",
+            "vel": 100,
+            "loc": 0,
+            "time": "5.2000"
+        },
+        {
+            "name": "BP_Snare_C",
+            "vel": 108,
+            "loc": 0,
+            "time": "5.2000"
+        },
+        {
+            "name": "BP_Ride17_C",
+            "vel": 85,
+            "loc": 0,
+            "time": "5.4000"
+        },
+        {
+            "name": "BP_Snare_C",
+            "vel": 100,
+            "loc": 0,
+            "time": "5.6000"
+        },
+        {
+            "name": "BP_Snare_C",
+            "vel": 90,
+            "loc": 0,
+            "time": "5.8000"
+        },
+        {
+            "name": "BP_Tom1_C",
+            "vel": 100,
+            "loc": 0,
+            "time": "6.0000"
+        },
+        {
+            "name": "BP_Tom1_C",
+            "vel": 95,
+            "loc": 0,
+            "time": "6.2000"
+        },
+        {
+            "name": "BP_Tom2_C",
+            "vel": 105,
+            "loc": 0,
+            "time": "6.4000"
+        },
+        {
+            "name": "BP_Tom2_C",
+            "vel": 100,
+            "loc": 0,
+            "time": "6.6000"
+        },
+        {
+            "name": "BP_FloorTom_C",
+            "vel": 110,
+            "loc": 0,
+            "time": "6.8000"
+        },
+        {
+            "name": "BP_FloorTom_C",
+            "vel": 120,
+            "loc": 0,
+            "time": "7.0000"
+        },
+        {
+            "name": "BP_Kick_C",
+            "vel": 127,
+            "loc": 0,
+            "time": "7.0000"
+        },
+        {
+            "name": "BP_Crash15_C",
+            "vel": 127,
+            "loc": 0,
+            "time": "7.0000"
+        }
+    ]
+}

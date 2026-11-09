@@ -28,13 +28,19 @@ Rocksmith 2012 vs 2014 XML; "Remastered" CDLC guidelines. Unknown.
 Unknown.
 
 ## Example
-Single element from the CST issue excerpt: `<note time="29.320" string="3" fret="9" sustain="0.253" bend="1" hammerOn="0" harmonic="0"/>`.
+[observed in samples/rocksmith2014net_instrumental.xml] root `<song version="8">` with children in this order: `title`, `arrangement`, `part`, `offset`, `centOffset`, `songLength`, `startBeat`, `averageTempo`, `tuning` (attributes `string0`..`string5`), `capo`, `artistName`, `artistNameSort`, `albumName`, `albumYear`, `crowdSpeed`, `arrangementProperties`, `lastConversionDateTime`, `phrases`, `phraseIterations`, `newLinkedDiffs`, `linkedDiffs`, `phraseProperties`, `chordTemplates`, `ebeats`, `tonebase`, `tonea`..`toned`, `tones`, `sections`, `events`, `transcriptionTrack`, `levels` (each `<level difficulty="0">` with `notes`, `chords`, `anchors`, `handShapes`); a first note is `<note time="11.500" string="1" fret="0" mute="1"/>`. Arrangement files with `version="7"` exist too; vocals files are `<vocals count="67">` with `<vocal time note length lyric/>`, and `<showlights>` files carry the stage lighting. The element from the CST issue excerpt: `<note time="29.320" string="3" fret="9" sustain="0.253" bend="1" hammerOn="0" harmonic="0"/>`.
 
 ## ROX support
 Not read by ROX.
 
 ## Parsers & tools
 Rocksmith Custom Song Toolkit (C#): https://github.com/rscustom/rocksmith-custom-song-toolkit · RocksmithToTab: https://github.com/fholger/RocksmithToTab · rs2ir-converter: https://github.com/jermn007/rs2ir-converter
+
+## Getting samples
+
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): eleven XML files from the test projects of Rocksmith2014.NET (MIT): Lead/Bass/chords-only/notes-only arrangements (versions 7 and 8, a 12-level dynamic-difficulty file, a capo/tuning variant), vocals, Japanese vocals and two showlights files.
+- Manifest: nothing.
+- More: arrangements are authored in EOF and post-processed by DDC (the XML comments in the samples name both), then packed with the Rocksmith Custom Song Toolkit or DLC Builder; converters such as RocksmithToTab and rs2ir-converter read them (links above). Official arrangements exist only as compiled `.sng` inside retail `.psarc` files [inference].
 
 ## Sources
 https://github.com/rscustom/rocksmith-custom-song-toolkit/issues/147 · https://github.com/rscustom/rocksmith-custom-song-toolkit/blob/master/RocksmithToolkitCLI/sng2014/Program.cs · https://github.com/jermn007/rs2ir-converter

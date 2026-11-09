@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DynamixMap MapID="m_map_songname_H" BarPerMinute="130" TimeOffset="0.15">
+    <Center>
+        <Note Index="0" SubIndex="-1" Position="1.0" Size="1.0" Time="0.0" Type="NORMAL" />
+        <Note Index="1" SubIndex="2" Position="2.0" Size="1.5" Time="1.0" Type="HOLD" />
+        <Note Index="2" SubIndex="-1" Position="2.0" Size="1.5" Time="3.0" Type="SUB" />
+    </Center>
+    <Left Type="PAD">
+        <Note Index="3" SubIndex="-1" Position="0.0" Size="1.0" Time="2.5" Type="CHAIN" />
+    </Left>
+    <Right Type="MIXER">
+        <Note Index="4" SubIndex="-1" Position="3.0" Size="1.0" Time="4.0" Type="NORMAL" />
+    </Right>
+</DynamixMap>

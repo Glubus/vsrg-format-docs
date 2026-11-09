@@ -52,6 +52,12 @@ Not read by ROX.
 
 ArcCreate (C#): <https://github.com/Arcthesia/ArcCreate> (`Compose/Project/Export/Exporter.cs`, `Data/ProjectSettings.cs`, `Data/ChartSettings.cs`, `Storage/ImportInformation.cs`); EtoileResurrection (archived): <https://github.com/freeze-dolphin/EtoileResurrection>; Etoile.Lite is the successor named in its README.
 
+## Getting samples
+
+- **Committed**: 2 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
+- **Manifest**: 1 entry in `samples.manifest.json` (downloaded by `tools/fetch-samples.sh` into `samples-local/`; listed in [`samples/SOURCES.md`](samples/SOURCES.md))
+- **More samples**: export a project from ArcCreate (`Compose/Project/Export/Exporter.cs` writes the package, per the fiche) or convert with EtoileResurrection / Etoile.Lite. Fan packages also circulate as `.arcpkg` files in community channels [inference]. The committed package is an audio-less rebuild; the unmodified original (with a 44 KB `base.ogg` and `base.jpg`) is in the manifest.
+
 ## Sources
 
 - <https://github.com/Arcthesia/ArcCreate>

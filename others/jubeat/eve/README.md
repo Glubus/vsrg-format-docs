@@ -63,6 +63,10 @@ Arcade jubeat `.eve` (this page); the same events in binary form in `.jbsq`. jub
 
 ## Example
 
+[observed in manifest sample jubeatools_Life_Without_You.eve] Real files are written with the right-aligned fields (`{time:>8},{command:<8},{value:>8}`), start with `MEASURE`, `HAKU`, `TEMPO` at tick 0 (in that order) and list simultaneous taps as consecutive `PLAY` lines with the same time (e.g. `480,PLAY,0` / `480,PLAY,3` / `480,PLAY,8`).
+
+A runnable hand-written file is [`samples/synthetic-example.eve`](samples/synthetic-example.eve).
+
 Illustrative, hand-built from the rules above (not from a real chart): 
 
 ```
@@ -85,6 +89,12 @@ Not read by ROX 0.8.1.
 
 - [Stepland/jubeatools](https://github.com/Stepland/jubeatools) (Python; `formats/konami/eve`, `konami/commons.py`)
 - [fishguy6564/Jubeat-MemonEveConverter](https://github.com/fishguy6564/Jubeat-MemonEveConverter) (C)
+
+## Getting samples
+
+**Committed** ([`samples/`](samples/SOURCES.md)): `synthetic-example.eve` (hand-written, CC0; two tempos, taps, five long notes, validated against the jubeatools value rules). **Manifest:** `jubeatools_Life_Without_You.eve` (jubeatools test fixture pinned to a commit; the repository has no LICENSE, so it is not committed).
+
+**How to get more**: convert any memon/memo chart with jubeatools (loader/dumper for `eve`; the GitHub repository README now says "Moved to gitlab": <https://gitlab.com/Buggyroom/jubeatools>, not opened), or with `Jubeat-MemonEveConverter` (<https://github.com/fishguy6564/Jubeat-MemonEveConverter>). Arcade `.eve` files come from the arcade game data (one file per difficulty named `bsc`/`adv`/`ext`, per jubeatools); those are commercial. The jubeatools repository also contains `.eve` test data (see the manifest entry).
 
 ## Sources
 

@@ -75,6 +75,12 @@ Not read by ROX 0.8.1.
 
 [Stepland/jubeatools](https://github.com/Stepland/jubeatools) (`construct`-based loader/dumper).
 
+## Getting samples
+
+**Committed:** none. **Manifest:** none. No `.jbsq` file exists in any public repository found (jubeatools ships only the Kaitai description `jubeatools/formats/konami/jbsq/jbsq.ksy`, no sample). A synthetic binary was not written because the 96-byte header contains padding and fields whose real-world content is unknown (`../README.md`).
+
+**How to get one**: jubeatools can *write* `.jbsq` from any other jubeat format (it has a loader and a dumper, per the README), which produces a conforming file from a memon/eve/memo chart; real ones come from arcade game data (commercial) and, for the jubeat plus family, from `.jbt` archives (encrypted `seq_*` entries, see the iOS note by SaxxonPike: <https://github.com/SaxxonPike/rhythm-game-formats/blob/master/ios/jbt-rb-orb.md>).
+
 ## Sources
 
 - <https://raw.githubusercontent.com/Stepland/jubeatools/master/jubeatools/formats/konami/jbsq/construct.py> and `load.py` (read)

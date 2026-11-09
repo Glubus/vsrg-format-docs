@@ -32,13 +32,19 @@ Unknown.
 Keys and layouts differ per platform (PC/Mac/console) [inference]; Unknown.
 
 ## Example
-None.
+[observed in samples/rocksmith2014net_packed_pc.sng and the other packed files] Packed files start with the bytes `4A 00 00 00 03 00 00 00`; the unpacked data file `samples/rocksmith2014net_unpacked.sng` starts `26 01 00 00 ...` (no such header). See [samples/](samples/).
 
 ## ROX support
 Not read by ROX.
 
 ## Parsers & tools
 Rocksmith Custom Song Toolkit (C#): https://github.com/rscustom/rocksmith-custom-song-toolkit · rs2ir-converter (Python): https://github.com/jermn007/rs2ir-converter · slopsmith: https://github.com/byrongamatos/slopsmith
+
+## Getting samples
+
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): six `.sng` test files from Rocksmith2014.NET (MIT): one unpacked, PC and macOS packed variants, and the packed instrumental / vocals / technique-test arrangements. No decoder was run on them here.
+- Manifest: nothing beyond the PSARC test packages listed in [../psarc/README.md](../psarc/README.md).
+- More: every Rocksmith 2014 `.psarc` holds `songs/bin/generic/*.sng` (overview above); unpack it with the Rocksmith Custom Song Toolkit or Rocksmith2014.NET; build `.sng` from `.xml` with the toolkit's `sng2014` CLI (`RocksmithToolkitCLI/sng2014/Program.cs`, cited in Sources). The toolkit repository has two more `.sng` (`generalscripts/25or6to4_lead.sng`, `..._vocals.sng`, not opened; likely a commercial song's arrangement, so not committed) and `RocksmithToolkitLib/Resources/VOCALS_RS2.sng`.
 
 ## Sources
 https://github.com/jermn007/rs2ir-converter · https://github.com/rscustom/rocksmith-custom-song-toolkit/blob/master/RocksmithToolkitCLI/sng2014/Program.cs · https://deepwiki.com/byrongamatos/slopsmith/2.4-psarc-and-file-format-support

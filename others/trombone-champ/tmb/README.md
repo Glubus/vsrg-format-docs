@@ -93,6 +93,10 @@ Not read by ROX. Pitch-based, no lanes; at best a lossy projection onto columns 
 - boner-viewer (web previewer): https://github.com/Paturages/boner-viewer
 - TCCC chart converter: https://tc-chart-converter.github.io/
 
+## Getting samples
+
+Committed: three MIT test charts from TromboneCharter plus one synthetic full-field chart ([`samples/`](samples/)). Official tracks are copyrighted and not included. Custom tracks are distributed as folders (`song.tmb` + `song.ogg`) by the community: TootTally (<https://toottally.com/>, its song pages follow `https://toottally.com/song/<id>/` per TootTallySongDownloader source; its `api/songs/` endpoint did not answer from here) and the Trombone Champ Modding Discord; Thunderstore hosts only mods (86 packages checked, none are charts). Tools that write `.tmb`: TromboneCharter, Midi2TromboneChamp, the TootMaker editor.
+
 ## Sources
 - https://raw.githubusercontent.com/NyxTheShield/TrombLoader/master/CustomTracks/CustomTrackData.cs
 - https://raw.githubusercontent.com/NyxTheShield/TrombLoader/master/CustomTracks/TrackLoader.cs

@@ -1,0 +1,11 @@
+# Samples: Thumper object library
+
+## Fetched by tools/fetch-samples.sh (not committed; listed in samples.manifest.json)
+| Target file | URL | Licence note | What it exercises |
+|---|---|---|---|
+| examples_playable_objects_leaf_1a_turns.txt | https://raw.githubusercontent.com/RainbowUnicorn7297/thumper-modding-tool/e31b097cd7e51e3c2063e5cc7d69c89f6989eba0/examples/playable_objects/leaf_1a_turns.txt | thumper-modding-tool repo has no LICENSE file; not committed | Community text (Python literal) form of a Thumper object: leaf with turn/pitch tracks |
+| examples_playable_objects_leaf_3a_grindable_types.txt | https://raw.githubusercontent.com/RainbowUnicorn7297/thumper-modding-tool/e31b097cd7e51e3c2063e5cc7d69c89f6989eba0/examples/playable_objects/leaf_3a_grindable_types.txt | thumper-modding-tool repo has no LICENSE file; not committed | Community text (Python literal) form of a Thumper object: leaf with grindable (rail) variants |
+| examples_playable_objects_leaf_6a_sentry.txt | https://raw.githubusercontent.com/RainbowUnicorn7297/thumper-modding-tool/e31b097cd7e51e3c2063e5cc7d69c89f6989eba0/examples/playable_objects/leaf_6a_sentry.txt | thumper-modding-tool repo has no LICENSE file; not committed | Community text (Python literal) form of a Thumper object: leaf with boss sentry |
+| levels_customlevel1_lvl_1_track.txt | https://raw.githubusercontent.com/RainbowUnicorn7297/thumper-modding-tool/e31b097cd7e51e3c2063e5cc7d69c89f6989eba0/levels/customlevel1/lvl_1_track.txt | thumper-modding-tool repo has no LICENSE file; not committed | Community text (Python literal) form of a Thumper object: level object (SequinLevel) text form |
+| levels_customlevel1_config_customlevel1.txt | https://raw.githubusercontent.com/RainbowUnicorn7297/thumper-modding-tool/e31b097cd7e51e3c2063e5cc7d69c89f6989eba0/levels/customlevel1/config_customlevel1.txt | thumper-modding-tool repo has no LICENSE file; not committed | Community text (Python literal) form of a Thumper object: level config text form |
+| levels_customlevel1_master_sequin.txt | https://raw.githubusercontent.com/RainbowUnicorn7297/thumper-modding-tool/e31b097cd7e51e3c2063e5cc7d69c89f6989eba0/levels/customlevel1/master_sequin.txt | thumper-modding-tool repo has no LICENSE file; not committed | Community text (Python literal) form of a Thumper object: master (SequinMaster) text form |

@@ -131,6 +131,10 @@ Not read by ROX 0.8.1 (no fumen codec in `src/formats`).
 - [cainan-c/OpenLibTaiko](https://github.com/cainan-c/OpenLibTaiko) — `docs/FUMEN_FORMAT.md`, C++ `CFumen::Parse`
 - [Fluto/TakoTako](https://github.com/Fluto/TakoTako) (BepInEx mod for the PC game, includes TJAConvert + `tja2bin`), [goaaats/TaikoMods](https://github.com/goaaats/TaikoMods)
 
+## Getting samples
+
+Nothing committed: fumen files are official game data (Bandai Namco). The manifest lists four zips from the tja2fumen test data, pinned to a commit (each zip holds `<name>_e/_h/_m/_n.bin`, i.e. easy/hard/oni/normal charts converted for the game, and the matching `.tja` is in the TJA manifest). To get more: dump an official game (the PC/Switch Taiko no Tatsujin data; see TakoTako / TaikoMods in the Sources/Parsers sections, `[MUSIC_ID]_n_2.bin`-style names per the fiche) or convert any `.tja` with `tja2fumen` (`convert_tja_to_fumen`), which writes the same files.
+
 ## Sources
 
 - <https://github.com/vivaria/tja2fumen> (README, `src/tja2fumen/parsers.py`, `classes.py`, `constants.py`, `converters.py` — read)

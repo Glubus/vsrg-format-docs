@@ -111,6 +111,12 @@ Not read by ROX.
 - EtoileResurrection (Kotlin/Java, .aff <-> ArcCreate): <https://github.com/freeze-dolphin/EtoileResurrection>
 - AFFKit (.NET): listed in search results, not inspected.
 
+## Getting samples
+
+- **Committed**: 14 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
+- **Manifest**: none.
+- **More samples**: fan charts are plain text and are made with ArcCreate (project folders with `0.aff`..`3.aff`, exported as `.arcpkg`) or other editors; the largest open collection found is the WTFPL-licensed archive https://github.com/lzwd66/Suhri-s-Charts-Archive (one folder per song with the `.aff` files, `base.ogg` and a `songlistadd.json`; the audio was not committed). Test projects of EtoileResurrection (GPL-3.0) give tiny charts. Official charts are game data and were not collected.
+
 ## Sources
 
 - <https://raw.githubusercontent.com/yojohanshinwataikei/vscode-arcaea-file-format/master/server/src/lexer.ts>, `parser.ts`, `types.ts`, `to-ast.ts`, `checker/metadata.ts`, `checker/value-range.ts`, `checker/arc-position.ts`, `checker/extra-lanes.ts`, `checker/scenecontrol.ts`, `checker/timinggroup-attribute.ts`

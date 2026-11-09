@@ -83,6 +83,12 @@ Not read by ROX.
 - AudicaConverter (C#): https://github.com/octoberU/AudicaConverter
 - `audica` npm package: https://www.npmjs.com/package/audica (listed in search; not opened)
 
+## Getting samples
+
+- **Committed**: 4 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
+- **Manifest**: 1 entry in `samples.manifest.json` (downloaded by `tools/fetch-samples.sh` into `samples-local/`; listed in [`samples/SOURCES.md`](samples/SOURCES.md))
+- **More samples**: the game's tools let players export `.audica` files (Harmonix blog, "Introducing Community Maps in Audica Update 0.1.5!"); octoberU/AudicaConverter converts osu! beatmaps (`.osz`) to `.audica` and keeps a `template.audica` in its repo (manifest); the community mirror project https://github.com/Zingabopp/AudicaDownloader downloads published custom songs (its GitHub description: "Simple program to download all available Audica custom songs"). A `.audica` is a zip: unzip it to get `song.desc`, `*.cues` (`expert.cues`, ...), `song.mid`.
+
 ## Sources
 - https://raw.githubusercontent.com/octoberU/Audica-.NET-Tools/main/AudicaTools/Audica.cs
 - https://raw.githubusercontent.com/octoberU/Audica-.NET-Tools/main/AudicaTools/Cue.cs

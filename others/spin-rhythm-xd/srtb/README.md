@@ -110,6 +110,10 @@ Not read by ROX. Wheel positions and spins do not map to columns; a decoder woul
 - SpinShare API/site (zip downloads): https://spinsha.re
 - In-game editor (official).
 
+## Getting samples
+
+Committed: the MIT editor template `Custom.srtb` ([`samples/`](samples/)). Manifest: two larger SRTBEditor templates (an official-track chart and a fan chart; not committed). Real custom charts: SpinShare (<https://spinsha.re>) serves each chart as a backup zip at `https://spinsha.re/api/song/<songID>/download` (verified downloading without login for ids 1024, 12000, 1500, 8000; zips of 0.3-9 MB containing the `.srtb`, audio and cover) [observed; live URL, not hashable, so not in the manifest]. Authors' licences are not stated. In-game, the editor's "backup" button creates the same zips.
+
 ## Sources
 - https://www.spinrhythmgame.com/editor-guide
 - https://github.com/plushproto/SRTBEditor (scripts `main.js`, `chart-loading.js`, `charter-utils.js`, `diagnostics.js`, `diagnostics-checker.js`, templates `*.srtb`)

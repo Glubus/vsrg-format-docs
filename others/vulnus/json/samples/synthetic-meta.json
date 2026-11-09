@@ -1,0 +1,12 @@
+{
+  "_artist": "Synthetic Artist",
+  "_title": "Synthetic Vulnus Map",
+  "_mappers": [
+    "vsrg-format-docs"
+  ],
+  "_music": "audio.mp3",
+  "_difficulties": [
+    "synthetic-easy.json",
+    "synthetic-official.json"
+  ]
+}

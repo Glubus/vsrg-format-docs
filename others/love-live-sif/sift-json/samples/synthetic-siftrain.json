@@ -1,0 +1,115 @@
+{
+  "song_name": "Synthetic SIFTrain sample",
+  "difficulty": 3,
+  "difficulty_name": "synthetic hard",
+  "music_file": "synthetic.ogg",
+  "lead_in": 1.0,
+  "rank_info": [
+    {
+      "rank_max": 0
+    },
+    {
+      "rank_max": 0
+    },
+    {
+      "rank_max": 0
+    },
+    {
+      "rank_max": 0
+    },
+    {
+      "rank_max": 0
+    }
+  ],
+  "song_info": [
+    {
+      "notes_speed": 0.6,
+      "notes": [
+        {
+          "timing_sec": 3.0,
+          "effect": 1,
+          "effect_value": 2,
+          "position": 9
+        },
+        {
+          "timing_sec": 3.5,
+          "effect": 1,
+          "effect_value": 2,
+          "position": 5
+        },
+        {
+          "timing_sec": 4.0,
+          "effect": 1,
+          "effect_value": 2,
+          "position": 1
+        },
+        {
+          "timing_sec": 4.5,
+          "effect": 2,
+          "effect_value": 2,
+          "position": 3
+        },
+        {
+          "timing_sec": 5.0,
+          "effect": 20,
+          "effect_value": 1.5,
+          "position": 7
+        },
+        {
+          "timing_sec": 5.0,
+          "effect": 17,
+          "effect_value": 2,
+          "position": 2
+        },
+        {
+          "timing_sec": 6.75,
+          "effect": 17,
+          "effect_value": 2,
+          "position": 8
+        },
+        {
+          "timing_sec": 7.5,
+          "effect": 20,
+          "effect_value": 1.0,
+          "position": 4
+        },
+        {
+          "timing_sec": 7.5,
+          "effect": 17,
+          "effect_value": 2,
+          "position": 6
+        },
+        {
+          "timing_sec": 9.0,
+          "effect": 8,
+          "effect_value": 2,
+          "position": 5
+        },
+        {
+          "timing_sec": 9.5,
+          "effect": 1,
+          "effect_value": 2,
+          "position": 1
+        },
+        {
+          "timing_sec": 10.0,
+          "effect": 32,
+          "effect_value": 2,
+          "position": 9
+        },
+        {
+          "timing_sec": 10.0,
+          "effect": 1,
+          "effect_value": 2,
+          "position": 9
+        },
+        {
+          "timing_sec": 11.0,
+          "effect": 4,
+          "effect_value": 2.0,
+          "position": 3
+        }
+      ]
+    }
+  ]
+}

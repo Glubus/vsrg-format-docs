@@ -295,6 +295,11 @@ Not read by ROX 0.8.1; a DSC→ROX conversion would be lossy (free-position targ
 - [Waelwindows/DIVA_Tools](https://github.com/Waelwindows/DIVA_Tools) (C#, FDSC: dsc ↔ xml), [blueskythlikesclouds/MikuMikuLibrary](https://github.com/blueskythlikesclouds/MikuMikuLibrary)
 - [Brolijah/DSC_ConvertF2nd_Luvit](https://github.com/Brolijah/DSC_ConvertF2nd_Luvit) (Lua, F → F 2nd DSC), thatrandomlurker's fork for Mirai / Miracle Girls Festival
 
+## Getting samples
+
+- Committed: nothing. Manifest: nothing. No `.dsc` file could be obtained from a source with a redistributable licence: the open tools (nastys/Open-PD-Script-Editor, jozsefsallai/dsc-merger, Waelwindows/DIVA_Tools, Brolijah/DSC_ConvertF2nd_Luvit; file lists checked) ship no sample charts, and official DSC files are game data of SEGA/Crypton.
+- How a person could get one: (1) open any song pack (mod) built by the community: the DIVA Mod Archive lists song packs made with DSC Studio, e.g. https://divamodarchive.com/post/114 "Delta Song Pack" (listed in search results; the page itself is script-rendered and was not downloadable here, so no hash is given); (2) export from Comfy Studio: the dsc-merger README says it merges charts "exported from Comfy Studio" with extra commands (Challenge Time, lyrics); (3) create one with DSC Studio or Open PD Script Editor (both write `.dsc`); (4) extract from your own retail copy of a Project DIVA game with the tools listed above, which target PSP, Dreamy Theater, f/F, F 2nd, X, Arcade/Future Tone and Mirai (Open-PD-Script-Editor README) [file locations inside the game archives: Unknown].
+
 ## Sources
 
 - <https://raw.githubusercontent.com/nastys/Open-PD-Script-Editor/touchbar/DSC.cpp>, `DSC.h`, `command.cpp`, `mainwindow.cpp`, `diag_time.cpp`, `opcode_db/db.json` (read)

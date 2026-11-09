@@ -1,0 +1,28 @@
+{
+	"angleData": [0, 90, 180, 270, 0, 999, 45, 90, 135, 180, 180, 0],
+	"settings":
+	{
+		"version": 13,
+		"artist": "synthetic",
+		"song": "Synthetic angleData level",
+		"author": "OthersA (CC0)",
+		"songFilename": "",
+		"bpm": 120,
+		"volume": 100,
+		"offset": 0,
+		"pitch": 100,
+		"hitsound": "Kick",
+		"hitsoundVolume": 100,
+		"countdownTicks": 4
+	},
+	"actions":
+	[
+		{ "floor": 2, "eventType": "Twirl" },
+		{ "floor": 4, "eventType": "SetSpeed", "speedType": "Multiplier", "bpmMultiplier": 2 },
+		{ "floor": 8, "eventType": "SetSpeed", "speedType": "Bpm", "beatsPerMinute": 90 },
+		{ "floor": 10, "eventType": "Checkpoint" },
+	],
+	"decorations":
+	[
+	],
+}

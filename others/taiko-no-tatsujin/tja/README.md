@@ -213,6 +213,14 @@ Not read by ROX (0.8.1): there is no TJA codec in `src/formats` (only `taiko` fo
 - TJA Editor (<https://keishispl.github.io/tja-editor/>), TJA Tools web (<https://whmhammer.github.io/tja-tools>)
 - Converters: mc2tja, kongamidtotja (Donkey Konga MIDI → TJA), TakoTako/TJAConvert (TJA+audio → official game mod)
 
+## Getting samples
+
+Committed in [`samples/`](samples/) (see `samples/SOURCES.md`): the 11 community files of the original upstream list (origin and licence unknown), 12 MIT parser test cases from OpenTaiko (`#MEASURE`, `#SCROLL`/`#HISPEED` complex numbers, player sides `P1`-`P7`, a deliberately malformed file), 2 OpenTaiko tower charts, a GPL-3.0 chart from PyTaiko, 11 MIT test files from tja2fumen (2P, missing headers, hands, `#SENOTECHANGE`) and 3 hand-written CC0 synthetic files (branches with UTF-8 BOM + CRLF, Shift-JIS, double play) [observed in samples/].
+
+The manifest (`samples.manifest.json`) adds real song charts from the tja2fumen repository (branches, tempo-heavy `#BPMCHANGE`/`#DELAY`, `#START P1`) and an OpenTaiko remix chart, pinned to commits, not committed because they are charts of copyrighted songs.
+
+More: the format is exported by TaikoJiro, TJAPlayer3 / OpenTaiko / PeepoDrumKit-style editors; community chart archives (not verified here, search terms: "TJA Taiko chart pack", "TJADB", `tjadb.github.io`, taiko-web song lists) and OpenTaiko's `Songs/` folder. The song folders contain `.tja` + audio; only the `.tja` is needed. `tja2fumen`'s `testing/data/` has `.tja` paired with official-style fumen. Unverified live sites (TJADB, taiko-web hosts) are not hashable and are not listed in the manifest.
+
 ## Sources
 
 - <https://github.com/269Seahorse/Better-taiko-web/blob/master/TJA-format.mediawiki> (opened in full)

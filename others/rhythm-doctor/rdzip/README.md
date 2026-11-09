@@ -38,6 +38,12 @@ Not read by ROX.
 ## Parsers & tools
 - RhythmBase (C#): `Level.FromFile("x.rdzip")`, `SaveToZip`: https://github.com/RDCN-Community-Developers/RhythmToolkit
 
+## Getting samples
+
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): `rebuilt-internet-overdose-no-audio.rdzip`, an audio-less package BUILT from an AGPL-3.0 level: a zip with only `main.rdlevel` at its root (the level refers to `music.ogg` and two images that are not included).
+- Manifest (`samples.manifest.json`): two real `.rdzip` files of HyperHaxStudios/RD-Levels (pinned commit): `HyperHax_-_Corrupted.rdzip` (4.8 MB) and `HyperHax_-_Nowhere_(EDM_Remix).rdzip` (3 MB). [observed by listing them: `main.rdlevel`, one `.ogg` and one cover image (`Album.jpg` / `Album.png`), all at the zip root]
+- More: custom levels from the Rhythm Cafe database or the in-game level browser/Steam Workshop [inference]; "Export" in the level editor produces the zip.
+
 ## Sources
 - https://fileinfo.com/extension/rdzip
 - https://raw.githubusercontent.com/RDCN-Community-Developers/RhythmToolkit/master/docs/Tutorial.md

@@ -109,6 +109,12 @@ Not read by ROX 0.8.1.
 - [MuNET-OSS/ChuChartManager](https://github.com/MuNET-OSS) (UGC ↔ C2S)
 - [mkpoli/sus-io](https://github.com/mkpoli/sus-io) (SUS only)
 
+## Getting samples
+
+- **Committed**: 4 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
+- **Manifest**: none.
+- **More samples**: UGC files are written by the Margrete editor (the header comment of every committed file says "Created with Margrete vX"); MuConvert (LGPL-3.0) keeps example UGC files in `tests/chu/testset/自制谱/`; the UMIGURI documentation (https://umgr.inonote.jp/) explains how songs and charts are added. Charts are shared by the CHUNITHM simulator community [inference].
+
 ## Sources
 
 - <https://gist.github.com/inonote/5c01e73781cab17765a1d93641d52298> ("Umiguri Chart v8 仕様", read in full)

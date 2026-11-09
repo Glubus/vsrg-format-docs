@@ -47,6 +47,11 @@ Not read by ROX.
 
 Documentation site: <https://docs.nuanr-mxi.com/en/>.
 
+## Getting samples
+
+- Committed: nothing. Manifest: nothing. No file in this format was found: the documentation site (https://docs.nuanr-mxi.com/en/) shows JSON fragments only (for example the full default judge line object in `judge_line.html`) and a proto3 definition (`package PhiCommonChart.ChartStructs`).
+- How a person could get one: produce it with PhiFanmade tools that read/write the model (the docs site lists them; not opened). Search terms: "PhiCommonChart", "PhiFanmade" [inference].
+
 ## Sources
 
 - <https://docs.nuanr-mxi.com/en/chart_format/judge_line.html>

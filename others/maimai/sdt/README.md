@@ -108,6 +108,12 @@ Not read by ROX 0.8.1.
 
 [donmai-me/MaiConverter](https://github.com/donmai-me/MaiConverter) (Python: parse/convert sdt, ma2, simai; AES encrypt/decrypt), sinmai-mods MoreChartFormats (loads srt/szt/sct/sdt in the DX game).
 
+## Getting samples
+
+**Committed** ([`samples/`](samples/SOURCES.md)): four synthetic files, one per generation (`synthetic-srt.srt`, `-szt.szt`, `-sct.sct`, `-sdt.sdt`), hand-written from donmai's column description and accepted by the SXT reader of MaiConverter. **Manifest:** none: no real classic chart (`.srt`..`.sdt`) is published in any repository found.
+
+**How to get real ones**: from maimai classic game data (commercial; encrypted counterparts `.srb/.szb/.scb/.sdb` can be decrypted with MaiConverter's `decrypt`, which needs the game key, not provided here); MaiConverter (<https://github.com/donmai-me/MaiConverter>) converts ma2/simai *to* sdt-family text, so any chart can be turned into an `.sdt` (commands `ma2tosdt`, `simaitosdt`, `simaifiletosdt` in its README). The format write-up is <https://listed.to/@donmai/18173/the-four-chart-formats-of-maimai-classic>.
+
 ## Sources
 
 - <https://listed.to/@donmai/18173/the-four-chart-formats-of-maimai-classic> (read in full)

@@ -21,7 +21,7 @@ timing   { offset?: i32 ms, res?: u16, bpm?: [[tick, bpm]...], sig?: [[tick, [nu
 LaneGroup{ dim?: u8, lane: Note[][] }
 Note     { t: Tick, id?: string, k?: string (kind), l?: Tick (length), v?: Pos (start), w?: Pos (end), p?: object }
 ```
-`chart` keys are lane-group ids (may be empty string); every note of a lane group shares the same dimension; notes in a lane sorted by `t`. Level/difficulty are suggested as custom `meta` fields. The remaining part of the spec (`Pos`/`Coord` definition, property conventions) was only partially read (the file was read up to the `Note` definition).
+`chart` keys are lane-group ids (may be empty string); every note of a lane group shares the same dimension; notes in a lane sorted by `t`. Level/difficulty are suggested as custom `meta` fields. `Pos` depends on `dim`: 0 = omitted or an empty array, 1 = a number or a one-element array, 2+ = an array of exactly `dim` numbers; `w` defaults to `v`. Notes may be written in a compact array form (`t`, `[k?, t, l?, p?]`, `[k?, t, [v, w?], l?, p?]`), which every reader must accept (spec, read in full).
 
 ## Timing model
 
@@ -45,7 +45,8 @@ Dimension of positions is not fixed by RGC: `dim` per lane group; semantics of k
 
 ## Example
 
-Unknown.
+Real file, `calibration.rgc` of the rgc repository (MIT), complete (see [samples/calibration.rgc](samples/calibration.rgc)): `{"header": {"version": "0.2.0", "game": "sdvx"}, "meta": {"title": "Calibration", "music": {"author": "HEXAGON", "path": "offset.ogg"}, "chart": {"author": "HEXAGON"}, "jacket": {"author": "HEXAGON", "path": "offset-1.png"}}, "timing": {"offset": 1000, "res": 1, "bpm": [[0, 120]], "sig": [[0, [4, 4]]]}, "chart": {"bt": {"dim": 0, "lane": [[0, 1, 2, 3, 16, 17, 18, 19, 32, 33, 34, 35, 48, 49, 50, 51], ...]}}}` [observed in samples/calibration.rgc; the file also has three more `bt` lanes of the same shape]. Notes are written in the *compact note format* of the spec (a bare integer = a 0-dimensional note at that tick; `[k, t, l, p]` for 0-D notes with kind/length/property, `[k, t, [v, w], l, p]` for 1+D notes); the spec's own example of the same chart says `"version": "0.3.0"`, the sample file has `0.2.0`. [spec read in full in the rgc repository, `docs/spec.md`]
+
 
 ## ROX support
 
@@ -55,7 +56,13 @@ Not read by ROX.
 
 @rhythm-gaming/rgc (TypeScript library, `lib.md`): <https://github.com/rhythm-gaming/rgc>; rgchart (Rust/WASM): <https://github.com/R2O3/rgchart>.
 
+## Getting samples
+
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): `calibration.rgc` (real SDVX calibration chart, MIT) and `synthetic-all-features.rgc` (hand-written from the spec, CC0: dimensions 0/1/2, compact and object notes, BPM and signature changes).
+- Manifest: nothing.
+- More: the library's spec (`docs/spec.md`) and converters (rgchart by R2O3, https://github.com/R2O3/rgchart; TypeScript library `@rhythm-gaming/rgc`) write the format; no other public `.rgc` collection was found (the rgc repository itself has only `test/chart/sdvx/calibration.rgc`).
+
 ## Sources
 
-- <https://raw.githubusercontent.com/rhythm-gaming/rgc/main/docs/spec.md> (read to the Note definition)
+- <https://raw.githubusercontent.com/rhythm-gaming/rgc/main/docs/spec.md> (read in full; commit 724560c47a12fd2d13170370f1e2b8074d482951 for the sample)
 - <https://rgc.readthedocs.io/en/latest/> (listed in search)

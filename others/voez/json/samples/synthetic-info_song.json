@@ -1,0 +1,15 @@
+{
+	"info":{
+		"version":"1",
+		"song_version":"1",
+		"id":"000000000000000000000001",
+		"author":"vsrg-format-docs",
+		"bpm":120,
+		"name":"Synthetic VOEZ"
+	},
+	"level":{
+		"easy":1,
+		"hard":3,
+		"extra":5
+	}
+}

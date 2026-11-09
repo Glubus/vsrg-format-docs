@@ -50,6 +50,12 @@ Not read by ROX.
 
 [nemonaii/Mod-The-Coaster](https://github.com/nemonaii/Mod-The-Coaster) (JS, web), [Brolijah/Aqualead_LZSS](https://github.com/Brolijah/Aqualead_LZSS), [oocyberkevinoo/Groove-Coaster-Converter](https://github.com/oocyberkevinoo/Groove-Coaster-Converter), [Brolijah/groove-coaster-modding](https://github.com/Brolijah/groove-coaster-modding).
 
+## Getting samples
+
+**Committed:** none. **Manifest:** none. The archives hold the game's music and chart scripts (commercial), and no open repository ships a real `.aar`; only `Mod-The-Coaster/guide-files/Bgm-dummy.zip` (a dummy BGM, not a chart) exists.
+
+**How to get one yourself**: install *Groove Coaster for Steam* (Steam app 744060, per the Steam thread linked in the README) or use the arcade/Switch data, then unpack the `.aar` files with Mod The Coaster (<https://github.com/nemonaii/Mod-The-Coaster>, MIT; first decompress ALLZ-prefixed files with Aqualead_LZSS, <https://github.com/Brolijah/Aqualead_LZSS>). Brolijah's note `ALAR_decode_encode/song .aar file layout.txt` (<https://github.com/Brolijah/groove-coaster-modding>, GPL-3) shows one song archive containing, per difficulty, three `.dat` files (`ac_shiva_easy.dat`, `ac_shiva_easy_clip.dat`, `ac_shiva_easy_ext.dat`, likewise `_normal` and `_hard`) next to two `.asn` audio files; the `.dat` files are presumably the chart scripts [inference]. The song list is `TableTune.aar`.
+
 ## Sources
 
 - <https://raw.githubusercontent.com/nemonaii/Mod-The-Coaster/main/README.md> (read)

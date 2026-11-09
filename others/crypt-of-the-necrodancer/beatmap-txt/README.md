@@ -52,6 +52,12 @@ Not read by ROX. No notes to convert; at best a metronome grid.
 - toofz-necrodancer-core (C#, game XML/replay/save): https://github.com/leonard-thieu/toofz-necrodancer-core
 - Game's essentia-based `beattracker` (ships in `data/essentia/` on Windows).
 
+## Getting samples
+
+- **Committed**: 2 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
+- **Manifest**: none.
+- **More samples**: the game writes the file itself: assign an MP3/OGG as custom music in a zone (official FAQ, https://braceyourselfgames.com/crypt-of-the-necrodancer/faq/) and the beat text file appears with the audio name + `.txt`; or run Supinic/necrodancer-custom-music (writes `<game dir>/data/custom_music/<audio>.txt`, per the fiche). No real file was found under a licence; the two committed files are synthetic. The 2017 Steam forum thread cited in the fiche contains a (millisecond) sample line that was not copied.
+
 ## Sources
 - https://braceyourselfgames.com/crypt-of-the-necrodancer/faq/ (Custom Music section)
 - https://github.com/Supinic/necrodancer-custom-music (README, `lib/beatmap.js`, `lib/index.js`)

@@ -47,6 +47,12 @@ Not read by ROX.
 
 <https://github.com/yojohanshinwataikei/vscode-arcaea-file-format> (JSON schemas), <https://github.com/Arcaea-Infinity/ArcaeaChartRender> (`fetch_song_info` from songlist).
 
+## Getting samples
+
+- **Committed**: 6 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
+- **Manifest**: none.
+- **More samples**: `songlist` is a JSON file of the game's asset folder (not collected here); fan-made songs ship a `songlistadd.json` fragment with each chart set (six real ones are committed from the Suhri archive; they contain a single entry object without the wrapper). JSON schemas for `songlist` are in https://github.com/yojohanshinwataikei/vscode-arcaea-file-format (`json-schema/songlist.json`).
+
 ## Sources
 
 - <https://raw.githubusercontent.com/yojohanshinwataikei/vscode-arcaea-file-format/master/json-schema/songlist.json>

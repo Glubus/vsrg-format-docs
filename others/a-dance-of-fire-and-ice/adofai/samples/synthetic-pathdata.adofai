@@ -1,0 +1,24 @@
+{
+	"pathData": "RRUULLDDRR!ETo",
+	"settings":
+	{
+		"version": 2,
+		"artist": "synthetic",
+		"song": "Synthetic legacy pathData level",
+		"author": "OthersA (CC0)",
+		"songFilename": "",
+		"bpm": 100,
+		"volume": 100,
+		"offset": 0,
+		"pitch": 100,
+		"countdownTicks": 4
+	},
+	"actions":
+	[
+		{ "floor": 3, "eventType": "Twirl" },
+		{ "floor": 6, "eventType": "SetSpeed", "speedType": "Multiplier", "bpmMultiplier": 1.5 },
+	],
+	"decorations":
+	[
+	],
+}

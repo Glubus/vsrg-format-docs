@@ -86,6 +86,12 @@ Not read by ROX.
 - RDLE standalone editor: https://giacomopc.itch.io/rdle
 - Datasette of the Rhythm Cafe level DB (7,433 levels listed): https://datasette.rhythm.cafe/
 
+## Getting samples
+
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): `rd-nurse_internet_overdose.rdlevel`, a real 750 KB community level from the AGPL-3.0 repository 0f-0b/rd-nurse (test data). [observed in it: top-level keys `settings`, `rows`, `decorations`, `events`, `conditionals`; `settings.version` 51; compact one-line JSON, no BOM; events of types `Move`, `Tint`, `SetVisible`, `PulseFreeTimeBeat`, `AddClassicBeat`, `PlaySound`, ...]
+- Not in the manifest (self-hosted Gitea, licence unknown): `main.rdlevel` of https://git.186526.xyz/7bg/rd-because-u-r-here (5 KB, version 51, UTF-8 BOM, tab-indented).
+- More: levels are published on the Rhythm Cafe level database (https://datasette.rhythm.cafe/, listed in Parsers) as `.rdzip` files [inference] (a `.rdlevel` is the `main.rdlevel` inside); the in-game Level Editor (https://wiki.rhythm.cafe/page/Level_Editor) writes them; the library RhythmBase / RhythmToolkit has a tutorial and test code. Author repositories such as HyperHaxStudios/RD-Levels carry `.rdzip` files (see [../rdzip/samples/SOURCES.md](../rdzip/samples/SOURCES.md)).
+
 ## Sources
 - https://wiki.rhythm.cafe/page/Level_Editor
 - https://wiki.rhythm.cafe/page/Add_Classic_Beat

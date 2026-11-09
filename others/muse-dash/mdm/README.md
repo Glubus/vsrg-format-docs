@@ -55,7 +55,21 @@ The BMS is read with game-specific rules, not like normal BMS (see `../bms/`). D
 
 ## Example
 
-Unknown.
+`info.json` of the CloneDash test album [observed in samples/clonedash-all-effects_info.json]:
+
+```json
+{
+	"name": "All Effects",
+	"author": "March",
+	"bpm": "120",
+	"scene": "scene_01",
+	"levelDesigner": "March",
+	"difficulty2": "500",
+	"searchTags": ["test"]
+}
+```
+
+Only difficulty 2 exists (`map2.bms`); a minimal package is `info.json` + `map2.bms` (+ audio and cover for actual play) [observed in samples/clonedash-all-effects-noaudio.mdm].
 
 ## ROX support
 
@@ -64,6 +78,12 @@ Not read by ROX.
 ## Parsers & tools
 
 CustomAlbums (C#): <https://github.com/MDMods/CustomAlbums>; chart_manager (Lua): <https://github.com/taypexx/chart_manager>; MDBMSC / iBMSC editors; mdmc-client: <https://github.com/amydevs/mdmc-client>.
+
+## Getting samples
+
+**Committed** ([`samples/`](samples/SOURCES.md)): `info.json` of both CloneDash test albums and two audio-less `.mdm` zips built from them (only `info.json` + `map2.bms`, no `music`, no `cover.png`). **Manifest:** none: real `.mdm` files include copyrighted audio.
+
+**How to get more**: <https://mdmc.moe/charts> (MDMC chart list, search result), or the `chart_manager` tool (<https://github.com/taypexx/chart_manager>) that generates and packs MDM files from `template/` (which needs your own music and cover). CustomAlbums (<https://github.com/MDMods/CustomAlbums>) loads `.mdm` or an unpacked folder from the `Custom_Albums` folder generated in the game directory on first launch (CustomAlbums README, step 3).
 
 ## Sources
 

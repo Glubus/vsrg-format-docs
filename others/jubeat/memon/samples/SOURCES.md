@@ -1,0 +1,18 @@
+# Samples: memon (`.memon`)
+
+## Committed
+
+| File | Origin (URL, pinned commit if any) | Author | Licence | What it exercises |
+|---|---|---|---|---|
+| `synthetic-1.0.0.memon` | hand-written for this repository from `schema.json` of Stepland/memon (commit 4905daf2625e609b9007d1d11e0a5710a000749f); validated against that schema with a small JSON-Schema subset checker run in scratch (the checker agrees with all pass/fail fixtures of the memon repo `tests/data`) | vsrg-format-docs contributors | CC0-1.0 / public domain (synthetic) | memon 1.0.0: metadata with a `preview` sample object, default `timing` with string decimal offset, 3 BPM events (integer beats, string BPM, symbolic beat `[32,1,2]`) and `hakus`; three charts: BSC (default timing, tick times), ADV (chart-specific timing replacing the default, `resolution` 48), EXT (symbolic fraction times and long-note durations, `p` 1/3/5); level as number or string; LF, 4-space indent (1776 bytes) |
+
+## Fetched by tools/fetch-samples.sh (not committed; listed in samples.manifest.json)
+
+| Target file | URL | Licence note | What it exercises |
+|---|---|---|---|
+| `jubeatools_Sky_Bus_For_Hire_BSC.memon` | https://raw.githubusercontent.com/Stepland/jubeatools/1aa4d33dd08760cb1b0c2a23a7d47a07c97d97a1/jubeatools/cli/tests/data/memon_merge/Sky%20Bus%20For%20Hire%20BSC.memon | No LICENSE file in the repository (checked tree at the pinned commit); public GitHub repo, so not committed | Legacy (pre-1.0) memon, `version` 0.1.0 (596 bytes): metadata keys `song title`, `music path`, `album cover path`, `BPM` (180.28199768066406), `offset` -0.028; one chart BSC level 1 with a single note `{l:0, n:2, p:0, t:1680}` (zero-length long-note fields written on a tap) (596 bytes, sha256 `30312fd5977777f2...`) |
+| `jubeatools_Sky_Bus_For_Hire_ADV.memon` | https://raw.githubusercontent.com/Stepland/jubeatools/1aa4d33dd08760cb1b0c2a23a7d47a07c97d97a1/jubeatools/cli/tests/data/memon_merge/Sky%20Bus%20For%20Hire%20ADV.memon | No LICENSE file in the repository (checked tree at the pinned commit); public GitHub repo, so not committed | Legacy memon 0.1.0, ADV level 5 of the same song (596 bytes), one note `n`=1 at tick 1680; merged with the BSC/EXT files by a jubeatools CLI test (596 bytes, sha256 `a9562bd369e8f031...`) |
+| `jubeatools_Sky_Bus_For_Hire_EXT.memon` | https://raw.githubusercontent.com/Stepland/jubeatools/1aa4d33dd08760cb1b0c2a23a7d47a07c97d97a1/jubeatools/cli/tests/data/memon_merge/Sky%20Bus%20For%20Hire%20EXT.memon | No LICENSE file in the repository (checked tree at the pinned commit); public GitHub repo, so not committed | Legacy memon 0.1.0, EXT level 10 (598 bytes), one note `n`=15 at tick 1680 (598 bytes, sha256 `57a081e32e4111fd...`) |
+| `memon-spec_per-chart_bpms.json` | https://raw.githubusercontent.com/Stepland/memon/4905daf2625e609b9007d1d11e0a5710a000749f/tests/data/07%20-%20bpm%20changes/pass/per-chart.json | No LICENSE file in the repository (checked tree at the pinned commit); public GitHub repo, so not committed | memon 1.0.0 schema test fixture (758 bytes): root timing plus a per-chart timing object in each of BSC/ADV/EXT, no notes (758 bytes, sha256 `d2bf6d290e51ad85...`) |
+| `memon-spec_fractions_for_time.json` | https://raw.githubusercontent.com/Stepland/memon/4905daf2625e609b9007d1d11e0a5710a000749f/tests/data/05%20-%20fraction%20times/pass/fractions%20are%20allowed%20for%20time.json | No LICENSE file in the repository (checked tree at the pinned commit); public GitHub repo, so not committed | memon 1.0.0 schema test fixture (221 bytes): note times written as symbolic fractions (221 bytes, sha256 `ebbd9a909ce26827...`) |
+

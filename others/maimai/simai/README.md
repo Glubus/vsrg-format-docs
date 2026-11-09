@@ -113,6 +113,12 @@ Not read by ROX 0.8.1.
 - [Neskol/MaiLib](https://github.com/Neskol/MaiLib) / [MaichartConverter](https://github.com/Neskol/MaichartConverter) (C#)
 - MajdataEdit / MajdataPlay (editor/player), sinmai-mods MoreChartFormats (loads simai and sdt in-game)
 
+## Getting samples
+
+**Committed** ([`samples/`](samples/SOURCES.md)): `synthetic-maidata.txt` (parsed by MaiConverter) and `synthetic-maidata-3simai-extras.txt` (connected slides and absolute durations, not accepted by MaiConverter, written from the wiki). **Manifest:** five `maidata.txt` files from the CC0 `MaichartConverterUnitTest` repo (converted official charts or excerpts; `[SD]` and `[DX]`, hundreds of BPM changes, touch notes).
+
+**How to get more**: the simai wiki (<https://w.atwiki.jp/simai/>) documents the language; MajdataEdit / MajdataPlay (<https://github.com/LingFeng-bbben/MajdataEdit>, GPL-3) edit and play `maidata.txt` (their repositories contain no chart); MaichartConverter writes `maidata.txt` from `.ma2` (it is how the manifest files were made); the community shares charts as folders (`maidata.txt`, `track.mp3`, `bg.*`, `pv.mp4`) with copyrighted audio.
+
 ## Sources
 
 - <https://w.atwiki.jp/simai/pages/1002.html> (simai語の譜面書式, read in full)

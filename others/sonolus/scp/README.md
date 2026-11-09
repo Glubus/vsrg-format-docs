@@ -9,7 +9,7 @@ SCP is the Sonolus Collection Package file format used between Sonolus app versi
 
 ## Container & encoding
 
-Archive; internal structure not read.
+ZIP archive. Per the converter source, entries are `sonolus/<type>/list`, `sonolus/<type>/<item name>` (item JSON) and `repository/<ResourceType>/<hash>` (e.g. `EffectData`, `EffectClip`/`EffectAudio`, level data); types: levels, skins, backgrounds, effects, particles, engines [observed in https://github.com/sevenc-nanashi/scp-converter `src/index.ts`, not in a real file].
 
 ## Structure / metadata
 
@@ -46,6 +46,10 @@ Not read by ROX.
 ## Parsers & tools
 
 scp-converter: <https://github.com/sevenc-nanashi/scp-converter>; Sonolus free pack: <https://github.com/Sonolus/sonolus-free-pack>; om2pjsk-usc (osu!mania -> PJSK USC/SCP): <https://github.com/endoretic/om2pjsk-usc>.
+
+## Getting samples
+
+Nothing committed or listed: no `.scp` was found at an immutable URL, and building one would require knowledge beyond the converter source. From `scp-converter` (`src/index.ts`, MIT) the package is a ZIP whose entries are `sonolus/<type>/list`, `sonolus/<type>/<item name>` (item JSON) and `repository/<ResourceType>/<hash>` (resources such as `EffectData`, `EffectClip`/`EffectAudio`, level data), with types levels, skins, backgrounds, effects, particles, engines [observed in the converter source, not in a real file]. To obtain one: in the Sonolus app (0.5.13-0.6.0) export a collection to `.scp`, or package a static server made by `sonolus-generate-static`; the Sonolus free pack (<https://github.com/Sonolus/sonolus-free-pack>, MIT) is a source of resources.
 
 ## Sources
 

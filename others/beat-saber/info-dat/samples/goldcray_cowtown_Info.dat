@@ -1,0 +1,74 @@
+{
+  "_version": "2.0.0",
+  "_songName": "Cowtown",
+  "_songSubName": "",
+  "_songAuthorName": "They Might Be Giants",
+  "_levelAuthorName": "goldcray",
+  "_beatsPerMinute": 126.6,
+  "_songTimeOffset": 0,
+  "_shuffle": 0,
+  "_shufflePeriod": 0.5,
+  "_previewStartTime": 9.306,
+  "_previewDuration": 15,
+  "_songFilename": "song.egg",
+  "_coverImageFilename": "cover.jpg",
+  "_environmentName": "NiceEnvironment",
+  "_customData": {
+    "_editor": "beatmapper",
+    "_editorSettings": {
+      "modSettings": {
+        "customColors": {
+          "isEnabled": false,
+          "colorLeft": "#f21212",
+          "colorLeftOverdrive": 0,
+          "colorRight": "#006cff",
+          "colorRightOverdrive": 0,
+          "envColorLeft": "#f21212",
+          "envColorLeftOverdrive": 0,
+          "envColorRight": "#006cff",
+          "envColorRightOverdrive": 0,
+          "obstacleColor": "#f21212",
+          "obstacleColorOverdrive": 0
+        },
+        "mappingExtensions": {
+          "isEnabled": false,
+          "numRows": 3,
+          "numCols": 4,
+          "colWidth": 1,
+          "rowHeight": 1
+        }
+      }
+    }
+  },
+  "_difficultyBeatmapSets": [
+    {
+      "_beatmapCharacteristicName": "Standard",
+      "_difficultyBeatmaps": [
+        {
+          "_difficulty": "Expert",
+          "_difficultyRank": 7,
+          "_beatmapFilename": "Expert.dat",
+          "_noteJumpMovementSpeed": 19,
+          "_noteJumpStartBeatOffset": -0.5,
+          "_customData": {
+            "_editorOffset": 0,
+            "_requirements": [],
+            "_difficultyLabel": "Beneath The Waves"
+          }
+        },
+        {
+          "_difficulty": "ExpertPlus",
+          "_difficultyRank": 9,
+          "_beatmapFilename": "ExpertPlus.dat",
+          "_noteJumpMovementSpeed": 19,
+          "_noteJumpStartBeatOffset": -0.5,
+          "_customData": {
+            "_editorOffset": 0,
+            "_requirements": [],
+            "_difficultyLabel": "A New Leaf Overturned"
+          }
+        }
+      ]
+    }
+  ]
+}

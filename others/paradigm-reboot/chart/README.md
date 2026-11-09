@@ -47,6 +47,12 @@ Not read by ROX.
 
 None found. Score trackers: <https://github.com/PRProber>.
 
+## Getting samples
+
+- Committed: nothing. Manifest: nothing. No sample could be obtained and the format itself is unknown (see above).
+- Why: Paradigm: Reboot is a commercial mobile game (App Store id1499645558 and Google Play `com.tunergames.paradigm` per search results) and no public chart dump, spec or parser was found; the fan wiki page "Data Mining" (https://paradigmreboot.fandom.com/wiki/Data_Mining) answered HTTP 403 when fetched here, so its content is unknown.
+- How a person could get one: install the game, locate its Unity asset bundles in the app data / APK and open them with a generic Unity asset reader (e.g. Zizany, `unity-asset`, found by search) [inference; not verified for this game]. Search terms: "Paradigm Reboot data mining", "范式起源 谱面 解包" [inference].
+
 ## Sources
 
 - <https://github.com/PRProber>

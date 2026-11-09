@@ -1,0 +1,49 @@
+{
+  "header": {
+    "version": "0.3.0",
+    "editor": "hand-written 0.0.0",
+    "game": "demo/mixed"
+  },
+  "meta": {
+    "title": "Synthetic RGC example",
+    "music": {"author": "Nobody", "path": "song.ogg"},
+    "chart": {"author": "vsrg-format-docs"},
+    "jacket": {"author": "Nobody"},
+    "level": 5
+  },
+  "timing": {
+    "offset": -120,
+    "res": 24,
+    "bpm": [[0, 120], [384, 150.5]],
+    "sig": [[0, [4, 4]], [192, [3, 4]]]
+  },
+  "chart": {
+    "": {
+      "dim": 0,
+      "lane": [
+        [0, 24, 48, [ "don", 72 ], [ "kat", 96, 24 ], [ "roll", 144, 48, {"hands": 2} ]],
+        [{"t": 12, "id": "n-1", "k": "tap"}, {"t": 36, "l": 0}, {"t": "60", "p": {"big": true}}]
+      ]
+    },
+    "laser": {
+      "dim": 1,
+      "lane": [
+        [
+          ["laser", 96, [0.25, 0.75], 48],
+          {"t": 192, "l": 24, "v": 0.75, "w": [0.5]}
+        ]
+      ]
+    },
+    "osu": {
+      "dim": 2,
+      "lane": [
+        [
+          ["circle", 0, [[256, 192]]],
+          ["slider", 48, [[100, 100], [300, 100]], 24, {"curve": "L"}],
+          {"t": 120, "k": "circle", "v": [64, 320]}
+        ]
+      ]
+    }
+  },
+  "custom-field": {"kept": true}
+}

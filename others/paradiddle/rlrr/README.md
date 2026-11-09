@@ -51,7 +51,7 @@ Top-level (schema `required`: `version`, `instruments`):
 `songTracks` (drumless backing tracks, up to 5), `drumTracks` (up to 4; with 2/3/4 tracks the order is kick / snare / cymbals / toms per the guide), `songPreview`, `coverImagePath`. Every audio format supported; ogg recommended; MP3 padding can desync.
 
 ## Versions & variants
-Schema v0.7 current; version 0 and 0.5 drum layouts exist (handled by a TODO in the converter). Kit files contain only `instruments` (version 0.5/0.7). Recordings contain `events` from play.
+Schema v0.7 current; version 0 and 0.5 drum layouts exist (handled by a TODO in the converter). Kit files contain only `instruments` (version 0.5/0.7). Recordings contain `events` from play. [observed in samples/defaultset.rlrr: the shipped default kit has `instruments` as its only top-level key, i.e. no `version` at all, although the schema marks `version` as required]
 
 ## Quirks & pitfalls
 - `time` in `DrumEvent` is a string while it is a number in `BPMEvent`.
@@ -82,6 +82,12 @@ Not read by ROX. Mapping to columns would require choosing a column per instrume
 - paradiddleTools (Python): https://github.com/rrtrytcg/paradiddleTools
 - Paradiddle web converter: https://converter.paradiddleapp.com
 - ParaDB: https://paradb.net/instructions
+
+## Getting samples
+
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): `defaultset.rlrr` (the real default drum kit of ParadiddleUtilities, GPL-3.0) and two hand-written `synthetic-example_*.rlrr` song charts (CC0) built from the v0.7 schema.
+- Manifest (`samples.manifest.json`): nothing. Community songs on ParaDB are zips that include the song audio, and the site is a live, changing page (not hashable).
+- Getting real song charts: (1) download a map zip from a map page of ParaDB (https://paradb.net/instructions: the zip unpacks to `<Song>/<Song>_Easy.rlrr`, `_Medium`, `_Hard`, `_Expert` plus `.ogg` tracks); (2) convert your own MIDI with the Paradiddle Song Creator (https://paradiddleapp.com/custom-song-guide/: output folder `ParadiddleUtilities/rlrr_files/` holds `<SongName>_<difficulty>.rlrr`); (3) community converters from Clone Hero/YARG charts exist (paradiddleTools, ParaKit; seen in search results, not tested). In the game, songs live in `Paradiddle/Saved/Songs/` (PC) and kits in `Paradiddle/Saved/DrumLayouts/` (guide).
 
 ## Sources
 - https://paradiddleapp.com/custom-song-guide/

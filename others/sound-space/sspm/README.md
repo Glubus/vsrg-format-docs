@@ -106,6 +106,10 @@ Not read by ROX.
 - Sound Space Plus (GDScript): https://github.com/Rhythia/sound-space-plus (`scripts/content/game/Song.gd`)
 - Spec: https://github.com/basils-garden/types
 
+## Getting samples
+
+Committed: two hand-built, audio-less synthetic files (v1 and v2) in [`samples/`](samples/). Real maps embed audio (and cover) of third-party songs and carry no licence, so none is committed or listed: the community site named by sspm-player's README, `https://sspm.paada.fr`, did not answer from here, and live map sites are not hashable. How to get more: download `.sspm` from the Rhythia / Sound Space Plus map sites ("Download maps" section of <https://github.com/lolopada/sspm-player>), install Sound Space Plus (itch.io, chedski) and look in its maps folder, or export from the editor SSQE. Old `.txt` maps are documented in [`../txt/`](../txt/README.md).
+
 ## Sources
 - https://raw.githubusercontent.com/basils-garden/types/main/sspm/v1.md
 - https://raw.githubusercontent.com/basils-garden/types/main/sspm/v2.md

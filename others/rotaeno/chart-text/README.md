@@ -46,7 +46,8 @@ Unknown.
 
 ## Example
 
-Unknown.
+Hand-written from the tool's reader (no game-exported file was available): [samples/synthetic-all-note-types.txt](samples/synthetic-all-note-types.txt) starts `# Version 2`, a blank line, `# BPM`, `0,120`, `32,150`, ... and then `# Note` with lines such as `0,1,0` (tap at time 1, degree 0) and `2,3,270,2,315,1,1,0,0` (slide).
+
 
 ## ROX support
 
@@ -55,6 +56,12 @@ Not read by ROX.
 ## Parsers & tools
 
 RotaenoChartTool (C++): <https://github.com/adashi521/RotaenoChartTool>; rotaeno-tools: <https://github.com/zznyjidi/rotaeno-tools>.
+
+## Getting samples
+
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): `synthetic-all-note-types.txt` (hand-written from RotaenoChartTool's reader, CC0).
+- Manifest: nothing. No game-exported chart is available from an open source: RotaenoChartTool (no licence file) and zznyjidi/rotaeno-tools (parser code only: `src/main.py`, `src/parser/*`, `utils/constant_extractor/extractor.py`) contain no sample charts.
+- How a person could get one: charts are game data of Rotaeno; how the game's files map to the text described here is Unknown. Search terms: "Rotaeno chart extract", "RotaenoChartTool" [inference].
 
 ## Sources
 

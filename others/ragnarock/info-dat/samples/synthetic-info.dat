@@ -1,0 +1,66 @@
+{
+  "_version": "1",
+  "_songName": "Synthetic Example",
+  "_songSubName": "",
+  "_songAuthorName": "Nobody",
+  "_levelAuthorName": "vsrg-format-docs",
+  "_explicit": "false",
+  "_beatsPerMinute": 120.0,
+  "_shuffle": 0,
+  "_shufflePeriod": 0.5,
+  "_previewStartTime": 0,
+  "_previewDuration": 0,
+  "_songApproximativeDuration": 16,
+  "_songFilename": "song.ogg",
+  "_coverImageFilename": "",
+  "_environmentName": "Midgard",
+  "_songTimeOffset": 0,
+  "_customData": {
+    "_contributors": [],
+    "_editors": {
+      "Edda": {
+        "version": "synthetic"
+      },
+      "_lastEditedBy": "synthetic (hand-written)"
+    }
+  },
+  "_difficultyBeatmapSets": [
+    {
+      "_beatmapCharacteristicName": "Standard",
+      "_difficultyBeatmaps": [
+        {
+          "_difficulty": "Easy",
+          "_difficultyRank": 1,
+          "_beatmapFilename": "synthetic-Easy.dat",
+          "_noteJumpMovementSpeed": 10,
+          "_noteJumpStartBeatOffset": 0,
+          "_customData": {
+            "_editorOldOffset": 0,
+            "_editorGridSpacing": 2,
+            "_editorGridDivision": 4,
+            "_warnings": [],
+            "_information": [],
+            "_suggestions": [],
+            "_requirements": []
+          }
+        },
+        {
+          "_difficulty": "Hard",
+          "_difficultyRank": 2,
+          "_beatmapFilename": "synthetic-Hard.dat",
+          "_noteJumpMovementSpeed": 10,
+          "_noteJumpStartBeatOffset": 0,
+          "_customData": {
+            "_editorOldOffset": 0,
+            "_editorGridSpacing": 2,
+            "_editorGridDivision": 4,
+            "_warnings": [],
+            "_information": [],
+            "_suggestions": [],
+            "_requirements": []
+          }
+        }
+      ]
+    }
+  ]
+}

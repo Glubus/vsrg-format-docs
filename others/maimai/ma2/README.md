@@ -90,6 +90,7 @@ Not in the chart.
 - `MET_DEF`/`MET` argument order is lower then upper.
 - BPM values must be stored with the 275.001-style rounding to match the game's integer-microsecond clock.
 - Line order affects z-order: to get an aesthetic overlap different from the logical one, shift timing by 1 tick (ma2Research's Apollo example: increase `BRSCL` duration, increase `CNSCR` tick by 1 and reduce its duration by 1).
+- [observed in samples/OshamaDXBar6.ma2, samples/TanakaBar36.ma2] `1.03.00` files use unprefixed note names (`TAP`, `STR`, `SI_`, `BRK`, `HLD`, `XTP`, `XST`), `1.04.00` files use the `NM`/`BR`/`EX`/`BX` prefixed names (`NMTAP`, `NMSTR`, `NMSCR`, `BRTAP`); files may also have no header at all (`samples/DXFestivalTestMa2.ma2`).
 - Fixed 4 beats per measure; use `RESOLUTION` for subdivisions; a multiple of 3 and a power of 2 (384) recommended.
 
 ## Example
@@ -116,6 +117,12 @@ Not read by ROX 0.8.1.
 - [Neskol/MaiLib](https://github.com/Neskol/MaiLib), [MaichartConverter](https://github.com/Neskol/MaichartConverter) (C#)
 - [lcebot/ma2-parser](https://github.com/lcebot/ma2-parser) (ma2 → simai), [lcebot/maidata-parser](https://github.com/lcebot/maidata-parser) (simai → ma2)
 - MuNET-OSS/MaiChartManager (C#)
+
+## Getting samples
+
+**Committed** ([`samples/`](samples/SOURCES.md)): six small files from the CC0 `Neskol/MaichartConverterUnitTest` repository (a 1.04 connected-slide test, utage-style slides, a long-hold test, an unsynchronised-group test, a note-type matrix test). **Manifest:** eight charts from the same repository (full 1.03.00 and 1.04.00 charts with BPM changes, touch notes, `FES_MODE 1`, footers, plus two short bar excerpts), not committed because they are converted official charts or excerpts of them.
+
+**How to get more**: <https://github.com/Neskol/MaichartConverterUnitTest> has ~30 further `.ma2`/`maidata` files (`MaichartConverterUnitTest/data/`); MaichartConverter (<https://github.com/Neskol/MaichartConverter>, GPL-2) and MaiConverter (<https://github.com/donmai-me/MaiConverter>) convert simai to ma2 so any simai chart gives an `.ma2`; ma2Research (<https://github.com/Littlebluemoon/ma2Research>, Unlicense) has inline examples in `Charts.md`. Official charts are in the maimai DX game data (`.../music/musicNNNNNN/NNNNNN_0D.ma2`, see the fiche).
 
 ## Sources
 

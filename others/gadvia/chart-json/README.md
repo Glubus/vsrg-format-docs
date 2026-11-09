@@ -59,6 +59,12 @@ Not read by ROX.
 ## Parsers & tools
 None known. Extraction: AssetRipper, adb.
 
+## Getting samples
+
+**Committed:** none. **Manifest:** none. No Gadvia chart is published anywhere I could reach (the Rhythm Game Wiki page lists only field names and types), and the game is commercial; inventing a file from a field list without semantics (`Type`, `NoteValue`, `SPValue`, `time` unit) would not be a real chart, so no synthetic file was written.
+
+**How to get one yourself** (Rhythm Game Wiki, *Gadvia:Guides/Extracting game files*, <https://rgwiki.stary.pc.pl/wiki/Gadvia:Guides/Extracting_game_files>): install the Android game (`com.hgca.uma`), enable USB debugging, run `adb shell pm path com.hgca.uma`, `adb pull` the three APKs (`base.apk`, `split_UnityDataAssetPack.apk`, `split_config.arm64_v8a.apk`), rename `split_UnityDataAssetPack.apk` to `.zip` and unzip it. The charts are in asset bundles with 32-hex-character names under `assets/bin/Data/` (e.g. `293c9b06cc505f448949507b64e7a17c`); find the bundle containing the song name by text search, then open that single bundle in AssetRipper with *File > Open File* (not *Open Folder*) and *Export > Export all Files*. The game's servers stopped on 2025-01-15 and it is offline-only, so an already installed copy is the practical source.
+
 ## Sources
 - https://rgwiki.stary.pc.pl/wiki/Gadvia:Chart_file
 - https://rgwiki.stary.pc.pl/wiki/Gadvia:Gadvia

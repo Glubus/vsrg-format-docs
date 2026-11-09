@@ -1,0 +1,6 @@
+id=000000000000000000000001
+name=Synthetic VOEZ
+bpm=120
+author=vsrg-format-docs
+diff=1-3-5
+version=1

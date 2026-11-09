@@ -114,6 +114,12 @@ Not read by ROX. Stick-steered traces, branching sections and four player slots 
 - Gitaroo Man File Reader (C++, LGPL-3; CHC read/write/edit, Clone Hero and TAS export): https://github.com/sonicfind/Gitaroo-Man-File-Reader
 - gitarootools (Python; other game files): https://github.com/boringhexi/gitarootools
 
+## Getting samples
+
+**Committed:** none. **Manifest:** none. No `.CHC` file is published in any open repository (Gitaroo-Man-File-Reader and gitarootools contain code and tool test data only, no CHC; checked at `a3bb1daf`/`22e6b0a5`), and the charts are commercial game data. The synthetic route was rejected because the header and junk fields cannot be verified without a real file.
+
+**How to get one yourself**: own a copy of Gitaroo Man (PS2) or Gitaroo Man Lives! (PSP), unpack the game archives with gitarootools (`gm-xgmunpack` for XGM, `gm-pakunpack` for PAK of Gitaroo Man Lives; <https://github.com/boringhexi/gitarootools>), look for the per-stage `*.CHC` files (stage number in characters 3-4 of the file name, from `CHC.cpp`) and open them with Gitaroo Man File Reader (<https://github.com/sonicfind/Gitaroo-Man-File-Reader>, GPL-3; it can round-trip `.CHC` and export to Clone Hero `.chart`). Which archive holds the `.CHC` files is not stated in the sources read [inference: the game's data archives]. The Gitaroo Pals Discord linked from both READMEs is the community channel for help.
+
 ## Sources
 - https://github.com/sonicfind/Gitaroo-Man-File-Reader (`README.md`, `GitarooFileReader/CHC/CHC.cpp`, `CHC.h`, `CH_Export.cpp`)
 - https://github.com/boringhexi/gitarootools (README only)

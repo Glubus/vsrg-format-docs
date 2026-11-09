@@ -81,6 +81,10 @@ Not read by ROX.
 - synth_mapping_helper (Python): https://github.com/adosikas/synth_mapping_helper (read/write `.synth`, GUI)
 - Synth Riders Beatmap Editor (official).
 
+## Getting samples
+
+Nothing committed: `.synth` files embed copyrighted audio and have no stated licence, and no open-licensed repository with a `.synth` was found (synth_mapping_helper's tests are empty). The community site <https://synthriderz.com> offers public downloads: `GET https://synthriderz.com/api/beatmaps` returns JSON (`download_url` per map, e.g. `/api/beatmaps/391/download?hash=...`, followed by a redirect to the zip; verified downloading 1.7-4.5 MB files without login). Because the files can be updated by the uploader and the URL is live, they are not hashable and are not in the manifest. Other ways: create one with the Synth Riders Beatmap Editor (saves `.synth`), or use adosikas/synth_mapping_helper to read/write.
+
 ## Sources
 - https://raw.githubusercontent.com/adosikas/synth_mapping_helper/main/src/synth_mapping_helper/synth_format.py
 - https://github.com/adosikas/synth_mapping_helper

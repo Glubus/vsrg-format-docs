@@ -62,6 +62,10 @@ Not read by ROX.
 
 DereTore (C#, authoring toolkit): <https://github.com/OpenCGSS/DereTore>; libcgss (HCA/ACB): <https://github.com/hozuki/libcgss>; DereGuide (iOS): <https://github.com/superk589/DereGuide>; DereInfo (Kotlin/Android): <https://github.com/KYHSGeekCode/DereInfo>; motto-cgss: <https://github.com/logchan/motto-cgss>.
 
+## Getting samples
+
+No sample was obtained. The CSV blobs come from the game's data (copyright Bandai Namco) and the DereInfo project's `tw/original/` data repository (named in its README) is not available as a public clone. How to get them: per the DereInfo README, extract the game's SQLite `.bdb` beatmap databases from the downloaded data bundle (the app does this) and read the `beatmaps` blobs; DereTore / DereGuide / StarlightDirector are the open-source tools that read and write beatmaps. I did not verify a public file URL.
+
 ## Sources
 
 - <https://raw.githubusercontent.com/yhs0602/DereInfo/master/README.md>

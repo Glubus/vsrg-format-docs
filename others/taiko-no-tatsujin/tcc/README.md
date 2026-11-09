@@ -90,6 +90,10 @@ Not read by ROX 0.8.1.
 
 [AioiLight/Open-Taiko-Chart](https://github.com/AioiLight/Open-Taiko-Chart) (spec, C# classes for Json.NET), Koioto plugin, TJAPlayer3-f, OpenTaiko.
 
+## Getting samples
+
+Committed: the spec examples (Rev.1 and Rev.2.4 `.tci`/`.tcc`, plus a `.tcm` medley) from AioiLight/Open-Taiko-Chart (MIT) in [`samples/`](samples/). No real-world `.tcc` was found in the open repositories checked (Open-Taiko-Chart contains only specification pages; TJAPlayer3-f and Koioto could not be cloned anonymously). To get more: install Koioto (plugin "OpenTaikoChart") or TJAPlayer3-f and export/convert a `.tja`; OpenTaiko writes `.optktci`/`.optktcm` variants [per fiche]. Rev.3 (branches) was still unspecified in the repository README.
+
 ## Sources
 
 - <https://github.com/AioiLight/Open-Taiko-Chart> (README, `Rev1_ja-JP.md` read)

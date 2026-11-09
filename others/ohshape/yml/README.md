@@ -92,6 +92,12 @@ Not read by ROX. Pose walls cannot be expressed in key columns.
 - OhShape Level Editor (C#, YamlDotNet): https://github.com/OddersLab/OhShapeEditor
 - OhShape-SimpleSongInfo (overlay mod, reads current song data): https://github.com/Shadnix-was-taken/OhShape-SimpleSongInfo
 
+## Getting samples
+
+**Committed** ([`samples/`](samples/SOURCES.md)): the official demo level `ice-flow-by-kevin-macleod.yml` from the GPL-3 OhShapeEditor repository. **Manifest:** none (the `.ogg`/`.mp4` of the example are not copied).
+
+**How to get more**: write maps with the official Level Editor (<https://github.com/OddersLab/OhShapeEditor>); the game loads `My Documents/OhShape/Songs/*.yml` (Editor README); community maps are distributed with their audio by the unofficial ohshapes.com site (<http://ohshapes.com/info>, search result) and the OhShape Discord, so they are not redistributable.
+
 ## Sources
 - https://github.com/OddersLab/OhShapeEditor (`Readme.md`, `examples/ice-flow-by-kevin-macleod.yml`, `src/Assets/Scripts/WallDanceVR/YamlDeserializer.cs`, `src/Assets/Scripts/Utils/WallsUtils.cs`, `src/Assets/Scripts/Manager/SongManager.cs`)
 - https://ohshape.fandom.com/wiki/Editor (via search snippet)

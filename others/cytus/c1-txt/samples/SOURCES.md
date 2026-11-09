@@ -1,0 +1,12 @@
+# Samples: Cytus 1 chart ("Rayark v2 modified") (`.txt`)
+
+## Committed
+
+| File | Origin (URL, pinned commit if any) | Author | Licence | What it exercises |
+|---|---|---|---|---|
+| `synthetic-c1.txt` | hand-written from the fiche and the Cytoid parser (Cytoid `Chart.cs` FromLegacyChart reads PAGE_SIZE, PAGE_SHIFT, NOTE, LINK by whitespace split) | OthersA | CC0 / public domain (hand-written for this repository) | synthetic. VERSION 2 header (BPM 120, PAGE_SIZE 2.0 = 240/BPM, PAGE_SHIFT 0), tab-separated NOTE lines: two simultaneous clicks, one hold (duration 1.0 s), a 3-note drag chain via `LINK 3 4 5`; the non-standard OFFSET line is deliberately absent |
+| `cyl_package_tool_test_cytus1_chart.txt` | https://github.com/ky-reflection/cyl_package_tool/blob/3ee9792908a12827e62971fd29b3ba6ba36363c5/tests/resources/test_cytus1_chart.txt | ky_reflection (test fixture; origin of the chart itself not stated) | MIT (repo LICENSE, "Copyright (c) 2024 ky_reflection") | C1 chart: VERSION 2, BPM 167.996643, PAGE_SHIFT 0.84, PAGE_SIZE 1.4286, upper-case `NOTE` lines tab-separated, simultaneous notes, 6.5 KB |
+| `cyl_package_tool_test_c1.txt` | https://github.com/ky-reflection/cyl_package_tool/blob/3ee9792908a12827e62971fd29b3ba6ba36363c5/tests/resources/test_c1.txt | ky_reflection (test fixture) | MIT (repo LICENSE, "Copyright (c) 2024 ky_reflection") | C1 chart: VERSION 2, BPM 320, PAGE_SIZE 0.75, title-case `Note` keyword (not `NOTE`), 27 KB |
+| `make_cytus2_trytoc2_not_chang_BPM.hard.txt` | https://github.com/we684123/Make_Cytus2/blob/f1423347b400f24103dcf214e0fc83e3d47d13d0/trytoc2%28not_chang_BPM%29.hard.txt | we684123 (Make_Cytus2 author, 永格天 in LICENSE) | MIT (repo LICENSE, "Copyright (c) 2018 永格天") | C1-style text with `VERSION 3` and extra tool-specific header lines (scan_line_direction_opposite, extension_of_time, auto_fix_type, change_type_to_*_form_x, format_version, beat, time_base, conversion_constant) before the notes; note keywords `SLIDE` and `NOTE`; file named `trytoc2(not_chang_BPM).hard.txt` in the repo (origin of the chart itself not stated) |
+
+Note: the `ez.txt`/`hd.txt`/`ex.txt` charts of the manifest level `cytoid_io.cytoid.8bit_adventurer.cytoidlevel` (listed under `cytus/cytoidlevel`) are **C2-style JSON** despite the `.txt` extension, not C1 text; the C1 parser in Cytoid (`Chart.cs`, `FromLegacyChart`) is what reads the `VERSION 2` files listed above.

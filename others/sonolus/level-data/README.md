@@ -83,6 +83,10 @@ Not read by ROX.
 - sonolus-core-go (Go): <https://pkg.go.dev/github.com/WindowsSov8forUs/sonolus-core-go/core/resource>
 - Sonolus.py: <https://sonolus.py.qwewqa.xyz/>
 
+## Getting samples
+
+Committed: one synthetic gzip LevelData and its plain JSON twin ([`samples/`](samples/)). No real level data was found in a licensed open repository (Sonolus engine/template repos checked ship no levels; `UntitledCharts/sonolus-level-converters` test files are `.sus` charts of Project SEKAI songs under GPL-3.0 but are copyrighted charts, not committed). To obtain real ones: any Sonolus server serves a level's `data` resource (gzip JSON; the level item JSON gives its URL), the sonolus-level-converters / rg_converters tools convert USC/SUS to LevelData, and the Sonolus.py/Sonolus.js guides build a test level.
+
 ## Sources
 
 - <https://wiki.sonolus.com/level-specs/resources/level-data>

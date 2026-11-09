@@ -52,6 +52,12 @@ Not read by ROX.
 
 prpr / Phira (Rust): <https://github.com/Mivik/prpr>, <https://github.com/TeamFlos/phira>. Third-party converter osz -> pez: <https://github.com/AkiraNyx/osz2pez> (appeared in search results, not inspected).
 
+## Getting samples
+
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): `rpechart_demo.pez`, a real zip built by the MIT-licensed `rpechart` library (members `chart.json` and `info.txt` only, no audio, no picture). [observed in samples/rpechart_demo.pez: `info.txt` is a CRLF text file starting with `#` then `Name:`, `Path:`, `Song:`, `Picture:`, `Chart:`, `Level:`, `Composer:`, `Charter:` lines]
+- Manifest: nothing (real fan `.pez` packages contain music and are shared on live sites).
+- More: Phira imports a `.pez` zip (prpr README); packages are exported from Re:PhiEdit or built by tools such as rpechart (`export_pez`).
+
 ## Sources
 
 - <https://github.com/Mivik/prpr> (README)

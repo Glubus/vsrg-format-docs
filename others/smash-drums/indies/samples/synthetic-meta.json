@@ -1,0 +1,168 @@
+{
+  "NameArtist": "Synthetic Artist",
+  "NameSong": "Synthetic Song (120 BPM then 150 BPM)",
+  "NameCharter": "vsrg-format-docs",
+  "FilePath": "audio.ogg",
+  "SongOffsetSeconds": 0.0,
+  "SongTiming": [
+    {
+      "beat": 0,
+      "timer": 0
+    },
+    {
+      "beat": 8,
+      "timer": 4
+    },
+    {
+      "beat": 16,
+      "timer": 7.2
+    }
+  ],
+  "SongPhases": [
+    {
+      "beat": 0,
+      "phase": 1,
+      "power": 1,
+      "phaseName": "Intro"
+    },
+    {
+      "beat": 8,
+      "phase": 2,
+      "power": 1,
+      "phaseName": "Verse"
+    }
+  ],
+  "ChartEasy": [
+    {
+      "Beat": 4,
+      "Id": 0,
+      "Strength": 1
+    },
+    {
+      "Beat": 8,
+      "Id": 1,
+      "Strength": 1
+    }
+  ],
+  "ChartNormal": [
+    {
+      "Beat": 4,
+      "Id": 0,
+      "Strength": 1
+    },
+    {
+      "Beat": 5,
+      "Id": 1,
+      "Strength": 1
+    },
+    {
+      "Beat": 6,
+      "Id": 0,
+      "Strength": 1
+    },
+    {
+      "Beat": 7,
+      "Id": 1,
+      "Strength": 1
+    }
+  ],
+  "ChartHard": [
+    {
+      "Beat": 4,
+      "Id": 0,
+      "Strength": 1
+    },
+    {
+      "Beat": 4,
+      "Id": 4,
+      "Strength": 1
+    },
+    {
+      "Beat": 5,
+      "Id": 1,
+      "Strength": 1
+    },
+    {
+      "Beat": 6,
+      "Id": 0,
+      "Strength": 1
+    },
+    {
+      "Beat": 7,
+      "Id": 1,
+      "Strength": 1
+    },
+    {
+      "Beat": 8,
+      "Id": 2,
+      "Strength": 1
+    }
+  ],
+  "ChartExtreme": [
+    {
+      "Beat": 4,
+      "Id": 0,
+      "Strength": 1
+    },
+    {
+      "Beat": 4,
+      "Id": 4,
+      "Strength": 1
+    },
+    {
+      "Beat": 5,
+      "Id": 1,
+      "Strength": 1
+    },
+    {
+      "Beat": 5.5,
+      "Id": 4,
+      "Strength": 1
+    },
+    {
+      "Beat": 6,
+      "Id": 0,
+      "Strength": 1
+    },
+    {
+      "Beat": 6,
+      "Id": 2,
+      "Strength": 1
+    },
+    {
+      "Beat": 7,
+      "Id": 1,
+      "Strength": 2
+    },
+    {
+      "Beat": 8,
+      "Id": 3,
+      "Strength": 1
+    },
+    {
+      "Beat": 8.25,
+      "Id": 3,
+      "Strength": 1
+    },
+    {
+      "Beat": 8.5,
+      "Id": 3,
+      "Strength": 0
+    },
+    {
+      "Beat": 9,
+      "Id": 5,
+      "Strength": 1
+    },
+    {
+      "Beat": 10,
+      "Id": 1,
+      "Strength": 1
+    },
+    {
+      "Beat": 10,
+      "Id": 0,
+      "Strength": 1
+    }
+  ]
+}

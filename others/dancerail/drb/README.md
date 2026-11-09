@@ -71,6 +71,12 @@ Not read by ROX; lossy conversion (free x/width).
 
 DR3Editor (TypeScript), DanceRail3Viewer (C#), Dancerail_Import (Python).
 
+## Getting samples
+
+- **Committed**: 1 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
+- **Manifest**: 3 entries in `samples.manifest.json` (downloaded by `tools/fetch-samples.sh` into `samples-local/`; listed in [`samples/SOURCES.md`](samples/SOURCES.md))
+- **More samples**: install DanceRail3 (Android; the fiche cites Dancerail_Import: "your files (ogg and drb)") and use the DRMaker editor (a copy of `DRmaker(3.13).exe` is in the repo lucarioex/DanceRail3Viewer under `Assets/Resources/`, observed). DanceRail3Viewer stores its four `bluemelody.N.txt` charts under `Assets/Resources/SONGS/` (manifest; no licence); DR3Editor (https://github.com/swordalt/DR3Editor) reads/writes the same text grammar. The wiki https://wikiwiki.jp/drr/ documents songs (search result only, not opened).
+
 ## Sources
 
 - https://github.com/swordalt/DR3Editor (src/utils/levelFormat.ts, src/lang/en.ts, PROJECT_OVERVIEW.md)

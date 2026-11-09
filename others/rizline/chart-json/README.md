@@ -82,6 +82,12 @@ Not read by ROX. Free-form lines, moving canvases and per-line positions: conver
 - rizlib (Rust, serde structs for chart, catalog, asset lists, game config): https://gitlab.com/TadeLn/rizlib (crates.io `rizlib`)
 - Rhythm Game Wiki documentation: https://rgwiki.stary.pc.pl/wiki/Rizline:Chart
 
+## Getting samples
+
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): `synthetic-chart.json` (hand-written, CC0; Tap, Catch, Hold, BPM shift, challenge time, canvas speed).
+- Manifest (`samples.manifest.json`): `Chart_EZ_64.json`, the real official chart from rizlib's `test_data/chart` (pinned GitLab commit 4643e1c3e89b83956420e632454a22200111bcd3, 377 KB, MIT repository but a game asset, hence not committed). The same folder `test_data/catalog` and `test_data/patch_metadata` hold the other file types rizlib parses.
+- More: Steam Workshop custom charts (folder `Steam/steamapps/workshop/content/2272590/<workshop_item_id>/` with `chart.json`, `metadata.json`, `song.ogg`, from the fiche's sources); official charts are extracted from the game's asset bundles (rgwiki pages `Rizline:Chart_file` and the catalog pages).
+
 ## Sources
 - https://rgwiki.stary.pc.pl/wiki/Rizline:Chart
 - https://rgwiki.stary.pc.pl/wiki/Rizline:Chart_file
