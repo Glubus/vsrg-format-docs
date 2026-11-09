@@ -56,8 +56,32 @@ def read_status():
     return status
 
 
+# Why a sample is not read, from the error the game gives: the first ones are refusals on purpose (the file is no playable chart of
+# this format for the game), `error` is a file the reader should take and does not. A `not a chart file` (a README, a fuzz seed, a MIDI
+# not named notes.mid) is not counted at all.
+REASONS = [
+    ("not a chart file", re.compile(r"unsupported format: \w+$|is a MIDI file, not a Clone Hero chart")),
+    ("no note", re.compile(r"aucune note|no playable|No playable chart|no notes", re.I)),
+    ("no layout", re.compile(r"Unsupported layout")),
+    ("other mode", re.compile(r"Not a mania beatmap|Malody mode|pump-couple")),
+    ("needs its companion file", re.compile(r"metadata file|song of this edit")),
+    ("broken file", re.compile(r"truncated|runs past the end|size of the file is not|is not after the BPM table|mapping values are not allowed")),
+    ("events or metadata, not a chart", re.compile(r"FNF parse error: missing field `song`")),
+]
+# Files that come with a chart and are no chart themselves: their samples are not decoded.
+COMPANIONS = {"vsrg/clone-hero/ini", "vsrg/friday-night-funkin/vslice-metadata-json", "vsrg/o2jam/ojm"}
+
+
+def reason_of(message):
+    for name, pattern in REASONS:
+        if pattern.search(message):
+            return name
+    return "error"
+
+
 def read_decode(path):
-    decoded, tried = defaultdict(set), defaultdict(set)
+    """Per format folder: the files read into a playable chart, the files tried, and why each other file was not read."""
+    decoded, tried, errors = defaultdict(set), defaultdict(set), defaultdict(dict)
     for line in Path(path).read_text(encoding="utf-8", errors="replace").splitlines():
         fields = line.split("\t")
         if len(fields) < 2:
@@ -68,7 +92,18 @@ def read_decode(path):
         tried[match.group(1)].add(fields[1])
         if fields[0] == "OK":
             decoded[match.group(1)].add(fields[1])
-    return decoded, tried
+        else:
+            errors[match.group(1)].setdefault(fields[1], reason_of(fields[-1]))
+    why = defaultdict(lambda: defaultdict(int))
+    for folder, files in errors.items():
+        for file, reason in files.items():
+            if file in decoded[folder]:
+                continue
+            if reason == "not a chart file":
+                tried[folder].discard(file)
+            else:
+                why[folder][reason] += 1
+    return decoded, tried, why
 
 
 def rox_columns(path, rox, decoded):
@@ -96,11 +131,15 @@ def prism(path, decoded, reason):
     return "Plays" if decoded else "No"
 
 
+def category_of(path):
+    return path.split("/")[0]
+
+
 def main():
     if len(sys.argv) != 2:
         sys.exit(__doc__)
     index, status = read_index(), read_status()
-    decoded, tried = read_decode(sys.argv[1])
+    decoded, tried, why = read_decode(sys.argv[1])
     missing = sorted(set(index) ^ set(status))
     if missing:
         sys.exit(f"README.md and SAMPLES-STATUS.md list different formats: {missing}")
@@ -111,7 +150,9 @@ def main():
         ok, files = len(decoded[path]), len(tried[path])
         read, write = rox_columns(path, entry["rox"], ok)
         played = prism(path, ok, reason)
-        corpus = f"{ok}/{files}" if files and (read != "No" or ok) else "—"
+        corpus = f"{ok}/{files}" if files and (read != "No" or ok) and path not in COMPANIONS else "—"
+        not_read = ", ".join(f"{count} {name}" for name, count in sorted(why[path].items(), key=lambda item: item[0] != "error")) if corpus != "—" else ""
+        totals["errors"] += why[path].get("error", 0) if category_of(path) == "vsrg" and corpus != "—" else 0
         gaps = []
         if real < 5:
             gaps.append(esc(reason.split("; ")[0]))
@@ -119,7 +160,7 @@ def main():
         if category == "vsrg" and read == "No" and not played.startswith(NOT_A_GAP):
             gaps.append("no ROX reader")
         rows[category].append(
-            f"| [`{esc(entry['ext'])}`]({path}/) {esc(entry['name'])} | {esc(entry['game'])} | {real} | {synthetic} | {read} | {write} | {corpus} | {played} | {'; '.join(gaps)} |"
+            f"| [`{esc(entry['ext'])}`]({path}/) {esc(entry['name'])} | {esc(entry['game'])} | {real} | {synthetic} | {read} | {write} | {corpus} | {not_read} | {played} | {'; '.join(gaps)} |"
         )
         totals["formats"] += 1
         totals["vsrg"] += category == "vsrg"
@@ -130,12 +171,17 @@ def main():
         totals["few"] += 0 < real < 5
         totals["none"] += real == 0
 
-    header = "| Format | Game | Real charts | Synthetic | ROX read | ROX write | Corpus decoded | In Prism | What is missing |\n|---|---|---:|---:|---|---|---:|---|---|"
+    header = "| Format | Game | Real charts | Synthetic | ROX read | ROX write | Corpus decoded | Not read, why | In Prism | What is missing |\n|---|---|---:|---:|---|---|---:|---|---|---|"
     generated = "\n".join([
         BEGIN,
         "",
         f"Totals: {totals['formats']} formats ({totals['vsrg']} VSRG). ROX reads {totals['rox_read']} VSRG formats and writes {totals['rox_write']}; "
-        f"Prism plays {totals['plays']}. Real charts: {totals['five']} formats with at least 5, {totals['few']} with 1 to 4, {totals['none']} with none.",
+        f"Prism plays {totals['plays']}. Real charts: {totals['five']} formats with at least 5, {totals['few']} with 1 to 4, {totals['none']} with none. "
+        f"Samples of VSRG formats ROX reads that it fails on (`error`): {totals['errors']}.",
+        "",
+        "\"Not read, why\": `no note` (an empty map or a test file), `no layout` (a key count the game has no layout for), `other mode` (another "
+        "game mode in the same extension), `needs its companion file` (a V-Slice chart without its metadata, an `.edit` without its song) are files "
+        "the game refuses on purpose; `error` is a file the reader should take and does not.",
         "",
         "## VSRG",
         "",
