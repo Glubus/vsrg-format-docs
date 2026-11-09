@@ -87,11 +87,14 @@ def read_decode(path):
             continue
         folder = match.group(1)
         tried[folder].add(fields[1])
-        if fields[0] == "OK":
+        # `OK <path> <variant> <name> <keys> <notes> <fingerprint> <plays>`: a chart counts as decoded when ROX found a note in it.
+        if fields[0] == "OK" and len(fields) >= 8 and fields[5] != "0":
             decoded[folder].add(fields[1])
             layout = LAYOUT.search(fields[-1])
             if layout:
                 no_layout[folder].add(int(layout.group(1)))
+        elif fields[0] == "OK":
+            errors[folder].setdefault(fields[1], "no note")
         else:
             errors[folder].setdefault(fields[1], reason_of(fields[-1]))
     why = defaultdict(lambda: defaultdict(int))
@@ -181,8 +184,9 @@ def main():
         f"Real charts: at least 5 for {totals['five']} formats, 1 to 4 for {totals['few']}, none for {totals['none']}. "
         f"ROX errors on VSRG samples: {totals['errors']}.",
         "",
-        "\"Not decoded, why\": only `error` is a ROX failure; the other reasons are files that are no chart of this format (another mode, "
-        "a missing companion file, a broken or empty file, events or metadata). \"In Prism\" lists the key counts the game has no layout for.",
+        "\"ROX decoded\": charts where ROX found at least one note. \"Not decoded, why\": only `error` is a ROX failure; the other "
+        "reasons are files that are no chart of this format (another mode, a missing companion file, a broken or empty file, events or "
+        "metadata). \"In Prism\" lists the key counts the game has no layout for.",
         "",
         "## VSRG",
         "",
