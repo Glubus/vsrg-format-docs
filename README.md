@@ -78,8 +78,8 @@ Archives that carry charts with their audio and images. No page or sample of the
 | [`.msd`](vsrg/ddr/msd/) MSD step script | DDR'99 (PC simulator) | vsrg | partial | Decode only (DWI grammar) | [`vsrg/ddr/msd`](vsrg/ddr/msd/) |
 | [`.sdf`](vsrg/ddr/sdf/) Pocket DDR chart | Pocket DDR | vsrg | partial | No | [`vsrg/ddr/sdf`](vsrg/ddr/sdf/) |
 | [`.ssq`](vsrg/ddr/ssq/) DDR SSQ step data | Dance Dance Revolution (Konami) | vsrg | complete | Decode only | [`vsrg/ddr/ssq`](vsrg/ddr/ssq/) |
-| [`step`](vsrg/ddr/step/) DDR STEP (1st-3rd Mix, DDR Utility) | Dance Dance Revolution | vsrg | stub | No | [`vsrg/ddr/step`](vsrg/ddr/step/) |
-| [`step2`](vsrg/ddr/step2/) DDR STEP2 (1st Mix) | Dance Dance Revolution | vsrg | stub | No | [`vsrg/ddr/step2`](vsrg/ddr/step2/) |
+| [`step`](vsrg/ddr/step/) DDR STEP (1st-3rd Mix, DDR Utility) | Dance Dance Revolution | vsrg | partial | Decode only (by content) | [`vsrg/ddr/step`](vsrg/ddr/step/) |
+| [`step2`](vsrg/ddr/step2/) DDR STEP2 (1st Mix) | Dance Dance Revolution | vsrg | partial | No | [`vsrg/ddr/step2`](vsrg/ddr/step2/) |
 | [`x_data_US.bin / .sng / .sif`](vsrg/ddr/ultramix-archive/) DDR Ultramix archives | DDR Ultramix (Xbox) | vsrg | complete | No | [`vsrg/ddr/ultramix-archive`](vsrg/ddr/ultramix-archive/) |
 | [`.xmk`](vsrg/dj-hero/xmk/) DJ Hero chart (xmk) | DJ Hero / DJ Hero 2 | vsrg | stub | No | [`vsrg/dj-hero/xmk`](vsrg/dj-hero/xmk/) |
 | [`.pt`](vsrg/djmax/pt/) DJMAX pattern (PTFF) | DJMAX Online / DJMAX Technika (arcade, Technika Q) | vsrg | partial | No | [`vsrg/djmax/pt`](vsrg/djmax/pt/) |
