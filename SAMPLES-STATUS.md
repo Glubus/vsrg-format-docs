@@ -1,11 +1,12 @@
 # Samples status
 
-Real chart files per format of the [README index](README.md), all committed under `<format>/samples/` (charts only: no audio, video, images, and no archive or package of any kind; archives were opened and only their chart files kept). Origin URL, fetch date, author and licence/terms of every file are in the `samples/SOURCES.md` of each format; the "Getting samples" section of each format page says how to get more.
+Real and synthetic sample counts for each format of the [README index](README.md); the last column says why a format has fewer than 5 real
+charts and where to get more. Per-file origin, date and terms: `samples/SOURCES.md` of each format.
 
-- Formats: **182** (chart formats only; packages such as `.osz`, `.qp`, `.fnfc` are listed in the README, section Packages). With at least 5 real charts: **115**. With 1 to 4 real charts: **18**. With no real chart: **49** (no public copy).
-- Committed files: **2426** (including `SOURCES.md`-listed synthetic and converted files; the "Real" column below counts only real charts).
-- "Real" = a chart written by a game, a tool or a person for actual play or for a real test, downloaded from a public source. "Synthetic" = hand-written or script-written here (CC0). Converted files (made by running a converter on a real chart) are not counted as real unless the SOURCES.md says the converter output was published by someone else.
-- The 33 `.png` files of `vsrg/friday-night-funkin/ludum-dare-png` are the chart data itself (one tiny PNG per section, 12 rows high, no artwork); they are the only images in the repo.
+- 182 formats: 115 with at least 5 real charts, 18 with 1 to 4, 49 with none (no public copy). 2426 files committed.
+- Real: published for play or as another project's test, downloaded from a public source. Synthetic: written here (CC0). A converter's
+  output counts as real only when someone else published it.
+- The 33 `.png` of `vsrg/friday-night-funkin/ludum-dare-png` are chart data (one 12-pixel-high image per section), the only images here.
 
 ## vsrg
 
@@ -208,79 +209,12 @@ Real chart files per format of the [README index](README.md), all committed unde
 
 ## Licence notes
 
-By decision of the repository owner, real charts (community maps, official game data that is publicly downloadable, test fixtures of other projects) are committed as downloaded and the licence risk is accepted; each `SOURCES.md` records the URL, fetch date and the terms as far as known. The list below flags the places where authorship or terms are especially unclear.
+The owner accepted the risk of redistributing these snapshots. Each `SOURCES.md` gives the terms known per file; the unclear cases are:
 
-- vsrg/sound-voltex/ksh/samples/Gram_lt.ksh, Gram_ch.ksh, Gram_ex.ksh, Gram_in.ksh and kson/samples/Gram_ex.kson: sample song bundled with K-Shoot MANIA; ksm-v2 readme says bundled songs are the property of the content creators (outside use needs permission), but the files sit in MIT-licensed kshootmania/libkson (same maintainer); charts only, no audio
-- vsrg/sound-voltex/ksh/samples/{cantabile,hawk,howling,juicy,konga,tenkuu,xeroize}.ksh: fan charts of third-party songs; voltedit test/README.md says all charts were permitted by charters to be put in the (MIT) repo; permission statement is by the repo author, not per chart
-- vsrg/vos/vos/samples/{1,103,23,24,109}.vos: community song arrangements (MIDI of existing songs probably); only the MIT licence of rhythmus-emulator/rparser backs redistribution, authors unknown
-- vsrg/sound-voltex/vox/samples/oracle.golden.vox, curve-scroll.golden.vox: exports from the sdvxindex.com editor of synthetic fixtures; repository MIT, tool output of a third-party editor
-- vsrg/dtxmania/dtx/samples/dtx2gp_test3-6.dtx: LGPL-3.0 repo (COPYING); files are hand-written unit tests by the repo author (no per-file header)
-- vsrg/o2jam/ojn/samples/*.seed and ojm/samples/*.seed\|.ojm\|.m30: GPL-3.0 fuzz corpus of djzmo/render-ojn (README says synthetic/redistributable only); extension .seed kept
-- vsrg/dtxmania/{gda,g2d}/samples/synthetic-*: derived from loader code, not from a real GDA/G2D file; real header conventions unverified
-- vsrg/project-sekai/usc: sonolus-pjsekai-engine shared/src/level/data/append.json (MIT repo, Sonolus LevelData, 1.2 MB) not taken: converted chart of unstated origin, probably an official chart; belongs to others/sonolus
-- vsrg/rhythm-master/json/samples/rmessentials-fromjson_*.json: hand-written test files in AGPL-3.0 repo, contain joke strings; kept
-- vsrg/rhythm-master/imd: RMEssentials tojson/toimd .imd fixtures (crunch, canonrock, legend, friend01, ...) look like official/fan song charts, manifest only
-- vsrg/project-sekai/sus/samples/sus-analyzer_*: sample_data authored by repo owner (#DESIGNER mizucoffee), MIT repo; Touhou-song metadata only
-- vsrg/bms/bmson/samples/synthetic-features.bmson: pre-existing file (commit a7c56f8), authorship/licence not recorded; documented as presumed public domain.
-- vsrg/bms/bmson (manifest bms-rs_lostokens.bmson, bms-rs_bemusicstory_483_48K_ANOTHER.bmson): repo is Apache-2.0 but the charts are third-party; not committed.
-- vsrg/bms/bmson (manifest bemuse-ninja_onlylove_remix_*.bmson): CC-BY-NC in the files; NC terms, not committed.
-- vsrg/bms/bmson: bemusic/bmson-spec has no LICENSE file, nothing taken.
-- vsrg/bms/ibmsc/samples/synthetic-*.ibmsc: hand-built from pBMSC source, never opened in iBMSC; verified only by a mirrored Python reader (undo block written empty).
-- vsrg/bemuse/bemuse-song-json/samples/derived-aoi-olivia-bemuse-song.json: derived (id/path removed, reserialised) from the AGPL index.json fixture, not a real bemuse-song.json.
-- vsrg/robeats/lua-songmap/samples/*.lua: spotco/RobeatsCustomServerTemplate has no LICENSE file; committed on the strength of the author's devforum statement ("100% Free and open source to do anything you want with"); Monday Night Monsters note data belongs to the template author's own song.
-- vsrg/soundsphere/nanochart/samples/synthetic-*.nanochart: built with a Python port of the Lua encoder, checked only against 4 exact-byte vectors of NanoChart_test.lua.
-- vsrg/rhythm-open-exchange/{jrox,yrox}/samples/synthetic-*: hand-written, never run through the Rust codec; yrox quoting style may differ from serde_yaml output.
-- vsrg/fluxis: fluXis repo is MIT (LICENSE read) but contains no map files; fluXis map download without login not tested.
-- vsrg/bms/bms/samples/0.ct_[MAX].bms (+ 0.ct_a/h/n.bms): extracted from rhythmus-emulator/rparser test/bms_sample_angelico.zip (MIT repo); the fan chart authors (anubasu-anubasu, obj 980円の人) gave no licence of their own
-- vsrg/bms/bms/samples/allnightmokugyo.bms, l-for-nanasi.bms, vsrg/bms/bme/samples/L9^.bme: kusofumen from rhythmus-emulator/rparser (MIT repo); third-party joke charts (HIROHIO, paraoka), no licence from the authors
-- vsrg/bms/bms/samples/J219_7key.bms, lilith_mx.bms, vsrg/bms/bme/samples/nc_mx.bme, dive_withblank.bme: bms-rs test fixtures (Apache-2.0 repo); the notes are credited to the bms-rs author ("obj: Mikuro Xina") but the songs belong to other artists (cranky, ikaruga_nex, Silentroom, xi)
-- vsrg/bms/bms/samples/base62.bms: bemuse repo root is AGPL-3.0 but packages/bms is MIT (package.json); committed under MIT
-- vsrg/bms/bms/samples/invisible.bms, vsrg/bms/bml/samples/longnote-*.bml: Angolmois test files, declared public domain in their headers although the repo is GPL-2.0+; the sound samples they reference (CC-BY OLPC) are not included
-- vsrg/bms/bms/samples/{Another-capital,Hyper-capital}.bms duplicate another.bms / hyper.bms byte for byte (pre-existing upstream files, left in place)
-- vsrg/bms/bms/samples/be-music_*.bms, be-music_9key-all-keys-quarter.pms: MIT repo Nekokan/be-music (LICENSE 'Copyright (c) 2026 nulltask'); example charts written by the project (artist 'Codex'), not third-party songs
-- vsrg/bms/bms/samples/tapestry_*.bms: shuymn/tapestry bms-parser crate is MIT OR Apache-2.0 per README; tiny test stubs
-- vsrg/bms/bme/samples/BMSParser_05.bon_voyage_7hyper.bme: real chart (song Bon Voyage by Mystinia) inside an MIT-licensed parser repo; no separate licence for the song/chart
-- vsrg/friday-night-funkin/legacy-json/samples/rox-test-song.json: MIT via ROX (owner's crate), but whether the chart content is hand-made or derived from a real FNF chart is not stated
-- vsrg/friday-night-funkin/*: all real FNF charts (Funkin tag v0.2.7.1 is plain Apache-2.0 repo-wide, engines Apache-2.0) kept manifest-only because funkin.assets licence is proprietary; the v0.2.7.1 and 1.0.0 trees may be redistributable under Apache-2.0 but the parent said manifest-only
-- vsrg/flash-flash-revolution/swf/samples/synthetic-level.swf: verified only by a Python port of rCubed Beatbox.parseBeatbox, not by Flash/rCubed
-- vsrg/clone-hero/chart/samples/yarg-core_test.chart: committed under the YARG.Core repo licence LGPL-3.0 (LICENSE read); the file is a synthetic feature-check chart ("Test" artist) but its individual author is not stated
-- vsrg/clone-hero/mid/samples/yarg-core_test.mid: same, LGPL-3.0 repo fixture with synthetic-looking tracks, individual author not stated
-- vsrg/clone-hero/mid (manifest drawntotheflame.mid): full RB-style chart, rights unclear, therefore manifest only
-- vsrg/osu-mania/osu/samples/ppy-osu_*.osu: MIT repo (ppy/osu) but some fixtures (4869637, 100374, 20544) are real ranked-map derived; mapper licence unknown
-- vsrg/osu-mania/osu/samples/quaver-api_*.osu and vsrg/quaver/qua/samples/quaver-api_*.qua: MPL-2.0 repo, but Camellia/megalovania/Blue Zenith/ReEnd of a Dream/Tsukahara maps are real community maps; map licence unknown
-- vsrg/osu-mania/osu/samples/yavsrg-prelude_*.osu and osz/samples/yavsrg-prelude_*.osz: MIT repo, real community maps (DannyPX, Raveille, Overlord68_, Night Bunny 7); map licence unknown (osz are audio-less)
-- vsrg/quaver/qua/samples/quaver-resources_*.qua and qp/samples/built-princess-of-winter-audioless.qp: Quaver.Resources is CC-BY-NC 4.0 (non-commercial, attribution) - acceptable per brief but flag
-- vsrg/malody/mc/samples/quaver-api_*.mc and mcz/samples/built-quaver-api-malody-audioless.mcz: real Malody community charts in MPL-2.0 repo; chart licence unknown
-- vsrg/malody/mc/samples/mc2tja_*.mc: MIT repo (LuiCat); charts of songs by third parties (Jerico, Mizutori), chart licence unknown
-- Eddio0141/osu-file-parser test fixtures only in manifest (no LICENSE file, Cargo.toml says MIT OR Apache-2.0, real ranked maps)
-- others/beat-saber/dat/samples/bsdeno_AngelVoices_*, bsdeno_PreservedValkyria_*, bsdeno_IBetYou_BPMInfo.dat, bsdeno_Necromantic_BPMInfo.dat: community maps shipped as test fixtures in the MIT BeatSaber-Deno repo; mapper licence not stated per map
-- others/beat-saber/info-dat/samples/bsdeno_{AngelVoices,PreservedValkyria,IBetYou,Necromantic,BadApple,ECHO}_Info.dat: same doubt (community map metadata under the repo MIT licence)
-- others/chunithm/ugc/samples/muconvert_{Mobius_mas,Terminal_terminal,sabi}.ugc and chunithm/c2s/samples/muconvert_{Mobius,Terminal,sabi}_*.c2s: community charts of copyrighted songs inside the LGPL-3.0 MuConvert test set; individual charter licences not stated
-- others/chunithm/ugc/samples/muconvert_Example_basic.ugc: Margrete example chart by inonote (@DESIGN inonote), committed under the MuConvert repo licence only
-- others/cytus/c1-txt/samples/cyl_package_tool_test_*.txt and make_cytus2_*.txt: charts inside MIT repos, origin of the charts themselves (possibly ripped from the game) not stated
-- others/cytus/c2-json/samples/cyl_package_tool_*.json: same doubt (test fixtures, chart origin not stated)
-- others/arcaea/aff/samples/suhri_*, testify*_4.aff etc.: fan charts of copyrighted songs, committed under the archive's WTFPL; audio not committed
-- others/audica/audica/samples/audicaconv-template_*: chart of the song Dadadadadadadadadada by "octo" in the MIT AudicaConverter repo; song itself (mogg audio) not committed
-- others/chunithm/sus/samples/sonolus-pjsekai-engine-extended_expert.sus: chart title "Tell your world" (artist exp); origin (fan chart vs game chart) not stated; MIT repo
-- others/maimai/ma2 manifest 010070_03.ma2 and other converted official charts: CC0 repo licence but content derived from commercial game data, hence manifest only
-- others/ongeki/ogkr manifest ongeki-editor-bench_*.ogkr: MIT repo, but the charts (creators NaNya, MikiraSora, ...) may be fan or game charts; rights unclear, manifest only
-- others/jubeat/* manifest: Stepland/jubeatools, Stepland/memon have no LICENSE file; the GitHub jubeatools README says it moved to GitLab (not checked there)
-- osu-standard/osu/samples/osu-resources_*.osu: extracted from CC-BY-NC-4.0 ppy/osu-resources .osz (non-commercial); kept per brief, flagged. ppy/osu fixtures: MIT repo but many are real ranked maps by third-party mappers (Soleily - Renatus, Within Temptation, 1124896-style ids) with no per-file licence; same for osu-catch/osu-taiko/osu-standard files from kionell/osu-taiko-stable, MaxOhn/rosu-pp, ekgame/beatmap-analyzer (GPL-3.0) tests.
-- others/osu-standard/osu/samples/osu-resources_*.osu: extracted from the default-track .osz of ppy/osu-resources (CC-BY-NC-4.0, non-commercial + attribution); committed per brief, audio/images dropped
-- others/osu-*/osu/samples (ppy/osu, kionell/osu-taiko-stable, MaxOhn/rosu-pp, ekgame/beatmap-analyzer GPL-3.0): code repos MIT/GPL, but most .osu are real ranked maps by third-party mappers (e.g. Soleily - Renatus, Within Temptation - The Unforgiving, Tomorrow Perfume) without a per-file licence
-- others/rocksmith/xml/samples/rocksmith2014net_*.xml and rocksmith/sng/samples/rocksmith2014net_*.sng: MIT repo test data (title/artist 'Test'); not stated whether the note content was written from scratch or transcribed from a real song
-- others/phigros/rpe/samples/rpechart_*.json, pez/samples/rpechart_demo.pez: MIT repo kamilhzn/rpechart, docstring states fixtures are synthetic and contain no third-party material
-- others/paradiddle/rlrr/samples/defaultset.rlrr: GPL-3.0 ParadiddleUtilities drum kit file (kit layout, not a song)
-- manifest others/phigros/*: yuameshi/phigros-charts-repo has no licence file; contains official Pigeon Games charts and fan charts
-- manifest others/rizline/chart-json/Chart_EZ_64.json: MIT repo rizlib but the file is an extracted official Rizline chart
-- others/sound-space/txt/samples/ssp_BigShot.txt: MIT repo bundle, but the map targets a third-party song (Big Shot); only chart text committed, song licence unknown
-- others/sound-space/txt/samples/ssp_MeteoricImpact.txt, ssp_meganeko - Feral.txt: same, song licences not checked
-- others/taiko-no-tatsujin/tja/samples/opentaiko_tower_*_optktower.tja: in MIT OpenTaiko repo; song/sound team credits in file, no separate chart licence stated
-- others/taiko-no-tatsujin/tja/samples/pytaiko_TRIPLE HELIX.tja: GPL-3.0 repo; chart by repo author; headers credit Colin, Komi as charters
-- others/trombone-champ/tmb/samples/test-awesome.tmb: MIT TromboneCharter test file; melody origin unknown
-- vsrg/stepmania/sm/samples/nekonabe.sm and vsrg/stepmania/ssc/samples/simfile_L9.ssc: committed because the simfile repo is MIT, but the songs/charts (nekonabe by Saisei Hyper Beroove, L9 by paraoka) are third-party with no licence statement of their own
-- vsrg/pydance/dance/samples/*.dance: pydance LICENSE is MIT and Debian's copyright file says it covers music/graphics, but the download page only calls the songs "free"; they are not inside the GitHub mirror
-- vsrg/stepmania/ssc/samples/outfox-serenity_*.ssc: chart licence rests on the Serenity guidelines text (CC-BY 3.0/4.0 agreement by contributors), not on per-folder files; credits.txt/license.txt cover only music and graphics
-- vsrg/stepmania/ssc/samples/outfox-serenity_Matduke*.ssc: music of those songs is "all rights reserved" (credits.txt); only the chart text is committed
-- vsrg/stepmania/{sm,ssc}/samples/{Goin' Under,Mecha-Tribe Assault,Springtime}*: StepMania README says bundled songs are CC-NC (non-commercial); committed as chart text only
-- vsrg/stepmania/{sm,ssc}/samples/existing community files: origin and licence unknown (from upstream list), left in place
+- Real community or ranked maps inside code repos (MIT, MPL, GPL, Apache test fixtures: ppy/osu, Quaver.API, Prelude, bms-rs, rparser,
+  BeatSaber-Deno, MuConvert, voltedit...): the repo licence covers the code, the mapper gave none for the chart.
+- Non-commercial terms: Quaver.Resources and ppy/osu-resources (CC-BY-NC 4.0), StepMania's bundled songs (CC-NC).
+- Official game data that is publicly downloadable (Bestdori charts, K-Shoot MANIA's bundled song, extracted Phigros/Rizline/maimai charts).
+- Repos without a licence file (Robeats template, jubeatools, memon), committed on the author's public statement where one exists.
+- Synthetic files for binary formats (`.ibmsc`, `.nanochart`, `.swf`, GDA/G2D, `.jrox`/`.yrox`) were checked against a spec or a port of the
+  reader only, never opened in the game.

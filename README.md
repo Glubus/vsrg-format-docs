@@ -1,44 +1,33 @@
 # Rhythm game chart formats
 
-A reference of the chart / map file formats of rhythm games: how each file is encoded, how time is
-represented, how notes, holds and special objects are stored, and where the public knowledge
-comes from. It started as a link list (the upstream `README.md` of commit `503382a`, in this repository's history) and was completed
-for Prism, whose map library [ROX](https://github.com/Glubus/rhythm-open-exchange)
-(`rhythm-open-exchange` 0.8.1) needs to know which formats are worth reading. It is also a corpus of real chart samples:
-see [Samples](#samples).
+One page per chart format of rhythm games (encoding, timing, notes, sources) and real sample charts for each. Started from a link list
+(upstream `README.md`, commit `503382a`), extended for Prism's map library [ROX](https://github.com/Glubus/rhythm-open-exchange).
 
-**182 chart formats** documented over **102 games** (packages are listed separately, see [Packages](#packages)).
+182 chart formats over 102 games: 109 VSRG (39 complete, 45 partial, 25 stub), 73 others (17 complete, 40 partial, 16 stub).
 
-- VSRG: 109 formats: 39 complete, 45 partial, 25 stub.
-- Others: 73 formats: 17 complete, 40 partial, 16 stub.
-
-Every format has its own page, `<category>/<game>/<format>/README.md`, with the same sections:
-overview, container and encoding, structure and metadata, timing model, notes, audio and images,
-versions and variants, quirks, example, ROX support, parsers and tools, sources. Each game has an
-overview page, `<category>/<game>/README.md`. Real sample charts sit in `<format>/samples/` (never modify them: line endings
-and encodings are significant, see `.gitattributes`); see [Samples](#samples).
+- [`FORMATS.md`](FORMATS.md): status of every format (real charts, ROX read/write, samples ROX decodes, played by Prism).
+- [`SAMPLES-STATUS.md`](SAMPLES-STATUS.md): sample counts per format and why some have fewer than 5 real charts.
+- Format page: `<category>/<game>/<format>/README.md`. Game page: `<category>/<game>/README.md`.
+- Samples: `<format>/samples/`, sources in `samples/SOURCES.md`. Do not edit them (line endings and encodings matter, see `.gitattributes`).
 
 ## Samples
 
-Every format page ends with a `Getting samples` section. Real chart files live next to the page, in `<category>/<game>/<format>/samples/`,
-with a `samples/SOURCES.md` that gives, for each file, its source URL, the date it was fetched, author and licence or terms as far as known.
-Only chart files are stored: no audio, video or images, and no archive or package (`.osz`, `.zip`, `.qp`, `.fnfc`... are opened and only the
-chart files inside are kept, in a subfolder named after the set).
+Chart files only: no audio, video, images or archives (packages are unpacked and only their charts kept, one subfolder per set).
+`synthetic-*` files were written here (CC0); the rest comes from public sources, redistributed at the owner's risk. Formats with no public
+copy have no sample; their page says how to get one.
 
-| What | Where |
-|---|---|
-| Committed samples | `<category>/<game>/<format>/samples/`, listed in the `SOURCES.md` of that folder. Never modify them: line endings and encodings are significant (see `.gitattributes`). |
-| Status per format | [`SAMPLES-STATUS.md`](SAMPLES-STATUS.md): real and synthetic file counts for every format of the index, and why a format has fewer than 5 real files. |
-| Real status | [`FORMATS.md`](FORMATS.md): one row per format with its real charts, ROX read/write, how many samples the game decodes, whether Prism plays it, and what is missing. |
+## Rules
 
-Files marked `synthetic-` were written for this repository (CC0). Everything else was downloaded from a public source; the repository owner
-accepted the licence risk of redistributing those snapshots. Formats whose charts exist only inside commercial game data with no public copy
-have no sample; their page explains how to obtain one.
+- No invented facts: each comes from a source linked on the page or from the ROX source. Unknown is written `Unknown`, a deduction `[inference]`, a fact read in a sample `[observed in ...]`.
+- Category by gameplay: `vsrg/` for notes on fixed lanes toward a judgement line (the model ROX reads), `others/` for the rest. The reason per game is in [the game table](#game-by-game-category-decisions).
+- English. A new format gets its page, a row in the index below and a row in `SAMPLES-STATUS.md`.
+
+Doc status: `complete` (a parser can be written from the page), `partial` (gaps stated), `stub` (identity and sources). ROX: `Yes` (read and write),
+`Decode only`, `Partial` (one dialect), `No`.
 
 ## Packages
 
-Packages are archives that carry charts with their audio and images. They are not chart formats: they have no page and no sample here
-(archives are opened and only their chart files are kept, see [Samples](#samples)). Each chart page says in "Shipped in" which packages carry it.
+Archives that carry charts with their audio and images. No page or sample of their own; each chart page lists them under "Shipped in".
 
 | Package (extension) | Game | What is inside | Charts in |
 |---|---|---|---|
@@ -62,42 +51,6 @@ Packages are archives that carry charts with their audio and images. They are no
 | `.riq` | Rhythm Heaven Studio (fan game inspired by Rhythm Heaven) | Rhythm Heaven Studio zip: `.meta`, `Charts/chart<N>.json`, `Music/`, `Resources/` | none (RIQ chart JSON has no page of its own) |
 | `.psarc` | Rocksmith 2014 (official DLC and CDLC) | PlayStation archive, encrypted table of contents: `.sng` arrangements, JSON manifests, Wwise audio, art | [`.sng`](others/rocksmith/sng/) |
 | `.scp` | Sonolus | Sonolus Collection Package zip: levels with gzip LevelData, engines, skins, effects, particles | [`.json` (gzip LevelData)](others/sonolus/level-data/) |
-
-## Rules of this reference
-
-- Nothing is invented. Every fact comes from the former content of this repository, from the ROX
-  source, or from a source that is linked at the bottom of the page (official docs, wikis,
-  open-source parsers). What is not known is written `Unknown`; `[inference]` marks a deduction.
-- A hand-built example is always labelled as such.
-- English, like the original repository.
-
-## Categories
-
-- **`vsrg/`**: vertical scrolling rhythm games. Notes travel along fixed lanes or columns toward a
-  judgement line, with a column / key count model (osu!mania, StepMania and the dance games, BMS,
-  O2Jam, DTX drums, Malody Key, Quaver, FNF, guitar-game lanes...). These are the formats that map onto
-  ROX's model (key count columns, tap / hold / burst / mine, BPM and scroll-velocity points).
-- **`others/`**: every other rhythm game (free-position or touch-anywhere notes, scanlines, arcs,
-  radial, horizontal, 3D or grid-based games). The decision is taken per game; the one-line reason is in
-  [the game table](#game-by-game-category-decisions).
-
-Edge cases are placed by gameplay, not by the platform. Borderline games are flagged in their reason.
-
-## Legend
-
-| Doc status | Meaning |
-|---|---|
-| complete | A parser could be written from the page alone. |
-| partial | Main structure known; gaps are stated on the page. |
-| stub | Identity, what is known, and sources only. |
-
-| ROX column | Meaning (ROX 0.8.1, from its source `src/formats/auto/detect.rs` and codecs) |
-|---|---|
-| Yes (read + write) | Decoder and encoder exist and are reached from the extension. |
-| Decode only | A decoder exists, no encoder: BMS family (`.bms`, `.bme`, `.bml`, `.pms`, added by Prism), Clone Hero (`.chart` charts, `song.ini`, `.sng` packages, added by Prism), O2Jam (`.ojn` charts, `.ojm` sample containers, added by Prism, see `rhythm-open-exchange/VENDORED.md`), DTXMania `.dtx` (drums, guitar and bass of a song, one variant per instrument, added by Prism; `set.def`, `.gda` and `.g2d` are not read), FNF V-Slice (`-chart.json` + `-metadata.json`, `.fnfc` packages, added by Prism), DDR `.ssq` (the Single and Double charts of a file, added by Prism), Dance With Intensity `.dwi` (every Single, Solo and Double chart of a file, added by Prism), Kick It Up `.ksf` (one `pump-single` or `pump-halfdouble` chart per file, read with its file name, added by Prism), StepMania `.edit` (read with the song's `.sm`/`.ssc`: `EditDecoder`, added by Prism; `auto_decode` of a lone `.edit` fails with "edit needs its song") Project SEKAI `.sus` and `.usc` (one 12-column chart per file: `SusDecoder` and `UscDecoder`, added by Prism), BanG Dream Bestdori JSON and BanG! Simulator `.txt` (one 7-column chart per file: `BestdoriDecoder` and `SimulatorDecoder`, added by Prism; told by content, `.json` and `.txt` are never claimed by extension), SOUND VOLTEX K-Shoot MANIA `.ksh` (one 6-column chart per file, BT A-D then FX-L and FX-R, the lasers dropped and counted: `KshDecoder`, added by Prism; `.ksh` is also the Korn shell extension, so `looks_like_ksh` tells a chart from a script) and osu!taiko (converted to a 4K layout; not reached by extension auto-detection). |
-| Partial | Only a sub-dialect is understood (FNF legacy `.json` layout read by the Friday Night Funkin' codec). |
-| No (planned) | Not read; the ROX README lists it under "Planned" (nothing at the moment). |
-| No | Not read by ROX. |
 
 ## Formats: vsrg
 
@@ -398,81 +351,12 @@ Edge cases are placed by gameplay, not by the platform. Borderline games are fla
 | [Vulnus](others/vulnus/) | others | Cursor-aimed notes on a small grid. | [`.json`](others/vulnus/json/) |
 | [WACCA](others/wacca/) | others | Circular ring of 60 positions with variable-width arcs. | [`.mer`](others/wacca/mer/) |
 
-## Coverage of the original list
-
-Every entry of the upstream list (`README.md` at commit `503382a`) has a page:
-
-| Original entry | Where |
-|---|---|
-| `.ojn` O2Jam | [vsrg/o2jam/ojn](vsrg/o2jam/ojn/) |
-| `.osu` osu! (osu, taiko, ctb, mania) | [vsrg/osu-mania/osu](vsrg/osu-mania/osu/), [others/osu-standard/osu](others/osu-standard/osu/), [others/osu-taiko/osu](others/osu-taiko/osu/), [others/osu-catch/osu](others/osu-catch/osu/) |
-| `.sm`, `.ssc` StepMania | [vsrg/stepmania/sm](vsrg/stepmania/sm/), [vsrg/stepmania/ssc](vsrg/stepmania/ssc/) |
-| `.mc` Malody | [vsrg/malody/mc](vsrg/malody/mc/) |
-| `.bms` `.bme` `.bml` Be-Music Script | [vsrg/bms/bms](vsrg/bms/bms/), [bme](vsrg/bms/bme/), [bml](vsrg/bms/bml/) |
-| `.dwi` | [vsrg/dwi/dwi](vsrg/dwi/dwi/) |
-| `.ksf` Kick It Up | [vsrg/kick-it-up/ksf](vsrg/kick-it-up/ksf/) |
-| `.sma` StepMania AMX | [vsrg/stepmania-amx/sma](vsrg/stepmania-amx/sma/) |
-| `.vos` | [vsrg/vos/vos](vsrg/vos/vos/) |
-| `.pms` | [vsrg/bms/pms](vsrg/bms/pms/) |
-| `.dtx` | [vsrg/dtxmania/dtx](vsrg/dtxmania/dtx/) |
-| `.gda` / `.g2d` | [vsrg/dtxmania/gda](vsrg/dtxmania/gda/), [g2d](vsrg/dtxmania/g2d/) |
-| `.msd` DDR | [vsrg/ddr/msd](vsrg/ddr/msd/) |
-| `.ssq` DDR 4th mix | [vsrg/ddr/ssq](vsrg/ddr/ssq/) |
-| `.sdf` Pocket DDR | [vsrg/ddr/sdf](vsrg/ddr/sdf/) |
-| `.pt` DJMAX | [vsrg/djmax/pt](vsrg/djmax/pt/) |
-| `.ucs` Pump It Up | [vsrg/pump-it-up/ucs](vsrg/pump-it-up/ucs/) |
-| `.dance` pydance | [vsrg/pydance/dance](vsrg/pydance/dance/) |
-| `.tja` Taiko Jiro | [others/taiko-no-tatsujin/tja](others/taiko-no-tatsujin/tja/) |
-| `.xml` Music Master / Music Times | [vsrg/music-master/xml](vsrg/music-master/xml/), [vsrg/music-times/xml](vsrg/music-times/xml/) |
-| `.vox` SOUND VOLTEX | [vsrg/sound-voltex/vox](vsrg/sound-voltex/vox/) |
-| `.ksh` K-Shoot Mania | [vsrg/sound-voltex/ksh](vsrg/sound-voltex/ksh/) |
-| `.imd` / `.mde` Rhythm Master | [vsrg/rhythm-master/imd](vsrg/rhythm-master/imd/), [mde](vsrg/rhythm-master/mde/) |
-| `.xml` Dynamix | [others/dynamix/xml](others/dynamix/xml/) |
-| `.aff` Arcaea | [others/arcaea/aff](others/arcaea/aff/) |
-| `.txt` Cytus (original and Version2) / Cytus 2 | [others/cytus/c1-txt](others/cytus/c1-txt/), [others/cytus/c2-json](others/cytus/c2-json/) (Cytus 2 charts are JSON, not `.txt`, see the page) |
-| `.txt` Musync | [vsrg/musync/txt](vsrg/musync/txt/) |
-| `.txt` BanG Dream! | [vsrg/bang-dream/txt](vsrg/bang-dream/txt/), [bestdori-json](vsrg/bang-dream/bestdori-json/) |
-| `.json` Deemo | [others/deemo/json](others/deemo/json/) |
-| `.json` Rhythm Master WeChat mini program | [vsrg/rhythm-master/json](vsrg/rhythm-master/json/) |
-| `.json` StepMania Micro | [vsrg/stepmania-micro/json](vsrg/stepmania-micro/json/) |
-| `.xml` QQ Hyun Dance Mobile | [vsrg/qq-dance/xml](vsrg/qq-dance/xml/) |
-| `.drb` DanceRail | [others/dancerail/drb](others/dancerail/drb/) |
-| `.d2r` `.slo` `.sul` `.step` `.ftb`, DirectMove | [vsrg/legacy-dance-formats/](vsrg/legacy-dance-formats/) |
-| `.snp` `.xnt` | [vsrg/o2jam/xnt](vsrg/o2jam/xnt/) (`.snp` is listed under [Packages](#packages)) |
-| `ojn-docs/` (File Formats Wiki page) | [vsrg/o2jam/ojn/docs](vsrg/o2jam/ojn/docs/) |
-| `*-samples/` | `<format>/samples/` of the matching format (osu: [osu-mania/osu](vsrg/osu-mania/osu/samples/), sm, ssc, mc, tja, ojn, bme, bms, dtx) |
-
 ## Known without a format page
 
 Games with a page but no chart-format folder: [NOSTALGIA](others/nostalgia/), [Osu! Tatakae! Ouendan / Elite Beat Agents](others/elite-beat-agents/) (no public chart format found), [Rhythia](others/rhythia/) (shares Sound Space's [`.sspm`](others/sound-space/sspm/)).
-
 Investigated, no public format found, so no folder: osu!stream (`.osc`/`.osz2`), Unplugged (`.usm` is a third-party manager archive), Audition Online (only the undocumented `.arp` replay), KeyboardMania, Pump It Up arcade `.pak`/`.nxa`, DDR Freestyle, Dance Dance Immolation, `.pump`/`.nx`/`.ddr`, Funky Friday, Taptap Heroes, Dancing Line, Rhythm Cat, Tone Sphere, Beat Fever, Ensemble Stars, Uta no Prince, D4DJ, Girls Band Cry, Geometry Dash, Soundboxing, BoxVR/FitXR. Historic BMS dialects (MGQ, MBM, EMS, KMS) are listed in [`vsrg/bms/README.md`](vsrg/bms/) without a spec. `.fnfm` was requested but no such format was found (nearest: `.fnfc`, `.fnfmod`). Not investigated: Tap Tap Revolution, Rhythm Hive, Rhythm Game Maker, Raindrop `.dcf`, the FNF engines Forever / Leather / Andromeda.
 
-## Conventions for new pages
+## History
 
-1. Pick the category by gameplay (see above) and add `<category>/<game>/<format>/README.md` using
-   the section list given at the top of this file.
-2. Cite every source. Never write a spec detail you did not read.
-3. Add the format to the tables of this README and to [`SAMPLES-STATUS.md`](SAMPLES-STATUS.md).
-
-## Changes
-
-History of what this repository adds to the upstream list (Glubus/vsrg-format-docs at `503382ad`, 2020-12-09):
-
-- The upstream `README.md` (a link list) is in the history at commit `503382a`; this `README.md` is the index of every format.
-- The former `*-samples/` and `ojn-docs/` folders moved to `vsrg/<game>/<format>/samples/` (or `docs/`) and
-  `others/<game>/<format>/samples/`. Their content is unchanged byte for byte.
-- `.gitattributes` follows the new layout (`**/samples/** -text`): line endings of sample files must never be normalised.
-- One page per format and per game (English, like upstream), written from public sources only (see each page's Sources).
-- The pages `vsrg/bms/*` and the other formats read by ROX describe the ROX decoder in their "ROX support" section.
-- Hand-written, public-domain sample charts identical to the ROX test assets: `vsrg/bms/bms/samples/synthetic-features.bms`,
-  `vsrg/bms/pms/samples/synthetic-nine-buttons.pms`, `vsrg/bms/bmson/samples/synthetic-features.bmson`.
-- Sample corpus: 2426 chart files committed under `<category>/<game>/<format>/samples/` (2049 real charts downloaded from public sources, the rest
-  synthetic or converted), each folder with a `SOURCES.md` (URL, fetch date, author, licence/terms per file). Every format page has a
-  `Getting samples` section and [`SAMPLES-STATUS.md`](SAMPLES-STATUS.md) lists all 182 formats with their counts: 115 formats with at least 5 real charts,
-  18 with 1 to 4, 49 with none (no public copy).
-- Index limited to chart formats: the 20 package formats (`.osz`, `.olz`, `.qp`, `.mcz`, `.smzip`, `.fnfc`, `.fnfmod`, `.sng`, `.yargsong`, `.fms`, `.snp`, `.arcpkg`, BeatSaver `.zip`, `.cytoidlevel`, `.mdm`, `.pez`, `.rdzip`, `.riq`, `.psarc`, `.scp`) moved to the [Packages](#packages) table and to a "Shipped in" line on each chart page; the BMS difficulty table and Etterna cache pages were dropped (not chart files).
-- New format pages: `vsrg/etterna/ett`, `vsrg/interlude/yav`, `vsrg/r2beat/xml`,
-  `vsrg/friday-night-funkin/{nmv-json,maru-json}`. The osu!lazer `client.realm` database is documented as not being a chart format
-  (`vsrg/osu-mania/README.md`).
-- Page corrections made while reading real files are tagged `[observed in ...]`.
+- Upstream list at commit `503382a` (2020-12-09); its `*-samples/` and `ojn-docs/` moved, unchanged, into `<format>/samples/` and `vsrg/o2jam/ojn/docs/`.
+- Added since: one page per format and game, the sample corpus (about 2 000 real charts), the package table, `FORMATS.md` and `tools/gen_formats.py`.
