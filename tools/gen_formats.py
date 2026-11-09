@@ -25,8 +25,8 @@ PRISM_NOTES = {
     "vsrg/clone-hero/ini": "Metadata of a `.chart`/`.mid`",
     "vsrg/o2jam/ojm": "Keysounds of an `.ojn`",
 }
-# FNF engine charts ROX decodes but the scan never lists (it lists V-Slice charts and `.fnfc` only).
-FNF_UNLISTED = {"legacy-json", "psych-json", "kade-json", "troll-json", "maru-json", "nmv-json", "codename-json", "fps-plus-json", "ludum-dare-png"}
+# FNF engine charts ROX decodes but the scan never lists (it lists V-Slice, `.fnfc`, Codename and Ludum Dare charts only).
+FNF_UNLISTED = {"legacy-json", "psych-json", "kade-json", "troll-json", "maru-json", "nmv-json", "fps-plus-json"}
 # Files that come with a chart and are no chart themselves: their samples are not decoded.
 COMPANIONS = {"vsrg/clone-hero/ini", "vsrg/friday-night-funkin/vslice-metadata-json", "vsrg/o2jam/ojm"}
 
@@ -130,7 +130,7 @@ def prism(path, decoded, no_layout):
     if not decoded:
         return "No"
     if path.startswith("vsrg/friday-night-funkin/") and path.rsplit("/", 1)[1] in FNF_UNLISTED:
-        return "Not listed (the scan lists V-Slice only)"
+        return "Not listed (the scan lists V-Slice, Codename and Ludum Dare only)"
     if path.startswith("others/") and not path.endswith("/sus"):
         return "No"
     played = "Plays (12K, as a Project SEKAI chart)" if path == "others/chunithm/sus" else "Plays"
