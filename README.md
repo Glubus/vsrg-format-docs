@@ -137,9 +137,9 @@ Archives that carry charts with their audio and images. No page or sample of the
 | [`.pjsk / .json / .json.gz`](vsrg/project-sekai/pjsk/) PJSK score maker chart | Project SEKAI: Colorful Stage! | vsrg | partial | No | [`vsrg/project-sekai/pjsk`](vsrg/project-sekai/pjsk/) |
 | [`.sus`](vsrg/project-sekai/sus/) Sliding Universal Score (SUS) | Project SEKAI (Seaurchin / Chunithm lineage) | vsrg | partial | Decode only | [`vsrg/project-sekai/sus`](vsrg/project-sekai/sus/) |
 | [`.usc`](vsrg/project-sekai/usc/) Universal Sekai Chart (USC) | Project SEKAI (Sonolus) | vsrg | partial | Decode only | [`vsrg/project-sekai/usc`](vsrg/project-sekai/usc/) |
-| [`.not / .not5`](vsrg/pump-it-up/not/) Pump It Up NOT/NOT5 step file | Pump It Up (Andamiro) | vsrg | partial | No | [`vsrg/pump-it-up/not`](vsrg/pump-it-up/not/) |
-| [`.stx`](vsrg/pump-it-up/stx/) Pump It Up STX step file (STF4) | Pump It Up (Andamiro) | vsrg | partial | No | [`vsrg/pump-it-up/stx`](vsrg/pump-it-up/stx/) |
-| [`.ucs`](vsrg/pump-it-up/ucs/) Pump It Up User Custom Step | Pump It Up | vsrg | partial | No | [`vsrg/pump-it-up/ucs`](vsrg/pump-it-up/ucs/) |
+| [`.not / .not5`](vsrg/pump-it-up/not/) Pump It Up NOT/NOT5 step file | Pump It Up (Andamiro) | vsrg | partial | Decode only (5 or 10 columns) | [`vsrg/pump-it-up/not`](vsrg/pump-it-up/not/) |
+| [`.stx`](vsrg/pump-it-up/stx/) Pump It Up STX step file (STF4) | Pump It Up (Andamiro) | vsrg | partial | Decode only (one chart per mode) | [`vsrg/pump-it-up/stx`](vsrg/pump-it-up/stx/) |
+| [`.ucs`](vsrg/pump-it-up/ucs/) Pump It Up User Custom Step | Pump It Up | vsrg | partial | Decode only | [`vsrg/pump-it-up/ucs`](vsrg/pump-it-up/ucs/) |
 | [`.dance`](vsrg/pydance/dance/) pydance step file | pydance | vsrg | complete | Decode only | [`vsrg/pydance/dance`](vsrg/pydance/dance/) |
 | [`.xml`](vsrg/qq-dance/xml/) QQ Dance mobile chart | QQ Dance mobile (QQ炫舞手游) | vsrg | partial | No | [`vsrg/qq-dance/xml`](vsrg/qq-dance/xml/) |
 | [`.qua`](vsrg/quaver/qua/) Quaver map (YAML) | Quaver | vsrg | complete | Yes (read + write) | [`vsrg/quaver/qua`](vsrg/quaver/qua/) |

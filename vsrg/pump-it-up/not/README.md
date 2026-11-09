@@ -1,7 +1,7 @@
 # Pump It Up NOT / NOT5 step file (`.not`, `.not5`)
 Kind: chart
 
-Doc status: partial (step data and tempo fields decoded; title/other header fields skipped by the only parser) · ROX: no · Category: vsrg · Encoding: binary (little-endian; NOT4 step data XOR-obfuscated)
+Doc status: partial (step data and tempo fields decoded; title/other header fields skipped by the only parser) · ROX: decode only · Category: vsrg · Encoding: binary (little-endian; NOT4 step data XOR-obfuscated)
 
 ## Overview
 
@@ -87,7 +87,7 @@ No sample in the repo. NOT5 header magic: `70 75 6D 70 20 35 2E 30` (`pump 5.0`)
 
 ## ROX support
 
-Not read by ROX. A decoder needs the bunki/tempo logic and the NOT4 XOR step.
+Decode only (`rox::formats::pump::NotDecoder`, `decode_named`): `NOT4` records (line = the record's step index, panels = bits 6-15; light-only records skipped) and `NOT5` arrays with holds. Line `p` of tempo segment `j` at `start[j] + p / (BPM[j] / 6000 × split)` cs; the converter's 16/14 cs adjustments are not reproduced (no corpus file has a bunki). Columns: 10 when the name has `_XD`/`_DB` or a 2P panel is used (observed: the `DOUBLE` folder files and two others use all 10 panels; the converter's name rule alone would read them as single), else 5. All 12 corpus `NOT4` decode. Observed: the line count at 0x84 is 0 in most files, the first `u32` is the record count.
 
 ## Parsers & tools
 

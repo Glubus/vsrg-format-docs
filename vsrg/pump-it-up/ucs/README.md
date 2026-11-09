@@ -1,7 +1,7 @@
 # Pump It Up User Custom Step (`.ucs`)
 Kind: chart
 
-Doc status: partial · ROX: no · Category: vsrg · Encoding: text (ASCII, CRLF)
+Doc status: partial · ROX: decode only · Category: vsrg · Encoding: text (ASCII, CRLF)
 
 ## Overview
 
@@ -102,7 +102,7 @@ A block of 8 rows at 2 rows per beat: tap on the down-left panel at row 0, tap o
 
 ## ROX support
 
-Not read by ROX. `Single` maps to 5 columns (ROX has 5-column pump support); `Double` has no ROX step type.
+Decode only (`rox::formats::pump::UcsDecoder`): 5 columns (`Single`, `S-Performance`) or 10 (`Double`, `D-Performance`); a row lasts `60 / BPM / Split` s from the first block's `Delay` (later delays ignored, as the editors do); `X` tap, `M`…`H`…`W` hold; orphan hold parts and other characters counted. The 8 corpus charts decode.
 
 ## Parsers & tools
 

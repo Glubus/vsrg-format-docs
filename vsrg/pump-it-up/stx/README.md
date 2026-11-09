@@ -1,7 +1,7 @@
 # Pump It Up STX step file (`.stx`, header `STF4`)
 Kind: chart
 
-Doc status: partial (chart layout decoded; a few header/division fields skipped by the only parser) · ROX: no · Category: vsrg · Encoding: binary (little-endian, per-division zlib)
+Doc status: partial (chart layout decoded; a few header/division fields skipped by the only parser) · ROX: decode only · Category: vsrg · Encoding: binary (little-endian, per-division zlib)
 
 ## Overview
 
@@ -100,7 +100,7 @@ No sample in the repo. Header magic bytes: `53 54 46 34` ("STF4").
 
 ## ROX support
 
-Not read by ROX. Needs a new decoder (zlib, per-division tempo, 13-byte lines); the `.sm` loader already handles `pump-single`/`pump-halfdouble`.
+Decode only (`rox::formats::pump::StxDecoder`): one variant per mode with a note (the lightmap is not one), 5 or 10 columns as the table above; divisions read in order as UCS blocks (the first division's delay, signed centiseconds, places the chart); in Division mode the first division of each block. Codes 1 tap, 10/11/12 hold, 2-6 taps (counted). The delay is a signed `i32` (observed `-7`). All 12 corpus files decode (3 to 6 modes each).
 
 ## Parsers & tools
 
