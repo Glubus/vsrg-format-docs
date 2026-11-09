@@ -93,7 +93,7 @@ Archives that carry charts with their audio and images. No page or sample of the
 | [`.ezi`](vsrg/ez2/ezi/) EZ2AC keysound index | EZ2DJ / EZ2AC | vsrg | partial | No | [`vsrg/ez2/ezi`](vsrg/ez2/ezi/) |
 | [`.swf`](vsrg/flash-flash-revolution/swf/) FFR legacy level SWF (beatBox) | Flash Flash Revolution | vsrg | partial | No | [`vsrg/flash-flash-revolution/swf`](vsrg/flash-flash-revolution/swf/) |
 | [`.ffx`](vsrg/fluxis/ffx/) fluXis effects file | fluXis | vsrg | partial | No | [`vsrg/fluxis/ffx`](vsrg/fluxis/ffx/) |
-| [`.fsc`](vsrg/fluxis/fsc/) fluXis map | fluXis | vsrg | partial | No | [`vsrg/fluxis/fsc`](vsrg/fluxis/fsc/) |
+| [`.fsc`](vsrg/fluxis/fsc/) fluXis map | fluXis | vsrg | partial | Decode only (ticks as taps; scroll groups, effects not read) | [`vsrg/fluxis/fsc`](vsrg/fluxis/fsc/) |
 | [`.mid`](vsrg/fortnite-festival/mid/) Fortnite Festival chart MIDI | Fortnite Festival (Jam Tracks) | vsrg | stub | No | [`vsrg/fortnite-festival/mid`](vsrg/fortnite-festival/mid/) |
 | [`.json`](vsrg/friday-night-funkin/codename-json/) FNF Codename Engine chart + meta.json | Friday Night Funkin' (Codename Engine) | vsrg | partial | No | [`vsrg/friday-night-funkin/codename-json`](vsrg/friday-night-funkin/codename-json/) |
 | [`.json`](vsrg/friday-night-funkin/fps-plus-json/) FNF FPS Plus chart + meta/events | Friday Night Funkin' (FPS Plus) | vsrg | stub | No | [`vsrg/friday-night-funkin/fps-plus-json`](vsrg/friday-night-funkin/fps-plus-json/) |

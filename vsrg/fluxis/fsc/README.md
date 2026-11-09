@@ -1,7 +1,7 @@
 # fluXis map (`.fsc`)
 Kind: chart
 
-Doc status: partial · ROX: no · Category: vsrg · Encoding: json
+Doc status: partial · ROX: decode only · Category: vsrg · Encoding: json
 
 ## Overview
 
@@ -123,7 +123,7 @@ Hand-built (illustrative); PascalCase names confirmed on real maps [observed: fl
 
 ## ROX support
 
-Not read by ROX. The model fits closely (key columns, tap/hold/mine = Landmine, BPM + SV in ms). Lossy: Tick notes, scroll groups, dual playfields, effects/camera/playfield events, lane switching.
+Decode only (`rox::formats::fluxis::FscDecoder`, `.fsc`). Columns = the highest `lane`; `type 0` with `holdtime > 0` is a hold, `type 2` a mine, `type 1` (tick) a tap counted in the report. `TimingPoints` give BPM and signature, `ScrollVelocities` the scroll speed (per-group velocities applied to every lane). Not read: hitsounds, scroll groups, visual lanes, dual playfields, the `.ffx` effects and the storyboard. All 9 corpus maps decode (4 to 8 columns).
 
 ## Parsers & tools
 
