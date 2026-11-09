@@ -5,7 +5,7 @@ Doc status: complete · ROX: reads/writes (native) · Category: vsrg (README ind
 
 ## Overview
 
-`.rox` is the compact native file of Rhythm Open Exchange 0.8.1: one chart, one key count, no archive. A 50K-note mania chart is about 133 KB (vs ~3 MB as `.osu`) and decodes in ~21 ms (ROX wiki, v0.7.0 benchmark). Files are produced by `RoxNativeCodec` (`src/formats/rox_native`), the model is in `src/model`. The format is defined by the Rust code (rkyv `Archive` derives) rather than by a written spec; this page derives it from the source.
+Compact native file of Rhythm Open Exchange 0.8.1: one chart, one key count, no archive. A 50K-note mania chart is about 133 KB (vs ~3 MB as `.osu`) and decodes in ~21 ms (ROX wiki, v0.7.0 benchmark). Written by `RoxNativeCodec` (`src/formats/rox_native`); the model is in `src/model`. The Rust code (rkyv `Archive` derives) defines the format; no written spec exists.
 
 ## Container & encoding
 
@@ -15,12 +15,12 @@ offset 4   : N bytes   one zstd frame (level 3 when written by the native encode
 inflated   : an rkyv 0.8 archive of RoxChart (root object at the end of the buffer, as rkyv does)
 ```
 
-- Encode (`encoder.rs`): `chart.validate()` first (trait template), then clone the chart, **delta-encode the note times** (`notes[i].time_us := notes[i].time_us - notes[i-1].time_us`, first note relative to 0), serialise with `rkyv::to_bytes`, compress with zstd level 3 (`COMPRESSION_LEVEL = 3`), prepend the magic.
-- Decode (`decoder.rs`): check length >= 4 and the magic (`Invalid ROX file: missing magic bytes`); refuse a file larger than 100 MiB (`MAX_FILE_SIZE`); inflate the zstd frame into a 16-byte aligned buffer with a hard cap of 64 MiB (`MAX_DECOMPRESSED`, anti zstd-bomb, `InvalidFormat`); validate the archive with `bytecheck` (`rkyv::access`, errors become `RoxError::Deserialize`); check counts (`check_counts`); deserialize to `RoxChart`; delta-decode the notes with wrapping addition; finally `chart.validate()`.
-- No unchecked path (0.8.1 security fix, CHANGELOG: before, `from_bytes_unchecked` was used on unbounded input).
-- WASM builds: `compress` returns the raw rkyv bytes without zstd, and the wasm decoder reads the bytes after the magic as a raw archive. So a `.rox` written by a wasm32 build is NOT a zstd frame and is not readable by a native build, and vice versa [from the `#[cfg(target_arch = "wasm32")]` branches].
-- Byte order / pointer width of the rkyv archive: ROX enables `rkyv` with `default-features = false, features = ["alloc", "bytecheck"]` (Cargo.toml); no explicit endianness or pointer-width feature is selected, so rkyv 0.8's defaults apply [inference: native endianness (little-endian on all supported targets), 32-bit relative pointers]. The authoritative way to read a `.rox` is the Rust crate (or a rkyv-compatible reader built from the same type definitions below).
-- File naming: `*.rox`, one per difficulty; detection by extension (`auto/detect.rs`: `"rox" => Rox`). The magic is also a reliable signature.
+- Encode (`encoder.rs`): `chart.validate()`, clone, **delta-encode the note times** (`notes[i].time_us := notes[i].time_us - notes[i-1].time_us`, first note relative to 0), `rkyv::to_bytes`, zstd level 3 (`COMPRESSION_LEVEL = 3`), prepend the magic.
+- Decode (`decoder.rs`): require length >= 4 and the magic (`Invalid ROX file: missing magic bytes`); refuse files over 100 MiB (`MAX_FILE_SIZE`); inflate into a 16-byte aligned buffer capped at 64 MiB (`MAX_DECOMPRESSED`, anti zstd-bomb, `InvalidFormat`); validate the archive with `bytecheck` (`rkyv::access`, errors become `RoxError::Deserialize`); `check_counts`; deserialize; delta-decode the notes with wrapping addition; `chart.validate()`.
+- No unchecked path (0.8.1 security fix, CHANGELOG: `from_bytes_unchecked` was used on unbounded input before).
+- WASM builds: `compress` returns the raw rkyv bytes without zstd and the decoder reads the bytes after the magic as a raw archive. A `.rox` from a wasm32 build is not a zstd frame and a native build cannot read it, and vice versa [from the `#[cfg(target_arch = "wasm32")]` branches].
+- Byte order / pointer width: `rkyv` is enabled with `default-features = false, features = ["alloc", "bytecheck"]` (Cargo.toml), so rkyv 0.8 defaults apply [inference: native endianness (little-endian on all supported targets), 32-bit relative pointers]. Read a `.rox` with the Rust crate or an rkyv reader built from the types below.
+- Named `*.rox`, one per difficulty; detected by extension (`auto/detect.rs`: `"rox" => Rox`) or by the magic.
 
 ## Structure / metadata
 
@@ -55,7 +55,7 @@ inflated   : an rkyv 0.8 archive of RoxChart (root object at the end of the buff
 | `tags` | `Vec<string>` | empty |
 | `is_coop` | `bool` | false (requires an even `key_count`) |
 
-`key_count` is on `RoxChart`, not on `Metadata`, because it is a gameplay property (wiki).
+`key_count` sits on `RoxChart` because it is a gameplay property (wiki).
 
 `TimingPoint` (`timing.rs`), enum, two variants:
 
@@ -87,7 +87,7 @@ inflated   : an rkyv 0.8 archive of RoxChart (root object at the end of the buff
 
 ## Timing model
 
-Microsecond `i64` timestamps for everything (notes, durations, timing points, offsets). `Bpm` points give the tempo (`bpm: f32`, `signature` for bar lines); `Sv` points scale scroll speed only. Position -> time is trivial (times are absolute); beat positions are derived from the BPM points (`analysis::bpm`). Validation rules (`src/codec/validate.rs`, run by `encode` and `decode`, in this order, first error wins):
+Microsecond `i64` timestamps everywhere. `Bpm` points give tempo (`bpm: f32`, `signature` for bar lines); `Sv` points scale scroll speed only. Times are absolute; beats derive from the BPM points (`analysis::bpm`). Validation (`src/codec/validate.rs`, run by `encode` and `decode`, in this order, first error wins):
 
 1. `key_count != 0`; if `is_coop`, `key_count` must be even.
 2. Timing points sorted by `time_us`; if there are notes: at least one `Bpm` point and the first `Bpm` point must be at or before the first note.
@@ -98,33 +98,33 @@ Microsecond `i64` timestamps for everything (notes, durations, timing points, of
 
 ## Notes
 
-See the model table. Tap/Hold/Burst/Mine map from other formats as in the ROX wiki "Notes": StepMania `1`/`2`,`3`/`4`/`M`; osu!mania circle/hold; Quaver tap/LN (mines are not mapped by the Quaver decoder); FNF notes; osu!taiko don/kat. `RoxChart::remove_unsupported_notes` drops mines and bursts for games that cannot play them.
+Mapping from other formats (ROX wiki "Notes"): StepMania `1`/`2`,`3`/`4`/`M`; osu!mania circle/hold; Quaver tap/LN (the Quaver decoder maps no mines); FNF notes; osu!taiko don/kat. `RoxChart::remove_unsupported_notes` drops mines and bursts for games that cannot play them.
 
 ## Audio & images
 
-Only names: `audio_file`, `background_file` (relative paths); times `audio_offset_us`, `preview_time_us`, `preview_duration_us`. Keysounds: `hitsounds` table + `hitsound_index`.
+Names only: `audio_file`, `background_file` (relative paths); times `audio_offset_us`, `preview_time_us`, `preview_duration_us`. Keysounds: `hitsounds` table + `hitsound_index`.
 
 ## Versions & variants
 
 - `ROX_VERSION = 3`. CHANGELOG 0.7.0: "`.rox` binary format v3: Files encoded with version 2 are rejected with `RoxError::UnsupportedVersion(2)`. The `TimingPoint` enum has a different rkyv binary layout than the old struct."
-- In the 0.8.1 source the `version` byte is stored and `RoxError::UnsupportedVersion` exists, but no code in `src/` compares it on decode [inference from grep: the only uses of `ROX_VERSION` are the constant and `RoxChart::new`]; an old file fails at archive validation instead.
-- Content hashes are NOT stored in the file. `analysis::hash` (feature `analysis`) computes `xxh3_128` over the rkyv bytes of the whole chart (`hash`, 32 hex chars), of the notes only (`notes_hash`), of the timing points only (`timings_hash`), the first 16 hex chars (`short_hash`), and a rate-independent `normalized_notes_hash(chart, target_bpm)` (note times scaled so that the dominant BPM equals `target_bpm`, truncation toward zero). The README says "BLAKE3 content hashing", but the code uses xxHash3-128 (no blake3 dependency in Cargo.toml): the README is outdated [observed discrepancy].
+- In 0.8.1 the `version` byte is stored and `RoxError::UnsupportedVersion` exists, but nothing in `src/` compares it on decode [inference from grep: `ROX_VERSION` is used only as the constant and in `RoxChart::new`]; an old file fails at archive validation.
+- No content hash is stored. `analysis::hash` (feature `analysis`) computes `xxh3_128` over the rkyv bytes of the chart (`hash`, 32 hex chars), the notes (`notes_hash`), the timing points (`timings_hash`), the first 16 hex chars (`short_hash`), and a rate-independent `normalized_notes_hash(chart, target_bpm)` (note times scaled so the dominant BPM equals `target_bpm`, truncating toward zero). The README says "BLAKE3 content hashing" but the code uses xxHash3-128 (no blake3 dependency in Cargo.toml) [observed discrepancy].
 
 ## Quirks & pitfalls
 
-- Stored note times are deltas: a reader that skips `delta_decode_notes` gets wrong times. A writer must sort notes first (validation guarantees it).
-- wasm32 / native files differ (zstd vs raw).
-- `rkyv` archive layout depends on the exact type definitions and rkyv version: field order and enum layout change break files (as the 0.7.0 `TimingPoint` change did).
-- Decoding also runs semantic validation: a structurally fine file with overlapping notes is rejected.
-- `Option<u16>` hitsound index; strings stored as `CompactString` in the archive.
+- Stored note times are deltas; skipping `delta_decode_notes` gives wrong times. Writers must sort notes first.
+- wasm32 and native files differ (raw vs zstd).
+- The archive layout depends on the exact type definitions and rkyv version; field order or enum layout changes break files (as the 0.7.0 `TimingPoint` change did).
+- Decoding runs semantic validation: a structurally fine file with overlapping notes is rejected.
+- Hitsound index is `Option<u16>`; strings are `CompactString` in the archive.
 
 ## Example
 
-Not shown as bytes (binary, generated by the Rust codec). Equivalent logical content for the unit test of the codec (`rox_native/decoder.rs` tests: `RoxChart::new(4)`, one `TimingPoint::bpm(0, 180.0)`, `Note::tap(1_000_000, 0)`, `Note::hold(2_000_000, 500_000, 1)`): see the JSON form in [../jrox/README.md](../jrox/README.md).
+Binary, no bytes shown. The codec's unit test (`rox_native/decoder.rs`: `RoxChart::new(4)`, one `TimingPoint::bpm(0, 180.0)`, `Note::tap(1_000_000, 0)`, `Note::hold(2_000_000, 500_000, 1)`) has a logical equivalent in the JSON form in [../jrox/README.md](../jrox/README.md).
 
 ## ROX support
 
-This is the reference implementation (`RoxNativeCodec`, extensions `["rox"]`): read + write, checked decoding, auto-detected by extension.
+Reference implementation (`RoxNativeCodec`, extensions `["rox"]`): read + write, checked decoding, detected by extension.
 
 ## Parsers & tools
 
@@ -134,9 +134,7 @@ This is the reference implementation (`RoxNativeCodec`, extensions `["rox"]`): r
 
 ## Getting samples
 
-- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): nine real `.rox` files (community 4K maps converted by Prism: chordjack, jack, hold-heavy, many-BPM charts), byte-exact copies. All are 4K; no genuine non-4K file was available (the Prism demo charts are synthetic demo data, not committed).
-- **More**: decode any supported chart and re-encode it. With the crate (`rhythm-open-exchange` 0.8.1, library `rox`): `let chart = auto_decode(path)?; auto_encode(&chart, "output.rox")?;` (the repo's `examples/auto_conversion.rs`). Upstream `Glubus/rhythm-open-exchange` ships no `.rox`.
-- Layout verified on these files [observed in samples/]: the zstd payload is an rkyv root that sits at the end of the buffer (200 bytes for `RoxChart`: `version`, `key_count`, `Metadata` at offset 8, the three vector headers last); notes are 32-byte records with delta-encoded `time_us`.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md) (all 4K; no genuine non-4K file was available). To make more, decode any supported chart and re-encode it: `let chart = auto_decode(path)?; auto_encode(&chart, "output.rox")?;` (crate `rhythm-open-exchange` 0.8.1, library `rox`; the repo's `examples/auto_conversion.rs`). Upstream `Glubus/rhythm-open-exchange` ships no `.rox`. Layout checked on the samples [observed]: the zstd payload is an rkyv root at the end of the buffer (200 bytes for `RoxChart`: `version`, `key_count`, `Metadata` at offset 8, the three vector headers last); notes are 32-byte records with delta-encoded `time_us`.
 
 ## Sources
 

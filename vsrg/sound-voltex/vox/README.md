@@ -4,10 +4,10 @@ Kind: chart
 Doc status: partial · ROX: no · Category: vsrg · Encoding: text
 
 ## Overview
-`.vox` is the chart format of the Konami arcade game SOUND VOLTEX (SDVX), stored inside the game data (one `.vox` per song and difficulty, next to the `.2dx`/`.s3v` audio). It is **proprietary and undocumented by Konami**; the knowledge comes from community reverse engineering: zacharied's original notes, m0seng's rewrite covering v10/v12, and the whiteou7/vox2ksh writeup (v10/v12/v13; it says it was produced with Ghidra decompilation of `soundvoltex.dll` and that part of the analysis was LLM-assisted, so treat details as unverified). Charts are obtained from game data the user already owns; converters (vox2ksh, rmstZ) turn them into [`ksh`](../ksh/README.md). No chart files are included here.
+`.vox` is the chart format of the Konami arcade game SOUND VOLTEX (SDVX), stored in the game data (one `.vox` per song and difficulty, next to the `.2dx`/`.s3v` audio). Konami has not documented it; the knowledge comes from reverse engineering: zacharied's notes, m0seng's rewrite (v10/v12) and the whiteou7/vox2ksh writeup (v10/v12/v13, produced with Ghidra decompilation of `soundvoltex.dll`, partly LLM-assisted, so unverified). Converters (vox2ksh, rmstZ) turn it into [`ksh`](../ksh/README.md).
 
 ## Container & encoding
-Plain text. **UTF-8 or Shift-JIS** (which one is not predictable; Japanese comments break the wrong decoding); rmstZ tries CP932/CP936. Comments start with `//`, even mid-line. Every file starts with the 3-line banner `//====...`, `// SOUND VOLTEX OUTPUT TEXT FILE`, `//====...`. Sections are `#NAME` ... `#END` (extra stray closing tags occur and are ignorable). Fields are tab-separated ("tabsep") or comma(+tab)-separated ("commasep").
+Plain text, UTF-8 or Shift-JIS (unpredictable; Japanese comments break the wrong decoding). rmstZ tries CP932/CP936. Comments start with `//`, even mid-line. Every file starts with the 3-line banner `//====...`, `// SOUND VOLTEX OUTPUT TEXT FILE`, `//====...`. Sections are `#NAME` ... `#END` (stray extra closing tags occur and are ignorable). Fields are tab-separated ("tabsep") or comma(+tab)-separated ("commasep").
 
 ## Structure / metadata
 | Section | Content |
@@ -34,7 +34,7 @@ Plain text. **UTF-8 or Shift-JIS** (which one is not predictable; Japanese comme
 | `#SCRIPT_DEFINE`, `#SCRIPTED_TRACK1..8` | optional per-note scripts (`$targetStep`, `$offsetX`, `$offsetY`) |
 
 ## Timing model
-Timing = `mmm,bb,cc`: measure (1-indexed), beat (1-indexed, counted in units of the **local time signature's denominator**, not quarter notes), cell (0-indexed). Cells per beat = (4 * BEAT RESOLUTION) / denominator (usually 192/den), e.g. 4/4: 48 per beat; 15/16: 12 per beat. No row has `bb` >= numerator or `cc` >= cells per beat (verified by the writeup over its corpus). Lengths (`C1` of tracks) are in cells. BPM changes may happen mid-measure.
+Timing = `mmm,bb,cc`: measure (1-indexed), beat (1-indexed, in units of the local time signature's denominator, not quarter notes), cell (0-indexed). Cells per beat = (4 * BEAT RESOLUTION) / denominator (usually 192/den), e.g. 4/4: 48 per beat; 15/16: 12 per beat. The writeup verified over its corpus that no row has `bb` >= numerator or `cc` >= cells per beat. Lengths (`C1` of tracks) are in cells. BPM changes may happen mid-measure.
 
 ## Notes
 - BT tracks: C0 timing, C1 length in cells (0 = chip), C2 unknown (usually 2 for holds), C3 optional cells-per-chain.
@@ -43,16 +43,19 @@ Timing = `mmm,bb,cc`: measure (1-indexed), beat (1-indexed, counted in units of 
 - v13 shifts roll length to C9 and C8 becomes an unknown 0/1/2 flag.
 
 ## Audio & images
-Not in the chart file; audio is in the game's `.2dx`/`.s3v` containers and referenced by folder (preview offsets are not stored; see vox2ksh notes). Backgrounds via `SpecialN EXBG`.
+Audio is in the game's `.2dx`/`.s3v` containers, referenced by folder (preview offsets are not stored; see vox2ksh notes). Backgrounds via `SpecialN EXBG`.
 
 ## Versions & variants
-Observed format versions 10, 12, 13 (version 10 [observed in samples/2198_practice_btfxcombos_1n.vox and the other 2198-2208 practice charts]: `//====` banner, no `#BEAT RESOLUTION`); the writeup's corpus is 8254 charts, ~148 of them format 13. Versions 9 and earlier: Unknown.
+Observed: 10, 12, 13 (v10 [observed: 2198_practice_btfxcombos_1n.vox and the other 2198-2208 practice charts]: `//====` banner, no `#BEAT RESOLUTION`). The writeup's corpus is 8254 charts, ~148 of them v13. Version 9 and earlier: Unknown.
 
 ## Quirks & pitfalls
-[observed in samples/oracle.golden.vox] The editor export of the sdvxindex.com pipeline starts with the single comment line `// SOUND VOLTEX OUTPUT TEXT FILE` (no `//====` lines), writes `#BEAT RESOLUTION` 240 and tab-separated tables, whereas `ksm2sdvx` output (manifest `ksm2sdvx_*.vox`) has the 3-line banner and comma+tab effect tables (`1,<TAB>90.00,<TAB>...`). Mixed encodings; comments mid-line; beat column units; v13 column shift; lasers are pre-sampled curves (as fine as 1/64 measure), so converting to ksh needs thinning; `#END POSITION` is not the last note.
+- [observed: oracle.golden.vox] The sdvxindex.com editor export starts with the single comment line `// SOUND VOLTEX OUTPUT TEXT FILE` (no `//====` lines), writes `#BEAT RESOLUTION` 240 and tab-separated tables. `ksm2sdvx` output (`ksm2sdvx_*.vox`) has the 3-line banner and comma+tab effect tables (`1,<TAB>90.00,<TAB>...`).
+- Mixed encodings, mid-line comments, beat column units, the v13 column shift.
+- Lasers are pre-sampled curves (as fine as 1/64 measure); converting to ksh needs thinning.
+- `#END POSITION` is not the last note.
 
 ## Example
-Synthetic-chart exports (not Konami data) are in [samples/](samples/SOURCES.md). Illustrative, hand-built from the field tables above (not a real chart): `001,01,00<TAB>0<TAB>2` as a BT-A chip at measure 1 beat 1 cell 0 in `#TRACK3`.
+Hand-built from the field tables (not a real chart): `001,01,00<TAB>0<TAB>2` is a BT-A chip at measure 1 beat 1 cell 0 in `#TRACK3`. Synthetic exports are in [samples/](samples/SOURCES.md).
 
 ## ROX support
 Not read by ROX.
@@ -61,10 +64,10 @@ Not read by ROX.
 vox2ksh (Python): https://github.com/whiteou7/vox2ksh · ksm2sdvx (writes VOX v13): https://github.com/Foahh/ksm2sdvx · VOXL4DD3R (KSH/KSON -> VOX v13): https://github.com/ooznon/VOXL4DD3R · rmstZ (reads/writes vox): https://lrfasd.github.io/rmstZ/ · sdvxeditor PR #3 (vox import): https://github.com/Kizuruki/sdvxeditor/pull/3
 
 ## Getting samples
-- **Committed** ([`samples/`](samples/SOURCES.md), 13+ files): **11 real custom practice charts in the arcade layout, FORMAT VERSION 10** (`<id>_<name>_1n.vox`, IcarusFW/sdvx-practicecharts, charts made in kshootmania and converted with VoxCharger), the v13 `template_v13.vox` of JofoxTheCat/SDVX-Chart-Converter (MIT), three small v13 outputs of `ksm2sdvx`, and VOXL4DD3R exports (`oracle.golden.vox`, `curve-scroll.golden.vox`, and the export of a real fan chart `voxl4dd3r_poly.golden.vox`). No retail Konami chart is included.
-- **How the practice charts were found**: the repository https://github.com/IcarusFW/sdvx-practicecharts holds the charts under `ac_data/omnimix_practice/music/` for use with IFS_LayeredFS on Exceed Gear data (its README); retail charts of other songs only come from the user's own game data.
-- **Real arcade files**: they ship inside the game data of the Konami game, which the user must own. The vox2ksh instructions say to clone the tool "inside the game's `contents/` directory" and its docs refer to song folders such as `data/music/2229_kamui_tjhangneil` (https://github.com/whiteou7/vox2ksh, `README.md`, `specs/audio_engine.md`); [inference] each song folder holds one `.vox` per difficulty next to the `.s3v` audio. Charts of older versions (v10/v12) come from older game builds. Nothing here may be redistributed.
-- **Writers that make `.vox` without Konami data**: https://github.com/ooznon/VOXL4DD3R (KSH/KSON to VOX v13, byte-parity target: the sdvxindex.com editor's Import -> Export VOX), https://github.com/Foahh/ksm2sdvx (KSON to VOX v13), https://github.com/SirusDoma/VoxCharger and pyKSH-exporter (cited by VOXL4DD3R as VOX writer references).
+Committed: see [samples/SOURCES.md](samples/SOURCES.md). No retail Konami chart is included.
+- Practice charts: https://github.com/IcarusFW/sdvx-practicecharts holds them under `ac_data/omnimix_practice/music/` for IFS_LayeredFS on Exceed Gear data (its README).
+- Real arcade files ship in the game data of the Konami game, which the user must own. The vox2ksh instructions say to clone the tool "inside the game's `contents/` directory", and its docs refer to song folders such as `data/music/2229_kamui_tjhangneil` (https://github.com/whiteou7/vox2ksh, `README.md`, `specs/audio_engine.md`); [inference] each folder holds one `.vox` per difficulty next to the `.s3v` audio. Older versions (v10/v12) come from older game builds. Nothing here may be redistributed.
+- Writers that make `.vox` without Konami data: https://github.com/ooznon/VOXL4DD3R (KSH/KSON to VOX v13, byte-parity target: the sdvxindex.com editor's Import -> Export VOX), https://github.com/Foahh/ksm2sdvx (KSON to VOX v13), https://github.com/SirusDoma/VoxCharger and pyKSH-exporter (cited by VOXL4DD3R as VOX writer references).
 
 ## Sources
 https://github.com/whiteou7/vox2ksh (README, specs/vox_format.md, specs/notes.md) · https://lrfasd.github.io/rmstZ/WHATSNEW.html · https://github.com/Foahh/ksm2sdvx · https://github.com/ooznon/VOXL4DD3R

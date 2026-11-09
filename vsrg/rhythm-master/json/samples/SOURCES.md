@@ -1,7 +1,7 @@
 # Samples: Rhythm Master imdjson (`.json`, `BNDQ`)
 
 ## Committed
-All byte-exact from https://github.com/Fsu0413/RMEssentials @ `8945cab60ec58aec2f3bf08966e7c75f2f0d1bca` (author Fsu0413, AGPL-3.0 per repo `LICENSE`), test files written for the RMEssentials unit tests (`src/librmessentials/test/`). Some invalid files hold joke strings as wrong-typed values.
+From https://github.com/Fsu0413/RMEssentials @ `8945cab60ec58aec2f3bf08966e7c75f2f0d1bca` (Fsu0413, AGPL-3.0), unit-test files under `src/librmessentials/test/`.
 
 | File | Origin (upstream path) | Author | Licence | What it exercises |
 |---|---|---|---|---|
@@ -29,13 +29,12 @@ All byte-exact from https://github.com/Fsu0413/RMEssentials @ `8945cab60ec58aec2
 | `rmessentials-fromjson_tracktrackng.json` | `tst_rmechart/fromjson/tracktrackng.json` | Fsu0413 | AGPL-3.0 | invalid: track number has wrong type |
 | `rmessentials-fromjson_versionng.json` | `tst_rmechart/fromjson/versionng.json` | Fsu0413 | AGPL-3.0 | invalid: bad version |
 
-## Real charts downloaded from public sources (snapshots, fetched 2026-11-09)
-
+## Downloaded (fetched 2026-11-09)
 
 | File | Source URL | Date fetched | sha256 (of the downloaded file) | Author | Licence / terms as known | What it exercises / remarks |
 |---|---|---|---|---|---|---|
-| `crunch_5k_hd.imd.json` | https://raw.githubusercontent.com/Fsu0413/RMEssentials/8945cab60ec58aec2f3bf08966e7c75f2f0d1bca/src/librmessentials/test/tst_rmechart/tojson/crunch_5k_hd.imd.json | 2026-11-09 | 08c5ec9a64c9866206b220fff6ce0c69f38ca0d401f4ab559f5ac02c48655670 | Fsu0413/RMEssentials (repository; chart author see file) | Repo AGPL-3.0; chart of unclear origin (not committed) | imdjson 1.2.2 (tempo 135, volume 127, pan 64) converted from crunch_5k_hd.imd |
-| `reai105dudeni_5k_hd.imd.json` | https://raw.githubusercontent.com/Fsu0413/RMEssentials/8945cab60ec58aec2f3bf08966e7c75f2f0d1bca/src/librmessentials/test/tst_rmechart/toimd/reai105dudeni_5k_hd.imd.json | 2026-11-09 | 6bf1c104102d0a729719b8c973b81ada5616310a43484d01b8b4ec4935bc2412 | Fsu0413/RMEssentials (repository; chart author see file) | Repo AGPL-3.0; chart of unclear origin (not committed) | imdjson fixture for the JSON->IMD direction |
-| `friend01_4k_nm.imd.json` | https://raw.githubusercontent.com/Fsu0413/RMEssentials/8945cab60ec58aec2f3bf08966e7c75f2f0d1bca/src/librmessentials/test/tst_rmechart/tojson/friend01_4k_nm.imd.json | 2026-11-09 | ffcf3326ff74a19347b7b624e48d7e0ca134c7d8be63883e6a8d4e9e25bb01ed | Fsu0413 (RMEssentials output of a song chart) | Repo AGPL-3.0; chart of unclear origin | imdjson from an IMD: friend01 is version 1.3.0 tempo 290 (the fiche example); 80-180 KB |
-| `legend_5k_hd.imd.json` | https://raw.githubusercontent.com/Fsu0413/RMEssentials/8945cab60ec58aec2f3bf08966e7c75f2f0d1bca/src/librmessentials/test/tst_rmechart/toimd/legend_5k_hd.imd.json | 2026-11-09 | 9005dd39423d30459472c802678bd02297bb9e0c90585200f0268f76ceeba217 | Fsu0413 (RMEssentials output of a song chart) | Repo AGPL-3.0; chart of unclear origin | imdjson from an IMD: friend01 is version 1.3.0 tempo 290 (the fiche example); 80-180 KB |
-| `caiyilinbeast_6k_hd.imd.json` | https://raw.githubusercontent.com/Fsu0413/RMEssentials/8945cab60ec58aec2f3bf08966e7c75f2f0d1bca/src/librmessentials/test/tst_rmechart/tojson/caiyilinbeast_6k_hd.imd.json | 2026-11-09 | fd41d6dd4e21c90e212cbf23fed6aa38afc1ee46b8d1d9b527ce04f96d1554c2 | Fsu0413 (RMEssentials output of a song chart) | Repo AGPL-3.0; chart of unclear origin | imdjson from an IMD: friend01 is version 1.3.0 tempo 290 (the fiche example); 80-180 KB |
+| `crunch_5k_hd.imd.json` | https://raw.githubusercontent.com/Fsu0413/RMEssentials/8945cab60ec58aec2f3bf08966e7c75f2f0d1bca/src/librmessentials/test/tst_rmechart/tojson/crunch_5k_hd.imd.json | 2026-11-09 | 08c5ec9a64c9866206b220fff6ce0c69f38ca0d401f4ab559f5ac02c48655670 | Fsu0413/RMEssentials  | AGPL-3.0 (repo) | imdjson 1.2.2 (tempo 135, volume 127, pan 64) from crunch_5k_hd.imd |
+| `reai105dudeni_5k_hd.imd.json` | https://raw.githubusercontent.com/Fsu0413/RMEssentials/8945cab60ec58aec2f3bf08966e7c75f2f0d1bca/src/librmessentials/test/tst_rmechart/toimd/reai105dudeni_5k_hd.imd.json | 2026-11-09 | 6bf1c104102d0a729719b8c973b81ada5616310a43484d01b8b4ec4935bc2412 | Fsu0413/RMEssentials  | AGPL-3.0 (repo) | imdjson fixture for the JSON->IMD direction |
+| `friend01_4k_nm.imd.json` | https://raw.githubusercontent.com/Fsu0413/RMEssentials/8945cab60ec58aec2f3bf08966e7c75f2f0d1bca/src/librmessentials/test/tst_rmechart/tojson/friend01_4k_nm.imd.json | 2026-11-09 | ffcf3326ff74a19347b7b624e48d7e0ca134c7d8be63883e6a8d4e9e25bb01ed | Fsu0413 | AGPL-3.0 (repo) | imdjson from an IMD; 80-180 KB |
+| `legend_5k_hd.imd.json` | https://raw.githubusercontent.com/Fsu0413/RMEssentials/8945cab60ec58aec2f3bf08966e7c75f2f0d1bca/src/librmessentials/test/tst_rmechart/toimd/legend_5k_hd.imd.json | 2026-11-09 | 9005dd39423d30459472c802678bd02297bb9e0c90585200f0268f76ceeba217 | Fsu0413 | AGPL-3.0 (repo) | imdjson from an IMD; 80-180 KB |
+| `caiyilinbeast_6k_hd.imd.json` | https://raw.githubusercontent.com/Fsu0413/RMEssentials/8945cab60ec58aec2f3bf08966e7c75f2f0d1bca/src/librmessentials/test/tst_rmechart/tojson/caiyilinbeast_6k_hd.imd.json | 2026-11-09 | fd41d6dd4e21c90e212cbf23fed6aa38afc1ee46b8d1d9b527ce04f96d1554c2 | Fsu0413 | AGPL-3.0 (repo) | imdjson from an IMD; 80-180 KB |

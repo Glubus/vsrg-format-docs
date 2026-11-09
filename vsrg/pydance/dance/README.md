@@ -5,14 +5,14 @@ Doc status: complete · ROX: no · Category: vsrg · Encoding: text (UTF-8, no B
 
 ## Overview
 
-`.dance` is the native step-file format of the open-source dance game pydance. Its goals, from the spec: "easy parsability, easy human readability, brevity, and disambiguity". One `.dance` file holds the song metadata, optional description and lyrics, and **any number of step sections** (one per game mode x difficulty). It is line-oriented (not MSD), has explicit note-length letters instead of implicit slots, and uses explicit commands for BPM changes and stops. Spec: `dance-spec.txt` (version 1.2, 2004-03-01, shipped with pydance 1.0, mirrored in StepMania's `Docs/SimfileFormats/`); implementation: `DanceFile` in pydance's `fileparsers.py`. StepMania does **not** read `.dance`; it only keeps the document.
+`.dance` is the native step-file format of pydance. Spec goals: "easy parsability, easy human readability, brevity, and disambiguity". One file holds song metadata, optional description and lyrics, and any number of step sections (one per game mode x difficulty). Spec: `dance-spec.txt` (version 1.2, 2004-03-01, shipped with pydance 1.0, mirrored in StepMania's `Docs/SimfileFormats/`); implementation: `DanceFile` in `fileparsers.py`. StepMania does not read `.dance`.
 
 ## Container & encoding
 
-- One file per song, named anything with extension `.dance`; the audio, banner, background, cd title are separate files **named explicitly** in the metadata ("songs in this format will NOT have any files autodetected"). Place the `.dance` and its `.ogg` in the same folder.
-- "All text is encoded in UTF-8. Byte-order marking is not allowed." Strings and file names are case-sensitive; the directory separator is `/` on every platform. Newlines `\n`, `\r\n` or `\r`.
-- Line oriented: `#` as the first character of a (stripped) line is a comment; blank lines ignored; the keyword `end` on a line ends the current section.
-- Designed to be parsed by a table-driven DFA ("as in pydance's fileparsers.py"): states `WAITING, METADATA, DESCRIPTION, LYRICS, BACKGROUND, GAMETYPE, STEPS`.
+- One file per song, any name with extension `.dance`. Audio, banner, background and cd title are separate files named explicitly in the metadata ("songs in this format will NOT have any files autodetected"); keep the `.ogg` in the same folder.
+- "All text is encoded in UTF-8. Byte-order marking is not allowed." Strings and file names are case-sensitive; the directory separator is `/`. Newlines `\n`, `\r\n` or `\r`.
+- Line oriented: `#` as the first character of a stripped line is a comment; blank lines are ignored; the keyword `end` ends the current section.
+- Parsed by a table-driven DFA ("as in pydance's fileparsers.py"): states `WAITING, METADATA, DESCRIPTION, LYRICS, BACKGROUND, GAMETYPE, STEPS`.
 
 ## Structure / metadata
 
@@ -65,7 +65,7 @@ Standard game modes: `SINGLE`, `VERSUS` (two players, same steps), `COUPLE` (two
 ## Timing model
 
 - `bpm` at the start; `B <float>` changes the BPM at that point. Time passes only through note lines, `W`, `S` and `D`.
-- **Note-length letters** set how long the line lasts. The base `q` = the quarter note = **one beat**:
+- Note-length letters set how long the line lasts. The base `q` = the quarter note = **one beat**:
 
 | Letter | Note | Beats | pydance internal value (`DanceFile.BEATS`, 4 per beat) |
 |---|---|---|---|
@@ -82,7 +82,7 @@ Standard game modes: `SINGLE`, `VERSUS` (two players, same steps), `COUPLE` (two
 | `n` | 1/192 | 1/48 | 1/12 |
 
   (`x` 64th and the 1/192 `n` were added in spec 1.1, 2003-06-03, with `u` the 48th). Beat = cumulative sum of these durations; the line **plays at the position before** its own duration is added [inference from the "wait/step" semantics: the line's note comes first, then the time advances; the spec says "the 'base' is q, the quarter note, which represents one beat"].
-- **Commands** (uppercase single letters): `B <Float>` change BPM; `R` "Ready? Go!" graphics/sound; `W <Float>` wait this many seconds before the next event (audio time passes, notes do not); `S <Float>` stop scrolling for this many seconds before the next event; `D <Float>` the same as a sequence of 0-note strings for this many beats; `L <PosInt> <LongString>` display lyrics at this point (the EBNF writes `L <Float> <PosInt> <LongString>`, the command list and the implementation use `L <channel> <text>`: an inconsistency in the spec).
+- Commands (uppercase single letters): `B <Float>` change BPM; `R` "Ready? Go!" graphics/sound; `W <Float>` wait this many seconds before the next event (audio time passes, notes do not); `S <Float>` stop scrolling for this many seconds before the next event; `D <Float>` the same as a sequence of 0-note strings for this many beats; `L <PosInt> <LongString>` display lyrics at this point (the EBNF writes `L <Float> <PosInt> <LongString>`, the command list and the implementation use `L <channel> <text>`: an inconsistency in the spec).
 - `gap` positions beat 0 in the audio; with `startat` the audio is trimmed first and gap/steps are relative to `startat`.
 - Conversion of a position to time: integrate beats at the current BPM, add `S`/`W` seconds, add `gap/1000`.
 
@@ -108,20 +108,19 @@ Unknown note types are treated as `0` ("treat unknown note types as 0s, and hope
 
 ## Audio & images
 
-Audio: `filename` (+ optional `startat/endat`, `md5sum`). Images: `background`, `banner`, `cdtitle`; `movie` for a background video. Everything must be explicit paths (case-sensitive). No keysounds.
+Audio: `filename` (+ optional `startat/endat`, `md5sum`). Images: `background`, `banner`, `cdtitle`; `movie` for a background video. All explicit, case-sensitive paths. No keysounds.
 
 ## Versions & variants
 
-Spec versions: 1.0 (2003-06-01: "No more I command"), 1.1 (2003-06-03: 192nd `n`, 48th `u`), 1.2 (2004-03-01 with pydance 1.0: 9-panel mode); intermediate changes: 2003-06-26 BACKGROUNDS section note, 2003-06-27 EBNF for COUPLE-style modes, 2003-07-30 gap example, 2003-08-15 note types and VERSUS mode, 2003-12-22 `cdtitle`, 2003-12-23 3-panel modes and `bpmdisplay`. The earlier pyDDR **`.step`** format is the format this one generalizes ("The dance format is basically the step format, but generalized, smaller, and more readable. A script to convert .step files to .dance files is forthcoming") and is documented only as a stub in [legacy-dance-formats/step](../../legacy-dance-formats/step/README.md).
+Spec versions: 1.0 (2003-06-01: "No more I command"), 1.1 (2003-06-03: 192nd `n`, 48th `u`), 1.2 (2004-03-01 with pydance 1.0: 9-panel mode). Intermediate: 2003-06-26 BACKGROUNDS section note, 2003-06-27 EBNF for COUPLE-style modes, 2003-07-30 gap example, 2003-08-15 note types and VERSUS mode, 2003-12-22 `cdtitle`, 2003-12-23 3-panel modes and `bpmdisplay`. The earlier pyDDR `.step` format is its ancestor ("The dance format is basically the step format, but generalized, smaller, and more readable. A script to convert .step files to .dance files is forthcoming"); stub in [legacy-dance-formats/step](../../legacy-dance-formats/step/README.md).
 
 ## Quirks & pitfalls
 
-- Holds are `3 ... 1`, so a lone `3` is a hold start with no explicit tail character; a parser must close it when it sees the next `1`/`3` in the column [semantics from the spec text, not verified in the engine].
-- `gap` is a signed millisecond offset with the same orientation as StepMania `#OFFSET` expressed in ms (first beat at 0.3 s => `gap -300`) [inference]; it is the opposite sign of DWI `#GAP`.
-- Lyrics ignore `gap`.
-- There is no per-chart BPM: BPM changes are part of the step stream of each section.
+- Holds are `3 ... 1`: a lone `3` starts a hold and the next `1`/`3` in that column closes it [semantics from the spec text, not verified in the engine].
+- `gap` is a signed ms offset oriented like StepMania `#OFFSET` (first beat at 0.3 s => `gap -300`) [inference] and opposite to DWI `#GAP`. Lyrics ignore `gap`.
+- No per-chart BPM: BPM changes are part of each section's step stream.
 - `L` argument order inconsistency (above).
-- The format defines "secret" notes (`5`, `7`) that no other format has.
+- "Secret" notes (`5`, `7`) exist in no other format.
 
 ## Example
 
@@ -150,7 +149,7 @@ end
 
 ## ROX support
 
-Not read by ROX. A decoder would need: beat accumulation from letters, `B/S/W/D` commands, `gap` baked into times, game-mode -> key count (3/4/5/6/8/9 and doubles), and a hold rule for `3`.
+Not read by ROX. A decoder needs beat accumulation from letters, `B/S/W/D` commands, `gap` baked into times, game-mode to key count (3/4/5/6/8/9 and doubles) and a hold rule for `3`.
 
 ## Parsers & tools
 
@@ -159,9 +158,9 @@ Not read by ROX. A decoder would need: beat accumulation from letters, `B/S/W/D`
 
 ## Getting samples
 
-Committed in [`samples/`](samples/SOURCES.md): **6 REAL `.dance` files**: the three free songs of the pydance download page (`forkbomb`, `6jan`, `synrg`; pydance MIT licence, Debian says it covers the music) and three older versions of the same songs from Wayback captures of 2003-2004 (`wayback2003_6jan.dance` 9,676 bytes, `wayback2004_forkbomb.dance`, `wayback2003_synrg.dance` 19,951 bytes: more charts and a `credits` key). Plus see [`../../legacy-dance-formats/step`](../../legacy-dance-formats/step/samples/SOURCES.md) for two real pyDDR `.step` files.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md); two real pyDDR `.step` files are in [`../../legacy-dance-formats/step`](../../legacy-dance-formats/step/samples/SOURCES.md).
 
-More: the pydance source mirror ([mbenkmann/pydance](https://github.com/mbenkmann/pydance)) and the icculus tarballs 0.9.0-1.1.0 ship no songs; Wayback has no other `.dance` URL under icculus.org/pyddr (checked with the CDX index 2026-11-09); `pyDance-0.8.4.dmg`/`pyDance-0.9.0.dmg`/`1.0.1.dmg` captures exist (Mac images, not opened); the spec is `docs/dance-spec.txt`.
+More: the pydance source mirror ([mbenkmann/pydance](https://github.com/mbenkmann/pydance)) and the icculus tarballs 0.9.0-1.1.0 ship no songs. Wayback has no other `.dance` URL under icculus.org/pyddr (CDX index checked 2026-11-09). `pyDance-0.8.4.dmg`/`pyDance-0.9.0.dmg`/`1.0.1.dmg` captures exist (Mac images, not opened). The spec is `docs/dance-spec.txt`.
 
 ## Sources
 

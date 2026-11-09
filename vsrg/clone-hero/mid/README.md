@@ -4,19 +4,17 @@ Kind: chart
 Doc status: partial · ROX: decode only · Category: vsrg · Encoding: binary
 
 ## Overview
-Harmonix designed Guitar Hero 1/2 and Rock Band to store charts as Standard MIDI Files; early fan games (FoFiX / Frets on Fire, Phase Shift) adopted that layout, and Rock Band Network (user-authored RB DLC) made it the most documented chart format. Modern `.mid` charts follow the Rock Band layout plus community extensions from Phase Shift (SysEx modifiers, Real Drums, dance track) and Clone Hero (note-based tap/open markers, 6-fret). Charts are read by Clone Hero, YARG, Phase Shift, FoFiX, Rock Band 3 (with its own tooling) and written by REAPER/Onyx/EoF/Moonscraper. This page documents the instrument tracks that map to lanes (5-fret, 6-fret, drums, dance), and lists the others; the full per-track tables are in TheNathannator's docs (see Sources). The Pro Guitar/Pro Keys/vocals tracks are summarized only.
+Standard MIDI chart layout of Guitar Hero 1/2 and Rock Band, adopted by FoFiX / Frets on Fire and Phase Shift. Modern `.mid` charts follow the Rock Band layout plus Phase Shift extensions (SysEx modifiers, Real Drums, dance track) and Clone Hero extensions (note-based tap/open markers, 6-fret). Read by Clone Hero, YARG, Phase Shift, FoFiX, Rock Band 3; written by REAPER/Onyx/EoF/Moonscraper. This page covers the lane-mapped tracks (5-fret, 6-fret, drums, dance); the full per-track tables are in TheNathannator's docs (Sources). Pro Guitar/Pro Keys/vocals are summarized only.
 
 ## Packaged in
-
-- Shipped in: `.sng` (Clone Hero / YARG single-file package: a masked container with the song folder, i.e. chart, audio, images, video, plus a metadata key/value table).
-- Shipped in: `.yargsong` (YARG single-file song package from the YARC Launcher; internal layout Unknown).
+- `.sng` (Clone Hero / YARG single-file package: masked container with the song folder plus a metadata key/value table).
+- `.yargsong` (YARG single-file package from the YARC Launcher; internal layout Unknown).
 
 ## Container & encoding
-- Standard MIDI File format type 1 (multi-track), **ticks per quarter note** resolution (480 is common [inference]; the docs only state "ticks-per-quarter"). Format 0/2 and SMPTE division are not supported.
-- Big-endian numbers; variable-length quantities up to 4 bytes; chunks `MThd` (length 6) and `MTrk`; running status (resets after SysEx/meta events). Data bytes above 0x7F occur in the wild in SysEx (0xFF).
-- Folder layout: `notes.mid` + `song.ini` (metadata) + audio files. No metadata or audio file names inside the `.mid`.
-- Tracks are identified by the **track name meta event** (first event, FF 03). Unknown tracks are ignored. Instrument tracks are `PART <NAME>`.
-- Notable violations: running status not reset after SysEx/meta events (breaks NAudio-like parsers); 0xFF bytes inside SysEx.
+- Standard MIDI File format type 1, ticks-per-quarter resolution (480 common [inference]). Format 0/2 and SMPTE division are unsupported.
+- Big-endian numbers; variable-length quantities up to 4 bytes; chunks `MThd` (length 6) and `MTrk`; running status. Charts in the wild violate the spec: running status is not reset after SysEx/meta events (breaks NAudio-like parsers) and SysEx contains data bytes above 0x7F (0xFF).
+- Folder layout: `notes.mid` + `song.ini` (metadata) + audio files. The `.mid` names no metadata or audio.
+- Tracks are identified by the track name meta event (first event, FF 03); unknown tracks are ignored. Instrument tracks are `PART <NAME>`.
 
 ## Structure / metadata
 Tracks (names exact):
@@ -37,7 +35,7 @@ Tracks (names exact):
 `song.ini` carries title/artist and options that change parsing (`pro_drums`, `five_lane_drums`, `hopo_frequency`, `sustain_cutoff_threshold`, `multiplier_note`/`star_power_note`, `sysex_*` flags for Phase Shift): see [ini](../ini/README.md).
 
 ## Timing model
-Delta times in ticks; tempo from FF 51 events (microseconds per quarter note) in the first track; time signatures from FF 58. `seconds = sum(dTicks_i / TPQN * usPerQuarter_i / 1e6)`. Chart delay is `song.ini` `delay` (ms, not recommended). Hand positions etc. use the same ticks.
+Delta ticks; tempo from FF 51 (microseconds per quarter note) in the first track, time signatures from FF 58. `seconds = sum(dTicks_i / TPQN * usPerQuarter_i / 1e6)`. Chart delay is `song.ini` `delay` (ms, not recommended).
 
 ## Notes
 Difficulties are octaves in one track. Common ranges (MIDI note numbers): Expert 96-107, Hard 84-95, Medium 72-83, Easy 60-71; notes 108-127 (and some below the ranges) hold markers/animation.
@@ -71,30 +69,34 @@ Four lanes per difficulty: Beginner 48-51, Easy 60-63, Medium 72-75, Hard 84-87,
 Vocals (pitch notes 36-84, percussion 96/97, phrase markers 105/106, star power 116), Pro Guitar (strings per lane, fret in velocity, channel-based modifiers), Pro Keys (notes 48-72 + range shifts): see the source docs.
 
 ## Audio & images
-Not referenced from the `.mid`; the game looks for reserved file names (`song`, `guitar`, `rhythm`, `bass`, `keys`, `drums`, `drums_1..4`, `vocals`, `crowd`, `preview`) in the folder and artwork/video via `song.ini`.
+Not referenced from the `.mid`: the game looks for reserved names (`song`, `guitar`, `rhythm`, `bass`, `keys`, `drums`, `drums_1..4`, `vocals`, `crowd`, `preview`) in the folder; artwork/video via `song.ini`.
 
 ## Versions & variants
-- Guitar Hero 1/2 MIDI (`T1 GEMS`, `ANIM`, face-off phrases, different notes/markers; GH1/2 star power on note 103) vs Rock Band layout (what modern charts use).
-- Rock Band Network / C3 (RB3 authoring conventions).
-- Phase Shift extensions (SysEx, Real Drums, dance), Clone Hero extensions (tap/open note markers 104, GHL tracks), Editor on Fire (EoF) additions.
-- Real Rock Band files inside CON/PKG archives are the same MIDI plus a `songs.dta` database ([dta](../../rock-band/dta/README.md)).
+- GH1/2 MIDI (`T1 GEMS`, `ANIM`, face-off phrases, star power on note 103) vs the Rock Band layout.
+- Rock Band Network / C3 (RB3 authoring conventions); Phase Shift (SysEx, Real Drums, dance); Clone Hero (tap/open markers 104, GHL tracks); Editor on Fire.
+- Real Rock Band files in CON/PKG archives are the same MIDI plus a `songs.dta` ([dta](../../rock-band/dta/README.md)).
 
 ## Quirks & pitfalls
-Open note via note 95/83/... is disabled unless `[ENHANCED_OPENS]`; 4-lane cymbal/tom default is inverted vs `.chart`; tempo map must be track 0; velocity 41-50 affects Hard for trills/rolls; HOPO threshold formula differs from `.chart`; note-off/zero-velocity note-on equivalence; SysEx modifiers have inconsistent support; chord snapping within 10 ticks.
+Open note (95/83/...) is disabled without `[ENHANCED_OPENS]`; 4-lane cymbal/tom default is inverted vs `.chart`; tempo map must be track 0; velocity 41-50 affects Hard trills/rolls; HOPO threshold formula differs from `.chart`; zero-velocity Note On equals Note Off; SysEx modifier support is inconsistent; chord snapping within 10 ticks.
 
 ## Example
-Not a real file (binary). Illustrative layout from the tables above, hand-built: a `PART GUITAR` track with Note On 96 (Expert Green) at tick 0, Note Off at tick 240 = an Expert green sustain of 240 ticks; Note On 96 + Note On 97 on the same tick = a Green+Red chord.
+Binary; hand-built from the tables above: in a `PART GUITAR` track, Note On 96 (Expert Green) at tick 0 and Note Off at tick 240 = a 240-tick Expert green sustain; Note On 96 + 97 on one tick = Green+Red chord.
 
 ## ROX support
-Read by ROX since Prism's addition of `rox::formats::clone_hero::MidDecoder` (decode only), ONLY for a file NAMED `notes.mid` (any case; `.mid` is the extension of every MIDI file, so any other `.mid` is not a chart, `auto_decode*` refuse it). Own Standard MIDI File reader (`smf.rs`: format 0 and 1, ticks per quarter note; format 2 and SMPTE are errors; running status not reset by SysEx/meta events, which charts in the wild commit; hard limits on size, chunks, events and notes). The FIRST track gives the tempo map and the time signatures (in a format 0 file the single track is both: an extension, `YARG.Core` skips instruments there); tracks `PART GUITAR`, `PART GUITAR COOP`, `PART BASS`, `PART RHYTHM`, `PART KEYS` are 5-column variants at Expert (96-100), Hard (84-88), Medium (72-76), Easy (60-64), ordered by instrument then difficulty (`variants`, `decode_variant`, `decode_with_ini`, `decode_with_audio_plan`, `auto_decode*` with the `song.ini` of the folder; the `.sng` may hold a `notes.mid`, preferred to `notes.chart`). Drums, vocals, harmonies, GHL, `PART REAL_*`, `PART DANCE` and `T1 GEMS` are listed in `ChartReport::unsupported_tracks`, not read. Forced HOPO/strum (101/102, 89/90, 77/78, 65/66), the tap marker 104 and the tap SysEx are counted and ignored; open notes (the keys 95/83/71/59 after `[ENHANCED_OPENS]`, and notes inside an open SysEx phrase) have no column and are dropped and counted; star power, solos, versus, BRE, tremolo/trill markers, HOPO threshold and chord snapping are not used. A note longer than 0 ticks is a hold unless shorter than a third of the resolution (`resolution / 3`, integer division, as `YARG.Core`; a `song.ini` `sustain_cutoff_threshold` replaces it, 0 read as 1); holds stop at the next note of their fret. `song.ini` `delay` shifts the times (no `Offset` in a `.mid`); title, artist, charter and `diff_*` come from the `song.ini` only. No real `.mid` is used by the tests (community charts have no licence): every file is built byte by byte. Decisions: `rhythm-open-exchange/src/formats/clone_hero/mod.rs`.
+Read since Prism's addition of `rox::formats::clone_hero::MidDecoder` (decode only), only for a file named `notes.mid` (any case; other `.mid` files are not charts, `auto_decode*` refuse them). Own SMF reader (`smf.rs`): format 0 and 1; format 2 and SMPTE are errors; tolerates running status not reset by SysEx/meta; hard limits on size, chunks, events, notes. The first track is the tempo map and time signatures (a format 0 file's single track is both: an extension, `YARG.Core` skips instruments there).
+
+- Variants: `PART GUITAR`, `PART GUITAR COOP`, `PART BASS`, `PART RHYTHM`, `PART KEYS` at Expert (96-100), Hard (84-88), Medium (72-76), Easy (60-64), ordered by instrument then difficulty (`variants`, `decode_variant`, `decode_with_ini`, `decode_with_audio_plan`, `auto_decode*` with the folder's `song.ini`; a `.sng` `notes.mid` is preferred to `notes.chart`).
+- Not read, listed in `ChartReport::unsupported_tracks`: drums, vocals, harmonies, GHL, `PART REAL_*`, `PART DANCE`, `T1 GEMS`.
+- Counted and ignored: forced HOPO/strum (101/102, 89/90, 77/78, 65/66), tap marker 104, tap SysEx. Open notes (keys 95/83/71/59 after `[ENHANCED_OPENS]`, notes inside an open SysEx phrase) have no column: dropped and counted. Not used: star power, solos, versus, BRE, tremolo/trill, HOPO threshold, chord snapping.
+- A note longer than 0 ticks is a hold unless shorter than `resolution / 3` (integer division, as `YARG.Core`; `song.ini` `sustain_cutoff_threshold` replaces it, 0 read as 1); holds stop at the next note of their fret.
+- `song.ini` `delay` shifts the times (a `.mid` has no `Offset`); title, artist, charter and `diff_*` come only from `song.ini`.
+- No real `.mid` is used by the tests (community charts have no licence): every test file is built byte by byte. Decisions: `rhythm-open-exchange/src/formats/clone_hero/mod.rs`.
 
 ## Parsers & tools
 YARG.Core (C#): https://github.com/YARC-Official/YARG.Core · Onyx (Haskell): https://github.com/mtolly/onyx · Moonscraper (C#, reads/writes MIDI): https://github.com/FireFox2000000/Moonscraper-Chart-Editor · REAPER + RBN tooling; Editor on Fire; FoFiX (Python): https://github.com/fofix/fofix · Phase Shift (closed).
 
 ## Getting samples
-- Committed in [`samples/`](samples/SOURCES.md): 17 real files and 1 synthetic. Real: nine small Clone Hero charts by TheGreatNi (`thegreatni_*_notes.mid`, 6-12 KB up to 138 KB, CC BY 4.0, from https://archive.org/details/YoungDublinersAshleyFalls.7z), YARG.Core `yarg-core_test.mid` (11 tracks incl. GHL and vocals) and `drawntotheflame.mid` (18 tracks incl. Pro Keys E/M/H/X, HARM1-3, VENUE, BEAT), two Onyx DIY-folder transcriptions (`onyx_btbam-*`, Pro Keys/harmonies; the larger is ~1.3 MB, 960 tpqn), and three `notes.mid` extracted from Chorus Encore `.sng` downloads (a Harmonix RB chart, a 6-fret GHL layout, a FreeStyleGames GHL chart; containers and audio are not stored). The synthetic `synthetic-notes.mid` covers tap SysEx, `[ENHANCED_OPENS]`, tom markers.
-- Not obtained: Pro Guitar/Pro Bass tracks.
-- More: Chorus Encore (`https://api.enchor.us/search`, `https://files.enchor.us/<md5>.sng`), Onyx (https://github.com/mtolly/onyx; many community transcriptions with mixed licences), RhythmVerse, extracted Rock Band CON/PKG folders (https://wiki.yarg.in/wiki/Songs).
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). Not obtained: Pro Guitar/Pro Bass tracks. More: Chorus Encore (`https://api.enchor.us/search`, `https://files.enchor.us/<md5>.sng`), Onyx (https://github.com/mtolly/onyx; community transcriptions, mixed licences), RhythmVerse, extracted Rock Band CON/PKG folders (https://wiki.yarg.in/wiki/Songs).
 
 ## Sources
 - https://thenathannator.github.io/GuitarGame_ChartFormats/ (mid-format: Format-Overview, Technical-Details, Tracks/*; Implementation-Specific/Rock-Band, Guitar-Hero-1-and-2, Phase-Shift)

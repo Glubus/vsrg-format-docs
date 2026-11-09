@@ -4,10 +4,10 @@ Kind: metadata
 Doc status: complete · ROX: decode only · Category: vsrg · Encoding: text
 
 ## Overview
-`song.ini` is the metadata companion file of `notes.mid` and (nowadays) `notes.chart` charts, used by Clone Hero, YARG, Phase Shift, FoFiX / Frets on Fire and Rock Band-style custom song tools. It does not contain notes; some tags change how the chart is parsed. Metadata here overrides the `[Song]` section of a `.chart`.
+`song.ini` is the metadata companion of `notes.mid` and `notes.chart`, used by Clone Hero, YARG, Phase Shift, FoFiX / Frets on Fire and Rock Band-style custom song tools. It holds no notes, but some tags change chart parsing. Its metadata overrides the `.chart` `[Song]` section.
 
 ## Container & encoding
-INI text, a single `[song]` (or `[Song]`) section header, then `key = value` lines. Keys can be in any order and with inconsistent capitalization; pad the `=` with spaces (recommended; some programs fail without). Comments with `;` or `#` (usually full lines only; support varies). Values may contain formatting tags such as `<color=#00FF00>` that should be stripped if unused. Encoding is not specified in the docs. The `.sng` container converts the tags into its metadata pairs.
+INI text: one `[song]` (or `[Song]`) header, then `key = value` lines in any order with inconsistent key case. Pad `=` with spaces (some programs fail without). Comments `;` or `#` (usually whole lines; support varies). Values may hold formatting tags such as `<color=#00FF00>`; strip them if unused. Encoding unspecified. `.sng` converts the tags into its metadata pairs.
 
 ## Structure / metadata
 Value types: number (-1 can mean unset), float, string (no quotes unless stated), boolean (`True/False`, `true/false`, `0/1`), file name, MIDI note, MIDI velocity.
@@ -34,19 +34,19 @@ Game/tool specific:
 - FoFiX: `cassettecolor`, `tags` (only `cover`), `hopofreq` (0-5; 0 = 1/24 ... 5+ = 1/4 [reader's interpretation]), `early_hit_window_size` (`none|half|full`), `pro_drum`, `tutorial`, `boss_battle`, `scores`, `scores_ext`, `count`, career tags `unlock_id`, `unlock_require`, `unlock_text`, `unlock_completed`.
 
 ## Timing model
-Not applicable except `delay`, `preview_*`, `video_start_time` in ms.
+Only `delay`, `preview_*` and `video_start_time` (ms).
 
 ## Notes
-Not applicable.
+Unknown.
 
 ## Audio & images
-Audio comes from reserved file names beside the chart (see the chart/mid docs); `background`, `cover`, `icon`, `video` name image/video files in the folder.
+Audio uses reserved file names beside the chart (see chart/mid docs). `background`, `cover`, `icon`, `video` name files in the folder.
 
 ## Versions & variants
-Phase Shift, FoFiX and Clone Hero each added tags; YARG documents its own song.ini page (https://wiki.yarg.in/wiki/Song.ini).
+Phase Shift, FoFiX and Clone Hero each added tags. YARG: https://wiki.yarg.in/wiki/Song.ini
 
 ## Quirks & pitfalls
-Inconsistent case; `year` often `", 2002"`; `frets` vs `charter`; `delay` changes timing without changing the chart hash; `end_events` tag; tags in a `[Song]` header that is lower-case.
+Inconsistent key case; `year` often `", 2002"`; `frets` duplicates `charter`; `delay` changes timing without changing the chart hash; `[Song]` header may be lower case.
 
 ## Example
 ```
@@ -58,17 +58,16 @@ diff_guitar = 4
 pro_drums = True
 preview_start_time = 45000
 ```
-(Illustrative, hand-built from the tag tables above.)
+(Hand-built from the tag tables above.)
 
 ## ROX support
-Read by ROX (`SongIni::parse`, `rox::formats::clone_hero`; decode only): `name`, `artist`, `album`, `genre`, `year`, `charter`, `delay`, `song_length`, `preview_start_time`, `preview_end_time`, `sustain_cutoff_threshold`, `background` and the `diff_*` tags; UTF-8 or Latin-1, `[song]` matched without regard to case, whole-line `;`/`#` comments, formatting tags removed. The metadata takes precedence over `[Song]`, `delay` over `Offset`; the other tags are ignored.
+Read (`SongIni::parse`, `rox::formats::clone_hero`; decode only): `name`, `artist`, `album`, `genre`, `year`, `charter`, `delay`, `song_length`, `preview_start_time`, `preview_end_time`, `sustain_cutoff_threshold`, `background`, `diff_*`. UTF-8 or Latin-1, `[song]` case-insensitive, whole-line `;`/`#` comments, formatting tags removed. Metadata beats `[Song]`, `delay` beats `Offset`. Other tags are ignored.
 
 ## Parsers & tools
 YARG.Core (C#): https://github.com/YARC-Official/YARG.Core · FoFiX (Python) · Moonscraper.
 
 ## Getting samples
-- Committed in [`samples/`](samples/SOURCES.md): 15 real `song.ini` files (6 from Stickheadz32's GitHub chart repository, each beside a committed `.chart`; 9 by TheGreatNi, CC BY 4.0, from https://archive.org/details/YoungDublinersAshleyFalls.7z, each beside a committed `notes.mid`) and 3 synthetic CC0 files (full tag range, CRLF/unspaced `key=value` with comments and `five_lane_drums`, `.mid` parser tags `delay`/`multiplier_note`/`sysex_*`).
-- More: every Clone Hero/YARG song folder carries a `song.ini`; Chorus Encore stores the same keys as `.sng` metadata (see sng). Tag lists: https://github.com/TheNathannator/GuitarGame_ChartFormats (`docs/Chart-File-Formats/song-ini/Standard-Tags.md`, Clone Hero and Phase Shift tag pages, CC0).
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). More: every Clone Hero/YARG song folder has a `song.ini`; Chorus Encore stores the same keys as `.sng` metadata (see sng). Tag lists: https://github.com/TheNathannator/GuitarGame_ChartFormats (`docs/Chart-File-Formats/song-ini/Standard-Tags.md`, Clone Hero and Phase Shift tag pages, CC0).
 
 ## Sources
 https://thenathannator.github.io/GuitarGame_ChartFormats/ (song-ini/Format-Overview, Standard-Tags; Implementation-Specific/Clone-Hero, Phase-Shift, Frets-on-Fire-X song-ini tags) · https://wiki.yarg.in/wiki/Song.ini

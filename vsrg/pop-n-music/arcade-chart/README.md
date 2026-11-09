@@ -3,18 +3,16 @@ Kind: chart
 
 Doc status: stub · ROX: no · Category: vsrg · Encoding: binary
 
-Official pop'n music arcade chart data. Only one public reader was found: `popnchart.js` in Gi-z/popntowav (a tool that renders pop'n music IFS/chart files to WAV). No specification exists; this page records what that code does.
-
 ## Overview
+Arcade pop'n music chart data. The only public reader is `popnchart.js` in Gi-z/popntowav (renders IFS/chart files to WAV); no specification exists.
 
-- Charts of the arcade game are stored in Konami `.ifs` archives together with `.2dx` keysound containers (README of popntowav: "relies on IFSTools (mon/ifstools)"). The chart file name/extension is not stated in the sources read; the constructor accepts any filename. [Unknown: file name pattern, difficulty/slot layout.]
-- The reader handles one chart per file and has no directory: it reads events from offset 0 to end of file. A possible relation to the IIDX `.1` events ([`../../beatmania-iidx/1`](../../beatmania-iidx/1/README.md)) was not checked [inference: both start with a little-endian int32 offset].
+- Charts sit in Konami `.ifs` archives with `.2dx` keysound containers (popntowav README: "relies on IFSTools (mon/ifstools)"). The constructor accepts any filename. [Unknown: file name pattern, difficulty/slot layout.]
+- One chart per file, no directory: events run from offset 0 to end of file. A relation to the IIDX `.1` events ([`../../beatmania-iidx/1`](../../beatmania-iidx/1/README.md)) is unchecked [inference: both start with a little-endian int32 offset].
 
 ## Container & encoding
+Binary little-endian. Events are read sequentially to EOF (no stop on an "end of song" event).
 
-Binary little-endian. The code reads events sequentially until the end of the file (it does not stop on an "end of song" event).
-
-Two layouts, auto-detected by `checkFormat()`: the byte at offset 16 equals `69` -> *new* format (12-byte events); else the byte at offset 12 equals `69` -> *old* format (8-byte events); otherwise "Chart format not supported". The probe reads the byte at +4 of the second event, which the reader otherwise skips. The meaning of `69` (0x45) is not documented [Unknown].
+`checkFormat()` detects two layouts: byte at offset 16 equals `69` -> new format (12-byte events); else byte at offset 12 equals `69` -> old format (8-byte events); otherwise "Chart format not supported". The probe reads byte +4 of the second event, which the reader otherwise skips. The meaning of `69` (0x45) is Unknown.
 
 ## Structure / metadata
 
@@ -43,51 +41,43 @@ Event flags used by the tool:
 Other flags exist in the files but were ignored by the tool [Unknown].
 
 ## Timing model
-
-Offsets are in ticks; the tick rate is not given in the code (the tool does not convert ticks to seconds, it renders audio by events). [Unknown.]
+Offsets are ticks; the tick rate is Unknown (the tool renders audio by events and never converts to seconds).
 
 ## Notes
-
-Nine columns (0-8) = the nine buttons. Long-note data is present in the new layout (4 extra bytes) but its encoding is unknown here. Keysound indices refer to the `.2dx` container; the BGM track may be at the end so indices are shifted by one (`offsetKeysounds`).
+Columns 0-8 = the nine buttons. The new layout's 4 extra bytes hold long-note data (encoding unknown). Keysound indices refer to the `.2dx` container; the BGM track may sit at the end, shifting indices by one (`offsetKeysounds`).
 
 ## Audio & images
-
-`.2dx` containers, see [`../../beatmania-iidx/2dx`](../../beatmania-iidx/2dx/README.md). `twodx.js` (adapted from mon/SDVX-Song-Extractor `bm2dx.py`) reads each sample's `2DX9` header and takes the keysound index as sequential, because the popn files do not store it. A sample whose two flag bytes are `0000` is treated as a background track and moved to index 0 (`late_bg` records that it was not first).
+`.2dx` containers, see [`../../beatmania-iidx/2dx`](../../beatmania-iidx/2dx/README.md). `twodx.js` (adapted from mon/SDVX-Song-Extractor `bm2dx.py`) reads each sample's `2DX9` header and takes the keysound index as sequential (popn files do not store it). A sample whose two flag bytes are `0000` is a background track, moved to index 0 (`late_bg` records that it was not first).
 
 ## Versions & variants
-
-Old (8-byte) and new (12-byte) event layouts, detected by the byte probe above. Which game versions use which is not documented.
+Old (8-byte) and new (12-byte) layouts, detected by the byte probe. Which game versions use which: Unknown.
 
 ## Quirks & pitfalls
-
 - 12-bit param / 4-bit value packing for flags 2 and 7 only.
-- Reader ignores the end-of-song event and reads to EOF.
-- Format probe by a magic byte value is fragile.
+- The reader ignores the end-of-song event.
+- The magic-byte probe is fragile.
 
 ## Example
-
-None available (no sample file).
+Unknown.
 
 ## ROX support
 
 Not read by ROX.
 
 ## Parsers & tools
-
 - https://github.com/Gi-z/popntowav (`popnchart.js`, `twodx.js`, `popntowav.js`, `msadpcm.js`; JavaScript)
-- https://github.com/mon/ifstools ("Extractor for Konami IFS files", MIT licence; the popntowav README names it as the IFS extractor it relies on)
-- pop'n charts in the community are mostly distributed as `.pms` ([`../../bms/pms`](../../bms/pms/README.md)) or BMS conversions; popn.tools lists the official charts (https://popn.tools/).
+- https://github.com/mon/ifstools ("Extractor for Konami IFS files", MIT)
+- Community charts are mostly `.pms` ([`../../bms/pms`](../../bms/pms/README.md)) or BMS conversions; popn.tools lists official charts (https://popn.tools/).
 
 ## Getting samples
+None committed: no real file could be obtained. Searches on 2026-11-09 (GitHub path search through Sourcegraph for `*.2dx`, `<id>.1`, `*_op.bin`/`*_hp.bin`/`*.ifs`; repositories of every parser/converter named here; archive.org full-text/title search; web search) found no public copy. The tools ship no fixtures; the archive.org items are whole-game dumps or soundtracks (far above the 20 MB limit, or audio). The data exists only inside a game installation. No hand-written binary was made: the layout is unverified.
 
-No sample is committed: no real file of this format could be obtained. Searches on 2026-11-09 (GitHub path search through Sourcegraph for `*.2dx`, `<id>.1`, `*_op.bin`/`*_hp.bin`/`*.ifs`; the repositories of every parser/converter named below; archive.org full-text/title search; web searches) found no public copy: the tools ship no fixtures and the only archive.org items are whole-game dumps or soundtracks (not individual chart files, and far above the 20 MB limit or audio). The data is Konami game data that exists only inside a game installation. A hand-written binary was not made: the layout is unverified (Doc status: stub).
+To get real files (own copy of the game required):
 
-How to obtain real files (you need your own copy of the game):
-
-- Observed in `popntowav.js` (lines 21-26 of commit 469b6de82c6e5654eae42d130341d4c4d8b963a9): the tool runs `ifstools <song>.ifs`, then reads the chart from `<ifsname>_ifs/<ifsname>_op.bin`, falling back to `<ifsname>_hp.bin` when `_op.bin` does not exist, and the keysounds from `<ifsname>_ifs/<ifsname>.2dx`. So the official charts are `.bin` files inside each song's `.ifs` archive; this resolves the "file name pattern" left Unknown above for those two names (`_op`/`_hp`; the other difficulty suffixes are not in the sources read). [observed in popntowav.js]
+- [observed in popntowav.js, lines 21-26 of commit 469b6de82c6e5654eae42d130341d4c4d8b963a9] The tool runs `ifstools <song>.ifs`, reads the chart from `<ifsname>_ifs/<ifsname>_op.bin` (fallback `<ifsname>_hp.bin`) and the keysounds from `<ifsname>_ifs/<ifsname>.2dx`. So official charts are `.bin` files inside each song's `.ifs`; other difficulty suffixes are not in the sources read.
 - Unpack the `.ifs` with mon/ifstools (https://github.com/mon/ifstools, MIT).
-- A second naming example, for the Wii game: the Cutting Room Floor page "pop'n music (Wii)" lists charts such as `note\us\0101_bluebird_n5.bin` and `..._h5.bin` (search-result snippet only; the page returned HTTP 403 when fetched, so this is not verified).
-- Community PMS conversions of official pop'n charts exist (ZIv thread "beatmania, beatmania IIDX and pop'n music official BMS/PMS simfiles preservation project"); they are `.pms` files, see [`../../bms/pms`](../../bms/pms/README.md), not this format.
+- Wii game: the Cutting Room Floor page "pop'n music (Wii)" lists charts such as `note\us\0101_bluebird_n5.bin` and `..._h5.bin` (search snippet only; the page returned HTTP 403).
+- Community PMS conversions of official charts exist (ZIv thread "beatmania, beatmania IIDX and pop'n music official BMS/PMS simfiles preservation project"); they are `.pms` ([`../../bms/pms`](../../bms/pms/README.md)).
 
 ## Sources
 

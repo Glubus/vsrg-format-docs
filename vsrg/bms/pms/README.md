@@ -3,26 +3,26 @@ Kind: chart
 
 Doc status: complete · ROX: decode only (reads, never writes) · Category: vsrg · Encoding: text (Shift_JIS in practice)
 
-BMS-compatible text format specialised for 9-button pop'n-music-style play. Syntax = [`.bms`](../bms/README.md). Not to be confused with the official arcade pop'n music chart data (see [`../../pop-n-music`](../../pop-n-music/README.md)) nor with the older, unrelated doremimania `.pms`.
+BMS-compatible text format for 9-button pop'n-music-style play. Syntax = [`.bms`](../bms/README.md). Unrelated to arcade pop'n music data ([`../../pop-n-music`](../../pop-n-music/README.md)).
 
 ## Overview
 
-- Origin (hitkey memo): 2000-04-28 Koutaro Izumi's *doremimania* (a KEYBOARDMANIA trainer) used a `.pms` extension for a notation "completely different from BMS" (probably "Piano-Music-Script"); 2000-09-05 Nekomi released **feeling pomu** 1.41 Test5, specialised in 9 buttons, which auto-spreads BMS/BME charts over nine lanes and defined **PMS as a subset of BMS** for 9 buttons. The memo states the two PMS are unrelated.
-- 2002-09-23 **feeling pomu second** (pomu2) 0.60 added LN support (both RDM notation and `#LNOBJ`) and also an 18-button mode (PMS-DP, not in the arcade game). 2009-09-16 LR2 beta3 extended the channels read when the extension is `.pms`. 2014 `lr2_pmsview_helper` (Misty.ls04) fixes the LR2 preview from editors.
-- Why an extension: "9KEYS is BMS-DP substantially" - nothing in the file says it is 9-key. The *only* way to distinguish 9-button from double-play is the extension, so a 9-key chart must be `.pms`. Players that support PMS must read LN even in `.pms`.
-- Supported by: pomu2, WAview, in_bm2, LR2, nanasi, fgt++/#, GDAC2, BMSE, uBMplay, PMSee-V, bmx2wav, iBMSC 3.0+, Angolmois 2.0a2+; BME-SP-style by pomu2, LR2, GDAC2 (774gsc), PMSee-V, bmx2wav, Angolmois; 18-key by pomu2, nanasi, GDAC2 (774gsc), bmx2wav, Angolmois (`--key-spec`). beatoraja lists `.pms` as a playable format. A GitHub script "PMStoBMEConverter" converts PMS charts into single-player BME (search result, not inspected).
+- Origin (hitkey memo): on 2000-04-28 Koutaro Izumi's *doremimania* (a KEYBOARDMANIA trainer) used `.pms` for a notation "completely different from BMS" (probably "Piano-Music-Script"). On 2000-09-05 Nekomi's feeling pomu 1.41 Test5 defined PMS as a subset of BMS for 9 buttons. The two PMS are unrelated.
+- 2002-09-23 feeling pomu second (pomu2) 0.60 added LN (RDM and `#LNOBJ`) and an 18-button mode (PMS-DP, not in the arcade game). 2009-09-16 LR2 beta3 extended the channels read for `.pms`. 2014 `lr2_pmsview_helper` (Misty.ls04) fixes the LR2 preview from editors.
+- "9KEYS is BMS-DP substantially": nothing in the file says 9-key, so the extension is the only signal. PMS-capable players must read LN even in `.pms`.
+- Supported by: pomu2, WAview, in_bm2, LR2, nanasi, fgt++/#, GDAC2, BMSE, uBMplay, PMSee-V, bmx2wav, iBMSC 3.0+, Angolmois 2.0a2+; BME-SP-style by pomu2, LR2, GDAC2 (774gsc), PMSee-V, bmx2wav, Angolmois; 18-key by pomu2, nanasi, GDAC2 (774gsc), bmx2wav, Angolmois (`--key-spec`). beatoraja plays `.pms`. "PMStoBMEConverter" (GitHub, search result, not inspected) converts PMS to single-player BME.
 
 ## Container & encoding
 
-Same as BMS (Shift_JIS text, `#` commands). One chart per file. The task description mentions "pms, pms3, pms5, pmse keys": these are informal names for key variants (see below) and not separate formats; no source defines "pms3/pmse" - [inference: 3-button battle, 5-button, extended]. The memo does list "PMS (5button)" and "PMS (pomu-battle)" mappings.
+As BMS. "pms3/pmse" is undefined in any source [inference: 3-button battle, extended]; the memo lists "PMS (5button)" and "PMS (pomu-battle)" mappings.
 
 ## Structure / metadata
 
-All BMS headers. Special: `#PLAYER 3` is recommended for PMS "to maintain compatibility". `#TOTAL`, `#RANK` etc. as BMS.
+BMS headers. `#PLAYER 3` is recommended "to maintain compatibility".
 
 ## Timing model
 
-As BMS (measure + fraction, `02` length, `03/08` BPM, `09` STOP).
+As BMS.
 
 ## Notes
 
@@ -36,30 +36,29 @@ Lane mapping (hitkey KEYMAP table; buttons are numbered 1..9 left to right):
 | PMS 5 buttons | `13 14 15 22 23` (buttons 1,2,8,9 unused) | memo, "PMS (5button)" |
 | PMS pomu-battle | `11 12 13` per side | memo, "PMS (pomu-battle)" |
 
-- Invisible objects `31-49`, LN `51-69` and landmines `D1-E9` follow the mapping of the visible channels. The old free-zone channel `#xxx17` is used as a key in BME-type mode.
-- BMSE throws away `#xxxX7`, so editing BME-type PMS there is difficult; GDAC2 + 774gsc is the best editor per the memo; BMSC "can be begun most quickly".
+- Invisible objects `31-49`, LN `51-69` and landmines `D1-E9` follow the mapping of the visible channels. The old free-zone channel `#xxx17` is a key in BME-type mode.
+- BMSE throws away `#xxxX7`, so it cannot edit BME-type PMS; the memo prefers GDAC2 + 774gsc (BMSC "can be begun most quickly").
 - Raindrop's `TranslateTrackPMS` maps P1 channel offsets 0-4 to lanes 0-4, 5/6 to lanes 7/8 and 7/8 to lanes 5/6 (and P2 offsets 0-3 to themselves).
 - bmson uses `mode_hint` `popn-5k` and `popn-9k` (x = 1..5 or 1..9) for the same purpose, see [`../bmson`](../bmson/README.md).
-- The file does not encode button colour (the arcade buttons are colour-coded; [inference] players colour by lane).
+- Button colour is not stored; [inference] players colour by lane.
 
 ## Audio & images
 
-As BMS (keysounds `#WAVxx`).
+As BMS.
 
 ## Versions & variants
 
-pomu (2000, 9-key), pomu2 (2002, + LN + 18 keys), LR2 beta3 (2009, BME-SP read as PMS), beatoraja (PMS play mode). The "pop'n music" arcade charts themselves are not PMS.
+pomu (2000, 9-key), pomu2 (2002, + LN + 18 keys), LR2 beta3 (2009, BME-SP read as PMS), beatoraja (PMS play mode).
 
 ## Quirks & pitfalls
 
-- Extension decides the layout; a `.bms` with channels `11-15,22-25` is read as 2P/DP, not 9-key.
-- LR2 does not apply 9-key display when previewing from editors (hence lr2_pmsview_helper).
-- Two unrelated "PMS" (doremimania vs pomu); only the pomu one is BMS-compatible.
-- Channel `17` conflicts: free zone / foot pedal in other modes, a key here.
+- A `.bms` with channels `11-15,22-25` is read as 2P/DP, not 9-key.
+- LR2 does not apply 9-key display when previewing from editors.
+- Channel `17`: free zone / foot pedal in other modes, a key here.
 
 ## Example
 
-Illustrative, hand-built from the table above (not a real file): a one-measure PMS chart pressing buttons 1, 5, 9 in sequence.
+Hand-built: buttons 1, 5, 9 in sequence.
 
 ```
 #PLAYER 3
@@ -75,19 +74,21 @@ Illustrative, hand-built from the table above (not a real file): a one-measure P
 
 ## ROX support
 
-Read by ROX since Prism's addition of `rox::formats::bms` (decode only: ROX does not write BMS). Source: `rhythm-open-exchange/src/formats/bms/` (documented in its module, tests in `bms/tests.rs`, hand-written charts `assets/bms/features.bms` and `assets/bms/nine.pms`).
+Decode only (`rox::formats::bms`, source `rhythm-open-exchange/src/formats/bms/`; tests `bms/tests.rs`, charts `assets/bms/features.bms`, `assets/bms/nine.pms`). `.bms`, `.bme`, `.bml` go to `BmsDecoder`, `.pms` to `PmsDecoder` (the extension alone selects nine buttons); `auto_encode` refuses them.
 
-- Extensions: `.bms`, `.bme`, `.bml` go to `BmsDecoder`, `.pms` to `PmsDecoder` (the extension is the only thing that says nine buttons). `auto_decode`, `auto_decode_bytes` and `auto_decode_variant` detect them; `auto_encode` refuses them.
-- **Layout = the lanes the chart uses** (`#PLAYER` is ignored, like most players). One side: `[scratch] key1..key5` or `key1..key7` (keys 6 and 7 are channels `x8`/`x9`; the scratch column exists only when channel `x6`/`5x`/`6x` lanes use it) = 5, 6, 7 or 8 columns. Double play (1P and 2P lanes both used): `[scratch1] 1P keys | 2P keys [scratch2]` = 10, 12, 14 or 16 columns (a scratch column on both sides as soon as either side uses it). A chart with only 2P lanes is a single chart. PMS: nine columns, buttons `11 12 13 14 15 22 23 24 25`, or `11 12 13 14 15 18 19 16 17` (BME-type) when there is no 2P lane and channels 16-19 are used. Channel `x7` (free zone / foot pedal) and lanes outside the layout are dropped.
-- **Time**: measure length (`02`), BPM (`03` hex, `08` through `#BPMxx`/`#EXBPMxx`; a non-positive or undefined BPM is ignored; at one position `03` then `08`), STOP (`09`, 1/48 beat units, not scaled by the measure length, computed with the BPM that follows a BPM change at the same position, a note on a STOP is at the start of the pause; stops are baked into the note times like `.sm`, ROX has no stop point). Missing `#BPM` = 130.
-- **Long notes**: `#LNTYPE 1` channels (head/tail pairs; an odd last head is a tap), `#LNOBJ` (the terminator closes the previous note of the lane and is not a note; an orphan terminator is dropped), `#LNTYPE 2` runs (consecutive slots up to the first empty slot, across a bar line when the last and first slots are both filled). Mines `D1-E9` become ROX mines. Invisible objects (`3x`/`4x`) are ignored. A note inside a long note, or on the same time and column as the previous note, is dropped.
-- **`#RANDOM`**: always 1 (reproducible); `#SETRANDOM n` forces `n`; `#IF`/`#ELSEIF`/`#ELSE`/`#ENDIF`/`#ENDRANDOM` nest; an `#IF` without `#RANDOM` is 1; content inside `#RANDOM` but outside `#IF` is kept. `#SWITCH` is not supported.
-- **Keysounds and audio**: each playable note's `#WAVxx` goes to `chart.hitsounds` (file names with `\` become `/`, ids are case-insensitive base 36). Channel-01 background sounds are not part of a ROX chart. When the chart has exactly ONE defined background sound, that file is `metadata.audio_file` and every time is moved back by its position (earlier notes get negative times); otherwise `audio_file` is empty and Prism refuses the chart as "audio missing" (the sounds would have to be mixed into one track, not done).
-- **Text**: BOM UTF-8/UTF-16, else valid UTF-8, else Shift_JIS, else EUC-KR (`encoding_rs`).
-- **Metadata**: `#TITLE`, `#ARTIST`, `#GENRE`, `#MAKER` (creator), `#PLAYLEVEL` (difficulty value), difficulty name from `#DIFFICULTY` (1-5: Beginner, Normal, Hyper, Another, Insane) else `#SUBTITLE` else `Normal`, background from `#STAGEFILE` (else `#BACKBMP`).
-- **Audio plan**: `decode_with_audio_plan` also returns the sounds (every channel-01 object and the keysound of every playable object, at chart time) beside the chart; Prism mixes them into one Opus track when the chart has no single audio file (`docs/rendu-audio.md` in the Prism repo).
-- Not handled: `#SCROLLxx`/`#SPEEDxx`, `#STP`, `#SWITCH`, `#CHARSET`, base-62 files, BGA, `#LNMODE`, `#EXRANKxx`, and the hexadecimal-letter channels `1A-1Z` (MGQ/pomu).
-- Verification: the decoder agrees note for note (count, time, column, long notes) with Bemuse's `bms-js` (MIT) on the 21 sample charts of this repository (`bme/samples`, `bms/samples`), and by note count with `bms-rs` (Apache-2.0; it differs in time on the 8 of these 21 charts that use channel `02` or `03`, a difference not investigated further: for a shortened or lengthened measure it spaces the objects by the fraction of a 4/4 measure, where Bemuse and ROX use the fraction of the measure's own length). The sample charts are community files with no licence and are not shipped inside ROX; ROX's tests use the hand-written synthetic charts above.
+- Layout = the lanes the chart uses (`#PLAYER` ignored). One side: `[scratch] key1..key5` or `key1..key7` (keys 6/7 are channels `x8`/`x9`; scratch column only if `x6`/`5x`/`6x` lanes use it) = 5 to 8 columns. Double play: `[scratch1] 1P keys | 2P keys [scratch2]` = 10 to 16 columns (both scratches once either is used). Only-2P charts are single. PMS: nine columns `11 12 13 14 15 22 23 24 25`, or `11 12 13 14 15 18 19 16 17` (BME-type) with no 2P lane and channels 16-19 in use. Channel `x7` and lanes outside the layout are dropped.
+- Time: `02` measure length, `03` hex BPM, `08` via `#BPMxx`/`#EXBPMxx` (non-positive or undefined BPM ignored; `03` then `08` at one position), `09` STOP (1/48 beat units, not scaled by measure length, uses the BPM after a same-position BPM change; a note on a STOP sits at the start of the pause). Stops are baked into note times like `.sm`. Missing `#BPM` = 130.
+- Long notes: `#LNTYPE 1` pairs (odd last head is a tap), `#LNOBJ` (terminator closes the lane's previous note; orphan dropped), `#LNTYPE 2` runs (up to the first empty slot, across a bar line when last and first slots are filled). Mines `D1-E9` become mines. Invisible objects (`3x`/`4x`) ignored. A note inside a long note, or at the same time and column as the previous note, is dropped.
+- `#RANDOM` is always 1; `#SETRANDOM n` forces `n`; `#IF`/`#ELSEIF`/`#ELSE`/`#ENDIF`/`#ENDRANDOM` nest; an `#IF` without `#RANDOM` is 1; content in `#RANDOM` outside `#IF` is kept. `#SWITCH` unsupported.
+- Audio: playable notes' `#WAVxx` go to `chart.hitsounds` (`\` becomes `/`, ids case-insensitive base 36). Channel-01 sounds are not chart notes. With exactly ONE background sound, that file is `metadata.audio_file` and all times shift back by its position (earlier notes go negative). Otherwise `audio_file` is empty and Prism refuses the chart as "audio missing". `decode_with_audio_plan` also returns every channel-01 object and playable keysound at chart time; Prism mixes them into one Opus track (`docs/rendu-audio.md` in the Prism repo).
+- Text: BOM UTF-8/UTF-16, else valid UTF-8, else Shift_JIS, else EUC-KR (`encoding_rs`).
+- Metadata: `#TITLE`, `#ARTIST`, `#GENRE`, `#MAKER` (creator), `#PLAYLEVEL`, difficulty name from `#DIFFICULTY` (1-5: Beginner, Normal, Hyper, Another, Insane) else `#SUBTITLE` else `Normal`, background from `#STAGEFILE` else `#BACKBMP`.
+- Not handled: `#SCROLLxx`/`#SPEEDxx`, `#STP`, `#SWITCH`, `#CHARSET`, base-62 files, BGA, `#LNMODE`, `#EXRANKxx`, channels `1A-1Z` (MGQ/pomu).
+- Verification: note-for-note agreement with Bemuse's `bms-js` (MIT) on the 21 sample charts of `bme/samples` and `bms/samples`; note-count agreement with `bms-rs` (Apache-2.0), which differs in time on the 8 charts using channel `02` or `03` (not investigated): it spaces objects in a shortened or lengthened measure by the fraction of a 4/4 measure, where Bemuse and ROX use the measure's own length. Sample charts are unlicensed community files and are not shipped in ROX.
+
+## Parsers & tools
+
+BMS parsers with a PMS mode: Raindrop `NoteLoaderBMS.cpp`, beatoraja, Project OutFox (https://outfox.wiki/en/dev/mode-support/bms-pms-support), bmx2wav, PMSee-V, PMChr-V; conversion: PMStoBMEConverter (https://github.com/pablovirus/PMStoBMEConverter).
 
 ## Parsers & tools
 
@@ -95,10 +96,12 @@ BMS parsers with a PMS mode: Raindrop `NoteLoaderBMS.cpp`, beatoraja, Project Ou
 
 ## Getting samples
 
-- **Committed** ([`samples/`](samples/), details in [`samples/SOURCES.md`](samples/SOURCES.md)): the ROX synthetic chart (standard 9 buttons, `11-15` + `22-25`), three hand-written CC0 charts (BME-type 9 buttons `11 12 13 14 15 18 19 16 17`; 18 buttons; standard 9 buttons with `#LNTYPE 1` LN on channels 51/55/62/65, UTF-8 BOM + CRLF) and `9key-all-keys-quarter.pms` from Nekokan/be-music (MIT). No full real PMS song is committed: the real ones are fan works with no stated licence.
-- **Real charts** (committed): (a) 15 `.pms` charts from https://github.com/bemusic/music at commit `472b0f3cc433c39b0a7e9849705b34af68bf5400` (`bemuse-*.pms`: anhedonia, Blooming, scorpiondance `PMS_1..5`, encrux, chicken, ...; standard 9-button layout, `#PLAYER 3`, some CP932; README says "Each song is copyrighted by respective author"); (b) five ZIP archives of fan-made PMS difference charts from https://github.com/pmsdatabase/pmsdatabase.github.io/releases (`BOF2013PMS`, `BOFU2015PMS`, `BOFU2017PMS`, `G2R2014PMS`, `G2R2018PMS` `*_FullPackage_Team_sort*.zip`; the `.noaudio.zip` ones were rewritten without audio/image members, see SOURCES.md): BMS of Fighters 2013 (283 `.pms`), BOFU2015 (460), BOFU2017 (380), G2R2014 (449), G2R2018 (294). Observed inside them (analysed in a scratch copy): standard 9-button layout and `#PLAYER 3` almost everywhere (a few `#PLAYER 2`), `#LNTYPE`/`#LNOBJ`/`#LNMODE` long notes, `#RANDOM`, ch 02/03/08/09, CP932 text with some UTF-8 BOM files and some mixed line endings, and a handful of files using channels 16/18/19 outside the standard map (the BME-type layout); (c) two tiny asdfghjkoiuy/iBMSCPP stubs (`ibmscpp-pms-9k.pms`, `ibmscpp-pms-5k.pms`).
-- **How to get more**: the PMS Database (https://pmsdifficulty.xxxxxxxx.jp/) catalogues PMS differences; its release page lists further full packages (tags seen: `bofu2016pms-20161201` (21.7 MB), `bofxv19pms-20200526`, `bofxvipms-20210516`, `bofxviipms-20220830`, `bofetpms-20230712`, `bofntpms-20240509`, `bofttpms-20250426`, `bof21pms-20260512`, `g2r2014pms-20180325`). Its guide "創作譜面 (自作差分) の作成" (https://pmsdifficulty.xxxxxxxx.jp/guide_chart.html) says `.pms` is the extension for all PMS differences and names the editor pBMSC; the BMS EVENT 2016 page (https://bms.ms/~hitkey/evt/2016) lists a "BOFU2016PMS差分企画" project. Search terms: `PMS差分`, `PMS Database`, `BOF PMS`, `ポップン BMS`. LR2/beatoraja use PMS mode when the extension is `.pms`.
-- Real files are copyrighted fan works: check each work's terms before redistributing.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). Real PMS songs are fan works with no stated licence; check terms before redistributing.
+
+- Bemuse default songs: https://github.com/bemusic/music at commit `472b0f3cc433c39b0a7e9849705b34af68bf5400`.
+- PMS Database release zips https://github.com/pmsdatabase/pmsdatabase.github.io/releases (`BOF2013PMS`, `BOFU2015PMS`, `BOFU2017PMS`, `G2R2014PMS`, `G2R2018PMS` `*_FullPackage_Team_sort*.zip`; `.noaudio.zip` ones were rewritten without audio/image members): BOF 2013 (283 `.pms`), BOFU2015 (460), BOFU2017 (380), G2R2014 (449), G2R2018 (294). They hold standard 9-button charts with `#PLAYER 3` (a few `#PLAYER 2`), `#LNTYPE`/`#LNOBJ`/`#LNMODE`, `#RANDOM`, ch 02/03/08/09, CP932 with some UTF-8 BOM and mixed line endings, and a few BME-type files using channels 16/18/19.
+- More packages: the PMS Database (https://pmsdifficulty.xxxxxxxx.jp/); release tags `bofu2016pms-20161201` (21.7 MB), `bofxv19pms-20200526`, `bofxvipms-20210516`, `bofxviipms-20220830`, `bofetpms-20230712`, `bofntpms-20240509`, `bofttpms-20250426`, `bof21pms-20260512`, `g2r2014pms-20180325`. Its guide "創作譜面 (自作差分) の作成" (https://pmsdifficulty.xxxxxxxx.jp/guide_chart.html) says `.pms` is the extension for all PMS differences and names pBMSC; the BMS EVENT 2016 page (https://bms.ms/~hitkey/evt/2016) lists "BOFU2016PMS差分企画". Search terms: `PMS差分`, `PMS Database`, `BOF PMS`, `ポップン BMS`.
+- Parser stubs: asdfghjkoiuy/iBMSCPP `ibmscpp-pms-9k.pms`, `ibmscpp-pms-5k.pms`.
 
 ## Sources
 

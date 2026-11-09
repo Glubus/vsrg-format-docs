@@ -8,4 +8,4 @@ Konami's GuitarFreaks (guitar/bass controller: 3 then 5 fret buttons + pick + wa
 | [sq2/](sq2/README.md) | `.sq2` | GuitarFreaks/DrumMania V-series/XG-era sequence, 16-byte events |
 | [dsq/](dsq/README.md) | `.dsq`, `.gsq` (+ `.dsq0`..`.dsq2`, `.gsq1`..`.gsq3` variants of earlier games) | older drum/guitar sequence formats (stub) |
 
-Other tools: RAintN22/gitadora-tools (creates/converts `.dsq`, `.sq2`, `.sq3` and `.dtx`; releases only seen), DTXMania (reads converted DTX), GDAmania blog (GDA/DTX conversions: http://gdamania.blogspot.com/). The `.xg` extension suggested by the task could not be confirmed: no source found (Unknown).
+Other tools: RAintN22/gitadora-tools (creates/converts `.dsq`, `.sq2`, `.sq3` and `.dtx`; releases only seen), DTXMania (reads converted DTX), GDAmania blog (GDA/DTX conversions: http://gdamania.blogspot.com/). No source confirms a `.xg` extension (Unknown).

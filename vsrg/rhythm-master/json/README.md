@@ -4,7 +4,8 @@ Kind: chart
 Doc status: partial · ROX: no · Category: vsrg · Encoding: json
 
 ## Overview
-JSON chart dialect used by newer Rhythm Master clients (technical-test clients of 2022 onward store data as JSON per the RMEssentials changelog); RMEssentials calls it "imdjson", versions 1.2.1, 1.2.2, 1.2.3, 1.3.0, and converts IMD <-> imdjson. The original README lists "`.json`: Rhythm Master WeChat Mini Program chart"; whether the mini program uses exactly this schema is **not verified** (rmstZ lists the mini-program, Project FX and "Bu Xiu De Yin Fu" JSON together as one family). Source: RMEssentials `rmechart.cpp`, `tst_rmechart` fixtures.
+
+JSON chart dialect of newer Rhythm Master clients (technical-test clients from 2022 store data as JSON, per the RMEssentials changelog). RMEssentials calls it "imdjson" (versions 1.2.1, 1.2.2, 1.2.3, 1.3.0) and converts IMD <-> imdjson. The original README lists "`.json`: Rhythm Master WeChat Mini Program chart"; that the mini program uses this schema is not verified (rmstZ lists the mini-program, Project FX and "Bu Xiu De Yin Fu" JSON as one family). Source: RMEssentials `rmechart.cpp`, `tst_rmechart` fixtures.
 
 ## Container & encoding
 UTF-8 JSON. The official files keep keys in a fixed order (RMEssentials changelog); readers accept any order.
@@ -20,9 +21,11 @@ Single constant tempo; ticks of 1/48 beat; 1.2.3+ also carries absolute ms. IMD 
 Same semantics as [imd](../imd/README.md): attr 0 tap, attr 3/4 + `dur` hold or slide chain members with `isEnd`/`toTrack`. Lane = track-3 (tracks 3..8, up to 6 lanes).
 
 ## Audio & images
+
 Not in the file.
 
 ## Versions & variants
+
 1.2.1 = 1.2.2; 1.2.3 = 1.3.0 for notes; per-version fields above.
 
 ## Quirks & pitfalls
@@ -42,8 +45,7 @@ RMEssentials (C++/Qt): https://github.com/Fsu0413/RMEssentials ; rmstZ.
 
 ## Getting samples
 
-- Committed in [`samples/`](samples/): 5 real imdjson files converted from song charts (RMEssentials test tree, AGPL-3.0 repo), 4 valid one-note `existnotes_*` files and 19 deliberately invalid files from the same unit tests. Everything is listed with origin, date and sha256 in [`samples/SOURCES.md`](samples/SOURCES.md).
-- More: convert any `.imd` with RMEssentials (https://github.com/Fsu0413/RMEssentials, `RmeChart::toJson`); whether the WeChat mini program uses this schema is unverified.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). More: convert any `.imd` with RMEssentials (https://github.com/Fsu0413/RMEssentials, `RmeChart::toJson`).
 
 ## Sources
 - https://raw.githubusercontent.com/Fsu0413/RMEssentials/master/src/librmessentials/src/rmechart.cpp

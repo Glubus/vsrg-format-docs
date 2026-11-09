@@ -1,10 +1,10 @@
 # Friday Night Funkin' (FNF) and its engines
 
-Friday Night Funkin' is a free rhythm game by ninjamuffin99, PhantomArcade and The Funkin' Crew Inc. (author line of its itch.io page). It started as a 2020 game-jam build (the first public data layout is documented as "FNF (Ludum Dare)" in Moonchart) and is now developed commercially; the V-Slice 0.3+ update introduced the `.fnfc` chart packages. Four arrow lanes (left, down, up, right) scroll vertically on each side of the screen: the opponent's strumline and the player's strumline. The player hits arrows (and holds) in a rap battle. There is no chart format specification from the original authors for the early builds; the game's data files are JSON and each mod engine forked and extended the schema. This folder documents each variant that has its own schema, one folder per variant.
+Friday Night Funkin' is a free rhythm game by ninjamuffin99, PhantomArcade and The Funkin' Crew Inc. (author line of its itch.io page). It started as a 2020 game-jam build (Moonchart calls the first public data layout "FNF (Ludum Dare)") and is now developed commercially; V-Slice 0.3+ introduced the `.fnfc` chart packages. Four arrow lanes (left, down, up, right) scroll vertically on the opponent's and the player's strumline; the player hits arrows and holds. The original authors published no chart specification for the early builds. The data files are JSON, and each mod engine forked and extended the schema. One folder per schema variant follows.
 
-Category: **vsrg**. Justification: fixed arrow lanes (4 per side), vertical scrolling toward a strumline, time-ordered taps and holds; the format is a note list per lane.
+Category: **vsrg**. Justification: fixed arrow lanes (4 per side), vertical scrolling toward a strumline, time-ordered taps and holds.
 
-ROX: `.json` files are read and written as FNF by ROX (experimental), using the legacy `song.notes[].sectionNotes` layout (see below). Players of V-Slice charts (`.fnfc`, `-chart.json`) are not read.
+ROX: `.json` files are read and written as FNF by ROX (experimental) using the legacy `song.notes[].sectionNotes` layout. V-Slice charts (`.fnfc`, `-chart.json`) are not read.
 
 ## Variants
 
@@ -22,19 +22,19 @@ ROX: `.json` files are read and written as FNF by ROX (experimental), using the 
 | [nmv-json](nmv-json/README.md) | Psych-derived JSON, `format: "nmv2"`, `keys`/`lanes` | NightmareVision (NMVTeam) | partial | no |
 | [maru-json](maru-json/README.md) | legacy-like JSON with `sectionEvents`, `offsets`, `players` | Maru Funkin' (dead engine, via Moonchart) | stub | no |
 
-`.fnfm`: no file format of this name was found in any source consulted; the closest real extensions are `.fnfc` (chart package) and `.fnfmod` (mod package, announced in the Funkin' Crew blog of 2026-08-03).
+`.fnfm`: no format of this name found in any source. The closest real extensions are `.fnfc` (chart package) and `.fnfmod` (mod package, announced in the Funkin' Crew blog of 2026-08-03).
 
-Other engines exist (Forever Engine, Leather Engine, Andromeda, ...). They were NOT inspected: their schema is unknown here (Moonchart lists no distinct format for them). NightmareVision and Maru Funkin' have their own folders above (Maru only from Moonchart's description).
+Forever Engine, Leather Engine, Andromeda and others were not inspected; Moonchart lists no distinct format for them. Maru Funkin' is documented only from Moonchart's description.
 
 ## Samples
 
-Each variant folder has a `samples/` folder with a `SOURCES.md` (hand-written synthetic charts, committed; real charts are downloaded snapshots from public sources; no archives are committed) and a `Getting samples` section in its README.
+Each variant has `samples/SOURCES.md` and a `Getting samples` section in its README.
 
 ## Cross-variant facts
 
 - Time unit: milliseconds everywhere (note `strumTime`, sustain length), except Kade event positions (beats) and V-Slice's optional future `timeFormat`.
 - Lane meaning: 0 = left, 1 = down, 2 = up, 3 = right, per strumline. Which strumline a note belongs to is encoded differently per variant (`mustHitSection` + lane 0-7 in legacy; `d` 0-7 in V-Slice; a per-strumline list in Codename).
-- Hold notes: a start time plus a length in ms (`sustain length`); the game spawns sustain pieces every step (`stepCrochet = 60000 / bpm / 4`).
+- Holds: a start time plus a length in ms (`sustain length`); the game spawns sustain pieces every step (`stepCrochet = 60000 / bpm / 4`).
 - Sections: legacy/Psych/Kade group notes in sections of 16 steps (4 beats); V-Slice and Codename have no sections.
 - Moonchart (Haxe) converts between all of these, plus osu!mania, Quaver, StepMania, Clone Hero and MIDI: https://github.com/MaybeMaru/moonchart .
 

@@ -49,9 +49,11 @@ rg_converters (Python/C++): <https://github.com/UntitledCharts/rg_converters>; M
 
 ## Getting samples
 
-- Committed in [`samples/`](samples/): 5 `rgconv_*.mmws` files, produced by rg-converters (`mmw.mmws.export`) from real official/engine charts. **They are converted, not downloaded**: no `.mmws` file is published anywhere I could reach (checked the MikuMikuWorld fork repos, the Chart Cyanvas and Untitled Charts tooling). Everything is listed with origin, date and sha256 in [`samples/SOURCES.md`](samples/SOURCES.md).
-- Observed [observed in samples/rgconv_sekaibest_0001_01_easy.mmws]: file starts with the magic `MMWS` followed by `00 04 00 00 00` ...
-- How to get a native one: install MikuMikuWorld (crash5band) or a fork, open a `.sus` and File > Save.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). All are converted with rg-converters (`mmw.mmws.export`); no public `.mmws` exists (checked the MikuMikuWorld fork repos, Chart Cyanvas and Untitled Charts tooling).
+
+[observed: rgconv_sekaibest_0001_01_easy.mmws] starts with magic `MMWS` then `00 04 00 00 00` ...
+
+Native file: install MikuMikuWorld (crash5band) or a fork, open a `.sus`, File > Save.
 
 ## Sources
 

@@ -5,11 +5,11 @@ Doc status: stub · ROX: no · Category: vsrg · Encoding: binary
 
 ## Overview
 
-"STEP" is not an official name: SaxxonPike's `rhythm-game-formats` uses it for "the format exported using DDR Utility" and found in **Dance Dance Revolution 2nd Mix through 3rd Mix Plus, including Solo Bass Mix and Solo 2000**. The Solo mixes have "a slight variation in step panel configuration". It precedes the chunked [SSQ](../ssq/README.md) format (first used in 4th Mix) and is related to, but distinct from, [STEP2](../step2/README.md) (1st Mix only). The upstream page is a stub ("In a nutshell: TODO").
+"STEP" is a name coined by SaxxonPike's `rhythm-game-formats` for "the format exported using DDR Utility", found in DDR 2nd Mix through 3rd Mix Plus, including Solo Bass Mix and Solo 2000 ("a slight variation in step panel configuration"). It precedes the chunked [SSQ](../ssq/README.md) (4th Mix on) and relates to [STEP2](../step2/README.md) (1st Mix only). The upstream page is a stub ("In a nutshell: TODO").
 
 ## Container & encoding
 
-Unknown (binary; extension, header, endianness, quantization are not documented upstream).
+Unknown (extension, header, endianness, quantization).
 
 ## Structure / metadata
 
@@ -17,11 +17,11 @@ Unknown.
 
 ## Timing model
 
-Unknown. (The ZIv "DDR Research Master Thread" describes the PRE-MAX engine's *in-RAM edit mode* layout, one byte per beat with a nibble per player, which is probably the same data family but is not a file specification.)
+Unknown. The ZIv "DDR Research Master Thread" describes the PRE-MAX engine's in-RAM edit mode layout (one byte per beat, a nibble per player), probably the same data family but not a file specification.
 
 ## Notes
 
-Unknown beyond: Solo mixes use a different panel configuration (6 panels: the ZIv thread lists UL/UR bytes for solo edit data).
+Solo mixes use a different panel configuration (6 panels: the ZIv thread lists UL/UR bytes for solo edit data). Nothing else is known.
 
 ## Audio & images
 
@@ -33,11 +33,11 @@ Unknown.
 
 ## Quirks & pitfalls
 
-Not applicable (not documented).
+Unknown.
 
 ## Example
 
-Not available.
+None.
 
 ## ROX support
 
@@ -49,9 +49,7 @@ Not read by ROX.
 
 ## Getting samples
 
-Committed in [`samples/`](samples/SOURCES.md): three real STEP files from the RhythmCodex test suite (`2nd.step` 12,256 bytes, `picky.step` 8,456, `solo.step` 29,408 (Solo mix); commit `6c60e9b710150c6ca4adf9b7d93e51c2ad39b2ee`, `Step1/`; extracted from the fixture zips). The page's own gap (extension, header, endianness "not documented upstream") can be filled by inspecting these files with a hex editor. No other public source was found (searched GitHub parser repos and archive.org 2026-11-09).
-
-More: the "DDR Utility" export of your own DDR 2nd Mix to 3rd Mix Plus / Solo Bass Mix / Solo 2000 data, per the upstream note ([SaxxonPike/rhythm-game-formats `ddr/step.md`](https://github.com/SaxxonPike/rhythm-game-formats/blob/master/ddr/step.md)); RhythmCodex reads it.
+Committed: see [`samples/`](samples/SOURCES.md) (RhythmCodex test fixtures, `Step1/` at commit `6c60e9b710150c6ca4adf9b7d93e51c2ad39b2ee`). Inspect them with a hex editor to fill the gaps. No other public source (searched GitHub parser repos and archive.org 2026-11-09). Otherwise use "DDR Utility" on your own 2nd Mix to 3rd Mix Plus / Solo data ([`ddr/step.md`](https://github.com/SaxxonPike/rhythm-game-formats/blob/master/ddr/step.md)); RhythmCodex reads it.
 
 ## Sources
 

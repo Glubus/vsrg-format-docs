@@ -5,23 +5,23 @@ Doc status: stub · ROX: no · Category: vsrg · Encoding: json
 
 ## Overview
 
-The chart layout of "Maru Funkin'", an FNF engine that Moonchart marks `@:deprecated("Maru Funkin' engine is dead.")`; Moonchart describes it as "Like FNF Legacy but worse" and as "pretty similar to FNFLegacy although with enough changes to need a seperate implementation". Everything here comes from Moonchart's `FNFMaru.hx` (commit `5d9fbc2cb2afed76dd325134c6f9edb757c090a1`); the engine itself and any real Maru chart were NOT seen.
+Chart layout of "Maru Funkin'", an FNF engine Moonchart marks `@:deprecated("Maru Funkin' engine is dead.")` ("Like FNF Legacy but worse"; "pretty similar to FNFLegacy although with enough changes to need a seperate implementation"). Source: Moonchart's `FNFMaru.hx` (commit `5d9fbc2cb2afed76dd325134c6f9edb757c090a1`); the engine was not seen.
 
 ## Packaged in
 
-Not packaged: loose JSON.
+Loose JSON.
 
 ## Container & encoding
 
-UTF-8 JSON `{ "song": { ... } }`. File-name candidates (`formatFile`): only the lower-cased difficulty name. A meta file is "possible" (`hasMetaFile: POSSIBLE`). Moonchart detects the format by the special values `"offsets":`, `"stage":`, and optionally `"players":` / `"player3":`.
+UTF-8 JSON `{ "song": { ... } }`. File name (`formatFile`): the lower-cased difficulty name. Meta file "possible" (`hasMetaFile: POSSIBLE`). Moonchart detects the format by the special values `"offsets":`, `"stage":`, and optionally `"players":` / `"player3":`.
 
 ## Structure / metadata
 
-`FNFMaruJsonFormat`: `song` (string), `notes` (array of sections), `bpm` (float), `speed` (float), `offsets` (array of int: `[instrumental offset, vocals offset]`), `stage` (string), `players` (array of three strings: bf, dad, gf), plus optional backward-compatible `player1`, `player2`, `player3` (when `players` is missing Moonchart builds it from them, defaults `bf`, `dad`, `gf`).
+`FNFMaruJsonFormat`: `song` (string), `notes` (array of sections), `bpm` (float), `speed` (float), `offsets` (array of int: `[instrumental offset, vocals offset]`), `stage` (string), `players` (array of three strings: bf, dad, gf), plus optional backward-compatible `player1`, `player2`, `player3` (Moonchart builds `players` from them when missing; defaults `bf`, `dad`, `gf`).
 
 `FNFMaruSection`: `sectionNotes` (legacy notes `[time, lane, sustain]`), `sectionEvents` (array of events), `mustHitSection`, `bpm`, `changeBPM`. No `lengthInSteps`, `typeOfSection` or `altAnim` in the typedef.
 
-`sectionEvents[i]` = `[time, name, values]` (`values` an array). Event names are not listed in the Moonchart source; `addZoom` is seen in a real chart (see Observed in real files).
+`sectionEvents[i]` = `[time, name, values]` (`values` an array). Moonchart lists no event names; `addZoom` appears in a real chart (see Observed in real files).
 
 ## Timing model
 
@@ -29,7 +29,7 @@ As legacy ([../legacy-json/README.md](../legacy-json/README.md)): absolute ms fo
 
 ## Notes
 
-Legacy rule: `[strumTime, noteData, sustainLength]`, `noteData` 0-7, side decided with `mustHitSection`. Note-type strings used by Moonchart's resolver: `default`, `default-hey`, `default-alt`, `fire` (mapped to default, cheer, alt animation, mine), so a fourth slot carrying one of these strings is expected [inference from the resolver registration; no file seen].
+Legacy rule: `[strumTime, noteData, sustainLength]`, `noteData` 0-7, side decided with `mustHitSection`. Note-type strings used by Moonchart's resolver: `default`, `default-hey`, `default-alt`, `fire` (mapped to default, cheer, alt animation, mine). A fourth slot with one of these strings is expected [inference from the resolver registration; no file seen].
 
 ## Audio & images
 
@@ -41,12 +41,12 @@ Unknown.
 
 ## Quirks & pitfalls
 
-- The writer (`optimizedOutput`) removes section defaults: `mustHitSection: true`, `changeBPM: false`, `bpm: 0` are omitted, and the reader re-adds them (`fromJson`), so a missing `mustHitSection` means TRUE.
-- `players` is an array, not the `player1/player2` fields.
+- The writer (`optimizedOutput`) removes section defaults: `mustHitSection: true`, `changeBPM: false`, `bpm: 0` are omitted; the reader re-adds them (`fromJson`), so a missing `mustHitSection` means true.
+- `players` is an array replacing `player1/player2`.
 
 ## Example
 
-Hand-written (synthetic) from the typedefs, in the optimised form:
+Synthetic, from the typedefs, in the optimised form:
 
 ```json
 { "song": { "song": "Demo", "bpm": 120, "speed": 2.0, "offsets": [0, 0], "stage": "stage",
@@ -57,7 +57,7 @@ Hand-written (synthetic) from the typedefs, in the optimised form:
 
 ## ROX support
 
-Not read as Maru; the legacy codec needs `song.notes[].sectionNotes` and would read the notes, ignoring `sectionEvents`, `offsets` and `players` [inference from the ROX description in the legacy fiche].
+Not read as Maru; the legacy codec (`song.notes[].sectionNotes`) would read the notes and ignore `sectionEvents`, `offsets` and `players` [inference].
 
 ## Parsers & tools
 
@@ -65,13 +65,11 @@ Not read as Maru; the legacy codec needs `song.notes[].sectionNotes` and would r
 
 ## Observed in real files
 
-Real Maru charts are `songs/<song>/charts/<difficulty>.json` with a `songMeta.json` next to them; the song object has `offsets: [0,0]`, `players: [bf, dad, gf]` (e.g. `["GudBF","danny","gf"]`) and `stage`; sections without notes are `{}` (all defaults removed); events look like `[22500, "addZoom", ["0.075", "0.05"]]` and note sustains can be fractional (`931.928571428571`) [observed in samples/vs-danny/easy.json and samples/returnal/hard.json].
+`songs/<song>/charts/<difficulty>.json` with a `songMeta.json` beside it; `offsets: [0,0]`, `players: [bf, dad, gf]` (e.g. `["GudBF","danny","gf"]`), `stage`; notes-free sections are `{}`; events like `[22500, "addZoom", ["0.075", "0.05"]]`; fractional sustains (`931.928571428571`) [observed: vs-danny/easy.json, returnal/hard.json].
 
 ## Getting samples
 
-- Committed ([samples/](samples/) and [samples/SOURCES.md](samples/SOURCES.md)): real Maru Funkin' charts: `vs-danny/easy.json` (mod Vs Danny, Maru port), `returnal/hard.json` (mod RETURNAL) and four chart files shipped with the engine itself (`maru-engine-assets/`, FNF base-game charts in the Maru layout `songs/<song>/charts/<diff>.json`), extracted from GameBanana zips, plus one synthetic file.
-- Observed: charts live in `songs/<song>/charts/<difficulty>.json` (+ `songMeta.json`), empty sections are `{}`, events are `[time, "addZoom", ["0.075", "0.05"]]` [observed in samples/returnal/hard.json].
-- More: GameBanana mods built on Maru Funkin' (search `Maru Funkin`, e.g. mods 466972, 508895).
+Committed: see [samples/SOURCES.md](samples/SOURCES.md). More: GameBanana mods built on Maru Funkin' (search `Maru Funkin`, e.g. mods 466972, 508895). Charts live in `songs/<song>/charts/<difficulty>.json` (+ `songMeta.json`); see Observed in real files.
 
 ## Sources
 

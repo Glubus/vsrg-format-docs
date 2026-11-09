@@ -4,18 +4,17 @@ Kind: chart
 Doc status: complete · ROX: decode only · Category: vsrg · Encoding: text
 
 ## Overview
-`.chart` is a text format created for **Feedback Editor** (Turkeyman's GH1 tool), later used for Guitar Hero 3 customs via GHTCP, then adopted by **Moonscraper Chart Editor** (FireFox2000000) and **Clone Hero**, where it is the most common custom-chart format next to `.mid`. One `.chart` holds all instruments and difficulties of a song as separate sections; the song folder also has `song.ini` and audio. Sources: FireFox's `.chart` specification and TheNathannator's GuitarGame_ChartFormats (CC0).
+Text chart format created for Feedback Editor (Turkeyman's GH1 tool), used for GH3 customs via GHTCP, then adopted by Moonscraper Chart Editor (FireFox2000000) and Clone Hero, where it is the most common custom-chart format next to `.mid`. One `.chart` holds all instruments and difficulties as separate sections; the song folder also has `song.ini` and audio. Sources: FireFox's `.chart` specification and TheNathannator's GuitarGame_ChartFormats (CC0).
 
 ## Packaged in
-
-- Shipped in: `.sng` (Clone Hero / YARG single-file package: a masked container with the song folder, i.e. chart, audio, images, video, plus a metadata key/value table).
-- Shipped in: `.yargsong` (YARG single-file song package from the YARC Launcher; internal layout Unknown).
+- `.sng` (Clone Hero / YARG single-file package: masked container with the song folder plus a metadata key/value table).
+- `.yargsong` (YARG single-file package from the YARC Launcher; internal layout Unknown).
 
 ## Container & encoding
-- Text, INI-like: sections in square brackets with `{ }` bodies, line based. The character encoding is not specified in the docs consulted.
-- File names: `notes.chart` or a custom name; some charts ship several files whose names end with `[Y]`/`[F]` (has forced notes) or `[N]` (no forced notes), also lowercase or in parentheses. Prefer `notes.chart`, then `[Y]`/`[F]`, then the rest.
-- Sections can appear in any order (at least instrument tracks); unknown sections are ignored; a missing section equals an empty one.
-- Real files have no comments (the docs use `//` only to annotate examples). Values with spaces are quoted; there is no escape syntax, and quotes do occur inside values in the wild: strip only the outermost pair.
+- INI-like text: bracketed sections with `{ }` bodies, line based; encoding unspecified.
+- File names: `notes.chart` or custom; some charts ship several files ending `[Y]`/`[F]` (has forced notes) or `[N]` (none), also lowercase or in parentheses. Prefer `notes.chart`, then `[Y]`/`[F]`, then the rest.
+- Sections come in any order; unknown sections are ignored; a missing section is empty.
+- Real files have no comments (the docs use `//` only in examples). Values with spaces are quoted; no escape syntax, and quotes occur inside values: strip only the outermost pair.
 
 ## Structure / metadata
 Sections: `[Song]`, `[SyncTrack]`, `[Events]`, then `[<Difficulty><Instrument>]`.
@@ -26,7 +25,7 @@ Track event type codes: `A` tempo anchor, `B` tempo change, `E` text event, `H` 
 | Key | Meaning |
 | --- | --- |
 | `Name`, `Artist`, `Album`, `Genre`, `Year` (string, typically `", 2002"`), `Charter` | metadata |
-| `Resolution` | **required**: ticks per quarter note |
+| `Resolution` | required: ticks per quarter note |
 | `Difficulty` | number |
 | `Length` | seconds (metadata only) |
 | `Offset` | audio start time in seconds; a higher value makes the audio start sooner |
@@ -34,7 +33,7 @@ Track event type codes: `A` tempo anchor, `B` tempo change, `E` text event, `H` 
 | `MusicStream`, `GuitarStream`, `RhythmStream`, `BassStream`, `KeysStream`, `DrumStream`, `Drum2Stream`, `Drum3Stream`, `Drum4Stream`, `VocalStream`, `CrowdStream` | audio files |
 | Legacy GHTCP/Feedback ("dB") keys: `ArtistText`, `Singer`, `Bassist`, `Boss`, `Player2` (`Bass`/`Rhythm`), `CountOff`, `GuitarVolume`/`GuitarVol`, `BandVolume`/`BandVol`, `HoPo` (HOPO threshold = step-size denominator / 4: 1/4 step = 1.00, 1/8 = 2.00, 1/2 = 0.50), `Fretboard`, `MediaType`, `MusicURL`, `PreviewURL` | ignorable |
 
-`song.ini` metadata has priority over `[Song]` (see [ini](../ini/README.md)); `.chart` metadata is often not filled in.
+`song.ini` metadata has priority over `[Song]` (see [ini](../ini/README.md)); `.chart` metadata is often unfilled.
 
 ### `[SyncTrack]`
 - `<tick> = TS <numerator> [<denominator exponent>]`: denominator = 2^exponent, default exponent 2 (x/4). E.g. `768 = TS 7 4` = 7/16, `1104 = TS 3 3` = 3/8. A TS at tick 0 sets the start (4/4 if absent).
@@ -45,7 +44,7 @@ Track event type codes: `A` tempo anchor, `B` tempo change, `E` text event, `H` 
 `<tick> = E "<text>"` global events: `section <name>` or `prc_<name>` (practice/summary sections; `_` may replace the space), `end` (end of song); may be bracketed. 5-fret only: `<tick> = H <HandPos 0-19> <length>` (legacy GH1/2 hand animation positions).
 
 ### Instrument sections `[<Difficulty><Instrument>]`
-Difficulties: `Expert`, `Hard`, `Medium`, `Easy`. Events: `N <type> <length>` (notes and modifiers; a modifier applies to all notes on its tick), `S <type> <length>` (special phrases; they do not apply to the tick at `position + length` unless stated, except zero-length), `E <text>` (local event; treat everything after `E` as one parameter, spaces allowed). Keep events in increasing tick order. Type numbers are grouped in blocks of 32: 0-31 standard, 32-63 Guitar Hero, 64-95 Rock Band.
+Difficulties: `Expert`, `Hard`, `Medium`, `Easy`. Events: `N <type> <length>` (notes and modifiers; a modifier applies to all notes on its tick), `S <type> <length>` (special phrases; they do not apply to the tick at `position + length` unless stated, except zero-length), `E <text>` (local event; everything after `E` is one parameter, spaces allowed). Keep events in increasing tick order. Type numbers come in blocks of 32: 0-31 standard, 32-63 Guitar Hero, 64-95 Rock Band.
 
 | Section name suffix | Instrument |
 | --- | --- |
@@ -57,12 +56,11 @@ Difficulties: `Expert`, `Hard`, `Medium`, `Easy`. Events: `N <type> <length>` (n
 | `GHLGuitar`, `GHLBass`, `GHLRhythm`, `GHLCoop`, `GHLKeys` | Guitar Hero Live 6-fret |
 | `EnhancedGuitar`, `CoopLead`, `CoopBass`, `10KeyGuitar`, `DoubleDrums`, `Vocals` | legacy Feedback tracks, edited like 5-fret, never implemented elsewhere |
 
-Clone Hero also defines a lyrics track (see the lyrics page of the GuitarGame_ChartFormats docs; not reproduced here).
+Clone Hero also defines a lyrics track (see the lyrics page of the GuitarGame_ChartFormats docs).
 
 ## Timing model
-- Position in ticks; `Resolution` ticks per quarter note. `seconds = (60 / bpm) * (dTicks / Resolution) + seconds_at_that_tempo_start`, accumulated tempo by tempo from tick 0 (`bpm = B / 1000`).
-- Time signatures do not change the tick-to-time conversion, only measure boundaries.
-- `Offset` (seconds) shifts the audio relative to the chart; `song.ini` `delay` (ms) does the same (not recommended).
+- `Resolution` ticks per quarter note. `seconds = (60 / bpm) * (dTicks / Resolution) + seconds_at_that_tempo_start`, accumulated from tick 0 (`bpm = B / 1000`). Time signatures only change measure boundaries.
+- `Offset` (seconds) shifts the audio against the chart; `song.ini` `delay` (ms) does the same (not recommended).
 - No stops, warps or scroll-velocity changes.
 
 ## Notes
@@ -74,32 +72,29 @@ Clone Hero also defines a lyrics track (see the lyrics page of the GuitarGame_Ch
 | 5 | modifier: strum/HOPO flip ("force") |
 | 6 | modifier: tap (overrides force) |
 
-Length 0 = tap, > 0 = sustain. A chord is several `N` events on one tick (their lengths may differ: extended sustains / disjoint chords). Notes are strums by default and become HOPOs automatically when within `(65/192) * Resolution` ticks (rounded down: 192 -> 65, 480 -> 162) of the previous note, unless same lane or chord. Sustains are not cut off when short (unlike `.mid`).
+Length 0 = tap, > 0 = sustain. A chord is several `N` events on one tick (lengths may differ: extended sustains / disjoint chords). Notes are strums by default and become HOPOs automatically when within `(65/192) * Resolution` ticks (rounded down: 192 -> 65, 480 -> 162) of the previous note, unless same lane or chord. Short sustains are not cut off (unlike `.mid`).
 Special phrases (`S`): 0 / 1 = GH1/2 face-off phrase player 1 / 2, 2 = star power, legacy GHTCP: 3 battle star power, 4 / 5 = battle player 1 / 2 phrases. The 5-fret doc's own example uses `S 64 768` (Rock Band block). Local events: `solo`, `soloend` (notes on the `soloend` tick are inside the solo).
 
 ### 6-fret GHL
 Types: 0 White 1 (4th fret), 1 White 2 (5th), 2 White 3 (6th), 3 Black 1 (1st), 4 Black 2 (2nd), 8 Black 3 (3rd), 7 open, 5 force, 6 tap; `S 2` star power. Deprecated early local events: `ghl_6`, `ghl_6_forced`.
 
 ### Drums
-`N` types: 0 kick, 1 red, 2 yellow, 3 blue, 4 (4-lane green / 5-lane orange), 5 (5-lane green), 32 Expert+ (2x) kick. Accent modifiers 34-38 (red, yellow, blue, 4th lane, 5-lane green); ghost modifiers 40-44 (same order); cymbal modifiers 66 yellow, 67 blue, 68 green (4-lane notes are toms by default in `.chart`). Special phrases: 2 star power, 64 activation/fill phrase (its end tick is included), 65 single-lane roll, 66 double-lane roll. The drum track type is not marked in the file: use `pro_drums` / `five_lane_drums` in `song.ini`, else heuristics (cymbal markers = 4-lane Pro; 5-lane green note or sustained notes = 5-lane; else 4-lane). Local events: `solo`, `soloend`, `mix_<difficulty>_drums<config><flags>` (difficulty 0 easy ... 3 expert).
+`N` types: 0 kick, 1 red, 2 yellow, 3 blue, 4 (4-lane green / 5-lane orange), 5 (5-lane green), 32 Expert+ (2x) kick. Accent modifiers 34-38 (red, yellow, blue, 4th lane, 5-lane green); ghost modifiers 40-44 (same order); cymbal modifiers 66 yellow, 67 blue, 68 green (4-lane notes are toms by default in `.chart`). Special phrases: 2 star power, 64 activation/fill phrase (its end tick is included), 65 single-lane roll, 66 double-lane roll. The file does not mark the drum track type: use `pro_drums` / `five_lane_drums` in `song.ini`, else heuristics (cymbal markers = 4-lane Pro; 5-lane green note or sustained notes = 5-lane; else 4-lane). Local events: `solo`, `soloend`, `mix_<difficulty>_drums<config><flags>` (difficulty 0 easy ... 3 expert).
 
 ## Audio & images
-`[Song]` stream tags and/or reserved file names (`song`, `guitar`, `rhythm`, `bass`, `keys`, `drums`, `drums_1..4`, `vocals`, `vocals_1/2`, `crowd`, `preview`; `.opus`, `.ogg`, `.mp3`; `.wav`). Check reserved names first, then the tags. Images/video are declared in `song.ini`.
+`[Song]` stream tags and/or reserved file names (`song`, `guitar`, `rhythm`, `bass`, `keys`, `drums`, `drums_1..4`, `vocals`, `vocals_1/2`, `crowd`, `preview`; `.opus`, `.ogg`, `.mp3`; `.wav`). Reserved names win over tags. Images/video are declared in `song.ini`.
 
 ## Versions & variants
-Feedback Editor `.chart` (GH1/2 era); an unadopted `.chart-v2`; GHTCP/GH3 additions (tap/open); Moonscraper extensions; Clone Hero additions (lyrics, GHL tracks, drum parity with `.mid`); DJ Hero custom proposal (turntable track in `.chart`). Miscellaneous pages in the docs describe BMS conversions and old Moonscraper MIDI conversions.
+Feedback Editor `.chart` (GH1/2 era); an unadopted `.chart-v2`; GHTCP/GH3 additions (tap/open); Moonscraper extensions; Clone Hero additions (lyrics, GHL tracks, `.mid` drum parity); a DJ Hero turntable-track proposal. The docs also cover BMS conversions and old Moonscraper MIDI conversions.
 
 ## Quirks & pitfalls
-- Quoted values may contain quotes.
-- `Offset` sign: positive = audio sooner.
-- 5 and 6 are modifiers, not notes; the open note is 7.
-- Modifiers at one tick affect all notes on it.
-- Several `.chart` variants in one folder.
+- Quoted values may contain quotes; `Offset` positive = audio sooner.
+- 5 and 6 are modifiers, the open note is 7; modifiers at a tick affect all notes on it.
+- Several `.chart` variants can share a folder; drum track type is ambiguous.
 - Resolution varies; tempos are in thousandths of a BPM.
-- Drum track type is ambiguous.
 
 ## Example
-Hand-assembled from field rules and the doc's examples (illustrative; the `[Song]` values mirror the doc's example):
+Hand-assembled from field rules and the doc's examples (the `[Song]` values mirror the doc's example):
 
 ```
 [Song]
@@ -127,18 +122,21 @@ Hand-assembled from field rules and the doc's examples (illustrative; the `[Song
 ```
 
 ## ROX support
-Read by ROX since Prism's addition of `rox::formats::clone_hero` (decode only). `ChartDecoder` gives one 5-column chart per 5-lane track that has a note on the five frets (`Single`, `DoubleGuitar`, `DoubleBass`, `DoubleRhythm`, `Keyboard` × Expert/Hard/Medium/Easy; `variants`, `decode_variant`, `decode_with_ini`, `decode_with_audio_plan`; `auto_decode*` read the `song.ini` of the folder): frets 0-4 are the columns, sustains are holds (no cutoff unless the `song.ini` gives `sustain_cutoff_threshold`), `B`/`TS` make the tempo map, `[Song]` `Offset` and `song.ini` `delay` (same sign, the `song.ini` wins) move every time so that times count from the start of the audio, and the stems (reserved names and the `[Song]` stream tags) are the audio plan. Forced (5) and tap (6) flags and open notes (7, dropped: five columns) are counted, not kept; star power, solos, events, lyrics, drums, GHL tracks and `SingleBass` are not read. Decisions: `src/formats/clone_hero/mod.rs` in the ROX copy.
+Read since Prism's addition of `rox::formats::clone_hero` (decode only). `ChartDecoder` gives one 5-column chart per 5-lane track with a note on the five frets (`Single`, `DoubleGuitar`, `DoubleBass`, `DoubleRhythm`, `Keyboard` × Expert/Hard/Medium/Easy; `variants`, `decode_variant`, `decode_with_ini`, `decode_with_audio_plan`, `auto_decode*` with the folder's `song.ini`).
+
+- Frets 0-4 are the columns; sustains are holds (no cutoff unless `song.ini` gives `sustain_cutoff_threshold`); `B`/`TS` make the tempo map.
+- `[Song]` `Offset` and `song.ini` `delay` (same sign, `song.ini` wins) shift every time so times count from the audio start. Stems (reserved names and `[Song]` stream tags) are the audio plan.
+- Forced (5) and tap (6) flags and open notes (7, dropped: five columns) are counted, not kept. Star power, solos, events, lyrics, drums, GHL tracks and `SingleBass` are not read. Decisions: `src/formats/clone_hero/mod.rs` in the ROX copy.
 
 ## Parsers & tools
 - Moonscraper Chart Editor (C#): https://github.com/FireFox2000000/Moonscraper-Chart-Editor
-- YARG.Core chart parser (C#): https://github.com/YARC-Official/YARG.Core
-- Onyx (Haskell converter): https://github.com/mtolly/onyx
-- Clone Hero (closed source), Feedback Editor, Editor on Fire
+- YARG.Core (C#): https://github.com/YARC-Official/YARG.Core
+- Onyx (Haskell): https://github.com/mtolly/onyx
+- Clone Hero (closed), Feedback Editor, Editor on Fire
 - Docs: https://github.com/TheNathannator/GuitarGame_ChartFormats
 
 ## Getting samples
-- Committed in [`samples/`](samples/SOURCES.md): 9 real charts and 3 synthetic ones. Real: YARG.Core `yarg-core_test.chart` (all instruments incl. GHL and keys, UTF-8 BOM), five hand-made Clone Hero charts from Stickheadz32's GitHub repository (single-track and drums/bass charts, tempo changes, 192 resolution), and three charts extracted from Chorus Encore `.sng` downloads (a single-track chart, a guitar/bass/rhythm/drums chart, a Lead Guitar + Pro Drums chart with four guitar difficulties); the `.sng` containers and all audio/images are not stored. Synthetic CC0 charts cover things not found in the real files (forced/tap/open, anchors, 4-lane pro and 5-lane drums, minimal CRLF).
-- More: Chorus Encore (https://chorus.fightthe.pw/, API `https://api.enchor.us/search`, files at `https://files.enchor.us/<md5>.sng`; a `.sng` is a container, whose `notes.chart` is this format), Custom Songs Central, RhythmVerse, YARGCharts. Moonscraper Chart Editor (https://github.com/FireFox2000000/Moonscraper-Chart-Editor, BSD-3-Clause) writes `.chart` but its repository holds no chart fixtures. Licences of community charts are normally not stated.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). More: Chorus Encore (https://chorus.fightthe.pw/, API `https://api.enchor.us/search`, files at `https://files.enchor.us/<md5>.sng`; a `.sng` is a container whose `notes.chart` is this format), Custom Songs Central, RhythmVerse, YARGCharts. Moonscraper (https://github.com/FireFox2000000/Moonscraper-Chart-Editor, BSD-3-Clause) writes `.chart` but its repository has no chart fixtures. Community chart licences are normally not stated.
 
 ## Sources
 - https://thenathannator.github.io/GuitarGame_ChartFormats/ (chart-format Format-Overview, Brief-History, Tracks/5-Fret-Guitar, 6-Fret-Guitar, Drums, Legacy-Tracks; Implementation-Info/Time-Conversions)

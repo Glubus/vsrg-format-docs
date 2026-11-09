@@ -5,11 +5,11 @@ Doc status: complete (the whole format is a single Lua module) · ROX: no · Cat
 
 ## Overview
 
-NanoChart is a **very compact binary encoding of a column chart's note events** used by the rizu / soundsphere engine (GitHub `semyon422/rizu`, `chart/transform/NanoChart.lua`): a chart is reduced to a flat list of `(time, press|release, input)` events with 1/1024 s time resolution, preceded by a version byte, a 16-byte chart hash and an input count. The repository spec says replay events and exported `.nanochart` files depend on it and that "NanoChart uses the current `byte` buffer API while preserving the existing version 1 and version 2 wire format", so changes must be covered by exact-byte fixtures. It carries **no BPM, no scroll velocity and no keysounds**: it is a note-skeleton (for example to preview or to verify a chart against a replay), not a playable chart.
+NanoChart is a compact binary encoding of a column chart's note events in the rizu engine (`semyon422/rizu`, `chart/transform/NanoChart.lua`): a version byte, a 16-byte chart hash, an input count, then a flat list of `(time, press|release, input)` events with 1/1024 s resolution. Replay events and exported `.nanochart` files depend on it; the repository spec requires exact-byte fixtures for the version 1 and 2 wire formats. It has no BPM, scroll velocity or keysounds, so it is a note skeleton (preview, replay verification), not a playable chart.
 
 ## Container & encoding
 
-Raw binary, byte-oriented, big-endian bit fields as drawn below. No compression. Extension `.nanochart` for exported files (also embedded in replay data [inference]).
+Raw binary, big-endian bit fields as drawn below, no compression. Extension `.nanochart` (also embedded in replay data [inference]).
 
 ## Structure / metadata
 
@@ -58,7 +58,7 @@ Absolute time in **seconds**: integer part accumulated by delay objects (up to 1
 
 ## Notes
 
-Each event: `type` 1 = press, 0 = release (holds are a press followed by a release on the same input), `input` 1..255 (column index in the chart's input mode; inputs 13..255 use extended objects). Simultaneous events share one time via the same-time bit.
+`type` 1 = press, 0 = release (a hold is a press then a release on the same input). `input` 1..255 is the column index (13..255 use extended objects). Simultaneous events share one time via the same-time bit.
 
 ## Audio & images
 
@@ -66,14 +66,14 @@ None.
 
 ## Versions & variants
 
-Version 1: delays 0..15 s only. Version 2: delays -8..7 s (allows slightly unordered times), the version the encoder writes.
+Version 1: delays 0..15 s. Version 2 (written by the encoder): delays -8..7 s.
 
 ## Quirks & pitfalls
 
-- The time of a start object applies to **following same-time objects** until the next start object.
+- A start object's time applies to the following same-time objects until the next start object.
 - The encoder truncates times to 1/1024 s.
-- Input 0 means "time marker only".
-- In version 2 a delay nibble > 7 is negative (`delta - 16`), in version 1 it is unsigned.
+- Input 0 means time marker only.
+- Version 2 delay nibble > 7 is negative (`delta - 16`); version 1 is unsigned.
 - The hash is raw 16 bytes, not hex.
 
 ## Example
@@ -91,7 +91,7 @@ encodeNote(input 128, release, same time)            -> f4 80
 
 ## ROX support
 
-Not read by ROX. It lacks BPM/SV/keysounds that ROX stores; at best it could be turned into a hold/tap skeleton with a constant-tempo assumption.
+Not read by ROX. It lacks the BPM/SV/keysounds ROX stores; at best a tap/hold skeleton with a constant tempo assumption.
 
 ## Parsers & tools
 
@@ -99,8 +99,9 @@ rizu (Lua): https://github.com/semyon422/rizu (`chart/transform/NanoChart.lua`, 
 
 ## Getting samples
 
-- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): the bytes of one rizu unit test (version 1), five version-2 files built from real charts laid out exactly like the rizu exporter does, and two synthetic files. The real charts' note times come from real maps; the files were written by a Python port of `NanoChart:encode` (decoded back and compared), not by rizu.
-- **What the real exporter writes** (`rizu/editor/exports/NanoChartExporter.lua`, read at commit `cf4603379dcab949d3510b8c31d1d3e421df6ec0`): `<chart path>.nanochart` with version 2, an **all-zero 16-byte hash**, `inputCount` = key count, and only **key press events** (taps and hold starts, `type = 1`), sorted by time then input; next to it a zlib-compressed `<path>.nanochart_compressed` and `.preview0/.preview1` (plus `_compressed`) SPH previews. A genuine export needs the rizu editor (https://github.com/semyon422/rizu): open a chart and use the export; no genuine export file is published in any repository or CDN reached (`semyon422/soundsphere` is the same tree as rizu; `sphere`/`sphlib` repos need authentication).
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md); the real-chart files were written by a Python port of `NanoChart:encode` (decoded back and compared), not by rizu.
+
+The real exporter (`rizu/editor/exports/NanoChartExporter.lua`, read at commit `cf4603379dcab949d3510b8c31d1d3e421df6ec0`) writes `<chart path>.nanochart` with version 2, an all-zero 16-byte hash, `inputCount` = key count and only key press events (taps and hold starts, `type = 1`), sorted by time then input. Next to it go a zlib-compressed `<path>.nanochart_compressed` and `.preview0/.preview1` (plus `_compressed`) SPH previews. A genuine export needs the rizu editor (https://github.com/semyon422/rizu): open a chart and export. No genuine export is published in any repository or CDN reached (`semyon422/soundsphere` is the same tree as rizu; `sphere`/`sphlib` repos need authentication).
 
 ## Sources
 

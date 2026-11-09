@@ -5,11 +5,11 @@ Doc status: partial · ROX: no · Category: vsrg (12-lane vertical highway, Proj
 
 ## Overview
 
-**hololive Dream** (hololive production's mobile rhythm game, Project SEKAI-like) uses a **dialect of the Sliding Universal Score (SUS) text format** ([`../sus`](../sus/README.md)) for its charts. It keeps the SUS skeleton (`#MMMCC:data` lines, 12 lanes, bar lengths) but changes how each line's data is encoded and adds game-specific channels (hi-speed `NMS`, skill points, fever/charge sections, ghost notes). It is documented only by the loader of `UntitledCharts/rg_converters` (`cpp/src/converters/holodori_sus/loader.cpp`, described there as "a sekai-sus dialect decoded off the game's SusConverter"), which supports it as "Loading-Only". This page lists what that loader reads; behaviours the game has beyond it are unknown.
+hololive Dream (hololive production's Project SEKAI-like mobile game) uses a dialect of SUS ([`../sus`](../sus/README.md)): `#MMMCC:data` lines, 12 lanes and bar lengths as in SUS, but with its own data encoding and extra channels (hi-speed `NMS`, skill points, fever/charge sections, ghost notes). The only documentation is the loader in `UntitledCharts/rg_converters` (`cpp/src/converters/holodori_sus/loader.cpp`, "a sekai-sus dialect decoded off the game's SusConverter", "Loading-Only"). This page lists what that loader reads; anything beyond is unknown.
 
 ## Container & encoding
 
-Plain text, one directive per line, lines starting with `#` are interpreted; leading/trailing whitespace stripped. Charset not stated (ASCII-compatible). The same `.sus` extension as the PJSK SUS: distinguish by the data cell syntax and the extra directives.
+Plain text, one directive per line; lines starting with `#` are read, whitespace trimmed. Charset not stated (ASCII-compatible). Same `.sus` extension as PJSK SUS: tell them apart by data cell syntax and extra directives.
 
 ## Structure / metadata
 
@@ -21,14 +21,14 @@ Plain text, one directive per line, lines starting with `#` are interpreted; lea
 | `#WAVEOFFSET <seconds>` | Audio offset (float). |
 | `#BASEBPM <bpm>` | Default tempo used when a `#BPMxx` definition is missing (default 120). |
 | `#SP_SKILL mmm num/den slot` | Legacy skill-point line: measure `mmm`, position `num/den` within the measure, deck slot number. |
-| `#BPMxx <bpm>` | Tempo definition with 2-character id `xx` (the id is the two characters after `BPM`, used as a map key). |
-| `#NMSxx <multiplier>` | **NMS (hi-speed) definition**: scroll multiplier with id `xx`. |
+| `#BPMxx <bpm>` | Tempo definition with 2-character id `xx` (the two characters after `BPM`, used as a map key). |
+| `#NMSxx <multiplier>` | NMS (hi-speed) definition: scroll multiplier with id `xx`. |
 | `#COLORwwww <rgba>` | Colour definition (8 hex digits incl. alpha) for ghost notes; `wwww` = 4-hex id. |
 | `#mmm02:<length>` | Bar length of measure `mmm` (beats; default 4), as in SUS. |
 
 ### Data lines
 
-Header form `#mmmXY` + `:` + data, where `mmm` is the 3-digit measure, `X` the **event type** (hex/base-36 digit), `Y` the **lane character** (base-62 style, case-sensitive: `0-9`, `a-z` = 10-35, `A-Z` = 36-61).
+Header form `#mmmXY` + `:` + data. `mmm` is the 3-digit measure, `X` the event type (hex/base-36 digit), `Y` the lane character (base-62 style, case-sensitive: `0-9`, `a-z` = 10-35, `A-Z` = 36-61).
 
 | Event `X` (and header) | Meaning |
 |---|---|
@@ -43,24 +43,26 @@ Header form `#mmmXY` + `:` + data, where `mmm` is the 3-digit measure, `X` the *
 
 ### Data encoding
 
-A data string is a grid of **positions** within the measure. Two forms of token:
+A data string is a grid of positions within the measure. Two token forms:
 
-- A 2-character cell `kw` = `kind` (char 0) and `width` (char 1), each base-62; `kind == 0` means "empty". One cell advances the position by 1.
-- `0x` + 2 characters (base-62, `d1*62 + d2`): a **run of that many empty positions** (compression). Total positions = final position count; a note's fractional position within the measure = `position / total`.
+- A 2-character cell `kw` = `kind` (char 0) and `width` (char 1), each base-62. `kind == 0` means empty. One cell advances the position by 1.
+- `0x` + 2 characters (base-62, `d1*62 + d2`): a run of that many empty positions (compression). Total positions = final position count; a note's fractional position within the measure = `position / total`.
 
-For the meta lines (`08`, `0A`, `0B`, `0C`, `0D`) the cell is read as a 2-char id/value (only `00` is empty; `05` is id 5), so they use a slightly different cell reading from note lines.
+Meta lines (`08`, `0A`, `0B`, `0C`, `0D`) read the cell as a 2-char id/value (only `00` is empty; `05` is id 5).
 
 ### Note kinds
 
-Tap channel (`1l`): kind `1` normal tap; kind `2` = critical (as a co-located modifier or a standalone critical tap); kind `3` = "step ignore" marker (a relay marked this way is an `attach`, not a shape point); kind `6` also marks critical. Directional channel (`5l`): kind `1` flick up, `3` flick left, `4` flick right; `2`, `5`, `6` are **slide ease markers** (`2` ease-in; `5`/`6` ease-out). Long channel (`3lc`): kind `1` start, `2` end, `3` relay active (visible, combo), `4` bezier point, `5` relay deactivated (hidden, shape, no combo); a start is matched to the oldest open start ahead of its end (FIFO), relays between them are attached, unmatched ends are dropped, exact duplicate points removed (the dense encoding repeats points).
+- Tap channel (`1l`): kind `1` normal tap; kind `2` critical (as a co-located modifier or a standalone critical tap); kind `3` "step ignore" marker (a relay marked this way is an `attach`, not a shape point); kind `6` also marks critical.
+- Directional channel (`5l`): kind `1` flick up, `3` flick left, `4` flick right; `2`, `5`, `6` are slide ease markers (`2` ease-in; `5`/`6` ease-out).
+- Long channel (`3lc`): kind `1` start, `2` end, `3` relay active (visible, combo), `4` bezier point, `5` relay deactivated (hidden, shape, no combo). A start matches the oldest open start ahead of its end (FIFO), relays between them are attached, unmatched ends are dropped, and exact duplicate points are removed (the dense encoding repeats points).
 
 ## Timing model
 
-Positions are fractional (`position / total`) inside bars; ticks derive from bar lengths (`TICKS_PER_BEAT = 480` shared with the PJSK SUS code; "the file's ticks_per_beat is ignored"). Tempo from `#BPMxx` + channel `08`; hi-speed from `#NMSxx` + `0A` (a single hi-speed layer); audio offset from `#WAVEOFFSET`.
+Positions are fractional (`position / total`) inside bars. Ticks derive from bar lengths (`TICKS_PER_BEAT = 480`, shared with the PJSK SUS code; "the file's ticks_per_beat is ignored"). Tempo comes from `#BPMxx` + channel `08`, hi-speed from `#NMSxx` + `0A` (a single hi-speed layer), audio offset from `#WAVEOFFSET`.
 
 ## Notes
 
-Taps, critical taps, directional flicks, slides with relays and ease/bezier markers, ghost notes (decorative, colour from `#COLOR`), skill points, fever/charge sections. Lanes are positions on a 12-lane board (`MIN_LANE`..`MAX_LANE` of the shared SUS code).
+Taps, critical taps, flicks, slides with relays and ease/bezier markers, ghost notes (colour from `#COLOR`), skill points, fever/charge sections. Lanes: 12-lane board (`MIN_LANE`..`MAX_LANE` of the shared SUS code).
 
 ## Audio & images
 
@@ -68,29 +70,29 @@ Taps, critical taps, directional flicks, slides with relays and ease/bezier mark
 
 ## Versions & variants
 
-Not applicable (single dialect known). The PJSK variant of SUS (`../sus`) uses its own `#MMMTL:` syntax; the converter selects the loader by option, not by file contents. [inference from separate loader entry points]
+One dialect known. PJSK SUS (`../sus`) uses its own `#MMMTL:` syntax; the converter picks the loader by option, not file contents [inference from separate loader entry points].
 
 ## Quirks & pitfalls
 
-- Base-62 case-sensitive characters (`a-z` and `A-Z` differ).
-- `0x` runs compress empties; a parser that treats `0x` as a note kind misreads them.
-- Slides are split over several lines/channels; matching is by position, not by an explicit id.
+- Base-62 characters are case-sensitive (`a-z` and `A-Z` differ).
+- A parser that treats `0x` as a note kind misreads the empty runs.
+- Slides are split over several lines/channels and matched by position, not by an explicit id.
 - Bezier pull information is lost when converting to a PJSK-like model.
 - The fever section is only accepted when complete and ordered.
 
 ## Example
 
-Illustrative, hand-built from the cell rules above: measure 1, lane 5 tap channel, 8 positions, taps at positions 0 and 4:
+Hand-built from the cell rules above: measure 1, lane 5 tap channel, 8 positions, taps at positions 0 and 4:
 
 ```
 #00115:110x03110x03
 ```
 
-(cells `11` = kind 1 width 1; `0x03` = 3 empty positions; totals 1 + 3 + 1 + 3 = 8 positions.)
+Cells `11` = kind 1 width 1; `0x03` = 3 empty positions; totals 1 + 3 + 1 + 3 = 8 positions.
 
 ## ROX support
 
-Not read by ROX. 12-lane board with wide notes, flicks, slides with eases/beziers, skill/fever events.
+Not read by ROX.
 
 ## Parsers & tools
 
@@ -98,9 +100,10 @@ Not read by ROX. 12-lane board with wide notes, flicks, slides with eases/bezier
 
 ## Getting samples
 
-- Committed in [`samples/`](samples/): 6 official hololive Dreams charts downloaded from the game's CDN with HolodoriDB/holodori-asset-tools (`holodori download --filter '^chart_...\.sus$'`; catalog revision 110: about 1600 `chart_m<music id>_<easy|normal|hard|expert>.sus` resources). Everything is listed with origin, date and sha256 in [`samples/SOURCES.md`](samples/SOURCES.md).
-- More: run `pip install holodori-asset-tools` then `holodori download ./out --filter '^chart_m0.*\.sus$'` (no game or login needed, per its README); community database https://holodori.best.
-- Observed [observed in samples/holodori_chart_m0367_normal.sus]: files are CRLF and start with `#CREATE_APP_VERSION`, `#CREATE_DATE`, `#MUSIC_ID`, `#SCORE_LEVEL`, `#MEASURE_COUNT`, `#FULL_COMBO_NOTE_COUNT`, `#TOTAL_NOTE_COUNT` and per-type counts (`#NORMAL_NOTE_COUNT`, `#FLICK_NOTE_COUNT`, `#LONG_START_NOTE_COUNT`, `#LONG_END_NOTE_COUNT`, `#LONG_FLICK_END_NOTE_COUNT`, `#LONG_RELAY_NOTE_COUNT`, `#LONG_CONTINUE_NOTE_COUNT`, `#DAMAGE_NOTE_COUNT`, `#GHOST_NOTE_COUNT`), then `#WAVEOFFSET`, `#BASEBPM`, `#REQUEST "ticks_per_beat" 0`; data lines have no space after the colon (`#00002:4`, `#00008:01`) and use `0x03` empty runs (`#0063b0:0x0323`).
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). Charts come from the game's CDN via HolodoriDB/holodori-asset-tools (`holodori download --filter '^chart_...\.sus$'`; catalog revision 110: about 1600 `chart_m<music id>_<easy|normal|hard|expert>.sus` resources).
+
+- More: `pip install holodori-asset-tools`, then `holodori download ./out --filter '^chart_m0.*\.sus$'` (no game or login needed); community database https://holodori.best.
+- [observed: holodori_chart_m0367_normal.sus] CRLF; starts with `#CREATE_APP_VERSION`, `#CREATE_DATE`, `#MUSIC_ID`, `#SCORE_LEVEL`, `#MEASURE_COUNT`, `#FULL_COMBO_NOTE_COUNT`, `#TOTAL_NOTE_COUNT` and per-type counts (`#NORMAL_NOTE_COUNT`, `#FLICK_NOTE_COUNT`, `#LONG_START_NOTE_COUNT`, `#LONG_END_NOTE_COUNT`, `#LONG_FLICK_END_NOTE_COUNT`, `#LONG_RELAY_NOTE_COUNT`, `#LONG_CONTINUE_NOTE_COUNT`, `#DAMAGE_NOTE_COUNT`, `#GHOST_NOTE_COUNT`), then `#WAVEOFFSET`, `#BASEBPM`, `#REQUEST "ticks_per_beat" 0`. Data lines have no space after the colon (`#00002:4`, `#00008:01`) and use `0x03` empty runs (`#0063b0:0x0323`).
 
 ## Sources
 

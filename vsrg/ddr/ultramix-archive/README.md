@@ -5,7 +5,7 @@ Doc status: complete for the US release (EU/other mixes partly unknown) · ROX: 
 
 ## Overview
 
-**DDR Ultramix** (Xbox, 2003; sold in Europe as *Dancing Stage Unleashed*) packs its assets in two flat archives next to `default.xbe`: `x_data_US.bin` (charts, textures, song info, animation data) and `music_US.sng` (audio streams). The charts inside are **legacy [SSQ](../ssq/README.md) files** (`<id>_all.ssq`, TPS 75 or 150). The archive layouts were reverse engineered from the US release by skogaby (`ddr-chart-tools/docs/ultramix_archive_formats.md`, with an extractor script `scripts/extract_ultramix_data.py`); the EU release reuses the structure with different offsets. Ultramix 2/3/4 were **not investigated** (same file-name convention, TOC location likely differs).
+DDR Ultramix (Xbox, 2003; Europe: *Dancing Stage Unleashed*) packs assets in two flat archives next to `default.xbe`: `x_data_US.bin` (charts, textures, song info, animation data) and `music_US.sng` (audio). The charts are legacy [SSQ](../ssq/README.md) files (`<id>_all.ssq`, TPS 75 or 150). skogaby reverse engineered the US layouts (`ddr-chart-tools/docs/ultramix_archive_formats.md`, extractor `scripts/extract_ultramix_data.py`). The EU release has different offsets; Ultramix 2/3/4 were not investigated.
 
 ```
 default.xbe       game executable (contains the x_data table of contents as static data)
@@ -13,13 +13,13 @@ x_data_US.bin     textures, charts, song info, animation data, ...
 music_US.sng      audio streams (XBOX-IMA ADPCM, 44.1 kHz stereo, headerless)
 ```
 
-Both archives are flat and **sector-aligned to 0x800** (2048 bytes, the Xbox DVD read granule).
+Both archives are sector-aligned to 0x800 (2048 bytes).
 
 ## Container & encoding
 
 ### `x_data_US.bin`
 
-A concatenation of sector-aligned payloads with **no header of its own**. The table of contents lives in the XBE as a static array of 16-byte little-endian entries.
+A concatenation of sector-aligned payloads with no header. The table of contents is a static array of 16-byte little-endian entries in the XBE.
 
 | Parameter | US | EU |
 |---|---|---|
@@ -36,7 +36,7 @@ struct x_data_entry {
 };
 ```
 
-`name_file_offset = name_va - 0xE780`; names are ASCII. Lookup in the game: names containing `\` are rejected (flat archive), comparison is case-insensitive (`_stricmp`), linear scan. A handful of entries are fully zero (e.g. the `all.ssq` sentinel); skip them. For all 737 entries `size_aligned == roundup(size, 0x800)`.
+`name_file_offset = name_va - 0xE780`; names are ASCII. The game rejects names containing `\` (flat archive), compares case-insensitively (`_stricmp`) and scans linearly. A few entries are fully zero (e.g. the `all.ssq` sentinel); skip them. For all 737 entries `size_aligned == roundup(size, 0x800)`.
 
 Contents (US, 737 entries, ~126 MB): `.tga` 249 (uncompressed 32-bit BGRA textures), `.dds` 231, `.ssq` 60 (legacy DDR charts, TPS 75 or 150), `.csv` 54 (per-song background animation / stage direction), `.sif` 51 (song info), `.act` 33 (animation curves), `.ani` 27 (character animations), `.bmp` 22, `.txt` 3, `.pd` 3 (particle scripts), `.ddm` 2 (unknown), `.xpu` 2 (pixel shader blobs).
 
@@ -44,7 +44,7 @@ Per-song group (4-character song id, e.g. `abs2`): `{id}.sif`, `{id}.csv`, `{id}
 
 ### `music_US.sng`
 
-The TOC is **inline at the start** of the file:
+The TOC is inline at the start of the file:
 
 ```
 +0x0000  u32  entry_count N
@@ -62,9 +62,9 @@ struct sng_entry {
 };
 ```
 
-Entries with `loop_* == 0` are UI/non-song audio (tags `uime`, `uire`, `uigo`, `uisp`, `uirc`, `intr`, `inus`, `inuk`, `cred`, `live`). Entries with `loop_* != 0` are songs: `main` = full track, `loop` = ~8-second preview that loops on the song wheel; the tag equals the song id used by the `.sif`/`.ssq`/texture file names. The game reads the first sector once and keeps it resident; lookup is a linear scan comparing the tag as a u32.
+Entries with `loop_* == 0` are UI/non-song audio (tags `uime`, `uire`, `uigo`, `uisp`, `uirc`, `intr`, `inus`, `inuk`, `cred`, `live`). Entries with `loop_* != 0` are songs: `main` = full track, `loop` = ~8-second preview that loops on the song wheel. The tag equals the song id used by the `.sif`/`.ssq`/texture file names. The game reads the first sector once, keeps it resident and scans linearly, comparing the tag as a u32.
 
-Audio: headerless **XBOX-IMA ADPCM**, stereo, 44.1 kHz, block size 0x48 bytes (64 samples per channel); stream sizes are exact multiples of 0x48.
+Audio: headerless XBOX-IMA ADPCM, stereo, 44.1 kHz, block size 0x48 bytes (64 samples per channel); stream sizes are exact multiples of 0x48.
 
 ### `.sif` (song info)
 
@@ -81,15 +81,15 @@ NUL-terminated ASCII strings at fixed indices, zero-padded to a fixed size (typi
 
 ## Structure / metadata
 
-The chart data is the SSQ container (see [`../ssq`](../ssq/README.md)): legacy TPS (75/150), non-zero `time_offset[0]` in the tempo chunk, chunk types 1/2/3 plus auxiliary types. Ultramix SSQs are paired with WAVM audio (the same XBOX-IMA stream format) in conversions (`abs2_all.ssq` <-> `abs2.wavm`).
+Chart data is SSQ ([`../ssq`](../ssq/README.md)): legacy TPS (75/150), non-zero `time_offset[0]`, chunk types 1/2/3 plus auxiliary. Conversions pair `abs2_all.ssq` with `abs2.wavm` (same XBOX-IMA stream).
 
 ## Timing model
 
-SSQ ticks (4096 per whole note) with a per-file TPS; see [`../ssq`](../ssq/README.md) for the legacy origin-shift (`time_offset[0]`).
+As SSQ, with per-file TPS and the legacy origin shift (`time_offset[0]`): [`../ssq`](../ssq/README.md).
 
 ## Notes
 
-See SSQ: 4-panel dance steps, freezes, shocks (no mines).
+As SSQ: 4-panel steps, freezes, shocks, no mines.
 
 ## Audio & images
 
@@ -101,14 +101,14 @@ US vs EU: same structure, different TOC offsets in `default.xbe`. Ultramix 2/3/4
 
 ## Quirks & pitfalls
 
-- The TOC is in the executable, not the bin: an extractor must know the XBE-specific offset and the VA -> file delta.
+- The TOC is in the executable, not the bin: an extractor needs the XBE-specific offset and the VA -> file delta.
 - Sizes are padded to 0x800 sectors; use `size`, not `size_aligned`.
-- `.sng` tags are 4-char keys compared as an integer; case matters for `.sng` (tags), not for `x_data` names.
+- `.sng` tags are 4-char keys compared as an integer, so case matters for tags but not for `x_data` names.
 - Some TOC entries are zeroed sentinels.
 
 ## Example
 
-TOC entry layout and `.sif` content above are taken from the spec; no concrete sample file is in the repo.
+None; layouts above come from the spec.
 
 ## ROX support
 
@@ -120,7 +120,7 @@ Not read by ROX.
 
 ## Getting samples
 
-No sample: the archive is a 100+ MB Xbox asset pack (`x_data_US.bin`, `music_US.sng`) of a commercial game and the tool repository has no fixture. How (from the cited document): rip the Ultramix (Xbox, US release) disc, take `default.xbe`, `x_data_US.bin` and `music_US.sng`, and run `scripts/extract_ultramix_data.py` of [skogaby/ddr-chart-tools](https://github.com/skogaby/ddr-chart-tools) (commit `a733404f43427bfc7b9dea3cae67710149767993`) to get the `<id>_all.ssq` charts; the EU release uses different offsets and Ultramix 2/3/4 are not investigated.
+No sample: the archive is a 100+ MB Xbox asset pack and the tool repository has no fixture. Rip the Ultramix (Xbox, US) disc, take `default.xbe`, `x_data_US.bin` and `music_US.sng`, and run `scripts/extract_ultramix_data.py` of [skogaby/ddr-chart-tools](https://github.com/skogaby/ddr-chart-tools) (commit `a733404f43427bfc7b9dea3cae67710149767993`) to get the `<id>_all.ssq` charts.
 
 ## Sources
 

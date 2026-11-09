@@ -5,12 +5,12 @@ Doc status: partial · ROX: no · Category: vsrg · Encoding: text (CRLF)
 
 ## Overview
 
-`.ett` is the extension Etterna gives to an SSC-derived song file written by `NotesWriterETT::Write` (`src/Etterna/Models/NoteWriters/NotesWriterETT.cpp`; header comment: "Writes a Song to a .ETT file"). `Song::SaveToETTFile` sets the extension (`SetExtension(sPath, "ett")`), copies an existing file to `<name>.ett.old` first, and marks the saved steps. In the Etterna source at commit `2d706147cc4bcf95a8ceb24dc4f4129be207f803`:
+`.ett` is the extension Etterna gives to an SSC-derived song file written by `NotesWriterETT::Write` (`src/Etterna/Models/NoteWriters/NotesWriterETT.cpp`; header comment: "Writes a Song to a .ETT file"). `Song::SaveToETTFile` sets the extension (`SetExtension(sPath, "ett")`), copies an existing file to `<name>.ett.old` first, and marks the saved steps. At commit `2d706147cc4bcf95a8ceb24dc4f4129be207f803`:
 
-- the loader is a stub: `NotesLoaderETT.cpp`/`.h` contain only an `#include` and an empty include guard, and `NotesLoader::LoadFromDir` does not list ETT (order: SSC, SMA, SM, DWI, BMS, KSF, OSU);
-- `Song::SaveToETTFile` has **no call site** in `src/Etterna` (a search for `SaveToETTFile` finds only its definition and declaration).
+- the loader is a stub: `NotesLoaderETT.cpp`/`.h` hold only an `#include` and an empty include guard, and `NotesLoader::LoadFromDir` does not list ETT (order: SSC, SMA, SM, DWI, BMS, KSF, OSU);
+- `Song::SaveToETTFile` has no call site in `src/Etterna`.
 
-So `.ett` is, as far as the source shows, a write-only, never-invoked experiment [inference: from the absence of readers and callers]. No `.ett` file has been seen in the wild.
+So `.ett` is a write-only, never-invoked experiment [inference: no readers or callers]. No `.ett` file has been seen in the wild.
 
 ## Packaged in
 
@@ -18,7 +18,7 @@ Not packaged; would sit next to the song's `.sm`/`.ssc`.
 
 ## Container & encoding
 
-Plain text, MSD syntax (`#TAG:value;`), lines joined with CRLF (`JoinLineList` uses `\r\n`), values escaped with `SmEscape`. Encoding Unknown (UTF-8 as in StepMania 5).
+MSD text (`#TAG:value;`), lines joined with CRLF (`JoinLineList` uses `\r\n`), values escaped with `SmEscape`. Encoding Unknown (UTF-8 as in StepMania 5).
 
 ## Structure / metadata
 
@@ -51,13 +51,13 @@ By file name in the header, as `.sm`/`.ssc`.
 
 ## Quirks & pitfalls
 
-- No reader exists: a file cannot be loaded back by Etterna.
-- The note encoding is lossy for ambiguous letters (`U`) and, because the row symbols are replaced by blind string search, a letter sequence can be re-merged across measures [inference from the replace loops starting at offset 0].
+- No reader exists; Etterna cannot load the file back.
+- The note encoding is lossy for ambiguous letters (`U`); row symbols are replaced by blind string search, so a letter sequence can be re-merged across measures [inference from the replace loops starting at offset 0].
 - Only 4-key charts have note data.
 
 ## Example
 
-None: no real file, and a hand-built one would be pure inference (see Getting samples).
+None: no real file exists, and a hand-built one would be inference.
 
 ## ROX support
 
@@ -69,7 +69,7 @@ Etterna C++ (writer only): [NotesWriterETT.cpp](https://github.com/etternagame/e
 
 ## Getting samples
 
-No `.ett` file is committed: none exists in any repository checked (Etterna, ITGmania, StepMania, parser fixtures), and the only way to produce one is to build Etterna from source and call `Song::SaveToETTFile(path, false)` from code, since no menu, Lua binding or other caller was found [inference from a source search at commit `2d706147cc4bcf95a8ceb24dc4f4129be207f803`]. Useful starting points to obtain real data of the same family: the `#CHARTKEY`/`#MSDVALUES` tagged `.ssc` cache files (see `cache`) produced by stock Etterna.
+None committed: no `.ett` exists in any repository checked (Etterna, ITGmania, StepMania, parser fixtures). To produce one, build Etterna and call `Song::SaveToETTFile(path, false)` from code; no menu, Lua binding or other caller was found [inference from a source search at commit `2d706147cc4bcf95a8ceb24dc4f4129be207f803`]. Same-family real data: the `#CHARTKEY`/`#MSDVALUES` tagged `.ssc` cache files (see `cache`) from stock Etterna.
 
 ## Sources
 

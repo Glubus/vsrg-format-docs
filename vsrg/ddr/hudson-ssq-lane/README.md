@@ -5,11 +5,11 @@ Doc status: complete (as reverse engineered) · ROX: no · Category: vsrg · Enc
 
 ## Overview
 
-DDR **Hottest Party 4** and **Hottest Party 5** (Wii, Hudson Soft) store each chart in a **type 16** chunk of the [`.ssq`](../ssq/README.md) container. It replaces the [type 9](../hudson-ssq/README.md) chart used by Hottest Party 1 and Mario Mix; the two share nothing beyond the 12-byte chunk header. Where type 3 and type 9 rows are **panel masks**, a type 16 row names a **single lane**. Documented by skogaby in `ddr-chart-tools/docs/hudson_lane_ssq_format.md`, verified against the HP4 and HP5 main DOLs and every chart on both discs (57 HP4 songs / 1,098 charts; 121 HP5 songs / 798 charts). Only foot (dance-pad) charts are relevant to chart conversion; the same chunk type also carries Wii Remote "hand" charts and controller variants.
+DDR Hottest Party 4 and 5 (Wii, Hudson Soft) store each chart in a type 16 chunk of the [`.ssq`](../ssq/README.md) container. It replaces the [type 9](../hudson-ssq/README.md) chart of Hottest Party 1 and Mario Mix (only the 12-byte header is shared). Type 3 and 9 rows are panel masks; a type 16 row names a single lane. skogaby documented it in `ddr-chart-tools/docs/hudson_lane_ssq_format.md`, verified against the HP4 and HP5 main DOLs and every chart on both discs (57 HP4 songs / 1,098 charts; 121 HP5 songs / 798 charts). The chunk also carries Wii Remote "hand" charts and controller variants; only foot charts matter for conversion.
 
 ## Container & encoding
 
-Little-endian (the PowerPC game byte-swaps on load). The game's dispatcher routes chunk types 3, 9 and 16 into the same chart-slot table, so a disc could mix them; HP4/HP5 use type 16 only. Chunks are advanced by `length` rounded up to a dword.
+Little-endian (the PowerPC game byte-swaps on load). The game routes chunk types 3, 9 and 16 into the same chart-slot table; HP4/HP5 use type 16 only. Chunks advance by `length` rounded up to a dword.
 
 ## Structure / metadata
 
@@ -48,9 +48,9 @@ Which controller each of slots 3-7 maps to (Balance Board, Remote only, Remote +
 Total body size is `4N + ceil4(N) + 4N`. There is **no extra block**, no `CHAR`/`FREZ` table and no offset field: the loader computes the item-record offset directly from `N`.
 
 A row is the i-th element of each of the three arrays:
-- **tick**: i32 measure ticks.
-- **lane**: u8 lane index: the bit position in the type 3 mask (0 P1 Left, 1 Down, 2 Up, 3 Right, 4-7 the same for P2; 4-5 are hands in the `0x?a` styles). **`0xFF` = no note** (row skipped).
-- **item**: `{ i16 type, u16 param }`:
+- tick: i32 measure ticks.
+- lane: u8 lane index: the bit position in the type 3 mask (0 P1 Left, 1 Down, 2 Up, 3 Right, 4-7 the same for P2; 4-5 are hands in the `0x?a` styles). **`0xFF` = no note** (row skipped).
+- item: `{ i16 type, u16 param }`:
 
 | type | param | Meaning |
 |---|---|---|
@@ -65,7 +65,7 @@ The loader walks rows in order and merges every run of rows whose tick is `<=` t
 
 ## Timing model
 
-Measure ticks (4096 per whole note) mapped to time by the file's type 1 tempo chunk (HP4/HP5: tempo chunk with TPS = 150, type 2 events, as on HP1). See [`../ssq`](../ssq/README.md).
+Measure ticks (4096 per whole note) through the file's type 1 tempo chunk (HP4/HP5: TPS = 150, type 2 events as on HP1). See [`../ssq`](../ssq/README.md).
 
 ## Notes
 
@@ -79,19 +79,19 @@ Not in the chunk.
 
 ## Versions & variants
 
-- HP4 and HP5: type 16, with HP5 adding double (`0x18`) and Challenge (`0x06`).
-- Other chunks on these discs: type 1 tempo and type 2 events as on HP1; type 17 section markers as on arcade; **type 18** (HP5 only, 4 songs): `N x u32` ticks followed by `N x u32` zeros, not consumed by the step engine; one HP5 file carries an arcade-style type 9 metadata chunk (`param2 = 0`).
+- HP4 and HP5: type 16; HP5 adds double (`0x18`) and Challenge (`0x06`).
+- Other chunks on these discs: type 1 tempo, type 2 events, type 17 section markers as on arcade; type 18 (HP5 only, 4 songs): `N x u32` ticks then `N x u32` zeros, not used by the step engine; one HP5 file has an arcade-style type 9 metadata chunk (`param2 = 0`).
 
 ## Quirks & pitfalls
 
-- Three parallel arrays instead of records: ticks, lanes, items are stored separately.
-- `lane = 0xFF` or item type `-1` rows must be skipped.
-- Style code in the low byte decides the lane count; ignoring it mixes foot and hand charts.
-- Freeze-end ordering at equal ticks.
+- Ticks, lanes and items are three parallel arrays, not records.
+- Skip rows with `lane = 0xFF` or item type `-1`.
+- The style low byte sets the lane count; ignoring it mixes foot and hand charts.
+- At equal ticks, resolve a freeze end before a new arrow on the same lane.
 
 ## Example
 
-Not provided in the source. Illustrative, hand-built from the layout above for a single-foot chart with `N = 3` (tick 0 Left arrow, tick 1024 Right arrow, tick 2048 freeze end on Right):
+Hand-built for a single-foot chart with `N = 3` (tick 0 Left arrow, tick 1024 Right arrow, tick 2048 freeze end on Right):
 
 ```
 ticks:  00000000  00040000  00080000      (i32 LE: 0, 1024, 2048)
@@ -109,7 +109,7 @@ Not read by ROX (no SSQ support).
 
 ## Getting samples
 
-No file is committed: same situation as [`hudson-ssq`](../hudson-ssq/README.md) (documented from the Hottest Party 4 and 5 discs: 57 songs / 1,098 charts and 121 songs / 798 charts; no public extract; only multi-GB Wii disc images exist on archive.org). How: dump a Hottest Party 4 or 5 (Wii) disc you own, extract the `.ssq` files whose chart chunks have type 16, and read them with [skogaby/ddr-chart-tools](https://github.com/skogaby/ddr-chart-tools).
+No sample: same situation as [`hudson-ssq`](../hudson-ssq/README.md) (no public extract; only multi-GB Wii disc images on archive.org). Dump a Hottest Party 4 or 5 (Wii) disc you own, extract the `.ssq` files with type 16 chart chunks and read them with [skogaby/ddr-chart-tools](https://github.com/skogaby/ddr-chart-tools).
 
 ## Sources
 

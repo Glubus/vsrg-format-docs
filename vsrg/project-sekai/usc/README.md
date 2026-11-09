@@ -5,11 +5,11 @@ Doc status: partial · ROX: decode only (reads, never writes) · Category: vsrg 
 
 ## Overview
 
-USC (Universal Sekai Chart) is the JSON score model used by NonSpicyBurrito's `sonolus-pjsekai-engine` (a Sonolus recreation of the Project SEKAI engine); the package converts SUS to USC (`susToUSC`) and USC to Sonolus Level Data (`uscToLevelData`). The `rg_converters` README calls `.usc` "the old Sonolus standard (DEPRECATED FORMAT)", superseded by Next SEKAI LevelData. Editors such as MMW4CC export USC. The structure below is the TypeScript type definition shipped in `sonolus-pjsekai-engine@1.9.0`.
+JSON score model of NonSpicyBurrito's `sonolus-pjsekai-engine` (Sonolus recreation of the Project SEKAI engine), which converts SUS to USC (`susToUSC`) and USC to Sonolus Level Data (`uscToLevelData`). `rg_converters` calls `.usc` "the old Sonolus standard (DEPRECATED FORMAT)", superseded by Next SEKAI LevelData. MMW4CC and similar editors export it. The structure below is the TypeScript type definition in `sonolus-pjsekai-engine@1.9.0`.
 
 ## Container & encoding
 
-JSON (UTF-8). A chart editor may wrap or extend the object (not verified); the engine expects the bare `{offset, objects}` shape. Sonolus level data derived from it is gzip-JSON (see `../../../others/sonolus/level-data/`).
+JSON (UTF-8). Editors may wrap or extend the object (not verified); the engine expects the bare `{offset, objects}` shape. Sonolus level data derived from it is gzip-JSON (see `../../../others/sonolus/level-data/`).
 
 ## Structure / metadata
 
@@ -37,11 +37,11 @@ Every object has `beat` (number). Types:
 
 ## Timing model
 
-Beat-based (`beat` floats); BPM changes by `bpm` objects, scroll speed by `timeScale` objects. Conversion: beats -> seconds via the `bpm` objects; `offset` shifts the BGM.
+Beat-based (`beat` floats). `bpm` objects change tempo, `timeScale` objects change scroll speed. Beats convert to seconds via the `bpm` objects; `offset` shifts the BGM.
 
 ## Notes
 
-Single notes map to Sonolus archetypes (from `usc/convert.js`): `NormalTapNote`, `CriticalTapNote`, `NormalFlickNote`, `CriticalFlickNote`, `NormalTraceNote`, `CriticalTraceNote`, `NormalTraceFlickNote`, `CriticalTraceFlickNote`; direction values: left -1, up 0, right 1; eases: out -1, linear 0, in 1. Slides become connected entities (joints, attaches, ends) with `lane`/`size` data; simultaneous notes get `SimLine` entities generated automatically.
+Single notes map to Sonolus archetypes (from `usc/convert.js`): `NormalTapNote`, `CriticalTapNote`, `NormalFlickNote`, `CriticalFlickNote`, `NormalTraceNote`, `CriticalTraceNote`, `NormalTraceFlickNote`, `CriticalTraceFlickNote`; direction values: left -1, up 0, right 1; eases: out -1, linear 0, in 1. Slides become connected entities (joints, attaches, ends) with `lane`/`size` data. Simultaneous notes get `SimLine` entities automatically.
 
 ## Audio & images
 
@@ -49,15 +49,15 @@ None (BGM is part of the Sonolus level item).
 
 ## Versions & variants
 
-Superseded by Next SEKAI LevelData (`.nsld`) and by Chart Cyanvas / Untitled SEKAI LevelData variants (per rg_converters: Chart Cyanvas and Untitled SEKAI formats are deprecated). SUS <-> USC conversions available in rg_converters.
+Superseded by Next SEKAI LevelData (`.nsld`); per rg_converters the Chart Cyanvas and Untitled SEKAI LevelData variants are deprecated. rg_converters converts SUS <-> USC.
 
 ## Quirks & pitfalls
 
-Slide `connections` must start with start/ignore and end with end/ignore; hidden/attach have no lane or size; lane/size are numbers (can be non-integer).
+Slide `connections` start with start/ignore and end with end/ignore. hidden/attach have no lane or size. lane/size may be non-integer.
 
 ## Example
 
-Illustrative, hand-built from the TypeScript types above:
+Hand-built from the TypeScript types above:
 
 ```json
 {"offset":0,"objects":[
@@ -67,11 +67,14 @@ Illustrative, hand-built from the TypeScript types above:
 
 ## ROX support
 
-Read by ROX since Prism's addition of `rox::formats::sekai` (decode only): `UscDecoder` (`decode`, `decode_with_report` giving a `SekaiReport`, `decode_with_title`, `decode_file`; `DetectedFormat::Usc`). ONE chart per file, always **12 columns**, from `lane` (the CENTRE of the note from the centre of the stage) and `size` (HALF its width), as `susToUSC` writes them (`lane = x - 8 + width / 2`, `size = width / 2`): the leftmost lane is `lane - size + 6`, the column is that value (rounded when within 1e-4 of a whole lane, else floored and counted); a note not entirely on the stage is dropped and counted. The document may be bare (`{offset, objects}`) or wrapped in `{"usc": {...}, "version": 1|2}` (the editors' files, read from `rg_converters`; version 2 adds `damage`, `guide`, `skill`, `feverChance`, `feverStart` and `timeScaleGroup` objects). A `single` is a tap (`direction` is a flick, counted; `critical` dropped and counted; `trace` dropped and counted), a `slide` with `active` (true or absent) is ONE hold from its first connection to its last on the first connection's column, the connections between dropped and counted; a `slide` with `active: false` and a `guide` object are guides (dropped and counted); `damage`, `skill`, `feverChance`, `feverStart` and the scroll speeds (`timeScale`, `timeScaleGroup`) are counted and ignored. `bpm` objects are in beats (the last of a beat wins; the first BPM also holds before it; no valid BPM is an error); `offset` (seconds, `-#WAVEOFFSET` of the SUS it came from) moves every time by itself. A `.usc` has no title and no audio name: the title is the file stem, the sound is found in the folder. Limit 16 MiB. Decisions: `rox::formats::sekai` `mod.rs`; tests (every file built by hand): `sekai/tests.rs`.
+Decode only, `rox::formats::sekai` (`UscDecoder`, `DetectedFormat::Usc`). One chart per file, always 12 columns: leftmost lane `lane - size + 6` (`susToUSC` writes `lane = x - 8 + width / 2`, `size = width / 2`), rounded when within 1e-4 of a whole lane, else floored and counted; notes not entirely on the stage are dropped and counted.
 
-Read by Prism (`docs/game.md` "Project SEKAI"): same as the `.sus`; the scan keeps a `.usc` only when it starts as a JSON object with an `"objects"` key (`rox::formats::looks_like_usc`). No 12-column layout exists in the catalog yet: refused by the scan as `Unsupported layout: 12K` until one does.
+- Accepts bare `{offset, objects}` or `{"usc": {...}, "version": 1|2}` (version 2 adds `damage`, `guide`, `skill`, `feverChance`, `feverStart`, `timeScaleGroup`).
+- A `single` is a tap (`direction` counted as a flick; `critical` and `trace` dropped and counted). An active `slide` is one hold from first to last connection on the first column; its middle connections are dropped and counted. Guides, `damage`, `skill`, fever and scroll objects are counted and ignored.
+- `bpm` in beats (last of a beat wins; first BPM also holds before it; none valid is an error). `offset` (seconds, `-#WAVEOFFSET` of the source SUS) shifts every time. Title is the file stem; sound is found in the folder. Limit 16 MiB.
+- Prism (`docs/game.md` "Project SEKAI"): the scan keeps a `.usc` only if it starts as a JSON object with an `"objects"` key (`rox::formats::looks_like_usc`), then refuses it as `Unsupported layout: 12K` (no 12-column layout in the catalog).
 
-Sources read for this: `sonolus-pjsekai-engine` `lib/src/usc/{index,convert}.ts` and `lib/src/sus/convert.ts` (MIT), and `rg_converters` (GPL-3.0, read for the wrapper, the version-2 object types and the sign of `offset` only; nothing copied). No real `.usc` was decoded.
+Decisions: `rox::formats::sekai` `mod.rs`; tests `sekai/tests.rs`. Read for this: `sonolus-pjsekai-engine` `lib/src/usc/{index,convert}.ts`, `lib/src/sus/convert.ts` (MIT); `rg_converters` (GPL-3.0; wrapper, version-2 types, `offset` sign only; nothing copied). No real `.usc` was decoded.
 
 ## Parsers & tools
 
@@ -79,9 +82,10 @@ sonolus-pjsekai-engine (TypeScript): <https://github.com/NonSpicyBurrito/sonolus
 
 ## Getting samples
 
-- Committed in [`samples/`](samples/): `susc-converter_ccmmw.usc` and `.json` (real MMW4CC-style USC written by Kyonkrnk's tool tests, MIT); 5 `rgconv_*.usc` files = real PJSK/PJSK-engine charts converted by rg-converters (labelled "Converted" in SOURCES.md); `synthetic-12lane.usc` (hand-written CC0). Everything is listed with origin, date and sha256 in [`samples/SOURCES.md`](samples/SOURCES.md).
-- Observed [observed in samples/susc-converter_ccmmw.usc]: the editors' file is wrapped as `{"usc":{"objects":[...]}}` (compact, keys alphabetical), has a `timeScaleGroup` object (`{"changes":[{"beat","timeScale"}],"type":"timeScaleGroup"}`) and every note carries `timeScaleGroup` (index) next to `lane`, `size`, `critical`, `trace`.
-- More: convert any SUS with rg-converters or `susToUSC`; Sonolus servers serve LevelData rather than USC. No public repository with raw `.usc` charts was found besides susc-converter's tests.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md).
+
+- [observed: susc-converter_ccmmw.usc] the editors' file is wrapped as `{"usc":{"objects":[...]}}` (compact, keys alphabetical), has a `timeScaleGroup` object (`{"changes":[{"beat","timeScale"}],"type":"timeScaleGroup"}`), and every note carries `timeScaleGroup` (index) next to `lane`, `size`, `critical`, `trace`.
+- More: convert any SUS with rg-converters or `susToUSC`. Sonolus servers serve LevelData, not USC. No public repository with raw `.usc` charts exists besides susc-converter's tests.
 
 ## Sources
 

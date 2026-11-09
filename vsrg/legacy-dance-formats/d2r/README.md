@@ -5,11 +5,13 @@ Doc status: partial · ROX: no · Category: vsrg · Encoding: text (Shift-JIS er
 
 ## Overview
 
-"Dazzle Dazzle Realization" (D2R) is, per its description page, "basically a **practice program for Konami's Dance Dance Revolution**" that also lets you play your own songs with the DDR system: a Windows 95/98/NT + DirectX program (16 MB RAM, Pentium 133 MHz); BGM is PCM (WAVE) or CD-DA (from version 2 on). `*.d2r` is "the chart file of **Dazzle Dazzle Realization 2ndMIX**". The format page below was reverse engineered by the author of the editor (not official; "contents are my own investigation and analysis; commands may have been added, changed, or removed depending on the period"), dated 1999/07/14. The Wayback copy of `paramax.hypermart.net/d2r.html` (2003 capture) is the only source of the grammar; the upstream list (commit `503382a`) links the site root. Charts could be searched/registered in the "D2R譜面サーチ" database; the editor D2REDIT reads `*.d2r`, `*.sul`, `*.msd`, `*.ddr` and writes `*.d2r`, `*.ddr`, `*.slo`.
+Dazzle Dazzle Realization (D2R) is, per its description page, "basically a practice program for Konami's Dance Dance Revolution" that also plays your own songs with the DDR system (Windows 95/98/NT + DirectX; 16 MB RAM, Pentium 133 MHz; BGM as PCM WAVE or, from version 2, CD-DA). `*.d2r` is "the chart file of Dazzle Dazzle Realization 2ndMIX".
+
+The format was reverse engineered by the editor's author, dated 1999/07/14 (not official; "contents are my own investigation and analysis; commands may have been added, changed, or removed depending on the period"). The Wayback copy of `paramax.hypermart.net/d2r.html` (2003) is the only grammar source; the upstream list (commit `503382a`) links the site root. The editor D2REDIT reads `*.d2r`, `*.sul`, `*.msd`, `*.ddr` and writes `*.d2r`, `*.ddr`, `*.slo`; charts were registered in the "D2R譜面サーチ" database.
 
 ## Container & encoding
 
-Plain text edited with Notepad "or a dedicated editor". A line beginning with `*` is a comment. File = **definition part** followed by one or more **chart parts**, separated by `*---------` comment lines:
+Plain text edited with Notepad "or a dedicated editor". A line beginning with `*` is a comment. A file is a definition part followed by one or more chart parts, separated by `*---------` comment lines:
 
 ```
 *---------
@@ -38,7 +40,7 @@ Definition part commands (`KEY=value`):
 | `ARTIST=string` | artist shown at selection |
 | `MUSIC=file.wav` | the in-play music; "the better the quality, the longer the load"; too long (> about 3 minutes) gives noise/instability |
 | `SHORTCUT=file.wav` | the selection-screen sample (too high quality can stall for lack of memory) |
-| `TEMPO10=n` | tempo = **BPM x 10**, range 320..2559 (quarter notes per minute x 10); fix this if arrows drift out of sync over time |
+| `TEMPO10=n` | tempo = BPM x 10, range 320..2559 (quarter notes per minute x 10); fix this if arrows drift out of sync over time |
 | `DELAY=n` | arrow-vs-music offset; "increasing/decreasing by about 48 shifts the arrows by one arrow" |
 | `CDTRACK=n` | CD audio track (when playing from a CD) |
 | `CDTRACKFROM=n`, `CDTRACKTO=n` | start/end CD track for multi-track songs |
@@ -56,7 +58,7 @@ Chart part commands:
 
 ## Timing model
 
-Between `MUSICSTART` and `MUSICEND` each line is `[length]:[1P arrows]:[2P arrows]:[option]` ("do not put extra spaces before it"). `[length]` is one of 16 spellings of 7 effective durations (bold = standard, the one-character forms are from the previous version's `.sul` charts and "should not be used much"):
+Between `MUSICSTART` and `MUSICEND` each line is `[length]:[1P arrows]:[2P arrows]:[option]` ("do not put extra spaces before it"). `[length]` is one of 16 spellings of 7 effective durations (bold = standard; the one-character forms come from the previous version's `.sul` charts and "should not be used much"):
 
 | Symbols | Name | Meaning |
 |---|---|---|
@@ -72,30 +74,28 @@ Tempo changes: the `[option]` field, e.g. `T1900` sets `TEMPO10` to 1900 from th
 
 ## Notes
 
-`[1P arrows]` and `[2P arrows]` are 4-character fields using `L`, `D`, `U`, `R` in that **fixed left-to-right order**, with a half-width space for an empty panel (e.g. ` D  `, `L   `, `   R`). Doubles use both fields (separated by `:`; do not forget the colon). A line with no arrows is a rest (`4P:    :    :`). Examples from the page: `4p:   R:    :` (eighth, right), `4p: D  :    :`, `4P:L   :    :`. No hold/freeze arrows, no shock arrows in this version of the spec.
+`[1P arrows]` and `[2P arrows]` are 4-character fields using `L`, `D`, `U`, `R` in that fixed left-to-right order, with a half-width space for an empty panel (e.g. ` D  `, `L   `, `   R`). Doubles use both fields separated by `:`. A line with no arrows is a rest (`4P:    :    :`). Examples: `4p:   R:    :` (eighth, right), `4p: D  :    :`, `4P:L   :    :`. No hold/freeze or shock arrows in this spec version.
 
 ## Audio & images
 
-`MUSIC=` WAVE (PCM), `SHORTCUT=` WAVE, or CD-DA tracks via `CDTRACK*` (version 2 onward). No images in the format.
+`MUSIC=` and `SHORTCUT=` take WAVE (PCM); CD-DA tracks use `CDTRACK*` (version 2 onward). No images.
 
 ## Versions & variants
 
-- `.sul`: the previous version's chart format (symbols `P`, `p`, `Q`, `T`, ... come from it), see [sul](../sul/README.md); `.slo`: [slo](../slo/README.md); `.ddr`: unknown; also reads `.msd` ([MSD](../../ddr/msd/README.md)).
-- "2ndMIX" files; commands "may have been added/changed/removed" over time.
-- `GAMEMODE` = `NORMAL` / `HARD` / `ORIGINAL`; the MSD spec likewise has `NORMAL`/`HARD` (replaced by `BASIC` in MSD 2.0), so the two scenes shared vocabulary.
+- `.sul`: previous version's chart format (source of the `P`, `p`, `Q`, `T`, ... symbols), see [sul](../sul/README.md). `.slo`: [slo](../slo/README.md). `.ddr`: unknown. D2REDIT also reads `.msd` ([MSD](../../ddr/msd/README.md)).
+- `GAMEMODE` = `NORMAL` / `HARD` / `ORIGINAL`; the MSD spec likewise has `NORMAL`/`HARD` (replaced by `BASIC` in MSD 2.0).
 
 ## Quirks & pitfalls
 
-- `TEMPO10` is x10 integer BPM in 320..2559 (32.0 .. 255.9 BPM) - cannot represent 256+ BPM.
-- Length symbol aliases overlap between old (`P`, `p`, `Q`) and new (`4P`, `4p`, `4.`) generations; an alias like `2.` is the eighth, `1.` the quarter.
-- Spaces are semantic (empty panel); leading spaces break the line.
-- `*` comments only at line start.
-- 192nd/48th quantizations do not exist (minimum 1/16 "最小単位は１６分" in the editor).
-- Long WAV files are unstable beyond ~3 min.
+- `TEMPO10` is an integer BPM x 10 in 320..2559 (32.0 .. 255.9 BPM), so 256+ BPM cannot be represented.
+- Old (`P`, `p`, `Q`) and new (`4P`, `4p`, `4.`) length symbols overlap; `2.` is the eighth, `1.` the quarter.
+- Spaces are semantic (empty panel); leading spaces break the line; `*` comments only at line start.
+- The minimum unit is 1/16 ("最小単位は１６分" in the editor); 192nd/48th quantizations do not exist.
+- WAV files over about 3 minutes are unstable.
 
 ## Example
 
-Verbatim illustrative lines from the format page (comments translated):
+Lines from the format page (comments translated):
 
 ```
 *----
@@ -113,7 +113,7 @@ Verbatim illustrative lines from the format page (comments translated):
 
 ## ROX support
 
-Not read by ROX. A decoder would need: definition/chart part split, duration alias table, `TEMPO10`/option tempo changes, `DELAY` units (about 48 per arrow: unclear unit), LDUR fields.
+Not read by ROX. A decoder needs the definition/chart split, the duration alias table, `TEMPO10`/option tempo changes, `DELAY` units (about 48 per arrow; unit unclear) and LDUR fields.
 
 ## Parsers & tools
 
@@ -121,9 +121,9 @@ D2R itself (closed, http://gauss.takamatsu-nct.ac.jp/~iguchi/ddr/ddr2.htm, "D2R�
 
 ## Getting samples
 
-Committed in [`samples/`](samples/SOURCES.md): one **synthetic** (hand-written, CC0, ASCII) `.d2r` built from the rules of this page: definition part, a BASIC single chart and a MANIAC double chart with all duration symbols and a tempo change.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md) (one synthetic `.d2r`).
 
-No real file was found. The "D2R譜面サーチ" site (paramax.hypermart.net) listed user charts but "does not host any copyrighted data"; its editor archives are still on Wayback: D2REDIT (reads `.d2r`/`.sul`/`.ddr`, writes `.d2r`) at https://web.archive.org/web/20031219024931id_/http://paramax.hypermart.net/d2redit.zip (224,948 bytes; D2REDIT.exe + a Japanese readme) and SLOEDIT (`.slo`) at https://web.archive.org/web/20031219024931id_/http://paramax.hypermart.net/sloedit.zip (176,632 bytes; SloEdit.exe, readme.txt, slohead.txt). Neither archive holds a sample chart. To get real `.d2r`: run D2REDIT (Windows, `*.exe`) and save a new chart, or look for D2R 2ndMIX charts that fans uploaded to their own pages [inference].
+No real file was found. The "D2R譜面サーチ" site (paramax.hypermart.net) listed user charts but "does not host any copyrighted data". Its editors are on Wayback: D2REDIT (reads `.d2r`/`.sul`/`.ddr`, writes `.d2r`) at https://web.archive.org/web/20031219024931id_/http://paramax.hypermart.net/d2redit.zip (224,948 bytes; D2REDIT.exe + Japanese readme) and SLOEDIT (`.slo`) at https://web.archive.org/web/20031219024931id_/http://paramax.hypermart.net/sloedit.zip (176,632 bytes; SloEdit.exe, readme.txt, slohead.txt). Neither holds a sample chart. Run D2REDIT (Windows, `*.exe`) and save a new chart, or look for D2R 2ndMIX charts fans uploaded to their own pages [inference].
 
 ## Sources
 

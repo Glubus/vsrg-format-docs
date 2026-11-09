@@ -1,6 +1,6 @@
 # O2Jam
 
-O2Jam is a Korean 7-key vertical-scroll online rhythm game (O2Media, 2003; many regional releases: Korea mgame/NOWCOM, e-Games, GAMANIA, 9you, O2Jam Thai, O2Jam China; later O2Jam X2, O2Jam O2, Classic). Seven lanes fall towards a judgement line, with long notes and keysounded charts: so it belongs to the **vsrg** category (fixed columns, vertical scroll).
+Korean 7-key vertical-scroll online rhythm game (O2Media, 2003; regional releases: Korea mgame/NOWCOM, e-Games, GAMANIA, 9you, O2Jam Thai, O2Jam China; later O2Jam X2, O2Jam O2, Classic). Seven lanes fall to a judgement line, with long notes and keysounded charts: category **vsrg**.
 
 | Folder | File(s) | Role |
 |---|---|---|
@@ -10,8 +10,8 @@ O2Jam is a Korean 7-key vertical-scroll online rhythm game (O2Media, 2003; many 
 | [xnt/](xnt/README.md) | `.xnt` (+ `.xne`) | KrazyRain chart binary stored inside a `.snp` |
 | [txt/](txt/README.md) | `.txt` | O2Jam - Music & Game (mobile) chart, stub |
 
-Other O2Jam client files (not charts, only identified in [CXO2 docs](https://github.com/SirusDoma/CXO2/blob/develop/docs/file-format/FileFormat.md)): `.opi`/`.opa` package archives, `.ojs/.oji/.ojt/.oja` sprites (RGB555 frames), `.bnd` hit-test bounds, `ControlList_*.txt` UI layout, `ItemData*.dat`, `SetInfoData.ojs`. Not documented further here.
+Other client files, not documented here ([CXO2 docs](https://github.com/SirusDoma/CXO2/blob/develop/docs/file-format/FileFormat.md)): `.opi`/`.opa` package archives, `.ojs/.oji/.ojt/.oja` sprites (RGB555 frames), `.bnd` hit-test bounds, `ControlList_*.txt` UI layout, `ItemData*.dat`, `SetInfoData.ojs`.
 
-Related: Open2Jam (Java emulator, read-only parsers for all of the above), O2Mania (older emulator), CXO2 (C++ client reimplementation), Raindrop (VSRG that loads OJN).
+Related: Open2Jam (Java emulator, parsers for all of the above), O2Mania (older emulator), CXO2 (C++ client reimplementation), Raindrop (VSRG that loads OJN).
 
-Real sample files: [ojn/samples](ojn/samples/README.md).
+Samples: [ojn/samples](ojn/samples/README.md).

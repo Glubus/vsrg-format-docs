@@ -5,13 +5,13 @@ Doc status: partial · ROX: no · Category: vsrg · Encoding: text (Lua source c
 
 ## Overview
 
-In the open-source RoBeats Custom Server Template (spotco, 2020; last commit seen 2026), each song is a ModuleScript under `Workspace/SongMaps/` that builds and returns a Lua table. There is no separate file extension: the "file" is a Roblox `ModuleScript` instance (in the Rojo repository a `.lua` file). The list of playable songs is `Workspace/SongMapList.lua`, a Lua table of references to those modules. The song's audio is a Roblox asset id, not a file. Source: `Workspace/SongMaps/{MondayNightMonstersNormal,MondayNightMonstersHard,TestingMap}.lua`, `ReplicatedStorage/RobeatsGameCore/{SongDatabase,SongErrorParser,AudioManager}.lua`.
+In the open-source RoBeats Custom Server Template (spotco, 2020), each song is a ModuleScript under `Workspace/SongMaps/` that builds and returns a Lua table (a `.lua` file in the Rojo repository). `Workspace/SongMapList.lua` lists the playable songs. The audio is a Roblox asset id, not a file. Source: `Workspace/SongMaps/{MondayNightMonstersNormal,MondayNightMonstersHard,TestingMap}.lua`, `ReplicatedStorage/RobeatsGameCore/{SongDatabase,SongErrorParser,AudioManager}.lua`.
 
 ## Container & encoding
 
-- A `.lua` text file (Rojo layout) or a ModuleScript inside a Roblox place (`.rbxl`/`.rbxlx`). It is executable code: `require(songModule)` runs it. The template loads each song via a cloned module (`require_module_clone`) and then destroys the clone. A parser outside Roblox must therefore either interpret the Lua table-constructor subset used here or run a Lua interpreter (sandboxed: the file is arbitrary code).
-- One module per difficulty ("MondayNightMonstersNormal", "MondayNightMonstersHard" are two separate modules of the same audio).
-- Song id = position in `SongMapList` (comments in the list: "song id: 1/2/3").
+- A `.lua` file (Rojo layout) or a ModuleScript in a Roblox place (`.rbxl`/`.rbxlx`). It is executable: `require(songModule)` runs it (the template uses a cloned module, `require_module_clone`, then destroys it). An outside parser must handle the Lua table-constructor subset or run a sandboxed Lua interpreter.
+- One module per difficulty (`MondayNightMonstersNormal` and `MondayNightMonstersHard` share audio).
+- Song id = position in `SongMapList` (list comments "song id: 1/2/3").
 
 ## Structure / metadata
 
@@ -35,7 +35,7 @@ Header fields set on the returned table `rtv` (from the three shipped songs):
 
 ## Timing model
 
-Absolute milliseconds from the start of the audio (`Time`); the engine adds `AudioTimeOffset` plus the player's/global audio offset to the audio position (`get_current_time_ms`). A pre-start countdown shifts notes by `_pre_countdown_time_ms`. No BPM-based positioning: `TimingPoints` is informational (BPM display); no scroll velocity changes, no stops.
+Absolute milliseconds from audio start (`Time`). The engine adds `AudioTimeOffset` plus the player's/global audio offset (`get_current_time_ms`); a pre-start countdown shifts notes by `_pre_countdown_time_ms`. `TimingPoints` only feeds the BPM display: no scroll velocity changes, no stops.
 
 ## Notes
 
@@ -55,20 +55,18 @@ Every `HitObjects[i]` is a table with `Time` (ms), `Type`, `Track`, and for hold
 
 ## Audio & images
 
-Roblox asset ids (`rbxassetid://...`) for the song and cover; the audio is hosted by Roblox, so the chart cannot be played without the uploaded audio (the template README/forum notes the included song needs re-uploading after Roblox's 2022 audio permission change). Hit sounds are built-in SFX groups.
+Roblox asset ids (`rbxassetid://...`) for song and cover. The audio is hosted by Roblox, so the chart needs the uploaded audio (the included song needs re-uploading after Roblox's 2022 audio permission change, per the template README/forum). Hit sounds are built-in SFX groups.
 
 ## Versions & variants
 
-No version field. The template repository changed over time (115 commits); the schema above is the one of the current files. The official RoBeats game may use a different internal format: Unknown.
+No version field. The repository has 115 commits; the schema above matches the current files. The official game's internal format: Unknown.
 
 ## Quirks & pitfalls
 
-- It is code: `;` or `,` separators inside table constructors are both used (`{Time=time;Type=1;Track=track;}`), comments `--`.
-- Track numbers are 1-based.
-- Hold `Duration` is a length, not an end time.
-- Duplicate (track,time) pairs are rejected at load.
+- It is code: `;` and `,` separators both occur in table constructors (`{Time=time;Type=1;Track=track;}`); comments use `--`.
+- Tracks are 1-based; hold `Duration` is a length.
+- Duplicate (track, time) pairs are rejected at load.
 - `AudioTimeOffset` is negative in the samples (notes 75 ms earlier relative to the audio).
-- The same audio can appear in several modules (one per difficulty).
 
 ## Example
 
@@ -93,7 +91,7 @@ return rtv
 
 ## ROX support
 
-Not read. Mapping to ROX would be direct: `Track - 1` -> column of a 4K chart, `Type 1` -> Tap, `Type 2` -> Hold (`Duration` ms -> us), BPM from `TimingPoints[1]`, `AudioTimeOffset` -> `audio_offset_us` (ms -> us, sign to be checked). The obstacle is the container: Lua code, not data.
+Not read. Mapping would be direct: `Track - 1` -> column of a 4K chart, `Type 1` -> Tap, `Type 2` -> Hold (`Duration` ms -> us), BPM from `TimingPoints[1]`, `AudioTimeOffset` -> `audio_offset_us` (ms -> us, sign to be checked). The obstacle is the container: Lua code.
 
 ## Parsers & tools
 
@@ -103,8 +101,7 @@ Not read. Mapping to ROX would be direct: `Track - 1` -> column of a 4K chart, `
 
 ## Getting samples
 
-- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): the three songmaps of `spotco/RobeatsCustomServerTemplate` (commit `df8f4d3145ed474ad92b4371d030ee73d003b250`) and one converted map from Pastebin (https://pastebin.com/EkQrkfUL).
-- **More**: the Robeats wiki (https://robeats.fandom.com/wiki/RoBeats_Custom_Server) explains converting a `.osu` into a songmap. The repositories `RoVSRG/robeats-cs-legacy` (`songs/`), `RoVSRG/robeats-cs-maps` and `thenerdie/robeats-community-maps` are named by search results but now require authentication (private or removed), and Wayback has no copy of the files; community Roblox places hold songmaps as ModuleScripts.
+Committed: see [`SOURCES.md`](samples/SOURCES.md) (`spotco/RobeatsCustomServerTemplate` commit `df8f4d3145ed474ad92b4371d030ee73d003b250`; Pastebin https://pastebin.com/EkQrkfUL). More: the Robeats wiki (https://robeats.fandom.com/wiki/RoBeats_Custom_Server) explains converting a `.osu` into a songmap. `RoVSRG/robeats-cs-legacy` (`songs/`), `RoVSRG/robeats-cs-maps` and `thenerdie/robeats-community-maps` now require authentication (private or removed) and Wayback has no copy; community Roblox places hold songmaps as ModuleScripts.
 
 ## Sources
 

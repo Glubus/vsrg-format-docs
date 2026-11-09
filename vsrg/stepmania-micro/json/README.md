@@ -5,15 +5,15 @@ Doc status: partial · ROX: no · Category: vsrg · Encoding: json
 
 ## Overview
 
-Two related things carry this name:
+Two things share this name:
 
-1. **StepMania's JSON (de)serializer** (`NotesWriterJson::WriteSong/WriteSteps`, `NotesLoaderJson::LoadFromJsonFile`, in the StepMania C++ sources): a full dump of a `Song` (metadata, song timing, background changes, keysounds, lyrics, and every chart with its note data) into one JSON object, and the matching loader (`*.json` in a song folder). The schema below is read from those two files.
-2. **StepMania Micro's data files** (the JS game `smjs-0.3`): `songs/<Name>/steps.js` holds `var steps = { noteData: [ [beat, track, {tapnote}], ... ] }`, i.e. the same `noteData` array that `NotesWriterJson` produces, wrapped in a JS assignment, and `song.js` holds `var song = { bpm: 148, addToMusicPosition: -0.03 }` (single BPM, offset in seconds). Only these two sample files were retrieved; the relation "SM Micro data = StepMania JSON export" is inferred from the identical tuple shape (`[18.50, 0, {}]`, `[64.0, 0, {"Duration": 132, "SubType": 0, "Type": 2}]`) and the original README's links.
+1. StepMania's JSON (de)serializer (`NotesWriterJson::WriteSong/WriteSteps`, `NotesLoaderJson::LoadFromJsonFile`): a full dump of a `Song` (metadata, song timing, background changes, keysounds, lyrics, every chart with note data) as one JSON object, plus the matching loader (`*.json` in a song folder). The schema below is read from those two files.
+2. StepMania Micro's data files (JS game `smjs-0.3`): `songs/<Name>/steps.js` holds `var steps = { noteData: [ [beat, track, {tapnote}], ... ] }`, the `noteData` array of `NotesWriterJson` in a JS assignment, and `song.js` holds `var song = { bpm: 148, addToMusicPosition: -0.03 }` (single BPM, offset in seconds). Only these two files were retrieved; that SM Micro data is a StepMania JSON export is inferred from the identical tuple shape (`[18.50, 0, {}]`, `[64.0, 0, {"Duration": 132, "SubType": 0, "Type": 2}]`) and the original README's links.
 
 ## Container & encoding
 
-- JSON text (jsoncpp, `Json::Value`; `JsonUtil::WriteFile(root, file, false)` writes compactly) for the C++ side; JavaScript source (`var x = {...};`) for SM Micro.
-- One file per song (`WriteSong`) or per chart (`WriteSteps`). Extension `.json`; StepMania lists `*.json` as a loader file type (`NotesLoaderJson::GetApplicableFiles`) but the song loader order in `NotesLoader::LoadFromDir` does not include it, so it is used by tools/the Micro build, not by normal song scanning [inference from the loader list].
+- JSON text (jsoncpp, `Json::Value`; `JsonUtil::WriteFile(root, file, false)` writes compactly) on the C++ side; JavaScript source (`var x = {...};`) for SM Micro.
+- One file per song (`WriteSong`) or per chart (`WriteSteps`). StepMania lists `*.json` as a loader file type (`NotesLoaderJson::GetApplicableFiles`), but `NotesLoader::LoadFromDir` does not include it, so only tools and the Micro build use it [inference from the loader list].
 
 ## Structure / metadata
 
@@ -56,19 +56,19 @@ Tapnote object keys (omitted when default): `Type` (`TapNoteType` int, omitted f
 
 ## Audio & images
 
-By file name strings (`Music`, `Banner`, `Background`, ...). SM Micro: `songs/<Name>/<Name>.mp3` + `.ogg` (HTML5 audio `<source>` pair) and `background.png`.
+File name strings (`Music`, `Banner`, `Background`, ...). SM Micro: `songs/<Name>/<Name>.mp3` + `.ogg` (HTML5 audio `<source>` pair) and `background.png`.
 
 ## Versions & variants
 
 - C++ JSON: no version field.
-- SM Micro 0.3: `steps.js`/`song.js` JavaScript wrappers (`var steps = {noteData: [...]}`); 4 columns drawn at fixed x positions with rotations `90, 0, 180, -90`; judgment windows `[0.05, 0.1, 0.15, 0.25, 0.3]` s; the score table shows Marvelous, Perfect, Great, Good, Boo, Miss.
+- SM Micro 0.3: `steps.js`/`song.js` JavaScript wrappers (`var steps = {noteData: [...]}`); 4 columns at fixed x positions with rotations `90, 0, 180, -90`; judgment windows `[0.05, 0.1, 0.15, 0.25, 0.3]` s; the score table shows Marvelous, Perfect, Great, Good, Boo, Miss.
 
 ## Quirks & pitfalls
 
-- **ROX maps `.json` to the Friday Night Funkin' decoder** (`detect.rs`: `"json" => Fnf`), so a StepMania JSON file given to ROX would be misdetected.
+- ROX maps `.json` to the Friday Night Funkin' decoder (`detect.rs`: `"json" => Fnf`), so a StepMania JSON file would be misdetected.
 - `Duration` is in rows, not beats or ms.
-- The loader's `Deserialize(TapNote)` reads `root["Type"]` only `if root.isInt()` (a bug: tapnotes are objects), so loader results for `Type` may be wrong: treat the loader as less reliable than the writer [source reading].
-- Only BPM and stop segments survive; negative stops (warps) are plain stops of negative duration.
+- The loader's `Deserialize(TapNote)` reads `root["Type"]` only `if root.isInt()` (a bug: tapnotes are objects), so `Type` may load wrong; trust the writer more than the loader [source reading].
+- Only BPM and stop segments survive; negative stops (warps) become stops of negative duration.
 
 ## Example
 
@@ -90,7 +90,7 @@ var song = { bpm: 148, addToMusicPosition: -0.03 };
 
 ## ROX support
 
-Not read by ROX. (`.json` is routed to the FNF decoder, so StepMania JSON would need its own detection.)
+Not read. `.json` is routed to the FNF decoder, so StepMania JSON would need its own detection.
 
 ## Parsers & tools
 
@@ -98,9 +98,9 @@ Not read by ROX. (`.json` is routed to the FNF decoder, so StepMania JSON would 
 
 ## Getting samples
 
-Committed in [`samples/`](samples/SOURCES.md): the two real data files of StepMania Micro 0.3 for the song *Lost* (Wayback snapshot `20150110120332` of the original Dropbox host: `steps.js` 11,723 bytes with the `noteData` tuples, `song.js` 64 bytes: `bpm: 148`, `addToMusicPosition: -0.03`). They are JavaScript wrappers, the "SM Micro" variant described above.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md): the two SM Micro 0.3 data files for the song *Lost* (Wayback snapshot `20150110120332` of the original Dropbox host: `steps.js` 11,723 bytes, `song.js` 64 bytes: `bpm: 148`, `addToMusicPosition: -0.03`), JavaScript wrappers.
 
-Not found: any file written by `NotesWriterJson` (whole-song `.json`). To produce one: build StepMania (writer in `src/NotesWriterJson.cpp`) and call it from code. [StepMania-AMX/micro](https://github.com/StepMania-AMX/micro) is a JavaScript player derived from StepMania Micro that loads `.ucs` steps, not JSON.
+No file written by `NotesWriterJson` (whole-song `.json`) was found. To produce one, build StepMania (writer in `src/NotesWriterJson.cpp`) and call it from code. [StepMania-AMX/micro](https://github.com/StepMania-AMX/micro) is a JS player derived from StepMania Micro that loads `.ucs` steps, not JSON.
 
 ## Sources
 

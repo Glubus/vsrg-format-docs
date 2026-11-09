@@ -4,20 +4,17 @@ Kind: chart
 Doc status: complete · ROX: reads/writes (only Keys4 and Keys7; many Quaver features dropped) · Category: vsrg · Encoding: text (YAML)
 
 ## Overview
-
-`.qua` is the map file of **Quaver**, an open-source, community-driven, 4K/7K-centred VSRG (C#, MonoGame, on Steam; developers Swan and the Quaver team, 2017-). One `.qua` file is one difficulty. The format is plain YAML, written and read by the `Qua` class of the open-source `Quaver.API` library (MPL-2.0), which is the reference implementation. Quaver imports `.osz`, `.sm`, `.mcz`/`.mc` and `.qp` and converts them to `.qua` (`Quaver.Tools` has `ConvertOsuCommand`, `ConvertSmCommand`). Files are found inside `.qp` mapset archives (../qp/README.md), in Quaver's `Songs/` folder, on quavergame.com and in the Quaver.API test resources.
+`.qua` is the YAML map file of Quaver (one file per difficulty). The `Qua` class of the open-source `Quaver.API` library (MPL-2.0) is the reference implementation. Quaver converts `.osz`, `.sm`, `.mcz`/`.mc` and `.qp` imports to `.qua` (`Quaver.Tools`: `ConvertOsuCommand`, `ConvertSmCommand`). Files live in `.qp` mapset archives (../qp/README.md), Quaver's `Songs/` folder, quavergame.com and the Quaver.API test resources.
 
 ## Packaged in
 
-- Shipped in: `.qp` (zip of a Quaver mapset: one `.qua` per difficulty, audio, background, banner, hit samples).
+- `.qp` (zip of a Quaver mapset: one `.qua` per difficulty, audio, background, banner, hit samples).
 
 ## Container & encoding
-
-- UTF-8 YAML (parsed with YamlDotNet; `Qua.Parse` decodes the bytes with `Encoding.UTF8` and deserializes with `IgnoreUnmatchedProperties()`, so unknown keys are ignored). A real test file in Quaver.API starts with two U+FEFF BOM characters; strip BOMs before handing the text to a strict YAML parser. [observed in `AutoMods/Resources/short-ln.qua`]
-- Key names are PascalCase, exactly the C# property names. Enums are written by name (`Mode: Keys4`, `Signature: Triple`, `Type: Mine`, flags like `HitSound: Whistle, Finish` [inference: YamlDotNet's default for `[Flags]` enums]).
-- The writer (`Qua.Serialize`) sorts the map, sets `QuaVersion` to the minimum needed, and writes default values as zero/null so that they are omitted ("Set default values to zero so they don't waste space"): `Signature` (4/4), `HitSound` (Normal), `Volume` (100), `TimingGroup` (`$Default`), empty `Bookmarks`, `ScrollSpeedFactors`, `TimingGroups` are not emitted; line endings `\r\n`. The reader restores the defaults (`RestoreDefaultValues`). A parser must therefore treat every missing key as its default.
-- One file per difficulty; file name is free (often `<mapid>.qua`).
-- Whole-file limit in ROX: 100 MiB.
+- UTF-8 YAML (YamlDotNet). `Qua.Parse` deserializes with `IgnoreUnmatchedProperties()`, so unknown keys are ignored. A real Quaver.API test file starts with two U+FEFF BOM characters; strip them for strict YAML parsers. [observed: `AutoMods/Resources/short-ln.qua`]
+- Keys are the PascalCase C# property names. Enums are written by name (`Mode: Keys4`, `Signature: Triple`, `Type: Mine`, flags like `HitSound: Whistle, Finish` [inference: YamlDotNet's default for `[Flags]` enums]).
+- The writer (`Qua.Serialize`) sorts the map, sets `QuaVersion` to the minimum needed and omits defaults ("Set default values to zero so they don't waste space"): `Signature` (4/4), `HitSound` (Normal), `Volume` (100), `TimingGroup` (`$Default`), empty `Bookmarks`, `ScrollSpeedFactors`, `TimingGroups`. Line endings are `\r\n`. The reader restores defaults (`RestoreDefaultValues`), so treat every missing key as its default.
+- File name is free (often `<mapid>.qua`). ROX limit: 100 MiB.
 
 ## Structure / metadata
 
@@ -25,7 +22,7 @@ Top-level keys (from `Qua.cs`):
 
 | Key | Type | Meaning |
 |---|---|---|
-| `QuaVersion` | int | 0 = no versioning, 1 = contains mines. The reader refuses a file whose version is greater than `CurrentQuaVersion` (= 1) with a `QuaVersionException` |
+| `QuaVersion` | int | 0 = no versioning, 1 = contains mines. The reader refuses a version greater than `CurrentQuaVersion` (= 1) with a `QuaVersionException` |
 | `AudioFile` | string | audio file name in the map folder |
 | `SongPreviewTime` | int ms | preview start |
 | `BackgroundFile` | string | |
@@ -45,20 +42,19 @@ Top-level keys (from `Qua.cs`):
 | `SliderVelocities` | list | `StartTime` (float ms), `Multiplier` (float) |
 | `ScrollSpeedFactors` | list | `StartTime`, `Multiplier`; scroll speed factors of the default group |
 | `HitObjects` | list | see Notes |
-| `TimingGroups` | map | id -> group (tag `!ScrollGroup`); reserved ids `$Default` (not serialized, the top-level `SliderVelocities`/`ScrollSpeedFactors`/`InitialScrollVelocity` belong to it) and `$Global` (applies to every group; omitted when empty). A group has `ColorRgb`, `Hidden`, `InitialScrollVelocity`, `ScrollVelocities`, `ScrollSpeedFactors` |
+| `TimingGroups` | map | id -> group (tag `!ScrollGroup`); reserved ids `$Default` (not serialized; the top-level `SliderVelocities`/`ScrollSpeedFactors`/`InitialScrollVelocity` belong to it) and `$Global` (applies to every group; omitted when empty). A group has `ColorRgb`, `Hidden`, `InitialScrollVelocity`, `ScrollVelocities`, `ScrollSpeedFactors` |
 
-`Qua.Validate()` (run by `Parse(..., checkValidity: true)`, which throws `ArgumentException` listing the errors): at least one hit object; at least one timing point; `Mode` must be a defined `GameMode`; each sound effect `Sample` in `[1, CustomAudioSamples.Count]` and `Volume` in 1..100; each long note `EndTime > StartTime`; each key sound `Sample` in `[1, Count]` and `Volume >= 1`.
+`Qua.Validate()` (run by `Parse(..., checkValidity: true)`, which throws `ArgumentException` listing the errors) requires: at least one hit object; at least one timing point; `Mode` a defined `GameMode`; each sound effect `Sample` in `[1, CustomAudioSamples.Count]` and `Volume` in 1..100; each long note `EndTime > StartTime`; each key sound `Sample` in `[1, Count]` and `Volume >= 1`.
 
 ## Timing model
-
-- All times are milliseconds from the start of the audio. `HitObjects` `StartTime`/`EndTime` are ints, timing points / SVs / sound effects are floats. After loading, `Sort()` orders all lists by time.
-- `TimingPoints`: `StartTime` (float ms), `Bpm` (float), `Signature` (`Quadruple` = 4/4, default and omitted; `Triple` = 3/4), `Hidden` (bool, editor-only). BPM = quarter notes per minute, beat length = `60000 / Bpm` ms (`MillisecondsPerBeat`). Several points may share a timestamp; the last one wins for the SV bookkeeping (`NormalizeSVs`).
-- Position -> time is not needed: hit objects are in ms. Beats only matter for snapping and for the SV normalisation below.
-- **Scroll velocity** (`SliderVelocities`): `Multiplier` changes scroll speed from `StartTime` until the next entry; this never changes hit timing, only the screen position of the notes. Two representations exist (`Qua.cs` comments):
-  - `BPMDoesNotAffectScrollVelocity: false` (key absent: old maps, osu!/StepMania conversions) - "denormalized": the effective scroll multiplier is `SV multiplier * (currentBpm / baseBpm)`, where `baseBpm` is the most common BPM weighted by duration up to the last object (`GetCommonBpm`); every timing point resets the active SV multiplier to 1 unless an SV starts at the same time.
-  - `true` - "normalized": the multiplier is used as is; `InitialScrollVelocity` is the multiplier before the first SV. `NormalizeSVs()` / `DenormalizeSVs()` convert between the two (infinite BPM is treated as a multiplier of 128).
-- `ScrollSpeedFactors` (SSF) and `TimingGroups` give per-group, independent scrolling (hit objects reference a group with `TimingGroup`). `$Global` is applied on top of every group. Exact rendering formulas for SSF are not in the files consulted: Unknown.
-- To convert to ROX the denormalized form must first be normalised as above; the ROX decoder does not do it (see ROX support).
+- All times are ms from the audio start. `HitObjects` `StartTime`/`EndTime` are ints; timing points, SVs and sound effects are floats. `Sort()` orders all lists by time after loading.
+- `TimingPoints`: `StartTime` (float ms), `Bpm` (float), `Signature` (`Quadruple` = 4/4, default and omitted; `Triple` = 3/4), `Hidden` (editor-only). Beat length = `60000 / Bpm` ms (`MillisecondsPerBeat`). Several points may share a timestamp; the last wins for SV bookkeeping (`NormalizeSVs`).
+- Hit objects are in ms; beats matter only for snapping and SV normalisation.
+- Scroll velocity (`SliderVelocities`): `Multiplier` changes scroll speed from `StartTime` until the next entry; it never changes hit timing. Two representations (`Qua.cs` comments):
+  - `BPMDoesNotAffectScrollVelocity: false` (or absent: old maps, osu!/StepMania conversions), "denormalized": effective multiplier is `SV multiplier * (currentBpm / baseBpm)`, where `baseBpm` is the most common BPM weighted by duration up to the last object (`GetCommonBpm`). Every timing point resets the active SV multiplier to 1 unless an SV starts at the same time.
+  - `true`, "normalized": the multiplier is used as is; `InitialScrollVelocity` applies before the first SV. `NormalizeSVs()` / `DenormalizeSVs()` convert between the two (infinite BPM counts as multiplier 128).
+- `ScrollSpeedFactors` (SSF) and `TimingGroups` give independent per-group scrolling (objects reference a group with `TimingGroup`); `$Global` applies on top of every group. SSF rendering formulas: Unknown.
+- Converting to ROX needs the denormalized form normalised first; the ROX decoder does not.
 
 ## Notes
 
@@ -67,39 +63,32 @@ Top-level keys (from `Qua.cs`):
 | Key | Type | Meaning |
 |---|---|---|
 | `StartTime` | int ms | |
-| `Lane` | int | **1-based** lane (1 = leftmost). With `HasScratchKey` the scratch lane is `Lane == key count` (the last one) |
+| `Lane` | int | 1-based lane (1 = leftmost). With `HasScratchKey` the scratch lane is `Lane == key count` (the last one) |
 | `EndTime` | int ms | `0` / absent = tap; `> 0` = long note (`IsLongNote => EndTime > 0`); must be `> StartTime` |
-| `HitSound` | flags | `Normal` 1, `Whistle` 2, `Finish` 4, `Clap` 8 (`Hitsounds.cs`); `Normal` is played when the value is 0 or 1; written as 0 when it is `Normal` |
+| `HitSound` | flags | `Normal` 1, `Whistle` 2, `Finish` 4, `Clap` 8 (`Hitsounds.cs`); `Normal` plays when the value is 0 or 1; written as 0 when `Normal` |
 | `Type` | enum | `Normal` (0) or `Mine` (1; hit = miss; makes `QuaVersion` 1) |
-| `KeySounds` | list | `{ Sample: <1-based index into CustomAudioSamples>, Volume: <1-100, omitted = 100> }`; several key sounds per object are possible |
+| `KeySounds` | list | `{ Sample: <1-based index into CustomAudioSamples>, Volume: <1-100, omitted = 100> }`; several per object allowed |
 | `EditorLayer` | int | index into `EditorLayers` (0 = none), editor only |
 | `TimingGroup` | string | scroll group id; omitted = `$Default` |
 
-- Taps and long notes only (plus mines); no bursts/rolls. A long note's end is a separate judgement (`JudgementCount` 2); mines count 1 and are excluded from difficulty (`DifficultyContributingHitObjects`).
-- Simultaneous notes are allowed (chords); objects are sorted by `StartTime` after loading.
-- Key count: from `Mode` (Keys1..Keys10) plus 1 if `HasScratchKey` (`ModeHelper.ToKeyCount`); `FromKeyCount` is the inverse (1..10).
-- `SoundEffects` play background samples at a time (`Sample` index 1-based into `CustomAudioSamples`); `UnaffectedByRate` samples keep their pitch/speed under rate mods.
+- Taps, long notes and mines only; no bursts/rolls. A long note's end is a separate judgement (`JudgementCount` 2); mines count 1 and are excluded from difficulty (`DifficultyContributingHitObjects`). Chords are allowed.
+- Key count = `Mode` (Keys1..Keys10) plus 1 if `HasScratchKey` (`ModeHelper.ToKeyCount`); `FromKeyCount` is the inverse (1..10).
+- `SoundEffects` play background samples; `UnaffectedByRate` samples keep pitch/speed under rate mods.
 
 ## Audio & images
-
-`AudioFile`, `BackgroundFile`, `BannerFile` are plain file names relative to the folder (the `.qp` root). `CustomAudioSamples[].Path` are relative sample files (wav/ogg/mp3). `SongPreviewTime` is in ms. Keysounds are referenced by index (1-based) into `CustomAudioSamples` from `HitObjects[].KeySounds` and `SoundEffects[]`.
+`AudioFile`, `BackgroundFile`, `BannerFile` are file names relative to the `.qp` root; `CustomAudioSamples[].Path` are relative wav/ogg/mp3 files. `HitObjects[].KeySounds` and `SoundEffects[]` use 1-based indexes into `CustomAudioSamples`.
 
 ## Versions & variants
-
-- `QuaVersion` 0 -> original; 1 -> mines. `DetermineMinimumQuaVersion()` writes 1 only if a mine exists, so older clients still load maps without new features. A reader must reject `QuaVersion > 1` or ignore the unknown features.
-- Newer keys (`TimingGroups`, `ScrollSpeedFactors`, `HasScratchKey`, `BPMDoesNotAffectScrollVelocity`, `LegacyLNRendering`, `Genre`) can be absent in older files.
-- Maps converted from osu!/StepMania by Quaver use `BPMDoesNotAffectScrollVelocity` false and a long list of 1-ms-apart timing points (see the real test resource `Osu/Resources/Camellia - Backbeat Maniac (Evening) [Rewind VIP].qua`, which has thousands of `TimingPoints` entries).
+- `QuaVersion` 0 = original, 1 = mines. `DetermineMinimumQuaVersion()` writes 1 only if a mine exists. Reject `QuaVersion > 1` or ignore the unknown features.
+- Older files lack `TimingGroups`, `ScrollSpeedFactors`, `HasScratchKey`, `BPMDoesNotAffectScrollVelocity`, `LegacyLNRendering`, `Genre`.
+- osu!/StepMania conversions use `BPMDoesNotAffectScrollVelocity` false and long lists of 1-ms-apart timing points (test resource `Osu/Resources/Camellia - Backbeat Maniac (Evening) [Rewind VIP].qua`, thousands of `TimingPoints`).
 
 ## Quirks & pitfalls
-
 - Lanes are 1-based; osu!/ROX columns are 0-based.
 - `EndTime: 0` means tap, not a zero-length hold.
-- Every value equal to its default is omitted by the writer.
-- `Tags` is a single string; `Source`/`BackgroundFile` may be `''`.
-- `Mode: Keys1/2/3/5/6/8/9/10` and `HasScratchKey` exist, though 4K/7K dominate.
-- Floating-point `StartTime` of timing points/SVs vs integer `StartTime` of hit objects.
-- Denormalized SV (default!) depends on BPM; an importer that reads `Multiplier` at face value gets the wrong scroll speed on maps with BPM changes (hit timing is still correct).
-- The `Hidden` flag of timing points is editor-only.
+- `Tags` is one string; `Source`/`BackgroundFile` may be `''`.
+- `StartTime` is float for timing points/SVs, int for hit objects.
+- Denormalized SV is the default and depends on BPM: reading `Multiplier` at face value gives the wrong scroll speed on BPM-change maps (hit timing stays correct).
 
 ## Example
 
@@ -132,14 +121,13 @@ HitObjects:
 Three notes at 500 ms in lanes 2, 3 and 4; the first plays `hello.wav` at 100 % and `world.mp3` at 50 %.
 
 ## ROX support
-
-ROX source `src/formats/qua` (parser: `serde_yaml`, UTF-8, 100 MiB):
-- Read + write. Decode reads `AudioFile`, `SongPreviewTime`, `BackgroundFile`, `MapId`/`MapSetId` (only if > 0), `Mode`, `Title`, `Artist`, `Source`, `Tags` (split on whitespace), `Creator`, `DifficultyName`, `TimingPoints` (`Bpm` + `Signature` -> 4 or 3), `SliderVelocities`, `InitialScrollVelocity`, `HitObjects` (`StartTime`, `Lane` - 1, optional `EndTime`).
-- Only `Mode: Keys4` and `Keys7` are accepted (`QuaMode` has two variants); any other `Mode` value makes the YAML deserialisation fail. A missing `Mode` is `Keys4`.
-- `InitialScrollVelocity` (if finite and != 1) becomes an SV point at the start of the map (changelog 0.8.0). `SliderVelocities` become `TimingPoint::Sv` with the raw multiplier; `BPMDoesNotAffectScrollVelocity` is parsed but NOT used by the decoder, so denormalized maps are decoded with the wrong SV semantics (see Quirks).
-- Dropped on read: `HitSound`, `KeySounds`, `Type: Mine` (an object with `Type: Mine` has no field in ROX's struct and is decoded as a normal tap), `EditorLayer`, `TimingGroup`/`TimingGroups`, `ScrollSpeedFactors`, `SoundEffects`, `CustomAudioSamples`, `Bookmarks`, `EditorLayers`, `HasScratchKey` (a scratch lane would exceed the key count and fail ROX validation `InvalidColumn`), `LegacyLNRendering`, `Hidden`, `Genre`, `Description`, `BannerFile`.
-- A hold is decoded whenever `EndTime` is present, so an explicit `EndTime: 0` would give a hold of negative duration (validation error) [inference from `decoder.rs`: `if let Some(end) = ho.end_time { Note::hold(time, end - time, ..) }`].
-- Encode: writes `AudioFile`, `SongPreviewTime`, `BackgroundFile`, `MapId`, `Title`, `Artist`, `Creator`, `DifficultyName`, `Source`, `Tags` (space-joined), `BPMDoesNotAffectScrollVelocity: true`, `InitialScrollVelocity: 1.0`, BPM points (signature omitted), SV points, hit objects (lane + 1, `EndTime` for holds). The encoder never sets `Mode` (ROX source `to_qua` uses the default), so a 7K chart is written as `Mode: Keys4` [from reading the source; not run]. Burst/Mine notes are written like taps/holds.
+ROX source `src/formats/qua` (`serde_yaml`, UTF-8, 100 MiB). Read + write.
+- Reads `AudioFile`, `SongPreviewTime`, `BackgroundFile`, `MapId`/`MapSetId` (only if > 0), `Mode`, `Title`, `Artist`, `Source`, `Tags` (split on whitespace), `Creator`, `DifficultyName`, `TimingPoints` (`Bpm` + `Signature` -> 4 or 3), `SliderVelocities`, `InitialScrollVelocity`, `HitObjects` (`StartTime`, `Lane` - 1, optional `EndTime`).
+- Only `Mode: Keys4` and `Keys7` (`QuaMode`); any other value fails deserialisation. Missing `Mode` is `Keys4`.
+- `InitialScrollVelocity` (finite, != 1) becomes an SV point at map start (changelog 0.8.0). `SliderVelocities` become `TimingPoint::Sv` with the raw multiplier. `BPMDoesNotAffectScrollVelocity` is parsed but unused, so denormalized maps get wrong SV semantics.
+- Dropped: `HitSound`, `KeySounds`, `Type: Mine` (decodes as a tap), `EditorLayer`, `TimingGroup`/`TimingGroups`, `ScrollSpeedFactors`, `SoundEffects`, `CustomAudioSamples`, `Bookmarks`, `EditorLayers`, `HasScratchKey` (the scratch lane would exceed the key count and fail validation `InvalidColumn`), `LegacyLNRendering`, `Hidden`, `Genre`, `Description`, `BannerFile`.
+- A hold is decoded whenever `EndTime` is present, so an explicit `EndTime: 0` gives a negative-duration hold (validation error) [inference from `decoder.rs`: `if let Some(end) = ho.end_time { Note::hold(time, end - time, ..) }`].
+- Encode writes `AudioFile`, `SongPreviewTime`, `BackgroundFile`, `MapId`, `Title`, `Artist`, `Creator`, `DifficultyName`, `Source`, `Tags` (space-joined), `BPMDoesNotAffectScrollVelocity: true`, `InitialScrollVelocity: 1.0`, BPM points (signature omitted), SV points, hit objects (lane + 1, `EndTime` for holds). It never sets `Mode` (`to_qua` uses the default), so a 7K chart is written as `Mode: Keys4` [from reading the source; not run]. Burst/Mine notes are written like taps/holds.
 
 ## Parsers & tools
 
@@ -153,9 +141,7 @@ ROX source `src/formats/qua` (parser: `serde_yaml`, UTF-8, 100 MiB):
 | Moonchart (`Quaver`) | Haxe | https://github.com/MaybeMaru/moonchart |
 
 ## Getting samples
-
-- **Committed** in [`samples/`](samples/) (see [`SOURCES.md`](samples/SOURCES.md)): 82 real and test maps: Quaver.API's test resources (MPL-2.0: `sample`, `keysounds`, `sound-effects`, SV regression and "normalized" pairs, `stable-sorting` with CRLF, `cheat`/`symphony` large maps, converted osu! maps `megalovania` 7K and `Camellia - Backbeat Maniac` with thousands of timing points, 29 AutoMod inputs including one with a UTF-8 BOM), Quaver's built-in maps (Offset Calibrator and the 8 Princess of Winter difficulties; CC-BY-NC 4.0) and two hand-written CC0 charts covering `HasScratchKey`, mines (`QuaVersion: 1`), `TimingGroups`/`ScrollSpeedFactors`, Keys10, layers and bookmarks (features the upstream test files here do not contain).
-- **How to get more**: Quaver's editor writes `.qua` into the Songs folder; every mapset on https://quavergame.com is a `.qp` (a ZIP, so unzip it); Quaver converts `.osz`, `.sm` and `.mcz` on import (`MapsetImporter.AcceptedMapType`), which also produces `.qua`; the Quaver repository ships 11 default `.qp` under `Quaver.Resources/Quaver.Resources/DefaultMaps/`. Newest features (scratch, mines, timing groups) only appear in recent community maps or in the current Quaver.API tests (the pinned a921d56 snapshot has none).
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). More: Quaver's editor writes `.qua` into the Songs folder; every mapset on https://quavergame.com is a `.qp` (a ZIP); Quaver converts `.osz`, `.sm` and `.mcz` on import (`MapsetImporter.AcceptedMapType`); the Quaver repository ships 11 default `.qp` under `Quaver.Resources/Quaver.Resources/DefaultMaps/`. Scratch, mines and timing groups appear only in recent community maps or current Quaver.API tests (the pinned a921d56 snapshot has none).
 
 ## Sources
 

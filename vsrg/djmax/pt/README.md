@@ -4,13 +4,13 @@ Kind: chart
 Doc status: partial · ROX: no · Category: vsrg · Encoding: binary (little-endian), often encrypted
 
 ## Overview
-`.pt` files hold the note pattern of DJMAX Online (PC, 2006) and DJMAX Technika (arcade; versions 0.6 and 1.0 found in DJMAX Technika Q too). The header magic is `PTFF`, tracks use the `EZTR` magic: this is the same chunk family as the EZ2DJ [EZFF `.ez`](../../ez2/ez/README.md) format (a shared lineage is an [inference]; the common `EZTR` track magic is the evidence). Parsers: DJMax-Editor (C#, hsreina; reused by techmania-converter), DMTQ-Tools (C#, samnyan / CHN-WolF), PTfluffy (Python, DJMax Online only). A `.pt` holds one chart; keysound names are in the file's own sound table. Metadata (title, composer, level) is not in the file for DJMAX Online (PTfluffy: stored separately in a database).
+Note pattern of DJMAX Online (PC, 2006) and DJMAX Technika (arcade; versions 0.6 and 1.0 also found in DJMAX Technika Q). Header magic `PTFF`, track magic `EZTR`: the same chunk family as the EZ2DJ [EZFF `.ez`](../../ez2/ez/README.md) format (shared lineage is an [inference]; the common `EZTR` magic is the evidence). Parsers: DJMax-Editor (C#, hsreina; reused by techmania-converter), DMTQ-Tools (C#, samnyan / CHN-WolF), PTfluffy (Python, DJMax Online only). A `.pt` holds one chart; keysound names are in its own sound table. DJMAX Online files carry no metadata (title, composer, level); PTfluffy: stored separately in a database.
 
 ## Container & encoding
-Little-endian (except the 2-byte version field). 0x18-byte header, sound table, tracks. The header is never encrypted; the rest may be (DMTQ-Tools: "If the remaining data is encrypted, decrypt it before reading the sound table and tracks"). Encryption schemes found:
-- DJMAX Technika 1 (China): per the CHN-WolF crack write-up, PTFF files are encrypted with MT19937 (`init_by_array` seeded with the six header dwords) combined with a feedback derived from an XTEA variant (8-byte blocks; `plain = cipher ^ fk ^ mt_block`; `fk_0` = header 24-byte sum/CRC32; `fk_{j+1}` = XTEA-variant(fk_j, plaintext block twice)). Decrypting yields a resource bundle ("version u32 + wav entries") in that write-up: i.e. the layout below may not apply to that client [unclear]. TPK packages use AES-128 (state byte order non-standard).
-- DJMAX Technika Q: DMTQ-Tools reads plaintext and encrypted input offline (the decrypt algorithm is inside the tool; not reproduced).
-- DJMAX Online: `.pt` files extracted from `.pak` archives; PTfluffy parses them directly (it says nothing about encryption); MPGH forum thread says "pt files are encrypted" (unverified).
+Little-endian (except the 2-byte version field). 0x18-byte header, sound table, tracks. The header is never encrypted; the rest may be (DMTQ-Tools: "If the remaining data is encrypted, decrypt it before reading the sound table and tracks"). Encryption found:
+- DJMAX Technika 1 (China): per the CHN-WolF crack write-up, PTFF files are encrypted with MT19937 (`init_by_array` seeded with the six header dwords) combined with a feedback derived from an XTEA variant (8-byte blocks; `plain = cipher ^ fk ^ mt_block`; `fk_0` = header 24-byte sum/CRC32; `fk_{j+1}` = XTEA-variant(fk_j, plaintext block twice)). Decrypting yields a resource bundle ("version u32 + wav entries") in that write-up, so the layout below may not apply to that client [unclear]. TPK packages use AES-128 (state byte order non-standard).
+- DJMAX Technika Q: DMTQ-Tools reads plaintext and encrypted input offline (the decrypt algorithm is inside the tool, not reproduced).
+- DJMAX Online: `.pt` files come from `.pak` archives; PTfluffy parses them directly and says nothing about encryption; an MPGH forum thread says "pt files are encrypted" (unverified).
 
 ## Structure / metadata
 Header (decrypted layout, DMTQ-Tools `pt-format.md`, 0x18 bytes, same in versions 0.6/1.0):
@@ -41,25 +41,27 @@ Event: v0.6 11 bytes `{u32 tick; u8 type; 6 params}`; v1.0 16 bytes `{u32 tick; 
 | other | unspecified, keep the buffer | same |
 
 ## Timing model
-Tick-based: positions are ticks; the header gives ticks per measure, initial BPM and the BPM events (type 3); Beat events (type 4) set beats per measure [inference]. Conversion: time = integrate BPM per tick; tick -> beat = tick / (ticks_per_measure / beats_per_measure) [inference: EZFF note at 1/48 beat]. Exact rounding: Unknown.
+Positions are ticks. The header gives ticks per measure and initial BPM; BPM events (type 3) change tempo; Beat events (type 4) set beats per measure [inference]. Time = integral of BPM over ticks; tick -> beat = tick / (ticks_per_measure / beats_per_measure) [inference: EZFF note at 1/48 beat]. Exact rounding: Unknown.
 
 ## Notes
 - Note `attribute` (Technika Q `.bytes` list, same lineage: [bytes](../../../others/djmax-technika-q/bytes/README.md)): 0 normal (drag note if length != 6), A repeat, B last repeat, C hold, 5 chain start, 6 chain end, 1 half-speed, 2 double-speed. Whether these match `.pt` of DJMAX Online: Unknown.
-- Which track maps to which lane/key: Unknown from the sources read (the CHN-WolF write-up has `lanes.tsv`/`ptmap.tsv` research files; not read). In DMTQ's format the playable tracks are the first three (top/middle/bottom line). PTfluffy outputs 5-key or 7-key BMS (`-5`/`-7`, default 7).
+- Track to lane/key mapping: Unknown (the CHN-WolF write-up has `lanes.tsv`/`ptmap.tsv` research files, not read). In DMTQ's format the playable tracks are the first three (top/middle/bottom line). PTfluffy outputs 5-key or 7-key BMS (`-5`/`-7`, default 7).
 - Long notes: `duration` > 6 ticks [inference by analogy with EZFF's length bias 6].
 - Auto-play/BGM notes live in non-lane tracks [inference from EZFF].
 
 ## Audio & images
-Sound table names OGG files stored in the game archive (`.pak` for DJMAX Online, `.fpk` for Technika Q); PTfluffy refers to YoMax for unpacking `.pak`.
+OGG files in the game archive (`.pak` for DJMAX Online, `.fpk` for Technika Q); PTfluffy refers to YoMax for unpacking `.pak`.
 
 ## Versions & variants
-0.6 and 1.0 as above. DJMAX Online, DJMAX Technika 1..3, Technika Tune/Q (Q additionally has `.bytes` charts). DJMAX Portable/Trilogy are explicitly not supported by PTfluffy (different formats; Unknown).
+
+0.6 and 1.0 as above. Seen in DJMAX Online, Technika 1..3, Technika Tune/Q (Q also has `.bytes` charts). PTfluffy does not support DJMAX Portable/Trilogy (different formats; Unknown).
 
 ## Quirks & pitfalls
-Version bytes in a different order from other fields; header unencrypted, body encrypted; sound index width differs; event size 11 vs 16; beat param width disagreement.
+
+Version bytes are in a different order from other fields; header unencrypted, body encrypted; sound index width differs; event size 11 vs 16; beat param width differs between sources.
 
 ## Example
-Not provided (no sample file available; encrypted in retail).
+None (no `PTFF` sample available; encrypted in retail).
 
 ## ROX support
 Not read by ROX.
@@ -72,9 +74,12 @@ Not read by ROX.
 - DJMAX Technika 1 CN crack notes: https://github.com/CHN-WolF/DJMax_Technika_1_CN_Ver_Crack
 
 ## Getting samples
-- **Committed** ([`samples/`](samples/SOURCES.md)): seven real DJMAX Technika Q pattern payloads (`dmtqresearch_Patterns_<id>[_EARPHONE].bin`, 38-80 KB, plain/unencrypted) from the private-server research archive https://github.com/UrsulaProject/DMTQResearch (`DMTQ-server/dmtq/dmqglb.mb.pmang.com/DMQ/Patterns/`, 4 266 files there; its README says patterns are stored there and `_EARPHONE` marks Earphone mode). [observed in samples/dmtqresearch_Patterns_1.bin] They have **no `PTFF`/`EZTR` signature**: they start `00 00 00 00` + u32 (file size - 26), then 67-byte sound entries (u16 index, flag byte, 64-byte file name), then event data; how this wrapper relates to the `.pt` layout above is Unknown.
-- **No file with the `PTFF` header** was found at a public place: the parser repositories (DJMax-Editor, DMTQ-Tools) build their charts in memory (`DJMaxEditor.Tests/Fixtures/SyntheticChartFactory.cs`, `DMTQ.Tools.Core.Tests/Services/PatternBinarySerializerTests.cs`, `PtCipherTests.cs`).
-- **More**: the same archive holds thousands more `Patterns/<songid>[_EARPHONE]` files (fetch with `https://raw.githubusercontent.com/UrsulaProject/DMTQResearch/e780fbbbde49eabdbc736108a8dbc6ec0c4f7578/DMTQ-server/dmtq/dmqglb.mb.pmang.com/DMQ/Patterns/<name>`); or extract the pattern files from an installation of DJMAX Online or DJMAX Technika you own (DJMax-Editor opens PTFF files: `DJMaxEditor/Files/pt/PTOpenFile.cs`; DMTQ-Tools reads plaintext and encrypted Technika Q input; PTfluffy reads DJMAX Online). Technika 1 (China) files are encrypted per the CHN-WolF write-up; `.tpk` packages are AES-protected (fiche). Steam guide "PATTERN REPOSITORY" (https://steamcommunity.com/sharedfiles/filedetails/?id=3007176654) is another lead (not opened).
+
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md): DJMAX Technika Q pattern payloads (`dmtqresearch_Patterns_<id>[_EARPHONE].bin`, plain) from https://github.com/UrsulaProject/DMTQResearch (`DMTQ-server/dmtq/dmqglb.mb.pmang.com/DMQ/Patterns/`, 4 266 files; `_EARPHONE` marks Earphone mode). [observed: dmtqresearch_Patterns_1.bin] No `PTFF`/`EZTR` signature: they start `00 00 00 00` + u32 (file size - 26), then 67-byte sound entries (u16 index, flag byte, 64-byte file name), then event data. Relation to the `.pt` layout above is Unknown.
+
+No file with the `PTFF` header is public: DJMax-Editor and DMTQ-Tools build charts in memory (`DJMaxEditor.Tests/Fixtures/SyntheticChartFactory.cs`, `DMTQ.Tools.Core.Tests/Services/PatternBinarySerializerTests.cs`, `PtCipherTests.cs`).
+
+More: fetch `https://raw.githubusercontent.com/UrsulaProject/DMTQResearch/e780fbbbde49eabdbc736108a8dbc6ec0c4f7578/DMTQ-server/dmtq/dmqglb.mb.pmang.com/DMQ/Patterns/<name>`, or extract pattern files from a DJMAX Online or Technika installation you own (DJMax-Editor opens PTFF: `DJMaxEditor/Files/pt/PTOpenFile.cs`; DMTQ-Tools reads Technika Q input; PTfluffy reads DJMAX Online). Technika 1 (China) files are encrypted per the CHN-WolF write-up; `.tpk` packages are AES-protected. Steam guide "PATTERN REPOSITORY" (https://steamcommunity.com/sharedfiles/filedetails/?id=3007176654) is another lead (not opened).
 
 ## Sources
 - https://raw.githubusercontent.com/CHN-WolF/DMTQ-Tools/master/pt-format.md

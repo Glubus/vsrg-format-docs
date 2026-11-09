@@ -4,7 +4,8 @@ Kind: metadata
 Doc status: stub · ROX: no · Category: vsrg · Encoding: text
 
 ## Overview
-`songs.dta` (compiled `songs.dtb` on disc) is the song database of Rock Band / Guitar Hero (Harmonix engine) DLC and custom packages: one DataArray per song with names, audio track layout and the path of the `.mid` chart. It holds metadata and audio mixing only; notes are in the referenced MIDI ([mid](../../clone-hero/mid/README.md)). YARG, Clone Hero and Phase Shift support `songs.dta` for custom Rock Band songs (YARG wiki "Songs" page).
+
+`songs.dta` (compiled `songs.dtb` on disc) is the song database of Rock Band / Guitar Hero (Harmonix engine) DLC and custom packages: one DataArray per song with names, audio track layout and the `.mid` chart path. It holds metadata and audio mixing only; notes are in the MIDI ([mid](../../clone-hero/mid/README.md)). YARG, Clone Hero and Phase Shift support it for custom Rock Band songs (YARG wiki "Songs").
 
 ## Container & encoding
 Text S-expression (Lisp-like, parentheses; `;` starts a comment). Compiled form `.dtb` is binary (format not documented here). Normally shipped inside a CON/PKG package together with the `.mid`, `.mogg` (audio) and `gen/*.milo_*` files.
@@ -16,23 +17,26 @@ Each entry: `(<shortname> (name "Title") (artist "Artist") (master TRUE) (song_i
 - `preview`: start/stop ms.
 - `song.tracks`: maps instruments to channels of the `.mogg`; `pans` -1.0 left .. 1.0 right; `vols` -10..10 dB-like; `cores` integer array.
 - Other keys (rank, bank, drum_bank, etc., difficulty "rank" values) exist: Unknown here; see sources.
-Example origin: shortened from the Rock Band debug song "Dead on Arrival" as printed by The Cutting Room Floor and the Milo Modding Wiki.
 
 ## Timing model
-Not applicable.
+
+Unknown.
 
 ## Notes
-Not applicable.
+
+Unknown.
 
 ## Audio & images
 `.mogg` multitrack audio (path in `song.name`), album art `.png_xbox`/`.png_ps3` in `gen/`, `.milo` files (animation).
 
 ## Versions & variants
-`songs.dta` for RB1/2/3, GH and custom songs; extra keys differ per game (Unknown).
+
+`songs.dta` exists for RB1/2/3, GH and custom songs; extra keys differ per game (Unknown).
 
 ## Quirks & pitfalls
-- Real files mix several dialects [observed in samples/]: RB3 Deluxe uses `(master 1)`, `#ifndef ... #define ... #endif` preprocessor blocks and multi-line parenthesised `(tracks ((drum (0 1)) ...))` [observed in samples/rock-band-3-deluxe_songs.dta, samples/rock-band-3-deluxe_songs_dx.dta]; Onyx's resource file quotes every symbol (`('21guns' ('song_length' 327727) ...)`) [observed in samples/missing_song_data.dta]; Guitar Hero 2 customs embed `{do {set $songalbum "..."}}` script blocks inside `(artist ...)` and use `(caption performed_by)` [observed in samples/gh2-customs_songs.dta].
-Compiled `.dtb` must be decompiled; keys vary per game version.
+
+- Real files mix dialects [observed]: RB3 Deluxe uses `(master 1)`, `#ifndef ... #define ... #endif` blocks and multi-line `(tracks ((drum (0 1)) ...))` [observed: rock-band-3-deluxe_songs.dta, rock-band-3-deluxe_songs_dx.dta]; Onyx's resource file quotes every symbol (`('21guns' ('song_length' 327727) ...)`) [observed: missing_song_data.dta]; Guitar Hero 2 customs embed `{do {set $songalbum "..."}}` script blocks inside `(artist ...)` and use `(caption performed_by)` [observed: gh2-customs_songs.dta].
+- Compiled `.dtb` must be decompiled; keys vary per game version.
 
 ## Example
 ```
@@ -45,7 +49,7 @@ Compiled `.dtb` must be decompiled; keys vary per game version.
      (tracks ((drum (0 1 2 3)) (bass 4) (guitar (5 6)) (vocals (7 8))))
      (midi_file songs/deadonarrival/deadonarrival.mid)))
 ```
-(Excerpt of the Rock Band debug entry as published by The Cutting Room Floor; pans/vols/cores lines omitted.)
+(Rock Band debug entry from The Cutting Room Floor; pans/vols/cores omitted.)
 
 ## ROX support
 Not read by ROX.
@@ -54,8 +58,8 @@ Not read by ROX.
 dtab (Haskell, Data.DTA.Serialize.RB3): https://hackage.haskell.org/package/dtab-1.0/docs/Data-DTA-Serialize-RB3.html · Onyx: https://github.com/mtolly/onyx · YARG.Core · Rock Band Customs Project guides.
 
 ## Getting samples
-- Committed in [`samples/`](samples/SOURCES.md): 5 real `.dta` files and 1 synthetic. Real: Rock Band 3 Deluxe `songs.dta` (173,946 bytes), `songs_dx.dta` and `rb1_songs.dta` (https://github.com/hmxmilohax/rock-band-3-deluxe, `_ark/songs/`), Onyx `missing_song_data.dta`, and the Guitar Hero 2 customs `config/songs.dta` (https://github.com/Milohax-archive/gh2-customs). The synthetic file follows the fiche layout exactly.
-- More: ex-CON/PKG song folders contain `songs/songs.dta` (https://wiki.yarg.in/wiki/Songs); Rock Band Customs Project guide https://rock-band-customs.gitlab.io/authoring-dtas.html; Onyx writes `songs.dta` when building RB3 packages.
+
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). More: ex-CON/PKG song folders contain `songs/songs.dta` (https://wiki.yarg.in/wiki/Songs); Rock Band Customs Project guide https://rock-band-customs.gitlab.io/authoring-dtas.html; Onyx writes `songs.dta` when building RB3 packages. Upstream repos: https://github.com/hmxmilohax/rock-band-3-deluxe (`_ark/songs/`), https://github.com/Milohax-archive/gh2-customs.
 
 ## Sources
 https://milo.ipg.pw/index.php/Songs.dta (via search excerpts; page not reachable directly) · https://new.tcrf.net/Rock_Band_(PlayStation_2)/Debug_Songs · https://hackage.haskell.org/package/dtab-1.0/docs/Data-DTA-Serialize-RB3.html · https://rock-band-customs.gitlab.io/authoring-dtas.html · https://wiki.yarg.in/wiki/Songs

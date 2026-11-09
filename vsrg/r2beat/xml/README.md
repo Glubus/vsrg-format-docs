@@ -4,13 +4,14 @@ Kind: chart
 Doc status: partial · ROX: no · Category: vsrg · Encoding: xml (euc-kr or gb18030 declared; see below)
 
 ## Overview
-Per-song obstacle ("note") chart of R2Beat / QQ Speed, a plain XML file stored in the game's `rnr_script` pack (usually `rnr_script\music` or `music_add`) and edited by the custom-song community (自制音速) with R2NoteEditor-family tools (Newton wiki). rmstZ lists it as "R2beat chart, read and write". In the official online clients the obstacle data is served from the server and the local XML only carries key-sound info, so official note data cannot be extracted from recent clients; standalone ("单机") builds keep the full XML (Newton wiki). One file = one song/difficulty.
+
+Per-song obstacle chart of R2Beat / QQ Speed: plain XML in the game's `rnr_script` pack (usually `rnr_script\music` or `music_add`), edited by the custom-song community (自制音速) with R2NoteEditor-family tools (Newton wiki). rmstZ lists it as "R2beat chart, read and write". Official online clients serve obstacle data from the server and keep only key-sound info locally; standalone ("单机") builds keep the full XML (Newton wiki). One file = one song/difficulty.
 
 ## Packaged in
-`rnr_script` `.pak` archives (a `.pak` is a folder-like package of the game) or loose files; the song list is `music.txt` in `rnr_script` (title, difficulty stars, artist, genre, price, image and XML path); audio is `rnr_music\<id>\<id>.ogg|mp3` (the XML's BGM path is relative to `rnr_music\`). Cover images are 256x128 24-bit BMP in `rnr_image`. (Newton wiki.)
+`rnr_script` `.pak` archives (a `.pak` is a folder-like package) or loose files. The song list is `music.txt` in `rnr_script` (title, difficulty stars, artist, genre, price, image and XML path). Audio is `rnr_music\<id>\<id>.ogg|mp3` (the XML's BGM path is relative to `rnr_music\`). Cover images are 256x128 24-bit BMP in `rnr_image`. (Newton wiki.)
 
 ## Container & encoding
-XML text. The nyaruhodoo/r2beat-note editor writes `<?xml version="1.0" encoding="euc-kr"?>` and encodes the bytes as EUC-KR; the MCP editor `mcp-r2beat-note-editor` is reported to save gb18030. No BOM or line-ending rule is documented; files made by r2beat-note have no indentation and empty elements written as `<X ...></X>`.
+XML text. The nyaruhodoo/r2beat-note editor writes `<?xml version="1.0" encoding="euc-kr"?>` and encodes the bytes as EUC-KR; the MCP editor `mcp-r2beat-note-editor` is reported to save gb18030. No BOM or line-ending rule is documented. Files made by r2beat-note have no indentation and write empty elements as `<X ...></X>`.
 
 ## Structure
 Reconstructed from the TypeScript editor https://github.com/nyaruhodoo/r2beat-note (commit `32e6128edb7ec008019f5e624a8b5c42f3d16e99`, files `src/pages/NewMusic.vue`, `src/components/NoteEditorHeader.vue`, `src/note.ts`) and the Newton wiki header description (title, BPM, BGM path, delay, key-sound info, length; then one entry per obstacle):
@@ -37,10 +38,10 @@ Reconstructed from the TypeScript editor https://github.com/nyaruhodoo/r2beat-no
 
 Key-sound entries ("Key音") exist in official files; their element layout is Unknown.
 
-[observed in samples/r2beat-viewer_e_song926.xml] Key sounds are `<EFFECT Snd="e_song926/z.mp3" Volume="1.00"></EFFECT>` elements (6 in that file, after `LENGTH`, before the `AREA` list) and each `AREA` references one with `FxSndIndex` (0 = none, 1.. = index of the EFFECT [inference]). [observed in samples/dzsfo_Fight.xml] `BPM` entries use `OriginalBPM` only when it differs from the played BPM, a chart can hold many `BPM` entries (speed changes by `Frame`), `Coord` may be fractional (`130.5`), the declared encoding is `gb18030` there and `euc-kr` in the r2beat-viewer files, `TITLE Name` may be non-ASCII bytes in the declared encoding, and the BGM path is `<song>/<song>.mp3`.
+[observed in samples/r2beat-viewer_e_song926.xml] Key sounds are `<EFFECT Snd="e_song926/z.mp3" Volume="1.00"></EFFECT>` elements (6 in that file, after `LENGTH`, before the `AREA` list). Each `AREA` references one with `FxSndIndex` (0 = none, 1.. = index of the EFFECT [inference]). [observed in samples/dzsfo_Fight.xml] `BPM` entries use `OriginalBPM` only when it differs from the played BPM. A chart can hold many `BPM` entries (speed changes by `Frame`). `Coord` may be fractional (`130.5`). The declared encoding is `gb18030` there and `euc-kr` in the r2beat-viewer files. `TITLE Name` may be non-ASCII bytes in the declared encoding. The BGM path is `<song>/<song>.mp3`.
 
 ## Timing model
-`Coord` is the position in beats: 12 coords per beat, 48 per 4/4 measure at standard spacing; 16th notes are 3 coords apart (Newton wiki). The game runs at 60 fps; `Frame = Coord * 300 / BPM` and `Coord = Frame * BPM / 300` (mcp-r2beat-note-editor README; consistent with 12 coords/beat at 60 fps). `DELAY` and `BPM Frame` are in frames. A speed change (变速) is written through the `BPM` frame entries, not through `Coord` (Newton wiki). "Manual speed adjustment" multiplies all coords and edits BPM to change the apparent speed without changing the obstacle kinds.
+`Coord` is the position in beats: 12 coords per beat, 48 per 4/4 measure at standard spacing; 16th notes are 3 coords apart (Newton wiki). The game runs at 60 fps: `Frame = Coord * 300 / BPM` and `Coord = Frame * BPM / 300` (mcp-r2beat-note-editor README; consistent with 12 coords/beat at 60 fps). `DELAY` and `BPM Frame` are in frames. A speed change (变速) is written through the `BPM` frame entries, not through `Coord` (Newton wiki). "Manual speed adjustment" multiplies all coords and edits BPM to change the apparent speed without changing the obstacle kinds.
 
 ## Notes
 `Kind` / `Level` pairs (Newton wiki table, matching r2beat-note's `NoteType`):
@@ -53,19 +54,24 @@ Key-sound entries ("Key音") exist in official files; their element layout is Un
 Long obstacles (Level always 5): start / continue / end: up 134/135/136, down 137/138/139, left 140/141/142, right 143/144/145, up-left 128/129/130, up-right 131/132/133. The editor also knows Kind 161 (Level 0, "random"). Other Kinds are read as defaults; some unreleased obstacle models exist (Newton wiki). Early songs used "mosaic" left/right obstacles with Level 3, now disused.
 
 ## Audio & images
-Not in the chart; see Packaged in. Key sounds are separate audio entries referenced from the chart ([inference]).
+
+Not in the chart; see Packaged in. Key sounds are separate audio entries ([inference]).
 
 ## Versions & variants
-Chinese (QQ Speed), Korean, international, Japanese, HK/TW, Thai, Latin American and Brazilian servers existed (Newton wiki); whether their XML differ is Unknown.
+
+Chinese (QQ Speed), Korean, international, Japanese, HK/TW, Thai, Latin American and Brazilian servers existed (Newton wiki). Whether their XML differ is Unknown.
 
 ## Quirks & pitfalls
-BGM paths are relative to `rnr_music\`; XML encoding is a legacy Korean/Chinese code page (not UTF-8); BPM and coords are decoupled from real tempo ("standard speed" vs edited spacing); official online obstacle data is not in the client.
+
+BGM paths are relative to `rnr_music\`. Encoding is a legacy Korean/Chinese code page. BPM and coords are decoupled from real tempo. Official online obstacle data is not in the client.
 
 ## Example
-See `samples/synthetic-r2beat.xml` (hand-written, built from the structure above).
+
+`samples/synthetic-r2beat.xml` (hand-written from the structure above).
 
 ## ROX support
-None.
+
+Not read by ROX.
 
 ## Parsers & tools
 - r2beat-note (Vue/TypeScript editor): https://github.com/nyaruhodoo/r2beat-note
@@ -74,8 +80,7 @@ None.
 
 ## Getting samples
 
-- Committed in [`samples/`](samples/): 10 real chart XMLs (6 from tablez/r2beat-viewer's `res/note_music*` library of 5680 files, 4 from dzsfo/r2beat's `rnr_music`), plus `synthetic-r2beat.xml` (hand-written CC0). Everything is listed with origin, date and sha256 in [`samples/SOURCES.md`](samples/SOURCES.md).
-- More: tablez/r2beat-viewer (https://github.com/tablez/r2beat-viewer, GitHub Pages viewer https://r2.zako.cc) keeps `res/note_music/e_song<id>/*.xml` and `res/note_music2/<id>/<id>.xml` (5 charts per pack); dzsfo/r2beat has `rnr_music/<song>/<song>.xml` next to a `.txt` song entry; standalone "R2Beat single" distributions (Newton wiki).
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). More: tablez/r2beat-viewer (https://github.com/tablez/r2beat-viewer, viewer https://r2.zako.cc; `res/note_music/e_song<id>/*.xml` and `res/note_music2/<id>/<id>.xml`, 5 charts per pack, 5680 files); dzsfo/r2beat (`rnr_music/<song>/<song>.xml` next to a `.txt` song entry); standalone "R2Beat single" distributions (Newton wiki).
 
 ## Sources
 - https://www.newton.com.tw/wiki/%E8%87%AA%E8%A3%BD%E9%9F%B3%E9%80%9F (R2Beat custom-song wiki: files, XML parts, Coord, Kind/Level, Frame, Delay)

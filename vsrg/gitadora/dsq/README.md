@@ -4,7 +4,7 @@ Kind: chart
 Doc status: stub · ROX: no · Category: vsrg · Encoding: binary (little-endian)
 
 ## Overview
-`.dsq` (drums) and `.gsq` (guitar/bass) are the sequence files of the earliest Konami DrumMania/GuitarFreaks games; gitadora-customs has plugins for several generations (`dsq`, `dsq0`, `dsq05`, `dsq1`, `dsq15`, `dsq2`; `gsq`, `gsq1`, `gsq15`, `gsq2`, `gsq3`). Only the `dsq2` and `gsq` plugins were read; the generation split (which games) is Unknown.
+`.dsq` (drums) and `.gsq` (guitar/bass) are the sequence files of the earliest Konami DrumMania/GuitarFreaks games. gitadora-customs has plugins for several generations (`dsq`, `dsq0`, `dsq05`, `dsq1`, `dsq15`, `dsq2`; `gsq`, `gsq1`, `gsq15`, `gsq2`, `gsq3`). Only `dsq2` and `gsq` were read; which game uses which is Unknown.
 
 ## Container & encoding
 dsq: optional 0x10 header with magic `DSQ1` (if present the tool skips 0x10 bytes), then 8-byte entries `<I B B H>`: `u32 timestamp; u8 command; u8 param1; u16 param2`. Time division 300, beat division 480 (hard-coded in the tool). The tool has no writer for dsq2.
@@ -22,13 +22,13 @@ Drum lanes as listed; guitar lanes 3 buttons + open.
 Sound ids.
 
 ## Versions & variants
-Many (dsq0, dsq05, dsq1, dsq15, dsq2, gsq1, gsq15, gsq2, gsq3), not documented here.
+Many (dsq0, dsq05, dsq1, dsq15, dsq2, gsq1, gsq15, gsq2, gsq3), undocumented here.
 
 ## Quirks & pitfalls
 Unknown commands must be preserved.
 
 ## Example
-Not applicable.
+Unknown.
 
 ## ROX support
 Not read by ROX.
@@ -37,8 +37,9 @@ Not read by ROX.
 gitadora-customs plugins: https://github.com/fisyher/gitadora-customs/tree/master/plugins
 
 ## Getting samples
-- **Committed: none (no real file found).** No public `.dsq`/`.gsq` file found; gitadora-customs ships plugins (`dsq`, `dsq0`, `dsq05`, `dsq1`, `dsq15`, `dsq2`, `gsq`, `gsq1`, `gsq15`, `gsq2`, `gsq3`) but no test data.
-- **How to get one**: extract from the data of the matching older GuitarFreaks/DrumMania game you own; the plugin names suggest one reader per game generation (which game maps to which is Unknown in the fiche). Convert with https://github.com/fisyher/gitadora-customs (`seqtool.py`). RAintN22/gitadora-tools (named in the game README) is another tool; only its releases were seen.
+None committed: no public `.dsq`/`.gsq` found; gitadora-customs ships the plugins (`dsq`, `dsq0`, `dsq05`, `dsq1`, `dsq15`, `dsq2`, `gsq`, `gsq1`, `gsq15`, `gsq2`, `gsq3`) but no test data.
+
+To get one: extract from the data of the matching older GuitarFreaks/DrumMania game you own and convert with https://github.com/fisyher/gitadora-customs (`seqtool.py`). RAintN22/gitadora-tools is another tool; only its releases were seen.
 
 ## Sources
 - https://raw.githubusercontent.com/fisyher/gitadora-customs/master/plugins/dsq.py , dsq2.py , gsq.py

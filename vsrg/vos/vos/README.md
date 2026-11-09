@@ -3,12 +3,12 @@ Kind: chart
 
 Doc status: partial · ROX: no · Category: vsrg · Encoding: binary
 
-Binary song file of HanseulSoft's *Virtual Orchestra Studio* (VOS). The only open parser found is `VosParser.java` of ReVanTis/VosDroid (Android re-implementation, 2014); this page is derived from that source and its comments. No official specification exists.
+Binary song file of HanseulSoft's Virtual Orchestra Studio. The only open parser found is `VosParser.java` of ReVanTis/VosDroid (Android re-implementation, 2014); this page derives from it. No official specification exists.
 
 ## Overview
 
-- VOS (1999, HanseulSoft, Korea; freeware) is a 7-key "piano" game: a song is a MIDI arrangement in which some notes are marked as the ones the player performs. Files are tiny (rarely above 100 KB, per the gpbeta introduction). The same format is played by "Mania" (Chinese BMS-simulator collection, 1.4.2+) and ported by VosDroid; a "VOS Creator" tool converts a MIDI to `.vos`.
-- The original README of this repo lists "`.vos`: Virtual Orchestra Studio and CanMusic chart, including 000, 001, 006, 022 versions". The parser read here only checks a header value of 3; **what the "000/001/006/022 versions" refer to is Unknown** (no source found).
+- VOS (1999, HanseulSoft, Korea; freeware) is a 7-key "piano" game: a song is a MIDI arrangement in which some notes are marked as the ones the player performs. Files are tiny (rarely above 100 KB, per the gpbeta introduction). "Mania" (1.4.2+) and VosDroid play the format; a "VOS Creator" tool converts a MIDI to `.vos`.
+- The original README lists "`.vos`: Virtual Orchestra Studio and CanMusic chart, including 000, 001, 006, 022 versions". The parser only checks a header value of 3; what "000/001/006/022" refer to is Unknown.
 
 ## Container & encoding
 
@@ -70,8 +70,8 @@ Flags (comment in the source, not verified): bits 0-3 colour (RGB?), bits 4-6 co
 
 ## Notes
 
-- Playable notes = the 17th channel block; `keyboard` selects one of the seven keys; `type` bit 8 marks long notes (VosDroid 0.5.1 added long-note support). Everything else is MIDI backing music played automatically.
-- Each note is a MIDI note: pressing the key sends `pitch`/`volume` on `channel` in the original game.
+- Playable notes = the 17th channel block; `keyboard` selects one of the seven keys; flag bit 8 marks long notes (VosDroid 0.5.1 added long-note support). Everything else is MIDI backing music played automatically.
+- Each note is a MIDI note: the original game sends `pitch`/`volume` on `channel` when the key is pressed.
 
 ## Audio & images
 
@@ -79,32 +79,33 @@ No external audio: all sound is MIDI (instrument = GM program). No images.
 
 ## Versions & variants
 
-Unknown beyond header value 3 (see Overview). [observed in samples/1.vos, 103.vos] The first int32 may also be **2**: the file then continues with a length-prefixed file name (`Vosctemp.trk`), a size and a tag `VOS022` / `VOS008`, then 16-bit-length-prefixed text fields; [observed in samples/23.vos, 24.vos, 109.vos] with int32 3 the segment table is `inf`/`mid`/`EOF`, followed by a `VOS1` tag in 23/24 and not in 109. This layout is read from the MIT parser `src/ChartLoaderVOS.cpp` of https://github.com/rhythmus-emulator/rparser (`ParseMetaDataV2`/`V3`), which supports both, and is probably what the "000/001/006/022" versions of the original README refer to [inference]. The original game folder `Album/` holds the songs; VOS Creator makes `.vos` from MIDI.
+Unknown beyond header value 3. [observed: samples/1.vos, 103.vos] The first int32 may be 2: the file then continues with a length-prefixed file name (`Vosctemp.trk`), a size and a tag `VOS022` / `VOS008`, then 16-bit-length-prefixed text fields. [observed: samples/23.vos, 24.vos, 109.vos] With int32 3 the segment table is `inf`/`mid`/`EOF`, followed by a `VOS1` tag in 23/24 and not in 109. Both layouts are read by the MIT parser `src/ChartLoaderVOS.cpp` of https://github.com/rhythmus-emulator/rparser (`ParseMetaDataV2`/`V3`); they probably are the "000/001/006/022 versions" of the original README [inference]. The game's `Album/` folder holds the songs; VOS Creator makes `.vos` from MIDI.
 
 ## Quirks & pitfalls
 
-- Comments in the reference parser are wrong about endianness.
-- 1023-byte zero padding and the 14-byte channel padding are hard checks in that parser and may fail on other versions ("some versions 12 bytes").
-- Text encoding.
+- The reference parser's comments are wrong about endianness.
+- The 1023-byte zero padding and 14-byte channel padding are hard checks in that parser and may fail on other versions ("some versions 12 bytes").
+- Text encoding is unspecified.
 - Total length can be wrong; the MIDI segment is authoritative.
 
 ## Example
 
-Five real files are in [samples/](samples/SOURCES.md); `Canon in D.vos` of VosDroid is a manifest entry. Header bytes of `samples/1.vos`: `02 00 00 00 0C 00 00 00 "Vosctemp.trk" ... "VOS022"`; of `samples/23.vos`: `03 00 00 00 40 00 00 00 "inf" ... "mid" ... "EOF"`.
+Header bytes of `samples/1.vos`: `02 00 00 00 0C 00 00 00 "Vosctemp.trk" ... "VOS022"`; of `samples/23.vos`: `03 00 00 00 40 00 00 00 "inf" ... "mid" ... "EOF"`. See [samples/](samples/SOURCES.md); `Canon in D.vos` of VosDroid is a manifest entry.
 
 ## ROX support
 
-Not read by ROX. Mapping would be 7 columns from `keyboard` with MIDI-derived timing.
+Not read by ROX. A mapping would use 7 columns from `keyboard` with MIDI-derived timing.
 
 ## Parsers & tools
 
 - https://github.com/ReVanTis/VosDroid (Java; `VosParser`, `VosNote`, `VosSegment`, `VosByte`)
-- VOS Creator (MIDI to VOS converter) and Mania - linked from the gpbeta page.
+- VOS Creator (MIDI to VOS converter) and Mania, linked from the gpbeta page.
 
 ## Getting samples
-- **Committed** ([`samples/`](samples/SOURCES.md)): five real `.vos` files from the MIT-licensed test folder of https://github.com/rhythmus-emulator/rparser: two **version-2** files (header int32 2, file-name field `Vosctemp.trk`, tags `VOS022` and `VOS008`) and three **version-3** files (header int32 3, `inf`/`mid`/`EOF` segment table; one without the `VOS1` tag). Authorship of the songs is unknown (see doubts).
-- Also committed: `vosdroid_Canon_in_D.vos` (the song shipped with the VosDroid Android player; the repository has no licence file).
-- **More**: the game itself is freeware (HanseulSoft, 1999; per the fiche), and the song library is community made: the gpbeta page http://www.gpbeta.com/en/post/intro/vos-intro describes the community and the "VOS Creator" MIDI-to-VOS tool. Songs sit in the game's `Album/` folder (fiche). Each `.vos` embeds a MIDI file, so a MIDI can be turned into a `.vos` with VOS Creator [per the fiche] and VosDroid's roadmap lists a vos-to-mid conversion (https://github.com/ReVanTis/VosDroid, README: "D0.3 ... conversion from vos to mid"; its SPECIALTHANKS credits the tool vos2midi). The "000/001/006/022 versions" quoted by the original README are not documented anywhere found; the rparser samples show that `VOS022`/`VOS008` are tags of the v2 container.
+
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md) (version-2 and version-3 files from the MIT-licensed test folder of https://github.com/rhythmus-emulator/rparser, plus `vosdroid_Canon_in_D.vos`, shipped with VosDroid, which has no licence file). Song authorship is unknown.
+
+More: the game is freeware and the song library community made (http://www.gpbeta.com/en/post/intro/vos-intro, "VOS Creator" MIDI-to-VOS tool). Songs sit in the game's `Album/` folder. VosDroid's roadmap lists a vos-to-mid conversion (https://github.com/ReVanTis/VosDroid, README: "D0.3 ... conversion from vos to mid"; SPECIALTHANKS credits vos2midi). `VOS022`/`VOS008` are tags of the v2 container.
 
 ## Sources
 

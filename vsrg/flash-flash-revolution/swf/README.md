@@ -5,11 +5,11 @@ Doc status: partial · ROX: no · Category: vsrg · Encoding: binary (Flash SWF 
 
 ## Overview
 
-FFR's legacy engines store each song/chart as a Flash movie `level_<level_id>.swf` (`ChartFFRLegacy.songUrl`) containing the audio and a chart array. R^3 extracts the chart without running Flash: `Beatbox.parseBeatbox` walks the SWF tags, interprets `DoAction` bytecode (constant pool, push, init-array, set-variable/member, registers) and returns `_root.beatBox`.
+FFR's legacy engines store each song/chart as a Flash movie `level_<level_id>.swf` (`ChartFFRLegacy.songUrl`) with the audio and a chart array. R^3 extracts the chart without running Flash: `Beatbox.parseBeatbox` walks the SWF tags, interprets `DoAction` bytecode (constant pool, push, init-array, set-variable/member, registers) and returns `_root.beatBox`.
 
 ## Container & encoding
 
-SWF (header + tags). The chart lives in a `DoAction` tag as ActionScript 1/2 bytecode assigning `_root["beatBox"]` an array of arrays.
+SWF (header + tags). The chart sits in a `DoAction` tag as ActionScript 1/2 bytecode assigning `_root["beatBox"]` an array of arrays.
 
 ## Structure / metadata
 
@@ -21,7 +21,7 @@ Each beat entry: `[frame, direction, color, ms?]`. `direction` in `'L','D','U','
 
 ## Notes
 
-Taps only, 4 directions; colour is cosmetic/quantization. No holds.
+Taps only, 4 directions, no holds; colour is cosmetic quantization.
 
 ## Audio & images
 
@@ -29,11 +29,11 @@ Embedded MP3 in the SWF ("SWF MP3 + Beatbox extraction" mode).
 
 ## Versions & variants
 
-Legacy SWF vs R^3 formats (SM/SSC/osu/Quaver parsers).
+Legacy SWF versus the R^3 formats (SM/SSC/osu/Quaver parsers).
 
 ## Quirks & pitfalls
 
-Frame-based 30 fps quantization; sync offsets per engine; AS bytecode subset.
+30 fps frame quantization; per-engine sync offsets; AS bytecode subset.
 
 ## Example
 
@@ -49,9 +49,9 @@ rCubed (ActionScript).
 
 ## Getting samples
 
-- Committed ([samples/](samples/) and [samples/SOURCES.md](samples/SOURCES.md)): seven real FFR level SWFs downloaded from the public R^3 song endpoint `https://www.flashflashrevolution.com/game/r3/r3-songLoad.php?id=<playhash>` (the `playhash` values come from the public playlist https://www.flashflashrevolution.com/game/r3/r3-playlist.php, a JSON array of about 3600 songs with `level`, `playhash`, `arrows`, `author`, `stepauthor`), rewritten WITHOUT audio, images and fonts (only the DoAction/SetBackgroundColor/FileAttributes/ShowFrame/End tags are kept), and one synthetic SWF.
-- Observed: the downloads are zlib-compressed SWFs (`CWS`, version 6) or plain `FWS`; a level has several DoAction tags (one holds `_root.beatBox`); `beatBox` entries are `[frame, direction, colour]` or `[frame, direction, colour, ms]`; the number of beats equals `arrows` of the playlist entry [observed in samples/].
-- More: any `playhash` of the playlist works with the same URL (free songs); the legacy engines load `level_<level_id>.swf` from the engine's `songURL` (rCubed `ChartFFRLegacy.songUrl`).
+Committed: see [samples/SOURCES.md](samples/SOURCES.md) (rewritten without audio, images and fonts: only the DoAction/SetBackgroundColor/FileAttributes/ShowFrame/End tags kept; plus one synthetic SWF). Source: `https://www.flashflashrevolution.com/game/r3/r3-songLoad.php?id=<playhash>`; `playhash` values come from the public playlist https://www.flashflashrevolution.com/game/r3/r3-playlist.php (JSON array of about 3600 songs with `level`, `playhash`, `arrows`, `author`, `stepauthor`). Any `playhash` works with the same URL (free songs). Legacy engines load `level_<level_id>.swf` from the engine's `songURL` (rCubed `ChartFFRLegacy.songUrl`).
+
+Observed: downloads are zlib-compressed SWFs (`CWS`, version 6) or plain `FWS`; a level has several DoAction tags (one holds `_root.beatBox`); `beatBox` entries are `[frame, direction, colour]` or `[frame, direction, colour, ms]`; the beat count equals `arrows` of the playlist entry [observed].
 
 ## Sources
 

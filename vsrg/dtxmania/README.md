@@ -1,6 +1,6 @@
 # DTXMania
 
-DTXMania (by Mr. "yyagi" and community; fork lineage DTXManiaXG verK, DTXManiaNX by limyz, DTXManiaAL, BocuD fork, official 4.x at https://dtxmania.net/) is a free Windows simulator of Konami's arcade GuitarFreaks / DrumMania (later GITADORA). Drum charts use 9-11 vertical lanes with hi-hat, snare, bass, toms, cymbals, ride, left cymbal, left pedal; guitar/bass use 3 (RGB) then 5 (RGBYP) fret lanes plus open and wailing. Notes fall vertically on fixed lanes, so it is **vsrg** (also see the [GITADORA README](../gitadora/README.md) for the arcade games).
+DTXMania (by Mr. "yyagi" and community; fork lineage DTXManiaXG verK, DTXManiaNX by limyz, DTXManiaAL, BocuD fork, official 4.x at https://dtxmania.net/) is a free Windows simulator of Konami's arcade GuitarFreaks / DrumMania (later GITADORA). Drum charts use 9-11 vertical lanes (hi-hat, snare, bass, toms, cymbals, ride, left cymbal, left pedal). Guitar/bass use 3 (RGB) then 5 (RGBYP) fret lanes plus open and wailing. Notes fall on fixed vertical lanes, so it is **vsrg** (see also the [GITADORA README](../gitadora/README.md)).
 
 | Folder | File | Role |
 |---|---|---|

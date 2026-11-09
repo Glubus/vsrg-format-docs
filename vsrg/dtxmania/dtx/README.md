@@ -4,17 +4,17 @@ Kind: chart
 Doc status: complete · ROX: decode only (reads, never writes) · Category: vsrg · Encoding: text (Shift_JIS or UTF-8, line-based, BMS-style)
 
 ## Overview
-DTX is the chart format of DTXMania, a free GuitarFreaks/DrumMania simulator (see [README](../README.md)). It is a BMS dialect: header commands `#NAME: value`, resource tables `#WAVzz`, `#BPMzz`, `#AVIzz`, `#BMPzz`, and measure data lines `#mmmcc: <objects>`. One `.dtx` file = one chart (one difficulty, one or more instruments in the same file: drums, guitar, bass). Several files are grouped into a song with [set.def](../set-def/README.md) or by sorting files in a folder; typical archives hold the DTX files, the audio (OGG/WAV/MP3/XA), banner/preview image, BGA video and `.score.ini` score files ([samples listing](samples/README.md)). Editor: DTXCreator (`DTXCreator` in the DTXmaniaNX repo; writes `#DTXC_*` metadata); sources: community libraries such as http://files.pinoypercussionfreaks.com/ (the original README link). This page was written from DTXmaniaNX `CDTX.cs`, `EChannel.cs`, `CConversion.cs`, `DTXCreator/CDTXInputOutput.cs`, the project wiki, and the 10 real sample files in [samples/](samples/).
+DTX is the chart format of DTXMania, a free GuitarFreaks/DrumMania simulator (see [README](../README.md)). It is a BMS dialect: header commands `#NAME: value`, resource tables `#WAVzz`, `#BPMzz`, `#AVIzz`, `#BMPzz`, and measure data lines `#mmmcc: <objects>`. One `.dtx` file is one chart (one difficulty, one or more instruments: drums, guitar, bass). Files are grouped into a song with [set.def](../set-def/README.md) or by folder. Archives hold the DTX files, audio (OGG/WAV/MP3/XA), banner/preview image, BGA video and `.score.ini` files ([samples listing](samples/README.md)). Editor: DTXCreator (`DTXCreator` in the DTXmaniaNX repo; writes `#DTXC_*` metadata). Chart library: http://files.pinoypercussionfreaks.com/.
 
 ## Container & encoding
-- [observed in the manifest sample `dtxtopng_example_input_file_4.dtx`, a DTXCreatorAL 010 file] A DTX may be **UTF-16LE with BOM** (`FF FE`), not only Shift_JIS/UTF-8; the loader of the BocuD fork detects UTF-8 BOM, UTF-16 LE/BE BOMs, valid UTF-8, else Shift_JIS (`ChartTextEncoding.cs`, https://github.com/BocuD/DTXmaniaNX). [observed in samples/dtx2gp_test4.dtx] `#WAVzz` ids use base 36 beyond hex (`#WAV0G`, `#WAV0I`) and values may be followed by `;` comments.
-- Plain text, lines end with `\n` (Windows CRLF accepted). Charset: Shift_JIS or UTF-8 (set.def doc states so); sample files: 4 are plain ASCII/UTF-8-clean, 6 are not valid UTF-8 (Shift_JIS or similar), no BOM in any.
-- Line grammar (from `t入力_コマンド文字列を抜き出す` etc.): optional spaces, `#`, command = text up to `:`, space, `;` or newline; then optional spaces; parameter = text until newline or `;`; `;` starts a comment to end of line. A line starting with `;` is a comment. A command may be glued to its parameter (`#TITLE foo`, `#BPM 120`: `t入力_パラメータ食い込みチェック` splits a longer command name on the known prefix).
-- Command names are case-insensitive. `StartsWith` matching is used, so order matters: `PATH_WAV` before `PATH`, `BACKGROUND_GR` before `BACKGROUND`.
+- [observed: `dtxtopng_example_input_file_4.dtx`, DTXCreatorAL 010] A DTX may be UTF-16LE with BOM (`FF FE`). The BocuD fork loader detects UTF-8 BOM, UTF-16 LE/BE BOMs, valid UTF-8, else Shift_JIS (`ChartTextEncoding.cs`, https://github.com/BocuD/DTXmaniaNX). [observed: dtx2gp_test4.dtx] `#WAVzz` ids use base 36 beyond hex (`#WAV0G`, `#WAV0I`) and values may be followed by `;` comments.
+- Lines end with `\n` (CRLF accepted). Of the sample files, 4 are plain ASCII/UTF-8-clean, 6 are not valid UTF-8 (Shift_JIS or similar), none has a BOM.
+- Line grammar (from `t入力_コマンド文字列を抜き出す` etc.): optional spaces, `#`, command = text up to `:`, space, `;` or newline; optional spaces; parameter = text until newline or `;`. `;` starts a comment to end of line; a line starting with `;` is a comment. A command may be glued to its parameter (`#TITLE foo`, `#BPM 120`): `t入力_パラメータ食い込みチェック` splits a longer command name on the known prefix.
+- Command names are case-insensitive. Matching uses `StartsWith`, so order matters: `PATH_WAV` before `PATH`, `BACKGROUND_GR` before `BACKGROUND`.
 - Numbers use `.` or `,` as decimal point (custom `TryParse`).
 
 ## Structure / metadata
-Header commands read by `CDTX.t入力_行解析` (DTXmaniaNX): 
+Header commands read by `CDTX.t入力_行解析` (DTXmaniaNX):
 
 | Command | Meaning |
 |---|---|
@@ -34,19 +34,19 @@ Header commands read by `CDTX.t入力_行解析` (DTXmaniaNX):
 Resource tables (index `zz` = 2 chars base 36, `00`..`ZZ`, at most 36*36 entries):
 - `#WAVzz: file` (audio), `#VOLUMEzz: 0..100` (alias `#WAVVOLzz`), `#PANzz: -100..100` (alias `#WAVPANzz`; `#PANELzz`), `#SIZEzz` (chip display size).
 - `#BPMzz: x` BPM table used by channel 08.
-- `#AVIzz: file` / `#VIDEOzz`, `#AVIPANzz`, `#BMPzz`, `#BMPTEXzz`, `#BGAzz: bmp x1 y1 x2 y2 ox oy` (7 params), `#BGAPANzz`. 
+- `#AVIzz: file` / `#VIDEOzz`, `#AVIPANzz`, `#BMPzz`, `#BMPTEXzz`, `#BGAzz: bmp x1 y1 x2 y2 ox oy` (7 params), `#BGAPANzz`.
 - `#00002:`-style lines are data lines, below.
-- Forward references are allowed: chips may use a `#WAVzz` defined later (the parser patches chips on definition, "無限管理"). Redefinition of the same zz is allowed: a later `#WAVzz` applies to the chips that follow.
+- Forward references are allowed: the parser patches chips when the `#WAVzz` is defined ("無限管理"). A later redefinition of the same zz applies to the chips that follow.
 
 ## Timing model
-- Data line: `#mmmcc: oooo...` where `mmm` = 3-char measure number: first char base-36 (`0-9A-Z`, value*100), next two decimal digits; so `000`..`Z99` = 0..3599 (`CConversion.nConvert3DigitMeasureNumberToNumber`); `cc` = 2 hex digits = channel; the object string is a sequence of 2-char base-36 object ids (`00` = empty); `_` characters are ignored; an odd trailing char is dropped. Object k of n sits at `k/n` of the measure.
-- Internal position: the parser adds one empty leading measure and uses 384 ticks per measure: `pos = (measure+1)*384 + (384*k)/n` (BMS-style, so integer resolution 1/384).
-- Channel 02: measure length multiplier (real number, e.g. `#00002: 1.5`), whole line = one value; applies to that measure only for BMS/BME, and persists for DTX until changed [inference from `CDTX` timing loop: for BMS/BME `dbBarLength` is reset to 1.0 at the next measure, for DTX it is not].
-- Channel 03: BPM change, objects are 2-digit **hex** values; BPM = `BASEBPM + value`.
+- Data line: `#mmmcc: oooo...`. `mmm` = 3-char measure number: first char base-36 (`0-9A-Z`, value*100), next two decimal digits; `000`..`Z99` = 0..3599 (`CConversion.nConvert3DigitMeasureNumberToNumber`). `cc` = 2 hex digits = channel. The object string is a sequence of 2-char base-36 object ids (`00` = empty); `_` characters are ignored; an odd trailing char is dropped. Object k of n sits at `k/n` of the measure.
+- Internal position: the parser adds one empty leading measure and uses 384 ticks per measure: `pos = (measure+1)*384 + (384*k)/n` (`(384*i)/n` integer division, resolution 1/384).
+- Channel 02: measure length multiplier (real number, e.g. `#00002: 1.5`), whole line = one value. It applies to that measure only for BMS/BME and persists for DTX until changed [inference from `CDTX` timing loop: for BMS/BME `dbBarLength` is reset to 1.0 at the next measure, for DTX it is not].
+- Channel 03: BPM change, objects are 2-digit hex values; BPM = `BASEBPM + value`.
 - Channel 08: extended BPM, object = `zz` index into `#BPMzz`; BPM = `#BPMzz` value (plus `BASEBPM` unless zz = 00).
-- Initial BPM: `#BPM`. If no BPM chip at position 0, the parser inserts one using the BPM (or 120 if undefined).
-- Time of a chip: DTXmania `tComputeChipPlayTimeMs`: `t = t_anchor + 0x271 * (pos - pos_anchor) * barLength / bpm` ms (0x271 = 625; 625*384 = 240000 so a 384-tick measure of length 1 lasts 240000/bpm ms = 4 beats). The anchor is reset at each BPM/bar length change. Mode 0 floors to ms.
-- No stops/warps/scroll speed changes.
+- Initial BPM: `#BPM`. If no BPM chip sits at position 0, the parser inserts one using the BPM (or 120 if undefined).
+- Time of a chip: DTXmania `tComputeChipPlayTimeMs`: `t = t_anchor + 0x271 * (pos - pos_anchor) * barLength / bpm` ms (0x271 = 625; 625*384 = 240000, so a 384-tick measure of length 1 lasts 240000/bpm ms = 4 beats). The anchor resets at each BPM/bar length change. Mode 0 floors to ms.
+- No stops, warps or scroll speed changes.
 
 ## Notes
 Channel = 2 hex digits (`EChannel.cs`):
@@ -88,30 +88,26 @@ Channel = 2 hex digits (`EChannel.cs`):
 | EC, ED, EE, EF | click, first sound chip, mixer add / remove |
 
 Channel numbers are the decimal values of the `EChannel` enum in `EChannel.cs` written in hex (e.g. `HiHatClose = 17` = `0x11`). Full extended guitar/bass tables: [Extended DTX Data Format wiki](https://github.com/limyz/DTXmaniaNX/wiki/Extended-DTX-Data-Format).
-- Object value = WAV id (base-36) naming the keysound played when the chip is hit (and the sound id for auto-play).
-- Hold notes: only guitar/bass in DTXManiaAL: channel 2C (guitar) / 2D (bass); `01` = start, other = end; rules per wiki (start coincides with a press chip, end must not coincide with a press, nothing between; value not 00). No long notes for drums.
+- Object value = base-36 WAV id of the keysound played when the chip is hit (and the sound id for auto-play).
+- Hold notes: guitar/bass only, DTXManiaAL: channel 2C (guitar) / 2D (bass); `01` = start, other = end. Rules per wiki: start coincides with a press chip, end must not coincide with a press, nothing between, value not 00. No long notes for drums.
 - Lane count: drums 10 channels (11-1C, minus 1D/1E), guitar/bass 3 colors in classic DTX (5 in XG) + open + wailing.
 - Notes on the same lane at the same position overlap; chips need a WAV id (can be a rest sample).
 
 ## Audio & images
-Audio: `#WAVzz` table (OGG/WAV/MP3/XA); chip value picks the WAV; background music is usually channel 01 chips (or `#BGMWAV zz` in DTXCreator output). Preview `#PREVIEW`, banner `#PREIMAGE`, loading image `#STAGEFILE`, backgrounds `#BACKGROUND`/`#WALL`. Video: `#AVIzz` + chip channel 54 (the sample `OceanAvenueMST.dtx` uses `#AVI01: bgv.avi` and `#00054: 000100...`). Images: `#BMPzz`/`#BGAzz` + channels 04/07/55-60.
+Audio is the `#WAVzz` table (OGG/WAV/MP3/XA). Background music is usually channel 01 chips (or `#BGMWAV zz` in DTXCreator output). Video: `#AVIzz` + chip channel 54 (`OceanAvenueMST.dtx` uses `#AVI01: bgv.avi` and `#00054: 000100...`). Images: `#BMPzz`/`#BGAzz` + channels 04/07/55-60.
 
 ## Versions & variants
-- Original DTXMania (kairera0467 / yyagi lineage), DTXManiaXG (ver K adds XG lanes: 1B/1C, Y/P guitar buttons), DTXManiaAL (hold notes 2C/2D), DTXManiaNX (limyz), BocuD/DTXmaniaNX, DTXMania 4.x (https://dtxmania.net/). The "Extended DTX Data Format" wiki documents XG/AL additions. The parser also reads BMS/BME/MIDI via the same class.
-- Conversions of arcade GITADORA charts circulate as DTX (e.g. GDAmania blog "Changed all format to DTX files").
-- Older formats `.gda`, `.g2d`: see [gda](../gda/README.md), [g2d](../g2d/README.md).
+- DTXMania (kairera0467 / yyagi lineage), DTXManiaXG (ver K adds XG lanes 1B/1C and Y/P guitar buttons), DTXManiaAL (hold notes 2C/2D), DTXManiaNX (limyz), BocuD/DTXmaniaNX, DTXMania 4.x (https://dtxmania.net/). The "Extended DTX Data Format" wiki documents XG/AL additions. The same parser class reads BMS/BME/MIDI.
+- Arcade GITADORA charts circulate converted to DTX (e.g. GDAmania blog "Changed all format to DTX files").
+- Older formats: [gda](../gda/README.md), [g2d](../g2d/README.md).
 
 ## Quirks & pitfalls
-- Command names glued to parameters; `;` comments inside parameter lines; case-insensitive.
-- Base-36 resource ids but **hex** BPM objects in channel 03; measure number first char is base-36 x100.
-- Resources can be defined after use; later redefinition overrides for later chips.
-- `#PANEL` numeric vs text ambiguity.
-- A `.dtx` may hold drums + guitar + bass chips together (sample headers show `#GLEVEL`/`#BLEVEL` 0 in drum-only files).
-- Bar length multiplier applies per measure (BMS) vs persistent (DTX) [inference].
-- Tick resolution 1/384; positions rounded by `(384*i)/n` integer division.
+- Resource ids are base-36 but channel 03 BPM objects are hex.
+- A `.dtx` may hold drums + guitar + bass (sample headers show `#GLEVEL`/`#BLEVEL` 0 in drum-only files).
+- Bar length: per measure (BMS) vs persistent (DTX) [inference].
 
 ## Example
-Real excerpt from `samples/OceanAvenueMST.dtx` (first lines, origin: sample file in this repo):
+Excerpt from `samples/OceanAvenueMST.dtx` (first lines):
 
 ```
 #TITLE: Ocean Avenue
@@ -134,23 +130,28 @@ Real excerpt from `samples/OceanAvenueMST.dtx` (first lines, origin: sample file
 `#00608: 0U` = measure 6, channel 08 (ext. BPM), object `0U` = `#BPM0U: 178`. `#00411: 0J0K...` = measure 4, hi-hat (11), 8 slots, samples 0J/0K alternating.
 
 ## ROX support
-Read by ROX since Prism's addition of `rox::formats::dtx` (decode only: ROX does not write DTX). `DtxDecoder` gives one chart per instrument that has chips (`variants`, `decode_variant`, `decode_with_report` giving a `DtxReport`, `decode_with_audio_plan`; `auto_decode_all` names them `Drums`, `Guitar`, `Bass`): drums on the columns `LC HH SD HT BD LT FT CY RD` that the chart uses (the game's ten lanes, with the left pedal / left bass drum lane folded onto the bass drum and the open hi-hat on the hi-hat), guitar and bass on `Open R G B` (4 columns) or `Open R G B Y P` (6) with one note per button of a chord channel and holds from `2C`/`2D`; hidden chips, blank-hit settings, wailing, fill-ins, pictures, bar lines and unknown channels are dropped and counted. Times follow the game (384 ticks with integer division, a measure length kept until the next `02`, `#BPM`, `#BASEBPM`, channels `03` and `08`, tables with forward references and redefinitions); the audio plan holds channel `01`, the effect channels and the sound of every chip of the instrument. Not handled: `.gda`/`.g2d`, `set.def`, `#DTXVPLAYSPEED`, pan, pictures. Facts the fiche leaves open and the decoder settled from `CDTX.cs` (read, not copied): the hold pairing ignores the marker values, `#BPM00` is the FIRST one and takes no `#BASEBPM`, the default BPM is 120, the bar length persists (the fiche's "inference" is right), `#IF` before any `#RANDOM` reads 0.
+Decode only (`rox::formats::dtx`, `DtxDecoder`: `variants`, `decode_variant`, `decode_with_report`, `decode_with_audio_plan`; `auto_decode_all` names the charts `Drums`, `Guitar`, `Bass`). One chart per instrument that has chips.
+- Drums: columns `LC HH SD HT BD LT FT CY RD` as used; the left pedal / left bass drum lane folds onto the bass drum, open hi-hat onto hi-hat.
+- Guitar/bass: `Open R G B` (4 columns) or `Open R G B Y P` (6); one note per button of a chord channel; holds from `2C`/`2D`.
+- Dropped and counted: hidden chips, blank-hit settings, wailing, fill-ins, pictures, bar lines, unknown channels. Not handled: `.gda`/`.g2d`, `set.def`, `#DTXVPLAYSPEED`, pan.
+- Timing follows the game (384 ticks, integer division, persistent bar length). The audio plan holds channel `01`, the effect channels and every chip's sound.
+- Settled from `CDTX.cs`: hold pairing ignores the marker values, `#BPM00` is the FIRST one and takes no `#BASEBPM`, default BPM 120, bar length persists (the inference above is right), `#IF` before any `#RANDOM` reads 0.
 
 ## Parsers & tools
 - DTXmaniaNX (C#): https://github.com/limyz/DTXmaniaNX (CDTX.cs parser; DTXCreator writer `DTXCreator/Code/00.App/CDTXInputOutput.cs`)
-- DTXMania (official): https://dtxmania.net/ ; DTXMania Wiki (osdn): "DTX data format" (not reachable here).
+- DTXMania (official): https://dtxmania.net/ ; DTXMania Wiki (osdn): "DTX data format" (unreachable).
 - BocuD fork: https://github.com/BocuD/DTXmaniaNX ; DTXmaniaNXPLUS: https://github.com/mee19mc/DTXmaniaNXPLUS ; DeepWiki: https://deepwiki.com/limyz/DTXmaniaNX
 - Chart library: http://files.pinoypercussionfreaks.com/ (from original README)
 
 ## Getting samples
-- **Committed** ([`samples/`](samples/SOURCES.md)): the ten existing community charts (origin unknown), four hand-written unit-test charts from lathspell/dtx2gp (LGPL-3.0), and three `synthetic-*` charts (all drum channels + BPM table + bar length; guitar/bass + holds + `#BASEBPM` + `#RANDOM`; Shift_JIS/CRLF with glued commands).
-- Also committed: five community charts from https://github.com/shian0346/DTXtoPNG (`dtxtopng_example_input_file_1..5.dtx`; DTXCreator 024 / 025verK / AL 010; one is **UTF-16LE with BOM**, one has 50 `#BPMzz`) and five generated charts from https://github.com/cwchanap/DTXManiaCX (`dtxmaniacx_*.dtx`), both repositories without a licence file.
-- **More**: community chart libraries (the fiche cites http://files.pinoypercussionfreaks.com/), the DTXMania download area (https://osdn.net/projects/dtxmania/releases/ and https://dtxmania.net/), YouTube channels with chart links (APPROVED DTX Gaming, Furukon Rhythm Gaming: named in the DTXmaniaNX README), the editors DTXCreator (in https://github.com/limyz/DTXmaniaNX, writes `#DTXC_*` metadata) and DTXManiaXG Creator (https://drumgamer.weebly.com/tools2.html), converters that write DTX: `seqtool.py` of https://github.com/fisyher/gitadora-customs (SQ3 to DTX, needs game data) and the DTX Charter viewer https://fisyher.github.io/dtxcharter. Most charts are fan transcriptions of commercial songs: check each author's terms. Search terms: "DTXMania dtx simfile", "DTXMania chart download", "ドラムマニア dtx".
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md).
+
+More: community chart libraries (http://files.pinoypercussionfreaks.com/), the DTXMania download area (https://osdn.net/projects/dtxmania/releases/ and https://dtxmania.net/), YouTube channels with chart links (APPROVED DTX Gaming, Furukon Rhythm Gaming: named in the DTXmaniaNX README), the editors DTXCreator (in https://github.com/limyz/DTXmaniaNX) and DTXManiaXG Creator (https://drumgamer.weebly.com/tools2.html), and converters that write DTX: `seqtool.py` of https://github.com/fisyher/gitadora-customs (SQ3 to DTX, needs game data) and the DTX Charter viewer https://fisyher.github.io/dtxcharter. Most charts are fan transcriptions of commercial songs: check each author's terms. Search terms: "DTXMania dtx simfile", "DTXMania chart download", "ドラムマニア dtx".
 
 ## Sources
 - https://raw.githubusercontent.com/limyz/DTXmaniaNX/master/DTXMania/Code/Score,Song/CDTX.cs , EChannel.cs
-- https://raw.githubusercontent.com/limyz/DTXmaniaNX/master/FDK/Code/00.Common/CConversion.cs
-- https://raw.githubusercontent.com/limyz/DTXmaniaNX/master/DTXCreator/Code/00.App/CDTXInputOutput.cs
+- https://raw.githubusercontent.com/limyz/DTXmaniaNX/master/FDK/Code/00.Common/CConversion.cs (`CConversion.cs`)
+- https://raw.githubusercontent.com/limyz/DTXmaniaNX/master/DTXCreator/Code/00.App/CDTXInputOutput.cs (`DTXCreator/CDTXInputOutput.cs`)
 - https://github.com/limyz/DTXmaniaNX/wiki/Extended-DTX-Data-Format
 - https://dtxmania.net/documents/create-setdef
 - local samples in samples/

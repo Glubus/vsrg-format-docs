@@ -5,7 +5,7 @@ Doc status: partial · ROX: no · Category: vsrg · Encoding: json
 
 ## Overview
 
-Codename Engine (FNF-CNE-Devs) is a FNF engine with its own chart editor and a song folder layout with per-difficulty charts and meta files. Its chart format is not section based: notes live in a list of **strumlines**, each with its own characters, key count and notes. It also reads and converts Psych and legacy charts at load, and V-Slice charts in its editor only. Source: `source/funkin/backend/chart/ChartData.hx`, `Chart.hx` (main branch).
+Codename Engine (FNF-CNE-Devs) is an FNF engine with its own chart editor. Charts have no sections: notes live in a list of strumlines, each with its own characters, key count and notes. Psych and legacy charts are converted at load; V-Slice charts import in the editor only. Source: `source/funkin/backend/chart/ChartData.hx`, `Chart.hx` (main).
 
 ## Container & encoding
 
@@ -13,7 +13,7 @@ Codename Engine (FNF-CNE-Devs) is a FNF engine with its own chart editor and a s
   - `charts/<difficulty>.json` (default variant) or `charts/<variant>/<difficulty>.json`: the chart (`Paths.chart(song, difficulty, variant)`; saving writes `'$songPath/$chartFolder/${difficulty}.json'`).
   - `meta.json`, optionally `meta-<difficulty>.json`, `meta-<variant>.json`, `meta-<variant>-<difficulty>.json` (`loadChartMeta` tries them in this order of specificity).
   - optional `events.json` / `events-<variant>.json`: global events merged into the chart's `events` (`loadEventsJson`).
-- The parser detects the format of a chart file (`detectChartFormat`: `CODENAME`, `PSYCH_NEW`, `VSLICE`, `LEGACY`): Psych/legacy charts are converted at load (`PsychParser`, `FNFLegacyParser`), V-Slice is refused at runtime ("must be imported and converted in the new song editor window").
+- The parser detects the format of a chart file (`detectChartFormat`: `CODENAME`, `PSYCH_NEW`, `VSLICE`, `LEGACY`): Psych/legacy charts are converted at load (`PsychParser`, `FNFLegacyParser`); V-Slice is refused at runtime ("must be imported and converted in the new song editor window").
 
 ## Structure / metadata
 
@@ -41,13 +41,13 @@ Codename Engine (FNF-CNE-Devs) is a FNF engine with its own chart editor and a s
 
 ## Timing model
 
-- Notes and events in absolute milliseconds. Tempo: `meta.bpm` (initial) plus events named `BPM Change` (param: the BPM) in `events`; `stepsPerBeat` (default 4) and `beatsPerMeasure` (default 4) from `meta.json`.
-- Scroll speed: `scrollSpeed` per chart and optionally per strumline; `Scroll Speed Change` events exist in the engine [inference; not read in the files consulted].
-- No sections: camera focus is an event (`Camera Movement`, param = strumline index).
+- Absolute ms. Tempo: `meta.bpm` plus `BPM Change` events (param: the BPM); `stepsPerBeat` and `beatsPerMeasure` (default 4) from `meta.json`.
+- `scrollSpeed` per chart and optionally per strumline; `Scroll Speed Change` events exist [inference; not read].
+- Camera focus is an event (`Camera Movement`, param = strumline index).
 
 ## Notes
 
-- A note belongs to the strumline that lists it. `id` is the lane inside the strumline (0..keyCount-1), so there is no `mustHitSection` and no 0-7 lane space. `keyCount` allows strumlines with other than 4 keys (default 4) - the only FNF variant here with a variable key count.
+- A note belongs to the strumline that lists it. `id` is the lane inside the strumline (0..keyCount-1); there is no `mustHitSection` and no 0-7 lane space. `keyCount` (default 4) allows other key counts: the only FNF variant here with a variable key count.
 - `sLen` > 0 = hold of that length in ms.
 - `type`: `0` = default note; `n >= 1` = `noteTypes[n - 1]` (`Chart.addNoteType` returns `index + 1` and `0` for the default note).
 - Strumline `type` decides who plays it: `0` opponent (CPU, player in opponent mode), `1` player, `2` additional (always CPU).
@@ -55,23 +55,22 @@ Codename Engine (FNF-CNE-Devs) is a FNF engine with its own chart editor and a s
 
 ## Audio & images
 
-`meta.instSuffix` / `vocalsSuffix` and strumline `vocalsSuffix` choose the audio files (e.g. `Voices_Opponent.ogg`); the chart itself has none.
+`meta.instSuffix` / `vocalsSuffix` and strumline `vocalsSuffix` choose the audio files (e.g. `Voices_Opponent.ogg`).
 
 ## Versions & variants
 
-- `chartVersion` optional. Per-difficulty meta and "variants" (`charts/<variant>/...`, `meta-<variant>.json`) are first-class.
-- Conversion of legacy/Psych charts happens at load; the editor also imports V-Slice.
+`chartVersion` is optional. Per-difficulty meta and variants (`charts/<variant>/...`, `meta-<variant>.json`) are first-class. Legacy/Psych charts convert at load; the editor also imports V-Slice.
 
 ## Quirks & pitfalls
 
-- Several charts with other key counts per strumline break "4 lanes per side" assumptions.
-- `events.json` is a separate global file that must be merged.
-- Old `events[].type` int is replaced by names.
-- Chart-level `scrollSpeed` and strumline-level `scrollSpeed` both exist.
+- Per-strumline key counts break "4 lanes per side" assumptions.
+- `events.json` is a separate global file; merge it.
+- Old `events[].type` ints are replaced by names.
+- `scrollSpeed` exists at chart and strumline level.
 
 ## Example
 
-Illustrative, hand-built from the `ChartData` typedefs above (the MeguminBOT engine-differences page gives a similar example; not copied):
+Hand-built from the `ChartData` typedefs above (the MeguminBOT engine-differences page has a similar example, not copied):
 
 ```json
 {
@@ -88,11 +87,11 @@ Illustrative, hand-built from the `ChartData` typedefs above (the MeguminBOT eng
 
 ## ROX support
 
-Not read by ROX: the `.json` extension is routed to the legacy FNF codec, which expects `song.notes[].sectionNotes`; a Codename chart has no `song` object and fails parsing. A decoder would map each `strumLine` to a group of `keyCount` columns (an 8-column chart for two 4K strumlines).
+Not read. The `.json` extension goes to the legacy FNF codec, which expects `song.notes[].sectionNotes`; a Codename chart has no `song` object and fails. A decoder would map each `strumLine` to `keyCount` columns (8 columns for two 4K strumlines).
 
 ## Observed in real files
 
-`chartVersion` is `"1.6.0"` in the shipped Codename charts; `noteTypes` can be `["No Anim Note"]`; a real events.json uses `{ name: "Play Animation", time, params: [1, "hey", true] }`; `meta.json` carries `color` (hex string) [observed in samples/cne_bopeebo_*.json].
+`chartVersion` `"1.6.0"`; `noteTypes` can be `["No Anim Note"]`; events.json uses `{ name: "Play Animation", time, params: [1, "hey", true] }`; `meta.json` has `color` (hex) [observed: cne_bopeebo_*.json].
 
 ## Parsers & tools
 
@@ -101,8 +100,7 @@ Not read by ROX: the `.json` extension is routed to the legacy FNF codec, which 
 
 ## Getting samples
 
-- Committed ([samples/](samples/) and [samples/SOURCES.md](samples/SOURCES.md)): base-game songs shipped in FNF-CNE-Devs/CodenameEngine (`assets/songs/<song>/charts/normal.json`, `meta.json`, `events.json`; FNF base-game data belongs to The Funkin Crew Inc. (funkin.assets LICENSE.md: all rights reserved; Funkin `LICENSE.md`: only the source code is Apache-2.0); the owner accepted that risk, so the charts are committed as downloaded snapshots.), a community chart (`megumin-tool_suitmation-trials-*`) and synthetic files. Observed: `chartVersion` "1.6.0", `noteTypes: ["No Anim Note"]`, 3 strumlines (dad type 0, boyfriend type 1, hidden girlfriend type 2), event `Play Animation` with params `[1, "hey", true]`, `meta.json` with `color` like `#9271FD`.
-- More: https://codename-engine.com/ (named in its README); Codename mods ship `songs/<song>/charts/*.json`; the in-engine song editor writes them.
+Committed: see [samples/SOURCES.md](samples/SOURCES.md). More: https://codename-engine.com/ (named in its README); mods ship `songs/<song>/charts/*.json`; the in-engine song editor writes them. Observed: `chartVersion` "1.6.0", `noteTypes: ["No Anim Note"]`, 3 strumlines (dad type 0, boyfriend type 1, hidden girlfriend type 2), event `Play Animation` with params `[1, "hey", true]`, `meta.json` `color` like `#9271FD`.
 
 ## Sources
 

@@ -4,10 +4,11 @@ Kind: chart
 Doc status: partial · ROX: decode only (reads, never writes; Prism's addition) · Category: vsrg · Encoding: json
 
 ## Overview
-Bestdori (fan database/chart-sharing site for BanG Dream! Girls Band Party) stores charts as a **JSON array of objects** ("Bestdori v2" format; the older v1 format is converted by BanGConverter). The chart of an official song is available from the Bestdori API; fan charts are uploaded in the same shape. The exact official specification is not published as a document; the schema below comes from open-source parsers (ayachan Go package `bestdoriChart`) and tools.
+
+Bestdori (fan database/chart-sharing site for BanG Dream! Girls Band Party) stores charts as a JSON array of objects ("Bestdori v2"; BanGConverter converts the older v1). Official charts come from the Bestdori API; fan charts use the same shape. No official specification exists; the schema comes from open-source parsers (ayachan Go package `bestdoriChart`).
 
 ## Container & encoding
-UTF-8 JSON; root is an array (`BestdoriV2Chart = []BestdoriV2Note`). One file = one difficulty (Easy/Normal/Hard/Expert/Special). Notes need not be sorted (parsers sort by beat then lane). No audio inside: the song/audio is selected on the site.
+UTF-8 JSON; root is an array (`BestdoriV2Chart = []BestdoriV2Note`). One file = one difficulty (Easy/Normal/Hard/Expert/Special). Notes need not be sorted (parsers sort by beat then lane). No audio inside: the song is selected on the site.
 
 ## Structure / metadata
 Every element has `type` (string). Note types seen: `"BPM"`, `"Single"`, `"Long"`, `"Slide"`, `"Directional"`.
@@ -26,23 +27,25 @@ Every element has `type` (string). Note types seen: `"BPM"`, `"Single"`, `"Long"
 | `skill`, `charge` | Single / connection nodes | skill-note and fever-charge flags seen in Bestdori API Go types [inference from a search excerpt, not verified] |
 
 ## Timing model
-`beat` is a floating-point number of beats; BPM list from `BPM` elements: `time(beat) = sum(dBeat * 60 / bpm)` per segment. There is no separate offset in the chart (audio offset is handled by the site/tool).
+`beat` is a float number of beats; BPM list from `BPM` elements: `time(beat) = sum(dBeat * 60 / bpm)` per segment. No offset in the chart (the site/tool handles audio offset).
 
 ## Notes
 - `Single`: tap at `beat`, `lane`; optional `flick`.
-- `Long` (green hold): `connections` with at least 2 nodes, normally same lane; the last node is the release; a connections array of length 1 degrades to a single note; length 0 is invalid (ayachan).
+- `Long` (green hold): `connections` with at least 2 nodes, normally same lane; the last node is the release. One node degrades to a single note; zero nodes is invalid (ayachan).
 - `Slide`: like Long but nodes may change lane; `hidden` nodes shape the path.
-- `Directional`: directional (sideways) flick: `direction` Left/Right and `width` (the number of lanes it spans).
+- `Directional`: sideways flick: `direction` Left/Right and `width` (the number of lanes it spans).
 - Simultaneous notes: same beat, different lanes.
 
 ## Audio & images
+
 Not part of the chart.
 
 ## Versions & variants
-v1 (older Bestdori JSON; superseded), v2 (types above). Newer official game versions added directional flicks and hidden slide nodes; BanG! Simulator's own text format mirrors the type list ([txt](../txt/README.md)).
+
+v1 (older, superseded), v2 (types above). Newer game versions added directional flicks and hidden slide nodes; BanG! Simulator's text format mirrors the type list ([txt](../txt/README.md)).
 
 ## Quirks & pitfalls
-Negative beats and out-of-range lanes occur in fan charts (clamped by ayachan); first BPM may not be at beat 0; Long/Slide head position lives in `connections[0]`, not in top-level `beat`/`lane`; `hidden` nodes have no judgement.
+Fan charts contain negative beats and out-of-range lanes (clamped by ayachan). The first BPM may not be at beat 0. Long/Slide head position lives in `connections[0]`, not in top-level `beat`/`lane`. `hidden` nodes have no judgement.
 
 ## Example
 Shape given by the ayachan struct definitions (illustrative, hand-built):
@@ -53,19 +56,24 @@ Shape given by the ayachan struct definitions (illustrative, hand-built):
 ```
 
 ## ROX support
-Read by ROX since Prism's addition of `rox::formats::bandori` (decode only): `BestdoriDecoder` (`decode`, `decode_with_report` giving a `BandoriReport`, `decode_with_title`, `decode_file`; `DetectedFormat::Bestdori`). ONE chart per file, always **7 columns**, lane 0..6 -> column 0..6 (the fiche's "0..6" is confirmed by `bangbangboom-editor`'s exporter, "from 0 to 6", and by `BanGConverter`, which writes `lane + 1` into the simulator's 1..7; a lane outside 0..6 or not whole is dropped and counted, never clamped). `Single` -> Tap; `Long`/`Slide` -> ONE Hold from the first connection to the last on the FIRST connection's lane (lossy: the joints between, hidden ones included, and the path across lanes are lost, counted); a connection list of length 1 is a Tap, of length 0 invalid; `flick`, `Directional` (direction and width), `skill` and `charge` are counted and dropped (the note stays a Tap); an unknown `type` (a v1 chart's `System`/`Note` included) is counted. Tempo: the BPM at beat 0 is the last `BPM` at or before it (absolute value), 120 BPM until the first one when there is none (`BanGConverter`'s default); notes before beat 0 are dropped and counted; no offset, no audio (`audio_file` empty, title = file stem without `.bestdori`).
 
-**Detection** (the fiche gives no file-name convention, so this is a decision): ROX never claims a plain `.json` (it is FNF's). `detect` says `Bestdori` for `.bestdori` and `.bestdori.json`; `auto_decode*` also reads `<difficulty>.json` (`easy`, `normal`, `hard`, `expert`, `special`: the last path segment of the site's `/api/charts/<id>/<difficulty>.json`, `bestdori-api-go`) and `<id>.<difficulty>.json` when the content is a JSON array whose first element is an object and that names a note type (`rox::formats::is_bestdori_chart_name`, `looks_like_bestdori`, `is_bandori_chart_file`). Rename any other file to `*.bestdori.json`.
+Decode only (`rox::formats::bandori`, `BestdoriDecoder`, `DetectedFormat::Bestdori`). One chart per file, always 7 columns, lane 0..6 -> column 0..6 (confirmed by `bangbangboom-editor`'s exporter, "from 0 to 6", and by `BanGConverter`, which writes `lane + 1` into the simulator's 1..7). A lane outside 0..6 or not whole is dropped and counted, never clamped.
 
-Read by Prism (`docs/game.md` "BanG Dream"): listed by that rule, playable on the 7K layout; the sound is the audio file of the chart's name, else the first of the folder, else silence. Sources read: `ayachan` (MIT), `BanGConverter` (MIT), `bestdori-api-go` (MIT), `bangbangboom-editor` (MIT); nothing copied, no real chart was decoded.
+- `Single` -> Tap. `Long`/`Slide` -> one Hold from the first connection to the last on the first connection's lane (lossy: joints between, hidden ones included, and the cross-lane path are lost, counted). A connection list of length 1 is a Tap, of length 0 invalid.
+- `flick`, `Directional` (direction and width), `skill` and `charge` are counted and dropped (the note stays a Tap). An unknown `type` (a v1 chart's `System`/`Note` included) is counted.
+- Tempo: the BPM at beat 0 is the last `BPM` at or before it (absolute value); 120 BPM until the first one when there is none (`BanGConverter`'s default). Notes before beat 0 are dropped and counted. No offset, no audio (`audio_file` empty, title = file stem without `.bestdori`).
+- Detection (no file-name convention exists, so this is a decision): ROX never claims a plain `.json` (FNF's). `detect` says `Bestdori` for `.bestdori` and `.bestdori.json`. `auto_decode*` also reads `<difficulty>.json` (`easy`, `normal`, `hard`, `expert`, `special`: the last path segment of the site's `/api/charts/<id>/<difficulty>.json`, `bestdori-api-go`) and `<id>.<difficulty>.json` when the content is a JSON array whose first element is an object naming a note type (`rox::formats::is_bestdori_chart_name`, `looks_like_bestdori`, `is_bandori_chart_file`). Rename other files to `*.bestdori.json`.
+- Prism (`docs/game.md` "BanG Dream"): playable on the 7K layout; sound is the audio file of the chart's name, else the first of the folder, else silence.
+- Sources read: `ayachan`, `BanGConverter`, `bestdori-api-go`, `bangbangboom-editor` (all MIT); nothing copied, no real chart decoded.
 
 ## Parsers & tools
 ayachan (Go): https://github.com/6QHTSK/ayachan · bestdori-api-go: https://github.com/WindowsSov8forUs/bestdori-api-go · BanGConverter: https://github.com/loader3229/BanGConverter · bangbangboom-editor: https://github.com/K024/bangbangboom-editor · AAO-Editor: https://github.com/wuqiongjin/AAO-Editor · BanGDreamChartRender: https://github.com/WindowsSov8forUs/BanGDreamChartRender
 
 ## Getting samples
 
-- Committed in [`samples/`](samples/): 7 official charts (`/api/charts/<songId>/<difficulty>.json`, byte-exact) and 6 community charts (`post.chart` extracted from `/api/post/details?id=<id>`, re-serialised compactly), plus a synthetic example. Everything is listed with origin, date and sha256 in [`samples/SOURCES.md`](samples/SOURCES.md).
-- Observed [observed in samples/bestdori-official_song003_special.json]: besides BPM/Single/Long/Slide/Directional there is a `System` object (`{"type":"System","data":"bgm001.wav","beat":0}`), `skill`/`charge` flags on singles, and `Directional` with `direction` ("Right") and `width`; BPM changes are extra `BPM` objects (3 in song 200, 5 in song 400). Official files are compact one-line JSON; `hidden` connection flags appear in song 3 special.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md): official charts from `/api/charts/<songId>/<difficulty>.json` (byte-exact), community charts (`post.chart` extracted from `/api/post/details?id=<id>`, re-serialised compactly).
+
+- [observed: samples/bestdori-official_song003_special.json] Besides BPM/Single/Long/Slide/Directional there is a `System` object (`{"type":"System","data":"bgm001.wav","beat":0}`), `skill`/`charge` flags on singles, and `Directional` with `direction` ("Right") and `width`. BPM changes are extra `BPM` objects (3 in song 200, 5 in song 400). Official files are compact one-line JSON; `hidden` connection flags appear in song 3 special.
 - More: `https://bestdori.com/api/songs/all.5.json` lists songs; any `<songId>/<easy|normal|hard|expert|special>`; community chart ids via the site's post pages.
 
 ## Sources

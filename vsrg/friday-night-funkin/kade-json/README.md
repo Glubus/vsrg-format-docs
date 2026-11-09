@@ -5,14 +5,13 @@ Doc status: partial · ROX: no dedicated codec (the legacy codec reads the subse
 
 ## Overview
 
-Kade Engine (Kade-github) is a FNF mod engine with its own charting editor, replays and accuracy ratings. Its chart file is the legacy layout ([../legacy-json/README.md](../legacy-json/README.md)) with extra fields: BPM changes and scroll-speed changes as `eventObjects` positioned in beats, `songId`, `chartVersion`, `noteStyle`, `offset`. Sources: `source/Song.hx`, `source/Section.hx`, `source/PlayState.hx` of the `master` branch of Kade-github/Kade-Engine (`Song.latestChart = "KE1"`).
+Kade Engine (Kade-github) is an FNF mod engine with its own chart editor. Its chart is the legacy layout ([../legacy-json/README.md](../legacy-json/README.md)) plus `eventObjects` (BPM and scroll-speed changes, positioned in beats), `songId`, `chartVersion`, `noteStyle`, `offset`. Sources: `source/Song.hx`, `Section.hx`, `PlayState.hx` on `master` (`Song.latestChart = "KE1"`).
 
 ## Container & encoding
 
-- UTF-8 JSON `{ "song": { ... } }` (`parseJSONshit` reads `jsonData.song`); like vanilla, `loadFromJsonRAW` trims trailing characters until the text ends with `}`.
-- Files: `songs/<songId>/<songId><difficulty>.json` (the difficulty string is appended directly, e.g. `-hard`) plus `songs/<songId>/_meta.json` (`loadFromJson`: `Paths.loadJSON('songs/$songId/$songId$difficulty')` and `.../_meta`).
-- `_meta.json`: `{ "name": <display name>, "offset": <int ms> }` (`SongMeta`); `songName` defaults to the song id with dashes replaced by spaces, `offset` to 0.
-- Audio separate.
+- UTF-8 JSON `{ "song": { ... } }` (`parseJSONshit` reads `jsonData.song`); `loadFromJsonRAW` trims trailing characters until the text ends with `}`.
+- Files: `songs/<songId>/<songId><difficulty>.json` (difficulty appended directly, e.g. `-hard`) plus `songs/<songId>/_meta.json` (`Paths.loadJSON('songs/$songId/$songId$difficulty')` and `.../_meta`).
+- `_meta.json` (`SongMeta`): `{ "name": <display name>, "offset": <int ms> }`; `songName` defaults to the song id with dashes replaced by spaces, `offset` to 0.
 
 ## Structure / metadata
 
@@ -38,10 +37,10 @@ Kade Engine (Kade-github) is a FNF mod engine with its own charting editor, repl
 
 ## Timing model
 
-- `eventObjects` of type `"BPM Change"` define `TimingStruct`s in beats: `addTiming(beat, bpm, endBeat, startTime)`; each segment has `startBeat`, `bpm`, `startStep`, `startTime` (SECONDS), `length` (beats). `TimingStruct.getBeatFromTime(ms)` = `seg.startBeat + (ms/1000 - seg.startTime) * (seg.bpm / 60)`; `getTimeFromBeat` is the inverse. So Kade's real tempo map is the beat-based event list, not the per-section `changeBPM`.
-- Charts without `chartVersion` are converted at load (`conversionChecks`): section `changeBPM` become `"FNF BPM Change <index>"` events at beat `4 * index` (each section is assumed 4 beats), and every note gets `[3] = false`, `[4] = beat` computed from its ms time.
-- Sustain length: `TimingStruct.getTimeFromBeat(getBeatFromTime(songNotes[2]))` (converted through the BPM map).
-- Section lengths are 16 steps (`lengthInSteps`), times absolute ms as in vanilla.
+- `eventObjects` of type `"BPM Change"` define `TimingStruct`s in beats: `addTiming(beat, bpm, endBeat, startTime)`; each segment has `startBeat`, `bpm`, `startStep`, `startTime` (SECONDS), `length` (beats). `getBeatFromTime(ms)` = `seg.startBeat + (ms/1000 - seg.startTime) * (seg.bpm / 60)`; `getTimeFromBeat` is the inverse. Kade's real tempo map is this event list, not the per-section `changeBPM`.
+- Charts without `chartVersion` are converted at load (`conversionChecks`): section `changeBPM` becomes `"FNF BPM Change <index>"` events at beat `4 * index` (4 beats per section) and every note gets `[3] = false`, `[4] = beat`.
+- Sustain length: `TimingStruct.getTimeFromBeat(getBeatFromTime(songNotes[2]))`.
+- Sections are 16 steps (`lengthInSteps`); times are absolute ms as in vanilla.
 
 ## Notes
 
@@ -55,26 +54,25 @@ Kade Engine (Kade-github) is a FNF mod engine with its own charting editor, repl
 | 3 | `isAlt` (bool): alternate animation (old charts: `false`) |
 | 4 | `beat` the note sits on (float) |
 
-Strumline ownership uses the legacy rule: lane > 3 with `mustHitSection`, or lane < 4 without it, is the opponent's (`gottaHitNote = false`); the opposite is the player's. An alt animation is also applied when `section.altAnim || CPUAltAnim` for opponent notes or `playerAltAnim` for player notes. Negative times are clamped to 0 at load.
+Strumline ownership is the legacy rule: lane > 3 with `mustHitSection`, or lane < 4 without it, is the opponent's (`gottaHitNote = false`). Alt animation also applies when `section.altAnim || CPUAltAnim` (opponent notes) or `playerAltAnim` (player notes). Negative times clamp to 0 at load.
 
 ## Audio & images
 
-External (`Inst.ogg`, `Voices.ogg`); no references inside the chart.
+External (`Inst.ogg`, `Voices.ogg`).
 
 ## Versions & variants
 
-`chartVersion`: absent (vanilla-compatible, converted at load) and `"KE1"` (`Song.latestChart`). Other Kade releases / branches were not inspected and may differ. Moonchart implements this format as `FNFKade`.
+`chartVersion`: absent (vanilla-compatible, converted at load) or `"KE1"` (`Song.latestChart`). Other releases and branches were not inspected. Moonchart implements the format as `FNFKade`.
 
 ## Quirks & pitfalls
 
-- Beat numbers (`[4]`) and `eventObjects` positions are in beats; everything else is in ms.
+- Beat numbers (`[4]`) and `eventObjects` positions are in beats; everything else is ms.
 - `[3]` is a bool here, an int/type in Psych.
-- Two competing BPM mechanisms (`changeBPM` sections vs `eventObjects`); the latter wins in KE1 charts.
-- Scroll speed changes are events.
+- `eventObjects` wins over section `changeBPM` in KE1 charts; scroll speed changes are events.
 
 ## Example
 
-Illustrative, hand-built from `Song.hx` (not a real file):
+Hand-built from `Song.hx` (not a real file):
 
 ```json
 { "song": { "songName": "Test", "songId": "test", "chartVersion": "KE1",
@@ -88,7 +86,7 @@ Illustrative, hand-built from `Song.hx` (not a real file):
 
 ## ROX support
 
-`.json` goes to the legacy FNF codec ([../legacy-json/README.md](../legacy-json/README.md)): `song.notes[].sectionNotes` and `mustHitSection` are read (the lane rule is identical, so notes decode), `bpm` becomes the initial BPM and section `changeBPM` points are placed at the first note of the section; `eventObjects` (the real tempo map), `chartVersion`, `_meta.json`, `[3]`/`[4]` note slots are ignored. Charts with several tempo events decode with wrong BPM points [inference from the two sources].
+`.json` goes to the legacy FNF codec ([../legacy-json/README.md](../legacy-json/README.md)): notes decode (same lane rule), `bpm` is the initial BPM, section `changeBPM` points land at the section's first note. `eventObjects`, `chartVersion`, `_meta.json` and the `[3]`/`[4]` slots are ignored, so charts with several tempo events get wrong BPM points [inference].
 
 ## Parsers & tools
 
@@ -97,9 +95,7 @@ Illustrative, hand-built from `Song.hx` (not a real file):
 
 ## Getting samples
 
-- Committed ([samples/](samples/) and [samples/SOURCES.md](samples/SOURCES.md)): six real Kade Engine KE1 charts (`perkedel_*.json`, from the Kade fork Perkedel/Kaded-fnf-mods, GPL-3.0 repository; they carry `chartVersion` `KE1` and `eventObjects`, one has chartVersion `1`), four unconverted charts of the Kade-github/Kade-Engine repository (no `chartVersion`/`eventObjects`) and a synthetic KE1 chart with its `_meta`-style companion.
-- Observed in the Perkedel files: note arrays of 3, 5 or 6 elements (`[time, lane, sustain, isAlt, beat, 0]`), event objects with extra `value2`/`value3` fields, many mod-specific song fields (`videoPath`, `hasVideo`, `isCreditRoll`, `sectionLengths`...), 34 BPM-change events in `perkedel_heartbreaking.json`.
-- More: https://github.com/Perkedel/Kaded-fnf-mods (`assets/preload/data/songs/`, about 200 more JSON files, many with `chartVersion`); run Kade Engine and save from its chart editor.
+Committed: see [samples/SOURCES.md](samples/SOURCES.md). More: https://github.com/Perkedel/Kaded-fnf-mods (`assets/preload/data/songs/`, about 200 JSON files, many with `chartVersion`); run Kade Engine and save from its chart editor. Perkedel files: note arrays of 3, 5 or 6 elements (`[time, lane, sustain, isAlt, beat, 0]`), event objects with `value2`/`value3`, mod fields (`videoPath`, `hasVideo`, `isCreditRoll`, `sectionLengths`...), 34 BPM-change events in `perkedel_heartbreaking.json`.
 
 ## Sources
 

@@ -3,18 +3,18 @@ Kind: chart
 
 Doc status: complete · ROX: decode only (reads, never writes) · Category: vsrg · Encoding: json
 
-JSON successor/alternative to BMS. Specification v1.0.0-beta (2015-12-26), written from the bmson-spec source (`doc/index.rst`) at https://github.com/bemusic/bmson-spec.
+JSON successor to BMS. Specification v1.0.0-beta (2015-12-26), from the bmson-spec source (`doc/index.rst`) at https://github.com/bemusic/bmson-spec.
 
 ## Overview
 
-- bmson was started by wosderge as an alternative to BMS that is easy for developers, artists and chart authors (Wikipedia). Early version 0.2x/0.26 was implemented in Bemuse and Raindrop; developers of those players then wrote the **1.0.0** technical specification (bemusic/bmson-spec, readthedocs "bmson-spec 1.0.0-beta"). Official site: https://bmson.nekokan.dyndns.info/. Players: Bemuse (support announced 2015-08), Raindrop, beatoraja ("BMSON 0.2.1 / 1.0.0 (.bmson)").
-- Key idea: bmson is **sound-channel based**. Instead of a table of pre-cut keysounds (`#WAVxx` limited to 1295), a *sound channel* is one audio file and its notes are slice points: the player slices the stem at runtime between consecutive note positions. No keysound limit, authors can use any part of any file. Timing is in *pulses*, no measures.
-- A community fork (DJKero, "bmson-spec-fork", Version 2.0.0, 2023-10-24; https://github.com/djkero/bmson-spec-fork) restructures the objects (`song_info`, `chart_info`, `chart_data`, `note_events`, `judge_multiplier`, `life_multiplier`, `ln_type_hint`, `ln_judge_hint`, `ln_life_hint`, DJ.NEXT extension fields `judge_deltas`, `life_deltas`, per-note `vol`/`pan`/`up`). It is not the version used by beatoraja or Bemuse; this page documents 1.0.0.
+- wosderge started bmson as a BMS alternative easy for developers, artists and chart authors (Wikipedia). Bemuse and Raindrop implemented 0.2x/0.26; their developers then wrote the 1.0.0 spec. Official site: https://bmson.nekokan.dyndns.info/. Players: Bemuse (since 2015-08), Raindrop, beatoraja ("BMSON 0.2.1 / 1.0.0 (.bmson)").
+- Sound-channel based: a sound channel is one audio file and its notes are slice points the player cuts between consecutive note positions. No `#WAVxx` limit (1295). Timing is in pulses, with no measures.
+- A community fork (DJKero, "bmson-spec-fork", Version 2.0.0, 2023-10-24; https://github.com/djkero/bmson-spec-fork) restructures the objects (`song_info`, `chart_info`, `chart_data`, `note_events`, `judge_multiplier`, `life_multiplier`, `ln_type_hint`, `ln_judge_hint`, `ln_life_hint`, DJ.NEXT fields `judge_deltas`, `life_deltas`, per-note `vol`/`pan`/`up`). Beatoraja and Bemuse do not use it; this page covers 1.0.0.
 
 ## Container & encoding
 
-- A plain JSON document (UTF-8), one chart per file, `.bmson`. Distributed in a song folder next to the audio and image files it references (relative paths; `\` or `/` both allowed, must be normalised; absolute paths, `..` and NUL must be rejected by the player).
-- Sound recommendation: WAV and OGG Vorbis or MP4 AAC (`.m4a`); MP3 discouraged (encoder delay up to ~20 ms). BGA recommendation: PNG pictures, WebM video, 1280x720 preferred (1920x1080 accepted).
+- Plain JSON (UTF-8), one chart per file. It sits in a song folder next to the audio and image files it references (relative paths; `\` or `/` both allowed, must be normalised; absolute paths, `..` and NUL must be rejected by the player).
+- Recommended sound: WAV, OGG Vorbis, MP4 AAC (`.m4a`); MP3 discouraged (encoder delay up to ~20 ms). BGA: PNG, WebM, 1280x720 preferred (1920x1080 accepted).
 
 ## Structure / metadata
 
@@ -60,36 +60,36 @@ The prose of the spec also defines `info.title_image` (image shown before the so
 | --- | --- |
 | `version` | `1.0.0`. Compare with SemVer. `null` -> show an error. |
 | `info.title`, `subtitle`, `artist`, `genre` | Display text. Do not split title on delimiters. Subtitle may contain `\n`. |
-| `info.subartists` | Array of `"key:value"`; keys `music`, `vocal`, `chart`, `image`, `movie`, `other` (default `other`); trim spaces. Example: `"music:5argon"`. |
+| `info.subartists` | Array of `"key:value"`; keys `music`, `vocal`, `chart`, `image`, `movie`, `other` (default `other`); trim spaces. |
 | `info.mode_hint` | Layout/game mode (see Notes). Default `beat-7k`. A new mode must use a new `mode_hint`, not a new `version`. |
 | `info.chart_name` | e.g. `BEGINNER`, `NORMAL`, `HYPER`, `ANOTHER`, `7keys Beginner`. Default `""`. |
 | `info.level` | Unsigned integer; for `beat` modes on a 1-12 scale recommended. |
 | `info.init_bpm` | Starting tempo; required. |
-| `info.judge_rank` | Default 100. > 100 wider window, < 100 narrower. Non-normative interpretation: percentage of the player's default window (20 ms PERFECT at 100). Example windows: LR2 `#RANK 2`: Perfect GREAT 18 ms, GREAT 40, GOOD 100, BAD 200; Bemuse: 20/50/100/200. |
+| `info.judge_rank` | Default 100. > 100 wider window, < 100 narrower. Non-normative interpretation: percentage of the player's default window (20 ms PERFECT at 100). Windows: LR2 `#RANK 2` Perfect GREAT 18 ms, GREAT 40, GOOD 100, BAD 200; Bemuse 20/50/100/200. |
 | `info.total` | Default 100, must be >= 0 (negative: absolute value); relative gauge gain. IIDX reference: `7.605*n/(0.01*n+6.5)` percent for n notes. |
 | `info.back_image`, `eyecatch_image`, `title_image`, `banner_image`, `preview_music` | Paths. Banner ratio 15:4 (normally 600x160). If `preview_music` is absent, the player may build one from `sound_channels`. |
 | `info.resolution` | Pulses per quarter note of 4/4. Default 240 (lowest common multiple of 48 and 5: covers 80th, 120th, 240th notes). `0`/null -> 240, negative -> absolute value. |
 
 ## Timing model
 
-- Three time units: metric time `t` (seconds), musical time `b` (beats, 1 beat = quarter note), clock time `y` (pulses). All events are positioned by `y`.
-- **No measures, no time signature.** `lines` (bar lines) are purely visual: the list of `y` where a bar line is drawn. `lines` absent/null -> a bar line every 4 quarter notes (960 pulses at resolution 240). Empty array -> no bar line (the "100% minimoo-G" effect). The first line at `y = 0` may be omitted. Mapping from BMS measure lengths (spec example): `#00102:0.75` and `#00302:1.25` give lines at 960, 1680, 2640, 3840.
+- Time units: `t` (seconds), `b` (beats, quarter note), `y` (pulses). Events are positioned by `y`.
+- No measures, no time signature. `lines` (bar lines) are visual only: the list of `y` where a bar line is drawn. `lines` absent/null -> a bar line every 4 quarter notes (960 pulses at resolution 240). Empty array -> no bar line (the "100% minimoo-G" effect). The first line at `y = 0` may be omitted. Mapping from BMS measure lengths (spec example): `#00102:0.75` and `#00302:1.25` give lines at 960, 1680, 2640, 3840.
 - `info.init_bpm` is the tempo at `y = 0`. `bpm_events`: at `y` the tempo becomes `bpm`; several at the same `y` -> the last wins.
 - `stop_events`: at `y` the music pauses for `duration` pulses (converted with the BPM in effect); several at the same `y` add up.
-- Processing order inside one pulse: notes and BGA events, then BPM events, then stop events. A BPM change and a stop at the same pulse: BPM first, then the pause uses the new BPM. A BGM note at a stop pulse plays before the pause; a playable note at a stop pulse must be hit **at the start of the pause** (`t = 1.0` in the spec's example, not when the music resumes).
-- Position to time: walk the sorted events, `seconds += dy / resolution * 60 / bpm`, and add `duration / resolution * 60 / bpm` at stops. The spec's example table at 60 BPM, resolution 240: y = 120 -> 0.5 s, y = 240 with a 240-pulse stop -> 1.0 s start of pause (ambiguous up to 2.0 s), y = 241 -> 481/240 s.
+- Processing order inside one pulse: notes and BGA events, then BPM events, then stop events. A BPM change and a stop at the same pulse: BPM first, then the pause uses the new BPM. A BGM note at a stop pulse plays before the pause; a playable note at a stop pulse must be hit at the start of the pause (`t = 1.0` in the spec's example, not when the music resumes).
+- Position to time: `seconds += dy / resolution * 60 / bpm`, plus `duration / resolution * 60 / bpm` at stops. Spec example at 60 BPM, resolution 240: y = 120 -> 0.5 s, y = 240 with a 240-pulse stop -> 1.0 s start of pause (ambiguous up to 2.0 s), y = 241 -> 481/240 s.
 - There is no scroll-speed event in 1.0.0; beatoraja adds `scroll_events` (see below).
 
 ## Notes
 
-- Notes are grouped by `sound_channels[i]` (one audio file per channel). `Note`:
+- Notes are grouped by `sound_channels[i]` (one audio file each). `Note`:
   - `x`: lane. `0` or `null` -> not playable (BGM note). `1`, `2`, ... -> playable lane according to `mode_hint`.
   - `y`: pulse where the note is activated.
   - `l`: `0` = tap, `> 0` = long note from `y` to `y + l` (pulses).
   - `c`: continuation flag. `true` = continue the audio (do not restart), `false` = restart the file from its beginning at this note.
-- **Slicing** (the bmson-specific part): gather the distinct pulses of a channel's notes, convert to seconds; the audio is restarted whenever a note without `c` is hit; slices go between consecutive pulses; each note plays the slice starting at its pulse. Example from the spec: `vox.wav` with notes at y = 240 (c false), 360, 360, 720 (c false), 720, 840, 840, 1200, 1680 at 120 BPM gives 6 slices (0-0.25 s, 0.25-1, 1-1.25, 1.25-2, 2-3, 3-end). Multiple notes may share a slice. If a slice is assigned to both a playable and a BGM note, the BGM note is discarded. If a pulse mixes `c: true` and `c: false` notes, treat it as `c: false`. Polyphony of a slice is 1 (same slice triggered twice does not get louder); different slices of one channel can overlap.
-- **Layered notes**: notes of different channels at the same (x, y) fuse into one note that plays every slice. Length mismatch is an error (warning allowed).
-- **Mode hints** (spec appendix), x values:
+- Slicing: gather the distinct pulses of a channel's notes, convert to seconds; the audio is restarted whenever a note without `c` is hit; slices go between consecutive pulses; each note plays the slice starting at its pulse. Example from the spec: `vox.wav` with notes at y = 240 (c false), 360, 360, 720 (c false), 720, 840, 840, 1200, 1680 at 120 BPM gives 6 slices (0-0.25 s, 0.25-1, 1-1.25, 1.25-2, 2-3, 3-end). Multiple notes may share a slice. If a slice is assigned to both a playable and a BGM note, the BGM note is discarded. If a pulse mixes `c: true` and `c: false` notes, treat it as `c: false`. Polyphony of a slice is 1 (same slice triggered twice does not get louder); different slices of one channel can overlap.
+- Layered notes: notes of different channels at the same (x, y) fuse into one note that plays every slice. Length mismatch is an error (warning allowed).
+- Mode hints (spec appendix), x values:
 
   | mode_hint | x = lane |
   | --- | --- |
@@ -101,31 +101,29 @@ The prose of the spec also defines `info.title_image` (image shown before the so
   | `popn-9k` | 1-9 |
   | `generic-nkeys` | n keys, left to right |
 
-  The spec table has 16 numbered columns (x = 1..16, "Player 1" / "Player 2"); `SC` marks the scratch (turntable) column.
+  `SC` = scratch (turntable) column.
 - No mine or invisible note in 1.0.0. beatoraja extensions (from its wiki): in `info`: `ln_type` (1 LN / 2 CN / 3 HCN); per `Note`: `t` (long-note type, overrides `ln_type`), `up` (true on the end position of a LN = the sound of the LN end); root: `scroll_events: [{y, rate}]` (scroll multiplier, negative = reverse, since beatoraja 0.7.6), `mine_channels: [{name, notes:[{x,y,damage}]}]` (landmine: gauge loses `damage` if the key is held at judgment time, plays the sound on explosion), `key_channels: [{name, notes:[{x,y}]}]` (invisible notes: not drawn or judged, play the sound on key press).
 
 ## Audio & images
 
 - `sound_channels[].name`: file name; extension optional (player tries `.wav`, `.ogg`, `.m4a`...; if the given extension is not found/playable, drop it and retry). Subdirectories allowed; protect against absolute/parent/NUL paths.
-- `bga.bga_header[]` = table (`id`, `name`) of pictures/videos; `bga_events`, `layer_events` (drawn over BGA; **black is not transparent** unlike BMS channel 07, use alpha formats), `poor_events` (on miss) place them by pulse. A BMS->bmson converter must therefore turn black pixels of layer images into alpha. Duplicate `id`s: warn, the later one wins.
-- `info.preview_music`, `banner_image`, `back_image`, `eyecatch_image`, `title_image`.
+- `bga.bga_header[]` = table (`id`, `name`) of pictures/videos; `bga_events`, `layer_events` (drawn over BGA; black is not transparent, unlike BMS channel 07, so use alpha formats), `poor_events` (on miss) place them by pulse. A BMS-to-bmson converter must turn black pixels of layer images into alpha. Duplicate `id`s: warn, the later one wins.
 
 ## Versions & variants
 
-- 0.21 (legacy, camelCase: `soundChannel`, `judgeRank`, `initBPM`, `bgaHeader`, `bgaNotes`, `layerNotes`, `poorNotes`, `ID`, `bpmNotes`, `stopEvents`, `BarLine.k`, time in other units, absolute `total`). 0.2.1 and 0.26 are the versions players supported before 1.0.
-- 1.0.0 changelog from 0.21: snake_case fields; `bpmNotes -> bpm_events`, `stopEvents -> stop_events`, `BarLine.k` removed, `EventNote` split into `BpmEvent`/`StopEvent`, time unit = pulse, `total` relative; added `version`, `subtitle`, `subartists`, `mode_hint`, `chart_name`, `back_image`, `eyecatch_image`, `banner_image`, `preview_music`, `resolution`.
-- Spec fork 2.0.0 (2023): see Overview.
-- beatoraja extensions above.
+- 0.21 (legacy, camelCase: `soundChannel`, `judgeRank`, `initBPM`, `bgaHeader`, `bgaNotes`, `layerNotes`, `poorNotes`, `ID`, `bpmNotes`, `stopEvents`, `BarLine.k`, other time units, absolute `total`). Players supported 0.2.1 and 0.26 before 1.0.
+- 1.0.0 from 0.21: snake_case; `bpmNotes -> bpm_events`, `stopEvents -> stop_events`, `BarLine.k` removed, `EventNote` split into `BpmEvent`/`StopEvent`, time unit = pulse, relative `total`; added `version`, `subtitle`, `subartists`, `mode_hint`, `chart_name`, `back_image`, `eyecatch_image`, `banner_image`, `preview_music`, `resolution`.
+- Fork 2.0.0 (2023) and beatoraja extensions: see Overview and Notes.
 
 ## Quirks & pitfalls
 
-- Legacy files without `version` must be rejected or parsed as 0.21.
-- `x` is typed `any`: expect numbers, `null`, or missing; treat `null`/0 as BGM.
-- `init_bpm` missing is fatal; `lines` missing is not the same as `lines: []`.
-- Pulse positions are unsigned integers; with resolution 240 a BMS import of 1/192-grid data needs 192 -> 240 rescaling (the spec footnote: most games use 48 pulses per quarter, 240 = lcm(48, 5)).
-- The slicing algorithm needs the audio length; the last slice runs to the end of the file.
-- Stop and BPM processing order must follow the spec; "stop at note pulse" semantics are unusual.
-- Notes of one channel at identical pulses may be both BGM (x = 0) and playable (x > 0) -> BGM dropped.
+- Files without `version` must be rejected or parsed as 0.21.
+- `x` is typed `any`: numbers, `null` or missing; `null`/0 is BGM.
+- `init_bpm` missing is fatal; `lines` missing differs from `lines: []`.
+- With resolution 240, BMS data on a 1/192 grid needs 192 -> 240 rescaling (most games use 48 pulses per quarter; 240 = lcm(48, 5)).
+- Slicing needs the audio length; the last slice runs to the end of the file.
+- Stop and BPM order must follow the spec; "stop at note pulse" is unusual.
+- A BGM (x = 0) and a playable note at one pulse of a channel: BGM dropped.
 
 ## Example
 
@@ -150,20 +148,21 @@ Hand-built from the spec rules (illustrative; field names from the spec, values 
 }
 ```
 
-Reading: tap on key 1 at pulse 0, a 240-pulse long note on the turntable (x = 8) starting at pulse 480, BGM file started at pulse 0, bar lines every 960 pulses (a 4/4 grid), a one-beat stop at pulse 960 and a BPM change to 150 at pulse 1920.
+Tap on key 1 at pulse 0, a 240-pulse long note on the turntable (x = 8) at pulse 480, BGM at pulse 0, bar lines every 960 pulses, a one-beat stop at pulse 960, BPM 150 at pulse 1920.
 
 ## ROX support
 
-Read by ROX (decode only) through Prism's `rox::formats::bms::bmson` (`BmsonDecoder`, `.bmson` in `auto_decode*`; `auto_encode` refuses it). Source: `rhythm-open-exchange/src/formats/bms/bmson.rs`, tests `bmson_tests.rs`, hand-written chart `assets/bms/example.bmson` (also [`samples/synthetic-features.bmson`](samples/synthetic-features.bmson)).
+Decode only (`rox::formats::bms::bmson`, `BmsonDecoder`; `auto_encode` refuses it). Source `rhythm-open-exchange/src/formats/bms/bmson.rs`, tests `bmson_tests.rs`, chart `assets/bms/example.bmson` (also [`samples/synthetic-features.bmson`](samples/synthetic-features.bmson)).
 
-- Accepted: `version` 1.x (a missing version, i.e. legacy 0.2x, or another major is refused), `info.init_bpm` required and positive. Resolution: default 240, 0 is 240, negative is absolute.
-- **Time**: pulses to beats (`y / resolution`), `bpm_events` (last of a pulse wins, non-positive ignored), `stop_events` (pulses, summed at one pulse, a playable note on a stop is at the start of the pause), same timeline as BMS. `lines` and `bga` are ignored.
-- **Layout from `mode_hint`** (default and unknown = `beat-7k`, like beatoraja): `beat-5k`/`beat-7k` keys `x` = 1..N, scratch `x` = 8; `beat-10k`/`beat-14k` P1 keys 1..N and scratch 8, P2 keys 9..8+N and scratch 16; `popn-5k`/`popn-9k` 5/9 columns; `generic-Nkeys` N columns; `keyboard-24k` (26 columns) and `keyboard-24k-double` (52) from beatoraja's `Mode`, not from the spec. Columns are in the BMS order: `[scratch] keys`, double `[scratch1] P1 keys | P2 keys [scratch2]`, the scratch column only when a note uses it (both scratches in double play as soon as one is used). Notes outside the layout are dropped.
-- **Notes**: `x` 0, null or missing = background note; `l` > 0 = hold; negative `y` dropped; layered notes (same `x`, `y`, other channel) keep the first channel; a note inside a hold or at the same time and column is dropped.
-- **Keysounds and audio**: each playable note's channel `name` goes to the hitsound table (`\` becomes `/`, absolute names, drive letters and `..` are refused). Slicing of channel audio is not done. When the chart has exactly ONE background note and its channel holds nothing else, that file is `metadata.audio_file` and the time origin (every time moves back to it); otherwise `audio_file` is empty and Prism refuses the chart as "audio missing". A background note at the pulse of a playable note of its channel is dropped (spec rule).
-- **Metadata**: `title`, `artist`, `genre`, `level`, difficulty name from `chart_name` else `subtitle` else `Normal`, creator from a `chart:` sub-artist, background from `back_image` else `eyecatch_image`.
-- **Audio plan**: `decode_with_audio_plan` returns every channel sliced as beatoraja does (a pulse restarts the file at 0 when any of its notes has `c` false; a slice lasts to the next pulse if that pulse continues, else to the end of the file; lengths ignore stops). This differs from the spec's example table, whose restart pulses keep a growing file offset; the spec's text ("restart the audio") and beatoraja start them at 0. Prism mixes the plan into one Opus track when there is no single background sound.
-- Not handled: beatoraja `mine_channels`, `key_channels`, `scroll_events`, `ln_type`, note `t`/`up`, `c` (continuation), BGA, `preview_music`, the 2.0.0 fork, the legacy 0.2x layout.
+- Accepts `version` 1.x (missing version or another major is refused); `info.init_bpm` required and positive. Resolution default 240, 0 is 240, negative is absolute.
+- Time: `y / resolution` beats; `bpm_events` (last of a pulse wins, non-positive ignored); `stop_events` (summed per pulse, a playable note on a stop sits at the start of the pause). `lines` and `bga` ignored.
+- `mode_hint` (default and unknown = `beat-7k`, like beatoraja): `beat-5k`/`beat-7k` keys `x` = 1..N, scratch 8; `beat-10k`/`beat-14k` P1 keys 1..N and scratch 8, P2 keys 9..8+N and scratch 16; `popn-5k`/`popn-9k` 5/9 columns; `generic-Nkeys` N columns; `keyboard-24k` (26 columns) and `keyboard-24k-double` (52) from beatoraja's `Mode`. Column order as BMS: `[scratch] keys`, double `[scratch1] P1 keys | P2 keys [scratch2]`, scratch only when used. Notes outside the layout are dropped.
+- Notes: `x` 0, null or missing = background; `l` > 0 = hold; negative `y` dropped; layered notes (same `x`, `y`, other channel) keep the first channel; a note inside a hold or at the same time and column is dropped.
+- Audio: each playable note's channel `name` goes to the hitsound table (`\` becomes `/`; absolute names, drive letters and `..` refused). With exactly ONE background note whose channel holds nothing else, that file is `metadata.audio_file` and the time origin. Otherwise `audio_file` is empty and Prism refuses the chart as "audio missing". A background note at a playable note's pulse in its channel is dropped.
+- Metadata: `title`, `artist`, `genre`, `level`, difficulty name from `chart_name` else `subtitle` else `Normal`, creator from a `chart:` sub-artist, background from `back_image` else `eyecatch_image`.
+- `decode_with_audio_plan` slices every channel as beatoraja does: a pulse restarts the file at 0 when any of its notes has `c` false; a slice lasts to the next pulse if that continues, else to the file end; stops ignored. The spec's example table keeps a growing offset at restart pulses; its text and beatoraja restart at 0. Prism mixes the plan into one Opus track when there is no single background sound.
+- Not handled: beatoraja `mine_channels`, `key_channels`, `scroll_events`, `ln_type`, note `t`/`up`, `c`, BGA, `preview_music`, the 2.0.0 fork, legacy 0.2x.
+
 ## Parsers & tools
 
 - Bemuse (TypeScript/JS): https://github.com/bemusic/bemuse ; spec repo https://github.com/bemusic/bmson-spec
@@ -174,8 +173,7 @@ Read by ROX (decode only) through Prism's `rox::formats::bms::bmson` (`BmsonDeco
 
 ## Getting samples
 
-- **Committed** ([`samples/`](samples/), per-file origin in [`SOURCES.md`](samples/SOURCES.md)): 5 real bmson charts (two from the `MikuroXina/bms-rs` test folder: a 7K chart with 67 long notes and a 48-key `keyboard-24k-double` chart with `bpm_events` and BGA; three CC-BY-NC charts of "Only Love (Remix)" from the Bemuse music server) plus `synthetic-features.bmson` (hand-written).
-- **More**: the Bemuse music server lists its charts in `https://bemuse.ninja/music/index.json`; a bmson chart is at `https://bemuse.ninja/music/<song path>/<file>` (URL-encode `[` `]`); `[flicknote]onlylove_remix` is the only bmson song there. `bms2bmson-python` (MIT, https://github.com/bemusicscript/bms2bmson-python) and `bms-rs` (`src/bmson/bms_to_bmson.rs`) convert any `.bms` to bmson. The spec repo `bemusic/bmson-spec` has no sample file.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). The Bemuse music server lists charts in `https://bemuse.ninja/music/index.json`; a chart is at `https://bemuse.ninja/music/<song path>/<file>` (URL-encode `[` `]`). `[flicknote]onlylove_remix` is its only bmson song. `bms2bmson-python` (MIT, https://github.com/bemusicscript/bms2bmson-python) and `bms-rs` (`src/bmson/bms_to_bmson.rs`) convert `.bms` to bmson. The `bemusic/bmson-spec` repo has no sample file.
 
 ## Sources
 

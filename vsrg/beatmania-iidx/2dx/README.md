@@ -3,12 +3,11 @@ Kind: audio
 
 Doc status: partial · ROX: no · Category: vsrg · Encoding: archive (binary container of audio files)
 
-Not a chart format: the keysound container that accompanies the [`.1` chart](../1/README.md). Documented because chart events reference its samples by index.
+Not a chart format: the keysound container for the [`.1` chart](../1/README.md), whose events reference its samples by index.
 
 ## Overview
-
-- The IIDX arcade games ship each song's keysounds as one `.2dx` file (plus a `_pre.2dx` 10-second preview in mon/2dxTools' terminology). The files are **not encrypted**; entries are WAV data (MS-ADPCM in 2dxTools' conversion tool). Used by IIDX and by other Konami games with the same engine (the SDVX extractor `bm2dx.py` that popntowav adapted reads the same container; pop'n music keysounds are also `.2dx`, see [`../../pop-n-music`](../../pop-n-music/README.md)).
-- Reverse-engineered by community tools: iDestyKK/2dx_extract (C), mon/2dxTools (C: 2dxDump/2dxBuild/2dxMerge/2dxWavConvert), Gi-z/popntowav `twodx.js` (JS), SaxxonPike/iidx-datatools `2dxfix`.
+- IIDX ships each song's keysounds as one `.2dx` file (plus a `_pre.2dx` 10-second preview in mon/2dxTools' terms). Files are not encrypted; entries are WAV data (MS-ADPCM in 2dxTools' conversion). Other Konami games on the same engine use it (the SDVX extractor `bm2dx.py` that popntowav adapted reads it; pop'n music keysounds are `.2dx` too, see [`../../pop-n-music`](../../pop-n-music/README.md)).
+- Reverse-engineered by iDestyKK/2dx_extract (C), mon/2dxTools (C: 2dxDump/2dxBuild/2dxMerge/2dxWavConvert), Gi-z/popntowav `twodx.js` (JS), SaxxonPike/iidx-datatools `2dxfix`.
 
 ## Container & encoding
 
@@ -30,41 +29,38 @@ Not a chart format: the keysound container that accompanies the [`.1` chart](../
 
   (The iDestyKK description is equivalent: "skip 8 bytes from the `2DX9` header to get the 32-bit file size; the actual file starts 12 bytes after the size".)
 - Extraction by scanning for `2DX9` works because the scanner skips over each file's data once its size is known.
-- 2dxTools converts input audio to **MS-ADPCM WAV with block size 256**; preview files are clipped to exactly 10 s. After CS-era IIDX (CB), the engine is "a lot more sensitive to audio files that aren't 44.1 kHz stereo" (2dxfix README).
+- 2dxTools converts input audio to MS-ADPCM WAV with block size 256; preview files are clipped to exactly 10 s. After CS-era IIDX (CB), the engine is "a lot more sensitive to audio files that aren't 44.1 kHz stereo" (2dxfix README).
 
 ## Structure / metadata
-
-Only the fields above. No names are stored for samples; they are addressed by index (position in the offset table). For some games the keysound number was stored in the entry header; in pop'n files this is not the case and samples are sequential (comment in `twodx.js`).
+Only the fields above. Samples have no names and are addressed by index (position in the offset table). Some games stored the keysound number in the entry header; pop'n files do not (sequential samples, per `twodx.js`).
 
 ## Timing model
 
-Not applicable (audio container). Loop point/volume fields exist but are only partially understood.
+Loop point/volume fields exist but are only partially understood.
 
 ## Notes
 
-Not applicable. Chart `02`/`03`/`07` events index into this table. In pop'n music files the BGM track (`is_bg`) may be placed at the end of the container, so indices are shifted by one (popntowav's `offsetKeysounds`).
+Chart `02`/`03`/`07` events index into this table. In pop'n music files the BGM track (`is_bg`) may be placed at the end of the container, so indices are shifted by one (popntowav's `offsetKeysounds`).
 
 ## Audio & images
 
 WAV payloads (PCM/MS-ADPCM). No images.
 
 ## Versions & variants
-
-`2DX9` is the entry magic seen in IIDX up to PENDUAL (22) per 2dx_extract; the tools do not document other magics. `.s3p` is a related keysound archive written by SaxxonPike's 2dxfix tool for newer engine versions (details not documented in the sources).
+`2DX9` is the entry magic seen in IIDX up to PENDUAL (22) per 2dx_extract; no other magics are documented. `.s3p` is a related keysound archive written by SaxxonPike's 2dxfix for newer engine versions (undocumented).
 
 ## Quirks & pitfalls
-
-- The audio must be 44.1 kHz stereo for newer IIDX engines.
+- Newer IIDX engines need 44.1 kHz stereo audio.
 - Entry order matters; BGM may be first or last.
-- Header length field and the unknown bytes should be preserved when rewriting (2dxMerge keeps loop point/volume metadata).
+- Preserve the header length field and unknown bytes when rewriting (2dxMerge keeps loop point/volume metadata).
 
 ## Example
 
-No binary sample is stored. Layout of the first entry's magic (illustrative from the table): `32 44 58 39 | 18 00 00 00 | <size u32> | ...` (`18` = 24).
+No binary sample is stored. First entry's magic (from the table): `32 44 58 39 | 18 00 00 00 | <size u32> | ...` (`18` = 24).
 
 ## ROX support
 
-Not applicable / not read by ROX. Keysound extraction would require a 2DX9 reader plus a WAV/MS-ADPCM decoder.
+Not read by ROX. Keysound extraction needs a 2DX9 reader plus a WAV/MS-ADPCM decoder.
 
 ## Parsers & tools
 
@@ -74,14 +70,12 @@ Not applicable / not read by ROX. Keysound extraction would require a 2DX9 reade
 - https://github.com/SaxxonPike/iidx-datatools (`2dxfix`)
 
 ## Getting samples
+No sample committed: searches on 2026-11-09 (Sourcegraph GitHub path search for `*.2dx`, `<id>.1`, `*_op.bin`/`*_hp.bin`/`*.ifs`; the parser/converter repositories named below; archive.org; web) found no public copy. The tools ship no fixtures and archive.org only has whole-game dumps (above the 20 MB limit) or soundtracks. A `.2dx` holds copyrighted audio from game installs, which this repository does not accept.
 
-No sample is committed: no real file of this format could be obtained. Searches on 2026-11-09 (GitHub path search through Sourcegraph for `*.2dx`, `<id>.1`, `*_op.bin`/`*_hp.bin`/`*.ifs`; the repositories of every parser/converter named below; archive.org full-text/title search; web searches) found no public copy: the tools ship no fixtures and the only archive.org items are whole-game dumps or soundtracks (not individual chart files, and far above the 20 MB limit or audio). The data is Konami game data that exists only inside a game installation. A `.2dx` is a container of copyrighted keysound audio, which this repository does not accept anyway.
-
-How to obtain real files (you need your own copy of the game):
-
-- IIDX: iidx2bms (https://github.com/Glebsin/iidx2bms, commit 893a6a94b0bc442356be88852188cd5e05fe1b8e, `conversion.py`) looks for `<id>.2dx` and `<id>_pre.2dx` (preview) next to `<id>.1` in `\contents\data\sound\<id>\`, either loose or inside `<id>.ifs` (unpack with mon/ifstools); newer games use `<id>.s3p` instead of `<id>.2dx` for the main audio (same code: it requires `.1` + `.s3p` + `_pre.2dx`). It bundles `2dx_extract` to split the container into WAV files.
-- pop'n music: `popntowav.js` (Gi-z/popntowav, commit 469b6de82c6e5654eae42d130341d4c4d8b963a9) runs `ifstools` on a game `.ifs` and then reads `<ifsname>_ifs/<ifsname>.2dx` (lines 21-22), so the `.2dx` is inside the pop'n `.ifs` archive of each song.
-- Tools that read it: iDestyKK/2dx_extract, mon/2dxTools (`2dxDump`), SaxxonPike/iidx-datatools `2dxfix`.
+Real files need your own copy of the game:
+- IIDX: iidx2bms (https://github.com/Glebsin/iidx2bms, commit 893a6a94b0bc442356be88852188cd5e05fe1b8e, `conversion.py`) looks for `<id>.2dx` and `<id>_pre.2dx` next to `<id>.1` in `\contents\data\sound\<id>\`, loose or inside `<id>.ifs` (unpack with mon/ifstools). Newer games use `<id>.s3p` instead of `<id>.2dx` (the code needs `.1` + `.s3p` + `_pre.2dx`). It bundles `2dx_extract` to split the container into WAV files.
+- pop'n music: `popntowav.js` (Gi-z/popntowav, commit 469b6de82c6e5654eae42d130341d4c4d8b963a9) runs `ifstools` on a game `.ifs` and reads `<ifsname>_ifs/<ifsname>.2dx` (lines 21-22), so the `.2dx` is inside each song's pop'n `.ifs`.
+- Readers: iDestyKK/2dx_extract, mon/2dxTools (`2dxDump`), SaxxonPike/iidx-datatools `2dxfix`.
 
 ## Sources
 

@@ -5,9 +5,9 @@ Doc status: partial · ROX: no · Category: vsrg · Encoding: binary (little-end
 
 ## Overview
 
-Interlude (YAVSRG) stores every imported chart in its own compact binary form: the key count, the note rows, the BPM list and the scroll-velocity list. Historically it was a file, `.yav`; since the "Chart database" change of the changelog ("Your charts are now stored in an SQLite database file instead of as folders of .yav files", `docs/changelog.md`) it is a `BLOB` column of a SQLite table and the payload the Interlude CDN serves. The source states that the file reader is dead code: "this unused code used to be for reading .yav files, which no longer exist" (`prelude/src/Charts/ImportChart.fs`), and that a "future .yav file format that allows charts to be imported and exported as files" is only planned. The wiki (`docs/wiki/adding_songs.md`) and Prelude's README still say charts are "converted to the .yav file format" [outdated: contradicts the code comment]. There is therefore **no current `.yav` file**, but the binary layout documented below is real, current, and is what a chart looks like when downloaded from `https://cdn.yavsrg.net/<chart hash>`.
+Interlude (YAVSRG) stores each imported chart in a compact binary form: key count, note rows, BPM list, scroll-velocity list. It was once a `.yav` file; since the "Chart database" change ("Your charts are now stored in an SQLite database file instead of as folders of .yav files", `docs/changelog.md`) it is a `BLOB` column of a SQLite table and the payload the Interlude CDN serves. The file reader is dead code ("this unused code used to be for reading .yav files, which no longer exist", `prelude/src/Charts/ImportChart.fs`); a "future .yav file format that allows charts to be imported and exported as files" is only planned. The wiki (`docs/wiki/adding_songs.md`) and Prelude's README still say charts are "converted to the .yav file format" [outdated: contradicts the code comment]. So no current `.yav` file exists, but the layout below is current and is what `https://cdn.yavsrg.net/<chart hash>` serves.
 
-Everything here is read from YAVSRG/YAVSRG @ a7c78e77733595749e63da26b5300e8962a4e111 (`prelude/src/Charts/Chart.fs`, `NoteRow.fs`, `Shared/TimeArray.fs`, `Shared/Bitmask.fs`, `Data/ChartDatabase/DbCharts.fs`, `Data/Imports/OnlineImports.fs`) and verified by decoding 7 real CDN files and recomputing their hash (see Getting samples).
+Source: YAVSRG/YAVSRG @ a7c78e77733595749e63da26b5300e8962a4e111 (`prelude/src/Charts/Chart.fs`, `NoteRow.fs`, `Shared/TimeArray.fs`, `Shared/Bitmask.fs`, `Data/ChartDatabase/DbCharts.fs`, `Data/Imports/OnlineImports.fs`), verified by decoding 7 real CDN files and recomputing their hash.
 
 ## Packaged in
 
@@ -15,7 +15,7 @@ Not packaged in an archive. It lives in the `charts.Chart` BLOB column (`DbChart
 
 ## Container & encoding
 
-- Little-endian binary written with .NET `BinaryWriter`; no magic, no version, no length or key count inside the blob: **the key count is stored outside** (the `Keys` column / `ChartMeta`) and must be passed to the reader (`Chart.ReadFromStreamHeadless(keys, br)`, "headless" = without the header).
+- Little-endian binary written with .NET `BinaryWriter`; no magic, no version, no length or key count inside the blob: the key count is stored outside (the `Keys` column / `ChartMeta`) and must be passed to the reader (`Chart.ReadFromStreamHeadless(keys, br)`, "headless" = without the header).
 - Legacy `.yav` file (reader kept in `ImportChart.legacy_from_yav_file`): `byte keys`, a .NET `BinaryWriter` string (7-bit-length-prefixed UTF-8) holding the JSON `ChartImportHeader`, then the headless chart. The exact JSON encoding of the union fields (`BackgroundFile`/`AudioFile: ImportAsset = Copy | Link | Download | Missing`) is Unknown; no `.yav` file was found to check.
 - Identification: `Chart.Hash()` = uppercase hex SHA-256 over keys, rows, SV changes and length (below); it is the CDN file name and the chart id.
 
@@ -29,7 +29,7 @@ Three consecutive `TimeArray`s (`TimeArray.write`: `int32 count`, then per item 
 | BPM | `int32 meter` (beats per measure), `float32 ms-per-beat` |
 | SV | `float32 multiplier` |
 
-Metadata (title, artist, creator, difficulty name, tags, preview time, background/audio hashes, origins) is **not** in the blob; it is in the table row (`ChartMeta`) or the legacy JSON header (`ChartImportHeader`: Title, TitleNative, Artist, ArtistNative, Creator, DiffName, Subtitle, Source, Tags, PreviewTime, BackgroundFile, AudioFile, Origins).
+Metadata (title, artist, creator, difficulty name, tags, preview time, background/audio hashes, origins) is not in the blob; it is in the table row (`ChartMeta`) or the legacy JSON header (`ChartImportHeader`: Title, TitleNative, Artist, ArtistNative, Creator, DiffName, Subtitle, Source, Tags, PreviewTime, BackgroundFile, AudioFile, Origins).
 
 ## Timing model
 
@@ -37,7 +37,7 @@ Times are `float32` milliseconds from the audio start. Notes are grouped in rows
 
 ## Notes
 
-Row `NoteType` per column: `0` nothing (not stored), `1` tap, `2/3/4` hold head/body/tail. A hold is stored as a head row, a body entry in **every intermediate row** of that column, then a tail row; the validator rejects a head inside a hold, a body or tail without a head, a missing body, an unterminated hold, an empty row (a row with only bodies/nothing) and 0 notes. Key count 3..10.
+Row `NoteType` per column: `0` nothing (not stored), `1` tap, `2/3/4` hold head/body/tail. A hold is a head row, a body entry in every intermediate row of that column, then a tail row. The validator rejects a head inside a hold, a body or tail without a head, a missing body, an unterminated hold, an empty row and 0 notes. Key count 3..10.
 
 ## Audio & images
 
@@ -45,14 +45,14 @@ Not stored (referenced by hash in the database, downloaded separately).
 
 ## Versions & variants
 
-No version field. `CALC_VERSION` in `DbCharts.fs` versions the cached pattern/rating data, not the chart blob.
+No version field. `CALC_VERSION` in `DbCharts.fs` versions the cached pattern/rating data, not the blob.
 
 ## Quirks & pitfalls
 
-- A reader needs the key count from outside; with a wrong count a set bit beyond the key count makes decoding fail (observed with my reader: index error on the 94-byte JSON 404 body of the CDN, which is not a chart).
-- Hash input (`Chart.Hash`): `int32 keys`; then for every row, one byte per column **including empty ones** (0..4); then for each SV entry whose multiplier differs from the running one (start 1.0) `int32 round((t - firstNoteTime) * 0.2)` + `float32 multiplier`; finally `int32 round((lastNoteTime - firstNoteTime) * 0.01)` ( .NET `Convert.ToInt32`, round-half-even; BPM is not hashed). A Python re-implementation reproduced the CDN hash for all 7 downloaded files [observed].
-- Hold bodies are explicit rows entries, so there is no `endTime`.
-- A chart missing from the CDN answers HTTP 404 with a JSON body, not a chart: most hashes listed in `backbeat/archive/charts.json` were 404 on 2026-11-09.
+- A reader needs the key count from outside; with a wrong count a set bit beyond the key count breaks decoding (observed: index error on the 94-byte JSON 404 body of the CDN, which is not a chart).
+- Hash input (`Chart.Hash`): `int32 keys`; then for every row one byte per column including empty ones (0..4); then for each SV entry whose multiplier differs from the running one (start 1.0) `int32 round((t - firstNoteTime) * 0.2)` + `float32 multiplier`; finally `int32 round((lastNoteTime - firstNoteTime) * 0.01)` (.NET `Convert.ToInt32`, round-half-even; BPM is not hashed). A Python re-implementation reproduced the CDN hash for all 7 downloaded files [observed].
+- Hold bodies are explicit row entries, so there is no `endTime`.
+- A chart missing from the CDN answers HTTP 404 with a JSON body: most hashes in `backbeat/archive/charts.json` were 404 on 2026-11-09.
 
 ## Example
 
@@ -60,7 +60,7 @@ No version field. `CALC_VERSION` in `DbCharts.fs` versions the cached pattern/ra
 
 ## ROX support
 
-None. ROX has no Interlude codec; a converter would need the key count, BPM and SV lists above (hold bodies are redundant with head/tail).
+None. A converter would need the key count, BPM and SV lists (hold bodies are redundant with head/tail).
 
 ## Parsers & tools
 
@@ -69,9 +69,7 @@ None. ROX has no Interlude codec; a converter would need the key count, BPM and 
 
 ## Getting samples
 
-- **Committed** in [`samples/`](samples/) (see [`SOURCES.md`](samples/SOURCES.md)): 7 real charts downloaded from the Interlude CDN (4K x3, 6K, 7K x2, 9K; 1.5-17.8 KB; sources/authors recorded) and one 114-byte hand-built CC0 blob (4 keys, holds, 2 BPM, 3 SV) read back with an independent decoder.
-- **Also**: the CDN is a live site; most hashes listed in `backbeat/archive/charts.json` already answer HTTP 404 (JSON body, not a chart), so only these 7 could be downloaded on 2026-11-09. Fetch more with `curl -L https://cdn.yavsrg.net/<HASH>` and check the response is not the 94-byte error.
-- **How to get more**: install Interlude (https://www.yavsrg.net), import any osu!mania/StepMania/Quaver library (Options > Library); the charts land in the SQLite `charts` table as `Chart` BLOBs (location of the database file: Unknown here), which you can extract with any SQLite tool; legacy folders of `.yav` files exist only in Interlude builds before the "Chart database" change [inference, changelog gives no version here].
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). The CDN is live but most hashes in `backbeat/archive/charts.json` answer HTTP 404 (JSON body), so only 7 could be downloaded on 2026-11-09. Fetch more with `curl -L https://cdn.yavsrg.net/<HASH>` and check the response is not the 94-byte error. Or install Interlude (https://www.yavsrg.net), import any osu!mania/StepMania/Quaver library (Options > Library); charts land in the SQLite `charts` table as `Chart` BLOBs (database file location: Unknown here), extractable with any SQLite tool. Legacy folders of `.yav` files exist only in builds before the "Chart database" change [inference, changelog gives no version here].
 
 ## Sources
 

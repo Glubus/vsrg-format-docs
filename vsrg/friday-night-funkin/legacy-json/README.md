@@ -5,13 +5,12 @@ Doc status: complete · ROX: reads/writes (experimental; this is the layout ROX 
 
 ## Overview
 
-The original chart layout of Friday Night Funkin' (the "week" charts of the 0.2.x builds; the sources read are tag `v0.2.7.1`) and the base of the loaders of Kade Engine and Psych Engine (both carry `Song.hx`/`Section.hx` derived from it, see their folders). One JSON file per song and difficulty. Source of truth: `Song.hx`, `Section.hx`, `PlayState.generateSong`, `Conductor.hx` of the tag `v0.2.7.1` of FunkinCrew/Funkin (also the format Moonchart calls "FNF (Legacy)").
+The original FNF chart layout ("week" charts of the 0.2.x builds), base of the Kade and Psych loaders. One JSON file per song and difficulty. Moonchart calls it "FNF (Legacy)". Sources: `Song.hx`, `Section.hx`, `PlayState.generateSong`, `Conductor.hx` at tag `v0.2.7.1` of FunkinCrew/Funkin.
 
 ## Container & encoding
 
-- UTF-8 JSON, a single object `{ "song": { ... } }`. The official loader trims trailing garbage: `while (!rawJson.endsWith("}")) rawJson = rawJson.substr(0, rawJson.length - 1)` (some chart files end with stray characters), so a robust reader should tolerate trailing bytes after the last `}`.
-- One file per difficulty. The vanilla loader reads `assets/data/<folder>/<jsonInput>.json` lower-cased; the difficulty is the suffix of the file name (`bopeebo.json` normal, `bopeebo-easy.json`, `bopeebo-hard.json`) [inference from `Song.loadFromJson(jsonInput, folder)` and the difficulty suffix convention in PlayState; the exact string composition was not read]. Audio is separate (`Inst.ogg`, `Voices.ogg`).
-- No compression, no archive.
+- UTF-8 JSON `{ "song": { ... } }`. The official loader trims trailing garbage: `while (!rawJson.endsWith("}")) rawJson = rawJson.substr(0, rawJson.length - 1)`, so readers must tolerate bytes after the last `}`.
+- The loader reads `assets/data/<folder>/<jsonInput>.json` lower-cased; the difficulty is the file-name suffix (`bopeebo.json` normal, `bopeebo-easy.json`, `bopeebo-hard.json`) [inference from `Song.loadFromJson(jsonInput, folder)`; the string composition was not read]. Audio is separate (`Inst.ogg`, `Voices.ogg`).
 
 ## Structure / metadata
 
@@ -42,11 +41,10 @@ The original chart layout of Friday Night Funkin' (the "week" charts of the 0.2.
 
 ## Timing model
 
-- `bpm` at the song start; `Conductor.crochet = 60000 / bpm` (ms per beat), `stepCrochet = crochet / 4`. A section is `lengthInSteps` steps = `lengthInSteps * stepCrochet` ms (16 steps = 4 beats = one 4/4 measure).
-- **Note times are absolute milliseconds** (`sectionNotes[i][0]`), so notes do not depend on the section layout for placement. Section lengths are needed only to find when a BPM change takes effect: `Conductor.mapBPMChanges` walks the sections accumulating `totalSteps` and `totalPos += (60 / curBPM * 1000 / 4) * lengthInSteps`; when a section has `changeBPM && bpm != curBPM` it records `{stepTime, songTime, bpm}` at that section's start.
-- During play the engine calls `Conductor.changeBPM(SONG.notes[floor(curStep / 16)].bpm)` when that section has `changeBPM`.
-- Sustain pieces use the BPM in force when notes are generated: vanilla uses the song-level `stepCrochet` for all sustains (a known approximation); Psych tracks the section BPM (`daBpm`).
-- No stops, no time signatures other than 4/4 (steps per section may differ; 16 is the norm), no scroll velocity changes (a single `speed`).
+- `Conductor.crochet = 60000 / bpm` (ms per beat), `stepCrochet = crochet / 4`. A section is `lengthInSteps * stepCrochet` ms (16 steps = 4 beats).
+- Note times are absolute ms (`sectionNotes[i][0]`). Section lengths matter only for BPM changes: `Conductor.mapBPMChanges` accumulates `totalSteps` and `totalPos += (60 / curBPM * 1000 / 4) * lengthInSteps`; a section with `changeBPM && bpm != curBPM` records `{stepTime, songTime, bpm}` at its start. During play the engine calls `Conductor.changeBPM(SONG.notes[floor(curStep / 16)].bpm)` for such sections.
+- Sustain pieces use the BPM in force at note generation: vanilla uses the song-level `stepCrochet`; Psych tracks the section BPM (`daBpm`).
+- No stops, no signature other than 4/4 (steps per section may differ; 16 is the norm), no scroll velocity changes (single `speed`).
 
 ## Notes
 
@@ -65,35 +63,34 @@ gottaHitNote = section.mustHitSection
 if (noteData > 3) gottaHitNote = !gottaHitNote
 ```
 
-So with `mustHitSection: true`, lanes 0-3 are the player's and 4-7 the opponent's; with `mustHitSection: false` it is reversed. The `mustHitSection` flag therefore must be combined with the lane for every note.
+With `mustHitSection: true`, lanes 0-3 are the player's and 4-7 the opponent's; with `mustHitSection: false` it is reversed. Combine the flag with the lane for every note.
 
-Holds: the head note plus `floor(sustainLength / stepCrochet)` sustain pieces, one per step, spawned at `strumTime + stepCrochet * (i + 1)` (vanilla). Hold lengths are not quantised in the file.
+Holds: the head note plus `floor(sustainLength / stepCrochet)` sustain pieces, one per step, spawned at `strumTime + stepCrochet * (i + 1)` (vanilla). Hold lengths are not quantised.
 
-Other note kinds do not exist in vanilla; mods use extra array slots or negative lanes (Psych <= 0.6 stored events as notes with `noteData < 0`, see Psych doc). No mines, no keysounds, no per-note volume.
+Vanilla has no other note kinds, mines, keysounds or per-note volume. Mods use extra array slots or negative lanes (Psych <= 0.6 stored events as notes with `noteData < 0`, see Psych doc).
 
-Simultaneous notes (several lanes at the same time) are allowed; duplicate (time, lane) pairs ("ghost notes") exist in sloppily made charts.
+Simultaneous notes are allowed; duplicate (time, lane) pairs ("ghost notes") exist in sloppy charts.
 
 ## Audio & images
 
-Not in the chart. Vanilla loads `Inst` and, if `needsVoices`, `Voices` by song name; characters, stage, icons are code/asset data. `player1`/`player2` name character definitions.
+Not in the chart. Vanilla loads `Inst` and, if `needsVoices`, `Voices` by song name. `player1`/`player2` name character definitions.
 
 ## Versions & variants
 
-The vanilla format never carried a version field (Psych adds `format`, Kade adds `chartVersion`, V-Slice replaced it). Differences: `bpm` int vs float, extra per-engine fields (`gfVersion`/`player3`, `stage`, `events`, `sectionBeats`, `eventObjects`, `noteStyle`, `offset` ...). See [psych-json](../psych-json/README.md), [kade-json](../kade-json/README.md), [fps-plus-json](../fps-plus-json/README.md), [codename-json](../codename-json/README.md), [vslice-chart-json](../vslice-chart-json/README.md). Week 7 / 0.3 pre-release charts typed notes with an int in slot 3 (Psych's `Note.defaultNoteTypes` maps it).
+No version field in vanilla (Psych adds `format`, Kade `chartVersion`, V-Slice replaced it). Engines differ in `bpm` int vs float and add `gfVersion`/`player3`, `stage`, `events`, `sectionBeats`, `eventObjects`, `noteStyle`, `offset`: see [psych-json](../psych-json/README.md), [kade-json](../kade-json/README.md), [fps-plus-json](../fps-plus-json/README.md), [codename-json](../codename-json/README.md), [vslice-chart-json](../vslice-chart-json/README.md). Week 7 / 0.3 pre-release charts typed notes with an int in slot 3 (Psych's `Note.defaultNoteTypes` maps it).
 
 ## Quirks & pitfalls
 
 - `mustHitSection` flips lane ownership; ignoring it swaps the sides.
-- Section lengths other than 16 steps exist; times stay absolute.
-- A BPM change in a section is applied from the section start, but the notes keep their absolute times; a converter must compute the beat position from the BPM map, not from the note index.
-- `sectionNotes` can contain lanes outside 0-7 or negative lanes (events in engine charts).
-- Holds with `sustainLength` shorter than one step produce no sustain piece in vanilla (floor).
-- `bpm` fields are ints in vanilla; fractional BPM were rounded by that type, engines changed to float.
-- Trailing garbage after the final `}` appears in real charts: the vanilla charts of tag v0.2.7.1 end with thousands of NUL bytes after the closing brace [observed in samples/funkin-v0.2.7.1_bopeebo.json]; a strict JSON parser fails on them.
+- Sections other than 16 steps exist; times stay absolute. Compute beat positions from the BPM map, not the note index.
+- `sectionNotes` can hold lanes outside 0-7 or negative (events in engine charts).
+- A hold shorter than one step makes no sustain piece in vanilla (floor).
+- `bpm` is an int in vanilla (fractional BPM rounded); engines use float.
+- Vanilla charts of tag v0.2.7.1 end with thousands of NUL bytes after the closing brace [observed: funkin-v0.2.7.1_bopeebo.json]; strict JSON parsers fail.
 
 ## Example
 
-Illustrative, hand-built from the rules above (not a real chart):
+Hand-built from the rules above (not a real chart):
 
 ```json
 {
@@ -123,17 +120,17 @@ Illustrative, hand-built from the rules above (not a real chart):
 }
 ```
 
-At 120 BPM one step = 125 ms. Notes: the player's left arrow at 0 ms; the opponent's down arrow (lane 5 -> `noteData % 4 = 1`, other side because `5 > 3`) at 125 ms; the player's up arrow at 500 ms held for 250 ms (2 sustain steps).
+At 120 BPM one step = 125 ms. The player's left arrow at 0 ms; the opponent's down arrow (lane 5 -> `noteData % 4 = 1`, other side because `5 > 3`) at 125 ms; the player's up arrow at 500 ms held for 250 ms (2 sustain steps).
 
 ## ROX support
 
-ROX source `src/formats/fnf` (`FnfDecoder`/`FnfEncoder`, extension `json`, so every `.json` is routed to this codec by `auto/detect.rs`: `"json" => DetectedFormat::Fnf`; `.jrox` is a different extension):
-- Types: `FnfChart { song: FnfSong }`, `FnfSong { song, bpm: f32, speed (default 1.0), player1 ("bf"), player2 ("dad"), needsVoices (false), notes: [FnfSection] }`, `FnfSection { sectionNotes, lengthInSteps (16), mustHitSection (false), changeBPM (false), bpm (0.0) }`, a note is `[time_ms, lane, duration_ms]` as a `Vec<f64>`. Unknown fields (`gfVersion`, `events`, `sectionBeats`...) are ignored; note extras after index 2 are ignored.
-- Decode side choice: `FnfSide::Player` (default, 4 columns: only the player's notes), `Opponent` (4 columns), `Both` (8 columns, `is_coop = true`: opponent in columns 0-3, player in 4-7). Lane resolution (`resolve_column`): `raw_lane < 4` -> player iff `mustHitSection`, else (`>= 4`) player iff `!mustHitSection`; column = `raw_lane` or `raw_lane - 4`. This is the legacy rule above. A raw lane is cast `f64 as u8` (negative values saturate to 0, so legacy "event notes" with lane -1 become column-0 notes if their section matches [inference from the code]).
-- Timing: BPM point at 0 from `song.bpm`; for every section with `changeBPM && bpm > 0` and at least one note, a BPM point is placed at the time of the section's FIRST NOTE (not at the section start), if that time is > 0 [from `build_timing_points`]. No SV points, `speed` is dropped. Duration > 0 -> hold; times `ms * 1000` as `i64` (truncated).
-- Metadata is synthetic: title = `song`, artist `"Unknown"`, creator = `player2`, difficulty name `"Normal"`, audio `"Inst.ogg"`, source `"Friday Night Funkin'"`, tags `["fnf"]`.
-- Encode (`to_fnf`): one single section for the whole song (`lengthInSteps` 160000, `mustHitSection = !(key_count >= 8)`, `changeBPM: true`, `bpm` = first BPM), `player1: "bf"`, `player2` = creator, `speed 1.0`, notes `[time_ms, column, duration_ms]` (Burst -> hold, Mine -> tap), pretty-printed JSON. BPM changes after the first and SV points are lost. For 8K charts columns 0-3 are the opponent's and 4-7 the player's.
-- Version/format detection: only the Psych `format` field: a value starting with `psych_v1` makes lanes 0-3 the player's and 4-7 the opponent's regardless of `mustHitSection` (see [psych-json](../psych-json/README.md)); any other file is read with the legacy lane rule. The 100 MiB limit applies. V-Slice charts are a different format, see [vslice-chart-json](../vslice-chart-json/README.md).
+`src/formats/fnf` (`FnfDecoder`/`FnfEncoder`); `auto/detect.rs` routes every `.json` here (`"json" => DetectedFormat::Fnf`; `.jrox` is a different extension).
+- Types: `FnfChart { song: FnfSong }`, `FnfSong { song, bpm: f32, speed (1.0), player1 ("bf"), player2 ("dad"), needsVoices (false), notes: [FnfSection] }`, `FnfSection { sectionNotes, lengthInSteps (16), mustHitSection (false), changeBPM (false), bpm (0.0) }`, note `[time_ms, lane, duration_ms]` as `Vec<f64>`. Unknown fields (`gfVersion`, `events`, `sectionBeats`...) and note extras after index 2 are ignored.
+- Decode sides: `FnfSide::Player` (default, 4 columns), `Opponent` (4 columns), `Both` (8 columns, `is_coop = true`: opponent 0-3, player 4-7). `resolve_column`: `raw_lane < 4` is the player's iff `mustHitSection`, else (`>= 4`) iff `!mustHitSection`; column = `raw_lane` or `raw_lane - 4` (the legacy rule). Raw lane is cast `f64 as u8`: negative lanes saturate to 0, so event notes with lane -1 become column-0 notes if their section matches [inference].
+- Timing: BPM point at 0 from `song.bpm`; for each section with `changeBPM && bpm > 0` and at least one note, a BPM point at the time of the section's first note (not its start), if > 0 [`build_timing_points`]. No SV points, `speed` dropped. Duration > 0 is a hold; times `ms * 1000` as `i64` (truncated).
+- Metadata is synthetic: title = `song`, artist `"Unknown"`, creator = `player2`, difficulty `"Normal"`, audio `"Inst.ogg"`, source `"Friday Night Funkin'"`, tags `["fnf"]`.
+- Encode (`to_fnf`): one section for the whole song (`lengthInSteps` 160000, `mustHitSection = !(key_count >= 8)`, `changeBPM: true`, `bpm` = first BPM), `player1: "bf"`, `player2` = creator, `speed 1.0`, notes `[time_ms, column, duration_ms]` (Burst -> hold, Mine -> tap), pretty-printed. Later BPM changes and SV points are lost. For 8K charts columns 0-3 are the opponent's, 4-7 the player's.
+- Detection: only the Psych `format` field; a value starting with `psych_v1` makes lanes 0-3 the player's regardless of `mustHitSection` (see [psych-json](../psych-json/README.md)); everything else uses the legacy rule. The 100 MiB limit applies. V-Slice charts: [vslice-chart-json](../vslice-chart-json/README.md).
 
 ## Parsers & tools
 
@@ -144,9 +141,7 @@ ROX source `src/formats/fnf` (`FnfDecoder`/`FnfEncoder`, extension `json`, so ev
 
 ## Getting samples
 
-- Committed ([samples/](samples/) and [samples/SOURCES.md](samples/SOURCES.md)): five vanilla charts of FunkinCrew/Funkin tag `v0.2.7.1` (`assets/data/<song>/<song>[-hard].json`), ROX's MIT test chart, and two synthetic charts. FNF base-game data belongs to The Funkin Crew Inc. (funkin.assets LICENSE.md: all rights reserved; Funkin `LICENSE.md`: only the source code is Apache-2.0); the owner accepted that risk, so the charts are committed as downloaded snapshots.
-- Observed: four of five vanilla charts end with thousands of NUL bytes after the closing brace (e.g. 4192 in `funkin-v0.2.7.1_bopeebo.json`); bpm is an int; every note array has 3 elements.
-- More: the same tag has every week song (easy/normal/hard); the Kade and Psych repositories ship base-game charts in this layout (`assets/preload/data/songs/` in Kade, `assets/base_game/shared/data/` in Psych); community mods carry `data/<song>/<song>-<diff>.json` (GameBanana submissions, e.g. https://gamebanana.com/apiv11/Util/Search/Results?_sSearchString=...). Moonchart (https://github.com/MaybeMaru/moonchart) can also write it.
+Committed: see [samples/SOURCES.md](samples/SOURCES.md). More: tag `v0.2.7.1` has every week song (easy/normal/hard); Kade (`assets/preload/data/songs/`) and Psych (`assets/base_game/shared/data/`) repositories ship base-game charts in this layout; mods carry `data/<song>/<song>-<diff>.json` (GameBanana, e.g. https://gamebanana.com/apiv11/Util/Search/Results?_sSearchString=...); Moonchart (https://github.com/MaybeMaru/moonchart) can write it. Observed: four of five vanilla charts end with NUL bytes (4192 in `funkin-v0.2.7.1_bopeebo.json`); bpm is an int; every note array has 3 elements.
 
 ## Sources
 

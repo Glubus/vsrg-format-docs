@@ -5,14 +5,14 @@ Doc status: partial (chart layout decoded; a few header/division fields skipped 
 
 ## Overview
 
-`.stx` is an **Andamiro step file for the Pump It Up arcade series**: one file per song, holding **all difficulty modes** (Practice, Normal, Hard, Nightmare, Crazy, Freestyle, Half-Double, "Division" and a lightmap chart), each as a sequence of zlib-compressed "divisions" made of 13-byte step lines. Its magic is the ASCII string `STF4`. The format has no public specification from Andamiro; the community knows it from converters: `STX2DM` (StepMania-AMX, Windows/C++, converts STX to Kick It Up / Direct Move `.ksf`) and `UCSConverterTool` (valius, Dart/Flutter, STX to `.ucs`), whose `stx_file.dart` is the reader this page is based on (its README lists `.STX files` as supported input). [The Pump It Up game series/version that uses STF4 is not stated in the sources consulted.]
+`.stx` (magic `STF4`) is an Andamiro step file of the Pump It Up arcade series: one file per song holding all modes (Practice, Normal, Hard, Nightmare, Crazy, Freestyle, Half-Double, "Division", lightmap), each a sequence of zlib-compressed "divisions" of 13-byte step lines. No public specification; known from `STX2DM` (StepMania-AMX, C++, STX to `.ksf`) and `UCSConverterTool` (valius, Dart, STX to `.ucs`, `stx_file.dart` is the basis of this page). The sources do not say which Pump It Up version uses STF4.
 
 ## Container & encoding
 
-- Binary, **little-endian** (`readUint32Bytes`: "STX uses little endian"), IEEE-754 float32.
-- File = fixed header + one chart block per mode + (inside each chart) zlib streams. Files can be several hundred KB.
-- Per-division compression: a `uint32` byte length followed by that many bytes of a **zlib stream** (`zlib.decode`). STX2DM uses a fixed 16 MiB output buffer (`STX_UNCOMPRESSED = 16777216`) for decompression.
-- Text fields: 64-byte strings (the reference parser has `utf8.decode` for them commented out, so the charset is presumably UTF-8 or the Korean code page [inference]).
+- Binary, little-endian (`readUint32Bytes`: "STX uses little endian"), IEEE-754 float32.
+- Fixed header, then one chart block per mode, each holding zlib streams. Files can be several hundred KB.
+- Per-division compression: a `uint32` byte length, then that many bytes of a zlib stream (`zlib.decode`). STX2DM uses a fixed 16 MiB output buffer (`STX_UNCOMPRESSED = 16777216`).
+- Text fields are 64-byte strings. The reference parser has `utf8.decode` commented out, so the charset is presumably UTF-8 or the Korean code page [inference].
 
 ## Structure / metadata
 
@@ -27,14 +27,14 @@ Doc status: partial (chart layout decoded; a few header/division fields skipped 
 | 188 | 64 | step author (string) |
 | 252 | 9 x `uint32` | absolute file offsets of the nine charts, in this order |
 
-Chart order (`ChartIndex`): 0 practice, 1 normal, 2 hard, 3 nightmare, 4 crazy, 5 freestyle (full double), 6 half-double, 7 division, 8 lightmap. Chart `i` spans `[offset[i], offset[i+1])`, the last one to end of file. The lightmap chart (stage-light data) is ignored by converters. STX2DM's UI exposes the same modes: Practice, Normal, Hard, Nightmare, Crazy, Full Double, Half Double, Division, Lightmap.
+Chart order (`ChartIndex`): 0 practice, 1 normal, 2 hard, 3 nightmare, 4 crazy, 5 freestyle (full double), 6 half-double, 7 division, 8 lightmap. Chart `i` spans `[offset[i], offset[i+1])`, the last one to end of file. Converters ignore the lightmap chart (stage-light data). STX2DM's UI lists the same modes: Practice, Normal, Hard, Nightmare, Crazy, Full Double, Half Double, Division, Lightmap.
 
 ### Chart block
 
 | Offset | Size | Field |
 |---|---|---|
 | 0 | `uint32` | difficulty (meter; -1 if unset in the parser's default) |
-| 4 | 50 x `uint32` | `divisionCount` per block (`maxBlocks = 50`); a count of **0 ends the chart** |
+| 4 | 50 x `uint32` | `divisionCount` per block (`maxBlocks = 50`); a count of 0 ends the chart |
 | 204 | ... | for each block, for each division: `uint32 compressedLength` + zlib stream |
 
 ### Division (after zlib decompression)
@@ -44,7 +44,7 @@ Chart order (`ChartIndex`): 0 practice, 1 normal, 2 hard, 3 nightmare, 4 crazy, 
 | 0 | float32 | BPM |
 | 4 | `uint32` | beats per measure (default 4) |
 | 8 | `uint32` | beat split (steps per beat; UCS `:Split`) |
-| 12 | `uint32` | delay (**centiseconds**; the UCS converter multiplies by 10 to get ms) |
+| 12 | `uint32` | delay (centiseconds; the UCS converter multiplies by 10 to get ms) |
 | 16 | 20 x `uint32` (80 bytes) | "division sets" specific to Division Mode (not decoded; e.g. "Perfect 0 - 0, Great 1 - 1" per the source comment) |
 | 96 | `uint32` | speed factor (default 1000) |
 | 100 | 28 | padding |
@@ -53,7 +53,7 @@ Chart order (`ChartIndex`): 0 practice, 1 normal, 2 hard, 3 nightmare, 4 crazy, 
 
 ### Step line (13 bytes)
 
-Only the first `stepsPerBeat` bytes are used (the rest are not interpreted): **5** for Practice, Normal, Hard, Crazy and Division (single), **10** for Freestyle, Nightmare and Half-Double (double; "even though half double is only 6 steps in actuality, it is set up as a 10 step chart in data"). Panel order is left to right (1P: down-left, up-left, center, up-right, down-right [inference from the Pump layout]). Step codes:
+Only the first `stepsPerBeat` bytes are used: 5 for Practice, Normal, Hard, Crazy and Division (single), 10 for Freestyle, Nightmare and Half-Double (double; "even though half double is only 6 steps in actuality, it is set up as a 10 step chart in data"). Panel order is left to right (1P: down-left, up-left, center, up-right, down-right [inference from the Pump layout]). Step codes:
 
 | Byte | Meaning |
 |---|---|
@@ -68,39 +68,39 @@ Only the first `stepsPerBeat` bytes are used (the rest are not interpreted): **5
 | 5 | B step |
 | 6 | C step |
 
-Codes 2..6 are special/gimmick step types used by Division/other modes; the UCS converter downgrades them to regular steps.
+Codes 2..6 are special/gimmick steps used by Division and other modes. The UCS converter downgrades them to regular steps.
 
 ## Timing model
 
-Each division carries **its own BPM, beat split and delay**, so tempo changes are divisions. A line is one step slot: **`beatSplit` lines per beat**; time of line `k` inside a division = `delay/100 s + k / beatSplit * 60 / BPM` [inference from the UCS `:Delay`/`:Split`/`:BPM` semantics that the converter maps these fields to]. `beatPerMeasure` is the measure length in beats. Division Mode (a branching mode): a chart is a list of **blocks**; each block may contain several alternative divisions, and the player's path selects one division per block ("division sets" fields likely map judgements to branches). Non-Division modes have 1 division per block ("historically no STX has more than 1 division per block in non-Division modes", `stx_converter.dart`), so each block is simply a tempo segment. UCSConverterTool emits every path through a Division chart as a separate `.ucs`.
+Each division carries its own BPM, beat split and delay, so tempo changes are divisions. A line is one step slot, `beatSplit` lines per beat. Time of line `k` inside a division = `delay/100 s + k / beatSplit * 60 / BPM` [inference from the UCS `:Delay`/`:Split`/`:BPM` semantics the converter maps these fields to]. `beatPerMeasure` is the measure length in beats. Division Mode branches: a chart is a list of blocks, each block may hold several alternative divisions, and the player's path selects one per block ("division sets" fields likely map judgements to branches). Non-Division modes have 1 division per block ("historically no STX has more than 1 division per block in non-Division modes", `stx_converter.dart`), so each block is a tempo segment. UCSConverterTool emits every path through a Division chart as a separate `.ucs`.
 
 ## Notes
 
-Taps (1), holds (10 -> 11... -> 12), special steps (2-6, semantics unknown), 5-panel single (5 columns) and double (10 columns), half-double (10 columns with 6 used). No mines (UCS has none either).
+Taps (1), holds (10 -> 11... -> 12), special steps (2-6, semantics unknown), 5-panel single (5 columns), double (10), half-double (10 columns, 6 used). No mines.
 
 ## Audio & images
 
-Not in the file (separate game data).
+Not in the file.
 
 ## Versions & variants
 
-Header `STF4` (the "4" may be a format version [inference]). No other variants known to the parsers.
+Header `STF4` (the "4" may be a format version [inference]). No other variants known.
 
 ## Quirks & pitfalls
 
-- Block/division counts: stop at the first block with count 0; chart address list is fixed length (9).
-- Decompression buffer size: divisions can be large; STX2DM allocates 16 MiB.
-- Special step codes 2-6 collapse to regular steps in converters; keep them if lossless.
+- Stop at the first block with count 0; the chart address list is fixed length (9).
+- Divisions can be large; STX2DM allocates 16 MiB.
+- Special codes 2-6 collapse to regular steps in converters; keep them for lossless output.
 - `delay` is in centiseconds, not ms.
-- Panel columns: half-double uses a 10-wide line even though only 6 columns exist.
+- Half-double uses a 10-wide line though only 6 columns exist.
 
 ## Example
 
-No sample in the repo (binary, no public sample). Header magic bytes: `53 54 46 34` ("STF4").
+No sample in the repo. Header magic bytes: `53 54 46 34` ("STF4").
 
 ## ROX support
 
-Not read by ROX. Pump `pump-single` 5-column charts map to ROX (the `.sm` loader already supports `pump-single`/`pump-halfdouble`); STX would need a new decoder (zlib, per-division tempo, 13-byte lines).
+Not read by ROX. Needs a new decoder (zlib, per-division tempo, 13-byte lines); the `.sm` loader already handles `pump-single`/`pump-halfdouble`.
 
 ## Parsers & tools
 
@@ -109,9 +109,7 @@ Not read by ROX. Pump `pump-single` 5-column charts map to ROX (the `.sm` loader
 
 ## Getting samples
 
-Committed in [`samples/`](samples/SOURCES.md): 12 real `.STX` files (magic `STF4`) from the PC disc image "Pump It Up: The Prex 3" (archive.org item `prex-pc`, `STEP/*.STX`, 73 files; 12 spread over the song range were extracted from the 403 MB ISO, which is not kept). [observed in `samples/prex3-pc_101.STX`: header `STF4`, 56 zero bytes, a 64-byte title field at offset 60 (here `Ignition Starts!`), and at offset 252 an ascending table of nine absolute chart offsets (288, 547, 802, ...)], matching this page's header layout.
-
-More: the other 61 `.STX` of that ISO (extract with 7-Zip, `7z x PREX_PC.ISO "STEP/*.STX"`); later Pump It Up PC/arcade data (archive.org has Pump It Up PRO/Infinity/Prime packs as multi-GB `.rar`/`.7z`, not inspected); converters [StepMania-AMX/STX2DM](https://github.com/StepMania-AMX/STX2DM) and [valius/UCSConverterTool](https://github.com/valius/UCSConverterTool).
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md) (PC disc image "Pump It Up: The Prex 3", archive.org item `prex-pc`, `STEP/*.STX`, 73 files, ISO 403 MB). [observed: `prex3-pc_101.STX`: header `STF4`, 56 zero bytes, 64-byte title at offset 60 (`Ignition Starts!`), ascending table of nine chart offsets at 252 (288, 547, 802, ...)]. Extract the rest with `7z x PREX_PC.ISO "STEP/*.STX"`. Later PIU PC/arcade data: archive.org has Pump It Up PRO/Infinity/Prime packs as multi-GB `.rar`/`.7z` (not inspected). Converters: [StepMania-AMX/STX2DM](https://github.com/StepMania-AMX/STX2DM), [valius/UCSConverterTool](https://github.com/valius/UCSConverterTool).
 
 ## Sources
 

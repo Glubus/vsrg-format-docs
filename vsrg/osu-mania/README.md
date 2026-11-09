@@ -1,10 +1,8 @@
 # osu!mania
 
-osu!mania is the vertical-scrolling, key-count based game mode of osu! (mode 3). Notes fall along 1 to 18 columns (the key count is `CircleSize`; lazer clamps it to 1..18; 4K and 7K dominate the samples here) toward a judgement line; long notes are holds. Charts are stored in the same `.osu` text file as the other three osu! modes, with `Mode: 3`. It is a major source of VSRG charts: Quaver imports `.osz`, ROX and Moonchart have `.osu` mania codecs.
+Vertical-scrolling, key-count based mode of osu! (mode 3). Notes fall along 1 to 18 columns toward a judgement line (key count = `CircleSize`, lazer clamps it to 1..18; 4K and 7K dominate the samples here). Long notes are holds. Charts live in the same `.osu` text file as the other three modes, with `Mode: 3`. Quaver imports `.osz`; ROX and Moonchart have `.osu` mania codecs.
 
-Category: **vsrg** (fixed lanes, vertical scrolling). The other osu! modes (standard, taiko, catch) are not column based and live in `others/` ([osu!standard](../../others/osu-standard/README.md), [osu!taiko](../../others/osu-taiko/README.md), [osu!catch](../../others/osu-catch/README.md)); they share the very same file format.
-
-Formats in this folder:
+Category: vsrg (fixed lanes, vertical scrolling). The other modes (standard, taiko, catch) are not column based, share the file format and live in `others/`: [osu!standard](../../others/osu-standard/README.md), [osu!taiko](../../others/osu-taiko/README.md), [osu!catch](../../others/osu-catch/README.md).
 
 | Format | Folder | Status |
 |---|---|---|
@@ -12,9 +10,8 @@ Formats in this folder:
 | `.osb` storyboard file | [osb/](osb/README.md) | partial |
 | `.osz` mapset archive, `.osk` skin archive | documented as a section of [osu/](osu/README.md#the-osz--osk-archive-wrapper) | - |
 
-Sample files: [osu/samples/](osu/samples/) (10 original community maps, 4K and 7K, v14, plus 48 fixtures: 1K-18K, special style, old format versions v4-v10, CRLF/BOM edge cases), [osb/samples/](osb/samples/).
+Samples: [osu/samples/](osu/samples/) (10 original community maps, 4K and 7K, v14, plus 48 fixtures: 1K-18K, special style, old format versions v4-v10, CRLF/BOM edge cases), [osb/samples/](osb/samples/).
 
-osu!lazer note: lazer's `client.realm` file is a Realm metadata database, **not** a chart format (`OsuGameBase.CLIENT_DATABASE_FILENAME`, ppy/osu @ bb37f05); lazer stores the `.osu`/audio files content-addressed under `files/` and exports sets as `.olz` (lazer-native) or `.osz` (stable-compatible).
+lazer's `client.realm` is a Realm metadata database, not a chart format (`OsuGameBase.CLIENT_DATABASE_FILENAME`, ppy/osu @ bb37f05). lazer stores the `.osu`/audio files content-addressed under `files/` and exports sets as `.olz` (lazer-native) or `.osz` (stable-compatible).
 
 Links: https://osu.ppy.sh/, https://github.com/ppy/osu, https://osu.ppy.sh/wiki/en/Client/File_formats/osu_%28file_format%29, https://github.com/ppy/osu-wiki
-

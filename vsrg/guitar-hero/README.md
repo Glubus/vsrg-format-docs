@@ -1,8 +1,8 @@
 # Guitar Hero
 
-Category: **vsrg**: 5-lane note highway; notes travel down fixed lanes (Green, Red, Yellow, Blue, Orange) to a strum line.
+Category: vsrg: 5-lane note highway; notes travel down fixed lanes (Green, Red, Yellow, Blue, Orange) to a strum line.
 
-Guitar Hero (1) and Guitar Hero II were developed by Harmonix and store charts in Standard MIDI Files; later Neversoft titles (GH3, World Tour, ...) use a different chart container (`.qb`, documented in the format folder below). The community `.chart`/`.mid` formats used by Clone Hero and friends descend from these layouts.
+Guitar Hero (1) and Guitar Hero II were developed by Harmonix and store charts in Standard MIDI Files. Later Neversoft titles (GH3, World Tour, ...) use a different chart container (`.qb`, documented in the format folder below). The community `.chart`/`.mid` formats used by Clone Hero and friends descend from these layouts.
 
 Format folders:
 - [`qb-chart/`](qb-chart/README.md): Neversoft GH3/World Tour `songs/<name>.mid.qb` chart arrays (QB container).

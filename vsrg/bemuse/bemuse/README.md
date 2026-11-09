@@ -4,8 +4,7 @@ Kind: audio
 Doc status: complete · ROX: no · Category: vsrg · Encoding: binary chunks + json index
 
 ## Overview
-
-Bemuse is a web-based BMS/bmson player (HTML5, React, Redux, Pixi.js; GitHub `bemusic/bemuse`). A BMS archive can contain hundreds or thousands of keysound files; serving them one by one over HTTP is slow and one big ZIP is too large to retry. The **`.bemuse` file format** is Bemuse's answer: keysounds converted to `.ogg` are concatenated into **chunks of about 1.4 MB** (`max = 1474560` bytes in the packer), each chunk written as a `*.bemuse` file, with a JSON index `metadata.json` that maps each sound name to a byte range inside a chunk. It is a sound-asset container only; the charts remain `.bms/.bme/.bml/.bmson` files next to it. Produced by `bemuse-tools` (CLI) and by the Bemuse Song Workshop web app; consumed by the Bemuse client.
+Bemuse's `.bemuse` format packs keysounds (converted to `.ogg`) into chunks of about 1.4 MB (`max = 1474560` bytes in the packer), so a BMS song streams in a few HTTP requests. A JSON index `metadata.json` maps each sound name to a byte range in a chunk. Charts stay `.bms/.bme/.bml/.bmson` next to it. `bemuse-tools` and the Bemuse Song Workshop produce it; the Bemuse client (HTML5, React, Redux, Pixi.js; GitHub `bemusic/bemuse`) reads it.
 
 ## Container & encoding
 
@@ -19,11 +18,11 @@ Two kinds of file:
 | Offset | Size | Value |
 |---|---|---|
 | 0 | 10 | ASCII signature `BEMUSEPACK` |
-| 10 | 4 | `uint32` **little-endian** length `L` of an optional metadata block (always `0` in files written by the current packer; the doc says "All zeroes (legacy reasons)") |
+| 10 | 4 | `uint32` little-endian length `L` of an optional metadata block (always `0` in files written by the current packer; the doc says "All zeroes (legacy reasons)") |
 | 14 | `L` | metadata block (empty) |
-| 14 + `L` | rest | **payload**: the sound files concatenated back to back |
+| 14 + `L` | rest | payload: the sound files concatenated back to back |
 
-The reader (`getPayload`) checks the signature (`Invalid magic number` otherwise), reads the 4-byte length, and slices the blob from `14 + L`. Byte ranges in `metadata.json` are relative to the **payload start**, so `file bytes = chunk[14 + start .. 14 + end]` (for `L = 0`).
+The reader (`getPayload`) checks the signature (`Invalid magic number` otherwise), reads the 4-byte length, and slices the blob from `14 + L`. Byte ranges in `metadata.json` are relative to the payload start, so `file bytes = chunk[14 + start .. 14 + end]` (for `L = 0`).
 
 ### Chunk names
 
@@ -42,40 +41,34 @@ The reader (`getPayload`) checks the signature (`Invalid magic number` otherwise
 
 | Field | Meaning |
 |---|---|
-| `files[].name` | Sound file name, e.g. `snare.ogg`. Lookup in the client is **case-insensitive** (`name.toLowerCase()`). |
+| `files[].name` | Sound file name, e.g. `snare.ogg`. Client lookup is case-insensitive (`name.toLowerCase()`). |
 | `files[].ref[0]` | Index into `refs` (which chunk). |
-| `files[].ref[1]` | Start offset in the chunk **payload**. |
+| `files[].ref[1]` | Start offset in the chunk payload. |
 | `files[].ref[2]` | End offset (exclusive, as in `Blob.slice`). |
 | `refs[].path` | URL of the chunk relative to `metadata.json`. |
-| `refs[].hash` | MD5 (hex) of the chunk **payload** as produced by the packer (`Payload.hash`; the Bemuse docs call it "MD5 hash of the chunk file content"). |
+| `refs[].hash` | MD5 (hex) of the chunk payload as produced by the packer (`Payload.hash`; the Bemuse docs call it "MD5 hash of the chunk file content"). |
 | `refs[].size` | Size in bytes (documented; the packer shown writes only `path`/`hash`, readers ignore `size`). |
 
 ## Timing model
-
-Not applicable (no chart data).
+Unknown (no chart data).
 
 ## Notes
-
-Not applicable.
+Unknown.
 
 ## Audio & images
-
-Audio only: OGG Vorbis files (converted from the BMS `.wav/.ogg` keysounds by SoX/ffmpeg during packing). Images and video are not packed (see the song workshop for `bemuse-data/eyecatch_image`, `back_image`, `bga`, [`bemuse-song.json`](../bemuse-song-json/README.md)).
-
-Retrieval recipe from the docs: look up the entry by name, read `ref`, fetch `refs[ref[0]].path`, take `.slice(ref[1] + 14, ref[2] + 14)`.
+OGG Vorbis only (converted from BMS `.wav/.ogg` by SoX/ffmpeg). Images and video are not packed (see `bemuse-data/eyecatch_image`, `back_image`, `bga`, [`bemuse-song.json`](../bemuse-song-json/README.md)). Retrieval: look up the entry by name, read `ref`, fetch `refs[ref[0]].path`, take `.slice(ref[1] + 14, ref[2] + 14)`.
 
 ## Versions & variants
-
-- Legacy "music server" layout: `<server>/<song>/assets/metadata.json` + `assets/*.bemuse`; default `bemusepack_url` is `assets/metadata.json`.
-- Song Workshop ("new method"): keysound pack in `bemuse-data/sound/` (the guide shows `bemuse-data/sound` with optimised files), `bemusepack_url` in `bemuse-song.json` may point elsewhere or be `null` to use real files.
-- The 4-byte header length field is the only extensibility point; no known version number.
+- Legacy music server: `<server>/<song>/assets/metadata.json` + `assets/*.bemuse`; default `bemusepack_url` is `assets/metadata.json`.
+- Song Workshop: pack in `bemuse-data/sound/`; `bemusepack_url` in `bemuse-song.json` may point elsewhere or be `null` (use real files).
+- The 4-byte header length is the only extension point; no version number.
 
 ## Quirks & pitfalls
 
-- Offsets in `metadata.json` do **not** include the 14-byte header; add 14 (or `14 + L`).
-- The `hash` in `refs` is the payload MD5, so it cannot be verified by hashing the whole `.bemuse` file.
-- Names are case-insensitive for lookup; two sounds differing only by case collide.
-- Files are not individually compressed (they are already OGG).
+- Offsets in `metadata.json` exclude the 14-byte header; add 14 (or `14 + L`).
+- `refs[].hash` is the payload MD5, so hashing the whole `.bemuse` file cannot verify it.
+- Lookup is case-insensitive; two sounds differing only by case collide.
+- Files are not individually compressed (already OGG).
 
 ## Example
 
@@ -101,8 +94,7 @@ From the Bemuse docs (`website/docs/bemusepack.md`):
 (`size` = payload length + 14: `1596631 + 14 = 1596645`.)
 
 ## ROX support
-
-Not read by ROX (it is a keysound container for BMS, which ROX 0.8.1 does not read yet).
+Not read (ROX 0.8.1 does not read BMS).
 
 ## Parsers & tools
 
@@ -111,9 +103,7 @@ Not read by ROX (it is a keysound container for BMS, which ROX 0.8.1 does not re
 - Format doc: [`website/docs/bemusepack.md`](https://github.com/bemusic/bemuse/blob/master/website/docs/bemusepack.md).
 
 ## Getting samples
-
-- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): the `metadata.json` pack index of 8 real songs from the official server `bemuse.ninja/music/<song>/assets/metadata.json`, plus the repo's test fixture index. The `.bemuse` chunks themselves are audio containers and are not stored.
-- **More**: every song of `https://bemuse.ninja/music/index.json` has `<song>/assets/metadata.json`, whose `refs[].path` names the chunks (`ogg.N.<hash>.bemuse`, `m4a.N.<hash>.bemuse`) next to it. To pack your own BMS use the Bemuse Song Workshop or `bemuse-tools`.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md) (indexes only, no `.bemuse` chunks). Every song of `https://bemuse.ninja/music/index.json` has `<song>/assets/metadata.json`, whose `refs[].path` names the chunks (`ogg.N.<hash>.bemuse`, `m4a.N.<hash>.bemuse`) beside it. To pack your own BMS use the Song Workshop or `bemuse-tools`.
 
 ## Sources
 

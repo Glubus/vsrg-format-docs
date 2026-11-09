@@ -1,8 +1,8 @@
 # Quaver
 
-Quaver is a free, open-source (C#, MonoGame) competitive vertical-scrolling rhythm game on Steam and Mac/Windows, developed by Swan and the Quaver team since 2017. It plays 4K and 7K (other key counts 1-10 and an optional scratch lane exist in the format), has an online ranking system, a built-in editor and importers for osu!, StepMania and Malody maps.
+Quaver is a free, open-source (C#, MonoGame) competitive vertical-scrolling rhythm game on Steam and Mac/Windows, developed by Swan and the Quaver team since 2017. It plays 4K and 7K (the format also allows 1-10 keys and an optional scratch lane), has online ranking, a built-in editor and importers for osu!, StepMania and Malody maps.
 
-Category: **vsrg** (fixed lanes, vertical scrolling).
+Category: vsrg (fixed lanes, vertical scrolling).
 
 Formats:
 

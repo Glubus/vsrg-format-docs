@@ -5,9 +5,7 @@ Doc status: complete · ROX: reads/writes · Category: vsrg · Encoding: text
 
 ## Overview
 
-`.ssc` is the StepMania 5 successor of [`.sm`](../sm/README.md), created in the sm-ssc fork (expanded "Spinal Shark Collective" in community usage) and merged into StepMania 5.0. It keeps the MSD syntax (`#TAG:value;`) but organizes a file as **song header tags + one `#NOTEDATA` block per chart**; each chart carries its own metadata (`#STEPSTYPE`, `#DESCRIPTION`, `#DIFFICULTY`, `#METER`, `#CREDIT`, `#CHARTNAME`...) and may carry **its own timing** (`#OFFSET`, `#BPMS`, `#STOPS`, `#DELAYS`, `#WARPS`, `#FAKES`, `#SPEEDS`, `#SCROLLS`, ...). It is the format written by StepMania 5, Etterna (cache), ITGmania, Project OutFox (preferred submission format of "OutFox Serenity", per projectoutfox.com) and the editors ArrowVortex/SM5. Many packs ship both `.sm` and `.ssc`. Samples: [`samples/`](samples/) (10 real files).
-
-See also: [family overview](../README.md), [`.sm`](../sm/README.md), [`.edit`](../edit/README.md).
+`.ssc` is the StepMania 5 successor of [`.sm`](../sm/README.md), from the sm-ssc fork. Same MSD syntax, but a file is song header tags plus one `#NOTEDATA` block per chart. Each chart has its own metadata and may have its own timing. StepMania 5, Etterna (cache), ITGmania, Project OutFox and the editors ArrowVortex/SM5 write it. Many packs ship both `.sm` and `.ssc`. Samples: [`samples/`](samples/).
 
 ## Packaged in
 
@@ -15,13 +13,13 @@ See also: [family overview](../README.md), [`.sm`](../sm/README.md), [`.edit`](.
 
 ## Container & encoding
 
-- Text, UTF-8 (SM5 writes `\r\n` line ends; LF also read). A UTF-8 BOM may appear; ROX strips it and decodes lossily (undecodable bytes become U+FFFD in text fields only; `.sm` in ROX is strict UTF-8).
-- One file per song containing all charts. Same tokenizer as `.sm`: `//` comments, `\` escapes, `;` terminator with recovery of a missing `;` before a line starting with `#`, `:`-separated parameters (see the [`.sm` doc](../sm/README.md#container--encoding)).
-- StepMania loads `*.ssc` before `*.sm` in the same folder ([Song.cpp](https://github.com/stepmania/stepmania/blob/master/src/Song.cpp)); SM5 also caches `.ssc`-style files (`Cache/Songs/...`, with extra tags, see Versions).
+- Text, UTF-8 (SM5 writes `\r\n`; LF also read). ROX strips a UTF-8 BOM and decodes lossily (undecodable bytes become U+FFFD in text fields only; `.sm` in ROX is strict UTF-8).
+- One file per song with all charts. Same tokenizer as `.sm`: `//` comments, `\` escapes, `;` terminator with recovery of a missing `;` before a line starting with `#`, `:`-separated parameters (see the [`.sm` doc](../sm/README.md#container--encoding)).
+- StepMania loads `*.ssc` before `*.sm` in a folder ([Song.cpp](https://github.com/stepmania/stepmania/blob/master/src/Song.cpp)) and caches `.ssc`-style files in `Cache/Songs/...` with extra tags (see Versions).
 
 ## Structure / metadata
 
-Two states in the loader (`SSCLoader::LoadFromSimfile`): *song info* until a `#NOTEDATA` tag, then *chart info* until the `#NOTES`/`#NOTES2` tag that ends the chart and returns to song state. Tags written by `NotesWriterSSC` in this order (global tags first):
+The loader (`SSCLoader::LoadFromSimfile`) has two states: song info until a `#NOTEDATA` tag, then chart info until the `#NOTES`/`#NOTES2` tag that ends the chart and returns to song state. `NotesWriterSSC` writes tags in this order (global tags first):
 
 ### Song tags
 
@@ -50,7 +48,7 @@ Two states in the loader (`SSCLoader::LoadFromSimfile`): *song info* until a `#N
 
 | Tag | Value |
 |---|---|
-| `#NOTEDATA` | **empty tag `#NOTEDATA:;`**, starts a chart block |
+| `#NOTEDATA` | empty tag `#NOTEDATA:;`, starts a chart block |
 | `#CHARTNAME` | chart name (introduced by `#VERSION` 0.74 = `VERSION_CHART_NAME_TAG`; before that the name was stored in `#DESCRIPTION`) |
 | `#STEPSTYPE` | `dance-single`, `pump-single`, ... ([step types](../README.md#step-types-and-column-counts)) |
 | `#DESCRIPTION` | free text (edit name / style); from `#VERSION` 0.74 distinct from `#CHARTNAME` |
@@ -60,22 +58,22 @@ Two states in the loader (`SSCLoader::LoadFromSimfile`): *song info* until a `#N
 | `#MUSIC` | per-chart audio override |
 | `#RADARVALUES` | comma list, 14 categories per player (`Stream,Voltage,Air,Freeze,Chaos,Notes,TapsAndHolds,Jumps,Holds,Mines,Hands,Rolls,Lifts,Fakes` = `RadarCategory`), two players concatenated; values are recomputed unless loading cache/edit |
 | `#CREDIT` | chart author |
-| timing tags | `#OFFSET #BPMS #STOPS #DELAYS #WARPS #TIMESIGNATURES #TICKCOUNTS #COMBOS #SPEEDS #SCROLLS #FAKES #LABELS` and `#DISPLAYBPM`, `#ATTACKS`: **only present when the chart has its own timing** |
+| timing tags | `#OFFSET #BPMS #STOPS #DELAYS #WARPS #TIMESIGNATURES #TICKCOUNTS #COMBOS #SPEEDS #SCROLLS #FAKES #LABELS` and `#DISPLAYBPM`, `#ATTACKS`: only present when the chart has its own timing |
 | `#STEPFILENAME` | cache files only (instead of `#NOTES`) |
-| `#NOTES` / `#NOTES2` | the measures (only the measures; no parameters). `#NOTES2` is written instead of `#NOTES` when the song has `#KEYSOUNDS`; loaders accept both |
+| `#NOTES` / `#NOTES2` | the measures only, no parameters. `#NOTES2` is written instead of `#NOTES` when the song has `#KEYSOUNDS`; loaders accept both |
 
 Writer comment before each chart: `//---------------<stepstype> - <description>----------------`.
 
 ## Timing model
 
-Identical beat/row/offset model as `.sm` (48 rows per beat, 4 beats per measure, offset sign: beat 0 at `-#OFFSET` s; see the [`.sm` timing section](../sm/README.md#timing-model)), plus real segment tags. All are `beat=value` lists separated by commas; "beat" is a float; rows are `lrint(beat*48)`:
+Same beat/row/offset model as `.sm` (48 rows per beat, 4 beats per measure, beat 0 at `-#OFFSET` s; see the [`.sm` timing section](../sm/README.md#timing-model)), plus real segment tags. All are comma-separated `beat=value` lists; beat is a float; rows are `lrint(beat*48)`:
 
 | Tag | Entry | Meaning |
 |---|---|---|
 | `#BPMS` | `beat=bpm` | `beat >= 0`, `bpm > 0` required (SSC loader ignores others with a log) |
-| `#STOPS` | `beat=seconds` | freeze **after** the notes of the beat; `seconds > 0` |
-| `#DELAYS` | `beat=seconds` | freeze **before** the beat's notes; `seconds > 0` |
-| `#WARPS` | `beat=length_in_beats` | the covered beats are skipped instantly; notes inside cannot be hit. Version < 0.7 stored the *destination beat*, which the loader converts (`new - start`) |
+| `#STOPS` | `beat=seconds` | freeze after the notes of the beat; `seconds > 0` |
+| `#DELAYS` | `beat=seconds` | freeze before the beat's notes; `seconds > 0` |
+| `#WARPS` | `beat=length_in_beats` | the covered beats are skipped instantly; notes inside cannot be hit. Version < 0.7 stored the destination beat, which the loader converts (`new - start`) |
 | `#TIMESIGNATURES` | `beat=numerator=denominator` | only affects measure-line display, not timing (`TimeSignatureSegment`) |
 | `#TICKCOUNTS` | `beat=ticks` | hold-checkpoint ticks per beat, clamped 0..48 (pump-style hold ticks) |
 | `#COMBOS` | `beat=combo[=miss]` | combo increment per hit (and per miss, defaults to the hit value) |
@@ -84,13 +82,13 @@ Identical beat/row/offset model as `.sm` (48 rows per beat, 4 beats per measure,
 | `#FAKES` | `beat=length_in_beats` | notes inside are "fake": drawn but not judged |
 | `#LABELS` | `beat=text` | named marker, no gameplay effect |
 
-**Song vs chart timing ("split timing")**: from `#VERSION` >= 0.7 (`VERSION_SPLIT_TIMING`), if a chart contains **any** timing tag, StepMania builds a fresh `TimingData` for that chart from *only the chart's tags* (starting with the song's offset) and uses it *instead of* the song timing (`pNewNotes->m_Timing = stepsTiming` when `has_own_timing`); charts without timing tags use the song's. So a chart-level `#BPMS` replaces the whole song timing; a chart should repeat everything it needs. (ROX's rule: a chart with its own non-empty `#BPMS` uses its own `#STOPS/#DELAYS/#WARPS/#FAKES` too, even empty; a chart with only some of them falls back per tag to the song's. That is a superset of StepMania's behaviour for the usual cases.)
+Split timing: from `#VERSION` >= 0.7 (`VERSION_SPLIT_TIMING`), if a chart contains any timing tag, StepMania builds a fresh `TimingData` for that chart from only the chart's tags (starting with the song's offset) and uses it instead of the song timing (`pNewNotes->m_Timing = stepsTiming` when `has_own_timing`). Charts without timing tags use the song's. A chart-level `#BPMS` therefore replaces the whole song timing, and a chart should repeat everything it needs. ROX: a chart with its own non-empty `#BPMS` uses its own `#STOPS/#DELAYS/#WARPS/#FAKES` too, even empty; a chart with only some of them falls back per tag to the song's. That is a superset of StepMania's behaviour for the usual cases.
 
-Position -> time: per chart, sort BPM/stop/delay/warp events by beat; seconds = sum of `dBeats*60/bpm` + stops/delays; beats covered by a warp add 0 seconds; finally `time_in_audio = time - offset`. Same tie rule as `.sm`: stop after, delay before, a BPM change on the same beat applies first.
+Position to time: per chart, sort BPM/stop/delay/warp events by beat; seconds = sum of `dBeats*60/bpm` + stops/delays; beats covered by a warp add 0 seconds; finally `time_in_audio = time - offset`. Tie rule as in `.sm`: stop after, delay before, a BPM change on the same beat applies first.
 
 ## Notes
 
-The `#NOTES` value is the same measure grammar as `.sm` ([details](../sm/README.md#notes)): measures separated by `,`, rows of one character per column, 4..192 lines per measure, last measure ended by `;` of the tag.
+The `#NOTES` value uses the `.sm` measure grammar ([details](../sm/README.md#notes)): measures separated by `,`, one character per column, 4..192 lines per measure, last measure ended by the tag's `;`.
 
 | Char | Meaning |
 |---|---|
@@ -103,36 +101,31 @@ The `#NOTES` value is the same measure grammar as `.sm` ([details](../sm/README.
 | `L` | lift |
 | `F` | fake |
 | `K` | autokeysound (empty row sound) |
-| `A{mods:secs}` | attack note, written by `NoteDataUtil::GetSMNoteDataString` but **not parsed back** (loader branch is `#if 0`) |
+| `A{mods:secs}` | attack note, written by `NoteDataUtil::GetSMNoteDataString` but not parsed back (loader branch is `#if 0`) |
 
-Optional `[n]` after any char = keysound index into `#KEYSOUNDS`. `&` separates player parts in routine charts. Column count and order follow `#STEPSTYPE`. Note position inside the 4-beat measure of a `n`-line measure: `(measure + line/n)*4` beats.
-
-Unsupported-by-StepMania but seen: StepF2 `{note|attr|fake|reserved}` braces (OutFox parses them with a dedicated PIU loader when `#VERSION:0.81`).
+Optional `[n]` after any char = keysound index into `#KEYSOUNDS`. `&` separates player parts in routine charts. Columns follow `#STEPSTYPE`. A line in an `n`-line measure sits at `(measure + line/n)*4` beats. StepF2 `{note|attr|fake|reserved}` braces are not StepMania (OutFox parses them with its PIU loader at `#VERSION:0.81`).
 
 ## Audio & images
 
-Paths relative to the song directory: `#MUSIC` (song or per-chart), `#PREVIEW` (clip), `#INSTRUMENTTRACK`, `#BANNER`, `#BACKGROUND`, `#JACKET`, `#CDIMAGE`, `#DISCIMAGE`, `#CDTITLE`, `#PREVIEWVID`, `#LYRICSPATH` (`.lrc`), plus anything referenced by `#BGCHANGES`/`#FGCHANGES` (images, videos, folders of images, `.ini`/`.xml` effects). Keysound samples via `#KEYSOUNDS` + `[n]`. No audio is ever embedded. `#SAMPLESTART/#SAMPLELENGTH` define the wheel preview unless `#PREVIEW` is set.
+Paths relative to the song directory: `#MUSIC` (song or per-chart), `#PREVIEW`, `#INSTRUMENTTRACK`, `#BANNER`, `#BACKGROUND`, `#JACKET`, `#CDIMAGE`, `#DISCIMAGE`, `#CDTITLE`, `#PREVIEWVID`, `#LYRICSPATH` (`.lrc`), plus anything in `#BGCHANGES`/`#FGCHANGES` (images, videos, image folders, `.ini`/`.xml` effects). Keysounds via `#KEYSOUNDS` + `[n]`. No audio is embedded. `#SAMPLESTART/#SAMPLELENGTH` define the wheel preview unless `#PREVIEW` is set.
 
 ## Versions & variants
 
-`#VERSION` constants in `NotesLoaderSSC.h`: 0.53 fake radar value, 0.56 warp segments, **0.7 split timing** (chart-level timing allowed), 0.72 chart offset moved before attacks, **0.74 `#CHARTNAME` tag introduced** (earlier `#DESCRIPTION` held the name), 0.77 cache switch tag, 0.83 note-count radar (current). Dialects:
+`#VERSION` constants in `NotesLoaderSSC.h`: 0.53 fake radar value, 0.56 warp segments, 0.7 split timing (chart-level timing), 0.72 chart offset moved before attacks, 0.74 `#CHARTNAME` (earlier `#DESCRIPTION` held the name), 0.77 cache switch tag, 0.83 note-count radar (current).
 
-- **StepMania 5.0/5.1/5.2, ITGmania**: the ITGmania loader accepts the extra chart tags `#TECHCOUNTS`, `#NPSPERMEASURE`, `#NOTESPERMEASURE`, `#PEAKNPS`, `#NOTEANNOTATIONS`, `#GROOVESTATSHASH`, `#GROOVESTATSHASHVERSION` ([itgmania NotesLoaderSSC.cpp](https://github.com/itgmania/itgmania/blob/release/src/NotesLoaderSSC.cpp)); they are computed statistics / the [GrooveStats](../README.md#grooveStats-chart-hash) key, so they belong to cache files, not to authored charts [inference]. The tags are absent from stock StepMania.
-- **Etterna**: reads/writes the same tags and adds `#CHARTKEY` (`X` + SHA-1 hex of the chart's note types and integer BPM per non-empty row) and `#MSDVALUES` (its difficulty calculator output) in its cache ([etterna Steps.cpp/NotesWriterETT.cpp](https://github.com/etternagame/etterna)). `.osu` is also loadable in Etterna.
-- **Project OutFox**: `.ssc` plus the extra game types (`dance`, `groove`, `pump`, `techno`, `smx`, `stepstage`, ...), a dedicated PIU loader triggered by `#VERSION:0.81` (or a `ForcePIU` file in the group folder).
-- Early sm-ssc / draft documents: [`new format draft.txt`](https://github.com/stepmania/stepmania/blob/master/Docs/SimfileFormats/new%20format%20draft.txt) (a "less conservative" never-used MSD5 layout with `$TAGS` and `#NOTEDATA#`) and [`ssc_msd5.txt`](https://github.com/stepmania/stepmania/blob/master/Docs/SimfileFormats/ssc_msd5.txt) (the actual tag list; "hacky file format doc").
-- Per-file `//---` comments and blank lines are not significant.
+- StepMania 5.x, ITGmania: the ITGmania loader accepts chart tags `#TECHCOUNTS`, `#NPSPERMEASURE`, `#NOTESPERMEASURE`, `#PEAKNPS`, `#NOTEANNOTATIONS`, `#GROOVESTATSHASH`, `#GROOVESTATSHASHVERSION` ([itgmania NotesLoaderSSC.cpp](https://github.com/itgmania/itgmania/blob/release/src/NotesLoaderSSC.cpp)). They are computed statistics / the [GrooveStats](../README.md#grooveStats-chart-hash) key, so cache files only [inference]. Stock StepMania lacks them.
+- Etterna: same tags plus `#CHARTKEY` (`X` + SHA-1 hex of note types and integer BPM per non-empty row) and `#MSDVALUES` (difficulty calculator output) in its cache ([etterna Steps.cpp/NotesWriterETT.cpp](https://github.com/etternagame/etterna)). It also loads `.osu`.
+- Project OutFox: extra game types (`dance`, `groove`, `pump`, `techno`, `smx`, `stepstage`, ...) and a PIU loader triggered by `#VERSION:0.81` (or a `ForcePIU` file in the group folder).
+- Drafts: [`new format draft.txt`](https://github.com/stepmania/stepmania/blob/master/Docs/SimfileFormats/new%20format%20draft.txt) (never-used MSD5 layout with `$TAGS` and `#NOTEDATA#`) and [`ssc_msd5.txt`](https://github.com/stepmania/stepmania/blob/master/Docs/SimfileFormats/ssc_msd5.txt) (the actual tag list; "hacky file format doc").
+- `//---` comments and blank lines are not significant.
 
 ## Quirks & pitfalls
 
-- `#NOTEDATA:;` has an **empty value**; scanning for `#NOTEDATA:` is the reliable chart delimiter. Everything between two `#NOTEDATA` tags is that chart; the chart ends at its `#NOTES`/`#NOTES2` tag (tags after it, before the next `#NOTEDATA`, belong to the song again in StepMania's state machine).
-- A chart whose timing tags are partial: StepMania's chart `TimingData` starts empty (only the offset is copied); chart-level `#BPMS` is then effectively mandatory. ROX falls back to the song's.
-- `#OFFSET` per chart is allowed: two charts of the same song can have different audio sync.
-- `#VERSION` < 0.7: chart timing tags are ignored by the loader (only song timing).
-- Warps: `beat=length` (new) vs `beat=destination` (version < 0.7). Negative warps are invalid.
-- `#TIMESIGNATURES` does **not** change the 192-row measure in the note data; measure lines are drawn according to it but note placement is always 4 beats/measure.
-- `#SPEEDS`/`#SCROLLS` change only the visual position of notes; the judgement time is unchanged.
-- Chart-level `#CREDIT` vs song `#CREDIT`; `#DESCRIPTION` of Edit charts is their name.
+- `#NOTEDATA:;` has an empty value; scan for `#NOTEDATA:` to delimit charts. A chart ends at its `#NOTES`/`#NOTES2`; tags after it (before the next `#NOTEDATA`) belong to the song again.
+- With partial chart timing tags, StepMania's chart `TimingData` starts empty (only the offset is copied), so chart-level `#BPMS` is effectively mandatory. ROX falls back to the song's.
+- `#OFFSET` per chart is allowed: charts of one song can have different audio sync.
+- `#VERSION` < 0.7: chart timing tags are ignored. Warps are `beat=length` (new) vs `beat=destination` (< 0.7); negative warps are invalid.
+- `#TIMESIGNATURES` leaves the 192-row measure alone: measure lines follow it, note placement is always 4 beats/measure. `#SPEEDS`/`#SCROLLS` change only visual position, not judgement time.
 - `#RADARVALUES` count differs per version (cache/edit loaders split the list evenly across 2 players).
 - Mixed line endings, trailing whitespace and `//` comments inside `#NOTES` are normal.
 
@@ -170,11 +163,12 @@ Real excerpt from [`samples/Tokimeki Experience.ssc`](samples/Tokimeki%20Experie
 
 ## ROX support
 
-ROX 0.8.1 reads and writes `.ssc` ([ROX source: src/formats/sm/ssc_parser.rs, ssc_decoder.rs, ssc_encoder.rs, timing_data.rs](https://github.com/Glubus/rhythm-open-exchange/blob/main/src/formats/sm/)):
+ROX 0.8.1 reads and writes `.ssc` ([ROX source: src/formats/sm/ssc_parser.rs, ssc_decoder.rs, ssc_encoder.rs, timing_data.rs](https://github.com/Glubus/rhythm-open-exchange/blob/main/src/formats/sm/)).
 
-- **Read**: song tags (`#TITLE`, `#ARTIST`, `#CREDIT`, `#MUSIC` + first-audio fallback, `#BANNER`, `#BACKGROUND`, `#SAMPLESTART/#SAMPLELENGTH`, `#OFFSET`), one chart per `#NOTEDATA`: `#STEPSTYPE` (**kept: `dance-single` 4, `pump-single` 5, `dance-solo` 6, `pump-halfdouble` 6, `kb7-single` 7, `dance-double` 8**; others skipped with a reason), `#DESCRIPTION`, `#DIFFICULTY`, `#METER`, `#CREDIT`, `#NOTES`/`#NOTES2`, and chart-level `#BPMS/#STOPS/#DELAYS/#WARPS/#FAKES/#OFFSET` with split-timing semantics (see above). Stops, delays and BPM changes move the notes; warped notes, notes inside `#FAKES` (and holds starting there) are dropped; `#OFFSET` is baked into times. **Not read**: `#SPEEDS`, `#SCROLLS`, `#TIMESIGNATURES` (display only), `#LABELS`, `#COMBOS`, `#TICKCOUNTS`, `#ATTACKS`, `#BGCHANGES`, `#KEYSOUNDS`/`[n]`, `#CHARTNAME`. A chart with BPM <= 0 or a negative stop/delay/warp is refused ([ROX source: ssc_parser.rs `timing_for`]); a file without `#NOTEDATA` errors. The decoder returns the first playable chart; the library exposes all charts.
-- **Notes**: `1`, `L` => Tap; `2`..`3` => Hold; `4`..`3` => Burst (roll); `M` => Mine; `F`/`K` => not played.
-- **Write** (`SscEncoder`): `#VERSION:0.83`, header (same as `.sm` encoder), `#BPMS`, a single `#NOTEDATA` with `#STEPSTYPE` by column count (**4 dance-single, 5 pump-single, 6 dance-solo, 7 kb7-single, 8 dance-double; any other count is an error**), `#DESCRIPTION` = difficulty name, `#DIFFICULTY`, `#METER`, `#CREDIT`, then `#NOTES` on the 1/48-beat grid. No stops/warps/per-chart timing are written.
+- Read: song tags (`#TITLE`, `#ARTIST`, `#CREDIT`, `#MUSIC` + first-audio fallback, `#BANNER`, `#BACKGROUND`, `#SAMPLESTART/#SAMPLELENGTH`, `#OFFSET`); per `#NOTEDATA` chart: `#STEPSTYPE` (kept: `dance-single` 4, `pump-single` 5, `dance-solo` 6, `pump-halfdouble` 6, `kb7-single` 7, `dance-double` 8; others skipped with a reason), `#DESCRIPTION`, `#DIFFICULTY`, `#METER`, `#CREDIT`, `#NOTES`/`#NOTES2`, and chart-level `#BPMS/#STOPS/#DELAYS/#WARPS/#FAKES/#OFFSET` with split-timing semantics. Stops, delays and BPM changes move the notes; warped notes, notes inside `#FAKES` (and holds starting there) are dropped; `#OFFSET` is baked into times.
+- Not read: `#SPEEDS`, `#SCROLLS`, `#TIMESIGNATURES`, `#LABELS`, `#COMBOS`, `#TICKCOUNTS`, `#ATTACKS`, `#BGCHANGES`, `#KEYSOUNDS`/`[n]`, `#CHARTNAME`. A chart with BPM <= 0 or a negative stop/delay/warp is refused ([ROX source: ssc_parser.rs `timing_for`]); a file without `#NOTEDATA` errors. The decoder returns the first playable chart; the library exposes all.
+- Notes: `1`, `L` => Tap; `2`..`3` => Hold; `4`..`3` => Burst (roll); `M` => Mine; `F`/`K` not played.
+- Write (`SscEncoder`): `#VERSION:0.83`, header as the `.sm` encoder, `#BPMS`, one `#NOTEDATA` with `#STEPSTYPE` by column count (4 dance-single, 5 pump-single, 6 dance-solo, 7 kb7-single, 8 dance-double; other counts error), `#DESCRIPTION` = difficulty name, `#DIFFICULTY`, `#METER`, `#CREDIT`, `#NOTES` on the 1/48-beat grid. No stops, warps or per-chart timing written.
 
 ## Parsers & tools
 
@@ -185,11 +179,9 @@ ROX 0.8.1 reads and writes `.ssc` ([ROX source: src/formats/sm/ssc_parser.rs, ss
 
 ## Getting samples
 
-Committed in [`samples/`](samples/SOURCES.md): the 10 community files that were already here plus 7 files from the StepMania/Etterna/ITGmania repositories (default songs Goin' Under, Mecha-Tribe Assault, Springtime; simfile's `L9.ssc` with 19 time-signature changes, `#KEYSOUNDS` and `#NOTES2`; two copies of the sync-machine song with one chart per game type: `para-single`, `kb7-single`, `ez2-single`, `ez2-real`, `ds3ddx-single`, `bm-single5/7`, `techno-single8`, `pnm-five/nine`, `kickbox-quadarm`; the minimal `ScreenHowToPlay steps.ssc`) and 21 charts from the OutFox Serenity pack (chart text only; adds `dance-threedouble`, `maniax-*`, `smx-*`, `techno-single9/double9`, `kb4/5/6/8-single`, `kickbox-*`, `gh-solo/bass/rhythm`, `gddm-new`, `gdgf-five/six`, `pnm-four`; rolls, lifts, fakes, mines, `#ATTACKS`, `#KEYSOUNDS`, `#DELAYS`, `#SPEEDS`, `#SCROLLS`, `#FAKES`, `#LABELS`, per-chart timing).
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). The OutFox Serenity charts are chart text only. Some third-party files have unknown licence or are Konami/Andamiro charts (noted in `SOURCES.md`).
 
-Also committed (downloaded from GitHub, licence unknown or Konami/Andamiro charts, see `SOURCES.md`): four third-party `.ssc` files (a PIU 3rd-era chart as StepF2-style `#VERSION:0.81`, Raindrop's `jnight.ssc` with `#SPEEDS`/`#SCROLLS`, two community pack files from simfile-parser).
-
-More: the remaining 18 `.ssc` of OutFox Serenity community pack ([TeamRizu/OutFox-Serenity](https://github.com/TeamRizu/OutFox-Serenity), 39 `.ssc` at commit `e92f5439f563285dbf26399a88d4b2ada5c46247`; charts must be CC-BY 3.0/4.0 per its [guidelines](https://projectoutfox.com/outfox-serenity/guidelines)); `Songs/StepMania 5/`; the [StepMania-AMX/PIU-Simfiles](https://github.com/StepMania-AMX/PIU-Simfiles) fork of rayden-61/PIU-Simfiles (1,624 files in the tree, Pump It Up simfiles from StepF2/StepP1 as `.ssc`, no licence, Andamiro charts); [Etterna](https://github.com/etternagame/etterna) and [ITGmania](https://github.com/itgmania/itgmania) theme folders (`Themes/_fallback/Other/*.ssc`). Not found in the open: `lights-cabinet` charts (the step type exists in the engine), Shift-JIS `.ssc`. ITGmania (commit `8a3bf8884acdcb69363f7f0ea592138e398c71e4`) has loaders only for `.ssc`, `.sm`, `.sma`, `.dwi`, `.json` and writers for `.sm`, `.ssc`, `.dwi`, `.json` plus `CourseLoaderCRS`/`CourseWriterCRS`: it adds no chart extension of its own. Project OutFox is closed source (the public [TeamRizu/OutFox](https://github.com/TeamRizu/OutFox) repository holds only a README, licence file and issue-tracker docs), so its loader list could not be checked; its community packs use `.ssc` (plus `.bms/.pms/.dtx` for keysounded charts, per the Serenity guidelines). NotITG is closed source; no open-licensed NotITG mod chart was found.
+More: the remaining `.ssc` of the OutFox Serenity community pack ([TeamRizu/OutFox-Serenity](https://github.com/TeamRizu/OutFox-Serenity), 39 `.ssc` at commit `e92f5439f563285dbf26399a88d4b2ada5c46247`; charts must be CC-BY 3.0/4.0 per its [guidelines](https://projectoutfox.com/outfox-serenity/guidelines)); `Songs/StepMania 5/`; the [StepMania-AMX/PIU-Simfiles](https://github.com/StepMania-AMX/PIU-Simfiles) fork of rayden-61/PIU-Simfiles (1,624 files, Pump It Up simfiles from StepF2/StepP1 as `.ssc`, no licence, Andamiro charts); [Etterna](https://github.com/etternagame/etterna) and [ITGmania](https://github.com/itgmania/itgmania) theme folders (`Themes/_fallback/Other/*.ssc`). Not found in the open: `lights-cabinet` charts, Shift-JIS `.ssc`. ITGmania (commit `8a3bf8884acdcb69363f7f0ea592138e398c71e4`) loads `.ssc`, `.sm`, `.sma`, `.dwi`, `.json`, writes `.sm`, `.ssc`, `.dwi`, `.json` plus `CourseLoaderCRS`/`CourseWriterCRS`: no chart extension of its own. Project OutFox is closed source (the public [TeamRizu/OutFox](https://github.com/TeamRizu/OutFox) repository holds only a README, licence and issue-tracker docs); its community packs use `.ssc` (plus `.bms/.pms/.dtx` for keysounded charts, per the Serenity guidelines). NotITG is closed source; no open-licensed NotITG mod chart was found.
 
 ## Sources
 

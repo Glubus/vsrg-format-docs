@@ -5,7 +5,7 @@ Doc status: partial · ROX: decode only (reads, never writes) · Category: vsrg 
 
 ## Overview
 
-"DirectMove" appears in the original README with an unknown extension, as "found on the StepMania Wikia page for StepMania AMX" (page not fetchable, HTTP 403). Direct Move is a Korean Pump-It-Up simulator by "Kiho"; it has **no format of its own**: it plays [`.ksf`](../../kick-it-up/ksf/README.md) files with an extended ("new") grammar. StepMania's KSF loader implements those extensions (`|T`, `|B`, `|E`, `|D`, `|M`/`|C`, `|S`, `|F`, `|X` control rows, `#BPM2/#BPM3/#BUNKI/#STARTTIME2/3` headers).
+The original README lists "DirectMove" with an unknown extension, "found on the StepMania Wikia page for StepMania AMX" (page not fetchable, HTTP 403). Direct Move is a Korean Pump-It-Up simulator by "Kiho". It has no format of its own and plays [`.ksf`](../../kick-it-up/ksf/README.md) files with an extended ("new") grammar, which StepMania's KSF loader implements (`|T`, `|B`, `|E`, `|D`, `|M`/`|C`, `|S`, `|F`, `|X` control rows, `#BPM2/#BPM3/#BUNKI/#STARTTIME2/3` headers).
 
 ## Container & encoding
 
@@ -13,7 +13,7 @@ As KSF: CP949/EUC-KR text, CRLF.
 
 ## Structure / metadata
 
-See the KSF page; the Direct Move additions are the pipe control rows inside `#STEP`.
+See the KSF page. Direct Move adds pipe control rows inside `#STEP`.
 
 ## Timing model
 
@@ -29,7 +29,7 @@ See [KSF timing](../../kick-it-up/ksf/README.md#timing-model) (BUNKI centisecond
 
 ## Versions & variants
 
-Original KSF vs Direct Move "new grammar" ("the limit of 3 shifts disappeared"). Android port exists (net.zsoo.android.dmafree).
+Original KSF vs Direct Move "new grammar" ("the limit of 3 shifts disappeared"). An Android port exists (net.zsoo.android.dmafree).
 
 ## Quirks & pitfalls
 
@@ -49,7 +49,7 @@ StepMania `NotesLoaderKSF.cpp`; https://github.com/syspro86/directmove (download
 
 ## Getting samples
 
-No `.ksf` with DirectMove extensions was found in the open. [StepMania-AMX/directmove](https://github.com/StepMania-AMX/directmove) (fork of syspro86/directmove, commit `677c709a568a5e974721460f9e67758c0b9cb3ff`) holds the Visual Basic sources of KSFCreator/KSF Viewer and bitmaps, no chart. The plain KSF examples are in [`../../kick-it-up/ksf/samples`](../../kick-it-up/ksf/samples/SOURCES.md) (`sample.ksf`, plus the 7 real KIU charts). To get real DirectMove-variant files: install Direct Move (Korean simulator by "Kiho"; download links: see the AMX site https://dm.zsoo.net/pc/download referenced on http://stepmania.amx.io) and open its song folders (one `.ksf` per mode), or save a chart from KSFCreator (build from the repository). Look for `#BPM2`, `#BPM3`, `#BUNKI`, `#STARTTIME2` headers and `|T`, `|B` ... control rows per this page.
+No `.ksf` with DirectMove extensions was found. [StepMania-AMX/directmove](https://github.com/StepMania-AMX/directmove) (fork of syspro86/directmove, commit `677c709a568a5e974721460f9e67758c0b9cb3ff`) holds the Visual Basic sources of KSFCreator/KSF Viewer and bitmaps, no chart. Plain KSF examples: [`../../kick-it-up/ksf/samples`](../../kick-it-up/ksf/samples/SOURCES.md) (`sample.ksf`, the 7 real KIU charts). To get real files, install Direct Move (download links on the AMX site https://dm.zsoo.net/pc/download, referenced on http://stepmania.amx.io) and open its song folders (one `.ksf` per mode), or save a chart from KSFCreator (build from the repository). Look for `#BPM2`, `#BPM3`, `#BUNKI`, `#STARTTIME2` headers and `|T`, `|B` ... control rows.
 
 ## Sources
 

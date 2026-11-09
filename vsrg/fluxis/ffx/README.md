@@ -5,7 +5,7 @@ Doc status: partial · ROX: no · Category: vsrg · Encoding: json (legacy text 
 
 ## Overview
 
-`.ffx` is the **map effects/events file of fluXis**: a list of timed visual and gameplay events (flashes, pulses, shakes, shaders, playfield and camera transforms, lane switches, scroll multipliers, time offsets, note events...) that accompany a [`.fsc`](../fsc/README.md) difficulty. A `.fsc` references it by name in its `EffectFile` field; several difficulties of a set can share one `.ffx`. It is separate from the `.fsb` storyboard (sprites/shaders layered behind the playfield, not covered here). The Quaver importer emits `.ffx` files (`QuaverImport.cs` writes `<name>.ffx`).
+Map effects/events file of fluXis: timed flashes, pulses, shakes, shaders, playfield and camera transforms, lane switches, scroll multipliers, time offsets and note events for a [`.fsc`](../fsc/README.md) difficulty. A `.fsc` names it in `EffectFile`; several difficulties can share one `.ffx`. The `.fsb` storyboard is separate and not covered. The Quaver importer writes `<name>.ffx` (`QuaverImport.cs`).
 
 ## Packaged in
 
@@ -13,7 +13,7 @@ Doc status: partial · ROX: no · Category: vsrg · Encoding: json (legacy text 
 
 ## Container & encoding
 
-- UTF-8 text, loaded by `MapEvents.Load<T>(content)`: if the trimmed content does **not** start with `{` it is parsed with the **legacy line format**; otherwise as JSON (Newtonsoft.Json) into the `MapEvents` class.
+- UTF-8 text, loaded by `MapEvents.Load<T>(content)`: if the trimmed content does not start with `{` it is parsed with the legacy line format; otherwise as JSON (Newtonsoft.Json) into the `MapEvents` class.
 - The game generates `<unix timestamp>.ffx` file names for new effect files (`MapStore.cs`).
 - A hash of the text content (`MapUtils.GetHash`) is stored as `EffectHash`.
 
@@ -45,7 +45,7 @@ Top-level object, one array per event type; every array item is an event object.
 | `loops` | `LoopEvent` | `target` (group), `distance`, `count`: repeats a group of events. |
 | `notes` | `NoteEvent` | `content` (text note shown/used as a marker). |
 
-All event classes share `time` (double, ms), `lane` (int, editor lane) and `group` (string, omitted when null) from `ITimedObject`. Colours (`Color4`) and easings (osu!framework `Easing`) are serialised by Newtonsoft; their exact JSON form was not verified.
+All event classes share `time` (double, ms), `lane` (int, editor lane) and `group` (string, omitted when null) from `ITimedObject`. Colours (`Color4`) and easings (osu!framework `Easing`) are serialised by Newtonsoft; their JSON form was not verified.
 
 ### Legacy text lines
 
@@ -53,31 +53,31 @@ Lines of the form `Type(arg,arg,...)`: `LaneSwitch(time,count[,duration])`, `Fla
 
 ## Timing model
 
-Every event has an absolute `time` in milliseconds and (for transitions) a `duration` in ms plus an easing; no beat/measure units.
+Absolute `time` in ms; transitions add `duration` (ms) and an easing. No beats.
 
 ## Notes
 
-Not a note format: only `laneswitch` (changes how many lanes are visible), `scroll-multiply`, `time-offset` and `hitease` affect gameplay; the rest are visuals. `notes` are free-text markers.
+Not a note format. Only `laneswitch` (visible lane count), `scroll-multiply`, `time-offset` and `hitease` affect gameplay; the rest is visual. `notes` are free-text markers.
 
 ## Audio & images
 
-None (shaders and colours only).
+Unknown.
 
 ## Versions & variants
 
-- Legacy line-based `.ffx` (`LaneSwitch(...)`) and JSON `.ffx`.
-- `hitfade`/`playfieldfade` -> `layerfade`; `PlayfieldRotateEvent` pitch/yaw are commented out.
-- `playfield`/`subfield` indices address extra/dual playfields of the map (`extra-playfields`, `dual` in the `.fsc`).
+- Legacy line-based `.ffx` and JSON `.ffx`.
+- `hitfade`/`playfieldfade` became `layerfade`.
+- `playfield`/`subfield` indices address extra/dual playfields (`extra-playfields`, `dual` in the `.fsc`).
 
 ## Quirks & pitfalls
 
-- Content sniffing: any file not starting with `{` is parsed as legacy; a BOM or leading text breaks JSON detection. [inference]
-- `lane` on events is an editor field, not gameplay lane.
-- `scroll-multiply` targets scroll groups, not lanes (`groups`).
+- Any file not starting with `{` is parsed as legacy; a BOM or leading text breaks JSON detection. [inference]
+- `lane` on events is an editor field, not a gameplay lane.
+- `scroll-multiply` targets scroll groups (`groups`), not lanes.
 
 ## Example
 
-No sample in the repo; hand-built from the attributes above (illustrative):
+Hand-built from the attributes above (illustrative):
 
 ```json
 {
@@ -88,7 +88,7 @@ No sample in the repo; hand-built from the attributes above (illustrative):
 
 ## ROX support
 
-Not read by ROX. Only `scroll-multiply`, `laneswitch` and `time-offset` have gameplay meaning; ROX would drop everything else.
+Not read by ROX. Only `scroll-multiply`, `laneswitch` and `time-offset` have gameplay meaning; ROX would drop the rest.
 
 ## Parsers & tools
 
@@ -96,8 +96,7 @@ fluXis (C#): https://github.com/InventiveRhythm/fluXis (`fluXis/Map/MapEvents.cs
 
 ## Getting samples
 
-- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): six real `.ffx` JSON effect files extracted from public fluXis mapsets (laneswitch, flash, shaders, playfield and camera events...), downloaded 2026-11-09.
-- **How to get more**: unzip any mapset from `https://fluxis.flux.moe/api/mapsets/<id>/download`; the `.ffx` named by `EffectFile` in a `.fsc` is in the ZIP. The legacy line format was not seen in these sets.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). More: unzip any mapset from `https://fluxis.flux.moe/api/mapsets/<id>/download`; the `.ffx` named by `EffectFile` in a `.fsc` is inside. The legacy line format was not seen in these sets.
 
 ## Sources
 

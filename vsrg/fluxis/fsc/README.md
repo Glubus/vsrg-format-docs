@@ -5,7 +5,7 @@ Doc status: partial · ROX: no · Category: vsrg · Encoding: json
 
 ## Overview
 
-`.fsc` is the **per-difficulty map file of fluXis**, a community-driven open-source vertical-scrolling rhythm game built on osu!framework (C#). One `.fsc` holds one difficulty: metadata, timing points, scroll velocities, hit objects (lane based, 1..N keys), plus references to an audio/background/cover/video file and to the companion effects file ([`.ffx`](../ffx/README.md)) and storyboard (`.fsb`). A mapset is a ZIP of several `.fsc` files and their assets, distributed as `.fms`. fluXis has built-in importers that convert osu!, Quaver and StepMania maps into `.fsc` (`fluXis.Import.osu`, `fluXis.Import.Quaver`, `fluXis.Import.Stepmania`). The format is defined by the C# classes (`MapInfo`, `HitObject`, `TimingPoint`, `ScrollVelocity`, `HitSoundFade`), serialised with Newtonsoft.Json; there is no separate spec document, so this page is derived from the source. Property names that carry no explicit `[JsonProperty]` attribute are listed with their C# names (see Quirks).
+Per-difficulty map file of fluXis (open-source, osu!framework, C#): metadata, timing points, scroll velocities, lane-based hit objects (1..N keys) and references to audio/background/cover/video, the effects file ([`.ffx`](../ffx/README.md)) and the storyboard (`.fsb`). Mapsets are ZIPs of `.fsc` files and assets, distributed as `.fms`. Importers convert osu!, Quaver and StepMania maps (`fluXis.Import.osu`, `fluXis.Import.Quaver`, `fluXis.Import.Stepmania`). The format is the C# classes `MapInfo`, `HitObject`, `TimingPoint`, `ScrollVelocity`, `HitSoundFade` serialised with Newtonsoft.Json; there is no spec, so this page derives from source. Properties without `[JsonProperty]` are listed by C# name (see Quirks).
 
 ## Packaged in
 
@@ -15,7 +15,7 @@ Doc status: partial · ROX: no · Category: vsrg · Encoding: json
 
 - One JSON object per file, UTF-8 (Newtonsoft.Json). File name: any `*.fsc`; the game generates `<unix timestamp>.fsc` for new maps and `<difficulty>.fsc`/`<source name>.fsc` for converted maps.
 - `MapInfo.Sort()` orders `HitObjects` by `time` then `lane`, and `TimingPoints`, `ScrollVelocities`, `HitSoundFades` by `time`.
-- Hash: the game identifies a difficulty by a hash of the file content (`MapUtils.GetHash`) and the audio by an xxHash of the audio file; they are used for online lookup (not stored in the file).
+- The game identifies a difficulty by a hash of the file content (`MapUtils.GetHash`) and the audio by an xxHash of the audio file, for online lookup (not stored in the file).
 
 ## Structure / metadata
 
@@ -38,7 +38,7 @@ Doc status: partial · ROX: no · Category: vsrg · Encoding: json
 | `extra-playfields` | int | 0..9 extra playfields (clamped on set). |
 | `visualization-enabled` | bool | Audio visualisation. |
 
-Key count = highest `lane` over all hit objects (`KeyCount => HitObjects.Max(x => x.Lane)`); lane numbers are **1-based** (validation: "A hit object in this map is in a lane below 1"); `MinKeymode` default 1, no upper bound (`MaxKeymode = -1`).
+Key count = highest `lane` over all hit objects (`KeyCount => HitObjects.Max(x => x.Lane)`). Lane numbers are 1-based (validation: "A hit object in this map is in a lane below 1"). `MinKeymode` defaults to 1, no upper bound (`MaxKeymode = -1`).
 
 ### `metadata`
 
@@ -48,7 +48,7 @@ Key count = highest `lane` over all hit objects (`KeyCount => HitObjects.Max(x =
 
 | Field | Type | Meaning |
 |---|---|---|
-| `time` | double | Start time in **milliseconds**. |
+| `time` | double | Start time in milliseconds. |
 | `lane` | int | 1-based lane. |
 | `visual-lane` | float | Visual lane (only for `Tick` notes). Omitted when 0. |
 | `holdtime` | double | Hold duration in ms; `> 0` with `type = 0` makes a long note; end time = `time + holdtime`. Omitted when 0. |
@@ -65,7 +65,7 @@ Key count = highest `lane` over all hit objects (`KeyCount => HitObjects.Max(x =
 
 ### `ScrollVelocity`
 
-`time` (ms), `multiplier` (double, default 1), `group` (string, omitted when null), `groups` (list of group ids the SV applies to), and the obsolete `mask` (bool per lane, converted to groups `$1..$n`). Scroll groups are fluXis's way to give different lanes/notes independent SV: `$<n>` is the implicit group of lane n [inference from the `mask` conversion `Groups.Add($"${i + 1}")`].
+`time` (ms), `multiplier` (double, default 1), `group` (string, omitted when null), `groups` (list of group ids the SV applies to), and the obsolete `mask` (bool per lane, converted to groups `$1..$n`). Scroll groups give different lanes/notes independent SV; `$<n>` is the implicit group of lane n [inference from the `mask` conversion `Groups.Add($"${i + 1}")`].
 
 ### `HitSoundFade`
 
@@ -73,7 +73,7 @@ Key count = highest `lane` over all hit objects (`KeyCount => HitObjects.Max(x =
 
 ## Timing model
 
-Pure **millisecond** times; there are no measures/beats in the file: `TimingPoint`s provide BPM and signature for beat lines and the editor snap grid, `ScrollVelocity` provides speed changes (position = integral of multiplier over time; velocity groups allow different SV per lane). Offsets: the Quaver/osu importers bake offsets into times; an in-game `TimeOffsetEvent` ([`.ffx`](../ffx/README.md)) can shift hit windows during the map. Converting `time` to seconds = `time / 1000`.
+Times are ms; no measures/beats. `TimingPoint`s give BPM and signature for beat lines and the editor grid. `ScrollVelocity` gives speed changes (position = integral of multiplier over time; groups allow per-lane SV). Importers bake offsets into times; an in-game `TimeOffsetEvent` ([`.ffx`](../ffx/README.md)) can shift hit windows. Seconds = `time / 1000`.
 
 ## Notes
 
@@ -84,29 +84,29 @@ Pure **millisecond** times; there are no measures/beats in the file: `TimingPoin
 - Hidden: `hidden: true`.
 - Chords: several objects with the same `time` and different `lane`.
 - Per-note keysound: `hitsound` string (plus fades via `HitSoundFades`).
-- Lane switching (changing the visible key count mid-map) is done by `laneswitch` events in the [`.ffx`](../ffx/README.md) file; `FluXisImport` raises the key count to the maximum `Count` seen in lane-switch events.
+- Lane switching (changing the visible key count mid-map) uses `laneswitch` events in the [`.ffx`](../ffx/README.md) file; `FluXisImport` raises the key count to the maximum `Count` seen in lane-switch events.
 
 ## Audio & images
 
-`AudioFile` (the song), `BackgroundFile`, `CoverFile`, `VideoFile` are file names resolved inside the mapset folder. A `previewtime` in `metadata` (ms). Hitsounds are referenced by name (custom samples are ordinary files in the set).
+`AudioFile`, `BackgroundFile`, `CoverFile`, `VideoFile` are names resolved inside the mapset folder. Hitsounds are referenced by name (custom samples are ordinary files in the set).
 
 ## Versions & variants
 
-- The legacy layout kept effects in a custom text file (`LaneSwitch(...)`, `Flash(...)`, `Pulse(...)` lines, see [`.ffx`](../ffx/README.md)); new maps use JSON.
-- `ScrollVelocity.mask` (bool list) was replaced by `groups`.
-- `PlayfieldFade`/`HitFade` events were replaced by `layerfade`.
+- Legacy effects lived in a text file (`LaneSwitch(...)`, `Flash(...)`, `Pulse(...)`, see [`.ffx`](../ffx/README.md)); new maps use JSON.
+- `ScrollVelocity.mask` was replaced by `groups`.
+- `PlayfieldFade`/`HitFade` events became `layerfade`.
 
 ## Quirks & pitfalls
 
-- Properties without `[JsonProperty]` (e.g. `AudioFile`, `HitObjects`, `TimingPoints`, `AccuracyDifficulty`) have no explicit name in the source; the serialiser helpers (`Serialize()`/`Deserialize<T>()`) come from the external `flustix.Midori` NuGet package, whose naming policy (PascalCase for unattributed properties, observed in real `.fsc` files) was therefore not read from source; the observed PascalCase names are exact [observed in samples/fluxis-1240_1780684194.fsc].
+- Properties without `[JsonProperty]` (`AudioFile`, `HitObjects`, `TimingPoints`, `AccuracyDifficulty`) are named by the external `flustix.Midori` NuGet package, whose policy (PascalCase) was not read from source; the observed PascalCase names are exact [observed: fluxis-1240_1780684194.fsc].
 - `lane` is 1-based and, in `Separate` dual mode, spans both fields.
 - `holdtime` and `visual-lane` are omitted when zero (`DefaultValueHandling.Ignore`).
-- Times are doubles (ms); do not assume integers.
-- `KeyCount` in the importer is `ceil(maxLane / (isSplit ? 2 : 1))` and then maximised with lane-switch counts.
+- Times are doubles (ms).
+- Importer `KeyCount` = `ceil(maxLane / (isSplit ? 2 : 1))`, then maximised with lane-switch counts.
 
 ## Example
 
-No sample in the repo; hand-built from the documented fields (illustrative; key names with explicit attributes are exact, the PascalCase names were confirmed on real maps [observed in samples/fluxis-1240_1780684194.fsc]):
+Hand-built (illustrative); PascalCase names confirmed on real maps [observed: fluxis-1240_1780684194.fsc]:
 
 ```json
 {
@@ -123,7 +123,7 @@ No sample in the repo; hand-built from the documented fields (illustrative; key 
 
 ## ROX support
 
-Not read by ROX. The model is a close fit to ROX (key columns, tap/hold/mine = Landmine, BPM + SV in ms); lossy parts: Tick notes, scroll groups, dual playfields, effects/camera/playfield events and lane switching.
+Not read by ROX. The model fits closely (key columns, tap/hold/mine = Landmine, BPM + SV in ms). Lossy: Tick notes, scroll groups, dual playfields, effects/camera/playfield events, lane switching.
 
 ## Parsers & tools
 
@@ -133,9 +133,7 @@ Not read by ROX. The model is a close fit to ROX (key columns, tap/hold/mine = L
 
 ## Getting samples
 
-- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): nine real `.fsc` difficulties extracted from public fluXis mapsets (4K-8K, long notes, SVs, effects/storyboard references, maps converted from osu! and native ones), downloaded 2026-11-09 from fluxis.flux.moe.
-- **How to get more**: the public site serves any mapset ZIP without login at `https://fluxis.flux.moe/api/mapsets/<id>/download` (set ids and metadata at `https://fluxis.flux.moe/api/mapsets/<id>`; the browse page `https://fluxis.flux.moe/maps` lists ids); unzip and take the `*.fsc` entries. Or install fluXis (https://github.com/InventiveRhythm/fluXis) and import osu!/Quaver maps with the repo's importers.
-- Observed: the top-level JSON keys are PascalCase for `AudioFile`, `HitObjects`, `TimingPoints`, `ScrollVelocities`, `HitSoundFades`, `AccuracyDifficulty`, `HealthDifficulty` and kebab-case for `ls-v2`, `force-169`, `editor-time`, `extra-playfields`, `visualization-enabled` [observed in samples/fluxis-1240_1780684194.fsc].
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). More: `https://fluxis.flux.moe/api/mapsets/<id>/download` serves any mapset ZIP without login (metadata at `https://fluxis.flux.moe/api/mapsets/<id>`; ids listed at `https://fluxis.flux.moe/maps`); unzip and take the `*.fsc` entries. Or install fluXis (https://github.com/InventiveRhythm/fluXis) and import osu!/Quaver maps. Observed top-level keys: PascalCase for `AudioFile`, `HitObjects`, `TimingPoints`, `ScrollVelocities`, `HitSoundFades`, `AccuracyDifficulty`, `HealthDifficulty`; kebab-case for `ls-v2`, `force-169`, `editor-time`, `extra-playfields`, `visualization-enabled` [observed: fluxis-1240_1780684194.fsc].
 
 ## Sources
 

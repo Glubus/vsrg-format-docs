@@ -4,7 +4,7 @@ Kind: chart
 Doc status: stub · ROX: no · Category: vsrg · Encoding: xml (reportedly encrypted in newer versions)
 
 ## Overview
-Chart format of 乐动时代 (Music Times). Identified by the original README (`.xml`: **Music Times** chart) and rmstZ ("xml (乐动时代谱面)", http://www.ydsd.com/, read/write). A TapTap review snippet says that after the game upgrade "the official side encrypted the charts to guarantee chart quality" (search snippet, not verified). No schema or parser source was found: the structure is Unknown.
+Chart format of 乐动时代 (Music Times), listed as `.xml` in the original README and as "xml (乐动时代谱面)" (read/write) by rmstZ (http://www.ydsd.com/). A TapTap review snippet says that after the game upgrade "the official side encrypted the charts to guarantee chart quality" (search snippet, unverified). No schema or parser source found: structure Unknown.
 
 ## Container & encoding
 XML for plain charts (per rmstZ); encrypted variant: algorithm Unknown.
@@ -22,7 +22,7 @@ Plain vs encrypted.
 Unknown.
 
 ## Example
-Not applicable.
+Unknown.
 
 ## ROX support
 Not read by ROX.
@@ -31,9 +31,9 @@ Not read by ROX.
 rmstZ (closed source): https://lrfasd.github.io/rmstZ/
 
 ## Getting samples
+None committed: no public sample or parser source (rmstZ is closed source).
 
-- Committed: none. No public sample or parser source exists (rmstZ is closed source).
-- How to get one: install 乐动时代 (Music Times, http://www.ydsd.com/) from an older client (later clients reportedly encrypt charts, see Overview), locate its downloaded `.xml` chart and open it in rmstZ (https://lrfasd.github.io/rmstZ/) which lists it as readable and writable. [inference] on exact paths.
+To get one: install 乐动时代 (http://www.ydsd.com/) from an older client (later clients reportedly encrypt charts), find its downloaded `.xml` chart and open it in rmstZ (https://lrfasd.github.io/rmstZ/), which reads and writes it. [inference] on exact paths.
 
 ## Sources
 - https://lrfasd.github.io/rmstZ/

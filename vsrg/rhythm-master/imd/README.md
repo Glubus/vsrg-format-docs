@@ -4,7 +4,8 @@ Kind: chart
 Doc status: complete · ROX: decode only (reads, never writes) · Category: vsrg · Encoding: binary (little-endian)
 
 ## Overview
-IMD is the chart format of Rhythm Master's classic mode (4, 5 or 6 lanes). Files are named `<song>_<4|5|6>k_<ez|nm|hd>.imd` (key count; easy/normal/hard) and sit next to `<song>.mp3` and cover images (self-made chart import rules: song `xxx.mp3`, large image `xxx.png`, small `xxx__hd(ipad).png`, chart `xxx_4(5,6)k_ez(nm,hd).imd` per community guides). Fan charts exist in large numbers (dreamimd.com). One file = one difficulty. The layout below is read from RMEssentials `rmechart.cpp` (`RmeChart::fromImd/toImd`) and RM2Malody `imd_helper.py`, and verified by parsing the real file `keluodiya_4k_hd.imd` (RM2Malody repo) with a short script: header 130273 ms, 417 BPM entries, separator 0x0303, 822 notes, file length = 8 + 12*417 + 6 + 11*822.
+
+Chart format of Rhythm Master's classic mode (4, 5 or 6 lanes), one file per difficulty: `<song>_<4|5|6>k_<ez|nm|hd>.imd` (easy/normal/hard), next to `<song>.mp3` and cover images (community import rules: large image `xxx.png`, small `xxx__hd(ipad).png`). Fan charts are plentiful (dreamimd.com). The layout comes from RMEssentials `rmechart.cpp` (`RmeChart::fromImd/toImd`) and RM2Malody `imd_helper.py`, verified by parsing `keluodiya_4k_hd.imd` (RM2Malody repo): header 130273 ms, 417 BPM entries, separator 0x0303, 822 notes, file length = 8 + 12*417 + 6 + 11*822.
 
 ## Container & encoding
 Little-endian, no compression, no encryption in the classic files (the newer client downloads encrypted charts; not covered).
@@ -40,7 +41,7 @@ Milliseconds. BPM entries: official files contain one entry per beat (e.g. 0, 31
 | 0xA1 / 0xA2 | slide / hold, "attr 4, end" (end of a chain) | delta / duration ms |
 
   (bit meanings: 0x20, 0x40 and 0x80 combine start/continuation/end of a hold-and-slide chain; RMEssentials `fromImdNote` only accepts these 9 values and treats others as invalid.) In the real sample, counts were: 0x00 x582, 0x02 x75, 0x21 x59, 0x62 x32, 0xA2 x31, 0x22 x28, 0x01 x14, 0xA1 x1.
-- A chain ("worm"/"noodle" in the community) is: start note (0x61/0x62/0x21) -> following notes joined when the next note is at `time + duration` on the (moved) lane (RMEssentials `sortNotes` splices by `toTrack` and `timestamp + timeDur`), ending with `isEnd`.
+- A chain ("worm"/"noodle"): start note (0x61/0x62/0x21) -> following notes joined when the next note is at `time + duration` on the (moved) lane (RMEssentials `sortNotes` splices by `toTrack` and `timestamp + timeDur`), ending with `isEnd`.
 - Note counting (RMEssentials): a note with duration 0 counts as 1 unless it is a chain start; a note with a duration counts `1 + ticks/12` (combo from hold body).
 - Notes within one lane at equal timestamps sorted slide-before-hold ("0x21/0x61 before corresponding 0x22/0xA2").
 
@@ -48,13 +49,17 @@ Milliseconds. BPM entries: official files contain one entry per beat (e.g. 0, 31
 `<song>.mp3` (single backing track, no keysounds), cover jpg/png.
 
 ## Versions & variants
-Classic IMD only; star-motion charts use [mde](../mde/README.md); the JSON dialect is [json](../json/README.md) (imdjson 1.2.1/1.2.2/1.2.3/1.3.0).
+
+Classic IMD only. Star-motion charts: [mde](../mde/README.md). JSON dialect: [json](../json/README.md) (imdjson 1.2.1/1.2.2/1.2.3/1.3.0).
 
 ## Quirks & pitfalls
-Wrong track ids exist (RMEssentials ignores notes outside 3..8 when loading); BPM list can have thousands of entries; chain notes must be kept in order.
+
+- Wrong track ids exist (RMEssentials ignores notes outside 3..8 on load).
+- The BPM list can have thousands of entries.
+- Keep chain notes in order.
 
 ## Example
-Header of the real `keluodiya_4k_hd.imd` decoded by my script (origin: https://github.com/nladuo/RM2Malody, file read once, not copied):
+Header of the real `keluodiya_4k_hd.imd` (https://github.com/nladuo/RM2Malody; read, not copied):
 ```
 total_ms=130273, bpm_count=417, bpm[0]=(0 ms, 192.0), bpm[1]=(312 ms, 192.0)
 separator=0x0303, notes=822
@@ -63,7 +68,8 @@ note2: type=0x02 time=4062 track=1 action=625   (hold 625 ms)
 ```
 
 ## ROX support
-Read by ROX since Prism's addition of `rox::formats::imd` (decode only): `ImdDecoder` (`decode`, `decode_with_title`, `decode_with_name`, `decode_with_report` giving an `ImdReport`, `decode_file`; `DetectedFormat::Imd`). ONE chart per file, **4, 5 or 6 columns**: the file does not store the count, the NAME does (`<song>_<4|5|6>k_<ez|nm|hd>.imd`, which also gives the difficulty `Easy`/`Normal`/`Hard` and the title: the part before the suffix), else the highest `track` used plus one (at least 4, at most 6, as RMEssentials' chart viewer does); a note on a track the chart has not is dropped and counted. The file must be exactly `8 + 12n + 6 + 11m` bytes with the separator `0x0303`. Times are the notes' ms (x 1000 µs), the BPM table is read as one timing point per change of BPM (a table of one entry per beat at one tempo is ONE point), the first moved to the first note when it came later. Note types: `0x00` tap; `0x01` single slide = a tap on its lane (target lane lost); `0x02` hold; `0x22`/`0x62`/`0xA2` hold segments of a chain = one hold each on their own lane; `0x21`/`0x61`/`0xA1` slides of a chain = dropped when a segment ends or starts beside them (within 2 ms, a tolerance of the reader: real files round a segment's length by one ms or two), else kept as a tap; any other type is dropped and counted. A hold of length 0 is a tap. The title comes from the file name, `audio_file` is empty (the caller looks for `<song>.mp3`). `looks_like_imd` / `is_imd_chart_file` tell an `.imd` from another program's file (the extension is shared and the format has no signature). Verified locally on the 31 official 4K charts of the RM2Malody repository and the 4K, 5K and 6K fixtures of RMEssentials (no note dropped, no isolated slide, no overlap; the fixtures RMEssentials refuses are refused too), none kept in the repository. Not handled: `.mde`, the `imdjson` dialect, encrypted charts.
+
+Read only (`rox::formats::imd`: `ImdDecoder` with `decode`, `decode_with_title`, `decode_with_name`, `decode_with_report` giving an `ImdReport`, `decode_file`; `DetectedFormat::Imd`). One chart per file, 4, 5 or 6 columns. The file does not store the count: the name does (`<song>_<4|5|6>k_<ez|nm|hd>.imd`, which also gives difficulty `Easy`/`Normal`/`Hard` and the title before the suffix); otherwise the highest `track` plus one (min 4, max 6, as RMEssentials' viewer). Notes on a missing track are dropped and counted. The file must be exactly `8 + 12n + 6 + 11m` bytes with separator `0x0303`. Times are note ms (x 1000 µs). The BPM table becomes one timing point per BPM change (one entry per beat at one tempo is ONE point); the first moves to the first note if later. Note types: `0x00` tap; `0x01` single slide = tap on its lane (target lane lost); `0x02` hold; `0x22`/`0x62`/`0xA2` chain hold segments = one hold each on their own lane; `0x21`/`0x61`/`0xA1` chain slides = dropped when a segment ends or starts beside them (within 2 ms, since real files round a segment's length by one or two ms), else a tap; other types dropped and counted. A zero-length hold is a tap. The title comes from the file name and `audio_file` is empty (the caller looks for `<song>.mp3`). `looks_like_imd` / `is_imd_chart_file` tell an `.imd` from other programs' files (shared extension, no signature). Verified on the 31 official 4K charts of the RM2Malody repository and the 4K, 5K and 6K RMEssentials fixtures (no note dropped, no isolated slide, no overlap; fixtures RMEssentials refuses are refused too). Not handled: `.mde`, `imdjson`, encrypted charts.
 
 ## Parsers & tools
 - RMEssentials (C++/Qt, AGPL-3.0): https://github.com/Fsu0413/RMEssentials
@@ -73,8 +79,7 @@ Read by ROX since Prism's addition of `rox::formats::imd` (decode only): `ImdDec
 
 ## Getting samples
 
-- Committed in [`samples/`](samples/): 9 real charts (7 official classic-mode files from GirlKiller512/RhythmMasterResource covering 4k/5k/6k and ez/nm/hd, 2 RMEssentials song fixtures), 5 deliberately invalid RMEssentials files and `synthetic_4k_hd.imd`. Everything is listed with origin, date and sha256 in [`samples/SOURCES.md`](samples/SOURCES.md).
-- More: https://github.com/GirlKiller512/RhythmMasterResource holds 4134 `.imd` files (all songs of the classic mode, 3 key counts x 3 difficulties) with `mrock_song_client_android.xml` as song list; https://github.com/nladuo/RM2Malody has more (e.g. `keluodiya_4k_hd.imd`); fan charts at https://www.dreamimd.com; the Malody RM guide https://m.mugzone.net/wiki/2368.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). More: https://github.com/GirlKiller512/RhythmMasterResource holds 4134 `.imd` files (all classic songs, 3 key counts x 3 difficulties) with `mrock_song_client_android.xml` as song list; https://github.com/nladuo/RM2Malody has more (e.g. `keluodiya_4k_hd.imd`); fan charts at https://www.dreamimd.com; Malody RM guide https://m.mugzone.net/wiki/2368.
 
 ## Sources
 - https://raw.githubusercontent.com/Fsu0413/RMEssentials/master/src/librmessentials/src/rmechart.cpp , rmechart.h

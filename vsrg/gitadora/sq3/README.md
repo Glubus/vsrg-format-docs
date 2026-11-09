@@ -4,7 +4,7 @@ Kind: chart
 Doc status: partial · ROX: no · Category: vsrg · Encoding: binary (little-endian)
 
 ## Overview
-Chart archive of the GITADORA arcade games (names like `d<musicid>.sq3`/`g<musicid>.sq3`, one file per music id, containing the difficulty charts of one instrument family). Read and written by `fisyher/gitadora-customs` (`plugins/sq3.py`), whose code is the only source used: field semantics marked "unk" are unknown to it. A game never ships charts as plain files: they are extracted from the game's IFS archive.
+Chart archive of the GITADORA arcade games (`d<musicid>.sq3`/`g<musicid>.sq3`, one file per music id, holding the difficulty charts of one instrument family). Read and written by `fisyher/gitadora-customs` (`plugins/sq3.py`), the only source used: fields marked "unk" are unknown to it. Charts are extracted from the game's IFS archive.
 
 ## Container & encoding
 Little-endian binary, two-level container: `SEQP` archive header (0x20 bytes) followed by N chart chunks. Detection (`is_format`): bytes 0..3 = `SEQP`, byte 0x36 = 3, bytes 0x30..0x33 = `SQ3T`.
@@ -66,22 +66,22 @@ Event ids: 0x01 bpm, 0x02 barinfo (time signature), 0x03 bar line on, 0x04 bar l
 Note id (0x30): drums 0 hihat, 1 snare, 2 bass, 3 high tom, 4 low tom, 5 right cymbal, 6 left cymbal, 7 floor tom, 8 left pedal, 0xFF auto. Guitar/bass (5-button): 0 open, then a 5-bit mask over R,G,B,Y,P combinations: 1 R, 2 G, 3 RG, 4 B, 5 RB, 6 GB, 7 RGB, 8 Y, ..., 0x0F RGBY (0x08..0x0F add Y, 0x10..0x17 add P without Y, 0x18..0x1F with Y and P; the table is `g_`/`b_` + `rgbyp` pattern in the source), 0xFF auto.
 
 ## Timing model
-Time = timestamp (fixed time base) and beat position both stored per event: the chart carries both absolute time and a musical position; BPM events give microseconds per beat; time signature events set bar length; measures are marked by measure events (0x05). A converter to DTX takes the beat/ measure to place chips (gitadora-customs "SQ3 -> JSON -> DTX"). Exact quantization: Unknown.
+Each event stores a timestamp (fixed time base) and a beat position. BPM events give microseconds per beat, time signature events set bar length, measure events (0x05) mark measures. The DTX converter places chips by beat/measure ("SQ3 -> JSON -> DTX"). Exact quantization: Unknown.
 
 ## Notes
-Drums: single hits. Guitar/bass: fret chords, open, wail (bit 1 of 0x32), hold (bit 2), hold duration at 0x08 (ticks of the time base). Auto-play notes carry the backing sounds. Bonus notes (kicks of bonus effect) are marked via a separate `.evt`/event file in other tools (`bonus_note` flag in the JSON; the .evt format is outside this page). Simultaneous notes share a timestamp.
+Drums: single hits. Guitar/bass: fret chords, open, wail (bit 1 of 0x32), hold (bit 2) with duration at 0x08 (time-base ticks). Auto-play notes carry the backing sounds. Bonus notes are marked in a separate `.evt` file in other tools (`bonus_note` flag in the JSON; the .evt format is out of scope). Simultaneous notes share a timestamp.
 
 ## Audio & images
-Sound ids refer to keysounds in the song's audio archive (sound id per note; format not covered here).
+Sound ids refer to keysounds in the song's audio archive (format not covered).
 
 ## Versions & variants
 SEQP archive version 3 (SQ3T flags 3). Older games: [sq2](../sq2/README.md), [dsq](../dsq/README.md).
 
 ## Quirks & pitfalls
-Time unit ambiguity; metadata charts are separate chart chunks; unknown 0x14/0x0C fields should be preserved when rewriting.
+Time unit ambiguity; metadata charts are separate chunks; preserve unknown 0x14/0x0C fields when rewriting.
 
 ## Example
-Not provided (no sample available; extracted game data cannot be redistributed).
+Unknown (extracted game data cannot be redistributed).
 
 ## ROX support
 Not read by ROX.
@@ -91,8 +91,9 @@ Not read by ROX.
 - gitadora-tools: https://github.com/RAintN22/gitadora-tools
 
 ## Getting samples
-- **Committed: none (no real file found).** `fisyher/gitadora-customs` contains no test data (its tree holds only Python plugins and tools), and no other repository with a public `.sq3` was found. Charts are Konami data and the fiche notes that a game never ships them as plain files.
-- **How to get one**: extract the IFS archives of a GITADORA install you own (the README's example uses `m1825_bgm.ifs` and `m1825_seq.ifs`) and convert with `seqtool.py` (https://github.com/fisyher/gitadora-customs: "Convert from IFS (SQ3) to DTX: `python seqtool.py --input-ifs-bgm m1825_bgm.ifs --input-ifs-seq m1825_seq.ifs --ifs-target sq3 ...`"). The same tool **writes** SQ3 from DTX charts ("DTX -> JSON -> SQ3" in its README), so an SQ3 can be produced from any open DTX chart (for example the synthetic ones in [dtx samples](../../dtxmania/dtx/samples/SOURCES.md)); the tool needs several third-party Python packages (`requirements.txt`: ifstools, kbinxml, lxml, numpy, pydub ...), none was installed here, so no output was committed.
+None committed: `fisyher/gitadora-customs` holds only Python plugins and tools, no test data, and no other repository with a public `.sq3` was found.
+
+To get one: extract the IFS archives of a GITADORA install you own (the README example uses `m1825_bgm.ifs` and `m1825_seq.ifs`) and convert with `seqtool.py` (https://github.com/fisyher/gitadora-customs): `python seqtool.py --input-ifs-bgm m1825_bgm.ifs --input-ifs-seq m1825_seq.ifs --ifs-target sq3 ...`. The tool also writes SQ3 from DTX charts ("DTX -> JSON -> SQ3"), e.g. the synthetic ones in [dtx samples](../../dtxmania/dtx/samples/SOURCES.md). It needs third-party Python packages (`requirements.txt`: ifstools, kbinxml, lxml, numpy, pydub ...); none was installed here, so no output was committed.
 
 ## Sources
 - https://raw.githubusercontent.com/fisyher/gitadora-customs/master/plugins/sq3.py

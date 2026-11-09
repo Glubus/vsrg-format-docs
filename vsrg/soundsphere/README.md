@@ -1,8 +1,8 @@
 # rizu (soundsphere)
 
-Category: **vsrg**: keyboard vertical-scrolling rhythm game engine (osu!mania/BMS/O2Jam/Quaver/StepMania/IIDX-style columns, also osu!standard/catch experiments).
+Category: vsrg. Keyboard vertical-scrolling rhythm game engine (osu!mania/BMS/O2Jam/Quaver/StepMania/IIDX-style columns, also osu!standard/catch experiments).
 
-rizu (repository `semyon422/rizu`, Lua/LuaJIT; the chart format tag `sphere` and the name soundsphere refer to the same engine lineage [inference]) is a community engine that plays charts from many games by decoding them into one internal model (`chart/`): decoders exist for osu!, BMS, O2Jam, Quaver, StepMania, K-Shoot Mania, IIDX (`.1`, `.2dx`, `.s3p`, `.ifs`) and MIDI. It has its own text chart format, SPH.
+rizu (repository `semyon422/rizu`, Lua/LuaJIT; the chart format tag `sphere` and the name soundsphere refer to the same engine lineage [inference]) is a community engine that decodes charts from many games into one internal model (`chart/`). Decoders exist for osu!, BMS, O2Jam, Quaver, StepMania, K-Shoot Mania, IIDX (`.1`, `.2dx`, `.s3p`, `.ifs`) and MIDI. Its own text chart format is SPH.
 
 Format folders:
 - [`sph/`](sph/README.md): `.sph` text chart format.

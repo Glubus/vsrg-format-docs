@@ -5,7 +5,7 @@ Doc status: partial · ROX: no · Category: vsrg · Encoding: text
 
 ## Overview
 
-`.sma` is the simfile format of StepMania AMX, a Pump-It-Up-oriented fork of StepMania 3.9. It is an `.sm` superset (same MSD syntax, same `#NOTES:` six-parameter chart tag, same note characters) that adds **row-based time values**, **per-chart timing** after each `#NOTES`, and a few Pump-specific tags (`#SPEED`, `#MULTIPLIER`, `#TICKCOUNT`, `#BEATSPERMEASURE`). There is **no formal specification**: everything below comes from reading the only open implementation, StepMania's `NotesLoaderSMA.cpp` (authors Aldo Fregoso and Jason Felds, 2009-2011), and from the community description ("sma is a middle ground between .sm and .ssc", "allows to use ROW for time, ... no other format uses this convention"). No writer exists in the StepMania tree.
+`.sma` is the simfile format of StepMania AMX, a Pump-It-Up-oriented StepMania 3.9 fork. It is an `.sm` superset (same MSD syntax, `#NOTES:` six-parameter chart tag and note characters) with row-based time values, per-chart timing after each `#NOTES`, and Pump tags (`#SPEED`, `#MULTIPLIER`, `#TICKCOUNT`, `#BEATSPERMEASURE`). No formal specification exists: this page reads the only open implementation, StepMania's `NotesLoaderSMA.cpp` (Aldo Fregoso, Jason Felds, 2009-2011), plus the community description ("sma is a middle ground between .sm and .ssc", "allows to use ROW for time, ... no other format uses this convention"). No writer exists in the StepMania tree.
 
 ## Container & encoding
 
@@ -32,30 +32,30 @@ Tags handled by `SMALoader::LoadFromSimfile` (case-insensitive):
 
 ## Timing model
 
-- **Beats or rows**: BPM/stop/delay/tickcount/speed/multiplier/fake entries are `position=value`. A position ending in `r` or `R` is a **row index** and is divided by `#ROWSPERBEAT` (`RowToBeat`: `value / rowsPerBeat`); without the suffix it is a beat (float) as in `.sm`. The community description: "sma allows to use ROW for time, which is quite annoying because no other format uses this convention".
+- Beats or rows: BPM/stop/delay/tickcount/speed/multiplier/fake entries are `position=value`. A position ending in `r` or `R` is a **row index** and is divided by `#ROWSPERBEAT` (`RowToBeat`: `value / rowsPerBeat`); without the suffix it is a beat (float) as in `.sm`. The community description: "sma allows to use ROW for time, which is quite annoying because no other format uses this convention".
 - BPMs and stops use the `.sm` rules including negative-value warps (`ProcessBPMsAndStops`), then are added to the current chart's timing.
-- **`#SPEED`** (`ProcessSpeeds`): `position=ratio=length[S]` (a trailing `S`/`s` on the length means seconds, otherwise beats); a 2-value entry gets default length `0` for the first entry and `4` for the later ones ("4 is the default value in SMA, although SM5 requires 0 for the first segment"). Maps to SM5 speed segments.
-- **`#MULTIPLIER`**: `position=hit[=miss...]` -> SM5 combo segments; "SMA files can use 6 values after the row/beat" (entries of size 2 or 4 use the hit value for misses).
-- **`#BEATSPERMEASURE`** -> time-signature numerators (affects the measure lines only).
+- `#SPEED` (`ProcessSpeeds`): `position=ratio=length[S]` (a trailing `S`/`s` on the length means seconds, otherwise beats); a 2-value entry gets default length `0` for the first entry and `4` for the later ones ("4 is the default value in SMA, although SM5 requires 0 for the first segment"). Maps to SM5 speed segments.
+- `#MULTIPLIER`: `position=hit[=miss...]` -> SM5 combo segments; "SMA files can use 6 values after the row/beat" (entries of size 2 or 4 use the hit value for misses).
+- `#BEATSPERMEASURE` -> time-signature numerators (affects the measure lines only).
 - `#OFFSET`: sign as `.sm` (beat 0 at `-offset` s).
 - Conversion of a position to time: as `.sm`/`.ssc` after resolving rows to beats.
 
 ## Notes
 
-Same chart data as `.sm` ([notes grammar](../../stepmania/sm/README.md#notes)): `0 1 2 3 4 M L F K`, `[n]` keysounds, measures separated by commas; step types are whatever `#NOTES` names (Pump `pump-single` 5, `pump-halfdouble` 6, `pump-double` 10, `pump-couple` 10, and the dance types; see [step types](../../stepmania/README.md#step-types-and-column-counts)). The wiki lists SMA as a chart format for both the `dance` and `pump` game modes.
+Chart data as `.sm` ([notes grammar](../../stepmania/sm/README.md#notes)): `0 1 2 3 4 M L F K`, `[n]` keysounds, measures separated by commas. Step types are whatever `#NOTES` names (Pump `pump-single` 5, `pump-halfdouble` 6, `pump-double` 10, `pump-couple` 10, and the dance types; see [step types](../../stepmania/README.md#step-types-and-column-counts)). The wiki lists SMA for both `dance` and `pump` game modes.
 
 ## Audio & images
 
-As `.sm`: `#MUSIC`, `#BANNER`, `#BACKGROUND`, `#CDTITLE`, `#KEYSOUNDS`; `#PREVIEW`/`#SAMPLESTART`.
+As `.sm`: `#MUSIC`, `#BANNER`, `#BACKGROUND`, `#CDTITLE`, `#KEYSOUNDS`, `#PREVIEW`/`#SAMPLESTART`.
 
 ## Versions & variants
 
-`#SMAVERSION` exists in the files but is ignored by StepMania's loader. The behaviour described is that of the loader as merged into StepMania 5 (`5_1-new`/master); AMX's own engine may support more [unknown].
+`#SMAVERSION` appears in files but StepMania's loader ignores it. This page describes the loader as merged into StepMania 5 (`5_1-new`/master); AMX's own engine may support more [unknown].
 
 ## Quirks & pitfalls
 
-- Position values may be rows (`123r`) or beats; the meaning of `#ROWSPERBEAT` depends on its **order in the file** (first = definition, next = trigger).
-- Timing tags **after** a `#NOTES` belong to that chart; a parser that treats them as song tags will mix charts.
+- Positions may be rows (`123r`) or beats; `#ROWSPERBEAT` means definition on first occurrence, trigger on later ones.
+- Timing tags after a `#NOTES` belong to that chart; a parser treating them as song tags mixes charts.
 - `#SPEED` default lengths differ from SM5's.
 - `.sma` shadows `.sm` in StepMania's folder loader.
 - The loader ends with `TidyUpData`; no per-version handling.
@@ -63,7 +63,7 @@ As `.sm`: `#MUSIC`, `#BANNER`, `#BACKGROUND`, `#CDTITLE`, `#KEYSOUNDS`; `#PREVIE
 
 ## Example
 
-No real `.sma` file is vendored in this repo and none was retrieved. The structure implied by the loader (illustrative, hand-built from the handler table above, not a real file):
+No real `.sma` file was found. Structure implied by the loader (illustrative, hand-built from the handler table above):
 
 ```
 #SMAVERSION:1;
@@ -86,7 +86,7 @@ No real `.sma` file is vendored in this repo and none was retrieved. The structu
 
 ## ROX support
 
-Not read by ROX (no `.sma` in [ROX source: src/formats/auto/detect.rs](https://github.com/Glubus/rhythm-open-exchange/blob/main/src/formats/auto/detect.rs)). Because the chart/notes layout is `.sm`, a decoder could reuse the ROX `.sm` pipeline after resolving `r` positions and chart-level timing.
+Not read by ROX (no `.sma` in [src/formats/auto/detect.rs](https://github.com/Glubus/rhythm-open-exchange/blob/main/src/formats/auto/detect.rs)). A decoder could reuse the `.sm` pipeline after resolving `r` positions and chart-level timing.
 
 ## Parsers & tools
 
@@ -95,9 +95,9 @@ Not read by ROX (no `.sma` in [ROX source: src/formats/auto/detect.rs](https://g
 
 ## Getting samples
 
-No `.sma` file is committed: none was found. Searched 2026-11-09: StepMania-AMX repositories (StepMania-AMX/StepMania-AMX at commit `6423c41f8c0efe79599e1004a5171a22ba61b910`: `Courses/Samples/*.crs` and `Themes/default/Other/ScreenHowToPlay steps.sm` only; ssc2sma.amx.io: TypeScript loaders and no fixtures); the AMX builds on https://download.stepmania.amx.io/ (`3.9+_final-WIN.zip`, `SMA-Touch-Beta5.9.2`, `SMA-Beta3.1.7z`, `SMA-Beta5.9.2-20140524.7z`: no `.sma`/songs, only themes, courses and the `.sm` how-to-play steps); archive.org (no AMX item); PIU-Simfiles forks (`.ssc`). A hand-written file was not produced because the loader's row/beat and `#ROWSPERBEAT` trigger semantics are not specified well enough to validate one.
+No `.sma` committed: none found. Searched 2026-11-09: StepMania-AMX repositories (StepMania-AMX/StepMania-AMX at commit `6423c41f8c0efe79599e1004a5171a22ba61b910`: only `Courses/Samples/*.crs` and `Themes/default/Other/ScreenHowToPlay steps.sm`; ssc2sma.amx.io: TypeScript loaders, no fixtures); AMX builds on https://download.stepmania.amx.io/ (`3.9+_final-WIN.zip`, `SMA-Touch-Beta5.9.2`, `SMA-Beta3.1.7z`, `SMA-Beta5.9.2-20140524.7z`: themes, courses and `.sm` how-to-play steps, no `.sma`/songs); archive.org (no AMX item); PIU-Simfiles forks (`.ssc`). No hand-written file: the row/beat and `#ROWSPERBEAT` trigger semantics are too loosely specified to validate one.
 
-How to get one: convert any `.ssc` with the AMX web converter ssc2sma.amx.io (source https://github.com/StepMania-AMX/ssc2sma.amx.io; "Step converter from .ssc to .sma; supports StepMania 5 (Official), PIU Infinity, StepF2" per the organisation page) [the output format is the `.sma` of this page], for example one of the committed `../../stepmania/ssc/samples/*Springtime*` pump charts; or install StepMania AMX and look for `.sma` in song folders of AMX-targeted packs.
+How to get one: convert any `.ssc` with the AMX web converter ssc2sma.amx.io (source https://github.com/StepMania-AMX/ssc2sma.amx.io; "Step converter from .ssc to .sma; supports StepMania 5 (Official), PIU Infinity, StepF2" per the organisation page), e.g. a committed `../../stepmania/ssc/samples/*Springtime*` pump chart; or install StepMania AMX and look for `.sma` in song folders of AMX-targeted packs.
 
 ## Sources
 

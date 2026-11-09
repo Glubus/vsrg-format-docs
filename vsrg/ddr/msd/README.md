@@ -5,13 +5,13 @@ Doc status: partial · ROX: no · Category: vsrg · Encoding: text (Shift-JIS-er
 
 ## Overview
 
-`.msd` is the text chart script of an early Windows DDR simulator, the "grand daddy" (StepMania's own words, `Docs/SimfileFormats/misc.txt`) of the whole `#TAG:param:param;` family: `.msd` -> `.dwi` -> `.sm` -> `.ssc`. It is **not a Konami format**, although the original README lists it as "Dance Dance Revolution chart". The earliest known specification is the Japanese page "MSDファイル書式 Ver2.0β1" (archived 2007 copy of `doremi.kalin.to/ddr/msd_format.html`): "an MSD file is a chart script developed for **DDR'99**; DDR'99 loads files written in this script". The `msd` Rust crate says "The first known use of the MSD format is from the rhythm dance game DDR'99 (DDR here standing for 'Delight Delight Reduplication')". Files were typically made by hand in a text editor or converted from BMS; DWI's author "was using MSD files I had found online as a basis" when starting DWI in 2000 (The History of DWI). D2R's editor (D2REDIT) also reads `*.msd` ([legacy-dance-formats/d2r](../../legacy-dance-formats/d2r/README.md)).
+`.msd` is the text chart script of an early Windows DDR simulator, the "grand daddy" (StepMania, `Docs/SimfileFormats/misc.txt`) of the `#TAG:param:param;` family: `.msd` -> `.dwi` -> `.sm` -> `.ssc`. It is not a Konami format. The earliest spec is the Japanese page "MSDファイル書式 Ver2.0β1" (archived 2007 copy of `doremi.kalin.to/ddr/msd_format.html`): "an MSD file is a chart script developed for DDR'99; DDR'99 loads files written in this script". The `msd` Rust crate: "The first known use of the MSD format is from the rhythm dance game DDR'99 (DDR here standing for 'Delight Delight Reduplication')". Files were made by hand or converted from BMS; DWI's author "was using MSD files I had found online as a basis" in 2000 (The History of DWI). D2REDIT also reads `*.msd` ([legacy-dance-formats/d2r](../../legacy-dance-formats/d2r/README.md)).
 
 ## Container & encoding
 
-- Plain text, `#TAG:PARAM0:PARAM1:PARAM2;` records ("The first field is typically an identifier but doesn't have to be", `MsdFile.cpp`), `//` comments in StepMania's reader. The semicolon is required, but StepMania recovers a missing `;` when a `#` begins a new line.
-- `\` escapes of `:`, `;`, `#`, `\` exist in the generalized MSD of today's tools ([Anders429/msd](https://github.com/Anders429/msd)); whether the original DDR'99 sim processed them is Unknown.
-- Charset undeclared; Japanese files are Shift-JIS in practice [inference]; the spec page is a Shift-JIS/CP932 Japanese document.
+- Plain text `#TAG:PARAM0:PARAM1:PARAM2;` records ("The first field is typically an identifier but doesn't have to be", `MsdFile.cpp`), `//` comments in StepMania's reader. The semicolon is required, but StepMania recovers a missing `;` when `#` starts a new line.
+- `\` escapes of `:`, `;`, `#`, `\` exist in today's generalized MSD ([Anders429/msd](https://github.com/Anders429/msd)); whether the DDR'99 sim processed them is Unknown.
+- Charset undeclared; Japanese files are Shift-JIS in practice [inference] (the spec page is CP932).
 - One file per song, all play modes inside.
 
 ## Structure / metadata
@@ -44,7 +44,7 @@ Predefined mode strings: `NORMAL` and `HARD` (**removed in Version 2.0**), `BASI
 
 ## Notes
 
-"The numeric keypad corresponds to the foot panels. The arrows left/down/up/right correspond to `4 2 8 6`. A 90-degree step is the keypad corner: `7` for left+up, `9` for up+right. Down+up is `A`; left+right is `B`." So: `1 2 3 4 6 7 8 9 A B` and `0`; the same digit alphabet DWI later kept (and extended with `<>` groups, `!` holds and `C..M` for 6-panel). No hold/freeze arrows exist in Ver 2.0 beta 1 (freeze notes arrived with DDRMAX; DWI added `!`). The spec says "MSD scripts are still in development, so major specification changes are possible".
+"The numeric keypad corresponds to the foot panels. The arrows left/down/up/right correspond to `4 2 8 6`. A 90-degree step is the keypad corner: `7` for left+up, `9` for up+right. Down+up is `A`; left+right is `B`." So: `1 2 3 4 6 7 8 9 A B` and `0`, the alphabet DWI kept (adding `<>` groups, `!` holds and `C..M` for 6-panel). Ver 2.0 beta 1 has no hold/freeze arrows (freezes came with DDRMAX; DWI added `!`). The spec says "MSD scripts are still in development, so major specification changes are possible".
 
 ## Audio & images
 
@@ -52,19 +52,18 @@ Predefined mode strings: `NORMAL` and `HARD` (**removed in Version 2.0**), `BASI
 
 ## Versions & variants
 
-Ver 2.0 beta 1 is the only version documented (it removed `NORMAL`/`HARD` for `BASIC`). StepMania's `MsdFile` is the generalized reader of the tag syntax and is still used for `.sm`, `.ssc`, `.dwi`, `.ksf`, `.sma`, `.edit`. Converters existed from BMS to MSD and DWI. Other simulators' MSD charts load in DWI after a GAP change.
+Only Ver 2.0 beta 1 is documented (it replaced `NORMAL`/`HARD` with `BASIC`). StepMania's `MsdFile` generalizes the tag syntax and still reads `.sm`, `.ssc`, `.dwi`, `.ksf`, `.sma`, `.edit`. Converters from BMS to MSD and DWI existed. Other simulators' MSD charts load in DWI after a GAP change.
 
 ## Quirks & pitfalls
 
 - Level precedes mode (DWI reverses it).
-- `#GAP` is in the simulator's own unit and differs from DWI's milliseconds.
-- Only 8th-note slots plus bracket groups: no explicit beat numbers.
-- No unescape/charset standard.
-- Practical `.msd` found today may in fact be DWI or SM text with the old extension.
+- `#GAP` is in the simulator's own unit, unlike DWI's milliseconds.
+- Only 8th-note slots plus bracket groups, no beat numbers.
+- No unescape/charset standard; a `.msd` found today may be DWI or SM text with the old extension.
 
 ## Example
 
-Hand-built from the translated rules above (illustrative; the spec page contains no sample):
+Hand-built from the translated rules (the spec has no sample):
 
 ```
 #TITLE:Example;
@@ -76,7 +75,7 @@ Hand-built from the translated rules above (illustrative; the spec page contains
 
 ## ROX support
 
-Not read by ROX (no `.msd` handling in [ROX source: src/formats/auto/detect.rs](https://github.com/Glubus/rhythm-open-exchange/blob/main/src/formats/auto/detect.rs); note that ROX's `sm/msd.rs` is only the shared `#TAG:param;` tokenizer for `.sm/.ssc`, not an MSD chart reader). A decoder would be a trimmed DWI decoder without holds.
+Not read by ROX ([`src/formats/auto/detect.rs`](https://github.com/Glubus/rhythm-open-exchange/blob/main/src/formats/auto/detect.rs) has no `.msd` handling; `sm/msd.rs` is only the shared `#TAG:param;` tokenizer for `.sm/.ssc`). A decoder would be a trimmed DWI decoder without holds.
 
 ## Parsers & tools
 
@@ -84,9 +83,7 @@ Not read by ROX (no `.msd` handling in [ROX source: src/formats/auto/detect.rs](
 
 ## Getting samples
 
-Committed in [`samples/`](samples/SOURCES.md): **7 REAL `.msd` files** (`doremi-ddr_*.msd`: fan charts by "TAKU" for the freeware DDR simulator Delight Delight Reduplication, from the Wayback copy of http://doremi.kalin.to/ddr/ captured 2006-04-17; CP932, CRLF, `#SINGLE:BASIC:<level>:`), plus one hand-written `synthetic-demo.msd` (does not count). The real dialect differs from the translated spec in the `#SINGLE` parameter order (see Structure).
-
-More: the other Wayback captures of the same site (`doremi.kalin.to/ddr/first.html` ... `fifth.html` list the charts; only these seven `.msd` URLs were captured with status 200); the 'Delight Delight Reduplication' program by Nickle (http://nickle.hey.to/, nothing downloadable in Wayback); D2REDIT reads `*.msd` (see [`../../legacy-dance-formats/d2r`](../../legacy-dance-formats/d2r/README.md)).
+Committed: see [`samples/`](samples/SOURCES.md) (fan charts from the Wayback copy of http://doremi.kalin.to/ddr/ captured 2006-04-17, plus one hand-written synthetic file). The real dialect writes `#SINGLE` mode first (see Structure). More: other Wayback captures of the site (`doremi.kalin.to/ddr/first.html` ... `fifth.html` list the charts; only those seven `.msd` URLs returned 200); the 'Delight Delight Reduplication' program by Nickle (http://nickle.hey.to/, nothing downloadable in Wayback); D2REDIT reads `*.msd` ([`../../legacy-dance-formats/d2r`](../../legacy-dance-formats/d2r/README.md)).
 
 ## Sources
 

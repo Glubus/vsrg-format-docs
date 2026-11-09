@@ -5,20 +5,18 @@ Doc status: partial (chart content decoded; jacket and waypoint sections unknown
 
 ## Overview
 
-[`../mmws`](../mmws/README.md) introduces the MikuMikuWorld (MMW) score file and notes that its binary layout "was not read". This page is the layout, reconstructed from the C++ **loader** (`mmws/loader.cpp`) and the shared header `mmw_io.hpp` of `UntitledCharts/rg_converters`, which implements the three variants:
+[`../mmws`](../mmws/README.md) introduces the MikuMikuWorld (MMW) score file. This page gives its binary layout, reconstructed from the C++ loader (`mmws/loader.cpp`) and shared header `mmw_io.hpp` of `UntitledCharts/rg_converters`, which implements three variants (credited to `@YarNix`; the authors do not document the format). All files are little-endian, strings NUL-terminated.
 
 | Signature | Extension | Program | Version fields |
 |---|---|---|---|
 | `MMWS` | `.mmws` | MikuMikuWorld | one `int32` version (1..4+) |
-| `CCMMWS` | `.ccmmws` | MikuMikuWorld for **Chart Cyanvas** (MMW4CC) | `int16` version + `int16` "cc version" |
-| `UCMMWS` | `.unchmmws` | MikuMikuWorld for **Untitled Charts** | one `int32` "uc version" |
-
-The format is not documented by its authors; the rg_converters credits `@YarNix` for the MMWS loaders/exporters. All files are **little-endian**, strings are NUL-terminated.
+| `CCMMWS` | `.ccmmws` | MikuMikuWorld for Chart Cyanvas (MMW4CC) | `int16` version + `int16` "cc version" |
+| `UCMMWS` | `.unchmmws` | MikuMikuWorld for Untitled Charts | one `int32` "uc version" |
 
 ## Container & encoding
 
-- Raw binary file; no compression.
-- The detector (`mmws/detector.cpp`) tests the file prefix in this order: `MMWS`, `CCMMWS`, `UCMMWS` ("first `startswith` match wins"), so `MMWS` is checked before the longer signatures.
+- Raw binary, no compression.
+- The detector (`mmws/detector.cpp`) tests the file prefix in this order: `MMWS`, `CCMMWS`, `UCMMWS` ("first `startswith` match wins").
 - Strings (`read_cstr`): bytes up to the next NUL (charset not stated: UTF-8 assumed [inference]).
 - Integers `int32` unless a field says otherwise; floats are IEEE-754 `float32`.
 
@@ -28,9 +26,9 @@ The format is not documented by its authors; the rg_converters credits `@YarNix`
 
 1. `cstr signature` (`"MMWS"`, `"CCMMWS"` or `"UCMMWS"`, NUL included).
 2. Version field(s) per variant (table above).
-3. If `version >= 3` (`has_address`): an **address table** of absolute file offsets: `metadata`, `events`, `taps`, `holds`; then `damages` (if `cc_version >= 1`), `layers` (if `cc_version >= 4`), and one more `int32` that is read and ignored (if `cc_version >= 5`, "waypoints"). Each section is then read after seeking to its address. For `version < 3` the sections follow each other with no table.
+3. If `version >= 3` (`has_address`): an address table of absolute file offsets: `metadata`, `events`, `taps`, `holds`; then `damages` (if `cc_version >= 1`), `layers` (if `cc_version >= 4`), and one more `int32` that is read and ignored (if `cc_version >= 5`, "waypoints"). Each section is read after seeking to its address. For `version < 3` the sections follow each other with no table.
 
-Feature flags derived from the versions (`Version` in `mmw_io.hpp`; `version` = base version, `cc` = Chart Cyanvas version, `uc` = Untitled Charts version):
+Feature flags derived from the versions (`Version` in `mmw_io.hpp`; `version` = base, `cc` = Chart Cyanvas, `uc` = Untitled Charts):
 
 | Flag | Condition | Effect |
 |---|---|---|
@@ -45,11 +43,11 @@ Feature flags derived from the versions (`Version` in `mmw_io.hpp`; `version` = 
 | `has_floatLaneWidth` | `cc >= 6` | lane/width stored as `float32` |
 | `has_dummyNote` | `cc >= 6` and `uc >= 1` | dummy (fake) flag in notes |
 
-For `MMWS` files `cc = 0`; for `UCMMWS` files the constructor defaults `cc = 6` and `version = 4`, i.e. all features.
+For `MMWS` files `cc = 0`; for `UCMMWS` files the constructor defaults `cc = 6` and `version = 4` (all features).
 
 ### Metadata section
 
-`cstr title`, `cstr designer`, `cstr artist`, `cstr musicFile` (read and discarded by the converter), `float32 offset` (milliseconds; the converter stores `waveoffset = offset / -1000` seconds, i.e. the sign is inverted). With `has_jacket` further data (jacket path/etc.) may follow but is not read: Unknown.
+`cstr title`, `cstr designer`, `cstr artist`, `cstr musicFile` (discarded by the converter), `float32 offset` (milliseconds; the converter stores `waveoffset = offset / -1000` seconds, sign inverted). With `has_jacket`, more data (jacket path etc.) may follow; it is not read: Unknown.
 
 ### Layers (time-scale groups)
 
@@ -57,7 +55,7 @@ For `MMWS` files `cc = 0`; for `UCMMWS` files the constructor defaults `cc = 6` 
 
 ### Events section
 
-1. `int32 timeSignatureCount`, then `timeSignatureCount * 3` `int32` values (3 ints per entry: measure/numerator/denominator [inference]); the converter **skips** them.
+1. `int32 timeSignatureCount`, then `timeSignatureCount * 3` `int32` values (3 ints per entry: measure/numerator/denominator [inference]); the converter skips them.
 2. `int32 tempoCount`; each `{ int32 tick; float32 bpm }`.
 3. If `has_hispeed`: `int32 count`; each `{ int32 tick; float32 timeScale; [int32 layer if has_layers] }`.
 4. If `has_skill_fever`: `int32 skillCount` then `skillCount * int32 tick`; then `int32 feverChanceTick` (signed) and `int32 feverStartTick` (signed); `> 0` means present.
@@ -72,10 +70,10 @@ Used by taps, hold nodes and damage notes (order of fields):
 | lane | int32 (or float32 if `has_floatLaneWidth`) | |
 | width | int32 (or float32) | |
 | layer | int32 | `has_layers` |
-| flick | int32 | only when the record is a tap or a hold **end** (not start/mid) |
+| flick | int32 | only when the record is a tap or a hold end (not start/mid) |
 | flag | int32 | bit `1` critical, `2` friction (trace), `4` dummy/fake (`has_dummyNote`) |
-| holdStepType | int32 | only for hold **mid** nodes: `0` normal (tick, shape + combo), `1` hidden (shape, no combo, critical = none), `2` skip (attach; combo, no shape change) |
-| ease | int32 | for hold **start** and **mid** nodes |
+| holdStepType | int32 | only for hold mid nodes: `0` normal (tick, shape + combo), `1` hidden (shape, no combo, critical = none), `2` skip (attach; combo, no shape change) |
+| ease | int32 | for hold start and mid nodes |
 
 Flick types: `0` none, `1` up (default), `2` left, `3` right. Ease types: `0` linear, `1` ease-in, `2` ease-out, `3` ease-in-out, `4` ease-out-in.
 
@@ -96,35 +94,34 @@ Flick types: `0` none, `1` up (default), `2` left, `3` right. Ease types: `0` li
 
 ## Timing model
 
-**480 ticks per beat** (`tick_to_beat(tick, 480)`). Tempo events and hi-speed events (per layer) as above; the time signature list is skipped by the converter, so the exact measure structure is not needed for beat positions. Offset in the metadata is the audio offset in ms.
+480 ticks per beat (`tick_to_beat(tick, 480)`), with tempo and per-layer hi-speed events as above. The converter skips the time signature list. The metadata offset is the audio offset in ms.
 
 ## Notes
 
-- Taps with flick/trace/critical/fake flags; hold slides with start (hidden start/end flags), mid nodes (normal/hidden/skip) and end (flick, friction); guides with colour and fade; damage notes; lane model: `lane` is the left edge on the MMW lane grid (0..11, wider with lane extension), `width` the width; converter geometry: centre = `lane - 6 + width/2`, half-size = `width/2` (0-centred, 12-lane board).
+`lane` is the left edge on the MMW lane grid (0..11, wider with lane extension), `width` the width. Converter geometry: centre = `lane - 6 + width/2`, half-size = `width/2` (0-centred, 12-lane board).
 
 ## Audio & images
 
-`musicFile` path (NUL-string) in the metadata; a jacket feature is flagged from version 2 but its layout is not read by the loader (Unknown).
+`musicFile` path (NUL-string) in the metadata. The loader does not read the jacket data flagged from version 2 (Unknown).
 
 ## Versions & variants
 
-See the flag table. The three signatures form one family: MMWS (original editor), CCMMWS (adds the `cc` capabilities used by Chart Cyanvas), UCMMWS (adds `uc` version and dummy notes; the converter calls its default `Version()` = all features).
+See the flag table. CCMMWS adds the `cc` capabilities, UCMMWS the `uc` version and dummy notes (the converter's default `Version()` enables all features).
 
 ## Quirks & pitfalls
 
-- Sections are addressed by **absolute offsets** (`seek_set`), not necessarily in file order; follow the table.
-- `has_dummyNote` requires both `cc >= 6` and `uc >= 1`.
-- `flick` is absent in start/mid records: reading it unconditionally desynchronises the stream.
-- `feverChanceTick` and `feverStartTick` are signed; <= 0 means "absent".
-- Offsets in `.mmws` are in ms and **negated** relative to `waveoffset`.
+- Sections are addressed by absolute offsets (`seek_set`), not necessarily in file order.
+- `flick` is absent in start/mid records; reading it unconditionally desynchronises the stream.
+- `feverChanceTick` and `feverStartTick` are signed; <= 0 means absent.
+- The offset is in ms, negated relative to `waveoffset`.
 
 ## Example
 
-No sample in the repo (binary). Illustrative, hand-built header for a minimal `MMWS` version-1 file: `4D 4D 57 53 00` (`MMWS\0`) then `01 00 00 00` (int32 version 1); sections then follow without an address table (version < 3).
+Hand-built header for a minimal `MMWS` version-1 file: `4D 4D 57 53 00` (`MMWS\0`) then `01 00 00 00` (int32 version 1); sections then follow without an address table (version < 3).
 
 ## ROX support
 
-Not read by ROX. Wide notes, slides with eases, guides, damage notes and layers (scroll groups) do not map to ROX columns.
+Not read by ROX (wide notes, eased slides, guides, damage notes and layers do not map to columns).
 
 ## Parsers & tools
 
@@ -133,9 +130,10 @@ Not read by ROX. Wide notes, slides with eases, guides, damage notes and layers 
 
 ## Getting samples
 
-- Committed in [`samples/`](samples/): 5 `.ccmmws` and 5 `.unchmmws` files produced by rg-converters (`mmw.ccmmws.export`, `mmw.unchmmws.export`) from real charts. **Converted, not downloaded**: no public `.ccmmws`/`.unchmmws` was found. Everything is listed with origin, date and sha256 in [`samples/SOURCES.md`](samples/SOURCES.md).
-- Observed [observed in samples/rgconv_sekaibest_0001_01_easy.ccmmws, ..unchmmws]: magic `CCMMWS` + `00 04 00 06 00 27 ...` for the Chart Cyanvas variant and `UCMMWS` + `00 01 00 00 00 27 ...` for the Untitled Charts variant (same length for the same chart).
-- How to get native ones: MMW4CC / MMW4UC (https://github.com/UntitledCharts/MikuMikuWorld4UC) File > Save.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). All are converted with rg-converters (`mmw.ccmmws.export`, `mmw.unchmmws.export`); no public `.ccmmws`/`.unchmmws` was found.
+
+- [observed: rgconv_sekaibest_0001_01_easy.ccmmws, ..unchmmws] magic `CCMMWS` + `00 04 00 06 00 27 ...` (Chart Cyanvas) and `UCMMWS` + `00 01 00 00 00 27 ...` (Untitled Charts); same length for the same chart.
+- Native files: MMW4CC / MMW4UC (https://github.com/UntitledCharts/MikuMikuWorld4UC) File > Save.
 
 ## Sources
 
