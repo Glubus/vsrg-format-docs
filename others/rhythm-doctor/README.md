@@ -1,8 +1,8 @@
 # Rhythm Doctor
 
-One-button rhythm game by 7th Beat Games (Steam release December 2025 per Wikipedia). The player presses a single key on the 7th beat of each pulse sequence ("rows" of patients). The built-in level editor (also standalone "RDLE") writes custom levels.
+One-button rhythm game by 7th Beat Games (Steam release December 2025 per Wikipedia). The player presses one key on the 7th beat of each pulse sequence ("rows" of patients). The built-in level editor (also standalone "RDLE") writes custom levels.
 
-Category: **others**. The game is one-button, the gameplay is a timeline of rows, beats and heavy visual events; there are no key lanes or columns of notes. A level file is mostly an event list (sound, VFX, rows, decorations, rooms).
+Category: others. Gameplay is a timeline of rows, beats and heavy visual events with no key lanes. A level file is mostly an event list (sound, VFX, rows, decorations, rooms).
 
 ## Formats
 | Folder | File | What |

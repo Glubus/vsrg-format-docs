@@ -2,7 +2,7 @@
 
 SEGA / United Game Artists rhythm series (Dreamcast 1999, Part 2 2002, ports on PS2, PC (Part 2, Steam), VR). The player repeats the "call" of enemies/reporters by pressing a sequence of directional/chu/hey inputs in rhythm during a scripted scene; the chart is a scripted *report* (a sequence of call-and-response phrases with timing), not a note scroller.
 
-**Category: others** — call-and-response script; no lanes.
+Category: others: call-and-response script; no lanes.
 
 ## Formats
 

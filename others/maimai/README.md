@@ -1,8 +1,8 @@
 # maimai / maimai DX
 
-SEGA arcade rhythm game (2012-). The cabinet has a circular screen with a ring of **8 buttons** (numbered clockwise from the 1 o'clock position, 1–8) and, since maimai DX (2019), a touch screen divided into **34 sensor zones** (groups A–E, 8 zones each for A/B/D/E, 2 for C). Notes start at the centre and travel outward to a button on the judgement ring (taps, holds, breaks, EX notes); "star" notes spawn **slides** that must be traced across the sensors along a shape (straight, arc along the ring, V, p/q, zigzag, fan…); DX adds touch notes and touch holds on sensors.
+SEGA arcade rhythm game (2012-). The cabinet has a circular screen with a ring of 8 buttons (numbered clockwise from the 1 o'clock position, 1–8) and, since maimai DX (2019), a touch screen with 34 sensor zones (groups A–E, 8 zones each for A/B/D/E, 2 for C). Notes start at the centre and travel outward to a button on the judgement ring (taps, holds, breaks, EX notes). Star notes spawn slides traced across the sensors along a shape (straight, arc along the ring, V, p/q, zigzag, fan…). DX adds touch notes and touch holds.
 
-**Category: others** — radial (centre-to-ring) movement, 8 ring positions + 34 touch zones, slide shapes; there are no vertical lanes. A ROX column model could only represent the 8 buttons as 8 columns and would lose slides and touch.
+Category: others. Movement is radial (centre to ring) over 8 ring positions + 34 touch zones, with slide shapes and no vertical lanes. A ROX column model could only map the 8 buttons to 8 columns and would lose slides and touch.
 
 ## Formats
 

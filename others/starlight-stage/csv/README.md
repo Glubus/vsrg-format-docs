@@ -4,12 +4,10 @@ Kind: chart
 Doc status: partial · ROX: no · Category: others · Encoding: text
 
 ## Overview
-
-Beatmap tables of CGSS as extracted from the game's resources (the game stores them in `.bdb` databases containing raw chart CSV blobs, with ACB/HCA audio). The schema below is from the DereInfo README ("CSV scheme (2020.12.19 update - witch mode)"). Authoring/extraction tools exist (DereTore toolkit, libcgss, DereGuide).
+Beatmap tables of CGSS extracted from the game's `.bdb` databases (raw chart CSV blobs; audio is ACB/HCA). The schema is from the DereInfo README ("CSV scheme (2020.12.19 update - witch mode)").
 
 ## Container & encoding
-
-CSV text, one row per object, one file per song/difficulty (debut, regular, pro, master, master+, light, trick, piano, forte are the difficulty names listed by DereInfo). In the game they live in SQLite `.bdb` files; DereInfo extracts SQLite DBs from the data bundle.
+CSV text, one row per object, one file per song/difficulty (debut, regular, pro, master, master+, light, trick, piano, forte per DereInfo). In the game they live in SQLite `.bdb` files; DereInfo extracts the SQLite DBs from the data bundle.
 
 ## Structure / metadata
 
@@ -17,7 +15,7 @@ Columns in order (as listed by DereInfo):
 
 | # | Column | Meaning |
 |---|---|---|
-| 1 | `id` | primary key; does **not** indicate note order |
+| 1 | `id` | primary key; not the note order |
 | 2 | `sec` | time (seconds) at which the note reaches the judgement line |
 | 3 | `type` | object kind (see below) |
 | 4 | `startPos`, 5 `finishPos` | start and end position counted from the left (note path endpoints) |
@@ -32,15 +30,15 @@ Columns in order (as listed by DereInfo):
 
 ## Timing model
 
-Absolute seconds per row (`sec`), with tempo changes encoded as `type = 93` rows (status = tempo, default 100) that rescale the speed seen by the engine; `distance` is derived after tempo changes.
+Absolute seconds per row (`sec`). Tempo changes are `type = 93` rows (status = tempo, default 100) that rescale the speed seen by the engine; `distance` is derived after them.
 
 ## Notes
 
-Normal tap, hold (paired via `groupId` start/end rows), flick (status = left/right), slide (connected by `groupId`, positions change across rows), grand-mode variants (width in `status`), witch-mode accident/decorator objects. Positions count from the left.
+Holds pair start/end rows via `groupId`; slides link rows by `groupId` with changing positions; flicks use `status` = left/right; grand variants carry width in `status`. Positions count from the left.
 
 ## Audio & images
 
-Not in the CSV (ACB/HCA audio, handled by libcgss).
+ACB/HCA audio, handled by libcgss.
 
 ## Versions & variants
 
@@ -48,11 +46,11 @@ Not in the CSV (ACB/HCA audio, handled by libcgss).
 
 ## Quirks & pitfalls
 
-`id` is not an order; `status` is overloaded by type; grand mode reinterprets `status` as width; group ids must be used to rebuild holds and slides.
+`id` is not an order; `status` is overloaded by type (width in grand mode); rebuild holds and slides from group ids.
 
 ## Example
 
-Real first rows, 8-column variant without the witch columns [observed in samples/mishiro-score-viewer_8039-1.csv]:
+First rows, 8-column variant without the witch columns [observed: mishiro-score-viewer_8039-1.csv]:
 
 ```
 id,sec,type,startPos,finishPos,status,sync,groupId
@@ -71,10 +69,9 @@ Not read by ROX.
 DereTore (C#, authoring toolkit): <https://github.com/OpenCGSS/DereTore>; libcgss (HCA/ACB): <https://github.com/hozuki/libcgss>; DereGuide (iOS): <https://github.com/superk589/DereGuide>; DereInfo (Kotlin/Android): <https://github.com/KYHSGeekCode/DereInfo>; motto-cgss: <https://github.com/logchan/motto-cgss>.
 
 ## Getting samples
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md) (`<musicId>-<difficulty>.csv` from the mishiro-score-viewer repository).
 
-Committed in [`samples/`](samples/): eight real beatmap CSVs (`<musicId>-<difficulty>.csv`) from the mishiro-score-viewer repository (data from the game). See [`samples/SOURCES.md`](samples/SOURCES.md) for every file's source URL, fetch date, sha256 and terms.
-
-Observed [observed in samples/mishiro-score-viewer_*.csv]: these files have the 8-column header `id,sec,type,startPos,finishPos,status,sync,groupId` (no `visible`/`size`/`distance` witch columns); `type` values found: 1, 2, 3, 91, 92 and 100 (the first rows are a `100` and a `91` at sec 0 with status e.g. 46). The mapping of 91/92/100 is not in the fiche sources. More: extract `.bdb` databases from the game data (DereInfo, DereTore).
+[observed: mishiro-score-viewer_*.csv] 8-column header `id,sec,type,startPos,finishPos,status,sync,groupId` (no `visible`/`size`/`distance`); `type` values found: 1, 2, 3, 91, 92 and 100 (the first rows are a `100` and a `91` at sec 0 with status e.g. 46). The meaning of 91/92/100 is not in the sources. More: extract `.bdb` databases from the game data (DereInfo, DereTore).
 
 ## Sources
 

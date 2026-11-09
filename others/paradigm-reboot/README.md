@@ -1,9 +1,7 @@
 # Paradigm: Reboot
 
-Paradigm: Reboot (Paradigm Studio, 2020) is a touch rhythm game (Unity). Its on-screen note layout was not verified from any source consulted here.
+Paradigm: Reboot (Paradigm Studio, 2020) is a Unity touch rhythm game. Its note layout is unverified.
 
-Category: **others** (tentative): no public chart-file specification is available to decide column-based vs free-position placement.
+Category: **others** (tentative): no public chart spec decides column-based vs free-position.
 
-Format documented: [`chart/`](chart/README.md) (stub).
-
-No chart-format repository was found: searches only surfaced score-tracking projects (Paradigm: Reboot Prober) that handle metadata, not note data. The Fandom wiki has a "Data Mining" page which was not read.
+Format: [`chart/`](chart/README.md) (stub). No chart-format repository exists; searches found only score trackers (Paradigm: Reboot Prober). The Fandom "Data Mining" page was not read.

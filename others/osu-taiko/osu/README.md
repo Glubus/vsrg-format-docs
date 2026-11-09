@@ -3,19 +3,19 @@ Kind: chart
 
 Doc status: partial · ROX: decode only (`TaikoDecoder`, converted to a 4K layout; not reached by extension auto-detection) · Category: others · Encoding: text
 
-Everything about the file container, sections, `[General]`/`[Metadata]`/`[Difficulty]`, `[Events]`, `[TimingPoints]` and the generic hit-object line is in the canonical page [vsrg/osu-mania/osu/README.md](../../../vsrg/osu-mania/osu/README.md). This page only covers what is specific to `Mode: 1`.
+Container, sections, `[General]`/`[Metadata]`/`[Difficulty]`, `[Events]`, `[TimingPoints]` and the generic hit-object line: see [vsrg/osu-mania/osu/README.md](../../../vsrg/osu-mania/osu/README.md). This page covers `Mode: 1` only.
 
 ## Overview
 
-osu!taiko is the osu! mode inspired by Taiko no Tatsujin: a horizontal scroll from the right to a fixed target circle on the left; the player hits "centre" (don, red) and "rim" (kat, blue) with two pairs of keys. The beatmap file is the ordinary `.osu` with `Mode: 1`. Maps are either made natively in taiko or are auto-converted from osu!standard / mania maps by the client at load time (the conversion is not stored in the file).
+Inspired by Taiko no Tatsujin: objects scroll from the right to a fixed target circle on the left; the player hits "centre" (don, red) and "rim" (kat, blue). The beatmap is an ordinary `.osu` with `Mode: 1`. Maps are made natively or auto-converted by the client from osu!standard / mania maps at load time (the conversion is not stored).
 
 ## Packaged in
 
-- Shipped in: `.osz` (zip of a beatmap set: one `.osu` per difficulty, audio, background, optional video, `.osb` storyboard, hitsounds).
+`.osz` (zip of a beatmap set: one `.osu` per difficulty, audio, background, optional video, `.osb` storyboard, hitsounds).
 
 ## Container & encoding
 
-Identical to the canonical doc: UTF-8 text, one file per difficulty, `osu file format vN`, `.osz` set archive.
+As in the canonical doc: UTF-8 text, one file per difficulty, `osu file format vN`, `.osz` set archive.
 
 ## Structure / metadata
 
@@ -49,18 +49,18 @@ Simultaneous objects: two objects at the same time are possible (stacked don/kat
 
 ## Audio & images
 
-As in the canonical doc. Taiko uses the `taiko-` prefixed sample sets of the skin (`taiko-normal-hitnormal.wav` etc.) [inference: skinning convention, not read in a source for this page]; per-object `hitSample` custom files also apply.
+As in the canonical doc. Taiko uses the `taiko-` prefixed skin sample sets (`taiko-normal-hitnormal.wav` etc.) [inference: skinning convention, not read in a source]; per-object `hitSample` custom files also apply.
 
 ## Versions & variants
 
-Same version line as the other modes. Version 8 changes the slider->hits conversion rule (see above). Gameplay-affecting differences between stable and lazer (scroll speed handling of inherited points) are not stored in the file.
+Same version line as the other modes. Version 8 changes the slider-to-hits conversion rule (see Notes). Stable and lazer differ in inherited-point scroll speed handling (not stored in the file).
 
 ## Quirks & pitfalls
 
-- A taiko map's `x,y` are meaningless; do not use them.
-- A drum roll's end time is not stored: it must be computed from `length`, `slides`, `SliderMultiplier`, the inherited multiplier and the beat length at the slider's start.
-- Strong/big is encoded in the sound bit `finish`, colour in the whistle/clap bits.
-- `curvePoints` must still parse (a slider line is a slider line) even though they are unused.
+- `x,y` are meaningless in taiko.
+- A drum roll's end time is not stored: compute it from `length`, `slides`, `SliderMultiplier`, the inherited multiplier and the beat length at the slider's start.
+- Strong/big is the `finish` sound bit; colour is the whistle/clap bits.
+- `curvePoints` must still parse though unused.
 
 ## Example
 
@@ -79,23 +79,22 @@ Mode: 1
 
 ## ROX support
 
-ROX source `src/formats/taiko`:
-- `TaikoDecoder` is a separate decoder that parses the `.osu` with the same parser as mania, requires `Mode: 1` (else `InvalidFormat("Not a taiko beatmap (mode=N, expected 1)")`), and builds a **4-column** chart. The extension auto-detection (`auto/detect.rs`: `osu -> DetectedFormat::Osu`) and `auto/dispatch.rs` only know the mania decoder, so taiko decoding needs an explicit call.
-- Mapping: spinners (type bit 3) are skipped. Every other object (including sliders, which therefore become a single tap at the slider start, NOT a roll) becomes tap(s): kat if whistle or clap, don otherwise; `finish` -> big: two columns at the same time. Small notes alternate between the two columns of their colour, big ones use both. Column layouts (`ColumnLayout`): `Dkkd` (default) don = columns 0 and 3, kat = 1 and 2; `Dkdk` don = 0,2, kat = 1,3; `Kddk` don = 1,2, kat = 0,3. `AlternationState` can be supplied to continue the alternation.
-- Timing: only uninherited points become BPM points (with meter); SV points are dropped; if there is no BPM point, 120 BPM at 0 is inserted. Metadata: title/artist (Unicode preferred), creator, version, ids, audio, background, `AudioLeadIn` and `PreviewTime`.
-- Not read: drum roll length, swell, scroll speed, editor/colours. Burst/hold notes are never generated. Encoding to taiko is not provided.
+`src/formats/taiko`, `TaikoDecoder`: parses the `.osu` with the mania parser, requires `Mode: 1` (else `InvalidFormat("Not a taiko beatmap (mode=N, expected 1)")`) and builds a 4-column chart. Extension auto-detection (`auto/detect.rs`: `osu -> DetectedFormat::Osu`) and `auto/dispatch.rs` only know the mania decoder, so taiko needs an explicit call. Encoding to taiko is not provided.
+
+- Spinners (type bit 3) are skipped. Every other object, sliders included (a slider becomes a single tap at its start, not a roll), becomes taps: kat if whistle or clap, don otherwise; `finish` -> big: two columns at the same time. Small notes alternate between the two columns of their colour, big ones use both. Column layouts (`ColumnLayout`): `Dkkd` (default) don = columns 0 and 3, kat = 1 and 2; `Dkdk` don = 0,2, kat = 1,3; `Kddk` don = 1,2, kat = 0,3. `AlternationState` continues the alternation.
+- Timing: only uninherited points become BPM points (with meter); SV points are dropped; with no BPM point, 120 BPM at 0 is inserted. Metadata: title/artist (Unicode preferred), creator, version, ids, audio, background, `AudioLeadIn`, `PreviewTime`.
+- Not read: drum roll length, swell, scroll speed, editor/colours. Burst/hold notes are never generated.
 
 ## Parsers & tools
 
 - osu!lazer taiko ruleset (C#): https://github.com/ppy/osu/tree/master/osu.Game.Rulesets.Taiko
 - osu-file-parser, libosu (Rust): see the canonical doc.
-- ROX `TaikoDecoder` (Rust), vendored in this repository.
-- Taiko no Tatsujin charts (`.tja`) are a different format: [../../taiko-no-tatsujin/tja/](../../taiko-no-tatsujin/tja/).
+- ROX `TaikoDecoder` (Rust).
+- `.tja` is a different format: [../../taiko-no-tatsujin/tja/](../../taiko-no-tatsujin/tja/).
 
 ## Getting samples
 
-- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): 15 `Mode: 1` charts (v9, v12, v14; Kantan to Inner Oni difficulties of one song; drum rolls; swells; one hand-written mini map) from kionell/osu-taiko-stable (MIT), ekgame/beatmap-analyzer (GPL-3.0), MaxOhn/rosu-pp (MIT), ppy/osu (MIT), N0zoM1z0/osu-reverse-engineering (MIT).
-- More: any osu! mapset (`.osz`) with taiko difficulties has `.osu` files with `Mode: 1`; converted maps (standard -> taiko) are not stored as taiko files (the client converts at load time). Fixture folders: kionell/osu-taiko-stable `tests/Files/Taiko/Beatmaps`, ekgame/beatmap-analyzer `test_maps/taiko`.
+Committed: see [samples/SOURCES.md](samples/SOURCES.md). More: any osu! mapset (`.osz`) with taiko difficulties has `.osu` files with `Mode: 1` (converted standard maps are not stored as taiko files). Fixture folders: kionell/osu-taiko-stable `tests/Files/Taiko/Beatmaps`, ekgame/beatmap-analyzer `test_maps/taiko`.
 
 ## Sources
 

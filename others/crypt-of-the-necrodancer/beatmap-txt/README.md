@@ -4,38 +4,45 @@ Kind: metadata
 Doc status: partial · ROX: no · Category: others · Encoding: text
 
 ## Overview
-When the player assigns a custom MP3/OGG to a zone, NecroDancer analyses it and stores the result in a text file next to the game data: the beat data text file "with the same name as your song file" (official FAQ). It contains only beat positions, no notes. Because the game is a rhythm roguelike, this is the entire timing description the game needs for custom music. Sources disagree on the unit (seconds in the FAQ and in a CLI tool that writes the files, milliseconds with commas in a 2017 forum sample), so a parser must sniff the content.
+
+When the player assigns a custom MP3/OGG to a zone, the game stores its beat analysis in a text file "with the same name as your song file" (official FAQ). It holds only beat positions, which is all the timing the game needs. Sources disagree on the unit (seconds in the FAQ and in a CLI tool that writes the files; milliseconds with commas in a 2017 forum sample), so a parser must sniff the content.
 
 ## Container & encoding
-- Plain text. Location (Supinic's tool): `<game dir>/data/custom_music/<audio file name>.txt`; the audio file is referenced from the game's `save_game.xml` (the tool edits it to add symlinks; a custom lobby track that is later missing can crash the game, FAQ).
-- Name: exactly the audio file name including its extension plus `.txt` (forum: "the name is the same as the song name including extension + .txt").
-- Official FAQ (2021 text): "The beat data text file is a numbered list of numbers ... Each number indicates the position of a beat, in seconds. So if you want to remove the final 10 beats, remove the final ten numbers in the list."
-- Supinic's tool writes `beats.join("\n")`, i.e. one floating point number per line, in seconds (`i + offset` stepping by `60/bpm`).
-- A forum sample from 2017 shows a single line of comma-separated integers (e.g. `352,699,1046,1393,...`) which at 173 BPM (346.8 ms per beat) are milliseconds, followed (outside the file) by its author's notes `BPM: 173`, `Beats: 368`. [conflict: the format may have changed between 2017 and the FAQ, or the sample was the output of the author's own console tool; unresolved]
+
+- Plain text at `<game dir>/data/custom_music/<audio file name>.txt` (Supinic's tool). The name is the audio file name including its extension plus `.txt` (forum). The audio file is referenced from `save_game.xml` (the tool edits it to add symlinks; a custom lobby track that later goes missing can crash the game, FAQ).
+- FAQ (2021 text): "The beat data text file is a numbered list of numbers ... Each number indicates the position of a beat, in seconds. So if you want to remove the final 10 beats, remove the final ten numbers in the list."
+- Supinic's tool writes `beats.join("\n")`: one float per line, in seconds (`i + offset` stepping by `60/bpm`).
+- A 2017 forum sample is one line of comma-separated integers (e.g. `352,699,1046,1393,...`), milliseconds at 173 BPM (346.8 ms per beat), with its author's notes `BPM: 173`, `Beats: 368` outside the file. [conflict: the format may have changed since 2017, or the sample came from the author's own tool; unresolved]
 
 ## Structure / metadata
-No header, no metadata: just numbers. Count = number of beats. [Unknown whether the game accepts both separators.]
+
+No header or metadata, just numbers; count = number of beats. [Unknown whether the game accepts both separators.]
 
 ## Timing model
-Beat times are absolute positions in the audio. Intervals between numbers define the tempo locally (tempo changes are allowed by the automatic tracker, which "needs a strong beat"; silence at the end keeps producing beats until the end of the audio, FAQ). Manual mode ("Manual Beats" option, tap the beat) produces the same file. First-beat offset is just the first number.
+
+Beat times are absolute positions in the audio; intervals give the local tempo. The automatic tracker allows tempo changes but "needs a strong beat", and silence at the end keeps producing beats until the end of the audio (FAQ). Manual mode ("Manual Beats", tap the beat) writes the same file. The first-beat offset is the first number.
 
 ## Notes
-Not applicable: gameplay events (movement, attacks) are driven by the player; only beats exist.
+
+Unknown: only beats exist; the player drives movement and attacks.
 
 ## Audio & images
-MP3 or OGG only (FAQ), which must be fully loaded into memory for beat detection. Using custom music disables Steam achievements and uses separate leaderboards.
+
+MP3 or OGG only (FAQ), fully loaded into memory for beat detection. Custom music disables Steam achievements and uses separate leaderboards.
 
 ## Versions & variants
-- Unit seconds (FAQ, Supinic tool) versus milliseconds (2017 forum sample).
-- The game also has its own XML (`necrodancer.xml`, dungeon files) for items, enemies and level layout, parsed by toofz-necrodancer-core; these are not charts.
+
+- Seconds (FAQ, Supinic tool) vs milliseconds (2017 forum sample).
+- `necrodancer.xml` and dungeon files (items, enemies, level layout; parsed by toofz-necrodancer-core) are not charts.
 
 ## Quirks & pitfalls
-- Wrong or non-OGG/MP3 content with a renamed extension makes the character fall through floors (FAQ).
+
+- A renamed non-OGG/MP3 file makes the character fall through floors (FAQ).
 - Silence at the end yields extra beats: delete the trailing numbers (FAQ).
-- The file name must keep the original audio extension.
+- The file name keeps the original audio extension.
 
 ## Example
-Illustrative, hand-built from the FAQ and the tool's output rule (120 BPM, one beat every 0.5 s):
+Hand-built from the FAQ and the tool's output rule (120 BPM, one beat every 0.5 s):
 ```
 0.5
 1
@@ -45,7 +52,8 @@ Illustrative, hand-built from the FAQ and the tool's output rule (120 BPM, one b
 The forum sample line begins `352,699,1046,1393,1740,2087,2434` (origin: Steam discussion thread, 2017, millisecond interpretation inferred).
 
 ## ROX support
-Not read by ROX. No notes to convert; at best a metronome grid.
+
+Not read by ROX (no notes to convert; at most a metronome grid).
 
 ## Parsers & tools
 - necrodancer-custom-music (JavaScript; wrapper over the game's `beattracker.exe`, writes the `.txt`): https://github.com/Supinic/necrodancer-custom-music
@@ -54,8 +62,9 @@ Not read by ROX. No notes to convert; at best a metronome grid.
 
 ## Getting samples
 
-- **Committed**: 1 real file (the beat list pasted in a 2017 Steam forum thread; comma-separated milliseconds) plus 2 synthetic files in [`samples/`](samples/). No other real beat file is published: they are generated locally by the game. Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
-- **More samples**: assign an MP3/OGG as custom music in a zone (official FAQ https://braceyourselfgames.com/crypt-of-the-necrodancer/faq/) and the beat text file is written next to the audio; or run Supinic/necrodancer-custom-music. Checked and containing no beat files: Supinic/necrodancer-custom-music, SamuelDev/Necrodancer-Custom-Music-Fix, Callum-Mitchell/Waltzifier.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). Real beat files are generated locally by the game and not published; the one real sample is a beat list pasted in a 2017 Steam forum thread (comma-separated milliseconds).
+
+More: assign an MP3/OGG as custom music in a zone (official FAQ https://braceyourselfgames.com/crypt-of-the-necrodancer/faq/) and the game writes the beat file next to the audio, or run Supinic/necrodancer-custom-music. Checked, no beat files: Supinic/necrodancer-custom-music, SamuelDev/Necrodancer-Custom-Music-Fix, Callum-Mitchell/Waltzifier.
 
 ## Sources
 - https://braceyourselfgames.com/crypt-of-the-necrodancer/faq/ (Custom Music section)

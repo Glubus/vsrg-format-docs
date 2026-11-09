@@ -1,8 +1,8 @@
 # Synth Riders
 
-VR rhythm game by Kluge Interactive. The player holds two hands that follow colored notes and rails (continuous paths) flying along a tunnel, dodging walls. Beatmaps are created with the in-game/official Synth Riders Beatmap Editor and shared as `.synth` files (Synthriderz community).
+VR rhythm game by Kluge Interactive. Two hands follow colored notes and rails (continuous paths) flying along a tunnel, dodging walls. Beatmaps come from the in-game/official Synth Riders Beatmap Editor and are shared as `.synth` files (Synthriderz community).
 
-Category: **others**: notes are free 2D positions plus rails (multi-node paths) and angled walls along a z-axis, not fixed lanes.
+Category: others. Notes are free 2D positions plus rails (multi-node paths) and angled walls along a z-axis, not fixed lanes.
 
 ## Formats
 | Folder | File | Status |

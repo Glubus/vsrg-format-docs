@@ -1,13 +1,14 @@
 # Beatblock
 
-Rhythm game by BubbleTabby / DPS2004 and team (Steam early access, itch.io demo). The player character (Cranky) sits in the middle of a polar field and swings a paddle to hit notes (blocks, sides, inverses, mines, holds, bounces) flying in from any angle, with heavy VFX (eases, decorations, shaders) scripted from the chart. Levels are folders edited with the in-game level editor (Ctrl+I opens level properties), shared as `.zip`/`.7z` on Beatblock Browser and the Steam Workshop.
+Rhythm game by BubbleTabby / DPS2004 and team (Steam early access, itch.io demo). The player sits in the middle of a polar field and swings a paddle at notes (blocks, sides, inverses, mines, holds, bounces) arriving from any angle, with VFX scripted from the chart. Levels are folders made with the in-game editor (Ctrl+I opens level properties), shared as `.zip`/`.7z` on Beatblock Browser and the Steam Workshop.
 
-Category: **others**: notes arrive radially at an angle around the player; there are no lanes or columns.
+Category: others: notes arrive radially at an angle around the player; there are no lanes or columns.
 
 ## Formats
-| Folder | File | Status |
+
+|Folder|File|Status|
 |---|---|---|
-| [level-json/](level-json/README.md) | `level.json` + chart `.json` + `.ogg` | JSON events with `type`, `time` (beats) and `angle`; documented only through the editor guide (stub) |
+|[level-json/](level-json/README.md)|`level.json` + chart `.json` + `.ogg`|JSON events with `type`, `time` (beats) and `angle`; documented only through the editor guide (stub)|
 
 ## Links
 - Editor guide (Google Doc): https://docs.google.com/document/d/1myd85jpTYQCtE1Mlu6fJEm3fJEIN_-7Q1TFcB1OcrT4

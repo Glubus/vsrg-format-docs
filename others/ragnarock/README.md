@@ -1,8 +1,8 @@
 # Ragnarock
 
-VR rhythm game (Viking drum boat; played with two hammers) listed on Steam. Custom songs are distributed through the community site RagnaCustoms. Its beatmap format "is derived from Beat Saber's" (Edda site), with major differences: some Beat Saber aspects do not translate, others are unused or missing. The official map editor supported by the developers is MediocreMapAssistant2 (MMA2); the community editor is Edda.
+VR rhythm game (Viking drum boat, two hammers) on Steam. Custom songs come from the community site RagnaCustoms. The beatmap format "is derived from Beat Saber's" (Edda site), with major differences: some Beat Saber aspects do not translate, others are unused or missing. The developers support MediocreMapAssistant2 (MMA2) as map editor; the community editor is Edda.
 
-Category: **others**: hammer targets in a few drum slots flying toward the player in VR; derived from the Beat Saber (non-column) model.
+Category: others: hammer targets in a few drum slots flying toward the player in VR, derived from the Beat Saber (non-column) model.
 
 ## Formats
 | Folder | File | Status |

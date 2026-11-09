@@ -5,13 +5,11 @@ Doc status: partial · ROX: no · Category: others · Encoding: text (space-sepa
 
 ## Overview
 
-`.mer` is the text chart format of WACCA's "Mercury" engine as handled by the community chart editors (BAKKA, then **MercuryMapper** by Yasu3D, a "forked from BAKKA-Avalonia" rewrite). Everything below is taken from MercuryMapper's `FormatHandler.cs`, `Note`/`Gimmick` code and enums, i.e. what that editor reads and writes; fields it ignores or does not model (e.g. the R-note extras) are marked. The editor also has two native dialects: `.map` (editor-saved Mercury text) and **SAT** ("Saturn"), a labelled format with `@COMMENTS` / `@GIMMICKS` / `@OBJECTS` sections and symbolic note types (format version "2").
-
-Category: **others** — see [../README.md](../README.md).
+`.mer` is the text chart format of WACCA's "Mercury" engine as handled by the community editors BAKKA and MercuryMapper (Yasu3D, forked from BAKKA-Avalonia). Everything below comes from MercuryMapper's `FormatHandler.cs`, `Note`/`Gimmick` code and enums, i.e. what that editor reads and writes. The editor has two native dialects: `.map` (editor-saved Mercury text) and SAT ("Saturn"), a labelled format with `@COMMENTS` / `@GIMMICKS` / `@OBJECTS` sections and symbolic note types (format version "2").
 
 ## Container & encoding
 
-Text, one record per line. Metadata lines start with `#`; the line `#BODY` separates metadata from content; content lines are whitespace-separated integers/floats (the writer pads them with `{,4}` widths). Reader: splits on spaces, requires ≥ 3 columns. Files carry no compression. UTF-8/ASCII.
+UTF-8/ASCII text, one record per line, uncompressed. Metadata lines start with `#`; `#BODY` separates metadata from content. Content lines are whitespace-separated numbers (the writer pads with `{,4}` widths); the reader splits on spaces and requires >= 3 columns.
 
 ## Structure / metadata
 
@@ -69,11 +67,11 @@ Header lines recognised by MercuryMapper (names with `EDITOR_` prefix are the ed
 
 ## Timing model
 
-Position = `(measure, tick)` with 1920 ticks per measure (MercuryMapper's `FullTick = Measure·1920 + Tick`); BPM / time-signature / hi-speed / stop / reverse are objects on the same grid. Time follows from the BPM history (`#OFFSET` is the audio offset); how a non-4/4 time signature changes the measure's real length is not verified from the sources opened (MercuryMapper builds "metre events" and "time scales" from the gimmicks). `Stop` and `Reverse` gimmicks alter scroll/time mapping. No fractional ticks.
+Position = `(measure, tick)` with 1920 ticks per measure (MercuryMapper's `FullTick = Measure·1920 + Tick`); BPM, time signature, hi-speed, stop and reverse are objects on the same grid. Time follows from the BPM history (`#OFFSET` is the audio offset). How a non-4/4 signature changes measure length is not verified (MercuryMapper builds "metre events" and "time scales" from the gimmicks). `Stop` and `Reverse` alter scroll/time mapping. No fractional ticks.
 
 ## Notes
 
-Touch, snap (forward/backward), slides CW/CCW, hold (start + segments + end linked by indices, with `render` flag per segment), chain, masks (hide parts of the ring: add/remove, direction), bonus effect flag (even IDs 2/6/8), R-notes (IDs 20–26; meaning of "R-Note" not documented in the sources) and gimmicks. Simultaneous notes share (measure, tick). Width up to 60 = full ring.
+Touch, snap (forward/backward), slides CW/CCW, hold (start + segments + end linked by indices, `render` flag per segment), chain, masks (add/remove, direction), bonus effect flag (even IDs 2/6/8), R-notes (IDs 20-26; meaning not documented in the sources) and gimmicks. Simultaneous notes share (measure, tick). Width 60 = full ring.
 
 ## Audio & images
 
@@ -81,22 +79,21 @@ Touch, snap (forward/backward), slides CW/CCW, hold (start + segments + end link
 
 ## Versions & variants
 
-- **MER** (game-like, numeric IDs).
-- **MercuryMapper `.map`** (editor-saved Mercury text), **SAT v2** (`@COMMENTS`, `@GIMMICKS`, `@OBJECTS`; symbolic types; also supports comments and trace/damage notes).
-- Official-game `.mer` files exist as plaintext in the MercuryPlayer repository (1247 files, `MusicData/Sxx-nnn/Sxx-nnn_0d.mer`): same `#BODY` layout, header values filled (`#MUSIC_SCORE_ID 1`, `#MUSIC_FILE_PATH MER_BGM_S00_003`, `#OFFSET 0.003200`), note ids 1-14 and 16, R-note ids 20-26 in newer songs, object id 5 (hi-speed) lines [observed in samples/*.mer; source https://github.com/frozenpandaman/MercuryPlayer/tree/ceab443b15891c182e27ce670b73b760494e5835/MusicData].
+- MER: game-like, numeric IDs. MercuryMapper `.map`: editor-saved Mercury text. SAT v2: `@COMMENTS`, `@GIMMICKS`, `@OBJECTS`, symbolic types, comments and trace/damage notes.
+- Official-game `.mer` files exist as plaintext in the MercuryPlayer repository (1247 files, `MusicData/Sxx-nnn/Sxx-nnn_0d.mer`): same `#BODY` layout, filled headers (`#MUSIC_SCORE_ID 1`, `#MUSIC_FILE_PATH MER_BGM_S00_003`, `#OFFSET 0.003200`), note ids 1-14 and 16, R-note ids 20-26 in newer songs, object id 5 (hi-speed) lines (e.g. `S03-061_02.mer`) [observed: samples/*.mer; source https://github.com/frozenpandaman/MercuryPlayer/tree/ceab443b15891c182e27ce670b73b760494e5835/MusicData].
 
 ## Quirks & pitfalls
 
-- `size`/`position` ranges: wrap modulo 60 and clamp 1–60.
-- Hold links are by `noteIndex`; indices must be unique and the chain consistent (the editor repairs notes after load).
+- `position` wraps modulo 60; `size` clamps to 1-60.
+- Hold links are by `noteIndex`; indices must be unique and consistent (the editor repairs notes after load).
 - Old files may lack the denominator in `3`.
-- Reading requires `#BODY`; missing it returns without loading.
-- The end-of-chart note (type 14) is stored as a note line but belongs to the gimmick list.
-- Data not modelled by MercuryMapper (some R-note fields, unknown gimmicks) may be lost on round trip.
+- Reading requires `#BODY`; without it nothing loads.
+- The end-of-chart note (type 14) is a note line but belongs to the gimmick list.
+- Data MercuryMapper does not model (some R-note fields, unknown gimmicks) may be lost on round trip.
 
 ## Example
 
-None taken verbatim from a source (no complete sample file was opened). Illustrative, hand-built from the writer code of MercuryMapper (`FormatHandler.WriteFile`):
+Hand-built from MercuryMapper's writer (`FormatHandler.WriteFile`), not from a real file:
 
 ```
 #MUSIC_SCORE_ID 0
@@ -126,9 +123,7 @@ Not read by ROX 0.8.1.
 
 ## Getting samples
 
-Committed in [`samples/`](samples/): eight real `.mer` files from frozenpandaman/MercuryPlayer (`MusicData/Sxx-nnn/Sxx-nnn_0d.mer`, 1247 files in that repository). See [`samples/SOURCES.md`](samples/SOURCES.md) for every file's source URL, fetch date, sha256 and terms.
-
-Observed [observed in samples/*.mer]: official files use the same `#BODY` layout as the fiche but with filled headers (`#MUSIC_SCORE_ID 1`, `#MUSIC_FILE_PATH MER_BGM_S00_003`, offsets such as `0.003200`); note type ids 1-14 and 16 occur, R-note ids 20-26 occur in newer songs, and hi-speed lines (object id 5) appear in `S03-061_02.mer`.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md) (from frozenpandaman/MercuryPlayer, `MusicData/Sxx-nnn/Sxx-nnn_0d.mer`, 1247 files in that repository).
 
 ## Sources
 

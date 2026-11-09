@@ -5,9 +5,9 @@ Doc status: complete · ROX: no · Category: others · Encoding: json (UTF-8, JS
 
 ## Overview
 
-`.memon` ("memo + json") is a JSON jubeat chart-set format created by **Stepland** to be easier to parse than the "memo-like" text formats ([memo](../memo/README.md), youbeat…). One file holds a whole song: metadata, shared timing, and several charts keyed by difficulty name. It is used by the jubeat simulator **jujube**, the editor **F.E.I.S**, the converter **jubeatools**, and has a C++ parser (`memoncpp`). Versions: legacy, `0.1.0`, `0.2.0`, `0.3.0`, `1.0.0` (the schema below is **1.0.0**). A memon file can be turned into `.eve` for arcade-compatible setups with `Jubeat-MemonEveConverter`.
+JSON jubeat chart-set format created by Stepland as an easier-to-parse alternative to the memo-like text formats ([memo](../memo/README.md), youbeat). One file holds a song: metadata, shared timing and several charts keyed by difficulty name. Used by the simulator jujube, the editor F.E.I.S, the converter jubeatools, and a C++ parser (`memoncpp`). Versions: legacy, `0.1.0`, `0.2.0`, `0.3.0`, `1.0.0` (schema below is 1.0.0). `Jubeat-MemonEveConverter` turns memon into `.eve`.
 
-Category: **others** — 4×4 grid (position = panel index 0–15).
+Category: others. 4×4 grid (position = panel index 0–15).
 
 ## Container & encoding
 
@@ -22,7 +22,7 @@ Root object (`version` and `data` required):
 | `version` | const `"1.0.0"` | schema version |
 | `metadata` | object | `title`, `artist`, `audio` (path relative to the memon file), `jacket` (path), `preview` = either `{start, duration}` in seconds (a sample of the music file) or a string path to a separate preview file. No extra keys allowed |
 | `timing` | timing object | default timing for every chart |
-| `data` | object | maps difficulty names (free strings, e.g. `BSC`, `ADV`, `EXT`) → chart |
+| `data` | object | maps difficulty names (free strings, e.g. `BSC`, `ADV`, `EXT`) to chart |
 
 Chart: `level` (decimal, "typically 1 to 10.9"), `resolution` (ticks per beat for the notes, default 240), `timing` (optional chart-specific timing object that replaces the default), `notes` (required array).
 
@@ -36,29 +36,29 @@ Beat-based: `t`, `l`, `beat`, and haku values are either an **integer number of 
 
 ## Notes
 
-Tap = note without `l`/`p`. Long = with `l` (duration) and `p` (tail start position in 6-notation; the tail goes outward from the head). 16 panels; `n` row-major. Notes must be unique and must not overlap hitboxes / marker animations (documented in the spec's "Other things to look out for": uniqueness, hitbox overlap, marker animation overlap, duplicate BPMs/HAKUs, multiple timing objects).
+Tap = note without `l`/`p`. Long = `l` (duration) + `p` (tail start in 6-notation; the tail goes outward from the head). `n` is row-major over 16 panels. Notes must be unique and must not overlap hitboxes or marker animations (spec "Other things to look out for": uniqueness, hitbox/marker overlap, duplicate BPMs/HAKUs, multiple timing objects).
 
 ## Audio & images
 
-`metadata.audio`, `metadata.jacket`, `metadata.preview` (sample or file), all relative to the memon file.
+`metadata.audio`, `metadata.jacket`, `metadata.preview` (sample or file), relative to the memon file.
 
 ## Versions & variants
 
-legacy (pre-0.1.0), 0.1.0, 0.2.0, 0.3.0, 1.0.0. jubeatools reads all (`memon:legacy`, `memon:v0.1.0`, … `memon:v1.0.0`) and writes them.
+legacy (pre-0.1.0), 0.1.0, 0.2.0, 0.3.0, 1.0.0. jubeatools reads and writes all (`memon:legacy`, `memon:v0.1.0`, ... `memon:v1.0.0`).
 
-[observed in samples/jubeatools_Sky_Bus_For_Hire_*.memon] Legacy `0.1.0` files have no `timing` object: metadata sits under `metadata` with the keys `song title`, `music path`, `album cover path`, `BPM` (float), `offset` (float seconds), and each chart is `{level, resolution, notes}` with notes `{n, t, l, p}` (a note without a tail is written with `l: 0, p: 0`).
+[observed: jubeatools_Sky_Bus_For_Hire_*.memon] Legacy `0.1.0` files have no `timing` object: metadata keys are `song title`, `music path`, `album cover path`, `BPM` (float), `offset` (float seconds); each chart is `{level, resolution, notes}` with notes `{n, t, l, p}` (no tail = `l: 0, p: 0`).
 
 ## Quirks & pitfalls
 
-- Time may be an integer (ticks) *or* a 3-element array: parsers must accept both.
+- Time is an integer (ticks) or a 3-element array; accept both.
 - Decimals may be strings.
-- Long-note `p` uses a different convention (6-notation) than the `.eve` direction bits.
-- A chart's `timing` overrides, it does not merge.
-- Duplicate BPM/haku events are discouraged; the spec lists rules.
+- Long-note `p` uses 6-notation, unlike the `.eve` direction bits.
+- A chart's `timing` replaces, not merges.
+- Duplicate BPM/haku events are discouraged (spec rules).
 
 ## Example
 
-None copied (schema reviewed only). Illustrative, hand-built from the JSON schema:
+Hand-built from the JSON schema:
 
 ```json
 {
@@ -81,7 +81,7 @@ Not read by ROX 0.8.1.
 
 ## Getting samples
 
-**Committed** ([`samples/`](samples/SOURCES.md)): 6 real files (three legacy 0.1.0 "Sky Bus For Hire" files, a 1.0.0 "Beat Juggling Mix" chart, two memon-spec schema fixtures) from the jubeatools tests and Stepland/memon (no LICENSE files) and one synthetic 1.0.0 file. More: F.E.I.S. (<https://github.com/Stepland/F.E.I.S.>) writes memon; jubeatools converts to/from it; the spec repo <https://github.com/Stepland/memon> has about 70 schema fixtures in `tests/data`.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). More: F.E.I.S. (<https://github.com/Stepland/F.E.I.S.>) writes memon; jubeatools converts to/from it; the spec repo <https://github.com/Stepland/memon> has about 70 schema fixtures in `tests/data`.
 
 ## Sources
 

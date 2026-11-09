@@ -1,12 +1,12 @@
 # Arcaea
 
-Arcaea (lowiro, 2017) is a 3D touch rhythm game: a bottom plane with four lanes (floor taps and holds) and a vertical sky plane where **arcs** (free 3D Bezier-like ribbons with x/y position) and **arc taps** travel toward the judgement line. Charts are plain-text `.aff` files; the community editor ecosystem (Arcade/ArcadeZero, ArcCreate) adds project formats and scripted scene control.
+Arcaea (lowiro, 2017) is a 3D touch rhythm game. A bottom plane has four lanes (floor taps and holds). A vertical sky plane carries **arcs** (free 3D Bezier-like ribbons with x/y position) and **arc taps** toward the judgement line. Charts are plain-text `.aff` files. The community editors (Arcade/ArcadeZero, ArcCreate) add project formats and scripted scene control.
 
-Category: **others**. The four floor lanes alone would fit a column model, but arcs are continuous 2D curves in the sky plane (x, y) with easing, plus camera and scene-control events, so the chart as a whole is not column-based.
+Category: **others**. Arcs are continuous 2D curves in the sky plane (x, y) with easing, and charts also hold camera and scene-control events, so the chart is not column-based.
 
 Formats documented:
 
-- [`aff/`](aff/README.md) - the `.aff` chart file (complete from parser sources).
-- [`songlist/`](songlist/README.md) - the `songlist` / `packlist` JSON metadata that lists songs of the game (stub).
+- [`aff/`](aff/README.md): the `.aff` chart file (complete from parser sources).
+- [`songlist/`](songlist/README.md): the `songlist` / `packlist` JSON song metadata (stub).
 
 Links: <https://github.com/yojohanshinwataikei/vscode-arcaea-file-format>, <https://github.com/Arcthesia/ArcCreate>, <https://github.com/Tempestissiman/ArcadeScenecontrol>, <https://github.com/freeze-dolphin/EtoileResurrection>.

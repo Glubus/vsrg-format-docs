@@ -1,8 +1,8 @@
 # Drums Rock
 
-VR drumming game by Garage 51 (PC VR, Quest). Colored "enemies" (drum-shaped demons) arrive and the player hits them with drumsticks on a 6-drum kit in front of them; some are double hits or drum rolls that need several hits. Custom songs (one folder per difficulty: Easy, Medium, Hard, Extreme) are placed in `AppData/LocalLow/Garage 51/Drums Rock/CustomSongs` and published on the Steam Workshop. The official workflow is a Google Sheets template that exports `notes.csv`; community tools convert from MIDI and Editor on Fire.
+VR drumming game by Garage 51 (PC VR, Quest). Drum-shaped demons arrive and the player hits them with sticks on a 6-drum kit; some are double hits or drum rolls. Custom songs (one folder per difficulty: Easy, Medium, Hard, Extreme) go in `AppData/LocalLow/Garage 51/Drums Rock/CustomSongs` and on the Steam Workshop. The official workflow is a Google Sheets template exporting `notes.csv`; community tools convert from MIDI and Editor on Fire.
 
-Category: **others**: a VR game with a 3D drum kit (six drums with fixed colors), double hits and drum rolls; categorised with the other VR drum game (Paradiddle) rather than as lane-based vsrg. It is arguably a 6-lane game [judgement call: a ROX 6K decoder is feasible].
+Category: others (VR game with a 3D drum kit of six fixed-color drums, doubles and drum rolls; grouped with Paradiddle). It is arguably a 6-lane game [judgement call: a ROX 6K decoder is feasible].
 
 ## Formats
 | Folder | File | Status |

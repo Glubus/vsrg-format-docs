@@ -4,12 +4,12 @@ Kind: package
 Doc status: complete · ROX: no · Category: others · Encoding: binary
 
 ## Overview
-`.sspm` is the map package of Sound Space Plus and its successor Rhythia. One file holds metadata, the audio (mp3/ogg), an optional PNG cover and the notes of ONE difficulty. Two versions: v1 (SS+ early, newline-terminated strings, notes only) and v2 (pointer table, typed custom data, extensible "marker" system). Specs by the SS+ community (basils-garden/types); readers in SS+ source (`Song.gd`), `pysspm-rhythia`, `sspm-player`. Maps are shared on community sites (e.g. https://sspm.paada.fr) and the Rhythia site.
+`.sspm` is the map package of Sound Space Plus and its successor Rhythia. One file holds metadata, the audio (mp3/ogg), an optional PNG cover and the notes of ONE difficulty. v1 (early SS+) has newline-terminated strings and notes only. v2 has a pointer table, typed custom data and an extensible "marker" system. Specs: SS+ community (basils-garden/types). Readers: SS+ source (`Song.gd`), `pysspm-rhythia`, `sspm-player`. Maps are shared on community sites (e.g. https://sspm.paada.fr) and the Rhythia site.
 
 ## Container & encoding
-- Binary, **little endian**, integers unsigned unless stated ("all numbers listed are little endian and all integers are unsigned", types index).
-- Signature `53 53 2B 6D` ("SS+m"). Version field decides layout.
-- Strings: UTF-8; "uint16 length" strings = 2-byte byte-length prefix + bytes (v2); v1 strings are newline-terminated.
+- Binary, little endian, integers unsigned unless stated ("all numbers listed are little endian and all integers are unsigned", types index).
+- Signature `53 53 2B 6D` ("SS+m"). The version field decides the layout.
+- Strings: UTF-8. v2 "uint16 length" strings are a 2-byte byte-length prefix + bytes; v1 strings are newline-terminated.
 - No compression; audio and cover are embedded raw (MP3/OGG; PNG, APNG unsupported).
 - One file = one difficulty.
 
@@ -43,7 +43,7 @@ Custom data (at its pointer): u16 field count; each: u16-prefixed field id (uniq
 Audio block: whole MP3/OGG file. Cover block: whole PNG.
 Marker definitions: u8 count; each: u16-prefixed id (notes are `ssp_note`, must be first), u8 value count (incl. arrays), then one type byte per value, then `00` terminator.
 Markers: repeated `u32 ms; u8 marker type (index into definitions); data per definition`.
-Doc inconsistency: the spec says "audio present flag at byte 0x2E, cover at 0x2F"; counting the fields in order gives audio at 0x2D, cover at 0x2E, requires-mod at 0x2F. Readers (pysspm) use the sequential order [inference]; do not trust the hard-coded offsets.
+Spec inconsistency: it says "audio present flag at byte 0x2E, cover at 0x2F", but counting the fields in order gives audio at 0x2D, cover at 0x2E, requires-mod at 0x2F. Readers (pysspm) use the sequential order [inference]; do not trust the hard-coded offsets.
 
 ### Data type ids (custom data + markers)
 | Id | Size | Meaning |
@@ -68,25 +68,25 @@ Common custom fields: `difficulty_name` (string; SS+ stores it for non built-in 
 Absolute milliseconds (u32) from the start of the audio. No BPM, beats, stops or SV. Notes are sorted by time (SS+ sorts after read).
 
 ## Notes
-Only taps ("hit by hovering"). Position: 3 x 3 grid, integer cells or "quantum" (float, possibly outside 0..2 or negative) notes. Simultaneous notes: same ms, different positions. v2 markers allow other object kinds besides `ssp_note`, whose format is defined by the definition table; only `ssp_note` (one position value) is standard. No holds, mines or keysounds.
+Only taps ("hit by hovering"). Position: 3 x 3 grid, integer cells or "quantum" notes (float, possibly outside 0..2 or negative). Simultaneous notes share the ms and differ in position. v2 markers allow other object kinds besides `ssp_note`, defined by the definition table; only `ssp_note` (one position value) is standard. No holds, mines or keysounds.
 
 ## Audio & images
-Embedded audio (MP3 or OGG) and PNG cover; flags and pointers say whether present. No preview, background, video fields (video support is an unreleased/unknown extension). Map ID, name, song name are strings; map ID is sanitized by readers (pysspm replaces `,` and invalid characters; SS+ requires lowercase `[0-9a-z_-]`, no leading `_`).
+Embedded audio (MP3 or OGG) and PNG cover; flags and pointers say whether they are present. No preview, background or video fields (video support is an unreleased/unknown extension). Readers sanitize the map ID (pysspm replaces `,` and invalid characters; SS+ requires lowercase `[0-9a-z_-]`, no leading `_`).
 
 ## Versions & variants
-- v1 (original SS+). SS+ can convert maps to v1 (`convert_to_sspm_v1`). Rhythia writes v2.
-- v2 (current). pysspm reads both and writes v2.
-- Newer Rhythia/Phoenyx/Nova formats exist ("Support for Pheonix/Nova Filetype (when I get my hands on the data structure)" in the pysspm roadmap): Unknown.
+- v1 (original SS+; SS+ converts to it with `convert_to_sspm_v1`).
+- v2 (current; Rhythia and pysspm write it, pysspm reads both).
+- Newer Rhythia/Phoenyx/Nova formats exist (pysspm roadmap: "Support for Pheonix/Nova Filetype (when I get my hands on the data structure)"): Unknown.
 - SS+ also imports Sound Space `.txt` maps and Vulnus JSON, see [txt](../txt/README.md), [vulnus](../../vulnus/json/README.md).
 
 ## Quirks & pitfalls
-- Real v2 files from SSQE end with a trailing length-prefixed string (`SSQE Export - <version>`) after the marker block and may store a 0-byte custom data block with offset 0 [observed in samples/rhythia_11871_v2.sspm]; the stored marker hash did not match SHA-1(definitions + markers) in the files checked.
-- Use pointers to seek (audio/cover blocks may be absent); do not read sequentially after metadata.
+- Real SSQE v2 files end with a length-prefixed string (`SSQE Export - <version>`) after the marker block and may store a 0-byte custom data block with offset 0 [observed: rhythia_11871_v2.sspm]; the stored marker hash did not match SHA-1(definitions + markers).
+- Seek by pointer (audio/cover blocks may be absent); do not read sequentially after metadata.
 - Strings in old SS+ files may not be valid UTF-8; pysspm falls back to latin-1.
-- `ms` is u32; the "last marker ms" field is not trusted by all readers.
-- Notes may not be sorted; mirrored axes: SS+ internally mirrors x/y for some imports (see txt).
-- Markers: unknown marker type must still be skipped using the definition table.
-- Hash field covers only markers + definitions.
+- Not all readers trust the "last marker ms" field.
+- Notes may be unsorted. SS+ mirrors x/y internally for some imports (see txt).
+- Skip unknown marker types using the definition table.
+- The hash field covers only markers + definitions.
 
 ## Example
 Illustrative, hand-built from the v1 rules above (bytes in hex, not a real file):
@@ -108,12 +108,11 @@ Not read by ROX.
 - Spec: https://github.com/basils-garden/types
 
 ## Getting samples
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md) (real maps are stripped of audio and cover, with flags and pointers updated).
 
-Committed in [`samples/`](samples/): eight real maps downloaded from the Rhythia server (four SSPM v1, four v2; served as `rhythia-legacy-*.sspm`) plus two hand-built synthetic files. The real maps were rewritten by me with the audio and cover blocks removed (flags and pointers updated, markers, custom data and trailing string kept). See [`samples/SOURCES.md`](samples/SOURCES.md) for every file's source URL, fetch date, sha256 and terms.
+Observed [observed: rhythia_*_v2.sspm]: the Rhythia API `POST https://production.rhythia.com/api/getBeatmaps` with `{"page":N,"session":""}` lists maps (13208 at fetch time) with `beatmapFile` URLs; old pages are legacy `.sspm`, the newest uploads are `.rhm`. SSQE-exported v2 files end with a length-prefixed trailer string such as `SSQE Export - 2.3.3.1`, can have a 0-byte custom-data block (offset 0), and carry a marker hash that differs from SHA-1(definitions + markers) as computed by pysspm.
 
-Observed [observed in samples/rhythia_*_v2.sspm]: the Rhythia API `POST https://production.rhythia.com/api/getBeatmaps` with `{"page":N,"session":""}` lists maps (13208 at fetch time) with `beatmapFile` URLs; old pages are legacy `.sspm`, newest uploads are `.rhm`. Real v2 files exported by SSQE end with a length-prefixed trailer string such as `SSQE Export - 2.3.3.1`, can have a custom-data block of 0 bytes (offset 0) and their stored marker hash is not equal to SHA-1(definitions + markers) as computed by pysspm.
-
-More: Rhythia / SS+ map sites, `%appdata%/soundspaceplus/maps`, the Rhythia-DB bulk downloader (<https://github.com/Varomine/Rhythia-DB>). Old Roblox maps are in [`../txt/`](../txt/README.md).
+More: Rhythia / SS+ map sites, `%appdata%/soundspaceplus/maps`, the Rhythia-DB bulk downloader (<https://github.com/Varomine/Rhythia-DB>). Old Roblox maps: [`../txt/`](../txt/README.md).
 
 ## Sources
 - https://raw.githubusercontent.com/basils-garden/types/main/sspm/v1.md

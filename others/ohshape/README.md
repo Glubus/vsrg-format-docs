@@ -1,8 +1,8 @@
 # OhShape
 
-VR fitness rhythm game by Odders Lab (Steam, Oculus, Viveport). Walls approach the player in time with the music and the player strikes the pose shown by the wall's cut-out (head offset, hand positions, legs), hits targets, dodges obstacles and collects coins. Custom songs are YAML files (one per difficulty) next to an `.ogg`, edited with the official OhShape Level Editor (Unity, source on GitHub) and loaded from `My Documents/OhShape/Songs`.
+VR fitness rhythm game by Odders Lab (Steam, Oculus, Viveport). Walls approach in time with the music; the player strikes the pose shown by the wall's cut-out (head offset, hand positions, legs), hits targets, dodges obstacles and collects coins. Custom songs are YAML files (one per difficulty) next to an `.ogg`, edited with the official OhShape Level Editor (Unity, source on GitHub) and loaded from `My Documents/OhShape/Songs`.
 
-Category: **others**: a full-body pose game; each event is a wall whose shape encodes a body pose, a hit, a dodge or a coin position; no lanes.
+Category: others. Full-body pose game; each event is a wall whose shape encodes a pose, a hit, a dodge or a coin position. No lanes.
 
 ## Formats
 | Folder | File | Status |

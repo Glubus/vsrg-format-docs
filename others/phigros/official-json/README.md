@@ -4,17 +4,14 @@ Kind: chart
 Doc status: complete · ROX: no · Category: others · Encoding: json
 
 ## Overview
-
-The native chart format of Phigros (Pigeon Games). The game stores one JSON file per difficulty (e.g. extracted `Chart_IN.json`); the reverse-engineered documentation calls the numeric schema `formatVersion` 1 (legacy, early releases) and 3 (current). Third-party players (phi-chart-render, prpr, Phira, Phichain) read it and many fan tools export it. How the game packs these files in its asset bundles is not covered by the documents consulted; community tools consume the extracted JSON (see e.g. the decrypted-assets mirror <https://github.com/SonolusHaniwa/phigros-decrypted-data>).
+Native chart format of Phigros (Pigeon Games): one JSON file per difficulty (e.g. extracted `Chart_IN.json`). The reverse-engineered docs call the schema `formatVersion` 1 (legacy, early releases) and 3 (current). Phira, prpr, phi-chart-render and Phichain read it. How the game packs these files in its asset bundles is not covered; community tools use the extracted JSON (e.g. the decrypted-assets mirror <https://github.com/SonolusHaniwa/phigros-decrypted-data>).
 
 ## Packaged in
-
-- Shipped in: `.pez` (Phira / PhiZone zip: a chart file, music, illustration, `info.yml`).
+`.pez` (Phira / PhiZone zip: chart file, music, illustration, `info.yml`).
 
 ## Container & encoding
-
-- Plain JSON, UTF-8, one file per difficulty. No archive, no compression in the file itself.
-- The file has no metadata (title, composer, music file); those live in the game's own info tables (or `info.yml` / `info.txt` in fan packages, see `pez/`).
+- Plain UTF-8 JSON, one file per difficulty, no compression.
+- No metadata (title, composer, music file): those live in the game's info tables (or `info.yml` / `info.txt` in fan packages, see `pez/`).
 
 ## Structure / metadata
 
@@ -31,7 +28,7 @@ Judge line object (`JudgeLine`):
 
 | Field | Type | Meaning |
 |---|---|---|
-| `bpm` | float | BPM of **this line**; defines the line's time unit T |
+| `bpm` | float | BPM of this line; defines the line's time unit T |
 | `notesAbove` / `notesBelow` | array of Note | notes on the front / back side of the line |
 | `speedEvents` | array | note flow speed events |
 | `judgeLineDisappearEvents` | array | opacity events |
@@ -62,39 +59,34 @@ Events: `startTime`/`endTime` (int, T units) plus:
 
 ## Timing model
 
-- Time unit `T = 1.875 / BPM` seconds, i.e. 1/32 of a beat (a "128th note" in the source's wording), using the **line's own** `bpm`. All `time`, `holdTime`, `startTime`, `endTime` of a line are integers in T. `seconds = t * 1.875 / line.bpm`, then add `offset` (see above for sign).
-- There is **no global BPM list**: tempo changes are baked into each line by authoring events/notes at different T values with a constant `bpm` (lines in one chart usually share the same `bpm`).
+- Time unit `T = 1.875 / BPM` seconds, i.e. 1/32 of a beat (a "128th note" in the source's wording), using the line's own `bpm`. All `time`, `holdTime`, `startTime`, `endTime` of a line are integers in T. `seconds = t * 1.875 / line.bpm`, then add `offset` (see above for sign).
+- There is no global BPM list: tempo changes are baked into each line by placing events/notes at different T values with a constant `bpm` (lines in one chart usually share the same `bpm`).
 - Vertical distance of a note from its line: derived from the integral of `speedEvents.value` (floor position). Hold length on screen: `d = speed * holdTime * 1.875/bpm` Y (per lchzh).
 - Events interpolate linearly between `start` and `end`; between events the previous end value holds [inference from the standard player implementations; not stated verbatim in the pages read].
 
 ## Notes
-
-- Tap (1), Drag (2: hit by holding at judgement time, no tap needed), Hold (3), Flick (4: flick in any direction).
-- A note's side: `notesAbove` falls onto the front of the line, `notesBelow` onto the back.
-- There are no keysounds. No fake notes in the official format (the RPE format adds `isFake`).
-- Simultaneous notes are just notes with equal `time` on any line; the game highlights them (not stored).
+- Tap (1), Drag (2: hit by holding at judgement time, no tap needed), Hold (3), Flick (4: any direction).
+- `notesAbove` falls onto the front of the line, `notesBelow` onto the back.
+- No keysounds, no fake notes (RPE adds `isFake`). Simultaneous notes are notes with equal `time`; the game highlights them (not stored).
 
 ## Audio & images
-
-Not referenced by the chart. Music/illustration are in the game's asset bundle (or `info.yml` for fan packages).
+Not referenced by the chart (game asset bundle, or `info.yml` for fan packages).
 
 ## Versions & variants
-
-- `formatVersion` 1 vs 3: the only semantic change documented is the move event encoding. Version 3 charts of old game versions also carry `numOf*` counters and speed-event `floorPosition`, dropped in 2.5.0.
-- Phichain exports always version 3 and treats `time` as a beat-scaled float on export (`time = beat * 1.875 / 60.0`); this contradicts "int" in lchzh's description and is a tool convention [unverified].
-- Other formats that cover the same ideas: RPE JSON (`../rpe/`), PEC (`../pec/`).
+- `formatVersion` 1 vs 3: the only documented semantic change is the move event encoding. Old-version v3 charts also carry `numOf*` counters and speed-event `floorPosition`, dropped in 2.5.0.
+- Phichain always exports version 3 and writes `time` as a beat-scaled float (`time = beat * 1.875 / 60.0`), contradicting "int" in lchzh's description; a tool convention [unverified].
+- Related: RPE JSON (`../rpe/`), PEC (`../pec/`).
 
 ## Quirks & pitfalls
-
-- Units are non-obvious: X/Y units are fractions of screen dimensions, T units are per-line.
+- X/Y units are fractions of screen dimensions; T units are per line.
 - `holdTime` is read as an integer even if written `120.0`.
-- Notes whose `type` is outside 1..4 must be ignored, not rejected.
-- `floorPosition` may be stale/redundant; players recompute from speed events.
-- Negative `offset` has never been used by official charts.
+- Notes with `type` outside 1..4 must be ignored, not rejected.
+- `floorPosition` may be stale; players recompute it from speed events.
+- Official charts never use a negative `offset`.
 
 ## Example
 
-Illustrative, hand-built from the field tables above (not an extracted official chart): one line, two notes.
+Hand-built from the field tables above (not an official chart): one line, two notes.
 
 ```json
 {"formatVersion":3,"offset":0.0,
@@ -121,9 +113,8 @@ Not read by ROX.
 - phi_reversed analysis docs: <https://github.com/Hxjjxg/phi_reversed>.
 
 ## Getting samples
-
-- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): 6 real official charts (formatVersion 1 and 3: `Introduction_Legacy`, `Christmas_SP`, `Rubbish_Sorting_SP`, `Anomaly_EZ`, `Destination_EZ`, `Winter_Cube_SP`; from the fan-site repository yuameshi/phigros-charts-repo) and two hand-written `synthetic-*` files.
-- More: official charts are extracted from the game's asset bundles by community tools; public mirrors exist (the fiche cites https://github.com/SonolusHaniwa/phigros-decrypted-data) and auto-updating dump repositories (e.g. MEMZ-Chrome/phigros-chart-tracker); fan tools export the same format (Phichain, https://github.com/Ivan-1f/phichain). Phira chart packages hold either this format or RPE (see [../rpe/](../rpe/)).
+Committed: see [samples/SOURCES.md](samples/SOURCES.md) (official charts from yuameshi/phigros-charts-repo, formatVersion 1 and 3).
+- Official charts are extracted from the game's asset bundles by community tools. Public mirrors: https://github.com/SonolusHaniwa/phigros-decrypted-data and auto-updating dumps (e.g. MEMZ-Chrome/phigros-chart-tracker). Phichain (https://github.com/Ivan-1f/phichain) exports the same format. Phira packages hold this format or RPE (see [../rpe/](../rpe/)).
 
 ## Sources
 

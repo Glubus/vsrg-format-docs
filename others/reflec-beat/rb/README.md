@@ -5,13 +5,13 @@ Doc status: stub · ROX: no · Category: others · Encoding: archive (zip with B
 
 ## Overview
 
-`.jbt`, `.orb` and `.rb` are the song packages of the Konami iOS BEMANI games: `.jbt` = *jubeat plus* / *jukebeat* (also the Android *jubeat plus*), `.rb` = *Reflec Beat plus* / *Rb+*, `.orb` = *pop'n rhythmin*. All are **zip files with a non-standard extension**; any zip tool opens them, but each file inside is encrypted. This stub documents the Reflec Beat-specific content from SaxxonPike's `rhythm-game-formats` repository.
+`.jbt`, `.orb` and `.rb` are the song packages of the Konami iOS BEMANI games: `.jbt` for jubeat plus / jukebeat (also Android jubeat plus), `.rb` for Reflec Beat plus / Rb+, `.orb` for pop'n rhythmin. All are zip files with a non-standard extension; every file inside is encrypted. The content below comes from SaxxonPike's `rhythm-game-formats` repository.
 
 ## Container & encoding
 
-- Zip (nothing special about the zip itself).
-- Every entry is encrypted with **Blowfish** (class name `BFCodec` in all games, including the Android C++ build) using a custom set of P and S boxes; the IV appears static. At least two keys exist, computed as `md5(unobfuscated_string)`, where the string is un-obfuscated from a table in the binary with `unobfuscated[i] = obfuscated[i] + i` (26 characters for one key, 22 + 7 added to each result for the alternate key). The repo says known keys/IVs are not disclosed.
-- Each entry has 8 trailing bytes used for verification before decryption (appear to be offsets; the last 4 bytes hold the start of the verification bytes); the decryptor strips these 8 bytes first.
+- Zip; every entry is encrypted with Blowfish (class `BFCodec` in all games, including the Android C++ build) using custom P and S boxes; the IV appears static.
+- At least two keys exist, computed as `md5(unobfuscated_string)`, where the string is un-obfuscated from a table in the binary with `unobfuscated[i] = obfuscated[i] + i` (26 characters for one key, 22 + 7 added to each result for the alternate key). The repo does not disclose known keys/IVs.
+- Each entry has 8 trailing verification bytes (apparently offsets; the last 4 bytes hold the start of the verification bytes); the decryptor strips them first.
 - Images are Apple-optimised PNG (needs `pngdefry`).
 
 ## Structure / metadata
@@ -26,7 +26,7 @@ Entries in a Reflec Beat package:
 | `artwork`, `artwork_2x` | cover (PNG, `_2x` retina) |
 | `artist_b`, `artist_b2x`, `artist_w`, `artist_w2x` | artist images (assumed) |
 | `title_b`, `title_b2x`, `title_w`, `title_w2x` | title card images |
-| `note_bas`, `note_med`, `note_har` | **charts** for Basic, Medium, Hard |
+| `note_bas`, `note_med`, `note_har` | charts for Basic, Medium, Hard |
 
 "For note format files, it is generally assumed that the notes themselves are encoded the same way as their arcade counterparts, except in separate files." The decoded chart layout is **Unknown** here.
 
@@ -40,7 +40,7 @@ Unknown.
 
 ## Audio & images
 
-`bgm` (AAC), `pre` (AAC), PNG images (see above).
+`bgm` and `pre` are AAC; images are PNG (see above).
 
 ## Versions & variants
 
@@ -48,11 +48,11 @@ Shared package scheme with jubeat plus (`seq_bas`, `seq_adv`, `seq_ext`, `index`
 
 ## Quirks & pitfalls
 
-Encrypted payload; verification trailer; Apple PNG variant; for `.acv` (pop'n rhythmin) files see the source repo.
+Encrypted payload, verification trailer, Apple PNG variant. For `.acv` (pop'n rhythmin) files see the source repo.
 
 ## Example
 
-Not applicable.
+Unknown.
 
 ## ROX support
 
@@ -64,8 +64,9 @@ None found for the chart payload. Blowfish decryption routines exist in communit
 
 ## Getting samples
 
-- Committed: nothing. No `.rb` package or decoded chart could be obtained: Reflec Beat plus is a commercial Konami iOS game and every entry of its packages is Blowfish-encrypted with keys that the documenting repository (SaxxonPike/rhythm-game-formats `ios/jbt-rb-orb.md`) does not disclose; no public copy was found.
-- How a person could get one [inference]: obtain the package from a device or backup that still has the game, unzip a song `.rb` (entries `info`, `bgm`, `pre`, `note_bas`, `note_med`, `note_har`, ...) and decrypt the entries with keys recovered from the app binary as the repository describes. The decoded chart layout is Unknown.
+Committed: nothing. Reflec Beat plus is a commercial Konami iOS game, every package entry is Blowfish-encrypted, and the documenting repository (SaxxonPike/rhythm-game-formats `ios/jbt-rb-orb.md`) does not disclose the keys; no public copy was found.
+
+How to get one [inference]: take the package from a device or backup that still has the game, unzip a song `.rb` (entries `info`, `bgm`, `pre`, `note_bas`, `note_med`, `note_har`, ...) and decrypt the entries with keys recovered from the app binary as the repository describes. The decoded chart layout is Unknown.
 
 ## Sources
 

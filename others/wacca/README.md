@@ -1,8 +1,8 @@
 # WACCA
 
-Arcade rhythm game by Marvelous (2019–2025). The cabinet has a **circular display ringed by a circular touch panel** (60 segments); notes approach the border of the circle and the player taps/slides/holds the matching arc segment (taps, "snap" swipes, clockwise/counter-clockwise slides, holds with intermediate points, chain notes, masks that hide parts of the ring, gimmicks such as reverse and stop). Charts use an internal engine called "Mercury"; the community chart editor family is **MercuryMapper / BAKKA / SAT**.
+Arcade rhythm game by Marvelous (2019-2025). A circular display is ringed by a 60-segment circular touch panel; notes approach the border and the player taps, swipes ("snap"), slides clockwise/counter-clockwise or holds the matching arc. Charts also have chain notes, masks hiding parts of the ring, and gimmicks (reverse, stop). The engine is called "Mercury"; the community editors are MercuryMapper / BAKKA / SAT.
 
-**Category: others** — polar/ring playfield (60 angular positions, variable-width arcs, hold paths that change position and width), not a lane game.
+Category: others. Polar playfield (60 angular positions, variable-width arcs, hold paths that change position and width), not a lane game.
 
 ## Formats
 

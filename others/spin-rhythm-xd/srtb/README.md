@@ -4,11 +4,11 @@ Kind: chart
 Doc status: partial · ROX: no · Category: others · Encoding: json
 
 ## Overview
-`.srtb` ("Spin Rhythm Track Bundle") is the chart container written by the Spin Rhythm XD in-game editor. The official editor guide says it holds "the note types and timings, the audio clip edits (bpm, time signature, cue points, difficulty types etc)". It is a Unity `ScriptableObject` dump serialized to JSON. Community tools (SRTBEditor, Chronomia, SpinShare) read and write it; no official specification exists, so the field list below is taken from real files (templates in the SRTBEditor repository, including a 5-difficulty full-album chart) and from the editors' source code. Meaning of some note fields is not documented (marked unknown).
+`.srtb` ("Spin Rhythm Track Bundle") is the chart container of the Spin Rhythm XD in-game editor: a Unity `ScriptableObject` dump serialized to JSON. The editor guide says it holds "the note types and timings, the audio clip edits (bpm, time signature, cue points, difficulty types etc)". No official spec: fields come from real files (SRTBEditor templates, including a 5-difficulty full-album chart) and editor source code. Some note fields have unknown meaning.
 
 ## Container & encoding
-- Outer file: UTF-8 JSON (single line by default). It is a registry: `unityObjectValuesContainer.values[]` lists objects, `largeStringValuesContainer.values[]` holds their payloads, `clipInfoCount` is the number of ClipInfo objects.
-- Each payload `val` is itself a **JSON string** (double-encoded). Parse the outer JSON, then `JSON.parse` every `val` (SRTBEditor `convertToJSON`); stringify them back to save (`convertToSRTB`).
+- Outer file: UTF-8 JSON (single line by default), a registry: `unityObjectValuesContainer.values[]` lists objects, `largeStringValuesContainer.values[]` holds their payloads, `clipInfoCount` is the number of ClipInfo objects.
+- Each payload `val` is itself a JSON string (double-encoded). Parse the outer JSON, then `JSON.parse` every `val` (SRTBEditor `convertToJSON`); stringify them back to save (`convertToSRTB`).
 - Entries (all keys fixed):
 
 | `unityObjectValuesContainer.values[]` (`key` / `jsonKey` / `fullType`) | Payload object |
@@ -18,7 +18,7 @@ Doc status: partial · ROX: no · Category: others · Encoding: json
 | `ClipInfo_<n>` / `SO_ClipInfo_ClipInfo_<n>` / `ClipInfo` | audio clip, BPM and time signature markers, cue points |
 
 - `largeStringValuesContainer.values[]` entries: `{ "key": "<jsonKey>", "val": "<JSON string>", "loadedGenerationId": 1 }`.
-- Companion files: `AlbumArt/<name>.png` and `AudioClips/<name>.ogg|mp3` under the game's `Custom` folder (`%USERPROFILE%/AppData/LocalLow/Super Spin Digital/Spin Rhythm XD/Custom`). A `.zip` backup (SpinShare download) contains the `.srtb`, `AlbumArt*` and audio files (SRTBEditor load code). The game also keeps `.bak` copies in the temp directory.
+- Companion files: `AlbumArt/<name>.png` and `AudioClips/<name>.ogg|mp3` under the game's `Custom` folder (`%USERPROFILE%/AppData/LocalLow/Super Spin Digital/Spin Rhythm XD/Custom`). A `.zip` backup (SpinShare download) holds the `.srtb`, `AlbumArt*` and audio files (SRTBEditor load code). The game also keeps `.bak` copies in the temp directory.
 
 ## Structure / metadata
 ### TrackInfo (keys seen)
@@ -43,10 +43,10 @@ Doc status: partial · ROX: no · Category: others · Encoding: json
 `timeSignatureMarkers[] {startingBeat, ticksPerBar, tickDivisor, beatLengthType, beatLengthDotted}`, `bpmMarkers[] {beatLength, clipTime, type}`, `cuePoints[] {name, time}`, `clipAssetReference {bundle, assetName, m_guid}` (audio clip file name, no extension), and optionally `lyrics`.
 
 ## Timing model
-- Notes carry **absolute seconds** on the audio clip, not beats: format 0 `time` is a float in seconds (verified: the last note of a 74-minute album chart is at 4472.5 s; ClipInfo markers reach 4466 s). Format 2 `tk` = `round(time * 100000)` (SRTBEditor `changeNoteEncodings`), i.e. units of 10 microseconds.
-- `bpmMarkers[i].beatLength` is **seconds per beat** (60/BPM; Chronomia writes `60/bpm`); `clipTime` is the second at which this tempo starts. Tempo changes are piecewise constant. `type` is 0 in all observed files (other values unknown).
-- `timeSignatureMarkers[].startingBeat` is a beat index counted from the clip start (negative = before the audio start); `ticksPerBar` / `tickDivisor` give the signature (4/4 default). `beatLengthType` and `beatLengthDotted` select the beat unit (6/8 workaround in the guide shows the editor cannot express some fractions).
-- Beat positions are only needed for editors and for `goBeatOffsetFromFirstNote`; playback uses the stored seconds.
+- Notes carry absolute seconds on the audio clip, not beats. Format 0 `time` is a float in seconds (the last note of a 74-minute album chart is at 4472.5 s; ClipInfo markers reach 4466 s). Format 2 `tk` = `round(time * 100000)` (SRTBEditor `changeNoteEncodings`), units of 10 microseconds.
+- `bpmMarkers[i].beatLength` is seconds per beat (60/BPM; Chronomia writes `60/bpm`); `clipTime` is the second at which the tempo starts; tempo is piecewise constant. `type` is 0 in all observed files.
+- `timeSignatureMarkers[].startingBeat` is a beat index from the clip start (negative = before audio); `ticksPerBar` / `tickDivisor` give the signature (4/4 default); `beatLengthType` / `beatLengthDotted` select the beat unit (the guide's 6/8 workaround shows some fractions are inexpressible).
+- Only editors and `goBeatOffsetFromFirstNote` use beats; playback uses the stored seconds.
 
 ## Notes
 Format 0 note: `{ "time": float seconds, "type": int, "colorIndex": int, "column": int, "m_size": int }`. Format 2 note: `{ "tk", "tp", "c", "p", "s" }` with the same meaning in order (`time`, `type`, `colorIndex`, `column`, `m_size`).
@@ -63,30 +63,29 @@ Format 0 note: `{ "time": float seconds, "type": int, "colorIndex": int, "column
 | 11 | beat-hold end |
 | 12 | scratch |
 
-- `colorIndex`: 0 = blue, 1 = red; higher values 2/3 appear as invisible (off-track) notes (SRTBEditor `calculateBalance`: "invis" counts for c >= 2).
+- `colorIndex`: 0 = blue, 1 = red; 2/3 appear as invisible (off-track) notes (SRTBEditor `calculateBalance`: "invis" counts for c >= 2).
 - `column`: signed lane position on the wheel. In a real chart, match/tap notes use -4..4 (mostly -2, 0, 2); 0 is the center. Slider and beat-hold notes also use it. `m_size`: size/shape value of unclear meaning (0..5 observed; type 5 with `m_size` 2 marks a slider release in SRTBEditor logic). [unknown]
-- Notes within 50 ticks (0.5 ms) of each other are treated as one stack by SRTBEditor (stacked matches must all be hit together).
+- SRTBEditor treats notes within 50 ticks (0.5 ms) of each other as one stack (stacked matches must all be hit together).
 - Sliders: type 4 start, optional intermediate type 4/5 points (each with its own `column` and `m_size`), final type 5. Beat-hold: type 1 start plus type 11 end.
-- Mutual constraints (misaligned stacks, "unmissable" notes) are a gameplay issue; see SRTBEditor `diagnostics-checker.js`.
 
 ## Audio & images
-- Audio: `ClipInfo.clipAssetReference.assetName` names a file in `Custom/AudioClips` (.ogg Vorbis or MP3 per the guide). Several ClipInfo entries (several audio files) are possible; each TrackData selects via `clipInfoAssetReferences` / `clipData[].clipIndex` (SRTBEditor says multi-clip charts are not fully supported).
-- Cover art: `TrackInfo.albumArtReference.assetName`, file in `Custom/AlbumArt` (1024x1024 recommended by the guide).
-- Backgrounds are referenced by GUID-like `backgroundId` strings, not user files (the guide says custom backgrounds are not editable).
+- Audio: `ClipInfo.clipAssetReference.assetName` names a file in `Custom/AudioClips` (.ogg Vorbis or MP3). Several ClipInfo entries are possible, selected per TrackData via `clipInfoAssetReferences` / `clipData[].clipIndex` (SRTBEditor: multi-clip charts not fully supported).
+- Cover art: `TrackInfo.albumArtReference.assetName` in `Custom/AlbumArt` (1024x1024 recommended).
+- Backgrounds are GUID-like `backgroundId` strings; custom backgrounds are not editable (guide).
 
 ## Versions & variants
-- `revisionVersion` / `compatibilityVersion` per TrackData (0 in observed files); `noteSerializationFormat` 0 (float) versus 2 (binary ticks) is the main format break; SRTBEditor can migrate 0 -> 2. Very old files ("ancient .srtb formats") and charts with missing/out-of-order fields are reported to break SRTBEditor.
+- `revisionVersion` / `compatibilityVersion` per TrackData (0 in observed files). `noteSerializationFormat` 0 (float) vs 2 (binary ticks) is the main break; SRTBEditor can migrate 0 -> 2. "Ancient .srtb formats" and charts with missing/out-of-order fields reportedly break SRTBEditor.
 - Official tracks use the same container; `bundle` values other than `CUSTOM` refer to game asset bundles.
 
 ## Quirks & pitfalls
-- Double-encoded JSON: payloads must be parsed twice and re-stringified without extra whitespace on save.
+- Double-encoded JSON: parse payloads twice, re-stringify without extra whitespace.
 - Key names mix camelCase (`colorIndex`) and Unity-style `m_size`/`m_guid`.
-- Time units differ between note formats (seconds float vs 10 us ints).
-- Difficulty slots and `difficultyType` numbering start at 2; slot index != difficulty.
-- Unknown fields must be preserved when round-tripping (many Unity-only fields).
+- Time units differ per note format (seconds float vs 10 us ints).
+- `difficultyType` numbering starts at 2; slot index != difficulty.
+- Preserve unknown fields when round-tripping.
 
 ## Example
-Real skeleton, quoted from `chronomia/converters/srtb.js` (container only, payloads are the embedded JSON strings):
+Real skeleton from `chronomia/converters/srtb.js` (container only, payloads are the embedded JSON strings):
 ```json
 {"unityObjectValuesContainer":{"values":[
   {"key":"TrackInfo","jsonKey":"SO_TrackInfo_TrackInfo","fullType":"TrackInfo"},
@@ -98,23 +97,20 @@ Real skeleton, quoted from `chronomia/converters/srtb.js` (container only, paylo
   {"key":"SO_ClipInfo_ClipInfo_0","val":"{...ClipInfo JSON...}","loadedGenerationId":1}]},
  "clipInfoCount":1}
 ```
-A decoded format-0 note list from the SRTBEditor template `CUTIEMARKS (And the Things That Bind Us).srtb`, difficulty 0, first entries:
+Decoded format-0 notes from the SRTBEditor template `CUTIEMARKS (And the Things That Bind Us).srtb`, difficulty 0, first entries:
 `{"time":1308.2274,"type":0,"colorIndex":0,"column":2,"m_size":0}`, `{"time":1308.4580,"type":4,"colorIndex":0,"column":2,"m_size":3}`, `{"time":1308.6164,"type":5,"colorIndex":0,"column":-2,"m_size":0}`.
 
 ## ROX support
-Not read by ROX. Wheel positions and spins do not map to columns; a decoder would have to project `column` to lanes and drop spins/scratches.
+Not read. A decoder would project `column` to lanes and drop spins/scratches.
 
 ## Parsers & tools
-- SRTBEditor (JavaScript web editor, load/save/diagnostics): https://github.com/plushproto/SRTBEditor
+- SRTBEditor (JavaScript web editor): https://github.com/plushproto/SRTBEditor
 - Chronomia (JavaScript converters osu!/sm/chart/BMS/KSH to SRTB): https://github.com/LavenderTheGreat/chronomia
-- SpinShare API/site (zip downloads): https://spinsha.re
+- SpinShare API/site: https://spinsha.re
 - In-game editor (official).
 
 ## Getting samples
-
-Committed in [`samples/`](samples/): nine real files - three templates from SRTBEditor (MIT: an empty-ish `Custom`, plus the `Inertia` and `CUTIEMARKS` charts) and six community charts extracted from SpinShare backup zips (no archive or audio kept). See [`samples/SOURCES.md`](samples/SOURCES.md) for every file's source URL, fetch date, sha256 and terms.
-
-SpinShare serves a chart's backup zip at `https://spinsha.re/api/song/<songID>/download` without login (zip = `.srtb` + `AlbumArt/` + `AudioClips/`); metadata at `https://spinsha.re/api/song/<id>`, newest at `/api/songs/new`.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). SpinShare serves backup zips at `https://spinsha.re/api/song/<songID>/download` without login (zip = `.srtb` + `AlbumArt/` + `AudioClips/`); metadata at `https://spinsha.re/api/song/<id>`, newest at `/api/songs/new`.
 
 ## Sources
 - https://www.spinrhythmgame.com/editor-guide

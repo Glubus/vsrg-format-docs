@@ -4,20 +4,18 @@ Kind: chart
 Doc status: complete · ROX: no · Category: others · Encoding: text
 
 ## Overview
-
-Text chart of the original **Cytus** (Rayark, 2012), in the dialect the Cytoid wiki calls **"Rayark v2 modified"**: Cytus' own `VERSION 2` text format plus a custom `OFFSET` parameter. It is the only format the early Cytoid supported, loaded by Cytoid and edited with Cytunity and PCtyx; the community also calls it the "C1 chart format" (deprecated in favour of the JSON C2 format, `../c2-json/`). The original repository README lists `.txt` for "Cytus chart, including original and Version2": the "Version2" in that line is this `VERSION 2` dialect; the pre-v2 ("original") layout is not described by any consulted source.
+Text chart of the original Cytus (Rayark, 2012), in the dialect the Cytoid wiki calls "Rayark v2 modified": Cytus' own `VERSION 2` text format plus a custom `OFFSET` parameter. Early Cytoid supported only this format; Cytunity and PCtyx edit it. The community also calls it the "C1 chart format" (deprecated for the JSON C2 format, `../c2-json/`). The repository README lists `.txt` as "Cytus chart, including original and Version2"; no consulted source describes the pre-v2 layout.
 
 ## Packaged in
-
-- Shipped in: `.cytoidlevel` (zip of a Cytoid level: `level.json`, chart text/JSON files, music, background).
+`.cytoidlevel` (zip of a Cytoid level: `level.json`, chart text/JSON files, music, background).
 
 ## Container & encoding
 
-Plain text, one record per line, one chart per file (extension `.txt`; PCtyx saving as `.txt` exports C2/Cytoid format since v200). Fields separated by a single space or tab (the wiki sample uses tabs in `NOTE` lines). Distributed inside Cytoid level archives (see `../cytoidlevel/`) or alone.
+Plain text, one record per line, one chart per file (extension `.txt`; PCtyx saving as `.txt` exports C2/Cytoid format since v200). Fields are separated by a single space or tab (the wiki sample uses tabs in `NOTE` lines). Found inside Cytoid level archives (see `../cytoidlevel/`) or alone.
 
 ## Structure / metadata
 
-Header (4 lines) then `NOTE` lines then `LINK` lines:
+Header (4 lines), then `NOTE` lines, then `LINK` lines:
 
 | Record | Format | Meaning |
 |---|---|---|
@@ -27,32 +25,28 @@ Header (4 lines) then `NOTE` lines then `LINK` lines:
 | `PAGE_SIZE` | `PAGE_SIZE {0}` | duration of one page in seconds (the scanner sweep time); smaller = faster scanner. The CrowFX guide gives `240 / BPM` for the editor-generated value (e.g. BPM 402 -> 0.597015) |
 | `NOTE` | `NOTE {id} {timing} {x} {duration}` | `id` identifies the note (Cytus requires chronological ids; Cytoid accepts any order); `timing` seconds when the note is touched; `x` in 0..1 (0 left, 1 right); `duration` > 0 makes it a Hold |
 | `LINK` | `LINK {id 1} {id 2} ...` | note chain (Drag): the listed ids are chained in order |
-| `OFFSET` | `OFFSET {0}` | **custom** (Cytoid): shifts all note times, seconds; positive delays notes, negative advances them |
+| `OFFSET` | `OFFSET {0}` | custom (Cytoid): shifts all note times, seconds; positive delays notes, negative advances them |
 
 ## Timing model
 
-Absolute seconds, no tempo map: `NOTE` timing and duration are in seconds from the start of the music; tempo changes are baked into the times. `PAGE_SIZE` sets the page (scan sweep) length and `PAGE_SHIFT` the first page's shift. Cytoid's loader (`Chart.cs`, `FromLegacyChart`) converts it to C2 ticks with `time_base` 480 and one tempo entry of `PAGE_SIZE * 1000000` microseconds per 480 ticks: `shift = PAGE_SHIFT + PAGE_SIZE` (plus `2 * PAGE_SIZE` if negative), `tick = time / PAGE_SIZE * 480 + shift / PAGE_SIZE * 480`, `page_index = floor(tick / 480)`, the first page's scan direction is -1 and alternates every page [observed in https://github.com/Cytoid/Cytoid, engines/unity/Assets/Scripts/Game/Chart/Chart.cs; the loader does not read an `OFFSET` line]. The scanner reverses direction at each page boundary.
+Absolute seconds, no tempo map: `NOTE` timing and duration are seconds from the start of the music; tempo changes are baked into the times. `PAGE_SIZE` sets the page (scan sweep) length and `PAGE_SHIFT` the first page's shift. Cytoid's loader (`Chart.cs`, `FromLegacyChart`) converts to C2 ticks with `time_base` 480 and one tempo entry of `PAGE_SIZE * 1000000` microseconds per 480 ticks: `shift = PAGE_SHIFT + PAGE_SIZE` (plus `2 * PAGE_SIZE` if negative), `tick = time / PAGE_SIZE * 480 + shift / PAGE_SIZE * 480`, `page_index = floor(tick / 480)`. The first page's scan direction is -1 and alternates every page [observed in https://github.com/Cytoid/Cytoid, engines/unity/Assets/Scripts/Game/Chart/Chart.cs; the loader does not read an `OFFSET` line].
 
 ## Notes
 
-Types are derived: every `NOTE` is a Click; `duration > 0` makes it a Hold (may span pages); an id listed in a `LINK` line becomes a Drag in that chain. No Flick or Long Hold in this format. No sibling flag: simultaneity is implicit.
+Types are derived: every `NOTE` is a Click; `duration > 0` makes it a Hold (may span pages); an id listed in a `LINK` line becomes a Drag in that chain. No Flick or Long Hold. Simultaneity is implicit (no sibling flag).
 
 ## Audio & images
-
-Not referenced by the chart (music and background live in the Cytoid level description or the game's assets).
+Unknown.
 
 ## Versions & variants
-
-- `VERSION 2` = Cytus format; "Rayark v2 modified" adds `OFFSET` (Cytoid).
-- Superseded by the JSON C2 format (`../c2-json/`) in Cytoid, which adds tempo list, explicit pages, flicks and long holds.
-- Converters: TigerHix's gist converts a Cytus chart to a Cytus II chart; `ky-reflection/cyl_package_tool` converts Cytus 2 JSON/txt to Cytus 1 `.converted.txt`; Cytofu converts Cytoid charts to osu! beatmaps.
+- `VERSION 2` = Cytus format; "Rayark v2 modified" adds `OFFSET` (Cytoid). The JSON C2 format (`../c2-json/`) supersedes it in Cytoid and adds tempo list, explicit pages, flicks and long holds.
+- Converters: TigerHix's gist (Cytus to Cytus II chart), `ky-reflection/cyl_package_tool` (Cytus 2 JSON/txt to Cytus 1 `.converted.txt`), Cytofu (Cytoid charts to osu! beatmaps).
 
 ## Quirks & pitfalls
 
-- Cytus itself requires chronological note ids; Cytoid does not.
-- Link breaks: LINK ids that do not match a NOTE make Cytoid misbehave and Cytunity report "Link Break"; Cytunity may allocate new ids on edits and fail to update LINK lines.
-- Times are plain seconds (no minutes); the editor-generated PAGE_SIZE is derived from BPM.
-- Fields are whitespace separated; parsers should accept both tabs and spaces.
+- LINK ids that match no NOTE make Cytoid misbehave and Cytunity report "Link Break". Cytunity may allocate new ids on edits and fail to update LINK lines.
+- Times are plain seconds; the editor-generated PAGE_SIZE derives from BPM.
+- Parsers should accept both tabs and spaces.
 
 ## Example
 
@@ -81,9 +75,9 @@ Not read by ROX.
 - Make_Cytus2: <https://github.com/we684123/Make_Cytus2>
 
 ## Getting samples
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md).
 
-- **Committed**: 5 real files (ky-reflection/cyl_package_tool test charts and Make_Cytus2 charts, MIT) plus 1 synthetic in [`samples/`](samples/). Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
-- **More samples**: the Cytoid wiki "b. Chart formats" has a shortened sample; Cytus 1 charts themselves are game data. The Cytoid repo's bundled level stores C2 JSON in its `.txt` files (see `../c2-json/samples/8bit_adventurer/`).
+More: the Cytoid wiki "b. Chart formats" has a shortened sample. Cytus 1 charts are game data. The Cytoid repo's bundled level stores C2 JSON in its `.txt` files (see `../c2-json/samples/8bit_adventurer/`).
 
 ## Sources
 

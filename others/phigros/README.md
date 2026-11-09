@@ -1,8 +1,8 @@
 # Phigros and Phigros fan-chart ecosystem
 
-Phigros (Pigeon Games, 2021) is a touch rhythm game where notes fall onto freely moving, rotating **judgement lines**; every chart has dozens of lines with their own position/rotation/opacity/speed event tracks, and each note belongs to one line (above or below). Fan engines (Re:PhiEdit, PhiEdit, Phira, phi-chart-render, prpr, Phichain) added more formats around it.
+Phigros (Pigeon Games, 2021) is a touch rhythm game where notes fall onto freely moving, rotating judgement lines. A chart has dozens of lines with their own position/rotation/opacity/speed event tracks, and each note belongs to one line (above or below). Fan engines (Re:PhiEdit, PhiEdit, Phira, phi-chart-render, prpr, Phichain) added more formats.
 
-Category: **others**. There are no fixed lanes or columns: a note's horizontal position is relative to a line that moves and rotates, so the ROX column model cannot represent it without destroying the chart.
+Category: others. There are no fixed lanes: a note's horizontal position is relative to a line that moves and rotates, so the ROX column model cannot represent it.
 
 Formats documented:
 

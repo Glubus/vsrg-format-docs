@@ -4,12 +4,11 @@ Kind: chart
 Doc status: partial · ROX: no · Category: others · Encoding: text
 
 ## Overview
-
-A sectioned plain-text chart format read and written by the open-source **RotaenoChartTool** (C++, by adashi521), a toolkit that transforms Rotaeno charts (time shift, rotation, trail generation, note conversion...). Whether it is identical to the game's own chart text is not established by the sources; the tool treats it as the chart it edits (it writes a `# Version 2` header). Other Rotaeno tooling exists (zznyjidi/rotaeno-tools; OBS stabilisers) but no spec.
+Sectioned plain-text chart format read and written by RotaenoChartTool (C++, adashi521; time shift, rotation, trail generation, note conversion). Whether it equals the game's own chart text is not established; the tool writes a `# Version 2` header. No spec exists (also zznyjidi/rotaeno-tools, OBS stabilisers).
 
 ## Container & encoding
 
-Plain text, lines; sections introduced by header lines `# BPM`, `# Tag`, `# Speed`, `# Note` (the tool reads each section until an empty line); output starts with `# Version 2` followed by a blank line, then `# BPM`, `# Speed`, `# Note`. Data lines are comma-separated numbers (parsed with `stod`).
+Plain text lines. Sections start with header lines `# BPM`, `# Tag`, `# Speed`, `# Note`; the tool reads each section until an empty line. Output starts with `# Version 2`, a blank line, then `# BPM`, `# Speed`, `# Note`. Data lines are comma-separated numbers (parsed with `stod`).
 
 ## Structure / metadata
 
@@ -22,15 +21,14 @@ Per-line number lists (from `Chart.h` comments and `readInfo`):
 | `# Note` | first number = note type, then type-specific values (below) |
 | `# Tag` | ignored by the reader |
 
-Note lines (type id: fields): `0` tap: `time,degree`; `1` flick: `time,degree`; `2` slide: `time,degree,slidetype,end_degree,snap,amount,prev_curv,next_curv`; `4` rotate: `time,degree,delta,prev_curv,next_curv`; `5` catch: `time,degree`; `11` trail: `time,degree,delta,prev_curv,next_curv`; any other id is read as a "Custom" note `time,degree` (the code also has a Bomb class, `time,degree`, but the reader has no id for it; ids 3, 6-10 are therefore treated as Custom). `SlideType`: Tap, Flick, SmallSlide, BigSlide.
+Note lines (type id: fields): `0` tap: `time,degree`; `1` flick: `time,degree`; `2` slide: `time,degree,slidetype,end_degree,snap,amount,prev_curv,next_curv`; `4` rotate: `time,degree,delta,prev_curv,next_curv`; `5` catch: `time,degree`; `11` trail: `time,degree,delta,prev_curv,next_curv`. Any other id is read as a "Custom" note `time,degree` (the code also has a Bomb class, `time,degree`, with no reader id; ids 3, 6-10 are therefore Custom). `SlideType`: Tap, Flick, SmallSlide, BigSlide.
 
 ## Timing model
 
-`time` per record (unit not stated in the code read; likely seconds [inference]); BPM and speed tracks are separate timelines; the tool integrates speed to a note "distance" (speed_distance) and trails use curvature parameters.
+`time` per record (unit not stated in the code read; likely seconds [inference]). BPM and speed are separate timelines. The tool integrates speed to a note "distance" (speed_distance); trails use curvature parameters.
 
 ## Notes
-
-Tap (0), Flick (1), Slide (2, with start/end angle, snap/amount and curvature), Rotate (4, dial rotation instruction), Catch (5), Bomb, Trail (11, angle path with curvature). Angles in degrees on the dial.
+Angles are degrees on the dial. Bomb exists in code only (see Structure).
 
 ## Audio & images
 
@@ -45,9 +43,7 @@ Unknown.
 Unknown.
 
 ## Example
-
-Hand-written from the tool's reader (no game-exported file was available): [samples/synthetic-all-note-types.txt](samples/synthetic-all-note-types.txt) starts `# Version 2`, a blank line, `# BPM`, `0,120`, `32,150`, ... and then `# Note` with lines such as `0,1,0` (tap at time 1, degree 0) and `2,3,270,2,315,1,1,0,0` (slide).
-
+Hand-written from the reader: [samples/synthetic-all-note-types.txt](samples/synthetic-all-note-types.txt) starts `# Version 2`, a blank line, `# BPM`, `0,120`, `32,150`, ... then `# Note` with lines such as `0,1,0` (tap at time 1, degree 0) and `2,3,270,2,315,1,1,0,0` (slide).
 
 ## ROX support
 
@@ -58,9 +54,7 @@ Not read by ROX.
 RotaenoChartTool (C++): <https://github.com/adashi521/RotaenoChartTool>; rotaeno-tools: <https://github.com/zznyjidi/rotaeno-tools>.
 
 ## Getting samples
-
-- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): only `synthetic-all-note-types.txt` (hand-written from RotaenoChartTool's reader). No real chart exists in an open source: RotaenoChartTool (no licence file), zznyjidi/rotaeno-tools (parser code), chogang/rotaeno-song-database (song metadata and extraction tools, no charts) were checked.
-- How a person could get one: charts are game data of Rotaeno; how the game's files map to the text format described here is Unknown.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). No open source holds a real chart. Checked: RotaenoChartTool (no licence file), zznyjidi/rotaeno-tools (parser code), chogang/rotaeno-song-database (metadata and extraction tools, no charts). How the game's files map to this text format is Unknown.
 
 ## Sources
 

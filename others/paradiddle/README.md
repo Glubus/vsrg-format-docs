@@ -1,8 +1,8 @@
 # Paradiddle
 
-VR drum simulator by Emre Tanirgan (Steam/PC VR, Quest). The player hits a 3D drum kit with sticks; since the "note highway" update, songs are played like a drum rhythm game (hits scroll toward each drum). Songs are folders of audio plus one `.rlrr` file per difficulty, which can be authored with the open-source Paradiddle Song Creator (`ParadiddleUtilities`) from MIDI, and are shared on ParaDB (paradb.net) and converted from Clone Hero/YARG charts by community tools. The same `.rlrr` format also stores drum kit layouts and live recordings.
+VR drum simulator by Emre Tanirgan (Steam/PC VR, Quest). The player hits a 3D drum kit with sticks; since the "note highway" update, hits scroll toward each drum. Songs are folders of audio plus one `.rlrr` per difficulty, authored from MIDI with the open-source Song Creator (`ParadiddleUtilities`), shared on ParaDB (paradb.net) and converted from Clone Hero/YARG charts by community tools. The same `.rlrr` also stores kit layouts and live recordings.
 
-Category: **others**: the chart is a list of hits on named 3D instruments (each with its own position in a kit layout) played with VR controllers, not fixed lanes.
+Category: others (hits on named 3D instruments, each with its own kit position, played with VR controllers; no fixed lanes).
 
 ## Formats
 | Folder | File | Status |

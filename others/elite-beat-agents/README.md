@@ -1,16 +1,16 @@
 # Osu! Tatakae! Ouendan / Elite Beat Agents (iNiS, Nintendo DS)
 
-iNiS touch-screen rhythm games (*Osu! Tatakae! Ouendan* 2005, *Elite Beat Agents* 2006, *Moero! Nekketsu Rhythm Damashii Osu! Tatakae! Ouendan 2* 2007). Numbered circles appear at free positions on the touch screen with a shrinking approach circle; sliders and spinners are traced/spun. The osu! game and its `.osu` format (standard mode) are modelled on this gameplay (see the osu!standard docs, `others/osu-standard/`).
+iNiS touch-screen rhythm games (*Osu! Tatakae! Ouendan* 2005, *Elite Beat Agents* 2006, *Moero! Nekketsu Rhythm Damashii Osu! Tatakae! Ouendan 2* 2007). Numbered circles appear at free positions on the touch screen with a shrinking approach circle; sliders and spinners are traced/spun. The osu! game and its `.osu` format (standard mode) are modelled on this gameplay (see `others/osu-standard/`).
 
-**Category: others** — free-position touch notes, no lanes.
+Category: others. Free-position touch notes, no lanes.
 
 ## Formats
 
-**No chart format folder.** I found **no public documentation or parser** of the actual NDS chart data: web searches only returned documentation of the graphics/model formats of the game files (NCLR, NCGR, NCSR, NCER, NANR, nsbmd, nsbca; The VG Resource wiki) and of the PC `.osu` format, not of the beatmap data inside the ROM. Creating a folder with an invented extension or layout would violate the no-invention rule. If someone later documents the ROM chart format, it belongs in `elite-beat-agents/<format>/`.
+No chart format folder. No public documentation or parser of the NDS chart data was found: web searches returned only the graphics/model formats of the game files (NCLR, NCGR, NCSR, NCER, NANR, nsbmd, nsbca; The VG Resource wiki) and the PC `.osu` format. A folder with an invented extension or layout would violate the no-invention rule. A documented ROM chart format belongs in `elite-beat-agents/<format>/`.
 
 ## Getting samples
 
-No sample is committed and no format folder exists. Nothing public documents the DS chart data (see Formats above); the only chart-like files around are the PC `.osu` descendants of the gameplay. To obtain the real data one would have to own the NDS cartridge/ROM of *Osu! Tatakae! Ouendan*, *Elite Beat Agents* or *Ouendan 2* and locate the beatmap data inside its file system; no source read says where it is or how it is encoded [inference: it would have to be reverse-engineered, e.g. starting from the VG Resource wiki page linked below, which only lists graphics/model formats]. If a format is reverse-engineered, add `elite-beat-agents/<format>/` with a fiche and samples/manifest.
+None committed. Nothing public documents the DS chart data; the only chart-like files are PC `.osu` descendants. Real data requires an NDS cartridge/ROM of *Osu! Tatakae! Ouendan*, *Elite Beat Agents* or *Ouendan 2* and locating the beatmap data in its file system; no source says where or how it is encoded [inference: it would need reverse-engineering, e.g. starting from the VG Resource wiki below, which lists only graphics/model formats]. A reverse-engineered format gets `elite-beat-agents/<format>/` with a fiche and samples/manifest.
 
 ## Links
 

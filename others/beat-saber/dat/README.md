@@ -4,14 +4,16 @@ Kind: chart
 Doc status: complete (interactable objects, BPM/audio data) / partial (lighting event boxes: field names only) · ROX: no · Category: others · Encoding: json
 
 ## Overview
-One JSON file per beatmap (characteristic x difficulty), named in `Info.dat` (`_beatmapFilename` v2, `beatmapDataFilename` v4). Typical names: `ExpertPlus.dat`, `Standard.dat`, `ExpertPlusStandard.dat`, `NormalStandard.dat`; extension is arbitrary, content is JSON. Contains cut notes, bombs, walls (obstacles), arcs, chains, lane-rotation events, waypoints and lighting events. Produced by the Official Editor, ChroMapper, MMA2, scripts. Three schemas: v2 (since 1.0.0, `_`-prefixed long names), v3 (1.20.0, abbreviated names), v4 (1.34.5, objects + metadata arrays, lighting split into a separate Lightshow file). Older files may be "v1" (`_version` `1.5.0`, a `.json` difficulty with `_events`/`_notes`/`_obstacles`, plus `_beatsPerMinute`, `_beatsPerBar`, `_noteJumpSpeed`, `_shuffle`, `_shufflePeriod` inside the difficulty file, see the conversion gist in the [info doc](../info-dat/README.md)).
+
+One JSON file per beatmap (characteristic x difficulty), named in `Info.dat` (`_beatmapFilename` v2, `beatmapDataFilename` v4). Typical names: `ExpertPlus.dat`, `Standard.dat`, `ExpertPlusStandard.dat`, `NormalStandard.dat`. It holds cut notes, bombs, walls, arcs, chains, lane-rotation events, waypoints and lighting events. Three schemas: v2 (since 1.0.0, `_`-prefixed long names), v3 (1.20.0, abbreviated names), v4 (1.34.5, objects + metadata arrays, lighting in a separate Lightshow file). "v1" files (`_version` `1.5.0`, a `.json` with `_events`/`_notes`/`_obstacles`, plus `_beatsPerMinute`, `_beatsPerBar`, `_noteJumpSpeed`, `_shuffle`, `_shufflePeriod`) are in the [info doc](../info-dat/README.md) conversion gist.
 
 ## Packaged in
 
-- Shipped in: BeatSaver `.zip` (map folder: `Info.dat`, one difficulty `.dat` each, audio, cover).
+BeatSaver `.zip` (`Info.dat`, one difficulty `.dat` each, audio, cover).
 
 ## Container & encoding
-JSON text, UTF-8. Possibly gzip-deflated (game accepts; OST uses it from 1.34.5). Coordinates and times are floats; fields at default may be omitted (game fills defaults since 1.31.0; the Official Editor always writes them; ChroMapper has a toggle). v4: a file with only `{ "version": "4.0.0" }` is valid, but NPS/note counts on the selection screen need `colorNotes`, `bombNotes`, `obstacles` all present. `customData` / `_customData` blocks hold mod data (Chroma, Noodle, ...) and are not vanilla.
+
+UTF-8 JSON, possibly gzip-deflated (the game accepts it; the OST uses it from 1.34.5). Fields at default may be omitted (the game fills defaults since 1.31.0; the Official Editor always writes them; ChroMapper has a toggle). v4: `{ "version": "4.0.0" }` is valid, but NPS/note counts on the selection screen need `colorNotes`, `bombNotes`, `obstacles` all present. `customData` / `_customData` blocks hold mod data (Chroma, Noodle, ...).
 
 ## Structure / metadata
 Version key: `_version` (v2) / `version` (v3, v4). Time `Beat` is a float in beats.
@@ -24,13 +26,13 @@ Version key: `_version` (v2) / `version` (v3, v4). Time `Beat` is a float in bea
 - `Rotation Lane` (v4 `r`): degrees of the lane rotation the object spawns from (360/90 degree characteristics).
 
 ### v2 (`_version` 2.0.0 .. 2.6.0)
-Top level: `_notes`, `_obstacles`, `_events`; 2.2.0 adds `_waypoints`; 2.4.0 adds `_specialEventsKeywordFilters`; 2.5.0 adds `_floatValue` on events; arcs `_sliders` are "supported unofficially" (BeatSaber-Deno table; BSMG shows the `_sliders` fields below).
+Top level: `_notes`, `_obstacles`, `_events`; 2.2.0 adds `_waypoints`; 2.4.0 adds `_specialEventsKeywordFilters`; 2.5.0 adds `_floatValue` on events. Arcs `_sliders` are "supported unofficially" (BeatSaber-Deno table; BSMG shows the `_sliders` fields below).
 
 | Collection | Field | Meaning |
 |---|---|---|
 | `_notes[]` | `_time` | beat |
 | | `_lineIndex`, `_lineLayer` | grid position |
-| | `_type` | 0 left saber, 1 right saber, **3 bomb** (BSMG sample uses `_type: 3` for the bomb) |
+| | `_type` | 0 left saber, 1 right saber, 3 bomb (BSMG sample uses `_type: 3` for the bomb) |
 | | `_cutDirection` | 0-8 as above |
 | `_obstacles[]` | `_type` | 0 full-height wall, 1 crouch wall, 2 free wall (v3-like, then `_lineLayer` and `_height` required) |
 | | `_time`, `_duration` | beat, length in beats |
@@ -44,7 +46,7 @@ Top level: `_notes`, `_obstacles`, `_events`; 2.2.0 adds `_waypoints`; 2.4.0 add
 Legacy wall conversion to v3 (BSMG): full-height -> layer 0, height 5; crouch -> layer 2, height 3.
 
 ### v3 (`version` 3.0.0 .. 3.3.0)
-Top-level keys (BSMG samples, 3.3.0): `bpmEvents`, `rotationEvents`, `colorNotes`, `bombNotes`, `obstacles`, `sliders`, `burstSliders`, `basicBeatmapEvents`, `colorBoostBeatmapEvents`, `waypoints`, `basicEventTypesWithKeywords`, `lightColorEventBoxGroups`, `lightRotationEventBoxGroups`, `lightTranslationEventBoxGroups`, `vfxEventBoxGroups` (3.3.0), `useNormalEventsAsCompatibleEvents`. (3.0.0/3.1.0 samples: color/rotation groups; 3.2.0 adds translation groups; the wiki sample for 3.0.0 lacks `i` in the box group objects that 3.1/3.2 have.)
+Top-level keys (BSMG samples, 3.3.0): `bpmEvents`, `rotationEvents`, `colorNotes`, `bombNotes`, `obstacles`, `sliders`, `burstSliders`, `basicBeatmapEvents`, `colorBoostBeatmapEvents`, `waypoints`, `basicEventTypesWithKeywords`, `lightColorEventBoxGroups`, `lightRotationEventBoxGroups`, `lightTranslationEventBoxGroups`, `vfxEventBoxGroups` (3.3.0), `useNormalEventsAsCompatibleEvents`. The 3.0.0/3.1.0 samples have color/rotation groups; 3.2.0 adds translation groups; the wiki sample for 3.0.0 lacks `i` in the box group objects that 3.1/3.2 have.
 
 | Collection | Fields |
 |---|---|
@@ -59,12 +61,12 @@ Top-level keys (BSMG samples, 3.3.0): `bpmEvents`, `rotationEvents`, `colorNotes
 | `colorBoostBeatmapEvents[]` | `b`, `o` boost on/off |
 | `waypoints[]` | `b`, `x`, `y`, `d` offset direction |
 | `basicEventTypesWithKeywords.d[]` | `k` keyword, `e[]` event types |
-| `lightColorEventBoxGroups[]` etc. | `b` beat, `g` group id, `e[]` event boxes: `f` index filter {`c`,`f`,`p`,`t`,`r`,`n`,`s`,`l`,`d`}, `w`,`d`,`r`/`s`/`t`,`b`..., inner events `e[]` (color) / `l[]` (rotation) etc. Field meanings of the box groups are documented on the BSMG lightshow page; not reproduced here. |
+| `lightColorEventBoxGroups[]` etc. | `b` beat, `g` group id, `e[]` event boxes: `f` index filter {`c`,`f`,`p`,`t`,`r`,`n`,`s`,`l`,`d`}, `w`,`d`,`r`/`s`/`t`,`b`..., inner events `e[]` (color) / `l[]` (rotation) etc. Field meanings are on the BSMG lightshow page. |
 
-Arc/chain head metadata: if an arc head or tail matches a note's time and position, the arc connects with the note and changes scoring. Chain wiki warning: chain head cut direction 8 behaves as Down (BSMG note on chains).
+If an arc head or tail matches a note's time and position, the arc connects with the note and changes scoring. A chain head with cut direction 8 behaves as Down (BSMG note on chains).
 
 ### v4 (`version` 4.0.0 / 4.1.0)
-Objects reference shared metadata by index to avoid repetition: `objects[]` hold time and `i`, `objectsData[]` hold the properties.
+Objects reference shared metadata by index: `objects[]` hold time and `i`, `objectsData[]` hold the properties.
 
 | Objects | Fields | Metadata array | Fields |
 |---|---|---|---|
@@ -76,7 +78,7 @@ Objects reference shared metadata by index to avoid repetition: `objects[]` hold
 | `spawnRotations[]` | `b`, `i` | `spawnRotationsData[]` | `t` execution time, `r` degrees (assumed deprecated for object `r`) |
 | `njsEvents[]` (4.1.0) | `b`, `i` | `njsEventsData[]` [inference from the BSMG annotation "NJS Event Metadata Index"] | `d` relative NJS difference, `e` easing (-1 none, 0 linear, ..., 100-102 Beat Saber specials) per the BSMG table |
 
-Head/tail notes of arcs/chains come from the `colorNotes` + `colorNotesData` collections. Bomb notes have no direction field.
+Head/tail notes of arcs/chains come from `colorNotes` + `colorNotesData`. Bomb notes have no direction field.
 
 ### v4 Lightshow file (`Lightshow.dat`)
 Same `version` + objects/data pattern: `basicEvents[{b,i}]` + `basicEventsData[{t,i,f}]`, `colorBoostEvents` + `colorBoostEventsData[{b}]`, `waypoints` + `waypointsData[{x,y,d}]`, `basicEventTypesWithKeywords`, `eventBoxGroups[{b,g,t,e[{f,e,l[{b,i}]}]}]`, `indexFilters[]`, `lightColorEventBoxes[]`, `lightColorEvents[]`, `lightRotationEventBoxes[]`, `lightRotationEvents[]`, `lightTranslationEventBoxes[]`, `lightTranslationEvents[]`, `fxEventBoxes[]`, `floatFxEvents[]`, `useNormalEventsAsCompatibleEvents` (names from the BSMG sample).
@@ -86,16 +88,17 @@ Type (`_type` / `et`): 0-4, 6, 7, 11 lights; 5 Color Boost (legacy); 8, 9 value/
 Light values (`_value` / `i`): 0 off; 1-4 secondary color (static/flash/fade/transition); 5-8 primary (static/flash/fade/transition); 9-12 white (static/flash/fade/transition). Color boost: 0 disable, 1 enable. Legacy rotation values: 0 -60, 1 -45, 2 -30, 3 -15 (counter-clockwise), 4 +15, 5 +30, 6 +45, 7 +60 degrees (clockwise). Float value (`_floatValue` / `f`) fine-tunes the effect (v2.5.0+, v3).
 
 ## Timing model
-Everything is in beats. With constant BPM: `seconds = beat * 60 / BPM`, BPM = Info `_beatsPerMinute` (v2) / `audio.bpm` (v4). BPM changes: v3 `bpmEvents` (`b`,`m`); v2 basic event type 100 (with `_floatValue` as BPM from 2.5.0; the 2.0.0 sample shows type 10 value 128, legacy); v4 beatmaps have no BPM events: BPM comes from the audio data file regions (below) and the Official Editor converts regions into BPM events when editing. No SV/scroll speed: objects fly at note jump speed (NJS from Info), only the spawn offset and NJS events (4.1.0) change travel. Position of an object in time is independent of its grid position. Sub-beat resolution is arbitrary float (editors use 1/N snaps).
+
+Everything is in beats: `seconds = beat * 60 / BPM` at constant BPM (Info `_beatsPerMinute` v2 / `audio.bpm` v4). BPM changes: v3 `bpmEvents` (`b`,`m`); v2 basic event type 100 (`_floatValue` as BPM from 2.5.0; the 2.0.0 sample shows type 10 value 128, legacy). v4 beatmaps have no BPM events: BPM comes from the audio data regions (below), which the Official Editor converts to BPM events. No scroll speed: objects fly at the Info note jump speed (NJS); only the spawn offset and NJS events (4.1.0) change travel. Sub-beat resolution is an arbitrary float (editors snap to 1/N).
 
 ## Notes
-- **Cut notes** (`_notes` type 0/1, `colorNotes`): color + cut direction + angle offset, 4x3 grid. Simultaneous notes allowed (same `b`).
-- **Bombs**: avoid, grid position only (v3/v4 no direction).
-- **Obstacles/walls**: duration in beats, rectangular volume x/y/w/h (legacy type 0/1).
-- **Arcs** (`sliders`/`arcs`): sustained path between a head and tail, curved by control-point multipliers and mid-anchor mode.
-- **Chains** (`burstSliders`/`chains`): head note plus `sc - 1` links toward tail, squish factor.
-- **Lane rotation** (`rotationEvents`, event types 14/15, v4 per-object `r`): used by `360Degree` / `90Degree` characteristics.
-- No holds/mines in the vsrg sense. Lanes are not columns; any mapping to Tap/Hold columns is lossy.
+
+- Cut notes (`_notes` type 0/1, `colorNotes`): color + cut direction + angle offset on the 4x3 grid; simultaneous notes share `b`.
+- Bombs: grid position only. Walls: duration plus x/y/w/h volume.
+- Arcs (`sliders`/`arcs`): path between head and tail, curved by control-point multipliers and mid-anchor mode.
+- Chains (`burstSliders`/`chains`): head note plus `sc - 1` links toward the tail, with a squish factor.
+- Lane rotation (`rotationEvents`, event types 14/15, v4 per-object `r`): for `360Degree` / `90Degree`.
+- No holds/mines; mapping to Tap/Hold columns is lossy.
 
 ## Audio Data (`BPMInfo.dat` / `AudioData.dat`)
 Introduced in 1.22.2 with the Official Editor beta; referenced from v4 Info `audio.audioDataFilename` (v2 Info may point to it, not required).
@@ -104,22 +107,24 @@ Introduced in 1.22.2 with the Official Editor beta; referenced from v4 Info `aud
 The editor converts BPM regions into BPM events in related beatmaps. A region maps sample range [si, ei] to beat range [sb, eb]; seconds for a beat inside a region = (si + (beat - sb) / (eb - sb) x (ei - si)) / songFrequency [inference from field names].
 
 ## Audio & images
-Not in this file; see Info. Audio files: wav or ogg (ogg for BeatSaver).
+
+Not in this file; see Info. Audio: wav or ogg (ogg for BeatSaver).
 
 ## Versions & variants
-- v1 (1.5.0, `.json`, legacy), v2 2.0.0-2.6.0, v3 3.0.0-3.3.0, v4 4.0.0/4.1.0 (BeatSaber-Deno supported versions: v4.1.0, v3.3.0, v2.6.0, v1.5.0).
-- v2 -> v3: renamed + abbreviated; walls free-form; `sliders`/`burstSliders`; box-group lighting. v3 -> v4: metadata indexing, lighting moved to `Lightshow.dat`, rotation per object, `njsEvents`.
-- The game keeps a compatibility layer that reads older schemas. BeatSaber-Deno marks: v2 no angle offset, no chains; v3 vanilla obstacles up to 2y, no NJS event; v4 bomb no direction.
-- Modded extensions (Mapping Extensions precision coordinates, Noodle Extensions, Chroma) live in `customData`.
+
+- v1 (1.5.0, `.json`), v2 2.0.0-2.6.0, v3 3.0.0-3.3.0, v4 4.0.0/4.1.0 (BeatSaber-Deno supports v4.1.0, v3.3.0, v2.6.0, v1.5.0).
+- v2 -> v3: renamed + abbreviated; free-form walls; `sliders`/`burstSliders`; box-group lighting. v3 -> v4: metadata indexing, lighting in `Lightshow.dat`, per-object rotation, `njsEvents`.
+- The game reads older schemas through a compatibility layer. BeatSaber-Deno marks: v2 no angle offset, no chains; v3 vanilla obstacles up to 2y, no NJS event; v4 bomb no direction.
+- Mapping Extensions precision coordinates, Noodle Extensions and Chroma live in `customData`.
 
 ## Quirks & pitfalls
-- Same note position/time with the same color is possible (stacks, "doubles"); no validation in the file.
+
 - v2 bombs are `_notes` with `_type` 3: filter before counting notes.
-- v2 events type 10 is both a light and a legacy BPM change; type 100 BPM change.
+- v2 event type 10 is both a light and a legacy BPM change; type 100 is BPM change.
 - v4 chain head cut direction 8 = Down (BSMG).
-- Defaulted values: absent `x`, `y`, `c`, `d`, `a` default to 0 (example in BSMG: `{ "b": 10.0 }` equals `x:0,y:0`); do not treat as invalid.
-- Index fields in v4 must be in range of the corresponding `*Data` array; shared metadata means editing one entry affects every object referencing it.
-- Mods may write non-standard line index/layer values (< 0 or > 3) via customData / precision values.
+- Absent `x`, `y`, `c`, `d`, `a` default to 0 (BSMG: `{ "b": 10.0 }` equals `x:0,y:0`).
+- v4 index fields must be in range of the `*Data` array; editing a shared entry affects every referencing object.
+- Mods may write line index/layer values < 0 or > 3 via customData / precision values.
 
 ## Example
 BSMG v3.2.0 sample (trimmed to notes/walls):
@@ -134,7 +139,8 @@ BSMG v3.2.0 sample (trimmed to notes/walls):
 Origin: https://bsmg.wiki/mapping/map-format/beatmap.html.
 
 ## ROX support
-Not read by ROX. No Beat Saber codec in ROX 0.8.1.
+
+Not read by ROX (no Beat Saber codec in ROX 0.8.1).
 
 ## Parsers & tools
 - BeatSaber-Deno / `bsmap` (TypeScript): https://github.com/KivalEvan/BeatSaber-Deno (schemas v1 to v4, converter, validator)
@@ -146,8 +152,7 @@ Not read by ROX. No Beat Saber codec in ROX 0.8.1.
 
 ## Getting samples
 
-- **Committed**: 51 real files: BeatSaber-Deno fixtures (v1-v4, MIT) and larger community fixtures, the official BSMG wiki snippets (`bsmgwiki_*.dat`, versions 1.5.0 to 4.1.0 for beatmap, lightshow and audio), and one subfolder per BeatSaver map set (`<id>_<hash8>/`: CC0 goldcray maps, a CC BY music map, and recent v2/v4 maps) extracted from BeatSaver zips; audio and covers were dropped. Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
-- **More samples**: BeatSaver (https://beatsaver.com; API `https://api.beatsaver.com/search/text/0?q=<term>`, `https://api.beatsaver.com/maps/latest`, zips at `https://cdn.beatsaver.com/<hash>.zip`). Searching `cc0` finds maps whose author states a licence. BeatSaber-Deno (`tests/resources/`) has more fixtures.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). More: BeatSaver (https://beatsaver.com; API `https://api.beatsaver.com/search/text/0?q=<term>`, `https://api.beatsaver.com/maps/latest`, zips at `https://cdn.beatsaver.com/<hash>.zip`); searching `cc0` finds maps whose author states a licence. BeatSaber-Deno (`tests/resources/`) has more fixtures. BSMG wiki snippets: `bsmgwiki_*.dat`.
 
 ## Sources
 - https://bsmg.wiki/mapping/map-format.html

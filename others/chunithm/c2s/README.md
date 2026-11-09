@@ -5,15 +5,15 @@ Doc status: partial · ROX: no · Category: others · Encoding: text (UTF-8, tab
 
 ## Overview
 
-`.c2s` is the plain-text chart format read by the CHUNITHM arcade engine ("c2s" = chuni 2 score [inference]). It is found in the game data tree `app/data/AXXX/music/musicXXXX/` (one `.c2s` per difficulty: Basic/Advanced/Expert/Master/World's End/Ultima), next to `Music.xml` which holds title/level/difficulty. The format is not publicly documented by SEGA; the descriptions below come from reverse-engineering notes (Suprnova's Chunithm-Research, a HackMD page) and from converter source code (Margrete2S/mgxc2s). The game **reloads `.c2s` files on song selection**, which makes custom-chart debugging easy.
+`.c2s` is the plain-text chart format read by the CHUNITHM arcade engine ("c2s" = chuni 2 score [inference]). It lives in `app/data/AXXX/music/musicXXXX/`, one `.c2s` per difficulty (Basic/Advanced/Expert/Master/World's End/Ultima), next to `Music.xml` (title/level/difficulty). SEGA does not document it; this page comes from Suprnova's Chunithm-Research, a HackMD page and the Margrete2S/mgxc2s source. The game reloads `.c2s` files on song selection.
 
-Category: **others** — see [../README.md](../README.md): 16 variable-width cells, slides with changing width, air plane.
+Category: others, see [../README.md](../README.md).
 
 ## Container & encoding
 
-- Plain text, "standard unicode" (UTF-8; Japanese creator names are written directly), one record per line, **fields separated by a horizontal tab**. In an existing chart the game ignores a note line unless it is formatted exactly; using spaces instead of tabs in a modified line was reported not to work (Suprnova, in Notepad++).
-- Block order: header, BPM/meter (and soflan) lines, notes, footer statistics, and the file ends with empty lines (HackMD: "All charts end with 2 empty lines").
-- One file per difficulty. Index/title/level are *not* in the file for recent versions (`MUSIC 0`, `DIFFICULT 00`, `LEVEL 0.0` are placeholders; older versions stored the music id and difficulty).
+- Plain text, "standard unicode" (UTF-8; Japanese creator names are written directly), one record per line, fields separated by a horizontal tab. The game ignores a note line in an existing chart unless it is formatted exactly; spaces instead of tabs in a modified line were reported not to work (Suprnova, in Notepad++).
+- Block order: header, BPM/meter (and soflan) lines, notes, footer statistics, then empty lines (HackMD: "All charts end with 2 empty lines").
+- One file per difficulty. Index/title/level are not in the file for recent versions (`MUSIC 0`, `DIFFICULT 00`, `LEVEL 0.0` are placeholders; older versions stored the music id and difficulty).
 
 ## Structure / metadata
 
@@ -27,9 +27,9 @@ Category: **others** — see [../README.md](../README.md): 16 variable-width cel
 | `DIFFICULT` | int | difficulty number (old) or 0/00 (3 = Master…) |
 | `LEVEL` | float | 0.0 in recent files |
 | `CREATOR` | string | chart author; shown on the song card unless difficulty is Basic/Advanced |
-| `BPM_DEF` | 4 floats | **display** BPMs: first = initial BPM; second = most used other BPM (mirrors 1st if none); 3rd/4th mirror 2nd/1st (Suprnova) |
+| `BPM_DEF` | 4 floats | display BPMs: first = initial BPM; second = most used other BPM (mirrors 1st if none); 3rd/4th mirror 2nd/1st (Suprnova) |
 | `MET_DEF` | two ints | display meter (Margrete2S writes `4 4`); cosmetic. Field order: see the `MET` line |
-| `RESOLUTION` | int | ticks per measure, **384** (96 per beat) |
+| `RESOLUTION` | int | ticks per measure, 384 (96 per beat) |
 | `CLK_DEF` | int | click (count-in) resolution, 384 |
 | `PROGJUDGE_BPM` | float | 240.000 (affects number of hold-judgement ticks: "proportional to hold judgement count") |
 | `PROGJUDGE_AER` | float | 0.999 |
@@ -39,29 +39,29 @@ Category: **others** — see [../README.md](../README.md): 16 variable-width cel
 
 | Line | Fields |
 |---|---|
-| `BPM` | `measure tick bpm` — real tempo change (first must be measure 0 tick 0) |
-| `MET` | `measure tick a b` — meter change, cosmetic only (it only changes where the thin measure lines are drawn). **Order caveat**: HackMD documents `METER_HIGH METER_LOW` (numerator first); Suprnova documents the columns as "Second Value, First Value" and stresses that "the values for the time signature are in reverse"; the mgxc2s fork of Margrete2S states that "in c2s, numerator should be placed in front of denominator" and writes `MET measure tick numerator denominator`. Treat the first value as numerator unless a real file contradicts it |
-| `SFL` | `measure tick duration multiplier` — scroll-speed ("soflan") multiplier with 6 decimals, negative allowed (board moves backwards); purely visual |
-| `DCM` | `measure tick duration speed` — per-note drop-speed segment written by Margrete2S for `SPDMOD` (used in newer charts) |
+| `BPM` | `measure tick bpm`: real tempo change (first must be measure 0 tick 0) |
+| `MET` | `measure tick a b`: meter change, cosmetic only (moves the thin measure lines). Order caveat: HackMD documents `METER_HIGH METER_LOW` (numerator first); Suprnova documents the columns as "Second Value, First Value" and stresses that "the values for the time signature are in reverse"; the mgxc2s fork of Margrete2S states that "in c2s, numerator should be placed in front of denominator" and writes `MET measure tick numerator denominator`. Treat the first value as numerator unless a real file contradicts it |
+| `SFL` | `measure tick duration multiplier`: scroll-speed ("soflan") multiplier with 6 decimals, negative allowed (board moves backwards); visual only |
+| `DCM` | `measure tick duration speed`: per-note drop-speed segment written by Margrete2S for `SPDMOD` (newer charts) |
 
 ### Note lines
 
-Common prefix: `TYPE measure tick cell width` where `measure` ≥ 0, `tick` in `[0, RESOLUTION)`, `cell` 0–15 = leftmost cell, `width` 1–16 cells to the right (`cell+width ≤ 16`).
+Common prefix: `TYPE measure tick cell width` where `measure` ≥ 0, `tick` in `[0, RESOLUTION)`, `cell` 0-15 = leftmost cell, `width` 1-16 cells to the right (`cell+width ≤ 16`).
 
 | Type | Extra fields | Meaning |
 |---|---|---|
-| `TAP` | – | tap |
+| `TAP` | - | tap |
 | `CHR` | `effect` (`UP`, `DW`, `CE`; Margrete2S also `LC RC LS RS BS`) | EX-TAP ("ex-note") with effect direction |
 | `FLK` | `L` | flick (always `L`, direction-agnostic) |
-| `MNE` | – | mine / damage |
+| `MNE` | - | mine / damage |
 | `HLD` / `HXD` | `length` [ `effect` ] | hold (`HXD` = EX hold in newer versions, `HLD` normal) |
-| `SLD` / `SLC` (also `SXD`, `SXC` for EX slides) | `length endCell endWidth` [ `SLD` ...] | slide segment: `SLD` = visible node (draws a note), `SLC` = control segment (no extra note); a slide starting with a straight segment begins with `SLD`, one starting in motion with `SLC`; **a slide ends at an `SLD` located where another slide currently is with nothing following**; width interpolates start→end width |
+| `SLD` / `SLC` (also `SXD`, `SXC` for EX slides) | `length endCell endWidth` [ `SLD` ...] | slide segment: `SLD` = visible node (draws a note), `SLC` = control segment (no extra note). A slide starting with a straight segment begins with `SLD`, one starting in motion with `SLC`. A slide ends at an `SLD` located where another slide currently is with nothing following. Width interpolates from start to end width |
 | `AIR`, `AUR`, `AUL`, `ADW`, `ADR`, `ADL` | `target` | air notes (up / up-right / up-left / down / down-right / down-left); `target` = note type of the parent at the same time/cell (`TAP`,`CHR`,`HLD`,`SLD`,`FLK`…) |
 | `AHD` (`AHX` for no-action end) | `target length` | air-hold; ends with an automatic down |
 | `ASD` / `ASC` | `target height length endCell endWidth endHeight color` | air-slide node / control (newer versions; Margrete2S output) |
 | `ALD` | `dense height length endCell endWidth endHeight color` | air-crush / air-trace lines |
 
-Ticks and lengths are all expressed in `RESOLUTION` parts per measure (length = duration in ticks). Offsets for sub-beat positions: `tick = beat_index·(R/4) + fraction·(R/4)`; with R = 384 a beat is 96 ticks, a 1/16 is 24 ticks. Air notes must be placed at the same measure/tick/cell/width as their parent note ("leech"); the Margrete2S writer enforces it. `AIR`s should be placed at note ends rather than mid-slide, which official charts sometimes do anyway.
+Ticks and lengths are in `RESOLUTION` parts per measure (length = duration in ticks). Sub-beat positions: `tick = beat_index·(R/4) + fraction·(R/4)`; with R = 384 a beat is 96 ticks, a 1/16 is 24 ticks. Air notes must sit at the same measure/tick/cell/width as their parent note ("leech"); the Margrete2S writer enforces it. `AIR`s belong at note ends rather than mid-slide, though official charts sometimes place them there.
 
 ### Footer
 
@@ -69,28 +69,28 @@ Statistics, ignored by the game (Suprnova: "do not seem to influence the functio
 
 ## Timing model
 
-Position = (measure, tick) with `RESOLUTION` ticks per measure (384; always 4 beats per measure regardless of `MET`). Tempo from `BPM measure tick bpm` lines; convert with `time = Σ segments (Δticks / R · 4 · 60/bpm)`. `MET` and `BPM_DEF`/`MET_DEF` are cosmetic. `SFL`/`DCM` only change drawing speed, never judgement time. There is **no audio offset** in the file (audio sync is handled by the game data / `Music.xml`, simulators add `BGMOFS`).
+Position = (measure, tick) with `RESOLUTION` ticks per measure (384; always 4 beats per measure regardless of `MET`). Tempo comes from `BPM measure tick bpm` lines: `time = Σ segments (Δticks / R · 4 · 60/bpm)`. `MET` and `BPM_DEF`/`MET_DEF` are cosmetic. `SFL`/`DCM` change drawing speed, never judgement time. The file has no audio offset (the game data / `Music.xml` handle sync; simulators add `BGMOFS`).
 
 ## Notes
 
-See the table above. Simultaneous notes: same measure/tick on different cells. Slides are chains of lines sharing the end position of one segment as the start of the next; air/air-hold lines are dependants. Mines are `MNE`. There are no keysounds.
+Simultaneous notes share measure/tick on different cells. A slide is a chain of lines where one segment's end is the next one's start; air/air-hold lines depend on a parent. Mines are `MNE`. No keysounds.
 
 ## Audio & images
 
-Not referenced: audio, jacket, title and levels are in the game's `Music.xml`/asset tree. For simulators the `.ugc`/`.sus` formats include `BGM`, `JACKET` fields.
+Not referenced (audio, jacket, title, levels live in `Music.xml`/the asset tree).
 
 ## Versions & variants
 
-`VERSION` lines seen: `1.08.00`, `1.11.00` (Margrete2S output), with additions between (EX hold/slide `HXD/SXD`, air-slide `ASD/ASC`, `ALD`, `DCM`). The hackmd page describes an older dialect: `AIR` family with `TYP MASTER` (target), `AHD TYP MASTER LENGTH`, `SLC` "slide chain", `CHR [DIRECTION]`, and `DIFFUCLT` (sic) header spelling.
+`VERSION` lines seen: `1.08.00`, `1.11.00` (Margrete2S output), with additions between (EX hold/slide `HXD/SXD`, air-slide `ASD/ASC`, `ALD`, `DCM`). The HackMD page describes an older dialect: `AIR` family with `TYP MASTER` (target), `AHD TYP MASTER LENGTH`, `SLC` "slide chain", `CHR [DIRECTION]`, and `DIFFUCLT` (sic) header spelling.
 
 ## Quirks & pitfalls
 
-- Fields must be tab-separated; trailing `PROGJUDGE_AER` has two leading spaces in output (`  0.999`) in Margrete2S — whitespace is not meaningful but tabs are.
-- Suprnova's example uses `RESOLUTION 386` in prose (typo for 384).
-- `MET` argument order is described inconsistently by the sources (see the table).
-- `SFL` multiplier must have six decimals (Suprnova). For per-note speed (`DCM`) mgxc2s notes the game cannot take speed `0`; use e.g. `0.00001`.
-- Every `AIR`/`AHD` must have a parent at the same position, otherwise the note is ignored or the game may refuse the chart [inference from the "leech" description].
-- Charts must satisfy CHUNITHM regulations (Margrete has an automatic regulation checker per its docs); `cell+width` > 16 is invalid [inference].
+- Fields must be tab-separated. Margrete2S writes `PROGJUDGE_AER` with two leading spaces (`  0.999`); that is harmless.
+- Suprnova's prose says `RESOLUTION 386` (typo for 384).
+- The sources disagree on `MET` argument order (see the table).
+- `SFL` multiplier needs six decimals (Suprnova). mgxc2s notes the game cannot take `DCM` speed `0`; use e.g. `0.00001`.
+- Every `AIR`/`AHD` needs a parent at the same position, otherwise the note is ignored or the game may refuse the chart [inference from the "leech" description].
+- Charts must satisfy CHUNITHM regulations (Margrete has a regulation checker per its docs); `cell+width` > 16 is invalid [inference].
 
 ## Example
 
@@ -110,19 +110,18 @@ AIR	9	0	4	8	CHR
 
 ## ROX support
 
-Not read by ROX 0.8.1 (no chunithm codec). Mapping to ROX would need a 16-column model with width collapsed to column ranges; slides/air are not representable.
+Not read by ROX 0.8.1. Mapping needs a 16-column model; slides/air are not representable.
 
 ## Parsers & tools
 
 - [AsakuraMizu/mgxc2s](https://github.com/AsakuraMizu/mgxc2s) / [sbga-tech/mgxc2s](https://github.com/sbga-tech/mgxc2s) (C#, writes c2s; source of the newer note IDs)
 - Margrete2S / Margrithm (<https://margrithm.girlsband.party/>)
-- MuNET-OSS ChuChartManager (UGC ↔ C2S, C#)
+- MuNET-OSS ChuChartManager (UGC <-> C2S, C#)
 - UMIGURI + Margrete (inonote) for `.ugc`; Suprnova research notes; adzen/chu2view (score viewer, not a parser)
 
 ## Getting samples
 
-- **Committed**: 7 real `.c2s` files from the LGPL-3.0 MuConvert test set: 4 official charts (VERSION 1.08.00 UTF-16LE with BOM, 1.10.01, 1.11.00) and 3 community charts (1.14.00). Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
-- **More samples**: official `.c2s` files are CHUNITHM game data; MuConvert and Margrete2S convert UGC/MGXC to c2s; https://github.com/mitsuhira/UMIGURI_charts holds `.mgxc`/`.ugc` charts that can be converted.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md) (LGPL-3.0 MuConvert test set; official charts VERSION 1.08.00 UTF-16LE with BOM, 1.10.01, 1.11.00; community charts 1.14.00). More: official `.c2s` files are CHUNITHM game data; MuConvert and Margrete2S convert UGC/MGXC to c2s; https://github.com/mitsuhira/UMIGURI_charts holds `.mgxc`/`.ugc` charts to convert.
 
 ## Sources
 

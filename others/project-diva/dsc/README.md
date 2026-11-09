@@ -5,33 +5,33 @@ Doc status: partial · ROX: no · Category: others · Encoding: binary (stream o
 
 ## Overview
 
-In SEGA's **Hatsune Miku: Project DIVA** series (PSP *Project DIVA / 2nd / Extend*, arcade, PlayStation 3/Vita *f*, *F*, *F 2nd*, *X*, PS4/Switch *Future Tone* / *Mega Mix*, and the 3DS *Project Mirai* family) the **chart is not a separate file format**: it is embedded in the **DSC ("DivaScript")** file of a PV — a compiled script of timed commands that also drives camera, character motions, facial expressions, lyrics, lighting, post-processing and the **targets** the player must hit. A rhythm chart is the sequence of `TARGET(...)` commands (plus `BAR_TIME_SET`/`TARGET_FLYING_TIME`, branch and challenge-time commands). Every game generation uses its own opcode numbering/parameter counts ("DSC formats"). Community tools dump DSC to a text script `OPCODE(arg, arg, ...);` and re-assemble it: **Open PD Script Editor** (nastys, Qt/C++, based on samyuu's ScriptEditor opcodes), **DSC Studio** (formerly DSC Editor), samyuu's **ScriptEditor** / Comfy Studio, **DSCTools** (DivaModding), `DIVA_Tools/FDSC`, `dsc-merger` (Rust), MikuMikuLibrary. The community documentation lives on *DivaDocs* ("DivaScript" page; not retrievable at the time of writing — HTTP 404 — so semantics below come from the Open PD Script Editor source and dsc-merger).
+In SEGA's Project DIVA series (PSP, arcade, PS3/Vita *f*, *F*, *F 2nd*, *X*, PS4/Switch *Future Tone* / *Mega Mix*, 3DS *Project Mirai*) the chart is not a separate format. It is embedded in the DSC ("DivaScript") file of a PV: a compiled script of timed commands that also drives camera, character motions, expressions, lyrics, lighting, post-processing and the targets. The chart is the sequence of `TARGET(...)` commands (plus `BAR_TIME_SET`/`TARGET_FLYING_TIME`, branch and challenge-time commands). Each game generation has its own opcode numbering and parameter counts ("DSC formats"). Community tools dump DSC to a text script `OPCODE(arg, arg, ...);` and reassemble it: Open PD Script Editor (nastys, Qt/C++, based on samyuu's ScriptEditor opcodes), DSC Studio (formerly DSC Editor), samyuu's ScriptEditor / Comfy Studio, DSCTools (DivaModding), `DIVA_Tools/FDSC`, `dsc-merger` (Rust), MikuMikuLibrary. DivaDocs ("DivaScript" page) returned HTTP 404, so semantics below come from the Open PD Script Editor source and dsc-merger.
 
-Category: **others** — free-position targets (x, y, angle, distance, amplitude/frequency curve) flying along trajectories; not column based; and the file is a general PV script.
+Category: others. Free-position targets (x, y, angle, distance, amplitude/frequency curve) fly along trajectories; the file is a general PV script.
 
 ## Container & encoding
 
-- Binary, **32-bit signed integers** only: `[opcode:i32] [param0:i32] … [param(n-1):i32]`, `n` = parameter count of that opcode in that game format. No tag/length framing: the parser must know the parameter counts (tables below).
-- **Endianness**: both byte orders are handled by Open PD Script Editor (user selects LE/BE; for the PSP "Edit" layout below a 16-byte shift is applied to all offsets in big-endian mode). Which platform uses which order is not stated in the sources opened (the F2 writer carries a TODO "endianness flag 0x10 LE, 0x18 BE?").
-- **Headers / variants** (Open PD Script Editor `DSC.cpp`; reader skip / writer header):
-  - **f** (Project DIVA f): 4-byte header (`0x12020220` = 302121504 written on save), commands follow to end of file.
-  - **FT** (the editor's "FT" format): 4-byte header `0x14050921` (335874337), commands to end of file.
-  - **Mirai** (3DS): 4-byte header (writer emits `0x12020220`), commands to end of file.
-  - **F 2nd and X**: header beginning with the ASCII magic `PVSC` (dword `0x43535650`) followed by zero dwords and size fields (the F2 writer stores `file size − 92` at offsets 4 and 20; the writers emit 19 dwords, the readers skip 72 bytes), then the commands, then a trailer: magic `EOFC` (`0x43464F45`) + 6 zero dwords. The X reader stops at `EOFC`.
-  - **A12 / PDA** (arcade 1.01 / 2.00) and **PSP1 / PSP2** (Project DIVA PSP games): no header; plain stream of commands to end of file.
-  - **PSP "Edit" data** (editor format `PSP2Edit`, Project DIVA 2nd/Extend edit-mode data): not a stream but a fixed-layout file: script at `0xE108`, lyrics (600 × 0x29-byte strings) at `0x2C2AC`, BPM changes (600 dwords, −1 = none) at `0x337DC`, then 600 "change bar" and 600 time-signature dwords (stored −1), song end at `0x353FC`, two modules, 20 stages (from `0x35408`), 30 motions, a button-SFX id and 9 hand items (names 0x28 bytes).
-- Related files (from the search results about the community docs, not opened): `pv_db.txt` PV metadata (encrypted `DIVAFILE` in F 2nd/X), `.farc` archives that contain the DSC files, audio files, `.mot` motions.
+- Binary, 32-bit signed integers only: `[opcode:i32] [param0:i32] ... [param(n-1):i32]`, `n` = parameter count of that opcode in that game format. No framing: the parser must know the counts (tables below).
+- Endianness: Open PD Script Editor handles both (user selects LE/BE; for the PSP "Edit" layout a 16-byte shift applies to all offsets in big-endian mode). Which platform uses which order is not stated in the sources opened (the F2 writer carries a TODO "endianness flag 0x10 LE, 0x18 BE?").
+- Headers (Open PD Script Editor `DSC.cpp`; reader skip / writer header):
+  - f: 4-byte header (`0x12020220` = 302121504 written on save), commands to end of file.
+  - FT (the editor's "FT" format): 4-byte header `0x14050921` (335874337), commands to end of file.
+  - Mirai (3DS): 4-byte header (writer emits `0x12020220`), commands to end of file.
+  - F 2nd and X: header starting with ASCII magic `PVSC` (dword `0x43535650`), zero dwords and size fields (the F2 writer stores `file size - 92` at offsets 4 and 20; writers emit 19 dwords, readers skip 72 bytes), then the commands, then a trailer: magic `EOFC` (`0x43464F45`) + 6 zero dwords. The X reader stops at `EOFC`.
+  - A12 / PDA (arcade 1.01 / 2.00) and PSP1 / PSP2: no header; plain command stream to end of file.
+  - PSP "Edit" data (editor format `PSP2Edit`, Project DIVA 2nd/Extend edit mode): fixed layout, not a stream. Script at `0xE108`, lyrics (600 × 0x29-byte strings) at `0x2C2AC`, BPM changes (600 dwords, -1 = none) at `0x337DC`, then 600 "change bar" and 600 time-signature dwords (stored -1), song end at `0x353FC`, two modules, 20 stages (from `0x35408`), 30 motions, a button-SFX id and 9 hand items (names 0x28 bytes).
+- Related files (from search results about the community docs, not opened): `pv_db.txt` PV metadata (encrypted `DIVAFILE` in F 2nd/X), `.farc` archives holding the DSC files, audio files, `.mot` motions.
 
 ## Structure / metadata
 
-A PV script is a **time-ordered list**: `TIME(t)` sets the current time, then every following command executes at that time until the next `TIME`. Typical beginning (per `dsc-merger`/editor conventions): `TIME(0)`, `PV_BRANCH_MODE(0)` …, ends with `PV_END` then `END`. Within a script, **branches** are expressed with `PV_BRANCH_MODE(n)` blocks (in the editor `time_branch` slots: 0 = default, 1 = fail, 2 = success), used for the "Challenge Time"/dual-route data in newer games.
+A PV script is a time-ordered list: `TIME(t)` sets the current time and following commands run at it until the next `TIME`. Typical start: `TIME(0)`, `PV_BRANCH_MODE(0)` ...; end: `PV_END` then `END`. Branches are `PV_BRANCH_MODE(n)` blocks (editor `time_branch` slots: 0 = default, 1 = fail, 2 = success), used for "Challenge Time"/dual-route data in newer games.
 
 Chart-relevant opcodes:
 
 | Opcode | Meaning |
 |---|---|
 | `TIME(t)` | timestamp in **units of 10 µs** (1/100 000 s): the editor converts `h:m:s.ms` as `(ms + (min·60 + h·3600)·1000)·100`; `6 000 000` = 1 minute |
-| `TARGET(...)` | spawn a target (button note) arriving at this time. Parameter count per game: PSP1/PSP2/A12/FT **7**, f **11**, F2/X **12**. Contains target type (circle, cross, square, triangle, star, holds, rush…), position (x, y), approach angle/curve parameters, hold length… — **exact parameter meanings are not documented in the sources opened** |
+| `TARGET(...)` | spawn a target (button note) arriving at this time. Parameter count per game: PSP1/PSP2/A12/FT **7**, f **11**, F2/X **12**. Contains target type (circle, cross, square, triangle, star, holds, rush…), position (x, y), approach angle/curve parameters, hold length...**exact parameter meanings are not documented in the sources opened** |
 | `TARGET_FLYING_TIME(ms)` | time (ms) a target takes to travel from spawn to its hit point; equals `240000/BPM` for the "normal" speed |
 | `BAR_TIME_SET(bpm, timesig)` | sets tempo and the time signature index used for bar timing; relation to flying time in the editor: `flying_time = 1000 / (bpm / ((ts+1)·60))` ms and `bpm = round(240000 / flying_time)` with `ts = 3` (4/4) |
 | `PV_BRANCH_MODE(m)` | begin a section for branch `m` (f/F2/X/FT) |
@@ -240,35 +240,35 @@ Plain-text dump syntax (Open PD Script Editor / dsc-merger "plaintext"): one com
 
 ## Timing model
 
-- `TIME(t)` is **absolute** time in 10 µs units (1/100 000 s), counted from the start of the PV script; all commands after it fire at that time (several commands can share one `TIME`). Convert: `seconds = t / 100000`.
-- Notes are authored by the **hit time**; the game spawns the target `TARGET_FLYING_TIME` ms earlier (the "flying time" is derived from BPM, `BAR_TIME_SET(bpm, ts)`: `240000/bpm` ms for 4/4). So the BPM needed by converters is carried by `BAR_TIME_SET` commands or by the `pv_db` data, not by a header.
-- There is no separate audio-offset field in the DSC: sync is a property of the PV (audio start via `MUSIC_PLAY` command time).
-- `PV_BRANCH_MODE(n)` splits the stream into alternative command lists played depending on the player's state (default/fail/success).
+- `TIME(t)` is absolute time in 10 µs units (1/100 000 s) from the start of the script; all commands after it fire then (several can share one `TIME`). `seconds = t / 100000`.
+- Notes are authored by hit time; the game spawns the target `TARGET_FLYING_TIME` ms earlier (derived from BPM via `BAR_TIME_SET(bpm, ts)`: `240000/bpm` ms for 4/4). Converters get BPM from `BAR_TIME_SET` or `pv_db`, not from a header.
+- No audio-offset field: sync is a property of the PV (audio starts at the `MUSIC_PLAY` command time).
+- `PV_BRANCH_MODE(n)` splits the stream into alternative command lists chosen by player state (default/fail/success).
 
 ## Notes
 
-Each `TARGET` is one note. The parameter layout of `TARGET` differs per game (7 params in PSP/A12/FT, 11 in f, 12 in F2/X); their meaning (target type, position, trajectory, hold length…) is **not verified** from the sources opened, so this page does not list it; the extra opcodes `TARGET_FLAG` (FT) and `TARGET_EFFECT` (F2/X) carry additional per-target data. No keysounds are modelled in the DSC itself.
+Each `TARGET` is one note. Parameter counts: 7 in PSP/A12/FT, 11 in f, 12 in F2/X. Their meaning (type, position, trajectory, hold length) is not verified in the sources opened and not listed here. `TARGET_FLAG` (FT) and `TARGET_EFFECT` (F2/X) carry extra per-target data. No keysounds.
 
 ## Audio & images
 
-Audio is separate (`MUSIC_PLAY` starts it); PV metadata, lyrics timing and difficulty stars are in `pv_db`; lyrics lines are DSC `LYRIC` commands (and for the PSP edit layout 600 fixed strings). Challenge Time sections and lyric markers can be added by dsc-merger.
+Audio is separate (`MUSIC_PLAY` starts it). PV metadata, lyrics timing and difficulty stars are in `pv_db`; lyric lines are DSC `LYRIC` commands (600 fixed strings in the PSP edit layout). dsc-merger can add Challenge Time sections and lyric markers.
 
 ## Versions & variants
 
-PSP1/PSP2 → A12 (arcade) → f → F2 → X → FT; opcodes keep ids 0–33 almost identical across formats, with later additions in the 34–163 range (see the table) and some ids reused with another meaning (e.g. `EDIT_LYRIC`/`NEAR_CLIP`, `EDIT_CAMERA_BOX` at 103 in X and 108 in F2). Mega Mix+/DSC Studio: FT-style. Project Mirai (3DS) uses its own table (`DivaScriptOpcode_Mirai`, not in the db above).
+PSP1/PSP2 to A12 (arcade) to f to F2 to X to FT. Ids 0-33 are almost identical across formats; later additions sit in 34-163 (see the table); some ids are reused with another meaning (e.g. `EDIT_LYRIC`/`NEAR_CLIP`, `EDIT_CAMERA_BOX` at 103 in X and 108 in F2). Mega Mix+/DSC Studio: FT-style. Project Mirai (3DS) has its own table (`DivaScriptOpcode_Mirai`, not in the db above).
 
 ## Quirks & pitfalls
 
-- Parameter counts are format specific: parse with the table of the **right game format**, otherwise the stream desynchronises (the editor aborts "DSC is corrupted. Unknown opcode").
-- Same opcode name, different id/length between games (`TARGET`: 7/11/12; `CHANGE_FIELD`: 1/2; `MODE_SELECT`, `SET_PLAYDATA`: 1/2).
-- `TOON＿EDGE` (F2, id 106) contains a full-width underscore in the editor's DB.
-- The whole script ends with `END`; X/F2 add the `EOFC` trailer.
+- Parse with the table of the right game format, or the stream desynchronises (the editor aborts "DSC is corrupted. Unknown opcode").
+- Same name, different id/length between games (`TARGET`: 7/11/12; `CHANGE_FIELD`: 1/2; `MODE_SELECT`, `SET_PLAYDATA`: 1/2).
+- `TOON＿EDGE` (F2, id 106) has a full-width underscore in the editor's DB.
+- Scripts end with `END`; X/F2 add the `EOFC` trailer.
 - `TIME` values must be non-decreasing; commands before the first `TIME` are invalid [inference].
-- Big-endian PS3/Vita-era files and little-endian files coexist.
+- Big-endian PS3/Vita-era and little-endian files coexist.
 
 ## Example
 
-Illustrative, hand-built from the rules above (not a real chart; the `TARGET` parameters are placeholders because their meaning is not documented here): in plaintext form
+Hand-built, placeholder values (not a real chart), plaintext form:
 
 ```
 TIME(0);
@@ -281,27 +281,26 @@ PV_END();
 END();
 ```
 
-`TIME(100000)` = 1.000 s; `BAR_TIME_SET(120, 3)` with `flying_time = 1000/(120/((3+1)·60)) = 2000` ms.
+`TIME(100000)` = 1.000 s; `BAR_TIME_SET(120, 3)`: `flying_time = 1000/(120/((3+1)·60)) = 2000` ms.
 
 ## ROX support
 
-Not read by ROX 0.8.1; a DSC→ROX conversion would be lossy (free-position targets) and requires reverse-engineered `TARGET` semantics.
+Not read by ROX 0.8.1. A DSC to ROX conversion would be lossy (free-position targets) and needs reverse-engineered `TARGET` semantics.
 
 ## Parsers & tools
 
-- [nastys/Open-PD-Script-Editor](https://github.com/nastys/Open-PD-Script-Editor) (C++/Qt; opcode DB `opcode_db/db.json`, `DSC.cpp`) — deprecated in favour of DSC Studio and ScriptEditor
+- [nastys/Open-PD-Script-Editor](https://github.com/nastys/Open-PD-Script-Editor) (C++/Qt; opcode DB `opcode_db/db.json`, `DSC.cpp`) (deprecated in favour of DSC Studio and ScriptEditor)
 - [jozsefsallai/dsc-merger](https://github.com/jozsefsallai/dsc-merger) (Rust; FT, F, F2, X)
 - DSC Studio (<https://docs.divamodarchive.com/DSC_Studio> via search, <https://gamebanana.com/tools/15894>), samyuu's ScriptEditor / [Comfy Studio](https://github.com/Samyuu/ComfyStudio)
 - [Waelwindows/DIVA_Tools](https://github.com/Waelwindows/DIVA_Tools) (C#, FDSC: dsc ↔ xml), [blueskythlikesclouds/MikuMikuLibrary](https://github.com/blueskythlikesclouds/MikuMikuLibrary)
-- [Brolijah/DSC_ConvertF2nd_Luvit](https://github.com/Brolijah/DSC_ConvertF2nd_Luvit) (Lua, F → F 2nd DSC), thatrandomlurker's fork for Mirai / Miracle Girls Festival
+- [Brolijah/DSC_ConvertF2nd_Luvit](https://github.com/Brolijah/DSC_ConvertF2nd_Luvit) (Lua, F to F 2nd DSC), thatrandomlurker's fork for Mirai / Miracle Girls Festival
 
 ## Getting samples
 
-- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): 15 real `.dsc` charts (`pv_<id>_extreme.dsc`) extracted from three community song packs of the DIVA Mod Archive (posts 672, 728, 607) by HTTP range requests (the multi-hundred-MB zips were not downloaded as a whole).
-- More: the DIVA Mod Archive API (`https://divamodarchive.com/api/v1/posts?query=song+pack`, observed 2026-11-09) lists song packs with `files` download URLs; charts sit at `<pack>/rom/script/pv_<id>_<difficulty>.dsc` inside the zip. Other sources: Comfy Studio exports (dsc-merger README), DSC Studio / Open PD Script Editor, your own retail copy of a Project DIVA game.
+Committed: see [samples/SOURCES.md](samples/SOURCES.md) (`pv_<id>_extreme.dsc` from DIVA Mod Archive posts 672, 728, 607, extracted by HTTP range requests from the multi-hundred-MB zips). More: the DIVA Mod Archive API (`https://divamodarchive.com/api/v1/posts?query=song+pack`, observed 2026-11-09) lists song packs with `files` download URLs; charts sit at `<pack>/rom/script/pv_<id>_<difficulty>.dsc` in the zip. Also Comfy Studio exports (dsc-merger README), DSC Studio / Open PD Script Editor, or your own retail copy.
 
 ## Sources
 
 - <https://raw.githubusercontent.com/nastys/Open-PD-Script-Editor/touchbar/DSC.cpp>, `DSC.h`, `command.cpp`, `mainwindow.cpp`, `diag_time.cpp`, `opcode_db/db.json` (read)
 - <https://github.com/jozsefsallai/dsc-merger> README (read)
-- DivaDocs *DivaScript* / *DSC Studio* pages (<https://docs.divamodarchive.com/DivaScript>) were returned by search but fetching failed (HTTP 404); statements from DivaDocs were therefore not used
+- DivaDocs *DivaScript* / *DSC Studio* pages (<https://docs.divamodarchive.com/DivaScript>): returned by search, fetch failed (HTTP 404), not used

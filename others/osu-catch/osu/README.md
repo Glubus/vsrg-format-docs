@@ -3,15 +3,15 @@ Kind: chart
 
 Doc status: partial · ROX: no (refused) · Category: others · Encoding: text
 
-The container, sections, timing points and generic hit-object line are in the canonical page [vsrg/osu-mania/osu/README.md](../../../vsrg/osu-mania/osu/README.md). This page only lists what is specific to `Mode: 2`. The slider line syntax (curve types, `slides`, `length`, edge sounds) is documented in [../../osu-standard/osu/README.md](../../osu-standard/osu/README.md).
+Container, sections, timing points and the generic hit-object line: [vsrg/osu-mania/osu/README.md](../../../vsrg/osu-mania/osu/README.md). Slider syntax (curve types, `slides`, `length`, edge sounds): [../../osu-standard/osu/README.md](../../osu-standard/osu/README.md). This page covers only `Mode: 2`.
 
 ## Overview
 
-osu!catch (osu!ctb) is the catching mode of osu!: fruits fall from the top, the player slides a catcher left/right. The file is the usual `.osu` with `Mode: 2`; catch maps are either mapped natively or converted at load time from osu!standard maps (a standard map has all the data a catch map needs: x positions, sliders, spinners), so a very large share of `Mode: 2` files are conversions made by the mapper.
+The usual `.osu` with `Mode: 2`: fruits fall from the top and the player slides a catcher. Maps are mapped natively or converted at load time from osu!standard (x positions, sliders and spinners already exist), so many `Mode: 2` files are conversions.
 
 ## Packaged in
 
-- Shipped in: `.osz` (zip of a beatmap set: one `.osu` per difficulty, audio, background, optional video, `.osb` storyboard, hitsounds).
+`.osz` (zip of a beatmap set: one `.osu` per difficulty, audio, background, optional video, `.osb` storyboard, hitsounds).
 
 ## Container & encoding
 
@@ -19,7 +19,7 @@ As in the canonical page (UTF-8 text, one file per difficulty, `.osz` set archiv
 
 ## Structure / metadata
 
-`[Difficulty]`: `CircleSize` (fruit size), `ApproachRate` (fall speed), `OverallDifficulty`, `HPDrainRate`, `SliderMultiplier`, `SliderTickRate` (juice-stream droplets). The exact gameplay use of each value is client behaviour and is not described in the sources consulted. Everything else as standard.
+`[Difficulty]`: `CircleSize` (fruit size), `ApproachRate` (fall speed), `OverallDifficulty`, `HPDrainRate`, `SliderMultiplier`, `SliderTickRate` (juice-stream droplets). Exact gameplay use of each is client behaviour, not described in the sources consulted. Everything else as standard.
 
 ## Timing model
 
@@ -40,21 +40,21 @@ Not in the file, computed by the client: hyper-dash (dash chains), fruit x offse
 
 ## Audio & images
 
-As in the canonical page. Hit sounds: the usual `hitSound`/`hitSample` fields; droplets use `slidertick`.
+As in the canonical page. Hit sounds use the usual `hitSound`/`hitSample` fields; droplets use `slidertick`.
 
 ## Versions & variants
 
-Format version 8 changes the juice-stream tick distance rule (above). The usual version table of the canonical page applies. Lazer v128 stores float positions.
+Format version 8 changes the juice-stream tick distance rule (above); otherwise the canonical version table applies. Lazer v128 stores float positions.
 
 ## Quirks & pitfalls
 
-- Slider paths are flattened to 1D: only the x extent of the curve counts.
-- A converted map keeps standard semantics in `x` values; maps near the playfield edge are clamped to `0..512` (`EffectiveX`).
+- Slider paths are flattened to 1D: only the x extent counts.
+- Converted maps keep standard `x` values; maps near the edge are clamped to `0..512` (`EffectiveX`).
 - `Mode: 2` is easy to confuse with the default 0: check `[General]`.
 
 ## Example
 
-Illustrative, hand-built from the rules above (not a real file):
+Hand-built from the rules above (not a real file):
 
 ```
 [General]
@@ -67,7 +67,7 @@ Mode: 2
 
 ## ROX support
 
-Not read by ROX: `OsuDecoder` returns `InvalidFormat("Not a mania beatmap (mode=2, expected 3)")` from the header peek.
+Not read: `OsuDecoder` returns `InvalidFormat("Not a mania beatmap (mode=2, expected 3)")` from the header peek.
 
 ## Parsers & tools
 
@@ -76,8 +76,7 @@ Not read by ROX: `OsuDecoder` returns `InvalidFormat("Not a mania beatmap (mode=
 
 ## Getting samples
 
-- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): 21 `Mode: 2` charts (ppy/osu catch tests, kionell/osu-taiko-stable, MaxOhn/rosu-pp); format v14 only. Standard maps used to test conversion to catch are in [../../osu-standard/osu/samples/](../../osu-standard/osu/samples/).
-- More: any osu! mapset (`.osz`) with catch difficulties has `.osu` files with `Mode: 2`; download from osu.ppy.sh needs an account [inference]. Fixture folders: ppy/osu `osu.Game.Rulesets.Catch.Tests/Resources/Testing/Beatmaps`, kionell/osu-taiko-stable `tests/Files/Catch/Beatmaps`.
+Committed: see [samples/SOURCES.md](samples/SOURCES.md) (format v14 only). Standard maps for testing conversion to catch: [../../osu-standard/osu/samples/](../../osu-standard/osu/samples/). Any `.osz` with catch difficulties holds `Mode: 2` files; osu.ppy.sh downloads need an account [inference]. Fixture folders: ppy/osu `osu.Game.Rulesets.Catch.Tests/Resources/Testing/Beatmaps`, kionell/osu-taiko-stable `tests/Files/Catch/Beatmaps`.
 
 ## Sources
 

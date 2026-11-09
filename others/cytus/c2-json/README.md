@@ -4,17 +4,13 @@ Kind: chart
 Doc status: partial · ROX: no · Category: others · Encoding: json
 
 ## Overview
-
-JSON chart format of **Cytus II** (Rayark) as used by the fan game **Cytoid** (the "C2 chart format") and by editors such as PCtyx, Cytoid Chart Editor and Cy2Unity. The Cytoid wiki warns it is written "at Cytoid compatibility; some tools might not be fully supported". Official Cytus II charts are not plain JSON: community tooling decrypts them from the game (a gist describes dumping libil2cpp, extracting the ASSET key and running a decryption script that yields BSON, readable with Json.NET's BsonReader). Fan charts are plain JSON.
+JSON chart format of Cytus II (Rayark) as used by the fan game Cytoid (the "C2 chart format") and by editors such as PCtyx, Cytoid Chart Editor and Cy2Unity. The Cytoid wiki warns it is written "at Cytoid compatibility; some tools might not be fully supported". Official Cytus II charts are encrypted: a gist describes dumping libil2cpp, extracting the ASSET key and running a decryption script that yields BSON (readable with Json.NET's BsonReader). Fan charts are plain JSON.
 
 ## Packaged in
-
-- Shipped in: `.cytoidlevel` (zip of a Cytoid level: `level.json`, chart text/JSON files, music, background).
+`.cytoidlevel` (zip of a Cytoid level: `level.json`, chart text/JSON files, music, background).
 
 ## Container & encoding
-
-- Cytoid: UTF-8 JSON, one file per difficulty (`chart.json`, `chart-extreme.json`, ...) referenced by `level.json` inside a `.cytoidlevel` zip (the wiki page for `.cytoidlevel` is a stub).
-- Official game assets: encrypted, BSON-decoded (see Overview).
+UTF-8 JSON, one file per difficulty (`chart.json`, `chart-extreme.json`, ...) referenced by `level.json` inside a `.cytoidlevel` zip (the wiki page for `.cytoidlevel` is a stub). Official game assets: encrypted, BSON-decoded.
 
 ## Structure / metadata
 
@@ -41,32 +37,27 @@ Note object: `page_index`, `type` (0 Click, 1 Hold, 2 Long Hold, 3 Drag head, 4 
 
 ## Timing model
 
-- Time is in **ticks**, not seconds; the BPM is irrelevant to tick positions (a note at tick 120 stays there when the BPM changes).
+- Time is in ticks; a note at tick 120 stays there when the BPM changes.
 - Pages: a note's tick is `page_index * time_base + alpha`, `start_tick = page*time_base`, `end_tick = (page+1)*time_base` (guide, with `time_base` 480 recommended for 4/4 and 2/4 songs). The Cytoid wiki describes `time_base` as "the length of a beat (in tick)"; the two descriptions differ on the page/beat relation and the sources were not reconciled.
 - Tempo: `tempo_list[i].value` microseconds per `time_base` ticks from `tick` onwards, so seconds between two ticks = `dticks * value / time_base / 1e6` summed piecewise. The first entry must be at tick 0. Guide: "time_base = value in microseconds".
 
 ## Notes
-
-Click (0), Hold (1) / Long Hold (2, spans pages) with `hold_tick`, Drag chains via `next_id` (head 3, child 4; C-Drag 6/7 use the same links), Flick (5). Siblings flagged by `has_sibling`. No keysounds.
+Click (0), Hold (1) / Long Hold (2, spans pages) with `hold_tick`, Drag chains via `next_id` (head 3, child 4; C-Drag 6/7 use the same links), Flick (5). No keysounds.
 
 ## Audio & images
-
-Not referenced by the chart itself; the Cytoid `level.json` points to music/preview/background.
+Unknown.
 
 ## Versions & variants
-
-C2 replaces the C1 text format (`../c1-txt/`, "Rayark v2 modified") in Cytoid. The wiki's page for the C1 format and for `.cytoidlevel` are stubs. Cytus II's own format has more events (not documented in the pages consulted).
+C2 replaces the C1 text format (`../c1-txt/`) in Cytoid. Cytus II's own format has more events (not documented in the pages consulted).
 
 ## Quirks & pitfalls
-
-- Note ids must be unique; `page_index` must match the tick's page or the note does not show but still counts as a miss.
-- Hold-only fields on other types are ignored.
+- Note ids must be unique; a `page_index` that does not match the tick's page hides the note but it still counts as a miss.
 - `next_id` must be `-1` for the last note of a drag, `0` when unused.
-- Naming differs between guides (`music_offset` vs `start_offset_time`).
+- Names differ between guides (`music_offset` vs `start_offset_time`).
 
 ## Example
 
-Illustrative, hand-built from the field list above (not taken from a real level):
+Illustrative, hand-built from the field list above (not from a real level):
 
 ```json
 {"format_version":0,"time_base":480,"music_offset":0.0,
@@ -91,9 +82,9 @@ Not read by ROX.
 - Chart decryption notes: <https://gist.github.com/HoLLy-HaCKeR/84bda48aa565c6214d1803a49fd6f5b7>
 
 ## Getting samples
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md).
 
-- **Committed**: 8 real charts: Cytoid Chart Editor test chart, cyl_package_tool fixtures and the three charts of the bundled Cytoid level `8bit_adventurer/` (`ez.txt`, `hd.txt`, `ex.txt`, extracted from `io.cytoid.8bit_adventurer.cytoidlevel`), plus 1 synthetic in [`samples/`](samples/). Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
-- **More samples**: Cytoid levels at https://cytoid.io (`services.cytoid.io/levels` lists them; their package download needs a login or an unknown path, not scraped); Cytoid Chart Editor and PCtyx write the format.
+More: Cytoid levels at https://cytoid.io (`services.cytoid.io/levels` lists them; the package download needs a login or an unknown path, not scraped). The bundled level `8bit_adventurer/` (`ez.txt`, `hd.txt`, `ex.txt`) comes from `io.cytoid.8bit_adventurer.cytoidlevel`. Cytoid Chart Editor and PCtyx write the format.
 
 ## Sources
 

@@ -4,13 +4,14 @@ Kind: chart
 Doc status: partial · ROX: no · Category: others · Encoding: json (binary for Just Dance 2015)
 
 ## Overview
-In the UbiArt Framework versions of Just Dance (2015/2016 onward), the choreography of a map is a **tape**: a timeline with a list of *clips*. A map normally has a dance tape (`<map>_tml_dance.dtape.ckd`: motion, pictogram and gold-effect clips), a karaoke tape (`<map>_tml_karaoke.ktape.ckd`: lyric clips with pitch) and a cinematics tape (`*.tape.ckd`: camera, FX, UI and other clips). "ckd" means "cooked" (the game's packaged form). From Just Dance 2016 on, a cooked tape is a plain JSON document with a trailing NUL byte; Just Dance 2015 used a binary layout. The format is known through reverse engineering by the modding community (Ferris Dancing parser, json2tape generator); there is no official documentation.
+
+In the UbiArt versions of Just Dance (2015/2016 onward) a map's choreography is a tape: a timeline of clips. A map normally has a dance tape (`<map>_tml_dance.dtape.ckd`: motion, pictogram, gold-effect clips), a karaoke tape (`<map>_tml_karaoke.ktape.ckd`: lyric clips with pitch) and a cinematics tape (`*.tape.ckd`: camera, FX, UI clips). "ckd" means cooked (packaged). From Just Dance 2016 a cooked tape is plain JSON with a trailing NUL byte; Just Dance 2015 used a binary layout. The format is known from modding-community reverse engineering (Ferris Dancing parser, json2tape generator); no official documentation exists.
 
 ## Container & encoding
-- File: UTF-8 JSON text terminated by one `0x00` byte (parser `clean_buffer_json` requires the last byte be 0 unless lax). Parsed as a `Tape` object.
-- Stored inside the game's cooked file tree / `.ipk` bundles (Ferris Dancing has an `ipk` module); community tools (e.g. KtapeTool) convert to readable JSON and back to "weird null-terminated JSON".
-- File naming (json2tape, Ferris Dancing notes): `<map>_tml_dance.dtape.ckd`, `<map>_tml_karaoke.ktape.ckd` under `world/maps/<map>/timeline/`; moves in `timeline/moves/<name>.msm`; pictograms in `timeline/pictos/<name>.png|tga`; music track `<map>_musictrack.tpl.ckd`.
-- One tape per map and kind (dance, karaoke, cinematics).
+
+- UTF-8 JSON terminated by one `0x00` byte (`clean_buffer_json` requires the last byte be 0 unless lax), parsed as a `Tape` object. One tape per map and kind (dance, karaoke, cinematics).
+- Stored in the game's cooked file tree / `.ipk` bundles (Ferris Dancing has an `ipk` module); tools such as KtapeTool convert to readable JSON and back to "weird null-terminated JSON".
+- Naming (json2tape, Ferris Dancing notes): `<map>_tml_dance.dtape.ckd`, `<map>_tml_karaoke.ktape.ckd` under `world/maps/<map>/timeline/`; moves in `timeline/moves/<name>.msm`; pictograms in `timeline/pictos/<name>.png|tga`; music track `<map>_musictrack.tpl.ckd`.
 
 ## Structure / metadata
 `Tape` (PascalCase keys, from Ferris Dancing `ubiart_toolkit::cooked::tape`):
@@ -37,32 +38,37 @@ Every clip has `__class` (`"MotionClip"`, `"PictogramClip"`, `"GoldEffectClip"`,
 Other clip classes defined by the parser (cinematics and UI): `ActorEnableClip`, `AlphaClip` (`Curve`), `CameraFeedClip`, `ColorClip`, `CommunityDancerClip`, `FXClip`, `GameplayEventClip`, `HideUserInterfaceClip`, `MaterialGraphic*Clip`, `ProportionClip`, `Proportion3DClip`, `RotationClip`, `SizeClip`, `SlotClip`, `SpawnActorClip`, `SoundSetClip`, `SoundwichClip`, `TapeLauncherClip`, `TapeReferenceClip`, `TextClip`, `TextAreaSizeClip`, `TranslationClip`, `VibrationClip` and three clips named by hash (`Unknown59FCC733Clip`, `UnknownCBB7C029Clip`, `Unknown5C944B01Clip`).
 
 ## Timing model
-- `StartTime` and `Duration` are **tape ticks**, 24 ticks per beat: json2tape maps beat `i` to tick `24*i` (`BeatsMap24`) and interpolates linearly between beat times of the source map to convert millisecond times (`ubiArtTime`). It adds 24 ticks (one beat) to a gold move's start for its `GoldEffectClip` and gives it duration 24.
+- `StartTime` and `Duration` are tape ticks, 24 ticks per beat: json2tape maps beat `i` to tick `24*i` (`BeatsMap24`) and interpolates linearly between beat times of the source map to convert millisecond times (`ubiArtTime`). It adds 24 ticks (one beat) to a gold move's start for its `GoldEffectClip` and gives it duration 24.
 - The beat grid is not in the tape: it is in the music track template (`MusicTrackStructure`): `markers` = sample positions of every beat on a 48 kHz timebase (json2tape writes `beat_ms * 48`; [inference: 48 samples per ms]), `signatures[] {marker, beats, comment?}` for the time signature (beats per bar), `sections[] {marker, sectionType, comment}`, `startBeat` (may be negative), `endBeat`, `fadeStartBeat`, `useFadeStartBeat`, `fadeEndBeat`, `useFadeEndBeat`, `videoStartTime` (float, seconds), `previewEntry`, `previewLoopStart`, `previewLoopEnd` (beat indices), `volume`, `fadeInDuration`/`fadeInType`/`fadeOutDuration`/`fadeOutType`, `entryPoints`. `path` and `url` of `MusicTrackData` name the audio. So tempo may vary: the marker spacing is the tempo map.
 - Seconds for tick `t`: beat index = `t / 24`; interpolate between `markers[floor]` and `markers[ceil]` (divide by 48000 for seconds if markers are 48 kHz samples). [inference from json2tape]
 
 ## Notes
-- A "note" in the rhythm sense does not exist. Gameplay is: (1) `MotionClip`s cue the **move** (`.msm` movement-space file) that the player's controller/camera motion is compared to, with `GoldMove` marking gold moves; (2) `PictogramClip`s show the matching icons on the scrolling timeline (json2tape emits one per entry of the source map's pictogram list); (3) `GoldEffectClip` triggers the gold effect; (4) `KaraokeClip` gives sing-along syllables with pitch and tolerances.
-- Coaches: `CoachId` selects which coach a move belongs to (duet, trio, quatro maps); `CoachCount` on pictograms is used for multi-coach icons that require cropping from the montage.
-- Move scoring parameters (`ScoreScale`, `ScoreSmoothing`, `ScoringMode`) differ per console platform.
-- Moves themselves are `.msm` ("movement space move") binary files with 2D data points `(f32, f32)` per sample, name, map and device (Ferris Dancing `msm` module: version 7 and others; several fields unknown); on PS4 `.gesture` files are used.
+
+No notes in the rhythm sense. `MotionClip`s cue the move (`.msm` movement-space file) that controller/camera motion is compared to, `GoldMove` marks gold moves; `PictogramClip`s show the icons on the scrolling timeline (json2tape emits one per entry of the source pictogram list); `GoldEffectClip` triggers the gold effect; `KaraokeClip` gives sing-along syllables with pitch and tolerances.
+
+- `CoachId` selects the coach a move belongs to (duet, trio, quatro maps); `CoachCount` on pictograms marks multi-coach icons that need cropping from the montage.
+- Scoring parameters (`ScoreScale`, `ScoreSmoothing`, `ScoringMode`) differ per console platform.
+- Moves are `.msm` ("movement space move") binary files with 2D data points `(f32, f32)` per sample, name, map and device (Ferris Dancing `msm` module: version 7 and others; several fields unknown); PS4 uses `.gesture` files.
 
 ## Audio & images
-`musictrack.tpl.ckd` `MusicTrackData.path` and `url` (e.g. `jmcs://jd-contents/<Map>/<Map>.ogg` in json2tape output); videos are `.webm`; pictograms are PNG/TGA textures (cooked `.tga.ckd` in games); a `montage.png` atlas is used in 2017-2018 maps. Audio is `.wav.ckd` (binary) in the games.
+
+`MusicTrackData.path` and `url` in `musictrack.tpl.ckd` (e.g. `jmcs://jd-contents/<Map>/<Map>.ogg` in json2tape output). Videos are `.webm`; pictograms are PNG/TGA textures (cooked `.tga.ckd` in games); a `montage.png` atlas is used in 2017-2018 maps. Game audio is `.wav.ckd` (binary).
 
 ## Versions & variants
-- Just Dance 2015: binary tape layout (Ferris Dancing `Tape::deserialize_with` for `Game::JustDance2015`). 2016 and later: JSON. Per-game differences: `SoundwichEvent` absent in 2017 Switch; `MontagePath`/`AtlIndex` only 2017-2018; `LowThreshold`/`HighThreshold` removed from 2019. Mods may omit `TrackId`, `IsActive`, `TapeClock` or write floats for ints.
-- Just Dance Now / "Bluestar engine": separate JSON maps with times in milliseconds (`moves`, `pictos`, `lyrics`, `beats`); converted to tapes by json2tape and BlueStar, and back by tape2json.
-- 2022 and later (Unity) tapes exist and are converted to UbiArt format by `Unity2UbiArt` (found by search, not opened).
+
+- Just Dance 2015: binary tape (Ferris Dancing `Tape::deserialize_with` for `Game::JustDance2015`). 2016 on: JSON. `SoundwichEvent` absent in 2017 Switch; `MontagePath`/`AtlIndex` only 2017-2018; `LowThreshold`/`HighThreshold` removed from 2019. Mods may omit `TrackId`, `IsActive`, `TapeClock` or write floats for ints.
+- Just Dance Now / "Bluestar engine": separate JSON maps with times in milliseconds (`moves`, `pictos`, `lyrics`, `beats`); json2tape and BlueStar convert them to tapes, tape2json back.
+- 2022 and later (Unity) tapes are converted to UbiArt format by `Unity2UbiArt` (found by search, not opened).
 
 ## Quirks & pitfalls
-- Trailing NUL byte; JSON may contain floats in integer fields (`StartTime`) and key case variants (`CoachID`).
-- Clip `Id` and `TrackId` are random 32-bit values generated by tools; uniqueness matters only inside a tape.
+
+- Trailing NUL byte; integer fields may hold floats (`StartTime`) and keys vary in case (`CoachID`).
+- Clip `Id` and `TrackId` are random 32-bit tool-generated values, unique only within a tape.
 - Gold effect times cannot be derived from a JDN map: json2tape places them 24 ticks after each gold move.
-- Tick-to-ms needs the beat markers of the music track, which is a different file.
+- Tick-to-ms needs the beat markers of the music track, a different file.
 
 ## Example
-Shape produced by json2tape for one move and one karaoke syllable (from its source `j2t.js`; keys quoted, values trimmed):
+Shape produced by json2tape (`j2t.js`) for one move, values trimmed:
 ```json
 {"__class":"Tape","Clips":[
  {"__class":"MotionClip","Id":123456,"TrackId":654321,"IsActive":1,"StartTime":384,"Duration":48,
@@ -71,10 +77,11 @@ Shape produced by json2tape for one move and one karaoke syllable (from its sour
   "MotionPlatformSpecifics":{"X360":{"__class":"MotionPlatformSpecific","ScoreScale":1.4,"ScoreSmoothing":0,"ScoringMode":0}}}],
  "TapeClock":0,"TapeBarCount":1,"FreeResourcesAfterPlay":0,"MapName":"<map>"}
 ```
-Numeric values 384/48 are illustrative (16 beats in, one beat long). `KaraokeClip` shape: `{"__class":"KaraokeClip","Id":1,"TrackId":2,"IsActive":1,"StartTime":0,"Duration":24,"Pitch":7.000001,"Lyrics":"la","IsEndOfLine":0,"ContentType":0,"StartTimeTolerance":4,"EndTimeTolerance":4,"SemitoneTolerance":5}`.
+Values 384/48 are illustrative (16 beats in, one beat long). `KaraokeClip`: `{"__class":"KaraokeClip","Id":1,"TrackId":2,"IsActive":1,"StartTime":0,"Duration":24,"Pitch":7.000001,"Lyrics":"la","IsEndOfLine":0,"ContentType":0,"StartTimeTolerance":4,"EndTimeTolerance":4,"SemitoneTolerance":5}`.
 
 ## ROX support
-Not read by ROX. A clip timeline of scored full-body moves; at most the beat grid could be exported, no columns.
+
+Not read by ROX (a clip timeline of scored full-body moves; at most the beat grid could be exported).
 
 ## Parsers & tools
 - Ferris Dancing / `ubiart_toolkit` (Rust, parse+write tapes, ipk, tpl, msm): https://github.com/Kriskras99/ferris_dancing
@@ -87,9 +94,9 @@ Not read by ROX. A clip timeline of scored full-body moves; at most the beat gri
 
 ## Getting samples
 
-**Committed** ([`samples/`](samples/SOURCES.md)): two synthetic tapes (dance + karaoke). No real tape was found publicly: Ferris Dancing's test files are in a private submodule, tape2json's `input/*.json` are empty `{}`, json2tape is PolyForm Strict and ships JDN JSON, just-dance-2014-tools ships binary Just Dance 2014 `.tpl.ckd` templates (another layout), and the other community repos hold code only.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md) (synthetic only). No real tape is public: Ferris Dancing's test files are in a private submodule, tape2json's `input/*.json` are empty `{}`, json2tape is PolyForm Strict and ships JDN JSON, just-dance-2014-tools ships binary Just Dance 2014 `.tpl.ckd` templates (another layout), and the other community repos hold only code.
 
-**How to get real ones**: extract `.ipk` bundles of a game install with IpkTool (<https://github.com/nkrapivin/JustDanceModTools>) or Ferris Dancing (<https://github.com/Kriskras99/ferris_dancing>); tapes are under `world/maps/<map>/timeline/` as `<map>_tml_dance.dtape.ckd` / `<map>_tml_karaoke.ktape.ckd`. JDN JSON converts with json2tape or BlueStar.
+To get real ones, extract `.ipk` bundles of a game install with IpkTool (<https://github.com/nkrapivin/JustDanceModTools>) or Ferris Dancing (<https://github.com/Kriskras99/ferris_dancing>); tapes are under `world/maps/<map>/timeline/`. JDN JSON converts with json2tape or BlueStar.
 
 ## Sources
 - https://github.com/Kriskras99/ferris_dancing (`ubiart_toolkit/src/cooked/tape/mod.rs`, `ubiart_toolkit/src/utils/json.rs`, `ubiart_toolkit/src/cooked/tpl/types.rs`, `ubiart_toolkit/src/msm/types.rs`, `scratchpad.md`)

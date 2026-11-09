@@ -4,11 +4,12 @@ Kind: chart
 Doc status: complete · ROX: no · Category: others · Encoding: json
 
 ## Overview
-`song.tmb` is the chart file of a Trombone Champ custom track. It is a single JSON object (the game's own binary `SavedLevel` form can also be exported, but JSON is the format used by the community: modding guides recommend JSON because binary tracks cannot be uploaded or have difficulty computed, per a Steam editor thread). The loader TrombLoader scans `BepInEx/CustomSongs/**/song.tmb` (and plugin folders), deserialises it with Newtonsoft.Json into `CustomTrackData`, de-duplicates by `trackRef`, and converts it to the game's `SavedLevel`. Editors: TromboneCharter (Godot), TootMaker (Unity editor), Trombone-Champ-Charter (Unity); converters: Midi2TromboneChamp (MIDI to TMB), TmbToMidi (TMB to MIDI), TCCC web converter. Trombone Champ has no timing points: one tempo for the whole song.
+
+`song.tmb` is the chart file of a Trombone Champ custom track: one JSON object. (The game's binary `SavedLevel` can also be exported, but the community uses JSON: binary tracks cannot be uploaded or have difficulty computed, per a Steam editor thread.) TrombLoader scans `BepInEx/CustomSongs/**/song.tmb` (and plugin folders), deserialises it with Newtonsoft.Json into `CustomTrackData`, de-duplicates by `trackRef` and converts it to `SavedLevel`. Editors: TromboneCharter (Godot), TootMaker (Unity editor), Trombone-Champ-Charter (Unity). Converters: Midi2TromboneChamp (MIDI to TMB), TmbToMidi (TMB to MIDI), TCCC web converter. The game has no timing points: one tempo for the whole song.
 
 ## Container & encoding
-- Plain JSON, UTF-8. One file = one chart (one difficulty); there is no difficulty set. The folder holds `song.tmb`, `song.ogg` (fixed name, `Globals.defaultAudioName`), and optionally `bg.png`, `bg.mp4` or `bg.trombackground` (Unity AssetBundle) (TrombLoader `CustomTrack.cs`).
-- Fixed file names: chart `song.tmb`, audio `song.ogg`. The folder name is free; identity is `trackRef`.
+
+Plain UTF-8 JSON, one chart (one difficulty) per file. The folder holds `song.tmb`, `song.ogg` (fixed name, `Globals.defaultAudioName`) and optionally `bg.png`, `bg.mp4` or `bg.trombackground` (Unity AssetBundle) (TrombLoader `CustomTrack.cs`). The folder name is free; identity is `trackRef`.
 
 ## Structure / metadata
 Fields read by TrombLoader `CustomTrackData` and written by Midi2TromboneChamp / TromboneCharter:
@@ -56,17 +57,19 @@ Each note is a 5-element float array (TromboneCharter `TMBInfo`: `NOTE_BAR, NOTE
 - No simultaneous different-pitch notes in normal play (one trombone).
 
 ## Audio & images
+
 `song.ogg` (Ogg Vorbis) plus optional `bg.png`, `bg.mp4`, `bg.trombackground`. No preview or offset fields. Lyrics are shown as karaoke text.
 
 ## Versions & variants
-- The game's native binary format (`SavedLevel` with `savedleveldata`, `bgdata`, `lyricspos`, `lyricstxt`, `endpoint`, `tempo`, `timesig`, `savednotespacing`, `note_color_*`); TrombLoader maps JSON to it in `CustomTrackData.ToSavedLevel` (notes -> `savedleveldata`, lyrics -> `lyricspos` `[bar, 0]` + `lyricstxt`).
-- Older Midi2TromboneChamp output has no `improv_zones`/`bgdata`; those are optional.
+
+The game's native binary `SavedLevel` has `savedleveldata`, `bgdata`, `lyricspos`, `lyricstxt`, `endpoint`, `tempo`, `timesig`, `savednotespacing`, `note_color_*`; TrombLoader maps JSON to it in `CustomTrackData.ToSavedLevel` (notes to `savedleveldata`, lyrics to `lyricspos` `[bar, 0]` + `lyricstxt`). Older Midi2TromboneChamp output lacks the optional `improv_zones`/`bgdata`.
 
 ## Quirks & pitfalls
-- `name`/`title` and lyric `text`/`lyric` naming differs between secondary sources; use the code of TrombLoader as reference.
-- Floating point jitter: TmbToMidi notes that adjacent notes can differ by 1 MIDI tick because of float precision in the TMB.
+
+- Secondary sources disagree on `name`/`title` and lyric `text`/`lyric`; TrombLoader's code is the reference.
+- TmbToMidi notes adjacent notes can differ by 1 MIDI tick from float precision.
 - Tempo is read as float but Midi2TromboneChamp writes `int(bpm)`.
-- `year`, `difficulty`, `savednotespacing`, `timesig` are ints (parsers using strict types fail on floats).
+- `year`, `difficulty`, `savednotespacing`, `timesig` are ints (strict parsers fail on floats).
 
 ## Example
 Illustrative, hand-built from the rules above (not a real chart): a 120 BPM track with a one-beat note on middle C followed by a one-beat slide up 2 semitones.
@@ -82,6 +85,7 @@ Illustrative, hand-built from the rules above (not a real chart): a 120 BPM trac
 ```
 
 ## ROX support
+
 Not read by ROX. Pitch-based, no lanes; at best a lossy projection onto columns by pitch band.
 
 ## Parsers & tools
@@ -95,7 +99,7 @@ Not read by ROX. Pitch-based, no lanes; at best a lossy projection onto columns 
 
 ## Getting samples
 
-Committed in [`samples/`](samples/): three MIT test charts from TromboneCharter, one synthetic full-field chart, and seven real custom-track charts (`<title>_<id>/song.tmb`) extracted from the TromboneDB mirror (zips at `https://db.trombone.fyi/<id>.zip`; audio/background not kept, no archive stored). See [`samples/SOURCES.md`](samples/SOURCES.md) for every file's source URL, fetch date, sha256 and terms. The index of all ~5800 charts is `https://tc-mods.github.io/TromboneDB/` (`docs/data/db.json` in tc-mods/TromboneDB). Observed [observed in samples/*/song.tmb]: tempo 105-137, timesig 2 or 4, 136-486 notes.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md) (real charts are `<title>_<id>/song.tmb` extracted from the TromboneDB mirror zips at `https://db.trombone.fyi/<id>.zip`; audio/background not kept). The index of all ~5800 charts is `https://tc-mods.github.io/TromboneDB/` (`docs/data/db.json` in tc-mods/TromboneDB). Observed [observed: samples/*/song.tmb]: tempo 105-137, timesig 2 or 4, 136-486 notes.
 
 ## Sources
 - https://raw.githubusercontent.com/NyxTheShield/TrombLoader/master/CustomTracks/CustomTrackData.cs

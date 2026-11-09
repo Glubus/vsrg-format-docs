@@ -4,18 +4,20 @@ Kind: metadata
 Doc status: complete · ROX: no · Category: others · Encoding: json
 
 ## Overview
-`Info.dat` is the entry point of a Beat Saber custom level. It carries song metadata, the audio and cover filenames, environment/color-scheme choices and the list of difficulty files (one beatmap per characteristic + difficulty). Written by the Official Editor, ChroMapper, MMA2 etc.; read by the game, SongCore and BeatSaver. Schema versions: v1 (legacy `info.json`, game < 1.0 era), v2 (since 1.0.0, root keys prefixed with `_`), v4 (since 1.34.5, no prefix, no beatmap sets). There is no v3 Info (v3 only exists for beatmap files); [BeatSaber-Deno](https://github.com/KivalEvan/BeatSaber-Deno/blob/main/BEATMAP.md) lists Info versions v1 (1.0.0), v2 (2.1.0) and v4 (4.0.1). The base game accepts older schemas through an internal compatibility layer, but BSMG recommends targeting the newest.
+
+`Info.dat` is the entry point of a custom level: song metadata, audio and cover filenames, environment/color-scheme choices and the list of difficulty files. Written by the Official Editor, ChroMapper, MMA2 etc.; read by the game, SongCore and BeatSaver. Schemas: v1 (legacy `info.json`), v2 (since 1.0.0, `_`-prefixed keys), v4 (since 1.34.5, no prefix, no beatmap sets). There is no v3 Info; [BeatSaber-Deno](https://github.com/KivalEvan/BeatSaber-Deno/blob/main/BEATMAP.md) lists Info versions v1 (1.0.0), v2 (2.1.0) and v4 (4.0.1). The game reads older schemas through a compatibility layer; BSMG recommends targeting the newest.
 
 ## Packaged in
 
-- Shipped in: BeatSaver `.zip` (map folder: `Info.dat`, one difficulty `.dat` each, audio, cover).
+BeatSaver `.zip` (`Info.dat`, one difficulty `.dat` each, audio, cover).
 
 ## Container & encoding
-- JSON text (UTF-8). All metadata files are JSON; any extension may be used for them, **except the info file, which must be named exactly `Info.dat`** (BSMG, map-format).
-- All filename references are relative to the directory containing `Info.dat`.
-- Since 1.34.5 the game's own OST/DLC metadata files are gzip-deflated; the game also accepts such deflated files for custom levels (BSMG), editors usually do not write them.
-- Defaulted properties: since 1.31.0 omitted fields take defaults; v4 additionally treats missing arrays as empty. `{ "version": "4.0.0" }` is a valid v4 beatmap.
-- One Info file per map set; difficulties are separate files (see [../dat/](../dat/README.md)).
+
+- UTF-8 JSON. Metadata files may use any extension, except the info file: exactly `Info.dat` (BSMG, map-format).
+- Filename references are relative to the directory containing `Info.dat`.
+- Since 1.34.5 the game's own OST/DLC metadata is gzip-deflated; the game also accepts such files for custom levels (BSMG).
+- Since 1.31.0 omitted fields take defaults; v4 also treats missing arrays as empty. `{ "version": "4.0.0" }` is a valid v4 beatmap.
+- One Info per map set; difficulties are separate files (see [../dat/](../dat/README.md)).
 
 ## Structure / metadata
 ### v2 (`_version` `2.0.0` / `2.1.0`)
@@ -58,31 +60,35 @@ difficultyBeatmaps[{characteristic,difficulty,beatmapAuthors{mappers[],lighters[
 - Two audio files: primary (`audio.songFilename`, used for play, BPM and LUFS) and preview (`songPreviewFilename`).
 - Colors are hex `RRGGBBAA` strings (`"C81414FF"`), `colorSchemeName` instead of id.
 - Authors per beatmap: `beatmapAuthors.mappers` / `lighters`.
-- Deprecated time offset and shuffle are gone.
+- Time offset and shuffle are gone.
 
 ### v1 legacy `info.json`
-Not on BSMG. From the conversion table in the gist [Beat Saber 1.0 level format conversion](https://gist.github.com/MCJack123/892b936ef0d18da43ab2764ba97402be): keys `songName`, `songSubName`, `authorName`, `beatsPerMinute`, `previewStartTime`, `previewDuration`, `coverImagePath`, `environmentName`, `oneSaber`, `difficultyLevels[]` with `characteristic`, `difficulty`, `difficultyRank`, `audioPath`, `offset`, `jsonPath`, `oldOffset`, `chromaToggle`, `customColors`, `difficultyLabel`; `_noteJumpSpeed`, `_shuffle`, `_shufflePeriod` live in the difficulty json. Fields the gist marks "custom mod": `contributors`, `customEnvironment`, `customEnvironmentHash`. The song loader README (https://github.com/xyonico/BeatSaberSongLoader) confirms `info.json` and that difficulty files are named by `jsonPath`. v1 has no environment list, no color schemes, no author-per-beatmap (BeatSaber-Deno table).
+Not on BSMG. From the conversion table in the gist [Beat Saber 1.0 level format conversion](https://gist.github.com/MCJack123/892b936ef0d18da43ab2764ba97402be): keys `songName`, `songSubName`, `authorName`, `beatsPerMinute`, `previewStartTime`, `previewDuration`, `coverImagePath`, `environmentName`, `oneSaber`, `difficultyLevels[]` with `characteristic`, `difficulty`, `difficultyRank`, `audioPath`, `offset`, `jsonPath`, `oldOffset`, `chromaToggle`, `customColors`, `difficultyLabel`; `_noteJumpSpeed`, `_shuffle`, `_shufflePeriod` live in the difficulty json. The gist marks `contributors`, `customEnvironment`, `customEnvironmentHash` as "custom mod". The song loader README (https://github.com/xyonico/BeatSaberSongLoader) confirms `info.json` and that difficulty files are named by `jsonPath`. v1 has no environment list, no color schemes, no author-per-beatmap (BeatSaber-Deno table).
 
 ## Timing model
-- Beatmap objects are in **beats**; seconds = beats x 60 / BPM (BPM from `_beatsPerMinute` / v4 `audio.bpm`) when BPM never changes; BPM changes are carried by beatmap BPM events (v3 `bpmEvents`, v2 events of type 100, see [../dat/](../dat/README.md)) or by BPM regions in the audio data file.
-- `_songTimeOffset` shifts the audio (seconds, deprecated). `_noteJumpMovementSpeed` / `_noteJumpStartBeatOffset` do not change judgement time; they control how early/far objects spawn (note jump metadata).
+- Beatmap objects are in beats; seconds = beats x 60 / BPM (BPM from `_beatsPerMinute` / v4 `audio.bpm`) when BPM never changes. BPM changes come from beatmap BPM events (v3 `bpmEvents`, v2 events of type 100, see [../dat/](../dat/README.md)) or BPM regions in the audio data file.
+- `_songTimeOffset` shifts the audio (seconds, deprecated). `_noteJumpMovementSpeed` / `_noteJumpStartBeatOffset` leave judgement time unchanged; they control how early/far objects spawn.
 
 ## Notes
-Not applicable at this level (see dat doc). Info only selects characteristic (`OneSaber` disables the left saber) and difficulty.
+
+Info only selects characteristic (`OneSaber` disables the left saber) and difficulty.
 
 ## Audio & images
-`_songFilename` / `audio.songFilename`, `songPreviewFilename` (v4), `_coverImageFilename` / `coverImageFilename`; v4 `audio.audioDataFilename`; v4 `lightshowDataFilename` per beatmap. If a v2/v3 beatmap is referenced, the lightshow file is ignored (lighting is inside the beatmap) (BSMG).
+
+`_songFilename` / `audio.songFilename`, `songPreviewFilename` (v4), `_coverImageFilename` / `coverImageFilename`, v4 `audio.audioDataFilename`, v4 per-beatmap `lightshowDataFilename`. A referenced v2/v3 beatmap makes the lightshow file ignored (lighting is inside the beatmap) (BSMG).
 
 ## Versions & variants
-- v1 info.json (legacy) -> v2 Info.dat (1.0.0) -> v4 Info.dat (1.34.5). No Info v3. BeatSaber-Deno schema versions: Info v4.0.1, v2.1.0, v1.0.0.
-- A v2 Info can load v2 and v3 beatmaps; a v4 Info can load v2, v3 and v4 beatmaps (BeatSaber-Deno BEATMAP.md). A v4 beatmap needs v4 audio data from a v4 Info.
-- `customData` / `_customData` blocks (Chroma, Noodle Extensions, SongCore, Cinema, ...) are mod extensions, not part of the vanilla schema.
+
+- v1 info.json -> v2 Info.dat (1.0.0) -> v4 Info.dat (1.34.5); no v3. BeatSaber-Deno: Info v4.0.1, v2.1.0, v1.0.0.
+- A v2 Info loads v2 and v3 beatmaps; a v4 Info loads v2, v3 and v4 beatmaps (BeatSaber-Deno BEATMAP.md). A v4 beatmap needs v4 audio data from a v4 Info.
+- `customData` / `_customData` blocks (Chroma, Noodle Extensions, SongCore, Cinema, ...) are mod extensions.
 
 ## Quirks & pitfalls
-- File name case: the Info must be `Info.dat` (some Linux tools see `info.dat`; [inference] accept both when parsing).
-- Do not rely on `_levelAuthorName` per beatmap in v2; per-beatmap authors exist only in v4.
+
+- The Info must be `Info.dat`; some Linux tools see `info.dat`. [inference] Accept both when parsing.
+- Per-beatmap authors exist only in v4.
 - Unset color-scheme colors become `null` colors in-game (BSMG).
-- `_difficulty` string for the last tier is `ExpertPlus` while the BSMG rank table labels it `Expert+`.
+- `_difficulty` for the last tier is `ExpertPlus`; the BSMG rank table labels it `Expert+`.
 - Mods add characteristics; filter unknown ones.
 
 ## Example
@@ -105,6 +111,7 @@ Excerpt of the BSMG sample (Magic, v2):
 Origin: https://bsmg.wiki/mapping/map-format/info.html (trimmed to one difficulty).
 
 ## ROX support
+
 Not read by ROX (no Beat Saber codec in `src/formats/`: auto, fnf, mc, osu, qua, rox_native, sm, taiko, jrox, yrox).
 
 ## Parsers & tools
@@ -117,8 +124,7 @@ Not read by ROX (no Beat Saber codec in `src/formats/`: auto, fnf, mc, osu, qua,
 
 ## Getting samples
 
-- **Committed**: 23 real `Info.dat`/`info.dat` files: BeatSaber-Deno fixtures (v1, v2.x, v4), BSMG wiki snippets (1.0.0, 2.0.0, 2.1.0, 4.0.0, 4.0.1) and the Info files of the BeatSaver map sets (`<id>_<hash8>/`, matching charts in `../dat/samples/<same set>/`). Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
-- **More samples**: see the `dat` fiche (BeatSaver API/CDN, BeatSaber-Deno fixtures, BSMG wiki snippets).
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md); matching charts in `../dat/samples/<same set>/`, set folders `<id>_<hash8>/`. More: see the [dat page](../dat/README.md) (BeatSaver API/CDN, BeatSaber-Deno fixtures, BSMG wiki snippets).
 
 ## Sources
 - https://bsmg.wiki/mapping/map-format.html

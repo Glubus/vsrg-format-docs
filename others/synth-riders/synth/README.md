@@ -4,20 +4,19 @@ Kind: package
 Doc status: partial · ROX: no · Category: others · Encoding: archive
 
 ## Overview
-A `.synth` file is a ZIP created by the Synth Riders Beatmap Editor. It holds one map set (several difficulties): a big JSON file named `beatmap.meta.bin`, a small `track.data.json` (UTF-16LE) summary, the audio file and the cover image. The structure below is reverse-engineered by the community tool `synth_mapping_helper` (`synth_format.py`), which reads and writes it; no official spec was found. Most field semantics ("no idea what this is for" comments) are partially unknown.
+
+A `.synth` file is a ZIP written by the Synth Riders Beatmap Editor: one map set (several difficulties) with a large JSON `beatmap.meta.bin`, a small `track.data.json` summary, the audio and the cover. The structure is reverse-engineered by the community tool `synth_mapping_helper` (`synth_format.py`), which reads and writes it; no official spec was found and several field semantics are unknown.
 
 ## Contents
 
-- `beatmap.meta.bin`: JSON text (UTF-8 with BOM, CRLF).
-- `track.data.json`: the chart data (UTF-16LE with BOM); see this page.
-- Audio file named by `AudioName` in the JSON, original format kept.
-- Cover image (`Artwork`), PNG in the editor copy.
+See Container & encoding.
 
 ## Container & encoding
-- ZIP (deflate). Entries: `beatmap.meta.bin`, `track.data.json`, audio (`AudioName` in the JSON; the audio file keeps its original format), cover image (`Artwork`; the editor stores a PNG-converted copy).
-- `beatmap.meta.bin` is **JSON text** in UTF-8 with BOM and CRLF line endings (despite the `.bin` name).
+
+- ZIP (deflate). Entries: `beatmap.meta.bin`, `track.data.json`, audio (`AudioName` in the JSON, original format kept), cover image (`Artwork`; the editor stores a PNG copy).
+- `beatmap.meta.bin` is JSON text in UTF-8 with BOM and CRLF line endings.
 - `track.data.json` is JSON in UTF-16LE with BOM.
-- One file contains all difficulties: `Easy`, `Normal`, `Hard`, `Expert`, `Master`, `Custom`.
+- One file holds all difficulties: `Easy`, `Normal`, `Hard`, `Expert`, `Master`, `Custom`.
 
 ## Structure / metadata
 ### `beatmap.meta.bin` keys (from the writer)
@@ -45,26 +44,24 @@ Dictionary: key = time index (as integer or float, in **1/64 beat** units), valu
 - The note's z coordinate is a world position along the track: `z = seconds x 20` (TIME_SCALE = 20 units per second); x, y are world positions: `xy = grid x 0.1365 (+ editor offsets 0.002 / 0.0012)` (GRID_SCALE). So time is stored twice (index and z) [inference; the tool derives beats from z: `(coord[2] / 20)` seconds].
 
 ## Notes
-- Taps: hand-colored notes (left/right) and "special" notes (one hand either, both hands).
-- Rails: notes with `Segments`, a continuous path to follow.
-- Walls (slides, crouch, square, triangle) require dodging.
-- Lights/effects: cosmetic markers.
-- Position is a continuous 2D position in the play space around the player (grid coordinates are multiples of 0.1365 world units), not a lane.
+
+Taps are hand-colored (left/right) or "special" (one hand either, both hands). Rails (`Segments`) are continuous paths. Walls (slides, crouch, square, triangle) must be dodged. Lights/effects are cosmetic. Position is a continuous 2D position around the player (multiples of 0.1365 world units), not a lane.
 
 ## Audio & images
-Audio file inside the zip named by `AudioName`; cover by `Artwork`/`ArtworkBytes`. `DrumSamples` unknown.
+
+Audio named by `AudioName`; cover by `Artwork`/`ArtworkBytes`. `DrumSamples` unknown.
 
 ## Versions & variants
-- Editor versions differ (`EditorVersion`, beta editor adds Crouch/Square/Triangle lists). The clipboard JSON format of the editor (`BPM`, `startMeasure`, `startTime`, `lenght` (sic), `notes`, `effects`, `jumps`, `crouchs`, `squares`, `triangles`, `slides`, `lights`) is the same structure and is what the helper edits.
-- Maps converted from other games (`BeatConverted`), modified (`BeatModified`) flags.
+
+`EditorVersion` varies; the beta editor adds Crouch/Square/Triangle lists. The editor's clipboard JSON (`BPM`, `startMeasure`, `startTime`, `lenght` (sic), `notes`, `effects`, `jumps`, `crouchs`, `squares`, `triangles`, `slides`, `lights`) has the same structure and is what the helper edits. Flags `BeatConverted` (converted from other games) and `BeatModified` exist.
 
 ## Quirks & pitfalls
-- Files downloaded from synthriderz.com are AES-encrypted ZIPs (compression method 99) and cannot be read by plain ZIP tools or the helper [observed on 40 downloads from https://synthriderz.com/api/beatmaps].
-- `.bin` extension is JSON; BOM and CRLF.
+
+- Files downloaded from synthriderz.com are AES-encrypted ZIPs (compression method 99); plain ZIP tools and the helper cannot read them [observed on 40 downloads from https://synthriderz.com/api/beatmaps].
 - Misspellings are real keys (`AudioFrecuency`, clipboard `lenght`, `Crouchs`).
-- Time keys can be floats (stored as strings in JSON); positions have small editor snap offsets.
-- Editor may refuse files with duplicate note types at the same time.
-- Unknown keys (marked "?" in the helper) must be preserved on round trip.
+- Time keys can be floats (strings in JSON); positions carry small editor snap offsets.
+- The editor may refuse duplicate note types at the same time.
+- Keys marked "?" in the helper must be preserved on round trip.
 
 ## Example
 Illustrative, hand-built from the writer code (not from a real map):
@@ -84,7 +81,7 @@ Not read by ROX.
 
 ## Getting samples
 
-No `.synth` could be committed. Downloads from the community site <https://synthriderz.com> (`GET /api/beatmaps` lists maps; `download_url` redirects to the file) are **AES-encrypted ZIPs** (entries `beatmap.meta.bin` and `track.data.json` use zip compression method 99, flag bit 1 set; checked on 40 files), so the chart cannot be extracted without the key, and the audio inside cannot be stripped. Unencrypted `.synth` files are only given out by their mappers [per the Synth_Riders_Kinematics README: "choose an unencrypted .synth file provided by its mapper. Encrypted downloads are unsupported"]. How to get one: save a map from the Synth Riders Beatmap Editor (writes an unencrypted `.synth`), or ask a mapper; `adosikas/synth_mapping_helper` reads/writes them.
+No `.synth` could be committed. Downloads from <https://synthriderz.com> (`GET /api/beatmaps` lists maps; `download_url` redirects to the file) are AES-encrypted ZIPs (`beatmap.meta.bin` and `track.data.json` use zip method 99, flag bit 1; checked on 40 files), so neither chart nor audio can be extracted without the key. Unencrypted `.synth` files come only from their mappers [Synth_Riders_Kinematics README: "choose an unencrypted .synth file provided by its mapper. Encrypted downloads are unsupported"]. Save a map from the Synth Riders Beatmap Editor (writes an unencrypted file) or ask a mapper; `adosikas/synth_mapping_helper` reads/writes them.
 
 ## Sources
 - https://raw.githubusercontent.com/adosikas/synth_mapping_helper/main/src/synth_mapping_helper/synth_format.py

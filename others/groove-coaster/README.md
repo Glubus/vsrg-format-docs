@@ -1,16 +1,16 @@
 # Groove Coaster
 
-Taito rhythm game (arcade 2011-, iOS/Android, Steam "Groove Coaster for Steam", Nintendo Switch). The player rides a camera along a 3D "coaster" track and presses buttons / uses a lever (arcade) or taps (mobile) as notes arrive along the track.
+Taito rhythm game (arcade 2011-, iOS/Android, Steam "Groove Coaster for Steam", Nintendo Switch). The player rides a 3D "coaster" track and presses buttons / uses a lever (arcade) or taps (mobile) as notes arrive.
 
-**Category: others** — notes follow a free-form 3D rail, not lanes.
+Category: others (notes follow a free-form 3D rail, not lanes).
 
 ## Formats
 
 | Folder | Format | Notes |
 |---|---|---|
-| [aar/](aar/README.md) | `.aar` ALAR archives (optionally ALLZ-compressed) that contain the "Stage" files with the music and the chart scripts | stub — the **chart script format inside is not documented** in the sources opened |
+| [aar/](aar/README.md) | `.aar` ALAR archives (optionally ALLZ-compressed) that contain the "Stage" files with the music and the chart scripts | stub; the chart script format inside is undocumented in the sources opened |
 
-Community tools: Mod The Coaster (AAR zip/unzip, ASN→OGG, TableTune editor), Aqualead LZSS decoder, Groove Coaster Converter (song/entry management), ALAR/GCST/chart-editor repos mentioned in community threads (not opened).
+Community tools: Mod The Coaster (AAR zip/unzip, ASN->OGG, TableTune editor), Aqualead LZSS decoder, Groove Coaster Converter (song/entry management), ALAR/GCST/chart-editor repos mentioned in community threads (not opened).
 
 ## Links
 

@@ -4,7 +4,8 @@ Kind: chart
 Doc status: stub · ROX: no · Category: others · Encoding: json
 
 ## Overview
-A Beatblock custom level is a folder (in `%appdata%/Beatblock/Custom Levels`, `~/Library/Application Support/Beatblock/Custom Levels` or `~/.local/share/beatblock/Custom Levels`) whose JSON files are written by the in-game editor. The editor is the primary tool; no standalone parser or public schema was found. What is documented comes from the official editor guide and the early-access technical notes (the property names of every event), from the community guide, and from a mention that levels can be edited as `level.json` by hand. The exact JSON key layout is therefore only partly known (see "Unknown").
+
+A Beatblock custom level is a folder (`%appdata%/Beatblock/Custom Levels`, `~/Library/Application Support/Beatblock/Custom Levels` or `~/.local/share/beatblock/Custom Levels`) of JSON files written by the in-game editor. No standalone parser or public schema exists. This page rests on the official editor guide, the early-access technical notes (property names of every event), the community guide, and real level packages (see "Unknown").
 
 ## Container & encoding
 - JSON, UTF-8. From format version 15/17 on, files are saved pretty-printed ("saved jsons now have formatting applied", technical notes); earlier versions wrote a single line.
@@ -18,7 +19,7 @@ A Beatblock custom level is a folder (in `%appdata%/Beatblock/Custom Levels`, `~
 - Events are objects with a `type` string and per-type properties. A user-quoted sample (Beatblock-Utilities README, as reported by a search result; the repository page was not retrievable by me): `{"type":"mine","time":1,"angle":90}`. Property names below are those of the editor's event panel and are probably the JSON keys [inference].
 
 ## Timing model
-- `time` is a **beat** position ("On which beat will the item hit Cranky") and may be fractional (decimals, so triplets are typed as fractions of a beat). The editor snaps to 1/4, 1/3, 1/6, 1/12 subdivisions.
+- `time` is a beat position ("On which beat will the item hit Cranky") and may be fractional (decimals, so triplets are typed as fractions of a beat). The editor snaps to 1/4, 1/3, 1/6, 1/12 subdivisions.
 - A "Play song" event starts the audio and holds its file name, BPM and start offset; "Set BPM" changes tempo mid-song. So tempo and offset are events on the beat timeline, not header fields.
 - `duration` (holds, eases) and `delay` (bounces) are in beats. Ease sequences use "distance in beats" before the hit (time -1 = 1 beat away; time 0 = hit).
 - Beat to seconds requires walking the tempo events: `seconds = offset + beats * 60 / BPM` within each BPM segment. [inference from the editor description]
@@ -40,24 +41,29 @@ Properties per note event (editor guide, "Events > Notes section"):
 - The score: hold detection changed in early access ("holds die faster ... `newHoldDetection`").
 
 ## Audio & images
-Audio file name is a property of the Play Song event (`.ogg` preferred). Offset is set in the event or by trimming the audio. Decorations: PNG spritesheet + JSON (`states`, fps) with the same base name; shaders are `.glsl` files in the level folder; Play Sound plays any audio inside the level file or the base game.
+
+Audio file name is a property of the Play Song event (`.ogg` preferred); offset is set there or by trimming the audio. Decorations: PNG spritesheet + same-name JSON (`states`, fps). Shaders: `.glsl` files in the level folder. Play Sound plays audio from the level or the base game.
 
 ## Versions & variants
-Demo (0.4.x) versus early access (format v15+). Dev-only events (Init Object, Single/Multi Pulse, Parallax BG, Play Midi, Set Background, Set Joystick Color, Trace, Video Background; deprecated: Spawn Beat, Paddle Count, Change Width) are hidden unless the game's `DEVONLY` marker files are removed.
+
+Demo (0.4.x) versus early access (format v15+). Dev-only events (Init Object, Single/Multi Pulse, Parallax BG, Play Midi, Set Background, Set Joystick Color, Trace, Video Background; deprecated: Spawn Beat, Paddle Count, Change Width) stay hidden unless the game's `DEVONLY` marker files are removed.
 
 ## Quirks & pitfalls
-- Property names such as `taileaseSequence` contain typos in the guide; whether the JSON uses the same spelling is unverified.
-- Format version bumps change behaviour via boolean flags; old levels must keep those flags.
+
+- Guide property names such as `taileaseSequence` contain typos; whether the JSON spells them the same is unverified.
+- Format version bumps change behaviour via boolean flags; old levels must keep them.
 - MP3 audio no longer loads.
 
 ## Unknown
 Resolved by real packages [observed in samples/*/level.json, format versions 12 to 14]: `level.json` has top-level keys `properties` (`speed`, `offset`, `formatversion`, `loadBeat`/`startBeat`/`startingBeat`) and `events` (`play`, `setBPM`, `setColor`, `setBgColor`, `ease`, `deco`, `paddles`, `tag`, `bookmark`, `showResults`, ...), and sometimes `metadata`; the chart is a separate JSON array of note objects with `time` (beats), `angle` and `type` (`block`, `inverse`, `side`, `hold`, `mineHold`, `mine`, `extraTap`; holds add `angle2`, `duration`; also `tap`, `startTap`, `endTap`, `speedMult`, `spinEase`, `holdEase`, `segments`, `order`); `manifest.json` has `metadata`, `properties`, `variants[]` (`display`, `difficulty`, `charter`, `name`) and `defaultVariant`, and the chart file is named `chart-<variant name>.json` (or plain `chart.json`). Still Unknown: version history, the exact semantics of most event fields, any checksum.
 
 ## Example
-Real level sets are committed in `samples/<set>/` (audio and images dropped; see `samples/SOURCES.md`). A tiny hand-written level in the observed layout is committed as `samples/synthetic-level.json`, `samples/synthetic-chart-Synthetic.json` and `samples/synthetic-manifest.json`. The single-event sample above is the only quoted fragment.
+
+Synthetic level: `samples/synthetic-level.json`, `samples/synthetic-chart-Synthetic.json`, `samples/synthetic-manifest.json` (see `samples/SOURCES.md`). The single-event sample under "Structure / metadata" is the only quoted fragment.
 
 ## ROX support
-Not read by ROX. Radial angle model with scripted VFX; mapping to columns would discard `angle` and most events.
+
+Not read by ROX. Mapping to columns would discard `angle` and most events.
 
 ## Parsers & tools
 - In-game level editor (official).
@@ -66,8 +72,7 @@ Not read by ROX. Radial angle model with scripted VFX; mapping to columns would 
 
 ## Getting samples
 
-- **Committed**: 6 real level sets (one subfolder each: `level.json`, chart JSON, `manifest.json`, `tags/`, spritesheet JSON, backups; audio and images dropped) from https://github.com/ItsBritex/beatblock-levels plus 3 synthetic files in [`samples/`](samples/). Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
-- **More samples**: levels are written by the in-game editor into the custom levels folder (paths in Overview) and shared as `.zip` via the Steam Workshop, https://beatblockbrowser.me/ (unreachable with TLS errors when checked) and Discord. Observed layout (formats 12-14): `level.json` (`properties`, `events`, optionally `metadata`), a chart file that is a JSON array of notes (`chart.json` or `chart-<variant>.json`), optional `manifest.json`, `backup/`, `tags/`.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md) (https://github.com/ItsBritex/beatblock-levels, plus synthetic files). Levels are written by the in-game editor into the custom levels folder (paths in Overview) and shared as `.zip` via the Steam Workshop, https://beatblockbrowser.me/ (TLS errors when checked) and Discord. Observed layout (formats 12-14): `level.json` (`properties`, `events`, optionally `metadata`), a chart file that is a JSON array of notes (`chart.json` or `chart-<variant>.json`), optional `manifest.json`, `backup/`, `tags/`.
 
 ## Sources
 - https://docs.google.com/document/d/1myd85jpTYQCtE1Mlu6fJEm3fJEIN_-7Q1TFcB1OcrT4 (Editor Guide, exported as text)

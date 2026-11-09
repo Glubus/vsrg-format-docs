@@ -1,13 +1,13 @@
 # Sound Space / Sound Space Plus / Rhythia
 
-Mouse-aim rhythm game family. Notes appear in a 3 x 3 grid in front of the camera, fly toward the player, and the player moves the cursor over each note at the right time (no click). Lineage:
+Mouse-aim rhythm game family. Notes appear in a 3 x 3 grid in front of the camera and fly toward the player, who moves the cursor over each note at the right time (no click). Lineage:
 
-1. **Sound Space** (Roblox game): maps stored as plain text note lists ([txt](txt/README.md)).
-2. **Sound Space Plus** (SS+, standalone Godot 3 game, repository `Rhythia/sound-space-plus`): adds the `.sspm` package ([sspm](sspm/README.md)), v1 then v2.
-3. **Rhythia** (rename of SS+ by NaN Studios; same `.sspm`), see [../rhythia/](../rhythia/README.md).
-4. **Vulnus** (separate game, JSON maps, importable into SS+): [../vulnus/](../vulnus/README.md).
+1. Sound Space (Roblox game): plain text note lists ([txt](txt/README.md)).
+2. Sound Space Plus (SS+, standalone Godot 3 game, repository `Rhythia/sound-space-plus`): adds the `.sspm` package ([sspm](sspm/README.md)), v1 then v2.
+3. Rhythia (rename of SS+ by NaN Studios; same `.sspm`): [../rhythia/](../rhythia/README.md).
+4. Vulnus (separate game, JSON maps, importable into SS+): [../vulnus/](../vulnus/README.md).
 
-Category: **others**. Notes are positioned freely (3 x 3 grid, "quantum" notes with float x/y), there is no lane or column; the player aims a cursor instead of pressing keys.
+Category: others. Notes sit at free positions (3 x 3 grid, "quantum" notes with float x/y); there are no lanes or columns, and the player aims a cursor instead of pressing keys.
 
 ## Formats
 | Folder | File | Status |

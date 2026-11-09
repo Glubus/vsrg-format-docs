@@ -4,13 +4,10 @@ Kind: package
 Doc status: stub · ROX: no · Category: others · Encoding: json
 
 ## Overview
-
-A single-file bundle written by Dynamaker (the web/Electron Dynamix editor) so a chart can be played on a phone: chart, music and background in one file. Per the Dynamaker guide: right-click -> "Save as .DY" (versus "Save as XML" for the chart only); DyNode's docs say the `.dy` format stores chart-related files (music, background...) in Base64.
+Single-file bundle written by Dynamaker (the web/Electron Dynamix editor): chart, music and background, for playback on a phone. In Dynamaker: right-click -> "Save as .DY" ("Save as XML" saves the chart only). DyNode's docs say `.dy` stores chart-related files (music, background...) in Base64.
 
 ## Contents
-
-- A single-file bundle: chart, music and background, for playback on a phone.
-- Chart format inside: [Dynamix XML](../xml/README.md) (the chart-only export).
+Chart ([Dynamix XML](../xml/README.md)), music, background.
 
 ## Container & encoding
 
@@ -21,11 +18,9 @@ JSON object (the loader evals it): `{ "CMap": {...}, "remix": { "music": <data U
 `CMap` has the same fields as the Dynamaker CMap XML (see `../xml/`, dialect A); `remix.music` is required, `remix.bg` optional.
 
 ## Timing model
-
 Same as `../xml/` (bars).
 
 ## Notes
-
 Same as `../xml/`.
 
 ## Audio & images
@@ -33,14 +28,10 @@ Same as `../xml/`.
 Embedded as base64 data URLs (`remix.music`, `remix.bg`).
 
 ## Versions & variants
-
-Unknown.
-
-[observed in dynamaker-modified `app/src/Script/function.js`] Dynamaker writes the bundle with `JSON.stringify({CMap, remix})` (`saveAsDynaMaker`); `saveAsMinimal` writes the same shape with `remix.isMinimal: true`. The loader also accepts a plain JSON file whose name ends in `JSON` with only `{CMap}` (`loadingScene.js`).
+[observed: dynamaker-modified `app/src/Script/function.js`] Dynamaker writes the bundle with `JSON.stringify({CMap, remix})` (`saveAsDynaMaker`); `saveAsMinimal` writes the same shape with `remix.isMinimal: true`. The loader also accepts a plain JSON file whose name ends in `JSON` with only `{CMap}` (`loadingScene.js`).
 
 ## Quirks & pitfalls
-
-Large files because of base64 audio; loaded with `eval` by Dynamaker (not strict JSON in practice) [inference].
+Large because of base64 audio; Dynamaker loads it with `eval` (not strict JSON in practice) [inference].
 
 ## Example
 
@@ -55,8 +46,7 @@ Not read by ROX.
 Dynamaker-modified: <https://github.com/jmakxd/dynamaker-modified>; DyNode: <https://dyn.iorinn.moe/en/>.
 
 ## Getting samples
-
-**Committed** ([`samples/`](samples/SOURCES.md)): `synthetic-minimal.dy`, a hand-written bundle with a generated silent WAV. No real `.dy` was found: real bundles embed the song as base64 and circulate only in the fanmade community. More: "Save as .DY" in Dynamaker / dynamaker-modified (`saveAsDynaMaker()`, `saveAsMinimal()` in `app/src/Script/function.js`) or DyNode.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). No real `.dy` was found (bundles embed the song as base64 and circulate only in the fanmade community). Make one with "Save as .DY" in Dynamaker / dynamaker-modified (`saveAsDynaMaker()`, `saveAsMinimal()` in `app/src/Script/function.js`) or DyNode.
 
 ## Sources
 

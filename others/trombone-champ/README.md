@@ -1,8 +1,8 @@
 # Trombone Champ
 
-Rhythm game by Holy Wow Studios (2022, PC/Switch/consoles). The player moves the mouse (or a stick) vertically to set the trombone pitch and holds a button to blow, following a pitched note ribbon that scrolls right to left. Official tracks are compiled into the game; custom tracks are loaded by the BepInEx plugin TrombLoader (and BaboonAPI) from a folder containing `song.tmb`, `song.ogg` and an optional background.
+Rhythm game by Holy Wow Studios (2022, PC/Switch/consoles). The mouse (or a stick) moves vertically to set the trombone pitch; a held button blows, following a pitched note ribbon that scrolls right to left. Official tracks are compiled into the game. The BepInEx plugin TrombLoader (and BaboonAPI) loads custom tracks from a folder with `song.tmb`, `song.ogg` and an optional background.
 
-Category: **others**: notes are horizontal ribbons positioned on a continuous pitch axis (slides and microtonal pitches); there are no fixed lanes or columns.
+Category: others. Notes are horizontal ribbons on a continuous pitch axis (slides and microtonal pitches); there are no fixed lanes or columns.
 
 ## Formats
 | Folder | File | Status |

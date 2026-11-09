@@ -1,10 +1,8 @@
 # Rhythm Heaven (リズム天国 / Rhythm Paradise) and Rhythm Heaven Studio
 
-Nintendo/tsunku♂ rhythm minigame series (GBA *Rhythm Tengoku*, DS, Wii *Fever/Minna no Rhythm Tengoku*, 3DS *Megamix*). Each stage is a short minigame played to a beat with single-button inputs; there are no scrolling notes: the "chart" is a **cue/script timeline** (when each game's cue happens). The official games' timelines are compiled "tickflow" scripts inside the ROM/archives; no chart format of the official games was researched in sources I could open (not documented here).
+Nintendo/tsunku♂ rhythm minigame series (GBA *Rhythm Tengoku*, DS, Wii *Fever/Minna no Rhythm Tengoku*, 3DS *Megamix*). Each stage is a short minigame with single-button inputs and no scrolling notes: the "chart" is a cue/script timeline. Official timelines are compiled "tickflow" scripts inside the ROM/archives; no other official chart format was researched. The one documented open format is the RIQ file of the fan game Rhythm Heaven Studio (RHeavenStudio, Unity), which builds "remixes" from minigame events on a beat timeline.
 
-The one **documented, open** chart format in the series' ecosystem is the **RIQ** file of the fan game **Rhythm Heaven Studio** (RHeavenStudio, Unity), which lets players build "remixes" out of minigame events on a beat timeline.
-
-**Category: others** — event/cue timeline per minigame (not note lanes).
+Category: others, event/cue timeline per minigame (not note lanes).
 
 ## Formats
 

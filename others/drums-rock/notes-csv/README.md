@@ -4,10 +4,10 @@ Kind: chart
 Doc status: complete · ROX: no · Category: others · Encoding: text (CSV)
 
 ## Overview
-A Drums Rock custom song is a folder of four files (five for the Steam Workshop): `song.ogg`, `preview.ogg`, `notes.csv` (the chart) and `info.csv` (song information), plus `album.jpg` when uploading to the Workshop. One folder holds exactly one difficulty. The format is simple and fully recoverable from two independent implementations: Editor on Fire's `dr.c` (export and import with validation) and the community `drumsrockparser.py` (MIDI to CSV). Official instructions describe the Google Sheets template that produces the same CSV.
+A Drums Rock custom song is a folder with `song.ogg`, `preview.ogg`, `notes.csv` (the chart) and `info.csv` (song information), plus `album.jpg` for the Steam Workshop. One folder holds one difficulty. Implementations: Editor on Fire's `dr.c` (export and import with validation) and the community `drumsrockparser.py` (MIDI to CSV). The official Google Sheets template produces the same CSV.
 
 ## Container & encoding
-- Plain text CSV with a header row, `,` separator, `\n` line endings (EoF writes `\n`; quotes inside names are doubled `""` per CSV; commas and `+` characters are not allowed in the song and artist fields of `info.csv`, EoF strips them).
+- CSV with a header row, `,` separator, `\n` line endings (EoF writes `\n`). Quotes inside names are doubled `""`. Commas and `+` are not allowed in the song and artist fields of `info.csv` (EoF strips them).
 - Folder: `CustomSongs/<SongName>/` (names without spaces recommended for compatibility). Start from the shipped `TemplateSong` folder. Workshop items are copied to `.../Drums Rock/Workshop/<folder>` with a `Metadata.cfg` (below).
 - One difficulty per folder: Easy, Medium, Hard, Extreme (EoF also names an "Extreme+" slot; `info.csv` difficulty values 0-3 are accepted on import).
 
@@ -39,24 +39,22 @@ Drum colors/lanes: 1 yellow = snare, 2 red = kick, 3 orange = high tom, 4 purple
 `Metadata.cfg` (Workshop packaging written by EoF): `title=<artist> - <title>` and `description=Song:  ... | Artist:  ... | Genre:  ... | Charter:  ... | Difficulty:  <name> | Average BPM:  <n> | Total notes:  <n> | ...`.
 
 ## Timing model
-Absolute seconds from the start of `song.ogg`, one value per row, no tempo information, no beat grid and no offset field. Tempo changes are baked in (the template requires a constant tempo; the MIDI script accumulates MIDI delta times with tempo changes). Resolution 0.01 s. Rows are in ascending time order. Drum roll duration is not stored: only the hit count (`interval`).
+Absolute seconds from the start of `song.ogg`, resolution 0.01 s, ascending order. No tempo, beat grid or offset field: tempo changes are baked in (the template requires constant tempo; the MIDI script accumulates MIDI delta times with tempo changes). Drum roll duration is not stored, only the hit count (`interval`).
 
 ## Notes
-- Single (type 1): one drum. Double (type 2): two different drums at the same time (EoF limits a chord to two gems; a third gem is dropped). Drum roll (type 3, "fat demon"): one drum, hit `interval` times; start time only.
-- Chords with more than two drums cannot be encoded.
+- Single (type 1): one drum. Double (type 2): two different drums at once (EoF limits a chord to two gems and drops a third; chords of more than two drums cannot be encoded). Drum roll (type 3, "fat demon"): one drum, hit `interval` times; start time only.
 - EoF import: timestamp times 1000 plus 0.5 ms, length 1 ms; drum rolls become notes named with the hit count.
 
 ## Audio & images
 `song.ogg`, `preview.ogg` (Ogg Vorbis required), `album.jpg` for the Workshop. Duration is in `info.csv`.
 
 ## Versions & variants
-- Header spelling differences (`No Enemies` versus `Nº Enemies`); EoF 1.8RC12 and later write/read the files; the Google Sheets template's `enemyData` sheet is the origin of the layout.
-- Four-difficulty folders versus one difficulty per `info.csv` row.
+- Header spelling differs (`No Enemies` vs `Nº Enemies`). EoF 1.8RC12 and later write/read the files; the Google Sheets template's `enemyData` sheet is the layout's origin.
 
 ## Quirks & pitfalls
-- Commas and `+` in title/artist break the info line; EoF strips them.
-- A drum roll without `interval` is rejected by EoF import; default hit count 3 on export.
-- Time values use `.` decimal separator; locale-formatted CSV (spreadsheet exports with `,` decimals) would break parsing.
+- Commas and `+` in title/artist break the info line (EoF strips them).
+- EoF import rejects a drum roll without `interval`; export defaults to 3 hits.
+- `.` is the decimal separator; spreadsheet exports with `,` decimals break parsing.
 - Gem numbering does not follow lane order.
 
 ## Example
@@ -67,10 +65,9 @@ Time [s],Enemy Type,Aux Color 1,Aux Color 2,No Enemies,interval,Aux
 2,2,2,3,1,,7
 3.25,3,5,5,1,5,5
 ```
-(`Aux` column follows the Aux Color 1 mapping.)
 
 ## ROX support
-Not read by ROX. A decoder could map the 6 drum colors to 6 columns, with doubles as chords and drum rolls approximated by a hold or burst; tempo is absent, so a constant BPM must be assumed.
+Not read by ROX. A decoder could map the 6 drum colors to 6 columns (doubles as chords, drum rolls as a hold or burst) with an assumed constant BPM.
 
 ## Parsers & tools
 - Editor on Fire (C; export/import, `src/dr.c`): https://github.com/raynebc/editor-on-fire
@@ -78,9 +75,7 @@ Not read by ROX. A decoder could map the 6 drum colors to 6 columns, with double
 - Official Google Sheets template (Demons March Hard) linked from the instructions page.
 
 ## Getting samples
-
-- **Committed**: 12 real files: `notes.csv` + `info.csv` of six community songs (Alice in Chains, Audioslave, Bon Jovi, Finger Eleven, Splatoon 2, Weezer) taken from Google Drive zips linked in the Steam guide "Direct song downloads" (audio not kept), plus 2 synthetic in [`samples/`](samples/). Observed: header uses `Nº Enemies`, and `info.csv` `Song Map` is 0 or 2 in these files (the fiche says EoF writes 0). Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
-- **More samples**: the guide https://steamcommunity.com/sharedfiles/filedetails/?id=3284235843 links ~140 Drive folders and files of community songs; the official template is on https://garage51.es/drumsrock/custom_songs.html; Editor on Fire exports the format.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). Observed: the header uses `Nº Enemies` and `info.csv` `Song Map` is 0 or 2 (the fiche says EoF writes 0). The Steam guide https://steamcommunity.com/sharedfiles/filedetails/?id=3284235843 ("Direct song downloads") links ~140 Google Drive folders and files of community songs; the official template is on https://garage51.es/drumsrock/custom_songs.html; Editor on Fire exports the format.
 
 ## Sources
 - https://garage51.es/drumsrock/custom_songs.html

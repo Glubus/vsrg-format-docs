@@ -1,8 +1,8 @@
 # Rizline
 
-Mobile rhythm game (iOS, Android, released 9 April 2023; a Steam PC version supports Workshop custom charts). Notes (Tap, Catch, Hold) fall toward a judgement line while "lines" (polylines drawn over moving canvases, colored by gradients) carry them; the camera and canvases move, scale and change speed during the song, and "Riztime" sections change the color theme. The community documentation lives on the Rhythm Game Wiki (rgwiki.stary.pc.pl) and in the Rust library `rizlib`.
+Mobile rhythm game (iOS, Android, released 9 April 2023; a Steam PC version supports Workshop custom charts). Notes (Tap, Catch, Hold) fall toward a judgement line and ride on "lines" (polylines over moving canvases, colored by gradients). The camera and canvases move, scale and change speed during the song, and "Riztime" sections change the color theme. Documentation: Rhythm Game Wiki (rgwiki.stary.pc.pl) and the Rust library `rizlib`.
 
-Category: **others**: notes ride on freely shaped, moving lines (canvas positions, speeds and camera moves change over time), so a note's screen position is not a fixed lane.
+Category: others (notes ride on freely shaped, moving lines, so a note has no fixed lane).
 
 ## Formats
 | Folder | File | Status |

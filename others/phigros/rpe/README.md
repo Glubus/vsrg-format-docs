@@ -4,17 +4,14 @@ Kind: chart
 Doc status: partial · ROX: no · Category: others · Encoding: json
 
 ## Overview
-
-Chart format of **Re:PhiEdit (RPE)**, the community Phigros chart editor by cmdysj; it is the de-facto standard for fan-made Phigros charts and is read by Phira, phi-chart-render, PhiZone Player and others. Much richer than the official format: global BPM list, several event layers per line, bezier/easing curves, parent lines, textures, text, colour and UI-bound lines. Documented in Chinese by the Phira team; the page below is a faithful English summary of fields that were read. Written against RPE 1.4.1 per the source; older "added in" versions are mostly unknown.
+Chart format of Re:PhiEdit (RPE), the community Phigros editor by cmdysj and the de-facto standard for fan charts (read by Phira, phi-chart-render, PhiZone Player and others). It is richer than the official format: global BPM list, several event layers per line, bezier/easing curves, parent lines, textures, text, colour and UI-bound lines. The Phira team documents it in Chinese; this page summarizes the fields read (RPE 1.4.1; older "added in" versions mostly unknown).
 
 ## Packaged in
-
-- Shipped in: `.pez` (Phira / PhiZone zip: a chart file, music, illustration, `info.yml`).
+`.pez` (Phira / PhiZone zip: chart file, music, illustration, `info.yml`).
 
 ## Container & encoding
-
-- JSON, UTF-8, one file per chart (often named by the editor as `<id>.json`); a chart folder also holds the music, illustration and optional line textures/hitsounds referenced by relative paths in `META`.
-- Phira's loader ignores the file extension and detects the format via `info.yml` `format` or by content.
+- JSON, UTF-8, one file per chart (often `<id>.json`); music, illustration and optional line textures/hitsounds sit beside it, referenced by relative paths in `META`.
+- Phira's loader ignores the extension and detects the format via `info.yml` `format` or by content.
 
 ## Structure / metadata
 
@@ -23,7 +20,7 @@ Root:
 | Field | Type | Meaning |
 |---|---|---|
 | `BPMList` | array of `{bpm, startTime}` | tempo map; `startTime` is a beat triple |
-| `META` | object | `RPEVersion` (int, 100..160), `background` (path), `charter`, `composer`, `id`, `illustration` (added 141), `level`, `name`, `offset` (int, **ms**), `song` (path) |
+| `META` | object | `RPEVersion` (int, 100..160), `background` (path), `charter`, `composer`, `id`, `illustration` (added 141), `level`, `name`, `offset` (int, ms), `song` (path) |
 | `judgeLineList` | array | lines |
 | `judgeLineGroup` | string[] | editor only |
 | `chartTime` | double | editing time in s (added 141), editor only |
@@ -37,13 +34,13 @@ Event (all but speed): `startTime`/`endTime` (beat triples), `start`/`end` (floa
 
 Easing ids: 1 Linear, 2 OutSine, 3 InSine, 4 OutQuad, 5 InQuad, 6 InOutSine, 7 InOutQuad, 8 OutCubic, 9 InCubic, 10 OutQuart, 11 InQuart, 12 InOutCubic, 13 InOutQuart, 14 OutQuint, 15 InQuint, 16 OutExpo, 17 InExpo, 18 OutCirc, 19 InCirc, 20 OutBack, 21 InBack, 22 InOutCirc, 23 InOutBack, 24 OutElastic, 25 InElastic, 26 OutBounce, 27 InBounce, 28 InOutBounce, 29 InOutElastic (not usable on speed events).
 
-Special events (`extended`): `colorEvents`, `scaleXEvents`, `scaleYEvents`, `textEvents`, `paintEvents`, `gifEvents`, `inclineEvents`; absent when unused (except inclineEvents). Field-level detail was not read [partial].
+Special events (`extended`): `colorEvents`, `scaleXEvents`, `scaleYEvents`, `textEvents`, `paintEvents`, `gifEvents`, `inclineEvents`; absent when unused (except inclineEvents). Field-level detail not read [partial].
 
 ## Timing model
 
 - Beat triple `[a, b, c]` = `a + b/c` beats (integer part, numerator, denominator).
 - Single BPM: `seconds = 60 / BPM * beat`. Multi-BPM: integrate piecewise over `BPMList`, using `BPM / line.bpmfactor` as the effective tempo (Phira docs give `beat2sec`/`sec2beat` reference code).
-- `META.offset` is in **milliseconds**: negative = music starts `-offset` ms before the chart; positive = after.
+- `META.offset` is in milliseconds: negative = music starts `-offset` ms before the chart; positive = after.
 - Coordinate system: origin at screen centre, X in -675..675, Y in -450..450 (so normalised x = `(x+675)/1350`, y = `1-(y+450)/900`).
 - Between events the previous end value is kept; Phira's reference code pads gaps with constant events and adds a sentinel until beat 31250000.
 
@@ -51,30 +48,27 @@ Special events (`extended`): `colorEvents`, `scaleXEvents`, `scaleYEvents`, `tex
 
 Note fields: `above` (1 = falls on the front, otherwise back), `alpha` (0..255, default 255), `startTime`/`endTime` (beat triples; equal unless Hold), `isFake` (1 = fake: no judgement, no hit effect/sound, not counted), `positionX` (relative to line centre), `size` (width multiplier, default 1), `speed` (default 1), `type`, `visibleTime` (s, default 999999), `yOffset` (effective offset `yOffset * speed`), `hitsound` (path, added 142), `judgeArea` (added 170), `tint`/`color` (int[3], added 170; field was renamed color -> tint in beta, accept both), `tintHitEffects` (int[3]?).
 
-Note `type`: 1 Tap, 2 **Hold**, 3 **Flick**, 4 **Drag** (differs from the official format where 2 = Drag, 3 = Hold, 4 = Flick). Default Tap.
+Note `type`: 1 Tap, 2 Hold, 3 Flick, 4 Drag (the official format uses 2 = Drag, 3 = Hold, 4 = Flick). Default Tap.
 
 ## Audio & images
-
-`META.song`, `META.background` are paths relative to the chart folder; per-line `Texture` and per-note `hitsound` likewise. RPE can also embed textures through control fields not documented here.
+`META.song`, `META.background`, per-line `Texture` and per-note `hitsound` are paths relative to the chart folder. Texture embedding via control fields is not documented here.
 
 ## Versions & variants
-
-- `META.RPEVersion` 100..160 but stays `150` for RPE 1.5.0 - 1.6.0 (alpha included) and `160` for 1.6.1 (field not bumped); do not use it to gate features.
+- `META.RPEVersion` 100..160 stays `150` for RPE 1.5.0 - 1.6.0 (alpha included) and `160` for 1.6.1; do not use it to gate features.
 - Fields have "added in" versions (141, 142, 150, 162, 163, 170); older charts omit them.
-- A `bpmfactor` quirk: the editor cannot edit it; the divisor semantics (`/` not `*`) is easy to get wrong.
+- `bpmfactor` is not editable in the editor and divides (`/`, not `*`).
 - Converters: PEC <-> RPE (`../pec/`), official <-> RPE.
 
 ## Quirks & pitfalls
-
-- Negative `alpha` hides the line **and all its notes** (deprecated/illegal but still works).
-- Negative speed makes notes fly upward; a Hold is fully drawn when its tail appears (not like the original game).
-- Empty layers: `null` in older versions, omitted in later (>= 143 at least).
+- Negative `alpha` hides the line and all its notes (illegal but works).
+- Negative speed makes notes fly upward; a Hold is fully drawn when its tail appears (unlike the original game).
+- Empty layers are `null` in older versions, omitted later (>= 143 at least).
 - `isCover` only masks notes on the back side of the line.
-- `speed`/`yOffset` interplay: `yOffset` is scaled by `speed`, so speed 0 cancels it.
+- `yOffset` is scaled by `speed`, so speed 0 cancels it.
 
 ## Example
 
-Illustrative, hand-built from the field tables above (not extracted from a real chart):
+Hand-built from the field tables above (not from a real chart):
 
 ```json
 {"BPMList":[{"bpm":120.0,"startTime":[0,0,1]}],
@@ -96,9 +90,8 @@ Not read by ROX.
 - PhiFanmade common chart docs: <https://docs.nuanr-mxi.com/en/>
 
 ## Getting samples
-
-- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): 8 real RPE charts downloaded from the Phira public chart API (`RPEVersion` 160 and 170, 2-5 MB each, extracted from their `.pez` packages) and 3 MIT synthetic fixtures from the `rpechart` library (`RPEVersion` 113, 160, 170).
-- More: browse https://api.phira.cn/chart (observed 2026-11-09: JSON list, field `file` = package URL); Re:PhiEdit writes `chart.json`; `rpechart` can generate charts from a small `spec.json` (https://github.com/kamilhzn/rpechart).
+Committed: see [samples/SOURCES.md](samples/SOURCES.md).
+- Browse https://api.phira.cn/chart (observed 2026-11-09: JSON list, field `file` = package URL). Re:PhiEdit writes `chart.json`. `rpechart` generates charts from a small `spec.json` (https://github.com/kamilhzn/rpechart).
 
 ## Sources
 

@@ -1,8 +1,8 @@
 # Gadvia
 
-Unity-based mobile rhythm game (iOS and Android, package `com.hgca.uma`). The rhythm mode is called "Sing mode" with three difficulties (Neritic, Photic, Bathyal; Abyssal and Hadal appear in game files but are unused); an Adventure story mode surrounds it. Scoring is standardised to 1,000,000 points. Its servers were switched off on 15 January 2025; the game now works offline. Notes carry lyric words (`word`).
+Unity mobile rhythm game (iOS, Android, package `com.hgca.uma`). The rhythm mode, "Sing mode", has three difficulties (Neritic, Photic, Bathyal; Abyssal and Hadal appear in game files but are unused) inside an Adventure story mode. Scoring is standardised to 1,000,000 points. Servers were switched off on 15 January 2025; the game works offline. Notes carry lyric words (`word`).
 
-Category: **others**: note objects have 3D positions (`Pos` x, y, z), `trackPos` and several note streams (notes, background notes, fall notes, speed and camera data); there is no documented fixed column layout.
+Category: others. Notes have 3D positions (`Pos` x, y, z), `trackPos` and several streams (notes, background notes, fall notes, speed and camera data); no documented column layout.
 
 ## Formats
 | Folder | File | Status |

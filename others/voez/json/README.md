@@ -5,7 +5,7 @@ Doc status: partial · ROX: no · Category: others · Encoding: json
 
 ## Overview
 
-VOEZ charts are a set of JSON files per song, produced and consumed by AndrewFM's **VoezEditor** (Unity). The format mirrors what the game stores in its asset bundles (the Switch version loads them from AssetBundles; the editor exports exactly the files below). Source: VoezEditor's `ProjectData.cs` (reader/writer) and its export manual; no official spec.
+JSON files per song, produced and consumed by AndrewFM's VoezEditor (Unity). The format mirrors the game's asset bundles (the Switch version loads AssetBundles). Source: VoezEditor's `ProjectData.cs` and its export manual; no official spec.
 
 ## Container & encoding
 
@@ -15,37 +15,37 @@ Per song folder: `info_song.json`, `note_easy.json`, `note_hard.json`, `note_ext
 
 `info_song.json`: `{ "info": { "version", "song_version", "id" (24-digit string), "author", "bpm" (number), "name" }, "level": { "easy", "hard", "extra" } }`.
 
-`note_<diff>.json` - array of notes sorted by time: `{ "Id": int, "Type": "click"|"hold"|"swipe"|"slide", "Track": int, "Time": float, "Hold": float (0.0 unless hold), "Dir": int }` (`Dir` meaning not documented; swipe direction presumably).
+`note_<diff>.json`: array of notes sorted by time: `{ "Id": int, "Type": "click"|"hold"|"swipe"|"slide", "Track": int, "Time": float, "Hold": float (0.0 unless hold), "Dir": int }` (`Dir` meaning undocumented; swipe direction presumably).
 
-`track_<diff>.json` - array of tracks sorted by `Start`: `{ "Id", "EntranceOn": bool, "PositionLock": bool, "X": float, "Size": float, "Start": float, "End": float, "Color": int, "Move": [...], "Scale": [...], "ColorChange": [...] }`; the three lists contain transformations `{ "To": float, "Ease": string, "Start": float, "End": float }` (for `ColorChange` `To` is an int colour id). Editor colour names in order: Red, Yellow, Gray, Light Blue, Green, Orange, Violet, Blue, Cyan, Purple [inference: id order].
+`track_<diff>.json`: array of tracks sorted by `Start`: `{ "Id", "EntranceOn": bool, "PositionLock": bool, "X": float, "Size": float, "Start": float, "End": float, "Color": int, "Move": [...], "Scale": [...], "ColorChange": [...] }`. The three lists hold transformations `{ "To": float, "Ease": string, "Start": float, "End": float }` (for `ColorChange`, `To` is an int colour id). Editor colour names in order: Red, Yellow, Gray, Light Blue, Green, Orange, Violet, Blue, Cyan, Purple [inference: id order].
 
-Ease strings: `easelinear`, `easeinexpo`, `easeoutexpo`, `easeinoutexpo`, `easeoutinexpo`, `easeinquad`, `easeoutquad`, `easeinoutquad`, `easeoutinquad`, `easeincirc`, `easeoutcirc`, `easeinoutcirc`, `easeoutincirc`, `easeoutback`, `easeinback`, `easeinoutback`, `easeoutinback`, `easeintelastic` (sic), `easeoutelastic`, `easeinoutelastic`, `easeoutinelastic`. The editor re-saves `easeinoutback` for float transformations as an `easeinback` + `easeoutback` pair because the original is "glitched" in the game.
+Ease strings: `easelinear`, `easeinexpo`, `easeoutexpo`, `easeinoutexpo`, `easeoutinexpo`, `easeinquad`, `easeoutquad`, `easeinoutquad`, `easeoutinquad`, `easeincirc`, `easeoutcirc`, `easeinoutcirc`, `easeoutincirc`, `easeoutback`, `easeinback`, `easeinoutback`, `easeoutinback`, `easeintelastic` (sic), `easeoutelastic`, `easeinoutelastic`, `easeoutinelastic`. For float transformations the editor re-saves `easeinoutback` as an `easeinback` + `easeoutback` pair because the original is "glitched" in the game.
 
 ## Timing model
 
-`Time`, `Hold`, `Start`, `End` are floats in **seconds** from the start of the song (the editor compares them with `songTime` in seconds); the BPM in `info_song.json` is only used for the editor's grid/metronome [inference from editor code]. Notes spawn `NOTE_DURATION` seconds before their time and travel along their track.
+`Time`, `Hold`, `Start`, `End` are floats in seconds from the start of the song (the editor compares them with `songTime` in seconds). The BPM in `info_song.json` only drives the editor's grid/metronome [inference from editor code]. Notes spawn `NOTE_DURATION` seconds before their time and travel along their track.
 
 ## Notes
 
-Click (tap), Hold (`Hold` seconds; hold ticks every fixed interval in the editor), Swipe, Slide. A note references a track by id (`Track`); the track defines the note's horizontal position over time (`X` plus `Move` keyframes, `Size` plus `Scale` keyframes). Track ids are re-numbered by `Start` order on save and note `Track` values are re-linked accordingly.
+Click (tap), Hold (`Hold` seconds; hold ticks every fixed interval in the editor), Swipe, Slide. A note references a track by id (`Track`); the track defines its horizontal position over time (`X` plus `Move` keyframes, `Size` plus `Scale` keyframes). Track ids are re-numbered by `Start` order on save and note `Track` values are re-linked.
 
 ## Audio & images
 
-File names fixed as listed above; `song_pv` must be exactly 20 s per the manual.
+File names are fixed as above; `song_pv` must be exactly 20 s per the manual.
 
 ## Versions & variants
 
-Editor supports a `ProjectMigrator`; Switch and mobile builds use the same JSON layout (not verified for mobile).
+The editor has a `ProjectMigrator`. Switch and mobile builds use the same layout (mobile not verified).
 
 ## Quirks & pitfalls
 
-- Track must be exported before notes (ids change).
-- Writers use string concatenation, so the JSON is irregular (no whitespace guarantees); the editor parses by splitting on `]},`.
-- `easeinoutback` bug workaround (see above).
+- Export tracks before notes (ids change).
+- Writers use string concatenation, so whitespace is irregular; the editor parses by splitting on `]},`.
+- `easeinoutback` workaround (see above).
 
 ## Example
 
-Illustrative, hand-built from the field list above (not a real chart):
+Hand-built from the field list (not a real chart):
 
 ```json
 // note_hard.json
@@ -64,7 +64,7 @@ VoezEditor (C#, Unity): <https://github.com/AndrewFM/VoezEditor>; VOEZ JSON pars
 
 ## Getting samples
 
-Committed in [`samples/`](samples/): a hand-written synthetic mini song built from the VoezEditor writer code (no real file counts). No real VOEZ chart could be obtained: official charts live in the game's AssetBundles (not publicly downloadable), the VoezEditor repository has no sample project and no licence, and the only community download pointers found (voez.fandom.com blog, GBAtemp thread) are dead links or audio only. To get real files: export from VoezEditor on song assets as described in its manual, or extract the Switch/mobile AssetBundles.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md) (synthetic only). No real VOEZ chart was obtained: official charts live in AssetBundles (not publicly downloadable), VoezEditor has no sample project or licence, and the voez.fandom.com blog and GBAtemp thread links are dead or audio only. Export from VoezEditor as its manual describes, or extract the Switch/mobile AssetBundles.
 
 ## Sources
 

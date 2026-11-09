@@ -1,8 +1,8 @@
 # osu!catch (osu!ctb, "catch the beat")
 
-osu!catch is the fruit-catching mode of osu! (mode 2, formerly "osu!ctb"). Fruits fall from the top of the playfield; the player moves a catcher plate horizontally.
+Fruit-catching mode of osu! (mode 2, formerly "osu!ctb"): fruits fall and the player moves a catcher plate horizontally.
 
-Category: **others**. Justification: objects have a free horizontal position (a continuous x, 0-512), not one of a fixed number of lanes; there is no key-count column model and no holds, so a conversion to columns is lossy.
+Category: **others**. Objects have a free horizontal x (0-512), not fixed lanes, and there are no holds, so conversion to columns is lossy.
 
 Format: `.osu` with `Mode: 2`, see [osu/](osu/README.md) and the canonical doc [vsrg/osu-mania/osu/README.md](../../vsrg/osu-mania/osu/README.md).
 

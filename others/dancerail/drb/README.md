@@ -4,12 +4,10 @@ Kind: chart
 Doc status: partial · ROX: no · Category: others · Encoding: text
 
 ## Overview
-
-`.drb` is the chart file made by DanceRail's editor DRMaker and imported into the Android game (Dancerail_Import: "your files (ogg and drb)"). No official spec exists. The only open grammar is the text chart format that DR3Editor reads/writes ("official format", exported as `.txt`; its `levelFormat.ts` parser and validator). Whether `.drb` is byte-identical to that `.txt` is **[inference]**, not verified.
+`.drb` is the chart file made by DanceRail's editor DRMaker and imported into the Android game (Dancerail_Import: "your files (ogg and drb)"). No official spec exists. The only open grammar is the text format DR3Editor reads/writes ("official format", exported as `.txt`; `levelFormat.ts` parser and validator). Whether `.drb` is byte-identical to that `.txt` is [inference], not verified.
 
 ## Container & encoding
-
-Text, one record per line, `;`-terminated header lines; note lines are bracket groups. Companion: `.ogg` audio (required by DanceRail3).
+Text, one record per line; `;`-terminated header lines; note lines are bracket groups. Companion `.ogg` audio (required by DanceRail3).
 
 ## Structure / metadata
 
@@ -30,19 +28,15 @@ Note line (e.g. `<12><1><3.5><0.5><1><1><0>`): `id` int; `type` int; `pos` = mea
 Note types (DR3Editor names): 1 Blue Tap, 2 Yellow Tap, 3 Orange Hold Start, 4 Orange Hold End, 5 Blue Hold Start, 6 Blue Hold Center, 7 Blue Hold End, 9 Circle Flick, 10 Damage, 11 Orange Hold Center, 13-16 Flick Left/Right/Up/Down, 17 Damage Middle, 18 Damage End, 19/20 Green Hold Center/End, 21/22 Yellow, 23/24 Pink, 25/26/27 2/3/4-Finger Tap.
 
 ## Timing model
-
-BPM list with change positions in measures; the editor converts `pos*4` beats to time through the BPM table. Speed changes (`#SC/#SCI`) alter note scroll speed. Offset negated seconds.
+BPM list with change positions in measures; the editor converts `pos*4` beats to time through the BPM table. `#SC/#SCI` speed changes alter note scroll speed. Offset is the negated seconds.
 
 ## Notes
-
-Continuous x position + width, holds as start/center/end chains linked by `parentId`, flicks, damage notes, multi-finger taps. This does not fit a fixed-column model.
+Continuous x position + width; holds are start/center/end chains linked by `parentId`; flicks, damage notes, multi-finger taps. Does not fit a fixed-column model.
 
 ## Audio & images
-
-`.ogg` only; illustration separate (editor manifest `manifest.json` in zip bundles, not part of the chart).
+`.ogg` only; illustration is separate (editor `manifest.json` in zip bundles, not part of the chart).
 
 ## Versions & variants
-
 DRMaker official format with 25 note types ("new 25-27 note types" per DR3Editor); DR3FP/viewer exports.
 
 ## Quirks & pitfalls
@@ -51,7 +45,7 @@ Validator requires 7 or 8 bracket groups; header keys have a space before `[` fo
 
 ## Example
 
-Illustrative from the grammar above:
+From the grammar above:
 
 ```
 #OFFSET=0;
@@ -65,16 +59,16 @@ Illustrative from the grammar above:
 
 ## ROX support
 
-Not read by ROX; lossy conversion (free x/width).
+Not read by ROX (free x/width would be lost).
 
 ## Parsers & tools
 
 DR3Editor (TypeScript), DanceRail3Viewer (C#), Dancerail_Import (Python).
 
 ## Getting samples
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md) (`bluemelody.1/3/6/8.txt` from DanceRail3Viewer, no licence). The repo's `BACKUP/bluemelody.6.txt` is byte-identical to `SONGS/bluemelody.6.txt`.
 
-- **Committed**: 4 real charts (`bluemelody.1/3/6/8.txt` from DanceRail3Viewer, no licence) plus 1 synthetic in [`samples/`](samples/). Origin, date, sha256 and terms are in [`samples/SOURCES.md`](samples/SOURCES.md). The same repo's `BACKUP/bluemelody.6.txt` is byte-identical to `SONGS/bluemelody.6.txt`.
-- **More samples**: install DanceRail3 (Android) and use the DRMaker editor (`DRmaker(3.13).exe` is in the DanceRail3Viewer repo under `Assets/Resources/`); DR3Editor (https://github.com/swordalt/DR3Editor) reads/writes the same text grammar.
+More: install DanceRail3 (Android) and use the DRMaker editor (`DRmaker(3.13).exe` is in the DanceRail3Viewer repo under `Assets/Resources/`); DR3Editor (https://github.com/swordalt/DR3Editor) reads/writes the same text grammar.
 
 ## Sources
 

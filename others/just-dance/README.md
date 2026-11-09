@@ -1,8 +1,8 @@
 # Just Dance (Ubisoft)
 
-Ubisoft's motion dance series (Wii 2009 onward; UbiArt Framework engine from Just Dance 2014/2015 on; Switch, PS4/5, Xbox, Wii U, PC, mobile "Just Dance Now"). The player copies a coach's choreography; the console scores controller or camera motion against reference "moves" while pictograms scroll in a timeline, and karaoke lyrics in sing-along modes. Maps are authored as UbiArt "tapes" (timelines of clips) plus music track data and motion classifiers.
+Ubisoft's motion dance series (Wii 2009 onward; UbiArt Framework from Just Dance 2014/2015 on; Switch, PS4/5, Xbox, Wii U, PC, mobile "Just Dance Now"). The player copies a coach's choreography and the console scores controller or camera motion against reference "moves". Maps are UbiArt "tapes" (clip timelines) plus music track data and motion classifiers.
 
-Category: **others**: a motion-scored dance game; the chart is a clip timeline of full-body moves and pictograms, not notes on lanes.
+Category: others. The chart is a clip timeline of full-body moves and pictograms, not notes on lanes.
 
 ## Formats
 | Folder | File | Status |

@@ -5,19 +5,19 @@ Doc status: stub · ROX: no · Category: others · Encoding: binary (Standard MI
 
 ## Overview
 
-In *Donkey Konga 2* (and 1/3 by analogy; "Convert Donkey Konga 2 & 3 charts to TJA" confirms 2 and 3) the song charts ("scores") are plain **Standard MIDI files** stored in the game's `files/Score` directory, one per song/difficulty, referenced by the `FILENAME=` field of `/root/Resource/SongInfo.res` (e.g. `FILENAME=01predictable`, with variants `…_1e.mid` for single-player Easy as seen in a REAPER project name `01predictable_1e.mid`). Audio is a separate GameCube **DSP** stream (`files/stream/score/NN.dsp`, 01–35; 35 = tutorial). Information comes from modding guides; no deeper binary documentation was opened.
+Donkey Konga 2 song charts ("scores") are plain Standard MIDI files in the game's `files/Score` directory, one per song/difficulty, referenced by the `FILENAME=` field of `/root/Resource/SongInfo.res` (e.g. `FILENAME=01predictable`; a REAPER project name `01predictable_1e.mid` shows the `_1e` single-player Easy suffix). Konga 3 works the same way ("Convert Donkey Konga 2 & 3 charts to TJA"). Audio is a separate GameCube DSP stream (`files/stream/score/NN.dsp`, 01-35; 35 = tutorial). Source: modding guides only.
 
 ## Container & encoding
 
-SMF (`MThd`/`MTrk`); the guide says **all notes must be on MIDI channel 10** when exporting; the file is loaded from `Score/`. Charts are reloaded when a song is entered from song select; changing `SongInfo.res` needs a full emulator restart.
+SMF (`MThd`/`MTrk`), loaded from `Score/`. All notes must be on MIDI channel 10 when exporting. Charts reload when a song is entered from song select; changing `SongInfo.res` needs a full emulator restart.
 
 ## Structure / metadata
 
-Song list (`SongInfo.res`, text, Shift-JIS): `#<id>` blocks with `SONGNAME`, `FILENAME` (score file prefix), `OFFSET` (delay before the song starts, used for timing the beats), `LENGTH` (180 s), `PRICE`, difficulty icons `1E 1H 1X` (single easy/normal/hard), `2E 2H 2X` (co-op), `4` (concert quartet), `B` (battle), `C` (concert share), `RUBY`, `COMMENT`, `GENRE`.
+Song list (`SongInfo.res`, text, Shift-JIS): `#<id>` blocks with `SONGNAME`, `FILENAME` (score file prefix), `OFFSET` (delay before the song starts, used for beat timing), `LENGTH` (180 s), `PRICE`, difficulty icons `1E 1H 1X` (single easy/normal/hard), `2E 2H 2X` (co-op), `4` (concert quartet), `B` (battle), `C` (concert share), `RUBY`, `COMMENT`, `GENRE`.
 
 ## Timing model
 
-MIDI ticks/tempo map. The guide notes that **beats placed before the 2 second mark do not appear** (a 2 s lead-in must be left) and the song audio starts immediately (the editor adds 1–2 s of silence).
+MIDI ticks/tempo map. Beats before the 2 second mark do not appear, so leave a 2 s lead-in; the song audio starts immediately (the editor adds 1-2 s of silence).
 
 ## Notes
 
@@ -27,23 +27,23 @@ MIDI ticks/tempo map. The guide notes that **beats placed before the 2 second ma
 | Right bongo | E4 (note 64) |
 | Clap | D#2 (note 39) |
 
-Other note numbers for both-bongo, rolls, etc. are not documented in the sources opened.
+Notes for both-bongo, rolls etc.: Unknown.
 
 ## Audio & images
 
-`files/stream/score/NN.dsp`: GameCube DSP ADPCM, **stereo with a "Cstr" header** (created with Audacity-gcdspadpcm + `dkdsp`), sample rate 32 000 Hz in official tracks.
+`files/stream/score/NN.dsp`: GameCube DSP ADPCM, stereo with a "Cstr" header (made with Audacity-gcdspadpcm + `dkdsp`), 32 000 Hz in official tracks.
 
 ## Versions & variants
 
-Only Donkey Konga 2 is documented in the guides opened (the KongaMidToTja tool title says "Donkey Konga 2 & 3 charts"); per-difficulty file suffixes (`_1e`, …) are inferred from a REAPER project item name in the guide.
+Only Donkey Konga 2 is documented in the guides (KongaMidToTja says "2 & 3"). The `_1e` suffixes come from a REAPER item name.
 
 ## Quirks & pitfalls
 
-Notes before 2 s are dropped; channel must be 10; offset in `SongInfo.res` shifts timing.
+Notes before 2 s are dropped; the channel must be 10; `OFFSET` in `SongInfo.res` shifts timing.
 
 ## Example
 
-Example `SongInfo.res` entry from the guide:
+`SongInfo.res` entry from the guide:
 
 ```
 #1
@@ -59,16 +59,15 @@ PRICE=1500
 
 ## ROX support
 
-Not read by ROX.
+Not read.
 
 ## Parsers & tools
 
-[kongamidtotja](https://codeberg.org/hapaxant/kongamidtotja) (Donkey Konga 2/3 → TJA, C#), REAPER project templates, Dolphin (extraction), Konga Beat (custom track editor, ResetEra thread).
+[kongamidtotja](https://codeberg.org/hapaxant/kongamidtotja) (Donkey Konga 2/3 to TJA, C#), REAPER project templates, Dolphin (extraction), Konga Beat (custom track editor, ResetEra thread).
 
 ## Getting samples
 
-- **Committed**: 9 real files of the custom Donkey Konga 2 track "Turbo Killer" (GameBanana mod 633998; audio not kept): 3 charted score MIDI files, 6 empty-slot MIDI files (133 bytes, no notes) and the `SongInfo` text entry, plus 1 synthetic in [`samples/`](samples/). Origin, date, sha256 and terms are in [`samples/SOURCES.md`](samples/SOURCES.md).
-- **More samples**: Konga Beat/Launcher (https://kongabeat.com) say custom tracks are shared on GameBanana; the Donkey Konga 2 game page there (https://gamebanana.com/games/23415) listed only this track mod. Official charts are `files/Score/*.mid` in a dumped game image (modding guide https://gist.github.com/ImJustSpirit/67626bbc3844703c2cc202e54cffdcc9).
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). Konga Beat/Launcher (https://kongabeat.com) say custom tracks are shared on GameBanana; its Donkey Konga 2 game page (https://gamebanana.com/games/23415) listed only one track mod. Official charts are `files/Score/*.mid` in a dumped game image (guide: https://gist.github.com/ImJustSpirit/67626bbc3844703c2cc202e54cffdcc9).
 
 ## Sources
 

@@ -1,8 +1,8 @@
 # Beat Saber
 
-VR rhythm game by Beat Games (Meta), released 2018. The player holds two sabers and slices colored blocks flying toward them along a 4 x 3 grid, avoids bombs and walls, and follows arcs and chains. Custom maps are distributed mainly through BeatSaver (`.zip` packages) and edited with the Official Editor, ChroMapper, MediocreMapAssistant and others.
+VR rhythm game by Beat Games (Meta), released 2018. The player holds two sabers and slices colored blocks flying along a 4 x 3 grid, avoids bombs and walls, and follows arcs and chains. Custom maps are distributed mainly through BeatSaver (`.zip` packages) and edited with the Official Editor, ChroMapper, MediocreMapAssistant and others.
 
-Category: **others**. Notes are free 3D objects placed on a 4-column x 3-row grid in front of the player (plus rotation lanes in 360/90 degree modes), cut with a direction, not hit on a fixed column lane; obstacles are volumes, and a large part of the file is lighting. It does not fit the vsrg column model.
+Category: others. Notes are free 3D objects on a 4-column x 3-row grid in front of the player (plus rotation lanes in 360/90 degree modes), cut with a direction. Obstacles are volumes, and much of the file is lighting. It does not fit the vsrg column model.
 
 ## Formats
 

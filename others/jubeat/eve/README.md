@@ -5,19 +5,19 @@ Doc status: complete · ROX: no · Category: others · Encoding: text (ASCII, `t
 
 ## Overview
 
-`.eve` is the plain-text event list the jubeat arcade game uses for charts (one file per difficulty, named after the difficulty, e.g. `bsc.eve`, `adv.eve`, `ext.eve`). It has no header: it is a flat sequence of timed commands. The format is read/written by **jubeatools** (Stepland) — whose `konami/commons.py` and `eve/load.py` are the main source here — and by `Jubeat-MemonEveConverter` (C), enabling F.E.I.S/memon charts to be used on arcade-compatible jubeat setups. The compiled binary equivalent is [jbsq](../jbsq/README.md).
+Plain-text event list of the jubeat arcade game, one file per difficulty named after it (`bsc.eve`, `adv.eve`, `ext.eve`). No header: a flat sequence of timed commands. Read/written by jubeatools (Stepland; `konami/commons.py` and `eve/load.py` are the main source here) and by `Jubeat-MemonEveConverter` (C), which lets F.E.I.S/memon charts run on arcade-compatible jubeat setups. The compiled binary form is [jbsq](../jbsq/README.md).
 
 ## Container & encoding
 
-ASCII text (jubeatools reads `ascii`), split on `\n`, blank lines ignored. Each line has **exactly three comma-separated fields**: `time, command, value`; whitespace around fields is trimmed (jubeatools writes them right-aligned: `{time:>8},{command:<8},{value:>8}`). Folder loader globs `*.eve`; the difficulty is guessed from the file stem (`BSC`/`ADV`/`EXT`), default EXTREME.
+ASCII text (jubeatools reads `ascii`), split on `\n`, blank lines ignored. Each line has exactly three comma-separated fields: `time, command, value`. Whitespace around fields is trimmed (jubeatools writes them right-aligned: `{time:>8},{command:<8},{value:>8}`). The folder loader globs `*.eve` and guesses the difficulty from the file stem (`BSC`/`ADV`/`EXT`), default EXTREME.
 
 ## Structure / metadata
 
 | Field | Meaning |
 |---|---|
-| `time` | integer tick; **300 ticks per second** |
+| `time` | integer tick; 300 ticks per second |
 | `command` | one of `END`, `MEASURE`, `HAKU`, `PLAY`, `LONG`, `TEMPO` |
-| `value` | integer; meaning depends on command |
+| `value` | integer; meaning depends on the command |
 
 | Command | Value | Meaning |
 |---|---|---|
@@ -35,39 +35,37 @@ ASCII text (jubeatools reads `ascii`), split on `\n`, blank lines ignored. Each 
 - `direction` (2 bits) = tail direction: `0` down, `1` up, `2` right, `3` left,
 - `length` (2 bits) = tail length in panels, 1–3,
 - `duration` = hold length in ticks (300 Hz), ≥ 0.
-The tail tip must stay on the grid; only straight (horizontal/vertical) tails exist in `.eve` (diagonal tails cannot be represented).
+The tail tip must stay on the grid. Tails are straight (horizontal/vertical); diagonal tails cannot be represented.
 
 ## Timing model
 
-Absolute time: `seconds = ticks / 300`. Tempo events are for display/beat markers and converters (the notes are placed in absolute time, not beats). To get beats, integrate `TEMPO` segments. The audio offset is not in the file (the first event time already includes it).
+`seconds = ticks / 300`. Notes sit in absolute time, not beats; tempo events serve display/beat markers and converters. Integrate `TEMPO` segments to get beats. The audio offset is not in the file (the first event time includes it).
 
 ## Notes
 
-Only two note kinds: `PLAY` (tap) and `LONG` (hold with a directional tail). No holds with release timing windows in the file. Simultaneous notes = identical `time`. `MEASURE`/`HAKU` are guide lines, not notes. The markers' animation timing (when a marker appears before its hit time) is a game constant.
+`PLAY` (tap) and `LONG` (hold with directional tail). Simultaneous notes share `time`. `MEASURE`/`HAKU` are guide lines. Marker animation lead time is a game constant.
 
 ## Audio & images
 
-Not referenced.
+Unknown.
 
 ## Versions & variants
 
-Arcade jubeat `.eve` (this page); the same events in binary form in `.jbsq`. jubeat plus/jukebeat store them as `seq_bas/seq_adv/seq_ext` files inside `.jbt` zip packages (encrypted, see the Reflec Beat/iOS page).
+Arcade `.eve`; binary form in `.jbsq`; jubeat plus/jukebeat keep `seq_bas/seq_adv/seq_ext` in encrypted `.jbt` zips (see the Reflec Beat/iOS page).
 
 ## Quirks & pitfalls
 
 - `TEMPO` value is the inverse of BPM: a zero value is invalid; jubeatools truncates the BPM to enough digits to recover the original value.
-- Parsers must accept any order but lines are normally time-sorted; ties sorted by (time, command, value).
+- Lines are normally time-sorted (ties by time, command, value); parsers must accept any order.
 - `HAKU` lines can be irregular; jubeatools detects a regular 4/4 pattern and then drops them.
-- The numeric command ids of the binary [`.jbsq`](../jbsq/README.md) (PLAY=1, END=2, MEASURE=3, HAKU=4, TEMPO=5, LONG=6) are **not** the same as the order in which jubeatools' `Command` enum lists the `.eve` commands (END=1, MEASURE=2, HAKU=3, PLAY=4, LONG=5, TEMPO=6); the text form uses names, so only matters when sorting events.
+- The numeric command ids of the binary [`.jbsq`](../jbsq/README.md) (PLAY=1, END=2, MEASURE=3, HAKU=4, TEMPO=5, LONG=6) differ from the order of jubeatools' `Command` enum for `.eve` (END=1, MEASURE=2, HAKU=3, PLAY=4, LONG=5, TEMPO=6). The text form uses names, so this matters only when sorting events.
 - Tail overflow outside the 4×4 grid is invalid.
 
 ## Example
 
-[observed in samples/jubeatools_Life_Without_You.eve, jubeatools_351450202_ext.eve] Real files use CRLF line endings (the loader splits on `\n` and strips each line), are written with the right-aligned fields (`{time:>8},{command:<8},{value:>8}`), start with `MEASURE`, `HAKU`, `TEMPO` at tick 0 (in that order) and list simultaneous taps as consecutive `PLAY` lines with the same time (e.g. `480,PLAY,0` / `480,PLAY,3` / `480,PLAY,8`).
+[observed in samples/jubeatools_Life_Without_You.eve, jubeatools_351450202_ext.eve] Real files use CRLF line endings (the loader splits on `\n` and strips each line), have right-aligned fields (`{time:>8},{command:<8},{value:>8}`), start with `MEASURE`, `HAKU`, `TEMPO` at tick 0 (in that order) and list simultaneous taps as consecutive `PLAY` lines with the same time (e.g. `480,PLAY,0` / `480,PLAY,3` / `480,PLAY,8`).
 
-A runnable hand-written file is [`samples/synthetic-example.eve`](samples/synthetic-example.eve).
-
-Illustrative, hand-built from the rules above (not from a real chart): 
+Hand-written file: [`samples/synthetic-example.eve`](samples/synthetic-example.eve). Illustrative excerpt built from the rules above:
 
 ```
        0,TEMPO   ,  500000
@@ -92,7 +90,7 @@ Not read by ROX 0.8.1.
 
 ## Getting samples
 
-**Committed** ([`samples/`](samples/SOURCES.md)): 3 real `.eve` files from the jubeatools test data (GitLab Buggyroom/jubeatools, mirrored on GitHub; no LICENSE file; includes CRLF-ending files) and one synthetic file. More: convert any memon/memo chart with jubeatools (<https://gitlab.com/Buggyroom/jubeatools>, GitHub copy moved) or Jubeat-MemonEveConverter (<https://github.com/fishguy6564/Jubeat-MemonEveConverter>); arcade originals (`bsc`/`adv`/`ext.eve`) are game data. No further public `.eve` collection was found.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md). More: convert memon/memo charts with jubeatools (<https://gitlab.com/Buggyroom/jubeatools>, GitHub copy moved) or Jubeat-MemonEveConverter (<https://github.com/fishguy6564/Jubeat-MemonEveConverter>). Arcade originals (`bsc`/`adv`/`ext.eve`) are game data. No other public `.eve` collection found.
 
 ## Sources
 

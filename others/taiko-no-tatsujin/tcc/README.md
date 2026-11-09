@@ -5,13 +5,11 @@ Doc status: partial (Rev.1 documented; Rev.2.x additions not opened) · ROX: no 
 
 ## Overview
 
-**Open Taiko Chart** is a JSON-based chart format created by **AioiLight** (2019-08-17, rev. 1) to replace `.tja`/`.tjf`, whose weaknesses are complicated multi-difficulty/2-player text, hard parsing and the Shift-JIS encoding. A "work" is a set of files: one **`.tci` (Open Taiko Chart Information)** — metadata and the list of courses — plus one or more **`.tcc` (Open Taiko Chart Course)** files that hold the actual measures, plus audio/video in the same folder. Revisions: Rev.1, Rev.2 (Dan-i/rank certification support) with 2.1–2.4, Rev.3 (branching, still being specified at the time of writing). A **`.tcm` (Open Taiko Chart Medley)** JSON groups several charts (format rev. 2, 2019-11-15). Supported by Koioto (plugin "OpenTaikoChart"), TJAPlayer3-f ≥ 1.6.0.1 and OpenTaiko (0auBSQ) 0.6.1 (which adds `.optktci`/`.optktcm`). Details from the Rev.1 Japanese specification.
-
-Category: **others** — same as [TJA](../tja/README.md).
+Open Taiko Chart is a JSON chart format by AioiLight (2019-08-17, rev. 1) replacing `.tja`/`.tjf` (complicated multi-difficulty/2P text, hard parsing, Shift-JIS). A work is one `.tci` (Information: metadata, course list), one or more `.tcc` (Course: the measures) and audio/video in the same folder. Revisions: Rev.1, Rev.2 (Dan-i) with 2.1-2.4, Rev.3 (branching, still being specified). A `.tcm` (Medley) JSON groups several charts (rev. 2, 2019-11-15). Supported by Koioto (plugin "OpenTaikoChart"), TJAPlayer3-f >= 1.6.0.1 and OpenTaiko (0auBSQ) 0.6.1 (adds `.optktci`/`.optktcm`). Details come from the Rev.1 Japanese specification. Category: others, as [TJA](../tja/README.md).
 
 ## Container & encoding
 
-JSON, **UTF-8 without BOM** (mandatory because of JSON), any newline convention. One `.tci` per work (never two); `.tcc` files are referenced from the `.tci`; audio/video must be in the same folder as the `.tci`.
+UTF-8 JSON without BOM, any newline convention. One `.tci` per work referencing the `.tcc` files; audio/video sit in the `.tci` folder.
 
 ## Structure / metadata
 
@@ -25,7 +23,7 @@ JSON, **UTF-8 without BOM** (mandatory because of JSON), any newline convention.
 | `background` | string | background image or video |
 | `bpm` | number | base BPM |
 | `offset` | number | time (seconds) at which the first measure starts |
-| `courses` | array of objects | one per difficulty: `difficulty` (`"oni"`, `"edit"`, …), `level` (number), `single` (path of the single-player `.tcc`), `multiple` (array of per-player `.tcc` paths, e.g. `["Edit_1P.tcc","Edit_2P.tcc"]`) |
+| `courses` | array of objects | one per difficulty: `difficulty` (`"oni"`, `"edit"`, ...), `level` (number), `single` (path of the single-player `.tcc`), `multiple` (array of per-player `.tcc` paths, e.g. `["Edit_1P.tcc","Edit_2P.tcc"]`) |
 
 ### `.tcc` (Course)
 
@@ -36,17 +34,17 @@ JSON, **UTF-8 without BOM** (mandatory because of JSON), any newline convention.
 | `balloon` | int array | balloon hit counts, in order |
 | `measures` | array of arrays of strings | one inner array per measure |
 
-The Rev.1 sample uses the key `"measure"` while the field table and the C# class say `measures` — implementations should be tolerant [inconsistency in the source].
+The Rev.1 sample uses the key `"measure"` while the field table and the C# class say `measures`; implementations should accept both [inconsistency in the source].
 
-Measure strings: either note strings (`0` blank, `1` don, `2` ka, `3` DON, `4` KA, `5` roll, `6` ROLL, `7` balloon, `8` roll end) or commands. A mid-measure command splits the measure into several strings; each command is a string on its own: `#bpm n`, `#scroll n`, `#tsign n1/n2`, `#gogobegin`, `#gogoend`, `#delay s`. Rules: only `0` may occur inside a roll (e.g. `50001008`), never repeat the head symbol up to the end (`666668`).
+Measure strings are note strings (`0` blank, `1` don, `2` ka, `3` DON, `4` KA, `5` roll, `6` ROLL, `7` balloon, `8` roll end) or commands. A mid-measure command splits the measure into several strings; each command is a string on its own: `#bpm n`, `#scroll n`, `#tsign n1/n2`, `#gogobegin`, `#gogoend`, `#delay s`. Only `0` may occur inside a roll (e.g. `50001008`); the head symbol is not repeated up to the end (`666668`).
 
 ## Timing model
 
-Same as TJA: each note string is divided evenly into its symbols over the measure (4/4 unless `#tsign`), `bpm` / `#bpm` give the tempo, `offset` the start time of measure 1 (seconds), `#delay` shifts later notation.
+As in TJA: each note string is divided evenly into its symbols over the measure (4/4 unless `#tsign`). `bpm` / `#bpm` give the tempo, `offset` the start time of measure 1 (seconds), `#delay` shifts later notation.
 
 ## Notes
 
-`1`–`8` as in TJA (no `9`, `A`–`I`, no branches in Rev.1).
+`1`-`8` as in TJA (no `9`, `A`-`I`, no branches in Rev.1).
 
 ## Audio & images
 
@@ -54,13 +52,13 @@ Same as TJA: each note string is divided evenly into its symbols over the measur
 
 ## Versions & variants
 
-Rev.1 (2019-08-17), Rev.2 (Dan-i), Rev.2.1–2.4, Rev.3 (branches; under specification). OpenTaiko adds `.optktci`/`.optktcm` with custom fields.
+Rev.1 (2019-08-17), Rev.2 (Dan-i), 2.1-2.4, Rev.3 (branches; under specification). OpenTaiko adds `.optktci`/`.optktcm` with custom fields.
 
 ## Quirks & pitfalls
 
-- Key `measure`/`measures` ambiguity (above). The `"name"` key appears in a table example for `title` (sample JSON uses `title`).
+- `measure`/`measures` ambiguity (above); a table example names the title key `"name"`, the sample JSON uses `title`.
 - Commands must be alone in their own array element.
-- Rolls must be terminated by `8`.
+- Rolls must end with `8`.
 
 ## Example
 
@@ -92,7 +90,7 @@ Not read by ROX 0.8.1.
 
 ## Getting samples
 
-Committed in [`samples/`](samples/): the five JSON examples of the specification (Rev.1 and Rev.2.4 `.tci`/`.tcc`, a `.tcm` medley) from AioiLight/Open-Taiko-Chart (MIT). No real-world `.tcc` was found: Koioto and TJAPlayer3-f could not be cloned anonymously and Open-Taiko-Chart holds only spec pages. See [`samples/SOURCES.md`](samples/SOURCES.md) for every file's source URL, fetch date, sha256 and terms. To get more: export from Koioto (plugin "OpenTaikoChart") or TJAPlayer3-f; OpenTaiko writes `.optktci`/`.optktcm`.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md) (the JSON examples of the AioiLight/Open-Taiko-Chart spec). No real-world `.tcc` was found: Koioto and TJAPlayer3-f could not be cloned anonymously and Open-Taiko-Chart holds only spec pages. For more, export from Koioto (plugin "OpenTaikoChart") or TJAPlayer3-f; OpenTaiko writes `.optktci`/`.optktcm`.
 
 ## Sources
 

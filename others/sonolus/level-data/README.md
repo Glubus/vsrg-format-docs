@@ -5,11 +5,11 @@ Doc status: complete · ROX: no · Category: others · Encoding: json
 
 ## Overview
 
-Level Data is the JSON resource a Sonolus engine uses to populate entities for a level. It is the interchange target of USC, SUS and many converters (rg_converters, sonolus-level-converters, `dcToLevelData` of the Deemo engine, `uscToLevelData` of the PJSekai engine). Specification: Sonolus Wiki "Level Data" and "Level Data Entity" pages and the `@sonolus/core` type definitions (7.16.0).
+Level Data is the JSON resource a Sonolus engine uses to populate entities for a level, and the interchange target of USC, SUS and many converters (rg_converters, sonolus-level-converters, `dcToLevelData` of the Deemo engine, `uscToLevelData` of the PJSekai engine). Spec: Sonolus Wiki "Level Data" and "Level Data Entity" pages and the `@sonolus/core` type definitions (7.16.0).
 
 ## Container & encoding
 
-JSON that **must be GZip-compressed** (`.json` is the only supported format; the file served as the level's `data` resource is gzip JSON).
+GZip-compressed JSON (`.json` is the only supported format; the level's `data` resource is gzip JSON).
 
 ## Structure / metadata
 
@@ -35,18 +35,18 @@ Level item (server side `LevelItem`, not part of the file): `name`, `version: 1`
 
 ## Timing model
 
-Time is expressed by the engine's own data: BPM via `#BPM_CHANGE` entities (`#BEAT` + `#BPM`), scroll speed via `#TIMESCALE_CHANGE` (`#BEAT` + `#TIMESCALE`), then any entity's `#BEAT` is converted to seconds by Sonolus using the BPM changes. Engines may instead store raw seconds in a custom data field (the Sonolus.js guide first uses a `time` field then refactors to `#BEAT`).
+Time comes from engine data: BPM via `#BPM_CHANGE` entities (`#BEAT` + `#BPM`), scroll speed via `#TIMESCALE_CHANGE` (`#BEAT` + `#TIMESCALE`); Sonolus converts any entity's `#BEAT` to seconds from the BPM changes. Engines may store raw seconds in a custom field instead (the Sonolus.js guide first uses `time`, then refactors to `#BEAT`).
 
 ## Notes
 
-Notes are engine archetypes; names and data are defined by each engine. Examples from real converters:
+Notes are engine archetypes with engine-defined names and data. Real converters:
 
 - Deemo engine (`dcToLevelData`): `Initialization`, `Stage`, `#BPM_CHANGE` (`#BEAT`, `#BPM`), `TapNote`/`SlideNote` with `#BEAT`, `lane`, `size`.
 - PJSekai engine (`uscToLevelData`): `NormalTapNote`, `CriticalFlickNote`, slide joints, `SimLine` (data `a`, `b` as `ref`) with `#BEAT`, `lane`, `size`, `direction`, `ease`.
 
 ## Audio & images
 
-BGM, cover and preview are separate Sonolus resources of the level item (not in LevelData).
+BGM, cover and preview are separate resources of the level item.
 
 ## Versions & variants
 
@@ -55,9 +55,9 @@ Older engines/level data used index-based archetype and entity layouts; `@sonolu
 ## Quirks & pitfalls
 
 - Must be gzip-compressed JSON.
-- `ref` targets are entity names: names must be unique and defined.
-- Unknown archetypes are silently ignored (not an error).
-- The same container holds very different games; a decoder must know the engine to interpret archetype/data names.
+- `ref` targets are entity names: unique and defined.
+- Unknown archetypes are silently ignored.
+- A decoder needs the engine to interpret archetype/data names.
 
 ## Example
 
@@ -85,11 +85,7 @@ Not read by ROX.
 
 ## Getting samples
 
-Committed in [`samples/`](samples/): seven real gzip LevelData files downloaded from the UntitledCharts Sonolus server (`https://untitledcharts.com/sonolus/levels/<name>` gives the item, whose `data.url` is the gzip JSON; all seven are NextRUSH+ engine levels, 1.3k-2.8k entities) plus a hand-written synthetic gzip/JSON pair (Deemo-style). See [`samples/SOURCES.md`](samples/SOURCES.md) for every file's source URL, fetch date, sha256 and terms. Only the `data` resource was downloaded, not cover or BGM.
-
-Observed [observed in samples/untitledcharts_*.json.gz]: real NextRUSH+ data uses archetypes such as `#BPM_CHANGE`, `#TIMESCALE_GROUP`, `#TIMESCALE_CHANGE`, `NormalTapNote`, `CriticalFlickNote`, `AnchorNote`, `Connector`, `SimLine`, `Initialization`.
-
-More: any Sonolus server (UntitledCharts, others) serves levels the same way; `sonolus-level-converters` / `rg_converters` convert USC/SUS to LevelData.
+Committed: see [`samples/SOURCES.md`](samples/SOURCES.md) (UntitledCharts Sonolus server: `https://untitledcharts.com/sonolus/levels/<name>` gives the item, whose `data.url` is the gzip JSON; only `data` was downloaded). Real NextRUSH+ data uses `#BPM_CHANGE`, `#TIMESCALE_GROUP`, `#TIMESCALE_CHANGE`, `NormalTapNote`, `CriticalFlickNote`, `AnchorNote`, `Connector`, `SimLine`, `Initialization` [observed: untitledcharts_*.json.gz]. Any Sonolus server serves levels the same way; `sonolus-level-converters` / `rg_converters` convert USC/SUS to LevelData.
 
 ## Sources
 

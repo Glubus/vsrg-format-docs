@@ -4,20 +4,18 @@ Kind: chart
 Doc status: partial · ROX: no · Category: others · Encoding: text
 
 ## Overview
-
-PEC (PhiEdit Chart) is the plain-text chart format of the older Phigros chart editor **PhiEdit** (by the same community as RPE). It does not store metadata (title, composer...). The Phira docs state the format is no longer updated; PhiEdit allows at most 30 judgement lines and no X/Y split. Still read by Phira and several players.
+PEC (PhiEdit Chart) is the plain-text chart format of PhiEdit, the older Phigros editor (same community as RPE). It stores no metadata. The Phira docs say it is no longer updated; PhiEdit allows at most 30 judgement lines and no X/Y split. Phira and several players still read it.
 
 ## Packaged in
-
-- Shipped in: `.pez` (Phira / PhiZone zip: a chart file, music, illustration, `info.yml`).
+`.pez` (Phira / PhiZone zip: chart file, music, illustration, `info.yml`).
 
 ## Container & encoding
 
-Plain text, one record per line; the first line is the offset; note records are followed by modifier lines starting with `#` (speed) and `&` (width). Charset not stated in the page (UTF-8/ASCII in practice [inference]). Phira loads it with `format: pec` in `info.yml`.
+Plain text, one record per line; the first line is the offset; note records are followed by modifier lines starting with `#` (speed) and `&` (width). Charset not stated (UTF-8/ASCII in practice [inference]). Phira loads it with `format: pec` in `info.yml`.
 
 ## Structure / metadata
 
-Line 1: offset in **ms** (integer). The doc says the real offset is `value - 175` ms (a fixed, unexplained 175 ms shift).
+Line 1: offset in ms (integer). The real offset is `value - 175` ms (a fixed, unexplained shift, per the doc).
 
 Record types (fields separated by spaces; times are in beats, floats):
 
@@ -42,30 +40,28 @@ Easing numbers are the same table as RPE (`../rpe/`). Eased events start from th
 
 ## Timing model
 
-Beats are floats (e.g. `0.500`); `bp` lines give the tempo map (`bp 0.000 180.000`). Coordinates in the file: origin at the bottom-left, centre at (1024, 700), range X 0..2048, Y 0..1400, angles **clockwise positive** (the editor UI uses centre origin and counter-clockwise positive). Convert beat to seconds by integrating the BPM list and applying the offset shift above.
+Beats are floats (e.g. `0.500`); `bp` lines give the tempo map (`bp 0.000 180.000`). Coordinates in the file: origin at the bottom-left, centre at (1024, 700), range X 0..2048, Y 0..1400, angles clockwise positive (the editor UI uses centre origin and counter-clockwise positive). Convert beat to seconds by integrating the BPM list and applying the offset shift above.
 
 ## Notes
 
-Types by prefix: `n1` Tap, `n2` Hold, `n3` Flick, `n4` Drag (same numbering as RPE). Modifier lines (`#`, `&`) bind to the preceding note line. Fake notes via the last field. 30-line limit.
+`n1` Tap, `n2` Hold, `n3` Flick, `n4` Drag (same numbering as RPE). Modifier lines (`#`, `&`) bind to the preceding note line. The last field marks fake notes. 30-line limit.
 
 ## Audio & images
 
-Not stored in PEC; supply them through the container (`info.yml` / `info.txt` for Phira).
+Supplied by the container (`info.yml` / `info.txt` for Phira).
 
 ## Versions & variants
-
-Frozen; superseded by RPE JSON. No version marker in the file.
+Frozen, no version marker; superseded by RPE JSON.
 
 ## Quirks & pitfalls
-
-- The 175 ms constant is easy to forget.
-- Angles are clockwise, unlike the RPE/editor UI convention.
-- Speed (`cv`) events cannot be eased; alpha (`cf`) neither.
-- Field order for `n2` differs from the other note types (two beats).
+- The 175 ms offset shift.
+- Angles are clockwise, unlike RPE and the editor UI.
+- `cv` (speed) and `cf` (alpha) events cannot be eased.
+- `n2` has two beats, so its field order differs from other note types.
 
 ## Example
 
-From the Phira docs (note and BPM examples; the note lines are verbatim, the BPM line is the doc's own sample):
+From the Phira docs (note lines verbatim; the BPM line is the doc's own sample):
 
 ```text
 bp 0.000 180.000
@@ -86,9 +82,7 @@ Not read by ROX.
 Phira (Rust): <https://github.com/TeamFlos/phira>; prpr (`format: pec`): <https://github.com/Mivik/prpr>; Phichain converts PEC.
 
 ## Getting samples
-
-- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): 8 real fan charts from yuameshi/phigros-charts-repo (offset lines 150, -50, -80; `bp` changes; `n1` records with `#`/`&` lines) and one hand-written `synthetic-all-records.pec`.
-- More: that repository holds more `.pec` charts; PhiEdit is the editor that writes the format; Phira loads it with `format: pec` in `info.yml`.
+Committed: see [samples/SOURCES.md](samples/SOURCES.md) (fan charts from yuameshi/phigros-charts-repo, which holds more `.pec` files; PhiEdit writes the format).
 
 ## Sources
 

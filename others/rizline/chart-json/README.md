@@ -4,12 +4,12 @@ Kind: chart
 Doc status: complete · ROX: no · Category: others · Encoding: json
 
 ## Overview
-A Rizline chart is one JSON document per difficulty. The official game stores charts as Unity assets (`Chart_EZ_64.json` style names in the test data of rizlib) extracted from the app's asset bundles; the PC version lets players publish custom charts on the Steam Workshop (`Steam/steamapps/workshop/content/2272590/<workshop_item_id>/`) as a folder with `chart.json`, `metadata.json` and `song.ogg`. The field list below is from the Rhythm Game Wiki page "Rizline:Chart" and was cross-checked against rizlib's serde structs and a real chart (`test_data/chart/Chart_EZ_64.json`: 230 lines, 13 canvases).
+One JSON document per difficulty. The official game stores charts as Unity assets (`Chart_EZ_64.json` style names in rizlib's test data), extracted from the app's asset bundles. The PC version publishes custom charts on the Steam Workshop (`Steam/steamapps/workshop/content/2272590/<workshop_item_id>/`) as a folder with `chart.json`, `metadata.json` and `song.ogg`. The field list is from the Rhythm Game Wiki page "Rizline:Chart", cross-checked against rizlib's serde structs and a real chart (`test_data/chart/Chart_EZ_64.json`: 230 lines, 13 canvases).
 
 ## Container & encoding
 - UTF-8 JSON, one chart per file. Official files may be pretty-printed; the Workshop `metadata.json` is minified.
-- Workshop custom chart folder: `chart.json` (chart data), `metadata.json`, `song.ogg` (Ogg audio).
-- No compression or encryption known for the extracted JSON. Fields named in camelCase except `bPM` (sic).
+- Workshop folder: `chart.json`, `metadata.json`, `song.ogg` (Ogg audio).
+- No compression or encryption known. Fields are camelCase except `bPM` (sic).
 
 ## Structure / metadata
 Root object:
@@ -39,7 +39,7 @@ Line: `linePoints[]`, `notes[]`, `judgeRingColor[]` (color key points), `lineCol
 
 ## Timing model
 - All times (`time`, `start`, `end`, `otherInformations[0]`) are in **beats**. Seconds: integrate tempo from `bPM` and the `bpmShifts` step function: `sec_per_beat = 60 / (bPM * multiplier(t))`, multiplier piecewise constant (a shift is instant).
-- Notes' positions along the scroll axis are stored as `floorPosition` = meters from the judgement line at level start: sum over time of the canvas speed (m/s, negative speeds allowed, instant changes), computed from `speedKeyPoints` of the canvas the note lies on. BPM shifts do not change floor positions (they only slow or speed global time). The in-game scroll-speed setting multiplies floor positions at runtime. Floor positions can be recomputed from the speed key points; the game stores them to speed up loading.
+- A note's scroll position is `floorPosition` = meters from the judgement line at level start: the integral over time of the canvas speed (m/s, negative speeds allowed, instant changes) from the `speedKeyPoints` of its canvas. BPM shifts do not change floor positions. The in-game scroll-speed setting multiplies them at runtime. The game stores them to speed up loading; they can be recomputed from the speed key points.
 - Example from the wiki: with a constant canvas speed of 1.0 m/s and 120 BPM, a note at beat 2 has floor position 1.0 m.
 - `offset` is 0 everywhere; audio sync is handled by the audio file itself [inference].
 
@@ -47,7 +47,6 @@ Line: `linePoints[]`, `notes[]`, `judgeRingColor[]` (color key points), `lineCol
 - Tap (0): tap at `time`. Catch (1): drag/catch note, no tap needed but the finger must be on the line [inference from the name]. Hold (2): press from `time` to `otherInformations[0]`; the tail can be on a different canvas.
 - A note belongs to a line; its horizontal position is the line's x at that time (interpolated between `linePoints` with their `easeType`) plus the canvas x. A line may have zero notes (decorative or guiding).
 - Simultaneous notes are multiple notes with the same `time`, usually on different lines.
-- Judgement ring: per-line ring colors via `judgeRingColor`.
 
 ## Audio & images
 Audio is outside the JSON: `song.ogg` for Workshop charts; official audio is in separate asset files (the wiki has pages for audio files, asset lists and the `Catalog_catalog.json` asset catalog). No offset or preview fields in `chart.json`; the preview start is `previewTime` in custom `metadata.json`.
@@ -57,9 +56,8 @@ Audio is outside the JSON: `song.ogg` for Workshop charts; official audio is in 
 - Workshop custom charts use the same chart schema plus `metadata.json`.
 
 ## Quirks & pitfalls
-- Beat-based times but scroll geometry from precomputed `floorPosition`: converters should recompute or keep them.
-- `otherInformations` is a bare float array: `[end, canvasIndex, tailFloorPosition]`.
-- Canvas index values are floats in the hold tail.
+- Times are in beats but scroll geometry uses precomputed `floorPosition`: recompute or keep it.
+- `otherInformations` is a bare float array `[end, canvasIndex, tailFloorPosition]`; the canvas index is a float.
 - Colors alpha: `lineColor` alpha acts as blend weight; the drawn alpha comes from `linePoint` (wiki section "Interactions between linePoint colors and lineColor key points").
 - Key point `value` means different things: absolute x (canvas/camera), meters per second (speed), multiplier (BPM).
 
@@ -76,16 +74,14 @@ Header of a real chart, from rizlib `test_data/chart/Chart_EZ_64.json` (trimmed)
 A Hold note from the same file: `{"type":2,"time":132.0,"floorPosition":52.8,"otherInformations":[134.0,2.0,53.6]}`.
 
 ## ROX support
-Not read by ROX. Free-form lines, moving canvases and per-line positions: conversion to fixed columns would be lossy; BPM shifts and note times are straightforward.
+Not read by ROX. Conversion to fixed columns would be lossy (free-form lines, moving canvases); BPM shifts and note times convert directly.
 
 ## Parsers & tools
 - rizlib (Rust, serde structs for chart, catalog, asset lists, game config): https://gitlab.com/TadeLn/rizlib (crates.io `rizlib`)
 - Rhythm Game Wiki documentation: https://rgwiki.stary.pc.pl/wiki/Rizline:Chart
 
 ## Getting samples
-
-- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): `Chart_EZ_64.json` (real official chart from rizlib's `test_data/chart`) and one hand-written `synthetic-chart.json`.
-- More: Steam Workshop custom charts (folder `Steam/steamapps/workshop/content/2272590/<workshop_item_id>/` with `chart.json`, `metadata.json`, `song.ogg`; needs Steam); official charts are extracted from the game's asset bundles (rgwiki guide "Extracting asset files from an Android device"). No public chart collection was found on GitHub.
+Committed: see [samples/SOURCES.md](samples/SOURCES.md). More: Steam Workshop custom charts (folder `Steam/steamapps/workshop/content/2272590/<workshop_item_id>/` with `chart.json`, `metadata.json`, `song.ogg`; needs Steam). Official charts are extracted from the game's asset bundles (rgwiki guide "Extracting asset files from an Android device"). No public chart collection was found on GitHub.
 
 ## Sources
 - https://rgwiki.stary.pc.pl/wiki/Rizline:Chart

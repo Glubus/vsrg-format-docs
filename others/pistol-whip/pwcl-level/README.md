@@ -4,12 +4,14 @@ Kind: chart
 Doc status: partial · ROX: no · Category: others · Encoding: json (several files per level)
 
 ## Overview
-The PWCL (Pistol Whip Custom Levels) mod by Givo loads levels from `./Custom Levels/<LevelName>/` next to the game. A level is a folder of JSON files: `level.pw` (metadata and global settings), then one set per difficulty named `Easy`, `Normal` or `Hard`: `<Diff>.pw_beat` (the actual gameplay chart: enemies and obstacles on beats), `<Diff>.pw_koreo` (a Koreographer tempo map and beat/event tracks), `<Diff>.pw_sec` (colour sections), `<Diff>.pw_geo` (track geometry: mesh chunks, props, decoration cubes), plus the audio (`songLocation`, e.g. `Assets/song.ogg`, only the file name is used) and an optional `poster.png`. The mod's C# model classes (`AllTheClasses.cs`) and a loader (`CustomLevels.cs`) deserialise them with Newtonsoft.Json; levels are authored in a Unity-based editor ("Pweditor"). The class definitions are the authority for field names; the PWCL structure doc page is still empty.
+
+The PWCL (Pistol Whip Custom Levels) mod by Givo loads levels from `./Custom Levels/<LevelName>/`. A level is a folder of JSON files: `level.pw` (metadata, global settings) and per difficulty (`Easy`, `Normal` or `Hard`) `<Diff>.pw_beat` (the gameplay chart: enemies and obstacles on beats), `<Diff>.pw_koreo` (Koreographer tempo map and event tracks), `<Diff>.pw_sec` (colour sections) and `<Diff>.pw_geo` (track geometry: mesh chunks, props, decoration cubes), plus the audio (`songLocation`, e.g. `Assets/song.ogg`, only the file name is used) and an optional `poster.png`. The mod's C# classes (`AllTheClasses.cs`, `CustomLevels.cs`) deserialise them with Newtonsoft.Json; levels are authored in the Unity editor "Pweditor". The class definitions are the authority for field names; the PWCL structure doc page is empty.
 
 ## Container & encoding
-- JSON, UTF-8 (the files in the level repository are minified or indented). Levels are shared as `.zip` of the folder (sample: `10 Second Test Level.zip`: `Easy.pw_beat`, `Easy.pw_geo`, `Easy.pw_koreo`, `Easy.pw_sec`, `level.pw`, `poster.png`, `.ogg`).
-- The `maps` array in `level.pw` lists which difficulties exist (`["Easy"]`, `["Hard"]`). Vectors are serialised with all derived members (e.g. `Vector2Int` has `x`, `y`, `magnitude`, `sqrMagnitude`; `Quaternion` includes `eulerAngles`).
-- The official Pistol Mix tool uses `level.pw` (level info), `.pw_event` (events and BPM; values stored internally as audio samples, so the right sample rate for the `.ogg` must be set) and `.pw_art` (models) per mod.io's Geomancer guide; those files were not examined here.
+
+- UTF-8 JSON, minified or indented. Levels ship as a `.zip` of the folder (sample `10 Second Test Level.zip`: `Easy.pw_beat`, `Easy.pw_geo`, `Easy.pw_koreo`, `Easy.pw_sec`, `level.pw`, `poster.png`, `.ogg`).
+- `maps` in `level.pw` lists the difficulties (`["Easy"]`, `["Hard"]`). Vectors carry derived members (`Vector2Int`: `x`, `y`, `magnitude`, `sqrMagnitude`; `Quaternion`: `eulerAngles`).
+- The official Pistol Mix tool uses `level.pw`, `.pw_event` (events and BPM, stored as audio samples, so set the right `.ogg` sample rate) and `.pw_art` (models) per mod.io's Geomancer guide; not examined.
 
 ## Structure / metadata
 `level.pw` (`LevelInfo`):
@@ -45,31 +47,37 @@ The PWCL (Pistol Whip Custom Levels) mod by Givo loads levels from `./Custom Lev
 `.pw_geo` (`Geoset`): `version`, `chunksForSlices[] {id, chunks[]}`, `chunks[] {id (Vector3Int), tris[] (indices), verts[] (vec3)}`, `decCubes[]`, `staticProps[] {pos, rot, scale, name, path}`, `dynamicProps[] {pos, rot, scale, Start, End, name}`, `spropNames[]`, `dpropNames[]`.
 
 ## Timing model
-- Gameplay times are **seconds**: `CustomBeat.time` goes straight into the game's `BeatData(time)` and the `beatTimes` list; `songLength` is in seconds. Sample: a one-enemy level at 69 BPM with `time` 4.902521 on a 10 s song.
-- `.pw_koreo` defines the musical grid in audio **samples** (`samplesPerBeat = sampleRate * 60 / bpm`, e.g. 41739.13 at 48 kHz and 69 BPM); the `Beat` track holds one event per beat (start sample, end = start + 1). Koreography drives the rhythmic background (pulses, section changes); targets are placed by `time` seconds.
-- `.pw_sec` `start`/`end` use whole-second positions in the sample (0..10 for a 10 s song). `colors[]` start/end are floats scaled by 1,000,000 by the loader [unit inference: seconds].
+
+- Gameplay times are seconds: `CustomBeat.time` goes into the game's `BeatData(time)` and `beatTimes`; `songLength` is seconds. Sample: one enemy at `time` 4.902521 in a 10 s, 69 BPM song.
+- `.pw_koreo` holds the musical grid in audio samples (`samplesPerBeat = sampleRate * 60 / bpm`, e.g. 41739.13 at 48 kHz and 69 BPM); the `Beat` track has one event per beat (start sample, end = start + 1). It drives background pulses and section changes; targets use `time` seconds.
+- `.pw_sec` `start`/`end` are whole seconds in the sample (0..10). `colors[]` start/end are floats scaled by 1,000,000 by the loader [unit inference: seconds].
 - Enemy sequences add durations (seconds); `fireTime` is relative to the sequence.
 
 ## Notes
-- A "note" is a target (enemy) with `distance` and `placement`; shooting happens when the player aims at it on the beat; `bonusEnemy` targets do not count for rank. Obstacles (walls, limbo bars, side steps) have a lateral `placement` -3..3. Simultaneous enemies are several entries in `targets`.
-- There are no holds. Enemy movement and firing are scripted with action sequences; some actions (Strafe, Instant, Animation) are commented out in the mod and thus unsupported.
-- `moveMode` Stationary versus Moving changes whether the player travels.
+
+- A note is a target (enemy) with `distance` and `placement`; `bonusEnemy` targets do not count for rank. Obstacles (walls, limbo bars, side steps) have a lateral `placement` -3..3. Simultaneous enemies are several `targets` entries.
+- No holds. Enemy movement and firing are scripted with action sequences; the actions Strafe, Instant, Animation are commented out in the mod (unsupported).
+- `moveMode` Stationary or Moving sets whether the player travels.
 
 ## Audio & images
-`songLocation` ogg, `poster.png` (level poster), `previewTime`. The mod's loader requests the audio with `UnityWebRequest` from the level folder.
+
+`songLocation` ogg (loaded with `UnityWebRequest` from the level folder), `poster.png`, `previewTime`.
 
 ## Versions & variants
-- `version` 0.2 for `level.pw` and `.pw_beat`/`.pw_geo`.
-- Official Pistol Mix files (mod.io) use `level.pw` plus `.pw_event`/`.pw_art`; their structure is not documented in sources opened here, so compatibility with the PWCL files is unknown.
+
+`version` 0.2 for `level.pw`, `.pw_beat`, `.pw_geo`. Official Pistol Mix files (`level.pw`, `.pw_event`, `.pw_art`) are undocumented here; compatibility with PWCL files is unknown.
 
 ## Quirks & pitfalls
-- Derived Unity members are serialised (`magnitude`, `sqrMagnitude`, `eulerAngles`); parsers must ignore them.
-- Enemy type names are enum names chosen by `enemySet`; using a name from another set throws on load (`Enum.Parse`).
-- `bpm` fields appear in several files with different roles (tempo, samples per beat); `Tdata.sections[].bpm` was 2022.0 in the sample (a placeholder).
-- Audio sample rate must match `mSampleRate`.
+
+- Ignore the serialised Unity members (`magnitude`, `sqrMagnitude`, `eulerAngles`).
+- Enemy `type` names come from `enemySet`; a name from another set throws on load (`Enum.Parse`).
+- `bpm` appears in several files with different roles; `Tdata.sections[].bpm` was 2022.0 in the sample (placeholder).
+- The audio sample rate must match `mSampleRate`.
 
 ## Example
-Real file, `Easy.pw_beat` from the PWCL repository sample "10 Second Test Level" (one enemy at 4.902521 s):
+
+Real `Easy.pw_beat` of the PWCL sample "10 Second Test Level" (one enemy at 4.902521 s; line breaks added; origin `levels/10 Second Test Level/10 Second Test Level.zip` in https://gitlab.com/pwcl/custom-levels):
+
 ```json
 {"version":0.2,"beatData":[{"time":4.902521,"targets":[{"type":"Enemy_Normal","distance":"Near",
  "placement":{"x":0,"y":0,"magnitude":0.0,"sqrMagnitude":0},
@@ -77,10 +85,10 @@ Real file, `Easy.pw_beat` from the PWCL repository sample "10 Second Test Level"
  "enemySequence":[],"bonusEnemy":false,"shielded":false,"noGround":false,"noCarve":false,"playerActionLerp":0.0}],
  "obstacles":[],"dynamicObstacles":[]}],"beatTimes":[4.902521]}
 ```
-(Line breaks added; origin: `levels/10 Second Test Level/10 Second Test Level.zip` in https://gitlab.com/pwcl/custom-levels.)
 
 ## ROX support
-Not read by ROX. Target grid and enemy scripts do not map to columns; a decoder could keep only beat times plus x placement.
+
+Not read by ROX. The target grid and enemy scripts do not map to columns; a decoder could keep beat times plus x placement.
 
 ## Parsers & tools
 - PWCL mod (C#, MelonLoader/Harmony, Newtonsoft.Json): https://gitlab.com/pwcl/mod
@@ -90,8 +98,7 @@ Not read by ROX. Target grid and enemy scripts do not map to columns; a decoder 
 
 ## Getting samples
 
-- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): 7 community levels from gitlab.com/pwcl/custom-levels, each in its own subfolder (`level.pw`, `Hard.pw_beat`, `Hard.pw_koreo`, `Hard.pw_sec` and, for the two smallest levels, `.pw_geo`); the `.ogg` songs and posters were not kept, and the `.pw_geo` files larger than 20 MB were skipped (listed in SOURCES.md).
-- More: the PWCL editor (https://gitlab.com/pwcl/editor) and docs (https://pwcl.givo.xyz/). Official Pistol Mix levels use `level.pw` + `.pw_event` + `.pw_art` on mod.io (pages are JavaScript-rendered; not examined).
+Committed: see [samples/SOURCES.md](samples/SOURCES.md) (levels from gitlab.com/pwcl/custom-levels; no `.ogg`, no posters, `.pw_geo` over 20 MB skipped). More: the PWCL editor (https://gitlab.com/pwcl/editor) and docs (https://pwcl.givo.xyz/). Official Pistol Mix levels (`level.pw` + `.pw_event` + `.pw_art`) are on mod.io (JavaScript-rendered; not examined).
 
 ## Sources
 - https://gitlab.com/pwcl/mod (`Pistol Whip Custom Levels/AllTheClasses.cs`, `CustomLevels.cs`)
