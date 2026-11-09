@@ -29,6 +29,7 @@ chart files inside are kept, in a subfolder named after the set).
 |---|---|
 | Committed samples | `<category>/<game>/<format>/samples/`, listed in the `SOURCES.md` of that folder. Never modify them: line endings and encodings are significant (see `.gitattributes`). |
 | Status per format | [`SAMPLES-STATUS.md`](SAMPLES-STATUS.md): real and synthetic file counts for every format of the index, and why a format has fewer than 5 real files. |
+| Real status | [`FORMATS.md`](FORMATS.md): one row per format with its real charts, ROX read/write, how many samples the game decodes, whether Prism plays it, and what is missing. |
 
 Files marked `synthetic-` were written for this repository (CC0). Everything else was downloaded from a public source; the repository owner
 accepted the licence risk of redistributing those snapshots. Formats whose charts exist only inside commercial game data with no public copy

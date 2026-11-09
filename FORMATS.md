@@ -1,0 +1,239 @@
+# Formats: real status
+
+One row per format of the [README index](README.md), with what is true today (2026-11-09) instead of how complete the page is: how many real charts this repository holds, whether ROX reads and writes the format, how many of the sample files the game's own reader decodes, and whether Prism plays it.
+
+- **Real charts / Synthetic**: from [SAMPLES-STATUS.md](SAMPLES-STATUS.md) (real = published for actual play or a real test; synthetic = written here, CC0).
+- **ROX read / write**: [rhythm-open-exchange](https://github.com/Glubus/rhythm-open-exchange) as vendored in Prism on 2026-11-09 (read = a decoder reached from the file; write = an encoder).
+- **Corpus decoded**: sample files of the folder that `game_core::decode_chart_file` read into a playable chart (at least one variant on a layout the game has), over the files tried; run on 2026-11-09 without the scan's audio requirement. `—` when ROX has no reader.
+- **In Prism**: whether the game lists and plays it. The library scan also needs the chart's audio file for `.osu`, `.qua`, `.sm`/`.ssc` (this repository holds no audio).
+- **What is missing**: why a format has fewer than 5 real charts (details and how to get more in its page's "Getting samples" and in SAMPLES-STATUS.md), and VSRG formats with no ROX reader.
+
+Totals: 204 formats (122 VSRG). ROX reads 42 VSRG formats and writes 9; Prism plays 28. Real charts: 116 formats with at least 5, 18 with 1 to 4, 50 with none, 20 container formats (their charts are in another folder).
+
+## VSRG
+
+| Format | Game | Real charts | Synthetic | ROX read | ROX write | Corpus decoded | In Prism | What is missing |
+|---|---|---:|---:|---|---|---:|---|---|
+| [`.bdon / .json`](vsrg/bang-dream/bdon/) BDON (BanG Dream! Our Notes) chart | BanG Dream! Our Notes | 6 | 0 | No | No | — | No | no ROX reader |
+| [`.json`](vsrg/bang-dream/bestdori-json/) Bestdori chart (v2 JSON) | BanG Dream! Girls Band Party (Bestdori) | 13 | 1 | Yes (by content, any `.json` name) | No | 14/14 | Plays |  |
+| [`.txt`](vsrg/bang-dream/txt/) BanG! Simulator chart (txt) | BanG Dream! (BanG! Simulator) | 9 | 7 | Yes | No | 15/16 | Plays |  |
+| [`.1`](vsrg/beatmania-iidx/1/) beatmania IIDX arcade chart archive (.1) | beatmania IIDX (arcade, 9th style onward) | 0 | 0 | No | No | — | No | Konami arcade data exists only inside a game install (contents/data/sound/<id>/<id>.1 or <id>.ifs); no ROX reader |
+| [`.2dx`](vsrg/beatmania-iidx/2dx/) beatmania IIDX keysound archive (2DX9 container) | beatmania IIDX (and other Konami games with the same engine) | 0 | 0 | No | No | — | No | Copyrighted keysound audio container exists only inside a game install and is audio, which the repo does not accept; no ROX reader |
+| [`.bemuse`](vsrg/bemuse/bemuse/) Bemuse sound pack (+ metadata.json) | Bemuse (web BMS player) | 9 | 0 | No | No | — | No | no ROX reader |
+| [`bemuse-song.json / index.json`](vsrg/bemuse/bemuse-song-json/) Bemuse song metadata and music server index | Bemuse (web BMS player) | 8 | 1 | No | No | — | No | no ROX reader |
+| [`.bme`](vsrg/bms/bme/) Be-Music Extend (BME) chart, 7 keys + scratch | BMS ecosystem (beatmania IIDX layout): LR2, beatoraja, Bemuse | 55 | 0 | Yes | No | 55/55 | Plays |  |
+| [`.bml`](vsrg/bms/bml/) Be-Music Longnote (BML) chart | BMS ecosystem (long-note charts via #LNOBJ) | 13 | 1 | Yes | No | 14/14 | Plays |  |
+| [`.bms`](vsrg/bms/bms/) Be-Music Source (BMS) chart | BMS ecosystem: LR2, beatoraja, Bemuse, Raindrop, ruv-it!, uBMplay, OutFox (beatmania/IIDX simulators) | 99 | 6 | Yes | No | 100/105 | Plays |  |
+| [`header.json / data.json`](vsrg/bms/bms-table/) BMS difficulty table | BMS (beatoraja, LR2, etc.) | 8 | 2 | No | No | — | No (difficulty table, not a chart) |  |
+| [`.bmson`](vsrg/bms/bmson/) bmson 1.0.0 (JSON BMS successor) | Bemuse, Raindrop, beatoraja (and BMS-ecosystem tools) | 5 | 1 | Yes | No | 5/6 | Plays |  |
+| [`.ibmsc`](vsrg/bms/ibmsc/) iBMSC project file | iBMSC / uBMSC / pBMSC (BMS editor) | 0 | 7 | No | No | — | No | no genuine editor-saved .ibmsc is public; no ROX reader |
+| [`.pms`](vsrg/bms/pms/) feeling-PoMu Script (PMS), 9-button BMS dialect | pop'n music style simulators: feeling pomu, LR2, beatoraja (PMS mode) | 23 | 59 | Yes | No | 82/82 | Plays |  |
+| [`.chart`](vsrg/clone-hero/chart/) Clone Hero / Moonscraper chart | Clone Hero / Moonscraper / Feedback Editor / YARG / Phase Shift | 9 | 4 | Yes | No | 12/12 | Plays |  |
+| [`.ini`](vsrg/clone-hero/ini/) Clone Hero song.ini metadata | Clone Hero / YARG / Phase Shift / FoFiX | 15 | 3 | Yes | No | 0/18 | Metadata of a `.chart`/`.mid` |  |
+| [`.mid`](vsrg/clone-hero/mid/) Rock Band / Clone Hero MIDI chart (notes.mid) | Clone Hero / YARG / Rock Band / Guitar Hero 1-2 / Phase Shift / FoFiX | 17 | 0 | Yes | No | 0/17 | No |  |
+| [`.sng`](vsrg/clone-hero/sng/) SNG song package (Clone Hero) | Clone Hero / YARG | 0 | 0 | Yes | No | — | Container: charts live in vsrg/clone-hero/chart and vsrg/clone-hero/mid |  |
+| [`.gen`](vsrg/ddr/gen/) DDR S+ song container (iOS) | Dance Dance Revolution S+ (iOS) | 0 | 0 | No | No | — | No | every .gen embeds Blowfish-encrypted full-song and preview MP3 (audio) and the only public copies are 3 in the DDR S+ Lite IPA on archive.org; no ROX reader |
+| [`.ssq (chunk 9)`](vsrg/ddr/hudson-ssq/) Hudson SSQ type 9 step chunk | DDR Mario Mix / DDR Hottest Party 1 (Wii/GC) | 0 | 0 | No | No | — | No | only multi-GB Wii/GameCube disc images exist publicly (archive.org) and no chart extract or fixture is published; no ROX reader |
+| [`.ssq (chunk 16)`](vsrg/ddr/hudson-ssq-lane/) Hudson SSQ type 16 lane-format chunk | DDR Hottest Party 4/5 (Wii) | 0 | 0 | No | No | — | No | only multi-GB Wii disc images exist publicly (archive.org) and no chart extract or fixture is published; no ROX reader |
+| [`.msd`](vsrg/ddr/msd/) MSD step script | DDR'99 (PC simulator) | 7 | 1 | No | No | — | No | no ROX reader |
+| [`.sdf`](vsrg/ddr/sdf/) Pocket DDR chart | Pocket DDR | 2 | 0 | No | No | — | No | only the 2 sample files of the StepMania docs exist publicly (Pocket DDR itself is not hosted anywhere found); no ROX reader |
+| [`.ssq`](vsrg/ddr/ssq/) DDR SSQ step data | Dance Dance Revolution (Konami) | 31 | 0 | Yes | No | 31/31 | Plays |  |
+| [`step`](vsrg/ddr/step/) DDR STEP (1st-3rd Mix, DDR Utility) | Dance Dance Revolution | 3 | 0 | No | No | — | No | only 3 public fixtures exist (RhythmCodex test data); no ROX reader |
+| [`step2`](vsrg/ddr/step2/) DDR STEP2 (1st Mix) | Dance Dance Revolution | 3 | 0 | No | No | — | No | only 3 public fixtures exist (RhythmCodex test data); no ROX reader |
+| [`x_data_US.bin / .sng / .sif`](vsrg/ddr/ultramix-archive/) DDR Ultramix archives | DDR Ultramix (Xbox) | 0 | 0 | No | No | — | No | container-sized (100+ MB) Xbox asset archive of a commercial game with no public copy found; no ROX reader |
+| [`.xmk`](vsrg/dj-hero/xmk/) DJ Hero chart (xmk) | DJ Hero / DJ Hero 2 | 13 | 0 | No | No | — | No | no ROX reader |
+| [`.pt`](vsrg/djmax/pt/) DJMAX pattern (PTFF) | DJMAX Online / DJMAX Technika (arcade, Technika Q) | 0 | 7 | No | No | — | No | the 7 committed files are DJMAX Technika Q server pattern payloads of unknown relation to PTFF .pt; no ROX reader |
+| [`.dtx`](vsrg/dtxmania/dtx/) DTXMania chart | DTXMania (GuitarFreaks/DrumMania simulator) | 24 | 4 | Yes | No | 23/28 | Plays |  |
+| [`.g2d`](vsrg/dtxmania/g2d/) DTXMania older chart (G2D) | GuitarFreaks/DrumMania via DTXMania | 5 | 1 | No | No | — | No | no ROX reader |
+| [`.gda`](vsrg/dtxmania/gda/) DTXMania older chart (GDA) | GuitarFreaks/DrumMania via DTXMania | 18 | 1 | No | No | — | No | no ROX reader |
+| [`set.def`](vsrg/dtxmania/set-def/) DTXMania song set descriptor | DTXMania | 15 | 3 | No | No | — | No | no ROX reader |
+| [`.dwi`](vsrg/dwi/dwi/) Dance With Intensity step file | Dance With Intensity | 48 | 1 | Yes | No | 49/49 | Plays |  |
+| [`.cache`](vsrg/etterna/cache/) Etterna chart cache (`<chartkey>.cache`, `songdata.cache`) | Etterna | 0 | 0 | No | No | — | No | generated artefact of Etterna pack tooling; no ROX reader |
+| [`.ett`](vsrg/etterna/ett/) Etterna song file (write-only) | Etterna | 0 | 0 | No | No | — | No | write-only format with no caller in the Etterna source; no ROX reader |
+| [`.ez`](vsrg/ez2/ez/) EZ2DJ/EZ2AC chart (EZFF) | EZ2DJ / EZ2AC | 11 | 0 | No | No | — | No | no ROX reader |
+| [`.ezi`](vsrg/ez2/ezi/) EZ2AC keysound index | EZ2DJ / EZ2AC | 11 | 0 | No | No | — | No | no ROX reader |
+| [`.swf`](vsrg/flash-flash-revolution/swf/) FFR legacy level SWF (beatBox) | Flash Flash Revolution | 7 | 1 | No | No | — | No | no ROX reader |
+| [`.ffx`](vsrg/fluxis/ffx/) fluXis effects file | fluXis | 6 | 0 | No | No | — | No | no ROX reader |
+| [`.fms`](vsrg/fluxis/fms/) fluXis mapset package | fluXis | 0 | 0 | No | No | — | Container: charts live in fluxis/fsc and fluxis/ffx |  |
+| [`.fsc`](vsrg/fluxis/fsc/) fluXis map | fluXis | 9 | 0 | No | No | — | No | no ROX reader |
+| [`.mid`](vsrg/fortnite-festival/mid/) Fortnite Festival chart MIDI | Fortnite Festival (Jam Tracks) | 0 | 0 | No | No | — | No | charts are encrypted in the game data; no ROX reader |
+| [`.json`](vsrg/friday-night-funkin/codename-json/) FNF Codename Engine chart + meta.json | Friday Night Funkin' (Codename Engine) | 8 | 3 | No | No | — | No | no ROX reader |
+| [`.fnfc`](vsrg/friday-night-funkin/fnfc/) FNF chart package (V-Slice) | Friday Night Funkin' (0.3+, V-Slice) | 0 | 0 | Yes | No | — | Container: charts live in vsrg/friday-night-funkin/vslice-chart-json and vslice-metadata-json |  |
+| [`.fnfmod`](vsrg/friday-night-funkin/fnfmod/) FNF mod package | Friday Night Funkin' (official mod menu) | 0 | 0 | No | No | — | Container: charts live in vsrg/friday-night-funkin/vslice-chart-json and vslice-metadata-json |  |
+| [`.json`](vsrg/friday-night-funkin/fps-plus-json/) FNF FPS Plus chart + meta/events | Friday Night Funkin' (FPS Plus) | 6 | 4 | Partial (read by the FNF codec) | No | 1/10 | Decoded, not listed (the scan lists V-Slice only) |  |
+| [`.json`](vsrg/friday-night-funkin/kade-json/) FNF Kade Engine chart (KE1) | Friday Night Funkin' (Kade Engine) | 10 | 2 | Partial | No | 8/12 | Decoded, not listed (the scan lists V-Slice only) |  |
+| [`.json`](vsrg/friday-night-funkin/legacy-json/) FNF legacy week chart (song.notes[].sectionNotes) | Friday Night Funkin' (≤0.2.x, Kade/Psych-compatible) | 6 | 2 | Yes | Yes | 7/8 | Decoded, not listed (the scan lists V-Slice only) |  |
+| [`.png`](vsrg/friday-night-funkin/ludum-dare-png/) FNF Ludum Dare chart (PNG per section) | Friday Night Funkin' (Ludum Dare jam build) | 33 | 5 | No | No | — | No | no ROX reader |
+| [`.json`](vsrg/friday-night-funkin/maru-json/) FNF Maru Funkin' chart | Friday Night Funkin' (Maru Funkin', dead engine) | 6 | 1 | Partial (read by the FNF codec) | No | 6/7 | Decoded, not listed (the scan lists V-Slice only) |  |
+| [`.json`](vsrg/friday-night-funkin/nmv-json/) FNF Nightmare Vision chart (nmv2) | Friday Night Funkin' (NightmareVision) | 5 | 2 | Partial (read by the FNF codec) | No | 6/7 | Decoded, not listed (the scan lists V-Slice only) |  |
+| [`.json`](vsrg/friday-night-funkin/psych-json/) FNF Psych Engine chart (psych_v1) | Friday Night Funkin' (Psych Engine) | 15 | 4 | Partial | No | 12/19 | Decoded, not listed (the scan lists V-Slice only) |  |
+| [`.json`](vsrg/friday-night-funkin/troll-json/) FNF Troll Engine chart | Friday Night Funkin' (Troll Engine) | 6 | 1 | Partial (read by the FNF codec) | No | 6/7 | Decoded, not listed (the scan lists V-Slice only) |  |
+| [`.json`](vsrg/friday-night-funkin/vslice-chart-json/) FNF V-Slice chart data (-chart.json) | Friday Night Funkin' (0.3+, V-Slice) | 22 | 2 | Yes | No | 0/24 | Plays (needs its `-metadata.json` beside it) |  |
+| [`.json`](vsrg/friday-night-funkin/vslice-metadata-json/) FNF V-Slice song metadata (-metadata.json) | Friday Night Funkin' (0.3+, V-Slice) | 18 | 2 | Yes | No | 0/20 | Part of a V-Slice chart |  |
+| [`.dsq/.gsq`](vsrg/gitadora/dsq/) Older DrumMania/GuitarFreaks sequences | GuitarFreaks/DrumMania (early) | 0 | 0 | No | No | — | No | No .dsq/.gsq is public (gitadora-customs/gitadora-tools ship plugins only, data comes from Konami IFS archives); no ROX reader |
+| [`.sq2`](vsrg/gitadora/sq2/) GuitarFreaks/DrumMania sequence | GF/DM V-series / XG | 0 | 0 | No | No | — | No | No .sq2 is public (same reason); no ROX reader |
+| [`.sq3`](vsrg/gitadora/sq3/) GITADORA sequence (SEQP/SQ3T) | GITADORA | 0 | 0 | No | No | — | No | No .sq3 is public (same reason); no ROX reader |
+| [`.mid`](vsrg/guitar-hero/gh12-mid/) Guitar Hero 1/2 MIDI chart | Guitar Hero / Guitar Hero II (Harmonix) | 6 | 2 | No | No | — | No | no ROX reader |
+| [`.qb`](vsrg/guitar-hero/qb-chart/) Neversoft Guitar Hero chart (QB) | Guitar Hero III / World Tour (Neversoft) | 0 | 0 | No | No | — | No | GH3 charts exist only inside PAK/WAD containers (PS2 ISOs and PC qb.pak.xen on archive.org); no ROX reader |
+| [`.yav`](vsrg/interlude/yav/) Interlude binary chart (legacy file, now database/CDN blob) | Interlude (YAVSRG) | 7 | 1 | No | No | — | No | no ROX reader |
+| [`.ksf`](vsrg/kick-it-up/ksf/) Kick It Up step file (+Direct Move) | Kick It Up / Direct Move (Pump) | 7 | 0 | Yes (single, halfdouble, double) | No | 5/7 | Plays |  |
+| [`.d2r`](vsrg/legacy-dance-formats/d2r/) Dazzle Dazzle Realization chart | Dazzle Dazzle Realization | 0 | 1 | No | No | — | No | no real .d2r survives in reachable archives (D2R chart-search site pages are on Wayback but link to dead personal sites; no ROX reader |
+| [`directmove`](vsrg/legacy-dance-formats/directmove/) Direct Move (extended KSF) | Direct Move | 0 | 0 | Yes | No | — | No | no DirectMove-variant .ksf (with \\|T/\\|B control rows) found on GitHub or archive.org |
+| [`.ftb`](vsrg/legacy-dance-formats/ftb/) Raindrop FTB chart | Raindrop (origin unknown) | 0 | 1 | No | No | — | No | no real .ftb exists in any reachable repository (Raindrop tests have .osu/.ssc only); no ROX reader |
+| [`.slo`](vsrg/legacy-dance-formats/slo/) SLOEDIT chart | D2R / SLOEDIT editor | 0 | 0 | No | No | — | No | no .slo file or grammar found anywhere reachable (only the SloEdit tool and its slohead.txt template on Wayback); no ROX reader |
+| [`.step`](vsrg/legacy-dance-formats/step/) pyDDR/pydance .step | pydance | 2 | 0 | No | No | — | No | only 2 .step URLs were captured by Wayback (0forkbomb, 6jan); no ROX reader |
+| [`.sul`](vsrg/legacy-dance-formats/sul/) D2R legacy chart | Dazzle Dazzle Realization (older version) | 0 | 0 | No | No | — | No | no .sul file found anywhere reachable; no ROX reader |
+| [`.mc`](vsrg/malody/mc/) Malody chart (JSON) | Malody / Malody V (Key, Catch, Pad, Taiko, Ring, Slide, Live, Cube) | 32 | 3 | Yes | Yes | 31/35 | Plays |  |
+| [`.mcz`](vsrg/malody/mcz/) Malody chart package (ZIP) | Malody / Malody V | 0 | 0 | No | No | — | Container: charts live in vsrg/malody/mc/samples (forge-demo_*) |  |
+| [`.xml`](vsrg/music-master/xml/) Music Master chart | Music Master (乐动达人) | 0 | 0 | No | No | — | No | No public copy found: charts only inside the 2013 iOS IPA (config.xml in song packs); no ROX reader |
+| [`.xml`](vsrg/music-times/xml/) Music Times chart | Music Times (乐动时代) | 0 | 0 | No | No | — | No | No public copy found anywhere; no ROX reader |
+| [`.txt`](vsrg/musync/txt/) MUSYNX (Musync) chart (txt) | MUSYNX / Musync | 0 | 0 | No | No | — | No | No public copy found; no ROX reader |
+| [`.ojm`](vsrg/o2jam/ojm/) O2Jam music/sample container (M30 / OMC / OJM) | O2Jam | 0 | 11 | Yes | No | 0/11 | Keysounds of an `.ojn` | OJM files are audio containers (they carry the game audio and cannot be stripped), so no real file is committed |
+| [`.ojn`](vsrg/o2jam/ojn/) O2Jam note file | O2Jam (and Open2Jam, O2Mania, CXO2) | 21 | 11 | Yes | No | 21/32 | Plays |  |
+| [`OJNList.dat`](vsrg/o2jam/ojnlist-dat/) O2Jam client music list | O2Jam | 1 | 0 | No | No | — | No | only one OJNList.dat reachable: other client folders sit beyond the first 45 MB of 1-2 GB RARs (O2Mania.rar, o2jam_setup.exe is an installer); no ROX reader |
+| [`.snp`](vsrg/o2jam/snp/) KrazyRain package (VDISK1.0) | KrazyRain | 0 | 0 | No | No | — | Container: charts live in o2jam/xnt |  |
+| [`.txt`](vsrg/o2jam/txt/) O2Jam - Music & Game chart | O2Jam - Music & Game (mobile) | 0 | 0 | No | No | — | No | Format unknown and no file found: rmstZ test pack sits on a Jianguoyun share page that cannot be downloaded with curl; no ROX reader |
+| [`.xnt`](vsrg/o2jam/xnt/) KrazyRain chart (XNOT) | KrazyRain | 0 | 0 | No | No | — | No | No .xnt is public: they exist only inside KrazyRain .snp archives (no public copy found; no ROX reader |
+| [`.olz`](vsrg/osu-mania/olz/) osu!lazer beatmap archive (lazer-native export) | osu!mania (osu!lazer) | 0 | 0 | No | No | — | Container: charts live in vsrg/osu-mania/osu/samples (3 extracted olz) |  |
+| [`.osb`](vsrg/osu-mania/osb/) osu! storyboard file | osu! (storyboards of osu!mania mapsets) | 21 | 0 | No | No | — | No | no ROX reader |
+| [`.osu`](vsrg/osu-mania/osu/) osu! beatmap (mode 3, osu!mania) | osu!mania (osu!) | 107 | 0 | Yes | Yes | 60/107 | Plays |  |
+| [`.osz`](vsrg/osu-mania/osz/) osu! beatmap archive | osu!mania (et autres modes osu!) | 0 | 0 | No | No | — | Container: charts live in vsrg/osu-mania/osu/samples and osb/samples |  |
+| [`(unknown)`](vsrg/pop-n-music/arcade-chart/) pop'n music arcade chart events | pop'n music (arcade) | 0 | 0 | No | No | — | No | Konami arcade data exists only inside a game install (<ifs>_op.bin / _hp.bin inside the song .ifs); no ROX reader |
+| [`.mmws / .ccmmws / .unchmmws`](vsrg/project-sekai/ccmmws/) MikuMikuWorld binary layout (MMWS/CCMMWS/UCMMWS) | Project SEKAI (MikuMikuWorld editors and forks) | 0 | 10 | No | No | — | No | no public .ccmmws/.unchmmws exists; no ROX reader |
+| [`.sus`](vsrg/project-sekai/holodori-sus/) hololive Dream SUS dialect | hololive Dream | 6 | 0 | Partial (read as Project SEKAI SUS) | No | 6/6 | Plays |  |
+| [`.mmws`](vsrg/project-sekai/mmws/) MikuMikuWorld score (MMWS) | Project SEKAI (MikuMikuWorld editor) | 0 | 5 | No | No | — | No | no public .mmws exists; no ROX reader |
+| [`.pjsk / .json / .json.gz`](vsrg/project-sekai/pjsk/) PJSK score maker chart | Project SEKAI: Colorful Stage! | 3 | 4 | No | No | — | No | 3 downloaded real files; no ROX reader |
+| [`.sus`](vsrg/project-sekai/sus/) Sliding Universal Score (SUS) | Project SEKAI (Seaurchin / Chunithm lineage) | 21 | 1 | Yes | No | 19/22 | Plays |  |
+| [`.usc`](vsrg/project-sekai/usc/) Universal Sekai Chart (USC) | Project SEKAI (Sonolus) | 2 | 6 | Yes | No | 7/8 | Plays | 2 raw USC from the susc-converter tests |
+| [`.not / .not5`](vsrg/pump-it-up/not/) Pump It Up NOT/NOT5 step file | Pump It Up (Andamiro) | 12 | 0 | No | No | — | No | no ROX reader |
+| [`.stx`](vsrg/pump-it-up/stx/) Pump It Up STX step file (STF4) | Pump It Up (Andamiro) | 12 | 0 | No | No | — | No | no ROX reader |
+| [`.ucs`](vsrg/pump-it-up/ucs/) Pump It Up User Custom Step | Pump It Up | 8 | 0 | No | No | — | No | no ROX reader |
+| [`.dance`](vsrg/pydance/dance/) pydance step file | pydance | 6 | 0 | No | No | — | No | no ROX reader |
+| [`.xml`](vsrg/qq-dance/xml/) QQ Dance mobile chart | QQ Dance mobile (QQ炫舞手游) | 0 | 0 | No | No | — | No | No public copy found: official xml.bytes only in old 2019 APKs; no ROX reader |
+| [`.qp`](vsrg/quaver/qp/) Quaver mapset package | Quaver | 0 | 0 | No | No | — | Container: charts live in vsrg/quaver/qua/samples (quaver-default_*) |  |
+| [`.qua`](vsrg/quaver/qua/) Quaver map (YAML) | Quaver | 121 | 2 | Yes | Yes | 88/123 | Plays |  |
+| [`.r2n`](vsrg/r2beat/r2n/) R2Beat chart package | R2Beat | 0 | 0 | No | No | — | No | No public copy found; no ROX reader |
+| [`.xml`](vsrg/r2beat/xml/) R2Beat note chart | R2Beat | 10 | 1 | No | No | — | No | no ROX reader |
+| [`.imd`](vsrg/rhythm-master/imd/) Rhythm Master classic chart | Rhythm Master (节奏大师) | 9 | 6 | Yes | No | 10/15 | Plays |  |
+| [`.json`](vsrg/rhythm-master/json/) Rhythm Master imdjson (BNDQ) | Rhythm Master (节奏大师) / WeChat mini program | 9 | 19 | No | No | — | No | no ROX reader |
+| [`.mde`](vsrg/rhythm-master/mde/) Rhythm Master star motion chart | Rhythm Master (节奏大师) | 0 | 0 | No | No | — | No | No public copy found: the only .mde (RMEssentials test) is a 0-byte placeholder; no ROX reader |
+| [`.jrox`](vsrg/rhythm-open-exchange/jrox/) ROX JSON | Rhythm Open Exchange | 0 | 9 | Yes | Yes | 9/9 | Plays | no upstream .jrox exists |
+| [`.rox`](vsrg/rhythm-open-exchange/rox/) ROX native binary | Rhythm Open Exchange | 9 | 0 | Yes | Yes | 9/9 | Plays |  |
+| [`.yrox`](vsrg/rhythm-open-exchange/yrox/) ROX YAML | Rhythm Open Exchange | 0 | 9 | Yes | Yes | 9/9 | Plays | no upstream .yrox exists |
+| [`.lua`](vsrg/robeats/lua-songmap/) RoBeats custom-server song map (Lua ModuleScript) | RoBeats (Roblox) | 4 | 0 | No | No | — | No | robeats-cs-legacy/robeats-cs-maps repos private/removed, Wayback has no capture, Sourcegraph/grep.app blocked by bot checks, archive.org partly offline; no ROX reader |
+| [`.dta`](vsrg/rock-band/dta/) Rock Band songs.dta database | Rock Band / Guitar Hero (Harmonix engine) | 5 | 1 | No | No | — | No | no ROX reader |
+| [`.ksh`](vsrg/sound-voltex/ksh/) K-Shoot MANIA chart (text) | K-Shoot MANIA / Unnamed SDVX Clone / SOUND VOLTEX fan charts | 12 | 2 | Yes | No | 14/14 | Plays |  |
+| [`.kson`](vsrg/sound-voltex/kson/) K-Shoot MANIA JSON chart | K-Shoot MANIA / Unnamed SDVX Clone (Rust rewrite) | 17 | 7 | No | No | — | No | no ROX reader |
+| [`.vox`](vsrg/sound-voltex/vox/) SOUND VOLTEX arcade chart | SOUND VOLTEX (arcade, Konami) | 12 | 6 | No | No | — | No | no ROX reader |
+| [`.nanochart`](vsrg/soundsphere/nanochart/) NanoChart (rizu compact note stream) | rizu (soundsphere) | 1 | 7 | No | No | — | No | only 1 genuine file (rizu test vector); no ROX reader |
+| [`.sph`](vsrg/soundsphere/sph/) SPH chart (rizu / soundsphere) | rizu (soundsphere) | 8 | 0 | No | No | — | No | no ROX reader |
+| [`.sma`](vsrg/stepmania-amx/sma/) StepMania AMX simfile | StepMania AMX | 0 | 0 | No | No | — | No | no .sma file exists in any reachable repository, AMX build archive or archive.org item; no ROX reader |
+| [`.json`](vsrg/stepmania-micro/json/) StepMania JSON (StepMania Micro) | StepMania Micro | 2 | 0 | No | No | — | No | only the 2 StepMania Micro 0.3 data files exist (Wayback); no ROX reader |
+| [`.crs`](vsrg/stepmania/crs/) StepMania course file | StepMania / ITG / OutFox / NotITG | 25 | 0 | No | No | — | No | no ROX reader |
+| [`.edit`](vsrg/stepmania/edit/) StepMania edit file | StepMania (player edits) | 40 | 3 | Yes | No | 0/43 | Plays with the song it names |  |
+| [`.sm`](vsrg/stepmania/sm/) StepMania simfile | StepMania 3.x/4/5, Etterna, ITG, NotITG, OutFox | 112 | 0 | Yes | Yes | 106/106 | Plays |  |
+| [`.smzip`](vsrg/stepmania/smzip/) StepMania package (smzip) | StepMania / ITG / Etterna / OutFox | 0 | 4 | No | No | — | Container: charts live in vsrg/stepmania/sm (stepmix-1.0/, stepmania-complete-disc/) and vsrg/dwi/dwi |  |
+| [`.ssc`](vsrg/stepmania/ssc/) StepMania 5 simfile | StepMania 5 / Etterna / ITGmania / OutFox | 42 | 0 | Yes | Yes | 40/40 | Plays |  |
+| [`.vos`](vsrg/vos/vos/) Virtual Orchestra Studio song (.vos) | Virtual Orchestra Studio (HanseulSoft) / CanMusic / Mania simulator | 6 | 0 | No | No | — | No | no ROX reader |
+| [`.yargsong`](vsrg/yarg/yargsong/) YARG single-file song package | YARG | 0 | 0 | No | No | — | Container: charts live in vsrg/clone-hero/chart and vsrg/clone-hero/mid |  |
+
+## Other games
+
+None is played by Prism (except CHUNITHM `.sus`, read as a Project SEKAI chart); listed for the sample counts.
+
+| Format | Game | Real charts | Synthetic | ROX read | ROX write | Corpus decoded | In Prism | What is missing |
+|---|---|---:|---:|---|---|---:|---|---|
+| [`.adofai`](others/a-dance-of-fire-and-ice/adofai/) A Dance of Fire and Ice level | A Dance of Fire and Ice | 6 | 2 | No | No | — | No |  |
+| [`.aff`](others/arcaea/aff/) Arcaea chart (AFF) | Arcaea | 19 | 0 | No | No | — | No |  |
+| [`.arcpkg`](others/arcaea/arcpkg/) ArcCreate package / project | Arcaea (ArcCreate) | 0 | 3 | No | No | — | Container: charts live in others/arcaea/aff/samples/etoile_sn.test |  |
+| [`songlist`](others/arcaea/songlist/) Arcaea songlist / packlist | Arcaea | 6 | 0 | No | No | — | No |  |
+| [`.audica`](others/audica/audica/) Audica map package | Audica | 7 | 39 | No | No | — | No |  |
+| [`.zip`](others/beat-saber/beatsaver-zip/) BeatSaver map package | Beat Saber | 0 | 0 | No | No | — | Container: charts live in others/beat-saber/dat/samples and info-dat/samples |  |
+| [`*.dat`](others/beat-saber/dat/) Beat Saber beatmap (v2/v3/v4, Lightshow, BPMInfo) | Beat Saber | 51 | 0 | No | No | — | No |  |
+| [`Info.dat`](others/beat-saber/info-dat/) Beat Saber Info (v1 info.json, v2, v4) | Beat Saber | 23 | 0 | No | No | — | No |  |
+| [`level.json`](others/beatblock/level-json/) Beatblock level (JSON events) | Beatblock | 41 | 3 | No | No | — | No |  |
+| [`.c2s`](others/chunithm/c2s/) C2S (CHUNITHM chart) | CHUNITHM (arcade) | 7 | 0 | No | No | — | No |  |
+| [`.sus`](others/chunithm/sus/) SUS (Sliding Universal Score) | Seaurchin, UMIGURI, ched, Project Sekai tooling | 6 | 0 | Yes | No | 6/6 | Plays (12K, as a Project SEKAI chart) |  |
+| [`.ugc`](others/chunithm/ugc/) UMIGURI Chart v8 | UMIGURI / Margrete (CHUNITHM simulator) | 10 | 0 | No | No | — | No |  |
+| [`.txt (<song>.mp3.txt)`](others/crypt-of-the-necrodancer/beatmap-txt/) Crypt of the NecroDancer custom music beat file | Crypt of the NecroDancer | 1 | 2 | No | No | — | No | only one real beat list is published (2017 Steam forum post) |
+| [`.txt`](others/cytus/c1-txt/) Cytus 1 chart ("Rayark v2 modified") | Cytus (Cytoid) | 5 | 1 | No | No | — | No |  |
+| [`.json`](others/cytus/c2-json/) Cytus II / Cytoid chart (C2) | Cytus II (Cytoid) | 8 | 1 | No | No | — | No |  |
+| [`.cytoidlevel`](others/cytus/cytoidlevel/) Cytoid level package | Cytoid / Cytus | 0 | 4 | No | No | — | Container: charts live in others/cytus/c2-json/samples |  |
+| [`.drb`](others/dancerail/drb/) DanceRail chart | DanceRail | 4 | 1 | No | No | — | No | only DanceRail3Viewer (4 distinct bluemelody charts) is publicly reachable |
+| [`.json`](others/deemo/json/) Deemo chart (JSON) | Deemo | 8 | 1 | No | No | — | No |  |
+| [`.bytes`](others/djmax-technika-q/bytes/) DJMAX Technika Q song | DJMAX Technika Q | 6 | 0 | No | No | — | No |  |
+| [`.mid`](others/donkey-konga/mid/) Donkey Konga score MIDI | Donkey Konga 2 (GameCube) | 3 | 8 | No | No | — | No | only one public custom Donkey Konga 2 track exists (3 charted MIDI files |
+| [`.csv`](others/drums-rock/notes-csv/) Drums Rock custom song (notes.csv + info.csv) | Drums Rock (VR drums) | 12 | 2 | No | No | — | No |  |
+| [`.dy`](others/dynamix/dy/) Dynamaker bundle (.dy) | Dynamix | 0 | 1 | No | No | — | No | container-ish bundle with embedded audio: no real .dy is public (they embed copyrighted music, shared in private fanmade circles) |
+| [`.xml`](others/dynamix/xml/) Dynamix chart XML | Dynamix | 3 | 1 | No | No | — | No | only 3 public real charts exist (CamberLoid/DynamixFanmade has 2, DyNode test fixture) |
+| [`.json`](others/gadvia/chart-json/) Gadvia chart (JSON asset) | Gadvia | 0 | 0 | No | No | — | No | no public copy anywhere: Unity asset bundles inside the commercial Android game, extraction needs the installed game (see fiche) |
+| [`.chc`](others/gitaroo-man/chc/) Gitaroo Man stage chart (CHC) | Gitaroo Man / Gitaroo Man Lives! | 0 | 0 | No | No | — | No | no public copy: game data of the PS2/PSP titles, no repo or site hosts CHC files |
+| [`.aar`](others/groove-coaster/aar/) AAR / ALAR archives (Groove Coaster) | Groove Coaster (Steam/arcade/Switch) | 0 | 0 | No | No | — | No | no public copy: archives of the commercial game (Steam/arcade/Switch) are not hosted anywhere reachable |
+| [`.eve`](others/jubeat/eve/) EVE (jubeat chart events) | jubeat (arcade) | 3 | 1 | No | No | — | No | only 3 public .eve files found (jubeatools test data) |
+| [`.jbsq`](others/jubeat/jbsq/) JBSQ (jubeat binary sequence) | jubeat (Konami) | 0 | 0 | No | No | — | No | no public copy: only the Kaitai spec exists |
+| [`.txt (memo)`](others/jubeat/memo/) jubeat analyser memo formats (memo/memo1/memo2/boogie/mono-column/youbeat) | jubeat analyser (fan simulator) | 8 | 0 | No | No | — | No |  |
+| [`.memon`](others/jubeat/memon/) memon (jubeat JSON chart set) | jubeat fan tools (F.E.I.S, jujube) | 6 | 1 | No | No | — | No |  |
+| [`.dtape.ckd / .ktape.ckd`](others/just-dance/ubiart-tape/) Just Dance UbiArt tape (dance, karaoke) | Just Dance (UbiArt Framework versions, 2016-2022) | 0 | 2 | No | No | — | No | no public real tape: test files are private (Ferris Dancing) or placeholders |
+| [`unknown`](others/lanota/lanotalium/) Lanotalium / Layesta fan chart | Lanota | 0 | 0 | No | No | — | No | no public chart: Lanotalium repo has none and its chart-zone API is dead |
+| [`.json`](others/love-live-sif/sift-json/) SIFTrain beatmap (Love Live! SIF live JSON) | Love Live! School Idol Festival | 8 | 1 | No | No | — | No |  |
+| [`.ma2`](others/maimai/ma2/) MA2 (maimai DX chart) | maimai DX (arcade) | 13 | 0 | No | No | — | No |  |
+| [`.sdt`](others/maimai/sdt/) SRT / SZT / SCT / SDT (maimai classic charts) | maimai (classic, pre-DX) | 0 | 4 | No | No | — | No | no public real classic chart: game data is encrypted (.sdb etc.) and not hosted |
+| [`maidata.txt`](others/maimai/simai/) simai (maidata.txt, 'simai language') | maimai fan simulators (simai, MajdataEdit/MajdataPlay) | 5 | 2 | No | No | — | No |  |
+| [`.bms`](others/muse-dash/bms/) Muse Dash BMS dialect | Muse Dash | 16 | 8 | Partial | No | 16/24 | No |  |
+| [`.mdm`](others/muse-dash/mdm/) Muse Dash custom album (MDM) | Muse Dash | 0 | 0 | No | No | — | Container: charts live in others/muse-dash/bms |  |
+| [`.yml`](others/ohshape/yml/) OhShape level (YAML) | OhShape (VR fitness) | 8 | 0 | No | No | — | No |  |
+| [`.ogkr`](others/ongeki/ogkr/) OGKR (ONGEKI chart) | ONGEKI (arcade) | 5 | 0 | No | No | — | No |  |
+| [`.osu`](others/osu-catch/osu/) osu! beatmap (mode 2, osu!catch) | osu!catch (osu!) | 21 | 0 | No | No | — | No |  |
+| [`.osu`](others/osu-standard/osu/) osu! beatmap (mode 0, osu!standard) | osu!standard (osu!) | 38 | 0 | No | No | — | No |  |
+| [`.osu`](others/osu-taiko/osu/) osu! beatmap (mode 1, osu!taiko) | osu!taiko (osu!) | 15 | 0 | Yes | No | 0/15 | No |  |
+| [`.rlrr`](others/paradiddle/rlrr/) Paradiddle song / kit / recording (RLRR) | Paradiddle (VR drums) | 16 | 2 | No | No | — | No |  |
+| [`unknown`](others/paradigm-reboot/chart/) Paradigm: Reboot chart | Paradigm: Reboot | 0 | 0 | No | No | — | No | commercial Unity game, format unknown, no public dump or parser found |
+| [`.json`](others/phigros/official-json/) Phigros official chart | Phigros | 6 | 2 | No | No | — | No |  |
+| [`.pec`](others/phigros/pec/) PhiEdit Chart (PEC) | Phigros (PhiEdit) | 8 | 1 | No | No | — | No |  |
+| [`.pez`](others/phigros/pez/) Phira / PhiZone chart package | Phigros (Phira / PhiZone) | 0 | 0 | No | No | — | Container: charts live in others/phigros/rpe/samples |  |
+| [`.json / protobuf`](others/phigros/phi-common-chart/) PhiCommonChart (PhiFanmade interchange model) | Phigros (PhiFanmade) | 0 | 0 | No | No | — | No | no file of this format exists publicly: only doc fragments at docs.nuanr-mxi.com |
+| [`.json`](others/phigros/rpe/) Re:PhiEdit chart (RPEJSON) | Phigros (Re:PhiEdit) | 11 | 0 | No | No | — | No |  |
+| [`.pw / .pw_beat`](others/pistol-whip/pwcl-level/) Pistol Whip Custom Levels folder (level.pw, .pw_beat, .pw_koreo, .pw_sec, .pw_geo) | Pistol Whip (PWCL community mod) | 30 | 0 | No | No | — | No |  |
+| [`.dsc`](others/project-diva/dsc/) DSC (Project DIVA DivaScript) | Hatsune Miku: Project DIVA (PSP, arcade, f/F2nd/X, Future Tone, Mega Mix) and Project Mirai (3DS) | 15 | 0 | No | No | — | No |  |
+| [`info.dat`](others/ragnarock/info-dat/) Ragnarock map (Beat Saber-derived) | Ragnarock | 21 | 3 | No | No | — | No |  |
+| [`.rb`](others/reflec-beat/rb/) RB package (Reflec Beat plus iOS) | REFLEC BEAT plus | 0 | 0 | No | No | — | No | commercial Konami iOS package, entries Blowfish-encrypted, no public copy found |
+| [`.rgc`](others/rgc/rgc/) RGC (Rhythm Game Chart) | Multi-game interchange (SDVX, DDR, osu!...) | 2 | 1 | No | No | — | No | only two public .rgc found (rgc repo test, vsrg-chart-view test) |
+| [`.rdlevel`](others/rhythm-doctor/rdlevel/) Rhythm Doctor level | Rhythm Doctor | 16 | 0 | No | No | — | No |  |
+| [`.rdzip`](others/rhythm-doctor/rdzip/) Rhythm Doctor level archive | Rhythm Doctor | 0 | 0 | No | No | — | Container: charts live in others/rhythm-doctor/rdlevel/samples |  |
+| [`.riq`](others/rhythm-heaven/riq/) RIQ (Rhythm Heaven Studio remix) | Rhythm Heaven Studio (fan game inspired by Rhythm Heaven) | 0 | 0 | No | No | — | Container: chart JSON lives inside the zip |  |
+| [`.bin / .tickflow`](others/rhythm-heaven/tickflow/) Rhythm Heaven Megamix / DS tickflow script | Rhythm Heaven Megamix (3DS) and Rhythm Heaven DS | 17 | 1 | No | No | — | No |  |
+| [`.json`](others/rizline/chart-json/) Rizline chart (chart.json) | Rizline | 1 | 1 | No | No | — | No | only the rizlib official test chart is public |
+| [`.psarc`](others/rocksmith/psarc/) Rocksmith 2014 package (PSARC) | Rocksmith 2014 (official DLC and CDLC) | 0 | 0 | No | No | — | Container: charts live in others/rocksmith/sng/samples and xml/samples |  |
+| [`.sng`](others/rocksmith/sng/) Rocksmith 2014 SNG (binary) | Rocksmith 2014 | 6 | 0 | No | No | — | No |  |
+| [`.xml`](others/rocksmith/xml/) Rocksmith 2014 arrangement XML | Rocksmith 2014 | 11 | 0 | No | No | — | No |  |
+| [`.txt`](others/rotaeno/chart-text/) Rotaeno chart text (as read by RotaenoChartTool) | Rotaeno | 0 | 1 | No | No | — | No | no open source holds real Rotaeno charts (only metadata/tools) |
+| [`.indies`](others/smash-drums/indies/) Smash Drums Indies package | Smash Drums (VR drums) | 6 | 1 | No | No | — | No |  |
+| [`.json (gzip)`](others/sonolus/level-data/) Sonolus Level Data | Sonolus (platform; Project SEKAI, Deemo and other fan engines) | 7 | 2 | No | No | — | No |  |
+| [`.scp`](others/sonolus/scp/) Sonolus Collection Package (SCP) | Sonolus | 0 | 0 | No | No | — | Container: charts live in sonolus/level-data |  |
+| [`.sspm`](others/sound-space/sspm/) Sound Space Plus / Rhythia map (v1, v2) | Sound Space Plus / Rhythia | 8 | 2 | No | No | — | No |  |
+| [`.txt`](others/sound-space/txt/) Sound Space (Roblox) text map | Sound Space (Roblox) / SS+ | 21 | 0 | No | No | — | No |  |
+| [`.bin (DGSH)`](others/space-channel-5/dgsh/) Space Channel 5 Part 2 DGSH sequence files | Space Channel 5: Part 2 (PC) | 6 | 0 | No | No | — | No |  |
+| [`.srtb`](others/spin-rhythm-xd/srtb/) Spin Rhythm XD track bundle | Spin Rhythm XD (custom tracks, SpinShare) | 9 | 0 | No | No | — | No |  |
+| [`.csv`](others/starlight-stage/csv/) CGSS beatmap CSV | THE iDOLM@STER Cinderella Girls Starlight Stage | 8 | 0 | No | No | — | No |  |
+| [`.synth`](others/synth-riders/synth/) Synth Riders map | Synth Riders | 0 | 0 | No | No | — | No | synthriderz.com downloads are AES-encrypted zips (key not public), audio inside cannot be stripped |
+| [`.bin`](others/taiko-no-tatsujin/fumen/) Fumen (official Taiko no Tatsujin binary chart) | Taiko no Tatsujin (arcade, consoles, PC Drum Master) | 30 | 0 | No | No | — | No |  |
+| [`.tcc`](others/taiko-no-tatsujin/tcc/) Open Taiko Chart (.tci/.tcc/.tcm JSON) | Koioto, TJAPlayer3-f, OpenTaiko | 5 | 0 | No | No | — | No |  |
+| [`.tja`](others/taiko-no-tatsujin/tja/) TJA (Taiko Jiro chart) | Taiko no Tatsujin simulators (TaikoJiro, TJAPlayer2/3, OpenTaiko, taiko-web, OutFox); modes taiko, konga, jube | 45 | 3 | No | No | — | No |  |
+| [`.tjf`](others/taiko-no-tatsujin/tjf/) TJF (Taikosan / TJF EDIT chart) | Taikosan, TaikoJiro 1 | 1 | 1 | No | No | — | No | only one real .tjf exists in the Taikosan package (getuploader archives 403, nothing else on Wayback/archive.org) |
+| [`.pc / .objlib`](others/thumper/objlib/) Thumper object library (leaf, level, gate, master) | Thumper | 6 | 0 | No | No | — | No |  |
+| [`.tmb`](others/trombone-champ/tmb/) Trombone Champ custom track (song.tmb) | Trombone Champ (TrombLoader custom tracks) | 10 | 1 | No | No | — | No |  |
+| [`.json`](others/voez/json/) VOEZ chart set (info / note / track JSON) | VOEZ | 0 | 6 | No | No | — | No | no real VOEZ chart publicly reachable (official charts only in game AssetBundles |
+| [`.json`](others/vulnus/json/) Vulnus map (meta.json + difficulty json) | Vulnus | 0 | 3 | No | No | — | No | no real Vulnus map found (maps shared on Discord |
+| [`.mer`](others/wacca/mer/) MER (WACCA / Mercury chart) | WACCA (arcade) | 8 | 0 | No | No | — | No |  |
+
+## Known reader gaps on these files
+
+From the same run; each is a format or a case the game does not read yet.
+
+- **Not read**: BDON, Rhythm Master JSON (`.imd.json`), KSON, `.vox`, `.pjsk`, Guitar Hero MIDI and any `.mid` not named `notes.mid`, Bemuse packs and song files, Codename Engine and FPS Plus charts (FNF).
+- **FNF outside V-Slice** (legacy, Psych, Kade, Troll...): decoded by ROX, never listed by the scan (an arbitrary `.json` is not a chart for the scan). The V-Slice charts here sit apart from their `-metadata.json`, so they are not read as they are stored.
+- **CHUNITHM `.sus`**: `#mmm2xy` holds, type-2 slides and AIR not read ("no playable note" on 3 files).
+- **Quaver**: Quaver.API fixtures with no note or a long note of zero or negative length are refused; `Mode: Keys10` (not standard) is refused.
+- **Malody**: modes other than Key are refused.
+- **Layouts the game does not have**: 3-column DTX drums, osu!mania 11K/13K/15K/18K, bmson 48K/52K.
+- **StepMania `.edit`**: read only with the song it names in the library folders (the ones here have no song).
