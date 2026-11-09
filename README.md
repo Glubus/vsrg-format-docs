@@ -91,7 +91,7 @@ Archives that carry charts with their audio and images. No page or sample of the
 | [`.ett`](vsrg/etterna/ett/) Etterna song file (write-only) | Etterna | vsrg | partial | No | [`vsrg/etterna/ett`](vsrg/etterna/ett/) |
 | [`.ez`](vsrg/ez2/ez/) EZ2DJ/EZ2AC chart (EZFF) | EZ2DJ / EZ2AC | vsrg | partial | No | [`vsrg/ez2/ez`](vsrg/ez2/ez/) |
 | [`.ezi`](vsrg/ez2/ezi/) EZ2AC keysound index | EZ2DJ / EZ2AC | vsrg | partial | No | [`vsrg/ez2/ezi`](vsrg/ez2/ezi/) |
-| [`.swf`](vsrg/flash-flash-revolution/swf/) FFR legacy level SWF (beatBox) | Flash Flash Revolution | vsrg | partial | No | [`vsrg/flash-flash-revolution/swf`](vsrg/flash-flash-revolution/swf/) |
+| [`.swf`](vsrg/flash-flash-revolution/swf/) FFR legacy level SWF (beatBox) | Flash Flash Revolution | vsrg | partial | Decode only (4 columns; embedded MP3 not read) | [`vsrg/flash-flash-revolution/swf`](vsrg/flash-flash-revolution/swf/) |
 | [`.ffx`](vsrg/fluxis/ffx/) fluXis effects file | fluXis | vsrg | partial | No | [`vsrg/fluxis/ffx`](vsrg/fluxis/ffx/) |
 | [`.fsc`](vsrg/fluxis/fsc/) fluXis map | fluXis | vsrg | partial | Decode only (ticks as taps; scroll groups, effects not read) | [`vsrg/fluxis/fsc`](vsrg/fluxis/fsc/) |
 | [`.mid`](vsrg/fortnite-festival/mid/) Fortnite Festival chart MIDI | Fortnite Festival (Jam Tracks) | vsrg | stub | No | [`vsrg/fortnite-festival/mid`](vsrg/fortnite-festival/mid/) |

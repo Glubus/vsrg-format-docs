@@ -1,7 +1,7 @@
 # FFR legacy level SWF (`level_<id>.swf`, "beatBox")
 Kind: chart
 
-Doc status: partial · ROX: no · Category: vsrg · Encoding: binary (Flash SWF with AS1/2 bytecode)
+Doc status: partial · ROX: decode only · Category: vsrg · Encoding: binary (Flash SWF with AS1/2 bytecode)
 
 ## Overview
 
@@ -41,7 +41,7 @@ Illustrative: `_root.beatBox = [[30,"L","red"],[45,"R","blue"]]` (frames 30, 45 
 
 ## ROX support
 
-Not read by ROX.
+Decode only (`rox::formats::ffr::SwfDecoder`, `.swf`): `FWS` or zlib `CWS` movies (`ZWS` refused); the `DoAction` tags run through the same ActionScript subset as R^3, the first that sets `_root.beatBox` gives the chart. 4 columns `L D U R`, taps; time `frame / 30` s or the 4th element in ms; `arc_sync` (playlist) not applied. Tempo: the first `_root.bpmBox` entry (`[position, BPM × 1000]`, seen in one level; the position unit is undocumented, so later changes are not read), else a stand-in 120 BPM. The embedded MP3 is not read. All 7 corpus levels and the synthetic one decode (the note counts match the `beatBox` lengths, minus 5 duplicate taps in level 281).
 
 ## Parsers & tools
 
