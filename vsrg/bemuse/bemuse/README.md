@@ -110,6 +110,12 @@ Not read by ROX (it is a keysound container for BMS, which ROX 0.8.1 does not re
 - Packer (JavaScript): [`packages/bemuse-tools/src/bemuse-packer.js`](https://github.com/bemusic/bemuse/blob/master/packages/bemuse-tools/src/bemuse-packer.js), [`payload.js`](https://github.com/bemusic/bemuse/blob/master/packages/bemuse-tools/src/payload.js); Song Workshop https://github.com/bemusic/song-workshop.
 - Format doc: [`website/docs/bemusepack.md`](https://github.com/bemusic/bemuse/blob/master/website/docs/bemusepack.md).
 
+## Getting samples
+
+- **Committed** ([`samples/`](samples/)): `bemuse-test-a-metadata.json`, the `metadata.json` index of the Bemuse test fixture (AGPL-3.0).
+- **Fetched by `tools/fetch-samples.sh`** (not committed because the chunks contain audio): the two test `.bemuse` chunks (`bemuse/src/resources/test-fixtures/a|b/mp3.0.ea6087c3.bemuse`, pinned at commit `4bf3e7d98a44841b323741cc403ecb7b41618ade`). A real production pack (`metadata.json` and chunk `m4a.5.18649bde.bemuse` of `[flicknote]onlylove_remix`, CC-BY-NC) is on live URLs, not hashable, fetch manually.
+- **More**: any song of the official server `https://bemuse.ninja/music/` has `<song>/assets/metadata.json` whose `refs[].path` lists the `.bemuse` chunks next to it (`ogg.N.<hash>.bemuse`, `m4a.N.<hash>.bemuse`); the song list is `https://bemuse.ninja/music/index.json`. To produce one from your own BMS, use the Bemuse Song Workshop or `bemuse-tools` packer (see Parsers & tools).
+
 ## Sources
 
 - https://github.com/bemusic/bemuse (commit `4bf3e7d98a44841b323741cc403ecb7b41618ade`): `website/docs/bemusepack.md`, `website/docs/music-server.md`, `website/docs/song-workshop.md`, `bemuse/src/resources/bemuse-package.ts`, `packages/bemuse-tools/src/bemuse-packer.js`, `packages/bemuse-tools/src/payload.js`, `packages/bemuse-types/index.d.ts`

@@ -1,0 +1,24 @@
+{"offset":0,"objects":[
+ {"type":"bpm","beat":0,"bpm":140},
+ {"type":"bpm","beat":8,"bpm":175},
+ {"type":"bpm","beat":14,"bpm":140},
+ {"type":"timeScale","beat":0,"timeScale":1},
+ {"type":"timeScale","beat":8,"timeScale":1.5},
+ {"type":"timeScale","beat":12,"timeScale":1},
+ {"type":"single","beat":0,"lane":-4,"size":2,"trace":false,"critical":false},
+ {"type":"single","beat":2,"lane":-4,"size":2,"trace":false,"critical":false},
+ {"type":"single","beat":1,"lane":0,"size":2,"trace":false,"critical":true},
+ {"type":"single","beat":3,"lane":0,"size":2,"trace":false,"critical":true},
+ {"type":"single","beat":4,"lane":-2.5,"size":1.5,"trace":false,"critical":false,"direction":"up"},
+ {"type":"single","beat":6,"lane":0,"size":1,"trace":false,"critical":false,"direction":"left"},
+ {"type":"single","beat":6,"lane":3,"size":1,"trace":true,"critical":false},
+ {"type":"slide","active":true,"critical":true,"connections":[
+  {"type":"start","beat":8,"lane":-2,"size":2,"trace":false,"critical":true,"ease":"linear"},
+  {"type":"tick","beat":10,"lane":0,"size":2,"trace":false,"critical":true,"ease":"out"},
+  {"type":"hidden","beat":11},
+  {"type":"end","beat":12,"lane":2,"size":2,"trace":false,"critical":true,"direction":"right"}]},
+ {"type":"slide","active":false,"critical":false,"connections":[
+  {"type":"start","beat":16,"lane":2,"size":1,"trace":false,"critical":false,"ease":"linear"},
+  {"type":"attach","beat":18,"critical":false},
+  {"type":"end","beat":20,"lane":4,"size":1,"trace":false,"critical":false}]}
+]}

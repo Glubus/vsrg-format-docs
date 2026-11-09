@@ -1,0 +1,21 @@
+# metadata
+title Title
+artist Artist
+name Name
+creator Creator
+audio audio.mp3
+input 4key
+
+# notes
+- =0
+1111
+1000 ^ v1
+1000 ^ v2
+1000 ^ v3
+-
+1111
+1000 v1
+1000 v2
+1000 v3
+-
+- =1

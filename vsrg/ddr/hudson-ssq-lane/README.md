@@ -107,6 +107,10 @@ Not read by ROX (no SSQ support).
 
 [`skogaby/ddr-chart-tools`](https://github.com/skogaby/ddr-chart-tools) (Rust): converts type 16 foot charts (`0x14` single, `0x18` double) to SSC / modern SSQ; drops hand and controller-variant charts with a warning.
 
+## Getting samples
+
+No file is committed or in the manifest: same situation as [`hudson-ssq`](../hudson-ssq/README.md) (documented from the Hottest Party 4 and 5 discs: 57 songs / 1,098 charts and 121 songs / 798 charts; no public extract). How: dump a Hottest Party 4 or 5 (Wii) disc you own, extract the `.ssq` files whose chart chunks have type 16, and read them with [skogaby/ddr-chart-tools](https://github.com/skogaby/ddr-chart-tools).
+
 ## Sources
 
 - https://github.com/skogaby/ddr-chart-tools/blob/main/docs/hudson_lane_ssq_format.md

@@ -75,6 +75,12 @@ Not read by ROX. Not decodable without knowing the chart compression.
 
 - None public besides the original `SM2SDF.exe`/Pocket DDR. (This page's inspection is from the StepMania repo samples.)
 
+## Getting samples
+
+Committed in [`samples/`](samples/SOURCES.md): both sample files of the StepMania docs (`test.sdf` with a BPM change, `test-1bpm.sdf` with a single BPM; MIT). Their source `.sm` is committed as `../../stepmania/sm/samples/stepmania-docs_test.sm`, so a converter can be checked both ways. A copy also lives in Etterna's `Docs/legacy/SimfileFormats/SDF/`.
+
+More: the format comes from the Pocket DDR program and its `SM2SDF.exe` converter (the old StepMania forum thread is gone); real Pocket DDR song files are not distributed in the repositories checked. Produce more by converting any `.sm` with SM2SDF if you can find the tool.
+
 ## Sources
 
 - https://github.com/stepmania/stepmania/blob/master/Docs/SimfileFormats/SDF/SDF.txt

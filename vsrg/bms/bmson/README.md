@@ -172,6 +172,12 @@ Read by ROX (decode only) through Prism's `rox::formats::bms::bmson` (`BmsonDeco
 - bms-rs (Rust): https://github.com/MikuroXina/bms-rs (BMS; bmson conversion is out of this repo's research)
 - Editors/converters: see the "how_to_bmson" and "bmson Creation Notes" links of the spec.
 
+## Getting samples
+
+- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): `synthetic-features.bmson` (hand-written: `lines`, `bpm_events`, `stop_events`, long notes, sound channels).
+- **Fetched by `tools/fetch-samples.sh`** (listed in `samples.manifest.json`, not committed; pinned): two third-party charts from the Apache-2.0 repo `MikuroXina/bms-rs` pinned at commit `1eb789caa32a3e0851d274723468576de26a2d08` (`tests/bmson/files/lostokens.bmson`, a 7K chart with 67 long notes, and `bemusicstory_483_48K_ANOTHER.bmson`, a 48-key `keyboard-24k-double` chart with BPM events and BGA); plus the CC-BY-NC (`info.license`) beginner chart of "Only Love (Remix)" as a Wayback snapshot. The normal and hyper charts are live URLs on bemuse.ninja, not hashable, fetch manually (`https://bemuse.ninja/music/%5Bflicknote%5Donlylove_remix/onlylove_remix_normal.bmson`, `..._hyper.bmson`).
+- **More**: every bmson chart that the Bemuse music server lists in `https://bemuse.ninja/music/index.json` (chart `file` ending in `.bmson`; the file sits at `https://bemuse.ninja/music/<song path>/<file>`, URL-encode `[` `]`); the song `[flicknote]onlylove_remix` is the only bmson song among the 42 listed on 2026-11-09. The converters `bms2bmson-python` (MIT, `bmx2bmson.py`, https://github.com/bemusicscript/bms2bmson-python) and `bms-rs` (`src/bmson/bms_to_bmson.rs`) turn any `.bms` into bmson, which is how to get a bmson from any BMS you own. The official specification repo `bemusic/bmson-spec` has no sample file and no LICENSE file.
+
 ## Sources
 
 - bmson spec 1.0.0-beta: https://bmson-spec.readthedocs.io/en/master/doc/index.html (raw: https://github.com/bemusic/bmson-spec/raw/master/doc/index.rst)

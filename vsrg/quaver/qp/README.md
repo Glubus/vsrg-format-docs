@@ -68,6 +68,12 @@ Not read by ROX: unzip first and pass each `.qua` to the `.qua` codec.
 - map-parser `QuaverMapset::from_path` (Rust): https://docs.rs/map-parser/0.1.5/map_parser/struct.QuaverMapset.html
 - qua3osu (`.qp`/`.qua` -> `.osz`/`.osu`, C#): https://github.com/IceDynamix/qua3osu
 
+## Getting samples
+
+- **Committed** in [`samples/`](samples/) (see [`SOURCES.md`](samples/SOURCES.md)): `built-princess-of-winter-audioless.qp`, a 32 KB flat ZIP built here from the 8 CC-BY-NC Princess of Winter `.qua` of Quaver.Resources (no audio/image, so the `AudioFile` reference dangles).
+- **Manifest**: three real default mapsets of Quaver (`Lollipop - vibing oustide the supermarket at 1am.qp`, 2.0 MB; `zetoban - Flowering Night.qp`, 2.6 MB; `zetoban - Csikos Post.qp`, 2.9 MB), pinned to Quaver/Quaver @ e9b54a6 (CC-BY-NC 4.0 repository resources; contain mp3 and images, hence not committed). Listing them shows the layout: `<mapid>.qua` files + one mp3 + one jpg/png at the root.
+- **How to get more**: https://quavergame.com map pages offer `.qp` downloads; the editor's export writes a `.qp`; the other eight default packages are in the same repository folder (2-7.7 MB each).
+
 ## Sources
 
 - https://fileinfo.com/extension/qp

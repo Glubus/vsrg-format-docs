@@ -1,0 +1,9 @@
+#TITLE: Whisper Mint [Single]
+#L1FILE: whispermint-ext.dtx
+
+#TITLE: Confession [Full]
+#L1LABEL: BASIC
+#L1FILE: confessionfull-bas.dtx
+#L4FILE: subdir\confessionfull-mas.dtx
+#L5LABEL: Ultimate
+#L5FILE: subdir\confessionfull-ult.dtx

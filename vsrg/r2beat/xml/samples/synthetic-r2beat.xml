@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="euc-kr"?>
+<TITLE Name="Synthetic R2Beat test">
+<BPM Frame="0" BPM="120" OriginalBPM="120"></BPM>
+<BPM Frame="240" BPM="150" OriginalBPM="150"></BPM>
+<BGM Name="synthetic\synthetic.ogg" Volume="1.00"></BGM>
+<DELAY Value="0"></DELAY>
+<LENGTH Value="192"></LENGTH>
+<AREA Coord="12" Kind="16" Level="3" FxSndIndex="0"></AREA>
+<AREA Coord="24" Kind="17" Level="3" FxSndIndex="0"></AREA>
+<AREA Coord="27" Kind="18" Level="2" FxSndIndex="0"></AREA>
+<AREA Coord="30" Kind="19" Level="2" FxSndIndex="0"></AREA>
+<AREA Coord="36" Kind="20" Level="5" FxSndIndex="0"></AREA>
+<AREA Coord="48" Kind="22" Level="4" FxSndIndex="0"></AREA>
+<AREA Coord="60" Kind="24" Level="4" FxSndIndex="0"></AREA>
+<AREA Coord="72" Kind="26" Level="1" FxSndIndex="0"></AREA>
+<AREA Coord="72" Kind="27" Level="1" FxSndIndex="0"></AREA>
+<AREA Coord="96" Kind="134" Level="5" FxSndIndex="0"></AREA>
+<AREA Coord="120" Kind="135" Level="5" FxSndIndex="0"></AREA>
+<AREA Coord="144" Kind="136" Level="5" FxSndIndex="0"></AREA>
+<AREA Coord="168" Kind="140" Level="5" FxSndIndex="0"></AREA>
+<AREA Coord="180" Kind="141" Level="5" FxSndIndex="0"></AREA>
+<AREA Coord="192" Kind="142" Level="5" FxSndIndex="0"></AREA>
+</TITLE>

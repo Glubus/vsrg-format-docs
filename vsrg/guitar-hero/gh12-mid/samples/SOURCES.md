@@ -1,0 +1,7 @@
+# Samples: Guitar Hero 1 / Guitar Hero 2 MIDI chart
+
+## Committed
+| File | Origin (URL, pinned commit if any) | Author | Licence | What it exercises |
+| --- | --- | --- | --- | --- |
+| synthetic-gh1.mid | Synthetic: written by script for this repository, built strictly from the fiche and from TheNathannator/GuitarGame_ChartFormats @ 3d3640574821e1f7f0ec4be70627893aa88fdff6 (docs/Implementation-Specific/Guitar-Hero-1-and-2/MIDI-Tracks) | GuitarGames (ROX sample corpus) | CC0 1.0 / public domain (declared by the author of this file) | GH1 layout: tracks Tempo, EVENTS, `T1 GEMS`, `ANIM`; per-difficulty star power (103/91/79/67) and Face-Off P1/P2 (105/106, 93/94...) markers, vocalist mouth note 108, ANIM left-hand positions 40-52, GH1 text events [verse]/[gtr_on]/[chorus]/[solo]/[solo_on]/[end], 480 tpqn |
+| synthetic-gh2.mid | Synthetic: written by script for this repository, built strictly from the fiche and from TheNathannator/GuitarGame_ChartFormats @ 3d3640574821e1f7f0ec4be70627893aa88fdff6 (docs/Implementation-Specific/Guitar-Hero-1-and-2/MIDI-Tracks) | GuitarGames (ROX sample corpus) | CC0 1.0 / public domain (declared by the author of this file) | GH2 layout: Tempo, EVENTS ([music_start], [section band_enters], [verse]...), `PART GUITAR` (Expert/Hard/Medium notes, per-difficulty star power 103/91, Face-Off 105/106, big-note marker 110, left-hand positions 40/45/50, [idle]/[play]/[map HandMap_Default]/[solo_on]/[wail_on] events) and `PART BASS`, 480 tpqn |

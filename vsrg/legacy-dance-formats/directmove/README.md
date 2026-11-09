@@ -47,6 +47,10 @@ Read by ROX as KSF: the `|T` `|B` `|E` `|D` rows of a `.ksf` are applied (see [`
 
 StepMania `NotesLoaderKSF.cpp`; https://github.com/syspro86/directmove (downloads); STX2DM converter.
 
+## Getting samples
+
+No `.ksf` with DirectMove extensions was found in the open. [StepMania-AMX/directmove](https://github.com/StepMania-AMX/directmove) (fork of syspro86/directmove, commit `677c709a568a5e974721460f9e67758c0b9cb3ff`) holds the Visual Basic sources of KSFCreator/KSF Viewer and bitmaps, no chart. The plain KSF examples are in [`../../kick-it-up/ksf/samples`](../../kick-it-up/ksf/samples/SOURCES.md) (`sample.ksf`, plus manifest KIU charts). To get real DirectMove-variant files: install Direct Move (Korean simulator by "Kiho"; download links: see the AMX site https://dm.zsoo.net/pc/download referenced on http://stepmania.amx.io) and open its song folders (one `.ksf` per mode), or save a chart from KSFCreator (build from the repository). Look for `#BPM2`, `#BPM3`, `#BUNKI`, `#STARTTIME2` headers and `|T`, `|B` ... control rows per this page.
+
 ## Sources
 
 - https://github.com/stepmania/stepmania/blob/master/src/NotesLoaderKSF.cpp

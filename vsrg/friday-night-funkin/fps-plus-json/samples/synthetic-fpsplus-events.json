@@ -1,0 +1,8 @@
+{
+  "meta": { "format": "fpsplus_1" },
+  "events": [
+    { "time": 0, "lane": 0, "tag": "camFocusDad;0;0" },
+    { "time": 2000, "lane": 0, "tag": "camFocusBf;0;0" },
+    { "time": 2500, "lane": 1, "tag": "playAnim;bf;hey;false" }
+  ]
+}

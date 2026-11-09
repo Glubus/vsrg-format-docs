@@ -1,0 +1,74 @@
+AudioFile: audio.mp3
+SongPreviewTime: 1000
+BackgroundFile: bg.jpg
+MapId: -1
+MapSetId: -1
+Mode: Keys7
+HasScratchKey: true
+QuaVersion: 1
+Title: Synthetic 8K (7K + scratch)
+Artist: synthetic
+Source: ''
+Tags: synthetic test
+Creator: synthetic
+DifficultyName: Scratch Mines Groups
+Description: Hand-written test chart (CC0): scratch lane, mines, long notes, timing groups, scroll speed factors.
+BPMDoesNotAffectScrollVelocity: true
+InitialScrollVelocity: 1.0
+CustomAudioSamples:
+- Path: kick.wav
+SoundEffects:
+- StartTime: 0
+  Sample: 1
+  Volume: 80
+TimingPoints:
+- StartTime: 0
+  Bpm: 120.0
+- StartTime: 4000
+  Bpm: 180.0
+  Signature: 3
+SliderVelocities:
+- StartTime: 2000
+  Multiplier: 1.5
+- StartTime: 3000
+  Multiplier: 0.5
+ScrollSpeedFactors:
+- StartTime: 2500
+  Multiplier: 2.0
+TimingGroups:
+  fast: !ScrollGroup
+    InitialScrollVelocity: 2.0
+    ScrollVelocities:
+    - StartTime: 3000
+      Multiplier: 1.0
+    ScrollSpeedFactors:
+    - StartTime: 3500
+      Multiplier: 0.5
+  $Global: !ScrollGroup
+    ScrollVelocities:
+    - StartTime: 5000
+      Multiplier: 1.25
+HitObjects:
+- StartTime: 500
+  Lane: 1
+- StartTime: 1000
+  Lane: 4
+  EndTime: 1500
+- StartTime: 1000
+  Lane: 8
+  HitSound: Clap
+- StartTime: 1500
+  Lane: 2
+  Type: Mine
+- StartTime: 2000
+  Lane: 7
+  KeySounds:
+  - Sample: 1
+    Volume: 50
+- StartTime: 3000
+  Lane: 3
+  TimingGroup: fast
+- StartTime: 3500
+  Lane: 5
+  EndTime: 4500
+  TimingGroup: fast

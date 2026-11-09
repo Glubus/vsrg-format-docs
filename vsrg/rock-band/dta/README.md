@@ -52,5 +52,10 @@ Not read by ROX.
 ## Parsers & tools
 dtab (Haskell, Data.DTA.Serialize.RB3): https://hackage.haskell.org/package/dtab-1.0/docs/Data-DTA-Serialize-RB3.html · Onyx: https://github.com/mtolly/onyx · YARG.Core · Rock Band Customs Project guides.
 
+## Getting samples
+- Committed in [`samples/`](samples/SOURCES.md): `synthetic-songs.dta`, two fictional entries written strictly from the layout in this fiche (CC0).
+- Manifest: `missing_song_data.dta` from the Onyx repository (186,793 bytes, GPL-3.0 repo). Observed there: a lighter DTA dialect with quoted symbols (`('21guns' ('song' ('vocal_parts' 3)) ('song_length' 327727) ('format' 10) ('game_origin' 'rb1_dlc') ...)`) and only a few keys per entry (no `tracks`/`midi_file`).
+- More: any Rock Band 3 DLC/custom package extracted as a folder contains `songs/songs.dta` (structure: https://wiki.yarg.in/wiki/Songs, "ex-CON"/"ex-PKG"); the Rock Band Customs Project explains how to author one (https://rock-band-customs.gitlab.io/authoring-dtas.html); Onyx (https://github.com/mtolly/onyx) writes `songs.dta` when building RB3 packages. Commercial `songs.dta` files are not redistributable; compiled `.dtb` files need decompiling.
+
 ## Sources
 https://milo.ipg.pw/index.php/Songs.dta (via search excerpts; page not reachable directly) · https://new.tcrf.net/Rock_Band_(PlayStation_2)/Debug_Songs · https://hackage.haskell.org/package/dtab-1.0/docs/Data-DTA-Serialize-RB3.html · https://rock-band-customs.gitlab.io/authoring-dtas.html · https://wiki.yarg.in/wiki/Songs

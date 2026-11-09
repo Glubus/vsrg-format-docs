@@ -1,0 +1,34 @@
+# Samples: StepMania `.sm`
+
+## Committed
+
+| File | Origin (URL, pinned commit if any) | Author | Licence | What it exercises |
+|---|---|---|---|---|
+| Artificial Arcadia.sm | from upstream repository, origin and licence unknown | Unknown | Unknown | charts: dance-single x2; CRLF; 3 BPM segment(s) in song #BPMS |
+| Earth Angel.sm | from upstream repository, origin and licence unknown | Unknown | Unknown | charts: dance-single; CRLF; 1 BPM segment(s) in song #BPMS |
+| Euphoric Field (TV Size).sm | from upstream repository, origin and licence unknown | Unknown | Unknown | charts: dance-single; LF; 1 BPM segment(s) in song #BPMS |
+| It's Over Now.sm | from upstream repository, origin and licence unknown | Unknown | Unknown | charts: dance-single x5, dance-double x4; CRLF; 1 BPM segment(s) in song #BPMS; uses mines |
+| Karliz OP.sm | from upstream repository, origin and licence unknown | Unknown | Unknown | charts: dance-single x2; CRLF; 1 BPM segment(s) in song #BPMS; uses mines |
+| Merry Christmas Mr. Darkholme.sm | from upstream repository, origin and licence unknown | Unknown | Unknown | charts: dance-single; LF; 1 BPM segment(s) in song #BPMS |
+| Night Sky.sm | from upstream repository, origin and licence unknown | Unknown | Unknown | charts: dance-single; LF; 41 BPM segment(s) in song #BPMS; uses rolls #DISPLAYBPM |
+| Tunamayo-chan Obj black train - Bird Sprite -D.K.R.sm | from upstream repository, origin and licence unknown | Unknown | Unknown | charts: kb7-single x2; LF; 1 BPM segment(s) in song #BPMS |
+| mune_pettan3.sm | from upstream repository, origin and licence unknown | Unknown | Unknown | charts: dance-single x2, dance-solo; CRLF; 1 BPM segment(s) in song #BPMS; uses mines |
+| stargroup singing mei.sm | from upstream repository, origin and licence unknown | Unknown | Unknown | charts: dance-single x2; CRLF; 117 BPM segment(s) in song #BPMS; uses #DISPLAYBPM |
+| Goin' Under.sm | https://github.com/stepmania/stepmania/blob/7cbaff8ce2dcbede32dd3d6f3f2d8fafeafd674e/Songs/StepMania%205/Goin%27%20Under/Goin%27%20Under.sm | NegaRen (music); Fraxtil (charts, per #CREDIT in the .ssc twin) | CC-NC for bundled songs per the StepMania README ("Any songs that are included within this repository are under the CC-NC license"); engine code MIT | .sm twin of the .ssc: charts: dance-single x5, dance-double x4; CRLF; 1 BPM segment(s) in song #BPMS; uses mines; the matching SM5-written `.ssc` is in ../../ssc/samples; the SM5 repo blob is CRLF |
+| nekonabe.sm | https://github.com/garcia/simfile/blob/21e40d97e865dd00358a9ead27550c5fd4d21c96/testdata/nekonabe/nekonabe.sm | Saisei Hyper Beroove (music "Nekonabe"); chart author not stated | Repository MIT (simfile, (c) 2022 Ash Garcia); the song/chart itself has no licence statement (see doubts) | Old-style (2004 file date in testdata.zip) `.sm`: UTF-8 with BOM, Japanese title in #TITLE, long #BGCHANGES list with `.avi`/`.png` references, #LYRICSPATH, `dance-single` x4 + `dance-double` x3, no #DISPLAYBPM |
+| stepmania-docs_test.sm | https://github.com/stepmania/stepmania/blob/7cbaff8ce2dcbede32dd3d6f3f2d8fafeafd674e/Docs/SimfileFormats/SDF/test.sm | StepMania docs (kurt angle!/aj jelly in the file are placeholder names) | MIT (StepMania repository) | Source `.sm` of the Pocket DDR `.sdf` samples: 6 `dance-single` charts with ONE BPM change (93.81 -> 187.62 at beat 5), #TIMESIGNATURES/#KEYSOUNDS present only as the placeholder text `{ignored by sm2sdf}`, `#NOTES` parameters indented with spaces (6-parameter form), "Copied from" chart description |
+| stepmania-amx_ScreenHowToPlay steps.sm | https://github.com/StepMania-AMX/StepMania-AMX/blob/6423c41f8c0efe79599e1004a5171a22ba61b910/Themes/default/Other/ScreenHowToPlay%20steps.sm | StepMania team (SM 3.9 base of StepMania AMX) | StepMania licence (MIT-style, `Docs/Copying.txt` of the AMX repository) | Tiny SM 3.9-era `.sm` with NO `;` after `#BPMS:0.000=100.000` (the next line starts `#STOPS`): a real test for the tokenizer's missing-semicolon recovery; leading `//` comment block; `dance-single` one chart; tab-indented `#NOTES` parameters; #STOPS in beats (`16=2,...`) |
+| etterna_rebirth_longarrowhead (loop).sm | https://github.com/etternagame/etterna/blob/2d706147cc4bcf95a8ceb24dc4f4129be207f803/Themes/Rebirth/Sounds/music/longarrowhead%20(loop).sm | Etterna team (theme music loop) | MIT (Etterna repository, (c) 2016-2023 Etterna) | Header-only `.sm` (no `#NOTES` at all) describing a theme music loop: #MUSIC, #OFFSET:-0.051, #BPMS 172; an edge case for loaders (song without charts) |
+| etterna_rebirth_quiver (loop).sm | https://github.com/etternagame/etterna/blob/2d706147cc4bcf95a8ceb24dc4f4129be207f803/Themes/Rebirth/Sounds/music/quiver%20(loop).sm | Etterna team | MIT (Etterna repository) | Header-only `.sm` (no charts), second theme loop of the Rebirth theme |
+| etterna_tildeath_arrowhead (loop).sm | https://github.com/etternagame/etterna/blob/2d706147cc4bcf95a8ceb24dc4f4129be207f803/Themes/Til%20Death/Sounds/music/arrowhead%20(loop).sm | Etterna team | MIT (Etterna repository) | Header-only `.sm` (no charts) of the Til Death theme; uses empty-valued #BGCHANGES/#FGCHANGES/#STOPS |
+| etterna_tildeath_quiver (loop).sm | https://github.com/etternagame/etterna/blob/2d706147cc4bcf95a8ceb24dc4f4129be207f803/Themes/Til%20Death/Sounds/music/quiver%20(loop).sm | Etterna team | MIT (Etterna repository) | Header-only `.sm` (no charts) |
+
+Notes: the first ten files (no source slug prefix) were in the repository before this corpus work; their origin and licence are unknown. `nekonabe.sm` has a licence doubt logged in `/tmp/fsc-parts/doubts/StepmaniaFamily.md`.
+
+## Fetched by tools/fetch-samples.sh (not committed; listed in samples.manifest.json)
+
+| Target file | URL | Licence note | What it exercises |
+|---|---|---|---|
+| ddr-supernova2_PARANOiA-HADES.sm | https://raw.githubusercontent.com/noahm/simfile-parser/f7ff6e3c754a9a04aa705b8129dc89523fd4b02f/packs/SuperNOVA2/PARANOiA-~HADES~/PARANOiA%20~HADES~.sm | Unknown (no licence in noahm/simfile-parser; charts of a Konami game) | DDR SuperNOVA2 simfile as .sm (pack from noahm/simfile-parser): UTF-8 BOM + CRLF, #DISPLAYBPM, #STOPS, dance-single and dance-double charts; not committed (charts of a commercial game, no licence) |
+| easy-as-pie-2_Abracadabra.sm | https://raw.githubusercontent.com/noahm/simfile-parser/f7ff6e3c754a9a04aa705b8129dc89523fd4b02f/packs/Easy%20As%20Pie%202/Abracadabra/Abracadabra.sm | Unknown (no licence in noahm/simfile-parser) | Community pack simfile used as a parser unit-test fixture; not committed (licence unknown) |
+| bhop-ball_Central-Utopia_steps.sm | https://raw.githubusercontent.com/noahm/simfile-parser/f7ff6e3c754a9a04aa705b8129dc89523fd4b02f/packs/Bhop%20Ball/%5BT10%5D%20Central%20Utopia/steps.sm | Unknown (no licence in noahm/simfile-parser) | Community ITG-style simfile named steps.sm; not committed (licence unknown) |

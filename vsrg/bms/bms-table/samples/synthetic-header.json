@@ -1,0 +1,89 @@
+{
+  "name": "Synthetic Table",
+  "symbol": "syn",
+  "tag": "SYN",
+  "data_url": "synthetic-data.json",
+  "mode": "beat-7k",
+  "level_order": [
+    "0",
+    "1",
+    "2",
+    "!",
+    "?"
+  ],
+  "last_update": "2026-11-09",
+  "course": [
+    [
+      {
+        "name": "Synthetic Course 1",
+        "constraint": [
+          "grade_mirror",
+          "gauge_lr2",
+          "no_speed"
+        ],
+        "trophy": [
+          {
+            "name": "silvermedal",
+            "missrate": 5.0,
+            "scorerate": 70.0
+          },
+          {
+            "name": "goldmedal",
+            "missrate": 2.5,
+            "scorerate": 85.0
+          }
+        ],
+        "md5": [
+          "67928e0f0051fd5e9b30ae6fae8316e5",
+          "b042792a369bdbae966d48a269f813cb",
+          "5c283022da3ed567b05c56bdd24d3ee5",
+          "41f5332120f06cbb548968ca27eade6d"
+        ]
+      },
+      {
+        "name": "Synthetic Course 2",
+        "constraint": [
+          "grade_random",
+          "no_good"
+        ],
+        "sha256": [
+          "a798585ea6f97477dffb0c11529469a7b8880f8ff4fb98dac28c790d74047361",
+          "ef77ec845ef59b12374b10ddd8c3e67afb68f39bb9226b4bf2e2dd3fc5c798de",
+          "ecb5457bacd6a119c07ff8d9ab36b3901188a4413c0f8db9446be5cdabb27e18",
+          "7bbbf94a35f076ff2d39f3cfea122da99f1aa62224dd0211512b80d5a6f8180c"
+        ]
+      }
+    ],
+    [
+      {
+        "name": "Synthetic Course with chart objects",
+        "constraint": [
+          "gauge_7k"
+        ],
+        "trophy": [
+          {
+            "name": "bronzemedal",
+            "missrate": 10.0,
+            "scorerate": 60.0
+          }
+        ],
+        "charts": [
+          {
+            "md5": "67928e0f0051fd5e9b30ae6fae8316e5",
+            "sha256": "d35d576d9b4634963241a7a50dbd23204a9176e857bde676a258bde26ec7d654",
+            "level": "1",
+            "title": "Synthetic One",
+            "artist": "Nobody"
+          },
+          {
+            "md5": "b042792a369bdbae966d48a269f813cb",
+            "sha256": "a798585ea6f97477dffb0c11529469a7b8880f8ff4fb98dac28c790d74047361",
+            "level": "2",
+            "title": "Synthetic Two",
+            "artist": "Nobody"
+          }
+        ]
+      }
+    ]
+  ]
+}

@@ -42,13 +42,18 @@ Unknown (same `#WAVzz` mechanism if parsed as DTX).
 The original GDA spec is not available publicly in what I could fetch; behaviour is known only through DTXMania's code.
 
 ## Example
-Not applicable (no real GDA sample available).
+No real GDA sample available; a hand-written one built from the loader table is in [samples/](samples/SOURCES.md).
 
 ## ROX support
 Not read by ROX.
 
 ## Parsers & tools
 DTXmaniaNX CDTX.cs and DTXCreator `CDTXInputOutput.cs` (https://github.com/limyz/DTXmaniaNX).
+
+## Getting samples
+- **Committed** ([`samples/`](samples/SOURCES.md)): one hand-written `synthetic-drums-guitar-bass.gda`, built from the loader's `STGDAPARAM` table (`CDTX.cs`); it demonstrates what DTXMania accepts, not a real GDA file.
+- **No real file found**: no repository, spec or open archive with a `.gda` was reachable. The GDAmania blog converted its charts to DTX (fiche), so the originals are gone from that source.
+- **How to get more**: the DrumGamer site lists "GDA Creator 2 English Version" ("Editor for GDA, DTX and BMS files", https://drumgamer.weebly.com/tools2.html) and the simulator DigiBand ("Supports GDA and DTX files", https://drumgamer.weebly.com/simulators.html): a GDA can be written with GDA Creator 2 [inference: it is an editor for the format by its description]. DTXMania itself loads `.gda` (and `.g2d`), see [dtx](../dtx/README.md).
 
 ## Sources
 - https://raw.githubusercontent.com/limyz/DTXmaniaNX/master/DTXMania/Code/Score,Song/CDTX.cs

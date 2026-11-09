@@ -132,6 +132,12 @@ This is the reference implementation (`RoxNativeCodec`, extensions `["rox"]`): r
 - C# bindings `RhythmOpenExchange` (NuGet 0.5.0 per README).
 - rkyv: https://rkyv.org/ ; zstd: https://github.com/facebook/zstd
 
+## Getting samples
+
+- **Committed**: none. `.rox` is an rkyv archive inside a zstd frame; it can only be produced by the Rust codec, and building anything was not allowed for this corpus, so no file was fabricated by hand. The upstream repository `Glubus/rhythm-open-exchange` (MIT) ships no `.rox` fixture either (checked at commit `cbceffbc3bf2987170f412992cc43c5ee9b62c00`: its `assets/` folder holds `.osu`, `.qua`, `.sm`, `.fnf`/`.json`, `.bms/.bme/.pms/.bmson` sources only).
+- **How to get one**: decode any supported chart and re-encode it. With the crate (`rhythm-open-exchange` 0.8.1, library name `rox`): `let chart = auto_decode(path)?; auto_encode(&chart, "output.rox")?;` (this is the repo's `examples/auto_conversion.rs`, using `assets/osu/mania_7k.osu`). The text twins [`.jrox`](../jrox/) and [`.yrox`](../yrox/) of the same model have committed samples in their folders, and hold the same data (a `.rox` is the same `RoxChart`).
+- Note: the Prism repository keeps `.rox` files as test fixtures, but they come from community maps (their metadata names third-party packs), so they are not redistributable here.
+
 ## Sources
 
 - `rhythm-open-exchange/src/formats/rox_native/{mod,encoder,decoder}.rs`, `src/model/{chart,metadata,note,timing,hitsound}.rs`, `src/codec/{traits,validate}.rs`, `src/analysis/hash.rs`, `src/error.rs`, `Cargo.toml`, `CHANGELOG.md`, `wiki.wiki/{Notes,Timing-Points,Metadata,Hitsounds,Performance-Optimizations}.md`, `README.md`

@@ -1,0 +1,45 @@
+*---------------------- HEADER FIELD
+* Hand-written synthetic chart (CC0 / public domain) built from the BMS fiche of vsrg-format-docs.
+* Timing edge cases: decimal #BPM, channel 08 with #BPMxx above 255 and with a decimal value, a negative #BPMxx
+* (undefined by the spec; reverse scroll in some players), #STOPxx in 1/48 beat units, measure lengths 0.75 and 1.5 (channel 02).
+
+#PLAYER 1
+#GENRE Test
+#TITLE Synthetic extended timing
+#ARTIST vsrg-format-docs
+#BPM 150.5
+#BPM01 300
+#BPM02 133.5
+#BPM03 -90
+#STOP01 48
+#STOP02 96
+#PLAYLEVEL 4
+#RANK 2
+
+#WAV01 bgm.ogg
+#WAV02 tap.wav
+
+*---------------------- MAIN DATA FIELD
+
+#00001:01
+* measure 0 (150.5 BPM): four taps on key 1
+#00011:02020202
+
+* measure 1: channel 08 switches to BPM 300 (#BPM01) at the start and to 133.5 (#BPM02) at mid-measure
+#00108:0102
+#00111:02000200
+
+* measure 2: 3/4 measure; a one-beat stop (#STOP01 = 48) on slot 2 of 4
+#00202:0.75
+#00209:00000100
+#00212:02020200
+
+* measure 3: 6/4 measure; a two-beat stop (#STOP02 = 96) at its start, then the negative BPM (#BPM03 = -90) from slot 4 of 8
+#00302:1.5
+#00309:0200000000000000
+#00308:0000000003000000
+#00313:0200000002000000
+
+* measure 4: the channel 03 integer BPM 120 (hex 78) overrides the negative value
+#00403:78
+#00414:02000200

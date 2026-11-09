@@ -79,6 +79,12 @@ Read, decode only: `rox::formats::fnf_vslice::FnfcPackage` (`open`, `song_id`, `
 - Moonchart `FNFVSlice` (Haxe) reads/writes the pair: https://github.com/MaybeMaru/moonchart
 - Codename Engine's song editor imports V-Slice charts.
 
+## Getting samples
+
+- Committed: [samples/](samples/): `synthetic-vslice.fnfc`, a ZIP built from the synthetic V-Slice JSON files; it has no `Inst.ogg` (audio is never committed), so the game would reject it: it only exercises the container.
+- Manifest: none. No public, redistributable, directly downloadable `.fnfc` was found (community charts are on GameBanana, gated; they contain copyrighted audio).
+- How to get one: open the in-game Chart Editor (V-Slice) and save: it writes `.fnfc` ([modding docs, Creating a Chart](https://funkincrew.github.io/funkin-modding-docs/02-custom-songs-and-custom-levels/02-01-creating-a-chart.html)); or ZIP `manifest.json` + `<songid>-metadata.json` + `<songid>-chart.json` + `Inst.ogg` yourself following [docs/FNFC-SPEC.md](https://github.com/FunkinCrew/Funkin/blob/main/docs/FNFC-SPEC.md) and rename to `.fnfc`. File-type page: https://fileinfo.com/extension/fnfc.
+
 ## Sources
 
 - https://github.com/FunkinCrew/Funkin/blob/main/docs/FNFC-SPEC.md

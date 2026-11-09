@@ -79,6 +79,10 @@ Not read by ROX (binary QB container, console-specific; ROX plans Clone Hero but
 - Addy's Guitar Hero Toolkit (Python, archived; continued in C# as Honeycomb / GH-Toolkit-NET): https://github.com/AddyMills/Addys-Guitar-Hero-Toolkit (`midqb_gen/`, `pak_extract/Text2QB.py` and QB2Text), https://github.com/AddyMills/Honeycomb-GUI, https://github.com/AddyMills/Honeycomb-CLI, https://github.com/AddyMills/GH-Toolkit-NET
 - Authoring guides: https://www.addymills.com/authoring-world-tour-style-songs/, https://www.addymills.com/compiling-guitar-hero-world-tour-style-songs/
 
+## Getting samples
+- Committed: none. Manifest: none. QB charts live inside the PAK archives of Guitar Hero III / World Tour (commercial), and no freely licensed `.mid.qb` was found: the AddyMills/Addys-Guitar-Hero-Toolkit repository (the writer cited in this fiche) was listed and holds no `.qb`/`.mid`/`.chart` fixture files (only its LICENSE matched).
+- How to produce one: compile a Rock Band/GH2-style `.mid` with Addy's Guitar Hero Toolkit (`midqb_gen/`, https://github.com/AddyMills/Addys-Guitar-Hero-Toolkit) or its successors Honeycomb / GH-Toolkit-NET, per the authoring guides https://www.addymills.com/authoring-world-tour-style-songs/ and https://www.addymills.com/compiling-guitar-hero-world-tour-style-songs/ (as cited in this fiche). Real files: extract `songs/<name>.mid.qb` from the PAK of a game you own [inference: tool not verified].
+
 ## Sources
 
 - https://github.com/AddyMills/Addys-Guitar-Hero-Toolkit (commit `4ec8f7139720c2b59c21b70925fd90cdb1508b1b`): `midqb_gen/midqb_definitions.py` (`qbNodeHeaders`, `difficulties`, ...), `midqb_gen/midqb_classes.py` (`Note`, `QBItem`), `midqb_gen/midqb_functions.py` (`create_gh3_sections`, `parse_gh3_qb`), `pak_extract/Text2QB.py` (`create_qb`, `bin_array_data`, `bin_struct_data`), `README.md`

@@ -1,0 +1,134 @@
+[Song]
+{
+  Name = "Synthetic Feature Tour"
+  Artist = "Synthetic"
+  Album = "ROX Sample Corpus"
+  Genre = "Test"
+  Year = ", 2025"
+  Charter = "GuitarGames"
+  Resolution = 192
+  Difficulty = 1
+  Length = 24.5
+  Offset = 0
+  PreviewStart = 0
+  PreviewEnd = 10
+  Player2 = bass
+  MusicStream = "song.ogg"
+}
+[SyncTrack]
+{
+  0 = TS 4
+  0 = B 120000
+  768 = TS 3 3
+  768 = A 2000000
+  768 = B 90000
+  1344 = TS 7 4
+  1344 = B 150325
+  1920 = TS 4
+  1920 = B 120000
+}
+[Events]
+{
+  0 = E "section Intro"
+  768 = E "section Verse"
+  1344 = E "prc_Odd_Meter"
+  1920 = E "section Outro"
+  2688 = E "end"
+}
+[ExpertSingle]
+{
+  0 = N 0 0
+  0 = S 2 384
+  48 = N 1 0
+  96 = N 2 0
+  144 = N 3 0
+  192 = N 4 0
+  384 = N 0 96
+  384 = N 2 96
+  384 = S 2 384
+  576 = N 1 192
+  576 = N 3 96
+  576 = S 0 192
+  768 = N 2 0
+  768 = N 5 0
+  768 = S 1 192
+  816 = N 3 0
+  816 = N 6 0
+  864 = N 7 0
+  912 = N 4 0
+  960 = N 0 0
+  960 = N 1 0
+  960 = N 2 0
+  960 = N 3 0
+  960 = N 4 0
+  1344 = E solo
+  1536 = E soloend
+  1920 = N 0 0
+  1968 = N 1 0
+}
+[HardSingle]
+{
+  0 = N 0 0
+  96 = N 1 0
+  192 = N 2 96
+  384 = N 3 0
+  480 = N 4 0
+}
+[ExpertDoubleBass]
+{
+  0 = N 0 0
+  96 = N 0 0
+  192 = N 1 0
+  288 = N 2 0
+  384 = N 3 192
+  768 = N 7 0
+  0 = S 2 192
+}
+[ExpertKeyboard]
+{
+  0 = N 0 0
+  96 = N 1 0
+  192 = N 2 0
+  288 = N 3 0
+  384 = N 4 192
+}
+[ExpertDrums]
+{
+  0 = N 0 0
+  0 = N 1 0
+  0 = S 2 192
+  48 = N 2 0
+  48 = N 66 0
+  96 = N 3 0
+  96 = N 67 0
+  144 = N 4 0
+  144 = N 68 0
+  192 = N 0 0
+  192 = N 1 0
+  192 = N 32 0
+  192 = N 34 0
+  240 = N 1 0
+  240 = N 40 0
+  288 = N 2 0
+  336 = N 3 0
+  384 = N 4 0
+  384 = S 64 192
+  576 = S 65 96
+  672 = S 66 96
+}
+[ExpertGHLGuitar]
+{
+  0 = N 3 0
+  0 = S 2 192
+  48 = N 4 0
+  96 = N 8 0
+  144 = N 0 0
+  192 = N 1 0
+  240 = N 2 0
+  288 = N 7 0
+  336 = N 0 96
+  432 = N 1 0
+  432 = N 5 0
+  480 = N 2 0
+  480 = N 6 0
+}

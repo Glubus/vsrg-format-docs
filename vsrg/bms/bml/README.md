@@ -3,7 +3,7 @@ Kind: chart
 
 Doc status: complete · ROX: decode only (reads, never writes) · Category: vsrg · Encoding: text (Shift_JIS in practice)
 
-Same syntax as [`.bms`](../bms/README.md). `.bml` is a *filename filter* for charts that use long notes (LN) in the `#LNOBJ` form. No sample of this extension exists in the repo.
+Same syntax as [`.bms`](../bms/README.md). `.bml` is a *filename filter* for charts that use long notes (LN) in the `#LNOBJ` form. Samples: see [Getting samples](#getting-samples); the three Angolmois `.bml` test files use `#LNTYPE 1` channel-51 long notes rather than `#LNOBJ` [observed in samples/longnote-lntype1-last.bml], so the extension is not a reliable indicator of the LN notation.
 
 ## Overview
 
@@ -87,6 +87,14 @@ Read by ROX since Prism's addition of `rox::formats::bms` (decode only: ROX does
 ## Parsers & tools
 
 See [BMS parsers](../bms/README.md#parsers--tools). LN handling: bms-js `notes`, bms-rs, Raindrop (`LNObj` set), beatoraja (`LNMODE`).
+
+## Getting samples
+
+Details and per-file licences: [`samples/SOURCES.md`](samples/SOURCES.md).
+
+- **Committed** ([`samples/`](samples/)): three public-domain Angolmois test charts (`longnote-followed-by-bomb.bml`, `longnote-lntype1-interleaved.bml`, `longnote-lntype1-last.bml`; these three use `#LNTYPE 1` channel-51 long notes, not `#LNOBJ`, despite the extension) and one hand-written CC0 strict-BML chart (`synthetic-lnobj.bml`, `#LNOBJ ZZ` only, UTF-8, LF).
+- **Manifest** (`samples.manifest.json`): all 10 `.bml` files of https://github.com/bemusic/music at the pinned commit `472b0f3cc433c39b0a7e9849705b34af68bf5400` (olivia by 葵 with `#LNOBJ ZZ` in CP932, caelumize by void with `#LNOBJ 04`, starless `was`/`waslight` with `#LNOBJ G0`, ...), manifest-only because each song is copyrighted by its author.
+- **How to get more**: any BMS pack can contain `.bml` files (a `.bml` is a `.bms` with `#LNOBJ`): see "Getting samples" in [`../bms`](../bms/README.md). Per the hitkey memo the extension was created as a filter for `#LNOBJ` charts, so search a pack folder for `*.bml`; many authors name `#LNOBJ` charts `.bms`/`.bme` instead, so also search file contents for `#LNOBJ`.
 
 ## Sources
 

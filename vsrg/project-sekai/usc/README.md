@@ -77,6 +77,12 @@ Sources read for this: `sonolus-pjsekai-engine` `lib/src/usc/{index,convert}.ts`
 
 sonolus-pjsekai-engine (TypeScript): <https://github.com/NonSpicyBurrito/sonolus-pjsekai-engine> (superseded by <https://github.com/Next-SEKAI/sonolus-next-sekai-engine>); rg_converters (Python/C++): <https://github.com/UntitledCharts/rg_converters>.
 
+## Getting samples
+
+- Committed in [`samples/`](samples/SOURCES.md): `synthetic-12lane.usc`, hand-written CC0 (bpm/timeScale, taps with direction/trace/critical, slides with ease/hidden/attach, fractional `lane`/`size`).
+- Manifest: nothing. No real `.usc` with a redistributable licence was found; `sonolus-pjsekai-engine` (MIT, `0f6f37fc9b512b9d156ec4c00d998fe3916b157d`) contains `shared/src/level/data/append.json`, a 1.2 MB Sonolus LevelData (not USC; converted chart of unstated origin, so not taken).
+- More: convert any SUS with `susToUSC` (sonolus-pjsekai-engine `lib/src/sus/convert.ts`) or `rg-converters convert chart.sus chart.usc --to usc`; MMW4CC-family editors export USC (per the fiche); the Sonolus level data on untitledcharts.com / Chart Cyanvas can be turned back into USC by rg_converters. Check each chart's author licence.
+
 ## Sources
 
 - <https://cdn.jsdelivr.net/npm/sonolus-pjsekai-engine@1.9.0/dist/usc/index.d.ts>

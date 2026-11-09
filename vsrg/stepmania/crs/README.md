@@ -133,6 +133,12 @@ Not read by ROX (no chart data; ROX 0.8.1 models charts, not playlists).
 - StepMania (C++): [`CourseLoaderCRS.cpp`](https://github.com/stepmania/stepmania/blob/5_1-new/src/CourseLoaderCRS.cpp), [`CourseWriterCRS.cpp`](https://github.com/stepmania/stepmania/blob/5_1-new/src/CourseWriterCRS.cpp), [`Course.cpp`](https://github.com/stepmania/stepmania/blob/5_1-new/src/Course.cpp). ITGmania/OutFox/OpenITG share the code lineage.
 - `CourseUtil.cpp` saves edit courses to `<machine profile>/EditCourses/<name>.crs` (the in-game course editor path).
 
+## Getting samples
+
+Committed in [`samples/`](samples/SOURCES.md): 25 courses: the 6 default ones of the StepMania repository (`Courses/Default`), the 6 examples of `Docs/Userdocs/Course_Examples` (random song `*`, `#STYLE`, `#REPEAT:YES`, timed `#MODS`, meter ranges), and the 13 `Courses/Samples` of StepMania AMX (SM 3.9 era: `BESTn`/`WORSTn`, old-style difficulty names, `#LIVES`, a multi-line `#MODS`, a UTF-8 Japanese title). All are tiny and MIT-licensed (StepMania sources).
+
+More: courses live in `Courses/<Group>/*.crs` of any install (user-made ones are shared next to song packs [inference]); the ITGmania repository has the same `Courses/Default` set. No `#SONGSELECT:` (SM5.1 keyed form), `#GAINLIVES` or per-profile `EditCourses` example with an open licence was found: write one from the grammar above (it is plain text) and test it with a StepMania 5.1+/ITGmania build.
+
 ## Sources
 
 - https://github.com/stepmania/stepmania/blob/5_1-new/Docs/CourseFormat.txt

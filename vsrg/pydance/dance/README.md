@@ -157,6 +157,12 @@ Not read by ROX. A decoder would need: beat accumulation from letters, `B/S/W/D`
 - pydance `fileparsers.py` ([DanceFile](https://github.com/mbenkmann/pydance/blob/master/fileparsers.py), Python 2); the reference implementation also contains `MSDFile`, `DWIFile`, `SMFile`, `KSFFile`.
 - Text Text Revolution (ncurses clone) reads the earlier `.step`.
 
+## Getting samples
+
+Committed in [`samples/`](samples/SOURCES.md): the three free songs of the pydance download page (`forkbomb.dance`, `6jan.dance`, `synrg.dance`; pydance's licence is MIT and the Debian copyright file says it covers the music too), downloaded from https://www.icculus.org/pyddr/download.php. Between them they show `gap` positive and negative, `bpm`, one-chart (BEGINNER with tutorial `L` text lines) and two-chart songs, and the `e q s h o D` step-line kinds.
+
+More: the pydance source mirror ([mbenkmann/pydance](https://github.com/mbenkmann/pydance), commit `24b987a7d73a6f6061d266e1da973c9612bb10ca`) ships no songs; the Debian/Gentoo pydance packages pull the songs of the download page ("This will also download the songs below"). pydance converts `.sm`/`.dwi` on the fly but does not write `.dance` [inference]; the spec is `docs/dance-spec.txt` in the mirror. Not found: doubles/couple `.dance` files (the format has `DOUBLE`/`COUPLE` blocks per the spec), `.step` old-style files.
+
 ## Sources
 
 - https://github.com/stepmania/stepmania/blob/master/Docs/SimfileFormats/dance-spec.txt (also at http://kai.vm.bytemark.co.uk/svn/pydance/trunk/pydance/docs/dance-spec.txt per misc.txt)

@@ -93,6 +93,12 @@ Not read by ROX (no `.sma` in [ROX source: src/formats/auto/detect.rs](https://g
 - StepMania [NotesLoaderSMA.cpp](https://github.com/stepmania/stepmania/blob/master/src/NotesLoaderSMA.cpp) (C++; no `.sma` writer exists in the repository); Etterna `NotesLoaderSMA.cpp`; OutFox (pump mode lists `.sma`).
 - StepMania AMX itself (https://github.com/StepMania-AMX, binaries and tutorials on stepmania.amx.io).
 
+## Getting samples
+
+No `.sma` file is committed or in the manifest: none was found in any repository checked (StepMania-AMX/StepMania-AMX at commit `6423c41f8c0efe79599e1004a5171a22ba61b910` ships `Courses/Samples/*.crs` and one `ScreenHowToPlay steps.sm` only; StepMania-AMX/ssc2sma.amx.io has TypeScript loaders `src/loaders/ssc`, `sma`, `sm` and no fixtures; StepMania, ITGmania, Etterna ship the loader but no sample). A hand-written file was not produced because the loader's row/beat and `#ROWSPERBEAT` trigger semantics are not specified well enough to validate one.
+
+How to get one: (1) convert any `.ssc` with the AMX web converter ssc2sma.amx.io (source: https://github.com/StepMania-AMX/ssc2sma.amx.io; "Step converter from .ssc to .sma; supports StepMania 5 (Official), PIU Infinity, StepF2" per the organisation page) [the output format is the `.sma` of this page]; for example convert `../../stepmania/ssc/samples/Springtime.ssc` (pump-single charts) or the StepF2-style manifest file `piu-simfiles_308-Free-Style.ssc`; (2) install StepMania AMX (builds listed on the live index https://download.stepmania.amx.io/, 2.8 MB to 256 MB archives; the project site http://stepmania.amx.io) and look for `.sma` files in its song folders; the AMX forks of PIU simfile packs ([StepMania-AMX/PIU-Simfiles](https://github.com/StepMania-AMX/PIU-Simfiles)) are `.ssc`.
+
 ## Sources
 
 - https://github.com/stepmania/stepmania/blob/master/src/NotesLoaderSMA.cpp, NotesLoaderSMA.h, NotesLoader.cpp

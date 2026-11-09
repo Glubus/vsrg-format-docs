@@ -52,7 +52,7 @@ Difficulty ids: the base game uses `easy`, `normal`, `hard`, `erect`, `nightmare
 
 - Times are in `timeFormat` of the metadata: `"ms"` is the only format the FNFC spec says is supported; the source enum `SongTimeFormat` lists `ticks`, `float` and `ms` (`ms` = `'ms'` is the default). Notes carry no beat/step: step positions are computed by the game from the time and the metadata `timeChanges` (cached `_stepTime`).
 - BPM, time signature and beat tuplets: only in the metadata `timeChanges` ([../vslice-metadata-json/README.md](../vslice-metadata-json/README.md)), so a chart cannot be placed on a beat grid without its metadata.
-- Scroll speed is per difficulty (`scrollSpeed`), not per section. A draft RFC of the chart format (`rfc/chart-format/chartformat-7.jsonc` in the Funkin repository) mentions a `SetScrollSpeed` event [seen only in a search-result snippet; the RFC itself was not read].
+- Scroll speed is per difficulty (`scrollSpeed`), not per section. A draft RFC of the chart format (`rfc/chart-format/chartformat-7.jsonc` in the Funkin repository) mentions a `SetScrollSpeed` event [seen only in a search-result snippet; the RFC itself was not read]. The shipped charts use an event named `ScrollSpeed` with `v` = `{ absolute, duration, ease, scroll, strumline }` [observed in the manifest file tutorial-chart.json]; `FocusCamera` has a bare integer `v` (strumline index) in `bopeebo-chart.json`.
 
 ## Notes
 
@@ -114,6 +114,12 @@ Read, decode only: `rox::formats::fnf_vslice::VSliceDecoder` (`variants`, `decod
 - Moonchart `FNFVSlice` (Haxe): https://github.com/MaybeMaru/moonchart
 - In-game Chart Editor (saves `.fnfc`).
 - Codename Engine refuses V-Slice at runtime but imports it in its editor.
+
+## Getting samples
+
+- Committed: [samples/](samples/): a synthetic default-variation chart and an erect-variation chart.
+- Manifest: eight charts from FunkinCrew/funkin.assets (`preload/data/songs/<song>/<song>-chart[-<variation>].json`, commit `724eba9de9e76761d9cefd52169926bc51c760a5`). Licence: proprietary (funkin.assets LICENSE.md, all rights reserved), so fetched only. Observed: events use `ScrollSpeed` (`{absolute, duration, ease, scroll, strumline}`, the fiche guessed `SetScrollSpeed`), `FocusCamera` carries a bare int `v` (1/0) in `bopeebo-chart.json`, `ZoomCamera`, `SetCameraBop`, `PlayAnimation` objects; note kinds like `noanim`; a difficulty may be an empty list (`ugh-chart-erect.json`: `normal` has 0 notes); `stress-chart.json` has an extra `picospeaker` difficulty.
+- More: the game's `preload/data/songs/` tree (every song has `-chart.json`, `-chart-erect.json`, `-chart-pico.json`/`-bf.json` variations); the in-game Chart Editor writes `.fnfc` files (unzip them).
 
 ## Sources
 

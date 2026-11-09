@@ -1,0 +1,37 @@
+{
+  "song": {
+    "song": "Synthetic FPS Plus Legacy",
+    "bpm": 120,
+    "speed": 2.0,
+    "player1": "bf",
+    "player2": "dad",
+    "stage": "stage",
+    "gf": "gf",
+    "needsVoices": true,
+    "notes": [
+      {
+        "lengthInSteps": 16,
+        "mustHitSection": true,
+        "bpm": 120,
+        "changeBPM": false,
+        "altAnim": false,
+        "sectionNotes": [
+          [0, 0, 0],
+          [500, 1, 250],
+          [1000, 4, 0]
+        ]
+      },
+      {
+        "lengthInSteps": 16,
+        "mustHitSection": false,
+        "bpm": 150,
+        "changeBPM": true,
+        "altAnim": true,
+        "sectionNotes": [
+          [2000, 2, 0],
+          [2400, 7, 0]
+        ]
+      }
+    ]
+  }
+}

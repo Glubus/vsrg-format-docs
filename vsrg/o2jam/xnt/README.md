@@ -46,6 +46,10 @@ Not read by ROX.
 ## Parsers & tools
 Open2Jam: https://github.com/open2jamorg/open2jam/blob/master/parsers/src/org/open2jam/parsers/XNTParser.java and XNTChart.java
 
+## Getting samples
+- **Committed / manifest: none.** `.xnt` charts live inside `.snp` archives of KrazyRain, which are not publicly distributed (see [snp](../snp/README.md#getting-samples)).
+- **How to get one**: extract an `.snp` of an installed KrazyRain with Arrowgene.KrazyRain's `vdisk-extract` (https://github.com/sebastian-heinz/Arrowgene.KrazyRain, README); inside, each `.xnt` comes with an `.xne` XML holding the tempo. Open2Jam's `XNTParser.java` reads them.
+
 ## Sources
 - https://raw.githubusercontent.com/open2jamorg/open2jam/master/parsers/src/org/open2jam/parsers/XNTParser.java
 - https://raw.githubusercontent.com/open2jamorg/open2jam/master/parsers/src/org/open2jam/parsers/XNTChart.java

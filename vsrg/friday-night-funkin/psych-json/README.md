@@ -108,6 +108,13 @@ Not a ROX format of its own, but `.json` is routed to the FNF (legacy) codec, [.
 - Moonchart `FNFPsych` (Haxe): https://github.com/MaybeMaru/moonchart
 - Codename Engine's `PsychParser` imports it: https://github.com/FNF-CNE-Devs/CodenameEngine
 
+## Getting samples
+
+- Committed: [samples/](samples/): four synthetic files (psych_v1, pre-1.0 with event pseudo-notes, bare object, events.json).
+- Manifest: base-game charts from ShadowMario/FNF-PsychEngine (Apache-2.0 code), pinned: tag `0.6.3` (`eb0ade39e8d1c5437db2166a9ddb6eb3c05956e1`, pre-1.0 layout with `player3` and event pseudo-notes in `events.json`), tag `0.7.3` (`2dfa27773a3668e0c1b043a3fb4348942c8a6fb3`), main (`5c67ced49e5a98535298a6daa3f8f4ec79ac8399`, `assets/base_game/shared/data/`). Real base-game charts are fetched, not committed: FNF's data is owned by The Funkin Crew Inc. (https://github.com/FunkinCrew/funkin.assets/blob/main/LICENSE.md: all rights reserved; the Funkin repository `LICENSE.md` says only the source code is Apache-2.0).
+- Observed: the charts shipped in main carry `"format": "psych_v1_convert"` (the loader converts lanes on load), not `psych_v1`; `picospeaker.json` is a bare object without the `song` wrapper; note arrays have a 4th element only for typed notes (`No Animation`).
+- More: any Psych mod keeps charts in `mods/<mod>/data/<song>/`; the in-engine Chart Editor writes them; tags of the repository list every release.
+
 ## Sources
 
 - https://raw.githubusercontent.com/ShadowMario/FNF-PsychEngine/main/source/backend/Song.hx

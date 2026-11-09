@@ -54,6 +54,12 @@ Not read by ROX. Trivial to decode: 7 columns, ms times, Tap/Hold, BPM points.
 
 Raindrop (C++).
 
+## Getting samples
+
+Committed in [`samples/`](samples/SOURCES.md): one **synthetic** (hand-written, CC0) `.ftb` written from Raindrop's `NoteLoaderFTB.cpp`: two `BPM` lines, taps on all 7 tracks, a chord, and holds (`start-end`). The loader reads titles from a separate metadata file (3 lines: music file, title, author), not included.
+
+No real `.ftb` exists in the open: Raindrop's test folder has `esb.osu`, `esb.osb`, `jnight.ssc` only; the origin game/tool of the format is Unknown. How: run [Raindrop](https://github.com/zardoru/raindrop) (GPL-3.0) and load a folder whose charts are `.ftb`; a chart can also be produced by hand from the page's rules.
+
 ## Sources
 
 - https://github.com/zardoru/raindrop/blob/662dd11f/src/NoteLoaderFTB.cpp

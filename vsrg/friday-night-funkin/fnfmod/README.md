@@ -61,6 +61,12 @@ Not read.
 
 The official game (Mod Menu); Polymod: https://github.com/larsiusprime/polymod [Polymod's role is stated in the modding docs path name `_polymod_meta.json`; the link itself was not opened].
 
+## Getting samples
+
+- Committed: [samples/](samples/): `synthetic.fnfmod`, a ZIP in the documented mod layout (`_polymod_meta.json` + `data/songs/...`), no audio. Its `.fnfmod`-specific content is a guess (the format's own schema is Unknown), so treat it as a layout example only.
+- Manifest: none. Test builds with the Mod Menu are on Google Drive links in the blog post (not plain-curl downloadable, not verified) and example mods are on GameBanana (gated).
+- How to get one: install a build with the Mod Menu (v0.9 Feature Preview, per the blog https://funkin.me/blog/2026-08-03/), then ZIP a mod folder and rename it to `.fnfmod` [inference: the blog says the game accepts zip files with that extension]. `_polymod_meta.json` fields: https://polymod.io/docs/mod-metadata/.
+
 ## Sources
 
 - https://funkin.me/blog/2026-08-03/ (Mod Menu post)

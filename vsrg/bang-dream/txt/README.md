@@ -55,5 +55,11 @@ Read by ROX since Prism's addition of `rox::formats::bandori` (decode only): `Si
 ## Parsers & tools
 BanG! Simulator (Python): https://github.com/thtl1999/BanG-simulator · BanGConverter (JS): https://github.com/loader3229/BanGConverter · rmstZ.
 
+## Getting samples
+
+- Committed in [`samples/`](samples/SOURCES.md): `synthetic-bangsim.txt` (hand-written CC0: every note family of the fiche).
+- Manifest: none (real score files are generated per chart).
+- How to get one: run BanGConverter (source https://github.com/loader3229/BanGConverter; `Bang info.txt` points to https://qq1010903229.github.io/BanGConverter) to download and convert an official or Bestdori community chart to the BanG! Simulator `.txt` (`[musicnamecode]ex.txt`); the output is derived from copyrighted charts, so keep it local.
+
 ## Sources
 https://github.com/thtl1999/BanG-simulator (Bang info.txt) · https://github.com/loader3229/BanGConverter · https://lrfasd.github.io/rmstZ/WHATSNEW.html

@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "format": "fpsplus_1",
+    "song": "Synthetic FPS Plus",
+    "player": "Bf",
+    "opponent": "Dad",
+    "speaker": "Gf",
+    "stage": "Stage",
+    "scroll": 2.0,
+    "bpm": [
+      { "time": 0, "bpm": 120 },
+      { "time": 4000, "bpm": 150 }
+    ]
+  },
+  "notes": [
+    { "time": 0, "direction": 0, "length": 0, "player": false, "tag": "" },
+    { "time": 500, "direction": 1, "length": 0, "player": false, "tag": "" },
+    { "time": 1000, "direction": 2, "length": 2, "player": false, "tag": "" },
+    { "time": 1500, "direction": 3, "length": 0, "player": false, "tag": "alt" },
+    { "time": 2000, "direction": 0, "length": 0, "player": true, "tag": "" },
+    { "time": 2500, "direction": 1, "length": 0, "player": true, "tag": "hey" },
+    { "time": 3000, "direction": 2, "length": 4, "player": true, "tag": "" },
+    { "time": 3500, "direction": 3, "length": 0, "player": true, "tag": "censor" },
+    { "time": 4000, "direction": 0, "length": 0, "player": true, "tag": "" },
+    { "time": 4400, "direction": 1, "length": 0, "player": false, "tag": "" }
+  ]
+}

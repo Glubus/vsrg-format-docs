@@ -1,0 +1,61 @@
+*---------------------- HEADER FIELD
+* Hand-written synthetic chart (CC0 / public domain) built from the BMS fiche of vsrg-format-docs.
+* Double play: 1P and 2P lanes, 7 keys + scratch on each side (14K + 2 scratches).
+* 1P lanes: 16 (scratch) 11 12 13 14 15 18 19. 2P lanes: 21 22 23 24 25 28 29 and 26 (scratch).
+
+#PLAYER 3
+#GENRE Test
+#TITLE Synthetic double play
+#SUBTITLE [DP 14K]
+#ARTIST vsrg-format-docs
+#BPM 150
+#PLAYLEVEL 8
+#RANK 2
+#TOTAL 300
+#DIFFICULTY 3
+#LNOBJ ZZ
+
+#WAV01 bgm.ogg
+#WAV02 tap.wav
+#WAV03 scratch.wav
+
+*---------------------- MAIN DATA FIELD
+
+* measure 0: the background sound, then a staircase over the 1P lanes (scratch first, 8 slots)
+#00001:01
+#00016:0200000000000000
+#00011:0002000000000000
+#00012:0000020000000000
+#00013:0000000200000000
+#00014:0000000002000000
+#00015:0000000000020000
+#00018:0000000000000200
+#00019:0000000000000002
+
+* measure 1: a staircase over the 2P lanes, right to left (the 2P scratch, channel 26, is the rightmost lane)
+#00126:0200000000000000
+#00129:0002000000000000
+#00128:0000020000000000
+#00125:0000000200000000
+#00124:0000000002000000
+#00123:0000000000020000
+#00122:0000000000000200
+#00121:0000000000000002
+
+* measure 2: BPM 180 from its start (channel 03 reads the hex pair B4); scratches on both sides together;
+* a #LNOBJ long note on 1P key 1 (channel 11) and one on 2P key 7 (channel 29): head, then ZZ ends it
+#00203:B4
+#00216:03000000
+#00226:03000000
+#00211:0200ZZ00
+#00229:000200ZZ
+
+* measure 3: simultaneous chords on both sides
+#00311:02000000
+#00313:02000000
+#00315:02000000
+#00319:02000000
+#00321:02000000
+#00323:02000000
+#00325:02000000
+#00329:02000000

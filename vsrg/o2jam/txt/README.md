@@ -30,5 +30,9 @@ Not read by ROX.
 ## Parsers & tools
 rmstZ (closed source).
 
+## Getting samples
+- **Committed / manifest: none.** The format itself is Unknown (fiche): no layout, parser or sample was found. rmstZ (https://lrfasd.github.io/rmstZ) lists "txt (O2Jam - Music & Game)" as readable and writable and its page links a test-resource pack, but that pack is on a Jianguoyun share page (https://www.jianguoyun.com/p/DctV8o4Qitn5Bxi2x-AD) that is not a plain downloadable file (not hashable, not fetched, contents unverified).
+- **How to get one** [inference]: install the mobile game "O2Jam - Music & Game" (2019, per NamuWiki) and look for chart text files in its app data, or use rmstZ's "write" option to export a chart to the `txt (O2Jam - Music & Game)` type; neither route was verified.
+
 ## Sources
 - https://lrfasd.github.io/rmstZ/

@@ -64,5 +64,10 @@ Read by ROX (`SngPackage`, `rox::formats::clone_hero`; decode only): header (ver
 - LUA-SNG-Parser: https://github.com/GwyrddGlas/LUA-SNG-Parser
 - Chart-Packer: https://github.com/jcub1011/Chart-Packer
 
+## Getting samples
+- Committed in [`samples/`](samples/SOURCES.md): `synthetic-chart-audioless.sng` and `synthetic-mid-audioless.sng`, built by script from the SngFileFormat specification (version 1, XOR-masked data, metadata pairs, `notes.chart` or `notes.mid`) and re-parsed with an independent reader. They contain **no audio** and have not been opened in Clone Hero/YARG. The mdsitton/SngFileFormat repository (MIT) and YARG.Core (`YARG.Core/IO/SngHandler/`) contain no `.sng` fixtures (trees listed).
+- Manifest: none (no free real `.sng` found).
+- More: build one from any song folder with `SngCli encode` (https://github.com/mdsitton/SngFileFormat) which can also transcode audio to opus and images to JPEG; `SngCli decode` extracts existing `.sng` files back to a song folder. Chart distribution sites for Clone Hero (Chorus Encore, https://chorus.fightthe.pw/) are the place real `.sng` charts come from [inference: not verified in this pass]. Other writers/readers: Chart-Packer, parse-sng, LUA-SNG-Parser (see Parsers & tools).
+
 ## Sources
 https://github.com/mdsitton/SngFileFormat (README: specification, registry)

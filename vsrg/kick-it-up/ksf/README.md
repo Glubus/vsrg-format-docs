@@ -126,6 +126,14 @@ Read by Prism (`docs/game.md` "Formats de danse"): each `.ksf` of a folder is on
 - StepMania [NotesLoaderKSF.cpp](https://github.com/stepmania/stepmania/blob/master/src/NotesLoaderKSF.cpp) (C++; there is **no KSF writer**: `NotesWriterKSF.cpp`, linked from the original repo README, returns 404 at master, 5_1-new and the pinned commit); Etterna `NotesLoaderKSF.cpp`; pydance `KSFFile` ([fileparsers.py](https://github.com/mbenkmann/pydance/blob/master/fileparsers.py), Python); OutFox (pump mode lists `.ksf`).
 - Direct Move / KSFCreator: https://github.com/syspro86/directmove (releases); converter STX -> KSF: https://github.com/StepMania-AMX/STX2DM (MFC).
 
+## Getting samples
+
+Committed in [`samples/`](samples/SOURCES.md): `sample.ksf`, the format example of the StepMania docs (MIT).
+
+Manifest (fetched to `samples-local/vsrg/kick-it-up/ksf/`): three real charts from the open-source Kick It UP! 0.4b tree ([StepMania-AMX/KickItUp](https://github.com/StepMania-AMX/KickItUp), commit `80a1e1ad36cdfb335a58afc688bdf249db55da41`, `song/Beethoven Virus/`: `Crazy_1.ksf`, `Double.ksf`, `Easy_1.ksf`; the same folder has `Crazy_2`, `Easy_2`, `Hard_1`, `Hard_2`); the licence text allows free non-commercial redistribution of the program with source but does not mention the song data, so not committed. The repository also contains the KIU-variant note `docs/KSF-Notes.md`.
+
+More: Kick It Up community song folders (Korean Pump simulators: Kick It Up, DirectMove) contain one `.ksf` per difficulty and player (`Easy_1.ksf`, `Crazy_2.ksf`, `Double.ksf`...); StepMania, Etterna and ITGmania read them (`NotesLoaderKSF.cpp`). The AMX forks [StepMania-AMX/directmove](https://github.com/StepMania-AMX/directmove) and `STX2DM` produce/convert KSF but ship no sample. The DirectMove page gives CP949/EUC-KR and CRLF as the encoding of real files; expect that when collecting (`sample.ksf` is CRLF).
+
 ## Sources
 
 - https://github.com/stepmania/stepmania/blob/master/Docs/SimfileFormats/KSF/ksf-format.txt (+ `sample.ksf`, `_src.txt`)

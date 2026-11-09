@@ -1,0 +1,40 @@
+*---------------------- HEADER FIELD
+* Hand-written synthetic chart (CC0 / public domain) built from the BMS fiche of vsrg-format-docs.
+* Double play with 5 keys + scratch per side (10K + 2 scratches): lanes 16 11-15 / 21-25 26,
+* long notes in the RDM type 1 notation (#LNTYPE 1, channels 5x for 1P and 6x for 2P).
+
+#PLAYER 3
+#GENRE Test
+#TITLE Synthetic double play 10K
+#ARTIST vsrg-format-docs
+#BPM 128
+#PLAYLEVEL 5
+#RANK 3
+#LNTYPE 1
+
+#WAV01 bgm.ogg
+#WAV02 tap.wav
+
+*---------------------- MAIN DATA FIELD
+
+#00001:01
+* measure 0: 1P notes on keys 1 to 5 and the scratch
+#00016:020000000000
+#00011:000200000000
+#00012:000002000000
+#00013:000000020000
+#00014:000000000200
+#00015:000000000002
+
+* measure 1: the 2P side (scratch, channel 26, rightmost)
+#00121:020000000000
+#00122:000200000000
+#00123:000002000000
+#00124:000000020000
+#00125:000000000200
+#00126:000000000002
+
+* measure 2: a long note on 1P key 3 (channel 53: head on slot 0, tail on slot 2) and one on 2P key 1 (channel 61: head on measure 2 slot 1, tail in measure 3)
+#00253:02000200
+#00261:00020000
+#00361:00020000

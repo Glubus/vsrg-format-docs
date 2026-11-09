@@ -53,6 +53,12 @@ Not read by ROX.
 - osu-file-parser (Rust) parses `.osb` and can append it to an `.osu` structure: https://docs.rs/osu-file-parser
 - osu!lazer storyboard decoder (C#): https://github.com/ppy/osu/blob/master/osu.Game/Beatmaps/Formats/LegacyStoryboardDecoder.cs (file exists, HTTP 200; not read in detail)
 
+## Getting samples
+
+- **Committed** in [`samples/`](samples/) (see [`SOURCES.md`](samples/SOURCES.md)): 14 tiny `.osb` decoder test files from ppy/osu @ bb37f05 (MIT): animation loops/types, `[Variables]` (self-reference, suffix), video events with upper/lower-case extensions, out-of-order start times.
+- **Manifest**: 7 real storyboards of the osu-file-parser tests (`osb`, `osb_2`, `variable`, `variable2`, `match_test`, `legacy_event`, `aspire_osb1`; 0.3-76 KB), pinned to a commit; not committed (no LICENSE file upstream).
+- **How to get more**: a mapset's `.osb` sits at the root of the `.osz` next to the `.osu` files (see [osz](../osz/README.md)); the storyboard section of the osu! wiki and any ranked set with storyboard (https://osu.ppy.sh/beatmaps, filter "Has storyboard") provide real ones; the editor writes the shared storyboard to `<set>/<Artist - Title (Creator)>.osb`.
+
 ## Sources
 
 - https://github.com/ppy/osu-wiki/tree/master/wiki/Client/File_formats (osb page)

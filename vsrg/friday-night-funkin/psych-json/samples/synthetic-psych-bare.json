@@ -1,0 +1,25 @@
+{
+  "song": "Synthetic Psych Bare",
+  "bpm": 140,
+  "speed": 1.6,
+  "needsVoices": false,
+  "player1": "bf",
+  "player2": "dad",
+  "gfVersion": "gf",
+  "stage": "stage",
+  "format": "psych_v1",
+  "notes": [
+    {
+      "sectionBeats": 4,
+      "sectionNotes": [
+        [0, 0, 0],
+        [428.5714, 4, 0],
+        [857.1429, 1, 0]
+      ],
+      "mustHitSection": true,
+      "gfSection": false,
+      "altAnim": false
+    }
+  ],
+  "events": []
+}

@@ -88,6 +88,10 @@ Not read by ROX.
 - EZ2Tools (C++): https://github.com/ben-rnd/EZ2Tools (chart converter V0.6 -> V0.7/0.8)
 - EZ2PORT (the engine EZ2BMS follows; not found publicly)
 
+## Getting samples
+- **Committed / manifest: none.** No `.ez` file under an open licence or at a public, hashable URL was found. The EZ2BMS repository states its fixtures are "synthetic or from a GPL-3.0 project, never from a game install" (`packages/chart-core/test/fixtures/README.md`; checked: it contains no `.ez`/`.ezi`), and no repository scanned (EZ2BMS, EZ2Tools) ships one. A hand-written binary was deliberately not made: the retail cipher tables are not public, so an invented file could not be validated.
+- **How to get one**: install a copy of EZ2DJ/EZ2AC you own and copy the song chart files named `<mode>1p-<key>[-tier].ez` (EZ2BMS `docs/importing.md`, `modes/registry.ts`, cited in the fiche). Retail files are encrypted with a per-file-type 512-byte table that is "read out of the user's own game" (fiche; EZ2BMS `ez2data/crypt.ts`, EZ2PORT); https://github.com/Roganis/EZ2BMS (GPL-3.0) imports them and https://github.com/ben-rnd/EZ2Tools is the other tool named in the fiche. A file starting with `EZFF` is already plaintext (EZ2PORT rule, fiche).
+
 ## Sources
 - https://raw.githubusercontent.com/Roganis/EZ2BMS/main/packages/chart-core/src/io/ez/ezff.ts
 - https://raw.githubusercontent.com/Roganis/EZ2BMS/main/packages/chart-core/src/ez2data/crypt.ts

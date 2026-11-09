@@ -91,6 +91,11 @@ Not read by ROX. The model (wide free-position notes on a 24-unit board, slides 
 
 `rg-converters` (C++/Python): https://github.com/UntitledCharts/rg_converters (`cpp/src/converters/bdon/loader.cpp`, loading only; options `guide_traces`, `trace_ends`, `flick_body_collide`).
 
+## Getting samples
+
+- Committed / manifest: none. The only implementation is the `rg_converters` BDON loader (loading only); no sample `.bdon`/`.json.gz` is in its repository (test files are SUS and PJSK JSON).
+- How to get one: export a chart from the game BanG Dream! Our Notes (format name per the rg_converters README); the loader accepts gzip or plain JSON. [inference] No public download source is known; ask in the UntitledCharts community, whose converter library supports it.
+
 ## Sources
 
 - https://github.com/UntitledCharts/rg_converters (commit `673710dcc441aea97ac89e113f811d5c169763d4`): `README.md`, `cpp/src/converters/bdon/loader.cpp`, `cpp/include/rg/converters/bdon.hpp`

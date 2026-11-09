@@ -144,6 +144,12 @@ Not read by ROX. ROX has no BMS support in 0.8.1 (planned); an `.ibmsc` reader w
 - Other editors listed on [hitkey.nekokan.dyndns.info/editors.html](https://hitkey.nekokan.dyndns.info/editors.html): GDAC2, BMSE, uBMSC, pBMSC, iBMSCPP (native macOS/C++/Swift).
 - No third-party standalone `.ibmsc` parser found.
 
+## Getting samples
+
+- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): two hand-built `.ibmsc` files (`synthetic-minimal.ibmsc`, `synthetic-features.ibmsc`) produced by following the pBMSC reader/writer and verified only with a mirrored Python reader (not opened in iBMSC).
+- **Not found anywhere**: the `aqtq314/iBMSC` and `Shimi9999/pBMSC` repositories contain no sample project and no LICENSE file; nobody publishes `.ibmsc` files because they are an editor save format (BMS charts are published as `.bms`/`.bme`).
+- **To get a real one**: install iBMSC, uBMSC or pBMSC (Windows, .NET), open or draw any chart and use *Save* with the `.ibmsc` filter (`SaveiBMSC` in `iBMSC/ChartIO.vb`); or open any `.bms` in the editor and save it as `.ibmsc`. Real files also contain the editor's undo/redo history.
+
 ## Sources
 
 - https://github.com/Shimi9999/pBMSC (commit `06aaf7438dbca3c8a0611bd13d134f6d1ce04a28`): `iBMSC/ChartIO.vb` lines ~1072-1505, `iBMSC/Option Windows/Note.vb`, `iBMSC/EditorColumns.vb`, `iBMSC/UndoRedo.vb`, `iBMSC/MainWindow.vb` (defaults), `iBMSC/Strings.vb` ("iBMSC Binary Format (*.ibmsc)"), `README.md`

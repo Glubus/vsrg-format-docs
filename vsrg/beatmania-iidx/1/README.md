@@ -106,6 +106,18 @@ Not read by ROX. A decoder needs per-game tick rates and meter/BPM integration; 
 - SaxxonPike/iidx-ps2tools charttool (Python): https://github.com/SaxxonPike/iidx-ps2tools (`charttool/iidx_common.py`, `plugins/iidx25thac.py`; converts `.1` <-> JSON).
 - SaxxonPike/rhythm-game-formats `iidx/1.md`.
 
+## Getting samples
+
+No sample is committed and none is in `samples.manifest.json`: every real `.1` file is Konami game data, and no publicly downloadable, redistributable `.1` file was found (the converters and parsers below ship no fixtures; their repositories were checked at the commits cited). A hand-written binary `.1` was not made either, because the layout is only partly verified (see Doc status).
+
+How to obtain real files (you need your own copy of the game):
+
+- From an IIDX installation, the song folder holds the chart next to its sound archive. The converter iidx2bms (Python GUI + `one2bme` C tool) looks, for a song id `<id>`, in `\contents\data\sound\<id>\` (or directly in `\contents\data\sound\`) for `<id>.1` + `<id>.s3p` + `<id>_pre.2dx`, or else for one `<id>.ifs` archive (read with `ifstools`, which unpacks `<id>.1`, `<id>.2dx`, `<id>_pre.2dx`). Source: `iidx2bms/conversion/conversion.py` (`_find_chart_source`, `_prepare_from_ifs`) at https://github.com/Glebsin/iidx2bms/blob/893a6a94b0bc442356be88852188cd5e05fe1b8e/iidx2bms/conversion/conversion.py and its README ("Choose your `\contents\data\sound\` and `\contents\data\movie\` paths").
+- The `.ifs` wrapper is unpacked with mon/ifstools (https://github.com/mon/ifstools).
+- drmext/iidx-datatools `parse_chart_notecounts.py` "supports .ifs files directly and loose .1 files in directories" (README of the LupinThidr mirror, commit a4c86e76c79f2d1f1dd9aa0c03fd97d377b314e4), a cheap way to check that a dumped `.1` parses.
+- Slot layout seen in a converter: `one2bme.c` of iidx2bms maps directory slot 0 to `[Hyper7]`, 1 `[Normal7]`, 2 `[Another7]`, 3 `[Beginner7]`, 4 `[Leggendaria7]`, 6 `[Hyper14]`, 7 `[Normal14]`, 8 `[Another14]`, 10 `[Leggendaria14]` (`kDiffs` table, commit 893a6a94b0bc442356be88852188cd5e05fe1b8e). This differs from the "Container" section above, which, following iidx-ps2tools, lists slot 0 as SP NORMAL and slot 1 as SP HYPER, and does not name slots 3-5 and 9-11; which one is right for which game version is Unknown [uncertain: not verified on real data].
+- Converters that write BMS/BME from `.1`: iidx2bms (https://github.com/Glebsin/iidx2bms), osu!mania: QingQiz/iidx2osu. Community BMS recreations of official charts exist (ZIv thread "beatmania, beatmania IIDX and pop'n music official BMS/PMS simfiles preservation project") but they are BMS files, not `.1`.
+
 ## Sources
 
 - https://raw.githubusercontent.com/SaxxonPike/rhythm-game-formats/master/iidx/1.md
@@ -113,3 +125,5 @@ Not read by ROX. A decoder needs per-game tick rates and meter/BPM integration; 
 - https://raw.githubusercontent.com/SaxxonPike/iidx-ps2tools/master/charttool/plugins/iidx25thac.py
 - https://github.com/SaxxonPike/iidx-ps2tools (README)
 - Zenius-I-Vanisher thread on IIDX timing (cited by the spec): https://zenius-i-vanisher.com/v5.2/viewthread.php?threadid=5233 (not fetched)
+- iidx2bms (Getting samples): https://github.com/Glebsin/iidx2bms/tree/893a6a94b0bc442356be88852188cd5e05fe1b8e (`iidx2bms/conversion/conversion.py`, `iidx2bms/one2bme/one2bme.c`, `README.md`)
+- iidx-datatools mirror (Getting samples): https://github.com/LupinThidr/iidx-datatools/tree/a4c86e76c79f2d1f1dd9aa0c03fd97d377b314e4

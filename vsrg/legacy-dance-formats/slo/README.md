@@ -13,7 +13,7 @@ Unknown.
 
 ## Structure / metadata
 
-Unknown. Related D2R definitions (title, artist, tempo, delay...) are documented in [d2r](../d2r/README.md); whether `.slo` shares that syntax is Unknown.
+The definition part uses `KEY=value` lines; SLOEDIT's template `slohead.txt` lists the keys `ORDER= PLAYMODE= TITLE= ARTIST= MUSIC= SHORTCUT= TEMPO10= DELAYTIME= BGBMP= TITLEBMP= WAKUBMP= CDTRACK= CDTRACKFROM= CDTRACKTO= CDDELAYTIME= START=` [observed in `sloedit.zip:slohead.txt`, Wayback 2003-12-19 copy of http://paramax.hypermart.net/sloedit.zip]. Its readme says the definition part follows D2R2's (documented in [d2r](../d2r/README.md): `TITLE`, `ARTIST`, `MUSIC`, `SHORTCUT`, `TEMPO10`, `START` match; `ORDER`, `PLAYMODE`, `DELAYTIME`, `BGBMP`, `TITLEBMP`, `WAKUBMP` are new here). The chart grammar itself is Unknown.
 
 ## Timing model
 
@@ -47,7 +47,12 @@ Not read by ROX.
 
 SLOEDIT (~200 KB, from the chart-search site; no longer hosted).
 
+## Getting samples
+
+No sample: no `.slo` file or specification was found. Observed in the SLOEDIT archive (https://web.archive.org/web/20031219024931id_/http://paramax.hypermart.net/sloedit.zip, 176,632 bytes; read 2026-11-09): `slohead.txt` is the editor's template of **definition-part keys**: `ORDER= PLAYMODE= TITLE= ARTIST= MUSIC= SHORTCUT= TEMPO10= DELAYTIME= BGBMP= TITLEBMP= WAKUBMP= CDTRACK= CDTRACKFROM= CDTRACKTO= CDDELAYTIME= START=` (so `TITLE`, `ARTIST`, `MUSIC`, `SHORTCUT`, `TEMPO10`, `START` resemble [`.d2r`](../d2r/README.md); `ORDER`, `PLAYMODE`, `DELAYTIME`, `BGBMP`, `TITLEBMP`, `WAKUBMP` are new). The readme says the definition part follows the D2R2 style ("most D2R2 definitions can be used as-is"), notes are placed with keys `4 7 2 8 9 6 ; p : @ [ ]`, the arrow colours at 1/16 are "yellow, grey, blue, grey", and the editor autosaves. To get a file: run SloEdit.exe (Windows) from that archive, choose a play mode, place arrows, and save.
+
 ## Sources
 
 - http://web.archive.org/web/20031219024931/http://paramax.hypermart.net/editor.html
+- https://web.archive.org/web/20031219024931id_/http://paramax.hypermart.net/sloedit.zip (`readme.txt`, `slohead.txt`)
 - https://github.com/stepmania/stepmania/blob/master/Docs/SimfileFormats/misc.txt

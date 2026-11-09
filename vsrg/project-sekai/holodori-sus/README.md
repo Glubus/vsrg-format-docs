@@ -96,6 +96,11 @@ Not read by ROX. 12-lane board with wide notes, flicks, slides with eases/bezier
 
 `rg-converters` (C++/Python): https://github.com/UntitledCharts/rg_converters (`cpp/src/converters/holodori_sus/loader.cpp`, loading only).
 
+## Getting samples
+
+- Committed / manifest: none. The only open implementations (rg_converters `holodori_sus` loader; HolodoriDB/holodori-scores, MIT, which only reads such files) ship no sample file (tree of holodori-scores checked at `cdd1a71e0686083f58c89570e15a95139145bc1b`). Writing one by hand would rely on an unverified dialect reading.
+- How to get one: the game hololive Dreams (holodori) stores charts as this SUS dialect; `holodori-asset-tools` (https://github.com/HolodoriDB/holodori-asset-tools, GPL-3.0) can `holodori download` / `holodori extract` the game's assets without the game installed (README), and holodori.best (HolodoriDB) is the community database. Official charts are the game's copyright; the game also has an in-game custom chart feature whose exports would be the best candidates for redistributable samples.
+
 ## Sources
 
 - https://github.com/UntitledCharts/rg_converters (commit `673710dcc441aea97ac89e113f811d5c169763d4`): `README.md`, `cpp/src/converters/holodori_sus/loader.cpp`, `cpp/include/rg/converters/sus_common.hpp`

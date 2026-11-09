@@ -1,0 +1,53 @@
+This is a hand-written synthetic chart (CC0 / public domain), built from the PJSK SUS dialect described in ../README.md.
+Non-# lines are comments.
+
+#TITLE "Synthetic 12-lane Sekai chart"
+#ARTIST "synthetic"
+#DESIGNER "vsrg-format-docs (CC0)"
+#DIFFICULTY 0
+#PLAYLEVEL 1
+#WAVEOFFSET 0
+#REQUEST "ticks_per_beat 480"
+
+#00002: 4
+
+#BPM01: 140.0
+#BPM02: 175.0
+#00008: 01
+#00208: 02
+#00308: 0001
+
+#TIL00: "0'0:1.0, 2'0:1.5, 3'0:1.0"
+#HISPEED 00
+#MEASUREHS 00
+
+Measure 0: tap (lane 2 w4), critical tap (lane 6 w4)
+#00012: 1400000014000000
+#00016: 0000240000002400
+
+Measure 1: skill (lane 0 w1), flick-up (lane 4 w3) + directional up, flick-left (lane 8 w2) + directional left, trace (lane 10 w2)
+#00110: 4100000000000000
+#00114: 3300000000000000
+#00154: 1300000000000000
+#00118: 0000000032000000
+#00158: 0000000032000000
+#0011a: 0000000052000000
+
+Measure 2: critical slide start overlap, slide start lane 4 w4 (ch 0), visible relay lane 6 w4 with ease-out overlap, end in measure 3 on lane 8 w4
+#00214: 2400000000000000
+#002340: 1400000000000000
+#002360: 0000000034000000
+#00216: 0000000014000000
+#00256: 0000000064000000
+#003380: 2400000000000000
+
+Measure 4-5: guide (decorative slide) from lane 9 w2 to lane b w2
+#004990: 1200000000000000
+#005b90: 2200000000000000
+
+Measure 6-7: fever start (normal tap on lane f w1), fever end (critical tap on lane f w1)
+#0061f: 1100000000000000
+#0071f: 2100000000000000
+
+Measure 8: final tap
+#00812: 1400000000000000

@@ -91,6 +91,12 @@ Read by ROX since Prism's addition of `rox::formats::clone_hero::MidDecoder` (de
 ## Parsers & tools
 YARG.Core (C#): https://github.com/YARC-Official/YARG.Core · Onyx (Haskell): https://github.com/mtolly/onyx · Moonscraper (C#, reads/writes MIDI): https://github.com/FireFox2000000/Moonscraper-Chart-Editor · REAPER + RBN tooling; Editor on Fire; FoFiX (Python): https://github.com/fofix/fofix · Phase Shift (closed).
 
+## Getting samples
+- Committed in [`samples/`](samples/SOURCES.md): `yarg-core_test.mid` (YARG.Core unit-test fixture, LGPL-3.0; GUITAR, COOP, BASS, RHYTHM, KEYS, DRUMS, both GHL tracks, VOCALS) and `synthetic-notes.mid` (hand-built CC0: tempo/time-signature changes, force-HOPO, tap marker and Phase Shift tap SysEx, `[ENHANCED_OPENS]`, 4-lane pro drums with tom markers and roll lane, 5-lane keys).
+- Manifest: `drawntotheflame.mid` (YARG.Core `YARG.Core.UnitTests/Engine/Test Charts/`, 18 tracks incl. HARM1-3, Pro Keys, VENUE, BEAT; pinned URL). Not committed: it is a complete Rock Band-style chart whose rights are not stated.
+- Not obtained: Pro Guitar/Pro Bass tracks and Pro Keys in a freely licensed file (Pro Keys is present only in the manifest file). Rock Band Network / Rock Band chart `.mid` files are commercial; GH1/GH2-layout files see [gh12-mid](../../guitar-hero/gh12-mid/README.md).
+- More: Onyx (https://github.com/mtolly/onyx) exports `notes.mid` and its repository holds many community transcriptions (mixed authors, composition rights not cleared, so none were taken); YARG wiki "Songs" describes extracted Rock Band CON/PKG folders whose `songs/<name>/<name>.mid` can be copied for personal use (https://wiki.yarg.in/wiki/Songs); Chorus Encore for community charts.
+
 ## Sources
 - https://thenathannator.github.io/GuitarGame_ChartFormats/ (mid-format: Format-Overview, Technical-Details, Tracks/*; Implementation-Specific/Rock-Band, Guitar-Hero-1-and-2, Phase-Shift)
 - https://github.com/TheNathannator/GuitarGame_ChartFormats

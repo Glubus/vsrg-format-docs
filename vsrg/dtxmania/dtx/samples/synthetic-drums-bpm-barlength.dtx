@@ -1,0 +1,56 @@
+; Synthetic DTX chart written by hand from the DTXmaniaNX loader rules (CDTX.cs). Public domain (CC0). No audio is shipped.
+#TITLE: Synthetic Drums
+#ARTIST: Public Domain
+#COMMENT: hand-written feature test (BPM table, raw BPM chip, bar length, all drum lanes)
+#GENRE: Test
+#BPM: 120
+#DLEVEL: 52
+#PREVIEW: pre.ogg
+#PREIMAGE: banner.jpg
+#WAV01: bgm.ogg
+#WAV11: hihat_closed.wav
+#VOLUME11: 80
+#PAN11: -20
+#WAV12: snare.wav
+#WAV13: kick.wav
+#WAV14: hightom.wav
+#WAV15: lowtom.wav
+#WAV16: crash_right.wav
+#WAV17: floortom.wav
+#WAV18: hihat_open.wav
+#WAV19: ride.wav
+#WAV1A: crash_left.wav
+#WAV1B: hihat_pedal.wav
+#WAV1C: kick_left.wav
+#BPM01: 90
+#BPM02: 200.5
+; measure 0 (shown as the 1st measure): BGM chip, kick/snare/hi-hat
+#00001: 01
+#00011: 1111111111111111
+#00012: 00001200000012000000120000001200
+#00013: 13000000130000001300000013000000
+; measure 1: BPM table index 01 (90 BPM) in the middle, toms, cymbals
+#00108: 0000000001000000
+#00114: 14001400
+#00115: 00001500
+#00116: 16
+#00117: 0000000000001700
+#00118: 00000000000000000000000000000018
+#00119: 1900190019001900
+#0011A: 1A
+#0011B: 1B000000
+#0011C: 00001C00
+; measure 2: bar length 0.75 (persists in DTX until changed), raw BPM 0x96 = 150 at 3/4 of the measure
+#00202: 0.75
+#00211: 11111111
+#00203: 00000096
+#00213: 13001300
+; measure 3: BPM table index 02 (200.5 BPM), bar length back to 1.0
+#00302: 1.0
+#00308: 02
+#00312: 12121212
+#00313: 13131313
+; measure 4: back to the base BPM through the table (index 00 = #BPM)
+#00408: 00
+#00411: 1111
+#00416: 16

@@ -15,7 +15,7 @@ A folder: `<song>.json` (metadata) plus `<song>_section<N>.png` for N = 1..`sect
 
 `<song>.json`: `{ "song": <string>, "bpm": <int>, "sections": <int> }` (`FNFLudumDareMeta`).
 
-Each PNG is 8 pixels wide and `height` = number of steps in the section (16 normally; sections with more rows are 8 beats long). Pixel value 1 ("tile 1" after the engine's CSV conversion) is black (`0xFF000000`) on a white (`0xFFFFFFFF`) background in Moonchart's writer.
+Each PNG is 8 pixels wide and `height` = number of steps in the section (16 in Moonchart's writer, 12 in the real `bopeebo` files of tag 1.0.0 [observed by decoding the manifest PNGs];  sections with more rows are 8 beats long). Pixel value 1 ("tile 1" after the engine's CSV conversion) is black (`0xFF000000`) on a white (`0xFFFFFFFF`) background in Moonchart's writer.
 
 ## Timing model
 
@@ -39,7 +39,7 @@ Image decoding needs a PNG decoder (no text); one note per row means chords are 
 
 ## Example
 
-None (binary images).
+Real files: see [samples/SOURCES.md](samples/SOURCES.md) (manifest, tag 1.0.0) and the synthetic section PNGs in [samples/](samples/). Observed in the real PNGs: 8-bit RGB, white background, black (0,0,0) note pixels, hold pixels in columns 4-7.
 
 ## ROX support
 
@@ -49,6 +49,13 @@ Not read.
 
 - Moonchart `FNFLudumDare` (Haxe): https://github.com/MaybeMaru/moonchart/blob/main/src/moonchart/formats/fnf/FNFLudumDare.hx
 - FNF repository tag `1.0.0` (cited by Moonchart): https://github.com/FunkinCrew/Funkin/tree/1.0.0 [not opened]
+
+## Getting samples
+
+- Committed: [samples/](samples/): a synthetic 4-section song (PNG chart data only, no artwork), built from the layout below.
+- Manifest: the real Ludum Dare build data from tag `1.0.0` of FunkinCrew/Funkin (commit `567a7af392085da91ba8382e8117b2bcd9d03e7f`, `assets/data/<song>/`): `bopeebo.json` + 15 section PNGs and `fresh.json` + 16 PNGs. The tag has no licence file; not committed. The PNGs are chart data (8-pixel-wide RGB bitmaps without artwork).
+- Observed in those files: the PNGs are 8 pixels wide and 12 rows high (not 16), white background with black pixels, one black pixel per row at most, columns 0-3 notes and 4-7 hold continuations (hold pixel = note column + 4); `bopeebo.json` is `{"song": "Bopeebo", "bpm": 100, "sections": 15}` with 4-space indentation and no trailing newline. [observed in the manifest files; pixel layout read by decoding the PNGs]
+- More: browse https://github.com/FunkinCrew/Funkin/tree/1.0.0/assets/data (also `fresh`).
 
 ## Sources
 

@@ -97,6 +97,12 @@ Not read by ROX. It lacks BPM/SV/keysounds that ROX stores; at best it could be 
 
 rizu (Lua): https://github.com/semyon422/rizu (`chart/transform/NanoChart.lua`, test `NanoChart_test.lua`).
 
+## Getting samples
+
+- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): `rizu-test-v1-positive-delay.nanochart` (bytes of the rizu unit test, GPL-3.0) and two synthetic files (`synthetic-v2-roundtrip.nanochart`, `synthetic-v2-negative-delay.nanochart`) produced with a Python port of `NanoChart:encode` checked against the repository's exact-byte test vectors and decoded back with a port of `NanoChart:decode`.
+- **Not found**: no real `.nanochart` file is published in the repositories searched.
+- **To get a real one**: the rizu editor has an exporter, `rizu/editor/exports/NanoChartExporter.lua` (observed in the repo tree at commit `cf4603379dcab949d3510b8c31d1d3e421df6ec0`); run the game from source (https://github.com/semyon422/rizu), open a chart in the editor and use that export [inference: UI path not run]. The module can also be called directly: `NanoChart:encode(hash, inputs, notes)`.
+
 ## Sources
 
 - https://github.com/semyon422/rizu (commit `37df09654581800fa30df613385080b99c795c9a`): `chart/transform/NanoChart.lua`, `chart/transform/NanoChart_test.lua`, `chart/spec.md`

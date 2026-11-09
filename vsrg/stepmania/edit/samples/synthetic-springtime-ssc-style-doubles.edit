@@ -1,0 +1,23 @@
+#SONG:StepMania 5/Springtime;
+//---------------dance-double - synthetic edit (doubles)----------------
+#NOTEDATA:;
+#STEPSTYPE:dance-double;
+#DESCRIPTION:synthetic edit;
+#DIFFICULTY:Edit;
+#METER:7;
+#CREDIT:StepmaniaFamily corpus (CC0);
+#NOTES:
+10000001
+00100100
+0000M000
+02000000
+00000000
+03000000
+00000000
+00010010
+,
+10000001
+01000010
+00100100
+00011000
+;

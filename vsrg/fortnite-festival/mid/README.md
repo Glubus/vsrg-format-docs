@@ -36,5 +36,10 @@ Not read by ROX.
 ## Parsers & tools
 Festival-MIDI-Extractor: https://github.com/yotolo2354/Festival-MIDI-Extractor
 
+## Getting samples
+- Committed: none. Manifest: none. The charts are Epic/Harmonix assets encrypted in the game data, so no licence permits redistribution and no public sample exists.
+- How to get one: the Festival-MIDI-Extractor GUI (MIT, https://github.com/yotolo2354/Festival-MIDI-Extractor) downloads a Jam Track by track ID and, per its README, "decrypts the raw multi-track MIDI file (`notes.mid`)" and writes `song.ini` and `album.png` into one song folder ("Quick MIDI Export" fetches only those three). It is a fork of ilayezra/Festival-Extractor and uses blurlconvert for BLURL parsing (README credits). Its `tests/test_chart_extraction.py` was seen in the file list but not read. Legality of extraction is the user's responsibility.
+- Local check of the track layout described in this fiche (Easy 60-63 ... Expert 96-100, note 116 overdrive) needs such an extracted file; none was obtained here.
+
 ## Sources
 https://dromzeh.dev/posts/reverse-engineering-fortnite-festival · https://github.com/yotolo2354/Festival-MIDI-Extractor · https://www.engadget.com/your-old-rock-band-guitars-now-work-in-fortnite-festival-164054839.html

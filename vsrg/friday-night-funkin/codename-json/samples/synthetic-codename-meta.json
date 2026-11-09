@@ -1,0 +1,10 @@
+{
+  "displayName": "Synthetic Codename",
+  "bpm": 120.0,
+  "beatsPerMeasure": 4,
+  "stepsPerBeat": 4,
+  "icon": "bf",
+  "color": "#FFFFFF",
+  "coopAllowed": true,
+  "opponentModeAllowed": true
+}

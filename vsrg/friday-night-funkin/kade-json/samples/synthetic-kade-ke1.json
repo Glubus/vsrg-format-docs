@@ -1,0 +1,96 @@
+{
+  "song": {
+    "song": "Synthetic KE1",
+    "songName": "Synthetic KE1",
+    "songId": "synthetic-kade-ke1",
+    "chartVersion": "KE1",
+    "bpm": 120,
+    "speed": 2.0,
+    "needsVoices": true,
+    "player1": "bf",
+    "player2": "dad",
+    "gfVersion": "gf",
+    "noteStyle": "normal",
+    "stage": "stage",
+    "validScore": true,
+    "eventObjects": [
+      { "name": "Init BPM", "position": 0, "value": 120, "type": "BPM Change" },
+      { "name": "BPM Change 1", "position": 8, "value": 150, "type": "BPM Change" },
+      { "name": "Scroll Speed 1", "position": 12, "value": 1.5, "type": "Scroll Speed Change" }
+    ],
+    "notes": [
+      {
+        "startTime": 0,
+        "endTime": 2000,
+        "lengthInSteps": 16,
+        "mustHitSection": true,
+        "changeBPM": false,
+        "bpm": 120,
+        "altAnim": false,
+        "CPUAltAnim": false,
+        "playerAltAnim": false,
+        "typeOfSection": 0,
+        "sectionNotes": [
+          [0, 0, 0, false, 0],
+          [500, 1, 0, false, 1],
+          [1000, 2, 250, false, 2],
+          [1000, 6, 0, false, 2],
+          [1500, 3, 0, true, 3]
+        ]
+      },
+      {
+        "startTime": 2000,
+        "endTime": 4000,
+        "lengthInSteps": 16,
+        "mustHitSection": false,
+        "changeBPM": false,
+        "bpm": 120,
+        "altAnim": false,
+        "CPUAltAnim": false,
+        "playerAltAnim": false,
+        "typeOfSection": 0,
+        "sectionNotes": [
+          [2000, 0, 0, false, 4],
+          [3000, 2, 0, false, 6],
+          [3500, 5, 500, false, 7]
+        ]
+      },
+      {
+        "startTime": 4000,
+        "endTime": 5600,
+        "lengthInSteps": 16,
+        "mustHitSection": true,
+        "changeBPM": true,
+        "bpm": 150,
+        "altAnim": false,
+        "CPUAltAnim": false,
+        "playerAltAnim": false,
+        "typeOfSection": 0,
+        "sectionNotes": [
+          [4000, 0, 0, false, 8],
+          [4400, 1, 0, false, 9],
+          [4800, 2, 400, false, 10],
+          [5200, 3, 0, false, 11]
+        ]
+      },
+      {
+        "startTime": 5600,
+        "endTime": 7200,
+        "lengthInSteps": 16,
+        "mustHitSection": true,
+        "changeBPM": false,
+        "bpm": 150,
+        "altAnim": false,
+        "CPUAltAnim": false,
+        "playerAltAnim": true,
+        "typeOfSection": 0,
+        "sectionNotes": [
+          [5600, 0, 0, false, 12],
+          [6000, 1, 0, false, 13],
+          [6400, 2, 0, false, 14],
+          [6800, 3, 0, false, 15]
+        ]
+      }
+    ]
+  }
+}

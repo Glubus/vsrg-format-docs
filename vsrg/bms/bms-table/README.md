@@ -140,6 +140,12 @@ Not read by ROX. It carries no notes, only chart identifiers (MD5/SHA-256 of BMS
 - `jbmstable-parser` (Java, original): https://github.com/exch-bms2/jbmstable-parser
 - beatoraja (Java; imports tables): https://github.com/exch-bms2/beatoraja (`TableData.java`, `TableDataAccessor.java`)
 
+## Getting samples
+
+- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): `synthetic-header.json` and `synthetic-data.json` (hand-written, CC0, every documented key).
+- **Not in the manifest** (live URLs that change, not hashable, fetch manually): header + data of Stella (`https://stellabms.xyz/st/`, `data_url` = `score.json`), Satellite (`https://stellabms.xyz/sl/`), the NEW GENERATION Insane table (`https://rattoto10.github.io/second_table/`, absolute `data_url`) and the 2017 Normal table archive (`https://darksabun.club/table/archive/normal1/`). None of these sites states a licence, hence not committed.
+- **More**: open any table page, read `<meta name="bmstable" content="header.json">` in its HTML, download that header, then its `data_url` (this is how a client finds them, see above). Many tables are listed by the players that import them (beatoraja, LR2oraja, bms-table-rs examples `examples/single_fetch.rs`); table authors' pages are the primary source.
+
 ## Sources
 
 - https://github.com/exch-bms2/jbmstable-parser/wiki/%E9%9B%A3%E6%98%93%E5%BA%A6%E8%A1%A8%E3%81%AE%E4%BB%95%E6%A7%98 (specification, Japanese, 2018)

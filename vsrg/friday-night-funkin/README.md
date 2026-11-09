@@ -20,11 +20,17 @@ ROX: `.json` files are read and written as FNF by ROX (experimental), using the 
 | [vslice-chart-json](vslice-chart-json/README.md) | `<song>-chart[-<variation>].json` | V-Slice | complete | no |
 | [vslice-metadata-json](vslice-metadata-json/README.md) | `<song>-metadata[-<variation>].json` | V-Slice | complete | no |
 | [ludum-dare-png](ludum-dare-png/README.md) | one PNG per section + `.json` | the Ludum Dare 47 jam build | stub | no |
+| [nmv-json](nmv-json/README.md) | Psych-derived JSON, `format: "nmv2"`, `keys`/`lanes` | NightmareVision (NMVTeam) | partial | no |
+| [maru-json](maru-json/README.md) | legacy-like JSON with `sectionEvents`, `offsets`, `players` | Maru Funkin' (dead engine, via Moonchart) | stub | no |
 | [fnfmod](fnfmod/README.md) | `.fnfmod` ZIP | V-Slice mod package | stub | no |
 
 `.fnfm`: no file format of this name was found in any source consulted; the closest real extensions are `.fnfc` (chart package) and `.fnfmod` (mod package, announced in the Funkin' Crew blog of 2026-08-03).
 
-Other engines exist (Forever Engine, Leather Engine, Andromeda, ...). They were NOT inspected: their schema is unknown here. Moonchart also lists "FNF (Maru)", marked there as deprecated ("Maru Funkin' engine is dead"), described as "pretty similar to FNFLegacy although with enough changes to need a separate implementation"; it has no folder here.
+Other engines exist (Forever Engine, Leather Engine, Andromeda, ...). They were NOT inspected: their schema is unknown here (Moonchart lists no distinct format for them). NightmareVision and Maru Funkin' have their own folders above (Maru only from Moonchart's description).
+
+## Samples
+
+Each variant folder has a `samples/` folder with a `SOURCES.md` (hand-written synthetic charts, committed; real FNF charts are only fetched through the manifest because the game data is not freely redistributable) and a `Getting samples` section in its README.
 
 ## Cross-variant facts
 

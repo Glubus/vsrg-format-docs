@@ -51,5 +51,9 @@ Not read by ROX. Prism does not read it either: `set.def` is never listed as a c
 ## Parsers & tools
 DTXMania (C#): https://github.com/limyz/DTXmaniaNX
 
+## Getting samples
+- **Committed** ([`samples/`](samples/SOURCES.md)): three hand-written `synthetic-*.def` files (single song with three levels pointing at real files of [dtx samples](../dtx/samples/SOURCES.md); a two-song file; a Shift_JIS/CRLF file with Japanese labels), written from the field table of the official page https://dtxmania.net/documents/create-setdef.
+- **No real `set.def` under an open licence** was found in the repositories scanned (DTXmaniaNX, DTXManiaCX, dtx2gp, DTXtoPNG). Real ones accompany community DTX packs: the usual archive holds the `.dtx` files plus `set.def` next to the audio (see the archive listing in [dtx samples](../dtx/samples/README.md)); DTXManiaCX's bundled practice songs use a `box.def` (a different file) at `DTXMania.Game/BundledSongs/Practice/box.def` (https://github.com/cwchanap/DTXManiaCX).
+
 ## Sources
 - https://dtxmania.net/documents/create-setdef

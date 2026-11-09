@@ -1,0 +1,5 @@
+{
+  "events": [
+    { "name": "Camera Movement", "time": 6000, "params": [0] }
+  ]
+}

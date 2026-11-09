@@ -93,6 +93,13 @@ Read by ROX since Prism's addition of `rox::formats::bms` (decode only: ROX does
 
 BMS parsers with a PMS mode: Raindrop `NoteLoaderBMS.cpp`, beatoraja, Project OutFox (https://outfox.wiki/en/dev/mode-support/bms-pms-support), bmx2wav, PMSee-V, PMChr-V; conversion: PMStoBMEConverter (https://github.com/pablovirus/PMStoBMEConverter).
 
+## Getting samples
+
+- **Committed** ([`samples/`](samples/), details in [`samples/SOURCES.md`](samples/SOURCES.md)): the ROX synthetic chart (standard 9 buttons, `11-15` + `22-25`), three hand-written CC0 charts (BME-type 9 buttons `11 12 13 14 15 18 19 16 17`; 18 buttons; standard 9 buttons with `#LNTYPE 1` LN on channels 51/55/62/65, UTF-8 BOM + CRLF) and `9key-all-keys-quarter.pms` from Nekokan/be-music (MIT). No full real PMS song is committed: the real ones are fan works with no stated licence.
+- **Manifest** (`samples.manifest.json`, fetched by `tools/fetch-samples.sh`): (a) 15 `.pms` charts from https://github.com/bemusic/music at commit `472b0f3cc433c39b0a7e9849705b34af68bf5400` (anhedonia, Blooming, scorpiondance `PMS_1..5`, encrux, chicken, ... ; standard 9-button layout, `#PLAYER 3`, some CP932), manifest-only ("Each song is copyrighted by respective author"); (b) five ZIP archives of fan-made PMS difference charts, GitHub release assets of https://github.com/pmsdatabase/pmsdatabase.github.io/releases: BMS of Fighters 2013 (283 `.pms`), BOFU2015 (460), BOFU2017 (380), G2R2014 (449), G2R2018 (294). Observed inside them (analysed in a scratch copy): standard 9-button layout and `#PLAYER 3` almost everywhere (a few `#PLAYER 2`), `#LNTYPE`/`#LNOBJ`/`#LNMODE` long notes, `#RANDOM`, ch 02/03/08/09, CP932 text with some UTF-8 BOM files and some mixed line endings, and a handful of files using channels 16/18/19 outside the standard map (the BME-type layout); (c) two tiny asdfghjkoiuy/iBMSCPP stubs (`pms-9k.pms`, `pms-5k.pms`).
+- **How to get more**: the PMS Database (https://pmsdifficulty.xxxxxxxx.jp/) catalogues PMS differences; its release page lists further full packages (tags seen: `bofu2016pms-20161201` (21.7 MB), `bofxv19pms-20200526`, `bofxvipms-20210516`, `bofxviipms-20220830`, `bofetpms-20230712`, `bofntpms-20240509`, `bofttpms-20250426`, `bof21pms-20260512`, `g2r2014pms-20180325`). Its guide "創作譜面 (自作差分) の作成" (https://pmsdifficulty.xxxxxxxx.jp/guide_chart.html) says `.pms` is the extension for all PMS differences and names the editor pBMSC; the BMS EVENT 2016 page (https://bms.ms/~hitkey/evt/2016) lists a "BOFU2016PMS差分企画" project. Search terms: `PMS差分`, `PMS Database`, `BOF PMS`, `ポップン BMS`. LR2/beatoraja use PMS mode when the extension is `.pms`.
+- Real files are copyrighted fan works: check each work's terms before redistributing.
+
 ## Sources
 
 - https://hitkey.nekokan.dyndns.info/cmds.htm (section "PMS", KEYMAP table)
@@ -100,3 +107,4 @@ BMS parsers with a PMS mode: Raindrop `NoteLoaderBMS.cpp`, beatoraja, Project Ou
 - bmson spec (mode hints): https://bmson-spec.readthedocs.io/en/master/doc/index.html
 - Raindrop: https://raw.githubusercontent.com/zardoru/raindrop/master/src/NoteLoaderBMS.cpp
 - PMStoBMEConverter (search result only): https://github.com/pablovirus/PMStoBMEConverter
+- PMS Database: https://pmsdifficulty.xxxxxxxx.jp/ (pages about.html, guide_chart.html, BOFU2017PMS.html) and release assets https://github.com/pmsdatabase/pmsdatabase.github.io/releases

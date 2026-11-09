@@ -134,6 +134,11 @@ Read by ROX since Prism's addition of `rox::formats::ksh` (decode only): `KshDec
 - vox2ksh (Python): https://github.com/whiteou7/vox2ksh
 - rmstZ (web converter; reads/writes ksh, vox): https://lrfasd.github.io/rmstZ/
 
+## Getting samples
+- **Committed** ([`samples/`](samples/SOURCES.md)): the four difficulties of "Gram" from libkson's test assets, seven charts from the voltedit test folder (long chart, many BPM/beat changes, a stop, 20 000+ BPM, spins, camera), and two hand-written `synthetic-*` files (legacy Shift_JIS without `ver`; modern `ver=171` option showcase in LF/UTF-8 BOM).
+- **Manifest** (`samples.manifest.json`, not committed): `voxl4dd3r_poly.ksh` (LF-only line endings, fan chart, pinned to a commit).
+- **More**: the K-Shoot MANIA download page (https://www.kshootmania.com/en/download.html) offers the Windows/macOS software "+ default songs" and an "Input Gate" song pack (the page links a MEGA archive; not hashable here). The Windows packaging list in https://github.com/kshootmania/ksm-v2 (`dist_scripts/files_win.tsv`) shows the layout `songs/K-Shoot MANIA/<song>/<song>_lt.ksh`, `_ch.ksh`, `_ex.ksh` next to the audio and `gate.lst`. The bundled songs are "the property of the content creators" (`readme_en.txt` of the same repository), so they are not redistributed here. Community SDVX charts live on the sites named in the fiche (Nautica, https://www.sdvx.org/en/charting/kshfile); each chart has its own author terms. Editors that write KSH: K-Shoot Editor (Windows/macOS, same download page), the web editor https://github.com/123jimin/voltedit, and the converter https://github.com/whiteou7/vox2ksh (VOX to KSH, needs the user's own game data). Search terms: "ksh chart sdvx", "K-Shoot MANIA charts", "kshootmania".
+
 ## Sources
 - https://github.com/kshootmania/ksm-chart-format (`ksh_format.md`, CC0)
 - https://kson.dev/docs/format-spec/ksh_format/

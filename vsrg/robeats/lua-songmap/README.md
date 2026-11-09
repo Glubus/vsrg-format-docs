@@ -101,6 +101,11 @@ Not read. Mapping to ROX would be direct: `Track - 1` -> column of a 4K chart, `
 - The Roblox forum post describes the template: https://devforum.roblox.com/t/open-source-robeats-rhythm-game-custom-server-template/824563
 - RoBeats wiki mentions community osu!-based map creation workflows for the custom server (the page `RoBeats_Custom_Server` returned HTTP 403 to the fetcher; only a search snippet was seen: "Go to the osu! Song Folder of the map, and upload t...", so the converter itself is not identified).
 
+## Getting samples
+
+- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): the three songmaps of the open-source template `spotco/RobeatsCustomServerTemplate` (`MondayNightMonstersNormal.lua`, `MondayNightMonstersHard.lua`, `TestingMap.lua`), pinned at commit `df8f4d3145ed474ad92b4371d030ee73d003b250`. The repo has no LICENSE file; the author announced it as "100% Free and open source to do anything you want with".
+- **More**: the Robeats wiki (https://robeats.fandom.com/wiki/RoBeats_Custom_Server) explains how to make one: open a `.osu` file in a text editor, convert it to Lua with the converter linked there, paste it into a ModuleScript inside `Workspace/SongMaps`, then fill `AudioAssetId`. The repositories `RoVSRG/robeats-cs-legacy` (folder `songs/`) and `thenerdie/robeats-community-maps` were suggested by a web search but returned an authentication prompt on `git clone` on 2026-11-09 (private or removed), so nothing could be taken from them. Community Roblox places (e.g. the un-copylocked https://www.roblox.com/games/964613823/Robeats-Mapping-Place-Un-copylocked) contain songmaps as ModuleScripts.
+
 ## Sources
 
 - https://github.com/spotco/RobeatsCustomServerTemplate (cloned; files listed in Overview)

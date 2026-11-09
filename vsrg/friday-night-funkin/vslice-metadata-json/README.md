@@ -120,6 +120,12 @@ Read, decode only, together with the chart file (`VSliceDecoder`): `timeChanges`
 - Moonchart `FNFVSlice` (needs this metadata file): https://github.com/MaybeMaru/moonchart
 - Chart Editor in the game.
 
+## Getting samples
+
+- Committed: [samples/](samples/): synthetic default and erect metadata.
+- Manifest: five metadata files from FunkinCrew/funkin.assets (commit `724eba9de9e76761d9cefd52169926bc51c760a5`, proprietary licence, fetched only): single tempo (bopeebo), 14 `timeChanges` (monster), a 2-entry BPM change (eggnog erect), fractional BPM 111.5 (spaghetti). Observed: version `2.2.4`, `generatedBy` "Friday Night Funkin' - v0.8.1", `bt` [4, 4, 4, 4], `b` in beats.
+- More: the same folder holds `-metadata-erect.json` / `-metadata-pico.json` variations for most songs.
+
 ## Sources
 
 - https://raw.githubusercontent.com/FunkinCrew/Funkin/main/docs/FNFC-SPEC.md

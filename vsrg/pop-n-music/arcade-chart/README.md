@@ -78,6 +78,17 @@ Not read by ROX.
 - https://github.com/mon/ifstools ("Extractor for Konami IFS files", MIT licence; the popntowav README names it as the IFS extractor it relies on)
 - pop'n charts in the community are mostly distributed as `.pms` ([`../../bms/pms`](../../bms/pms/README.md)) or BMS conversions; popn.tools lists the official charts (https://popn.tools/).
 
+## Getting samples
+
+No sample is committed and none is in `samples.manifest.json`: official pop'n music chart data is Konami game data, and no publicly downloadable, redistributable file was found (Gi-z/popntowav ships no fixtures; its repository tree at commit 469b6de82c6e5654eae42d130341d4c4d8b963a9 holds only `.js`, `package.json`, `README.md`). A hand-written binary was not made: the layout is unverified (Doc status: stub).
+
+How to obtain real files (you need your own copy of the game):
+
+- Observed in `popntowav.js` (lines 21-26 of commit 469b6de82c6e5654eae42d130341d4c4d8b963a9): the tool runs `ifstools <song>.ifs`, then reads the chart from `<ifsname>_ifs/<ifsname>_op.bin`, falling back to `<ifsname>_hp.bin` when `_op.bin` does not exist, and the keysounds from `<ifsname>_ifs/<ifsname>.2dx`. So the official charts are `.bin` files inside each song's `.ifs` archive; this resolves the "file name pattern" left Unknown above for those two names (`_op`/`_hp`; the other difficulty suffixes are not in the sources read). [observed in popntowav.js]
+- Unpack the `.ifs` with mon/ifstools (https://github.com/mon/ifstools, MIT).
+- A second naming example, for the Wii game: the Cutting Room Floor page "pop'n music (Wii)" lists charts such as `note\us\0101_bluebird_n5.bin` and `..._h5.bin` (search-result snippet only; the page returned HTTP 403 when fetched, so this is not verified).
+- Community PMS conversions of official pop'n charts exist (ZIv thread "beatmania, beatmania IIDX and pop'n music official BMS/PMS simfiles preservation project"); they are `.pms` files, see [`../../bms/pms`](../../bms/pms/README.md), not this format.
+
 ## Sources
 
 - https://github.com/Gi-z/popntowav and `https://raw.githubusercontent.com/Gi-z/popntowav/master/popnchart.js`, `twodx.js`

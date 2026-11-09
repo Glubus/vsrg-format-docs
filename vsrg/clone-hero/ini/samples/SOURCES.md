@@ -1,0 +1,8 @@
+# Samples: Clone Hero `song.ini`
+
+## Committed
+| File | Origin (URL, pinned commit if any) | Author | Licence | What it exercises |
+| --- | --- | --- | --- | --- |
+| synthetic-song-full.ini | Synthetic: written by script for this repository, built strictly from the fiche and from TheNathannator/GuitarGame_ChartFormats @ 3d3640574821e1f7f0ec4be70627893aa88fdff6 (docs) | GuitarGames (ROX sample corpus) | CC0 1.0 / public domain (declared by the author of this file) | `[song]` header lower case, spaced `=`, LF; wide range of tags: name/artist/album/genre/year/charter/version/playlist/sub_playlist/album_track/playlist_track/rating, loading_phrase, preview_start_time/preview_end_time, song_length, delay, video_start_time, diff_* (incl. -1 and *_real/ghl), modchart, lyrics, vocal_gender, pro_drums, hopo_frequency, sustain_cutoff_threshold, end_events, icon, background |
+| synthetic-song-drums5-crlf.ini | Synthetic: written by script for this repository, built strictly from the fiche and from TheNathannator/GuitarGame_ChartFormats @ 3d3640574821e1f7f0ec4be70627893aa88fdff6 (docs) | GuitarGames (ROX sample corpus) | CC0 1.0 / public domain (declared by the author of this file) | CRLF, `[Song]`, unspaced `key=value`, `;` and `#` comment lines, `five_lane_drums`, `modchart=True` |
+| synthetic-song-midi-sysex.ini | Synthetic: written by script for this repository, built strictly from the fiche and from TheNathannator/GuitarGame_ChartFormats @ 3d3640574821e1f7f0ec4be70627893aa88fdff6 (docs) | GuitarGames (ROX sample corpus) | CC0 1.0 / public domain (declared by the author of this file) | Tags that affect `.mid` parsing: delay (ms), multiplier_note=116, sysex_slider, sysex_open_bass, sysex_high_hat_ctrl, sysex_rimshot, sysex_pro_slide, pro_drums |

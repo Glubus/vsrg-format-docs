@@ -1,0 +1,27 @@
+{
+  "$id": "1",
+  "VersionCode": 10000,
+  "MusicScoreEventDataList": [
+    {"$id": "2", "id": 1, "eventType": 0, "ticks": 0, "changeValue": 140.0},
+    {"$id": "3", "id": 2, "eventType": 0, "ticks": 3840, "changeValue": 175.0},
+    {"$id": "4", "id": 3, "eventType": 1, "ticks": 0, "changeValue": 1.0},
+    {"$id": "5", "id": 4, "eventType": 2, "ticks": 0, "changeValue": 1.0},
+    {"$id": "6", "id": 5, "eventType": 3, "ticks": 0, "changeValue": "4/4"}
+  ],
+  "EventArray": [],
+  "NoteList": [
+    {"$id": "7", "id": 6, "ticks": 0, "laneStart": 0, "laneEnd": 3, "category": 0, "type": 0, "speedRatio": 1.0, "noteLineType": 0, "noteBaseType": 1, "previousConnectionId": -1, "nextConnectionId": -1, "direction": 0, "isSkip": false, "IsSingle": true, "IsConnectedFirst": false, "IsConnectedLast": false},
+    {"$id": "8", "id": 7, "ticks": 480, "laneStart": 4, "laneEnd": 7, "category": 0, "type": 1, "speedRatio": 1.0, "noteLineType": 0, "noteBaseType": 1, "previousConnectionId": -1, "nextConnectionId": -1, "direction": 0, "isSkip": false, "IsSingle": true, "IsConnectedFirst": false, "IsConnectedLast": false},
+    {"$id": "9", "id": 8, "ticks": 1920, "laneStart": 2, "laneEnd": 4, "category": 3, "type": 0, "speedRatio": 1.0, "noteLineType": 0, "noteBaseType": 3, "previousConnectionId": -1, "nextConnectionId": -1, "direction": 0, "isSkip": false, "IsSingle": true, "IsConnectedFirst": false, "IsConnectedLast": false},
+    {"$id": "10", "id": 9, "ticks": 2400, "laneStart": 8, "laneEnd": 9, "category": 4, "type": 0, "speedRatio": 1.0, "noteLineType": 0, "noteBaseType": 11, "previousConnectionId": -1, "nextConnectionId": -1, "direction": 0, "isSkip": false, "IsSingle": true, "IsConnectedFirst": false, "IsConnectedLast": false},
+    {"$id": "11", "id": 10, "ticks": 3840, "laneStart": 2, "laneEnd": 5, "category": 1, "type": 1, "speedRatio": 1.0, "noteLineType": 1, "noteBaseType": 2, "previousConnectionId": -1, "nextConnectionId": 11, "direction": 0, "isSkip": false, "IsSingle": false, "IsConnectedFirst": true, "IsConnectedLast": false},
+    {"$id": "12", "id": 11, "ticks": 4800, "laneStart": 4, "laneEnd": 7, "category": 2, "type": 1, "speedRatio": 1.0, "noteLineType": 0, "noteBaseType": 5, "previousConnectionId": 10, "nextConnectionId": 12, "direction": 0, "isSkip": false, "IsSingle": false, "IsConnectedFirst": false, "IsConnectedLast": false},
+    {"$id": "13", "id": 12, "ticks": 5280, "laneStart": 5, "laneEnd": 8, "category": 13, "type": 1, "speedRatio": 1.0, "noteLineType": 2, "noteBaseType": 6, "previousConnectionId": 11, "nextConnectionId": 13, "direction": 0, "isSkip": false, "IsSingle": false, "IsConnectedFirst": false, "IsConnectedLast": false},
+    {"$id": "14", "id": 13, "ticks": 5760, "laneStart": 6, "laneEnd": 9, "category": 1, "type": 1, "speedRatio": 1.0, "noteLineType": 0, "noteBaseType": 2, "previousConnectionId": 12, "nextConnectionId": -1, "direction": 0, "isSkip": false, "IsSingle": false, "IsConnectedFirst": false, "IsConnectedLast": true},
+    {"$id": "15", "id": 14, "ticks": 7680, "laneStart": 8, "laneEnd": 9, "category": 9, "type": 0, "speedRatio": 1.0, "noteLineType": 0, "noteBaseType": 10, "previousConnectionId": -1, "nextConnectionId": 15, "direction": 0, "isSkip": false, "IsSingle": false, "IsConnectedFirst": true, "IsConnectedLast": false},
+    {"$id": "16", "id": 15, "ticks": 9600, "laneStart": 10, "laneEnd": 11, "category": 9, "type": 0, "speedRatio": 1.0, "noteLineType": 0, "noteBaseType": 13, "previousConnectionId": 14, "nextConnectionId": -1, "direction": 0, "isSkip": false, "IsSingle": false, "IsConnectedFirst": false, "IsConnectedLast": true}
+  ],
+  "MusicScoreTicksMax": 9600,
+  "MusicId": 0,
+  "FullComboDataHash": null
+}

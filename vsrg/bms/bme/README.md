@@ -106,6 +106,14 @@ Read by ROX since Prism's addition of `rox::formats::bms` (decode only: ROX does
 
 Same as [BMS](../bms/README.md#parsers--tools): bms-js, bms-rs, StepMania `NotesLoaderBMS`, Raindrop `NoteLoaderBMS` (translates `18`,`19` to keys 6,7), beatoraja, LR2; editors BMSE, iBMSC, BMSC.
 
+## Getting samples
+
+Details and per-file licences: [`samples/SOURCES.md`](samples/SOURCES.md). General sources (BMS Search, BMS events, starter packs, editors): see "Getting samples" in [`../bms`](../bms/README.md).
+
+- **Committed** ([`samples/`](samples/)): the 10 community 7K+scratch charts that came with the upstream repository (origin and licence unknown; Shift_JIS or ASCII, CRLF, invisible objects, `#LNOBJ ZV` + `#LNTYPE 1`, ch 08 `#BPM01`), plus from open-source repositories: bms-rs `nc_mx.bme` (Apache-2.0; UTF-8 with BOM, LF, `#STOP01`, ch 08/09/03/02), bms-rs `dive_withblank.bme` (tab and blank values in `#WAV`/`#BMP`), rparser's MIT kusofumen `L9^.bme` (`#BPM 721`, Shift_JIS, 212 KB) and sappho192/BMSParser's `05.bon_voyage_7hyper.bme` (MIT repository; a full 7K chart, ASCII).
+- **Manifest** (`samples.manifest.json`): 41 `.bme` charts from https://github.com/bemusic/music at the pinned commit `472b0f3cc433c39b0a7e9849705b34af68bf5400`, including real double-play `.bme` charts (`#PLAYER 3`, 14K, e.g. litmus `litmus_allisfair_14a.bme` with a lowercase `#LNOBJ zz`, `litmus_scorpiondance_DP*.bme`, ym1024 `starless_dp*_kero.bme` in CP932) and `#PLAYER 2` ones (`snack/dddd_dp*.bme`, `sobrem/_encrux_d2.bme`), CP932 and EUC-KR charts, and mines/STOP/BPM-999913 (`litmus_latch_7a.bme`). Not redistributable ("Each song is copyrighted by respective author"), so manifest-only.
+- **How to get more**: 7K IIDX-style BMS packs commonly contain `.bme` files (87 of the 221 chart files in `bemusic/music` are `.bme`, 109 `.bms`, 15 `.pms`, 10 `.bml`; BMS Search, BMS of Fighters event pages and GENOSIDE starter packages are the places to look, see the `.bms` page). Converters that emit `.bme`: iidx2bms (`.1` -> `.bme`, see [`../../beatmania-iidx/1`](../../beatmania-iidx/1/README.md)); PMStoBMEConverter (PMS to BME, per the pms fiche). Editors: iBMSC, BMSE, BMS Creator, GDA Creator.
+
 ## Sources
 
 - hitkey BMS command memo, sections "BME", "Channel Mapping Table", "KEYMAP Table": https://hitkey.nekokan.dyndns.info/cmds.htm

@@ -1,0 +1,58 @@
+;---- Synthetic DTX guitar/bass chart (hand-written from CDTX.cs / EChannel.cs and the Extended DTX Data Format notes). Public domain (CC0).
+#TITLE: Synthetic Guitar Bass
+#ARTIST: Public Domain
+#GENRE: Test
+#BPM: 120
+#BASEBPM: 100
+#GLEVEL: 45
+#BLEVEL: 38
+#DLEVEL: 0
+#PANEL: Synthetic panel text
+#WAV01: bgm.ogg
+#WAV21: gt_B.wav
+#WAV22: gt_G.wav
+#WAV23: gt_GB.wav
+#WAV24: gt_R.wav
+#WAV25: gt_RB.wav
+#WAV26: gt_RG.wav
+#WAV27: gt_RGB.wav
+#WAV20: gt_open.wav
+#WAV28: gt_wail.wav
+#WAV41: bs_B.wav
+#VOLUME41: 70
+; the next table entry is defined AFTER the chips that use it (forward reference is allowed)
+#00001: 01
+; ---- guitar: open + all 7 button combinations (ch 20-27) ----
+#00120: 20
+#00121: 0021
+#00122: 000022
+#00123: 00000023
+#00124: 0000000024
+#00125: 000000000025
+#00126: 00000000000026
+#00127: 0000000000000027
+#00128: 28
+; ---- guitar hold: start on a press chip (ch 22) + ch 2C value 01; end = ch 2C with another value, no press chip there ----
+#00222: 22000000
+#0022C: 01000200
+; ---- bass: open + combinations (ch A0-A7), wailing A8, hold on ch 2D ----
+#001A0: 20
+#001A1: 41
+#001A4: 0041
+#001A7: 000041
+#001A8: 28
+#003A1: 41000000
+#0032D: 01000200
+; ---- BPM: raw chip on ch 03 is BASEBPM + value: 0x3C = 60 -> 160 BPM ----
+#00203: 3C000000
+#RANDOM 2
+#IF 1
+#00411: 11
+#ENDIF
+#IF 2
+#00412: 12
+#ENDIF
+#WAV11: hihat.wav
+#WAV12: snare.wav
+#00520: 20
+#00521: 21

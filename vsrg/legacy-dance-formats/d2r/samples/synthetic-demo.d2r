@@ -1,0 +1,51 @@
+* synthetic D2R 2ndMIX chart (CC0), hand-written from the format description in the fiche
+*---------
+GAMEMODE=ORIGINAL
+ID=1
+TITLE=Synthetic Demo
+ARTIST=StepmaniaFamily corpus
+MUSIC=demo.wav
+SHORTCUT=demo-short.wav
+TEMPO10=1500
+DELAY=0
+START=4
+*---------
+LEVEL=2
+PLAYER=1
+MODE=BASIC
+MUSICSTART
+4P:    :    :
+4P:L   :    :
+4P: D  :    :
+4P:  U :    :
+4P:   R:    :
+4p:L   :    :
+4p:   R:    :
+4p: D  :    :
+4p:  U :    :
+4.:L   :    :
+4.: D  :    :
+4.:  U :    :
+4.:   R:    :
+4P:L  R:    :
+4P:    :    :T1900
+4P:L   :    :
+4P: D  :    :
+4P:  U :    :
+4P:   R:    :
+MUSICEND
+*---------
+LEVEL=5
+PLAYER=3
+MODE=MANIAC
+MUSICSTART
+4P:L   :   R:
+4P: D  :  U :
+4p:  U : D  :
+4p:   R:L   :
+T:L   :    :
+T: D  :    :
+T:  U :    :
+4P:L  R:L  R:
+4P:    :    :
+MUSICEND

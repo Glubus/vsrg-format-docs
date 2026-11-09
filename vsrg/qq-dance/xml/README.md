@@ -54,6 +54,11 @@ Not read by ROX.
 ## Parsers & tools
 QQX5Tools (Java/JavaFX): https://github.com/X5DIY/QQX5Tools ; qqx5-console: https://github.com/X5DIY/qqx5-console ; rmstZ: https://lrfasd.github.io/rmstZ/ ; QQX5FireTableGenerator (referenced, repo not reachable).
 
+## Getting samples
+
+- Committed / manifest: none. X5DIY/QQX5Tools and qqx5-console contain only the converters (Java), no chart files.
+- How to get one: per QQX5Tools' README, official 2019 builds stored charts as `*.xml.bytes` (compressed) inside the APK; its `BytesToXml` model converts them to XML (star motion, quarter moon, marble, traditional, bubble). Later builds download charts on demand [fiche]. Run QQX5Tools / qqx5-console (https://github.com/X5DIY/QQX5Tools, https://github.com/X5DIY/qqx5-console) on a 2019 APK, or open charts with rmstZ.
+
 ## Sources
 - https://github.com/X5DIY/QQX5Tools (README, `bean/IdolMapInfo.java`, `model/SetBasicInfo.java`)
 - https://github.com/X5DIY/qqx5-console

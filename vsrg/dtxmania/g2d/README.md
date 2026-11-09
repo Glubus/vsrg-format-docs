@@ -28,13 +28,17 @@ Unknown.
 No real sample; only DTXMania's loader as reference.
 
 ## Example
-Not applicable.
+No real sample; a hand-written one (same loader path as GDA) is in [samples/](samples/SOURCES.md).
 
 ## ROX support
 Not read by ROX.
 
 ## Parsers & tools
 DTXmaniaNX / DTXCreator: https://github.com/limyz/DTXmaniaNX
+
+## Getting samples
+- **Committed** ([`samples/`](samples/SOURCES.md)): one hand-written `synthetic-drums-guitar-bass.g2d` (CRLF twin of the GDA sample; the loader treats both extensions with the same channel-name table).
+- **No real file found**; what separates G2D from GDA is Unknown. Same leads as [gda](../gda/README.md#getting-samples) (DrumGamer tools page, DigiBand, GDA Creator 2); DTXmaniaNX (https://github.com/limyz/DTXmaniaNX) loads `.g2d` through `CDTX.tRead`.
 
 ## Sources
 - https://raw.githubusercontent.com/limyz/DTXmaniaNX/master/DTXMania/Code/Score,Song/CDTX.cs

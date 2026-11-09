@@ -53,6 +53,10 @@ Not read by ROX.
 
 Text Text Revolution (https://ttr.sourceforge.net/): plays `.step`. pydance <= 0.6.x: original loader (source not retrieved).
 
+## Getting samples
+
+No sample: pydance's old `.step` parser is not in the mirror ([mbenkmann/pydance](https://github.com/mbenkmann/pydance), commit `24b987a7d73a6f6061d266e1da973c9612bb10ca`; `fileparsers.py` handles `.dance`, DWI, SM, KSF) and no file was found. How to get one: install an old pydance/pyDDR release (the pydance FAQ says "pydance supports loading .dance (its native format), .step (its old format), DWI, and SM files" since 0.7.0; the old tarballs are on the SVN `http://kai.vm.bytemark.co.uk/svn/pydance/` mentioned on the download page) and look in its songs for `.step`; or get Text Text Revolution songs (https://ttr.sourceforge.net/, which loads pydance `.step`). For the unrelated binary DDR STEP data see [`../../ddr/step`](../../ddr/step/README.md) (three real files in the manifest).
+
 ## Sources
 
 - https://icculus.org/pyddr/faq.php

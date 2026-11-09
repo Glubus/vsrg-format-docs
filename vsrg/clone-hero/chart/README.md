@@ -136,6 +136,11 @@ Read by ROX since Prism's addition of `rox::formats::clone_hero` (decode only). 
 - Clone Hero (closed source), Feedback Editor, Editor on Fire
 - Docs: https://github.com/TheNathannator/GuitarGame_ChartFormats
 
+## Getting samples
+- Committed in [`samples/`](samples/SOURCES.md): `yarg-core_test.chart` (YARG.Core unit-test fixture, LGPL-3.0, UTF-8 BOM, all instruments incl. GHL and keys), and three hand-written CC0 charts (`synthetic-feature-tour.chart`: BPM/TS/anchors, sustains, forced/tap/open, star power, 4-lane pro drums, 6-fret GHL; `synthetic-5lane-drums.chart`; `synthetic-minimal.chart`).
+- Manifest: none for this format (the manifest entry `drawntotheflame.mid` belongs to [mid](../mid/README.md)).
+- More: Moonscraper Chart Editor (https://github.com/FireFox2000000/Moonscraper-Chart-Editor, BSD-3-Clause) writes `.chart`; its repository contains no chart fixtures (tree listed, none found). Community charts are indexed by Chorus Encore (https://chorus.fightthe.pw/) and Custom Songs Central; licences vary and are normally not stated, so check the accompanying `song.ini` before redistributing. The YARG wiki says YARG plays its built-in setlist and "creative commons/public domain songs" (https://wiki.yarg.in/wiki/Help:Adding_custom_songs). Chart bytes can also be produced from a `.mid` with mid2chart (https://github.com/raphaelgoulart/mid2chart, MIT) or Onyx (https://github.com/mtolly/onyx).
+
 ## Sources
 - https://thenathannator.github.io/GuitarGame_ChartFormats/ (chart-format Format-Overview, Brief-History, Tracks/5-Fret-Guitar, 6-Fret-Guitar, Drums, Legacy-Tracks; Implementation-Info/Time-Conversions)
 - https://github.com/TheNathannator/GuitarGame_ChartFormats

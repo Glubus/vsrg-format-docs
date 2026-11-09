@@ -86,6 +86,11 @@ hitsounds: []
 
 - Any YAML library; ROX `formats/yrox.rs` (Rust, serde_yaml).
 
+## Getting samples
+
+- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): three hand-written files (`synthetic-4k-features.yrox`, `synthetic-7k-minimal.yrox`, `synthetic-8k-coop.yrox`), CC0, same charts as the `.jrox` samples; the YAML parses to exactly the same data as the JSON twins (checked with PyYAML) but the exact scalar quoting of `serde_yaml` was not reproduced.
+- **More**: convert any supported chart with the ROX crate and write it with `YroxEncoder` (`serde_yaml::to_string`). Upstream has no `.yrox` sample.
+
 ## Sources
 
 - `rhythm-open-exchange/src/formats/yrox.rs`, `src/model/*.rs`, `src/formats/auto/detect.rs`

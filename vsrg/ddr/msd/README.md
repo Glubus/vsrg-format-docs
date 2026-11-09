@@ -82,6 +82,12 @@ Not read by ROX (no `.msd` handling in [ROX source: src/formats/auto/detect.rs](
 
 - StepMania `MsdFile` ([MsdFile.cpp](https://github.com/stepmania/stepmania/blob/master/src/MsdFile.cpp)), [Anders429/msd](https://github.com/Anders429/msd) (Rust/serde), [msdparser](https://pypi.org/project/msdparser/) (Python), pydance `MSDFile` (Python); D2REDIT reads/writes `.msd`-family files (see D2R).
 
+## Getting samples
+
+Committed in [`samples/`](samples/SOURCES.md): one **synthetic** (hand-written, CC0) `.msd` that follows this page's translated spec (level-first `#SINGLE:level:mode:steps;`, `#DOUBLE`, `#COUPLE`, 8th-note slots with `( )` and `[ ]`).
+
+No real DDR'99-era `.msd` was found: the original spec page ("MSDファイル書式 Ver2.0β1", archived 2007 copy of `doremi.kalin.to/ddr/msd_format.html`) has no sample and the simulator's files are not archived. The MSD *tokenizer* is exercised by every `.sm`/`.ssc`/`.dwi`/`.ksf` sample in this repository. To collect more: run D2REDIT (see [`../../legacy-dance-formats/d2r`](../../legacy-dance-formats/d2r/README.md); the editor page lists `*.msd` among the files it reads) on any `.msd` you find.
+
 ## Sources
 
 - https://web.archive.org/web/20070606025338/http://doremi.kalin.to/ddr/msd_format.html (MSD Ver 2.0β1, Japanese; translated above)

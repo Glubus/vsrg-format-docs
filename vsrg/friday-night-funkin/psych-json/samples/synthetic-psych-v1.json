@@ -1,0 +1,97 @@
+{
+  "song": {
+    "song": "Synthetic Psych v1",
+    "bpm": 150,
+    "speed": 2.2,
+    "needsVoices": true,
+    "offset": 0,
+    "player1": "bf",
+    "player2": "dad",
+    "gfVersion": "gf",
+    "stage": "stage",
+    "format": "psych_v1",
+    "arrowSkin": "",
+    "splashSkin": "noteSplashes",
+    "disableNoteRGB": false,
+    "notes": [
+      {
+        "sectionBeats": 4,
+        "sectionNotes": [
+          [0, 0, 0],
+          [400, 4, 0],
+          [800, 1, 400, "Hey!"],
+          [1200, 6, 0, "Alt Animation"],
+          [1400, 3, 0, "Hurt Note"]
+        ],
+        "mustHitSection": true,
+        "gfSection": false,
+        "altAnim": false
+      },
+      {
+        "sectionBeats": 4,
+        "sectionNotes": [
+          [1600, 0, 0],
+          [2000, 5, 0],
+          [2400, 2, 300, "GF Sing"],
+          [2800, 7, 0]
+        ],
+        "mustHitSection": false,
+        "gfSection": true,
+        "altAnim": false
+      },
+      {
+        "sectionBeats": 4,
+        "sectionNotes": [
+          [3200, 0, 0],
+          [3700, 1, 0],
+          [4200, 2, 500],
+          [4700, 6, 0, "No Animation"]
+        ],
+        "mustHitSection": true,
+        "gfSection": false,
+        "altAnim": false,
+        "changeBPM": true,
+        "bpm": 120
+      },
+      {
+        "sectionBeats": 8,
+        "sectionNotes": [
+          [5200, 4, 0],
+          [6200, 4, 0],
+          [7200, 0, 1000],
+          [8200, 5, 0]
+        ],
+        "mustHitSection": true,
+        "gfSection": false,
+        "altAnim": true
+      }
+    ],
+    "events": [
+      [
+        0,
+        [
+          ["Hey!", "BF", "0.6"]
+        ]
+      ],
+      [
+        1600,
+        [
+          ["Camera Follow Pos", "300", "200"],
+          ["Add Camera Zoom", "0.015", "0.03"]
+        ]
+      ],
+      [
+        3200,
+        [
+          ["Change Scroll Speed", "1.5", "1"]
+        ]
+      ],
+      [
+        5000,
+        [
+          ["Play Animation", "hey", "Dad"]
+        ]
+      ]
+    ]
+  }
+}

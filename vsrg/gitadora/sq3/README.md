@@ -90,6 +90,10 @@ Not read by ROX.
 - gitadora-customs (Python, `seqtool.py`): https://github.com/fisyher/gitadora-customs
 - gitadora-tools: https://github.com/RAintN22/gitadora-tools
 
+## Getting samples
+- **Committed / manifest: none.** `fisyher/gitadora-customs` contains no test data (its tree holds only Python plugins and tools), and no other repository with a public `.sq3` was found. Charts are Konami data and the fiche notes that a game never ships them as plain files.
+- **How to get one**: extract the IFS archives of a GITADORA install you own (the README's example uses `m1825_bgm.ifs` and `m1825_seq.ifs`) and convert with `seqtool.py` (https://github.com/fisyher/gitadora-customs: "Convert from IFS (SQ3) to DTX: `python seqtool.py --input-ifs-bgm m1825_bgm.ifs --input-ifs-seq m1825_seq.ifs --ifs-target sq3 ...`"). The same tool **writes** SQ3 from DTX charts ("DTX -> JSON -> SQ3" in its README), so an SQ3 can be produced from any open DTX chart (for example the synthetic ones in [dtx samples](../../dtxmania/dtx/samples/SOURCES.md)); the tool needs several third-party Python packages (`requirements.txt`: ifstools, kbinxml, lxml, numpy, pydub ...), none was installed here, so no output was committed.
+
 ## Sources
 - https://raw.githubusercontent.com/fisyher/gitadora-customs/master/plugins/sq3.py
 - https://github.com/fisyher/gitadora-customs (README)

@@ -150,6 +150,14 @@ Read by Prism (`docs/game.md` "Formats de danse"): one entry per playable chart;
 - pydance `DWIFile` ([fileparsers.py](https://github.com/mbenkmann/pydance/blob/master/fileparsers.py), Python); Etterna `NotesLoaderDWI.cpp`; OutFox (closed); [Stependous](https://stependous.sourceforge.net/) (DWI/DDR/StepMania converter/editor).
 - DWI itself (closed source, Windows).
 
+## Getting samples
+
+Committed in [`samples/`](samples/SOURCES.md): one **synthetic** (hand-written, CC0) file covering `#GAP`, `#CHANGEBPM`, `#FREEZE`, `#DISPLAYBPM`, `#SINGLE/#DOUBLE/#SOLO/#COUPLE`, `( )` `[ ]` groups, `<..>` jumps and `!` holds.
+
+Manifest (fetched to `samples-local/vsrg/dwi/dwi/`): three real `.dwi` files from the parser test packs of [noahm/simfile-parser](https://github.com/noahm/simfile-parser) at commit `f7ff6e3c754a9a04aa705b8129dc89523fd4b02f` (DDR 3rdMix and 5thMix charts converted to DWI, and a community pack's `02 Ants.dwi`); the repository has no licence, so not committed. The pack folders hold 38 (3rdMix) and 40 (5thMix) `.dwi` files in total.
+
+More: the official sample song of Dance With Intensity, `NotMyBattle.zip` (GunDrill, 2.1 MB; contains `notmybattle.dwi` with tempo changes and holds, mp3, png), downloadable from http://dwi.ddruk.com/downloads.php (live; its only Wayback copy is truncated to 1 MiB so it is not in the manifest; no licence statement seen). Songs from DWI-era packs: `.dwi` files sit next to the audio in each song folder. StepMania can also *write* `.dwi` (`NotesWriterDWI`), so any `.sm` can be exported to test a reader.
+
 ## Sources
 
 - http://dwi.ddruk.com/history.php (history), http://dwi.ddruk.com/readme.php#4 (format; text mirrored below)

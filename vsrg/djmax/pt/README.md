@@ -71,6 +71,10 @@ Not read by ROX.
 - PTfluffy (Python, DJMAX Online, GPLv3): https://sites.google.com/site/twisteroidambassador/ptff
 - DJMAX Technika 1 CN crack notes: https://github.com/CHN-WolF/DJMax_Technika_1_CN_Ver_Crack
 
+## Getting samples
+- **Committed / manifest: none.** The parser repositories do not ship `.pt` files: https://github.com/hsreina/DJMax-Editor builds its charts in memory (`DJMaxEditor.Tests/Fixtures/SyntheticChartFactory.cs`) and https://github.com/CHN-WolF/DMTQ-Tools tests its pattern serializer and cipher with in-memory data (`DMTQ.Tools.Core.Tests/Services/PatternBinarySerializerTests.cs`, `PtCipherTests.cs`); a scan of their trees (and of the other repositories listed in the fiche) found no `.pt` file. Real charts are Nexon/Pentavision data, and the Technika versions are encrypted, so no synthetic binary was invented.
+- **How to get one**: extract the pattern files from an installation of DJMAX Online or DJMAX Technika you own; DMTQ-Tools reads plaintext and encrypted Technika Q input (fiche) and DJMax-Editor opens the PTFF files (`DJMaxEditor/Files/pt/PTOpenFile.cs`); DJMAX Online charts can be read with PTfluffy (fiche). Technika 1 (China) files are encrypted per the CHN-WolF write-up (fiche); `.tpk` packages are AES-protected (fiche).
+
 ## Sources
 - https://raw.githubusercontent.com/CHN-WolF/DMTQ-Tools/master/pt-format.md
 - https://raw.githubusercontent.com/hsreina/DJMax-Editor/master/DJMaxEditor/Files/pt/PTOpenFile.cs

@@ -1,0 +1,30 @@
+*---------------------- HEADER FIELD
+* Hand-written synthetic chart (CC0 / public domain) built from the BMS fiche of vsrg-format-docs.
+* #LNTYPE 2 (MGQ type): a long note is a run of non-00 objects on a long-note channel (51 = 1P key 1,
+* 52 = 1P key 2, 56 = 1P scratch); it ends at the first 00 slot and may continue across a bar line.
+
+#PLAYER 1
+#GENRE Test
+#TITLE Synthetic LNTYPE 2
+#ARTIST vsrg-format-docs
+#BPM 140
+#PLAYLEVEL 3
+#RANK 2
+#LNTYPE 2
+
+#WAV01 bgm.ogg
+#WAV02 tap.wav
+
+*---------------------- MAIN DATA FIELD
+
+#00001:01
+* measure 0: a run of three slots on key 1 (slots 1, 2, 3 of 8), a normal tap on key 2
+#00051:0002020200000000
+#00011:0000000000000200
+
+* measures 1-2: a run that starts on the last slot of measure 1 and goes through the first two slots of measure 2 (crosses the bar line)
+#00152:0000000000000002
+#00252:0202000000000000
+
+* measure 3: a short run on the scratch lane (channel 56)
+#00356:02020000

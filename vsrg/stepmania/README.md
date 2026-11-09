@@ -20,11 +20,14 @@ StepMania is the open-source dance-game engine (Chris Danford, 2001-; "simulator
 | StepF2 / StepP1 | Pump It Up forks of SM5 (note syntax `{note|attr|fake|reserved}`) | `.ssc` with `#VERSION:0.81` |
 | Pump It Up Pro / Infinity | official Andamiro titles built on StepMania | `.sm`/`.ssc`-style |
 
+Fork notes (checked against sources): **Etterna** adds no authored chart extension but writes derived `#CHARTKEY`/`#MSDVALUES` tags, an unused `.ett` writer and binary `<chartkey>.cache` files, see [`../etterna`](../etterna/README.md). **ITGmania** (commit `8a3bf8884acdcb69363f7f0ea592138e398c71e4`) loads `.ssc .sm .sma .dwi .json` and courses (`.crs`) and writes `.sm .ssc .dwi .json`: no distinct extension. **Project OutFox** is closed source (its public repository is a bug tracker), so its extension list could not be verified; its community pack uses `.ssc` with extra step types.
+
 Format documents in this repo:
 
 - [`sm`](sm/README.md): the `.sm` simfile (3.x/4/5; basis of everything).
 - [`ssc`](ssc/README.md): StepMania 5 `.ssc` (per-chart timing).
 - [`edit`](edit/README.md): `.edit` single-chart fragments.
+- Etterna extras: [`../etterna`](../etterna/README.md) ([`ett`](../etterna/ett/README.md), [`cache`](../etterna/cache/README.md)).
 - Imports: [`../dwi`](../dwi/README.md), [`../kick-it-up`](../kick-it-up/README.md), [`../stepmania-amx`](../stepmania-amx/README.md), [`../pydance`](../pydance/README.md), [`../stepmania-micro`](../stepmania-micro/README.md), [`../ddr`](../ddr/README.md) (`.msd`, `.sdf`, `.ssq`), [`../pump-it-up`](../pump-it-up/README.md), [`../legacy-dance-formats`](../legacy-dance-formats/README.md).
 
 ## `.sm` vs `.ssc` at a glance

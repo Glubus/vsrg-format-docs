@@ -1,0 +1,36 @@
+*---------------------- HEADER FIELD
+* 手書きの合成譜面 (CC0 / パブリックドメイン)。vsrg-format-docs の BMS 説明に基づく。
+* Hand-written synthetic chart (CC0 / public domain): Shift_JIS (CP932) bytes, CRLF line ends, Japanese metadata and file names.
+
+#PLAYER 1
+#GENRE テスト
+#TITLE 合成テスト譜面
+#SUBTITLE [ＳＰ ＨＹＰＥＲ]
+#ARTIST テスト作者 / vsrg-format-docs
+#BPM 135
+#PLAYLEVEL 7
+#RANK 3
+#TOTAL 260
+#DIFFICULTY 3
+#LNOBJ ZZ
+
+#WAV01 背景音.wav
+#WAV02 打鍵音.wav
+#WAV03 スクラッチ.wav
+
+*---------------------- MAIN DATA FIELD
+
+#00001:01
+* 1小節目: 皿と鍵盤1-7 (チャンネル 16, 11-15, 18, 19)
+#00016:0200000000000000
+#00011:0002000000000000
+#00012:0000020000000000
+#00013:0000000200000000
+#00014:0000000002000000
+#00015:0000000000020000
+#00018:0000000000000200
+#00019:0000000000000002
+
+* 2小節目: 鍵盤1に #LNOBJ のロングノート、皿に単打
+#00111:0200ZZ00
+#00116:00000003

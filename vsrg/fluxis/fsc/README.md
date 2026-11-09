@@ -131,6 +131,11 @@ Not read by ROX. The model is a close fit to ROX (key columns, tap/hold/mine = L
 - Built-in editor.
 - Midori (serialisation helpers): NuGet `flustix.Midori` (source not fetched).
 
+## Getting samples
+
+- **Committed**: none. The `InventiveRhythm/fluXis` repository (MIT, commit `4187865461e9bf7d1b8201843b0a522229f87699`, `LICENSE` read) contains no `.fsc`, `.fms` or `.ffx` file (checked on the full file tree), and no hand-written file was added because the JSON key names of properties without `[JsonProperty]` (`AudioFile`, `HitObjects`, `TimingPoints`, ...) depend on the external Midori serialiser and could not be verified. The old pre-2025 Haxe client in `InventiveRhythm/fluXis-archive` uses a different format (`.fluxsc`/`.fluxsm`), not `.fsc`.
+- **How to get a real one**: (1) install fluXis (https://github.com/InventiveRhythm/fluXis), get any mapset as `.fms` (maps from the game's online map list, https://fluxis.flux.moe, or exported from the editor; the file name on export is `"{Title} - {Artist} [{Mapper}].fms"` per `MapStore.cs`), rename to `.zip` (it is a ZIP archive) and read the `*.fsc` entries; (2) import an osu!mania or Quaver map with the importers shipped in the repo (`fluXis.Import.osu`, `fluXis.Import.Quaver`) and let the game save it as fluXis maps; (3) the game's data folder is opened from Settings -> General -> Folders -> Open fluXis folder (Windows: `C:\Users\{username}\AppData\Roaming\fluXis\`, per https://fluxis.flux.moe/wiki/skinning); the map files live under it [inference: sub-folder names not read]. Whether the online map download needs a login was not tested.
+
 ## Sources
 
 - https://github.com/InventiveRhythm/fluXis (commit `4187865461e9bf7d1b8201843b0a522229f87699`): `fluXis/Map/MapInfo.cs`, `MapMetadata.cs`, `MapColors.cs`, `MapEvents.cs`, `Map/Structures/HitObject.cs`, `TimingPoint.cs`, `ScrollVelocity.cs`, `HitSoundFade.cs`, `fluXis/Import/FluXisImport.cs`, `MapImporter.cs`, `fluXis/Map/MapStore.cs`, `fluXis/Online/API/Models/Maps/DualMode.cs`

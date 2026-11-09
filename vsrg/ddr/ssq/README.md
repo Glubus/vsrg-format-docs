@@ -148,6 +148,12 @@ Read by Prism (`docs/game.md` "Formats de danse"): one entry per Single/Double c
 - [skogaby/ddr-chart-tools](https://github.com/skogaby/ddr-chart-tools) (Rust; SSQ <-> SSC, legacy/Ultramix/Hudson variants, `docs/ssq_format.md`).
 - [SaxxonPike/RhythmCodex](https://github.com/SaxxonPike/RhythmCodex) (C#, SSQ/XWB decoding); [SaxxonPike/rhythm-game-formats](https://github.com/SaxxonPike/rhythm-game-formats) (docs); Scharfrichter (named by `ddr-render.py` as its default converter backend); `ddrcharttool.py` (SM -> SSQ, mentioned in community guides); [drmext/ddr-datatools](https://github.com/drmext/ddr-datatools) (`ddr-render.py` mass converts xwb+ssq to ogg/.sm); [sbruder/brd](https://github.com/sbruder/brd) (`ddr2osu`: SSQ+XWB -> osu!).
 
+## Getting samples
+
+Manifest (fetched to `samples-local/vsrg/ddr/ssq/`, [`SOURCES.md`](samples/SOURCES.md)): the four real `.ssq` fixtures of the RhythmCodex test suite ([SaxxonPike/RhythmCodex](https://github.com/SaxxonPike/RhythmCodex), commit `6c60e9b710150c6ca4adf9b7d93e51c2ad39b2ee`, `Source/RhythmCodex.Lib.Test.Data/Ssq/`: `freeze.ssq` 12,560 bytes, `shock.ssq` 12,572, `59rm_all.ssq` 7,932 (offset/tempo test), `solo.ssq` 8,980 (6-panel)), each inside a small ZIP. The repository licence (MIT, file `LICENSE.md`) lists that path, but the data are charts of commercial DDR releases, so nothing is committed.
+
+More: the SSQ of any DDR arcade/console release you own (`<song id>_all.ssq`, e.g. in the arcade game's data or the `.gen` of DDR S+); the Ultramix charts via the extractor of `ddr-chart-tools` ([`../ultramix-archive`](../ultramix-archive/README.md)); Hudson variants in [`../hudson-ssq`](../hudson-ssq/README.md). Tools that read SSQ: RhythmCodex, [skogaby/ddr-chart-tools](https://github.com/skogaby/ddr-chart-tools), [sbruder/brd](https://github.com/sbruder/brd), drmext/ddr-datatools; none ships fixtures other than RhythmCodex's.
+
 ## Sources
 
 - https://github.com/SaxxonPike/rhythm-game-formats/blob/master/ddr/ssq.md

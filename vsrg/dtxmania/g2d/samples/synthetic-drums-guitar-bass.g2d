@@ -1,0 +1,29 @@
+; Synthetic G2D chart. Channel names (TC, BL, HH, SD, BD, ...) are the 2-character GDA names that DTXmaniaNX CDTX.cs maps to DTX channels. Hand-written, public domain (CC0). Derived from the loader code, NOT from a real G2D file.
+#TITLE: Synthetic G2D
+#ARTIST: Public Domain
+#BPM: 120
+#WAV01: bgm.ogg
+#WAV11: hh.wav
+#WAV12: sd.wav
+#WAV13: bd.wav
+#WAV14: ht.wav
+#WAV15: lt.wav
+#WAV16: cy.wav
+#WAV21: gt.wav
+#WAV41: bs.wav
+#00101: 01
+#001HH: 11111111
+#001SD: 00120012
+#001BD: 13001300
+#002TC: 5A
+#002HT: 14
+#002LT: 00150000
+#002CY: 16
+#002BL: 0.75
+#003HH: 1111
+#003G1: 21
+#003G7: 0021
+#003GW: 21
+#003B1: 41
+#003B0: 41
+#004FI: 01

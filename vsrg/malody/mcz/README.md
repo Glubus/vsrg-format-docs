@@ -46,6 +46,12 @@ Not read by ROX (no archive support in `src/formats/`; ROX reads the extracted `
 - MorePracticeMalodyServer (C#): https://github.com/RhythmCodec/MorePracticeMalodyServer
 - Malody Store API (download items): https://github.com/Mugzone/Malody_Store_API
 
+## Getting samples
+
+- **Committed** in [`samples/`](samples/) (see [`SOURCES.md`](samples/SOURCES.md)): two audio-less packages built here with Python `zipfile`: `built-quaver-api-malody-audioless.mcz` (3 Key charts, MPL-2.0 sources) and `built-mc2tja-taiko-audioless.mcz` (2 Taiko charts, MIT sources). Their flat layout is an [inference]: no real `.mcz` could be downloaded.
+- **Manifest**: none.
+- **How to get more**: Malody's in-game store downloads and its editor's export write `.mcz`; malody2osu accepts dragged `.mcz`/`.zip` files and renames them to `.zip` (see Parsers & tools); the community also shares `.mcz` on the Malody forum and Discord [inference, not checked]. Since an `.mcz` is a ZIP, unzip it to see the real layout.
+
 ## Sources
 - https://fileinfo.com/extension/mcz
 - https://github.com/Jakads/malody2osu (convert.py)

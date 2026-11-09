@@ -211,7 +211,7 @@ Circles / sliders / spinners are all parsed for modes 0-2 and the same line synt
 
 ## Versions & variants
 
-- The first line states the version: `osu file format v14` is the latest osu!stable version (wiki). All ten samples of this repository are v14. osu!lazer writes `osu file format v128` (`FIRST_LAZER_VERSION = 128`); from v128 on, object positions keep their decimals (below that lazer truncates to int).
+- The first line states the version: `osu file format v14` is the latest osu!stable version (wiki). The ten original samples of this repository are v14 [observed in samples/]; the committed fixtures also include v4, v5, v6, v7, v9 and v10 files (`samples/ppy-osu_beatmap-version-4.osu`, `ppy-osu_mania-slider.osu` (v5), `ppy-osu_beatmap-version-6.osu`, `ppy-osu_controlpoint-difficulty-multiplier.osu` (v7), `ppy-osu_100374.osu` (v9), `ppy-osu_4869637.osu` (v10)), lazer's `v128` only inside [`.olz`](../olz/README.md) archives, and the manifest adds v3 to v14 real files. osu!lazer writes `osu file format v128` (`FIRST_LAZER_VERSION = 128`); from v128 on, object positions keep their decimals (below that lazer truncates to int).
 - Versions that exist in the wild: v3 to v14 (the range supported by the `osu-file-parser` crate). The differences found in the sources consulted:
 
 | Version | Difference | Source |
@@ -230,6 +230,7 @@ Circles / sliders / spinners are all parsed for modes 0-2 and the same line synt
 
   Everything not listed (e.g. what exactly changed between v9 and v12) is "Unknown" in the sources consulted; the tolerant approach used by both lazer and ROX is to treat every field after `time,beatLength` as optional with the defaults above.
 - Mode-specific dialects: see the three `others/osu-*` pages.
+- osu!lazer's `client.realm` is **not** a chart format: it is lazer's Realm metadata database (`OsuGameBase.CLIENT_DATABASE_FILENAME = "client.realm"`, ppy/osu @ bb37f05); the actual `.osu` files are content-addressed under `files/` (`RealmFileStore`, `GetStoragePath`: `<hash[0]>/<hash[0..1]>/<hash>`). The lazer export of a set is an [`.olz`](../olz/README.md) (or a legacy `.osz`).
 - osu!lazer extras: the lazer encoder can write mania maps as `.osu` v128 (conversion of its internal model).
 
 ## Quirks & pitfalls
@@ -299,6 +300,12 @@ Per ROX source `src/formats/osu` and `auto/detect.rs`:
 | Moonchart (`OsuMania`) | Haxe | https://github.com/MaybeMaru/moonchart |
 
 (The four C/C++ parsers are the ones listed in the repository's original README, "found via GitHub search"; they were not audited.)
+
+## Getting samples
+
+- **Committed** in [`samples/`](samples/) (see [`samples/SOURCES.md`](samples/SOURCES.md)): the 10 community maps already present (origin unknown) plus 48 files with known origin and licence: lazer's mania test maps (1K-18K, `SpecialStyle:1`, v4/v5/v6/v7/v9/v10 old versions, SV 0.01x, spinner-as-hold, hitsound sample banks; MIT), Quaver.API's osu!->Quaver conversion inputs (7K keysound maps, CRLF, a 9245-timing-point map; MPL-2.0), Prelude's replay-parity maps (MIT) and three hand-written Beatmap Lens fixtures (MIT) including a deliberately malformed UTF-8-BOM file.
+- **Manifest** (`samples.manifest.json`, fetched by `tools/fetch-samples.sh`): 16 real files of the osu-file-parser test suite pinned to a commit, covering every format version v3 to v14 (including `v13`/`v14` mania maps and `v9_spaces`). Not committed because the repository has no LICENSE file.
+- **How to get more**: osu!stable writes one `.osu` per difficulty into `Songs/<set>/` after extracting an `.osz` (osu! wiki, see [osz](../osz/README.md)); every ranked/loved mania map on https://osu.ppy.sh/beatmaps (mode filter `mania`) downloads as an `.osz`, and unzipping it (ZIP) gives the `.osu`. osu!lazer keeps imported files content-addressed under `files/<first hash char>/<first two>/<sha256>` (`RealmFileStore`, `GetStoragePath`), indexed by `client.realm`: that Realm database is **not** a chart format, it only stores metadata and file names (`OsuGameBase.CLIENT_DATABASE_FILENAME = "client.realm"`, ppy/osu @ bb37f05). The osu!lazer test suite (`osu.Game.Rulesets.Mania.Tests/Resources/Testing/Beatmaps/`, `osu.Game.Tests/Resources/`) and the rosu-map `resources/` folder (a copy of lazer's) are the best small fixture sets. Rate-changer tools write `.osz` variants (the Prelude mapsets here are such rates).
 
 ## Sources
 

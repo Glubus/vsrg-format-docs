@@ -1,0 +1,78 @@
+{
+  "song": {
+    "song": "Synthetic Basic",
+    "bpm": 120,
+    "speed": 2.0,
+    "needsVoices": true,
+    "player1": "bf",
+    "player2": "dad",
+    "validScore": true,
+    "notes": [
+      {
+        "sectionNotes": [
+          [0, 0, 0],
+          [500, 1, 0],
+          [1000, 2, 250],
+          [1000, 6, 0],
+          [1500, 3, 0],
+          [1750, 4, 0]
+        ],
+        "lengthInSteps": 16,
+        "mustHitSection": true,
+        "changeBPM": false,
+        "bpm": 120,
+        "altAnim": false,
+        "typeOfSection": 0
+      },
+      {
+        "sectionNotes": [
+          [2000, 0, 0],
+          [2500, 5, 375],
+          [3000, 2, 0],
+          [3500, 7, 0]
+        ],
+        "lengthInSteps": 16,
+        "mustHitSection": false,
+        "changeBPM": false,
+        "bpm": 120,
+        "altAnim": true,
+        "typeOfSection": 0
+      },
+      {
+        "sectionNotes": [
+          [4000, 0, 0],
+          [4000, 3, 0],
+          [4500, 1, 1000],
+          [5000, 4, 0]
+        ],
+        "lengthInSteps": 16,
+        "mustHitSection": true,
+        "changeBPM": false,
+        "bpm": 120,
+        "altAnim": false,
+        "typeOfSection": 0
+      },
+      {
+        "sectionNotes": [],
+        "lengthInSteps": 16,
+        "mustHitSection": false,
+        "changeBPM": false,
+        "bpm": 120,
+        "altAnim": false,
+        "typeOfSection": 0
+      },
+      {
+        "sectionNotes": [
+          [8000, 2, 0],
+          [8500, 0, 0]
+        ],
+        "lengthInSteps": 8,
+        "mustHitSection": true,
+        "changeBPM": false,
+        "bpm": 120,
+        "altAnim": false,
+        "typeOfSection": 0
+      }
+    ]
+  }
+}

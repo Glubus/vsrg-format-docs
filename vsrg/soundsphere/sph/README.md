@@ -116,6 +116,11 @@ Not read by ROX. SPH maps well to ROX's column model (taps/holds/keysounds) but 
 
 rizu (Lua): https://github.com/semyon422/rizu (`chart/format/sph/`: `Sph.lua`, `ChartDecoder.lua`, `ChartEncoder.lua`, `SphLines.lua`, `lines/TextLines.lua`, `lines/template_key.lua`, `Metadata.lua`; tests in `chart/format/sph/tests`). The same repo's `chart/format/` contains decoders for osu!, BMS, O2Jam, Quaver, StepMania, KSM, IIDX and MIDI.
 
+## Getting samples
+
+- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): the repository's own sample chart `sea/chart/samples/chart_1.sph` plus the seven chart strings of the rizu unit tests (sounds + volumes, velocities, expands, measure markers, visual layers, Z85 keys), all GPL-3.0 from `semyon422/rizu` at commit `cf4603379dcab949d3510b8c31d1d3e421df6ec0`.
+- **More**: run rizu / soundsphere and import any osu!mania, BMS, Quaver, StepMania, etc. chart; the engine converts charts to its own model and `ChartEncoder` writes SPH (`chart/format/sph/ChartEncoder.lua`) [inference: the editor/export path was not run]. No public archive of `.sph` files was found.
+
 ## Sources
 
 - https://github.com/semyon422/rizu (commit `37df09654581800fa30df613385080b99c795c9a`): `chart/spec.md`, `chart/format/sph/spec.md`, `chart/format/sph/*.lua`, `chart/format/sph/lines/*.lua`, `chart/core/InputMode.lua`

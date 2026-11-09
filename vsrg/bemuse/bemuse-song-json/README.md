@@ -123,6 +123,12 @@ Not read by ROX (it is a catalogue of BMS songs; ROX has no BMS reader in 0.8.1)
 - `bemuse-indexer` (JavaScript/TypeScript): https://github.com/bemusic/bemuse/tree/master/packages/bemuse-indexer (reads `.bms`/`.bmson`, produces chart info).
 - `bemuse-tools` (server indexer) and Bemuse Song Workshop https://github.com/bemusic/song-workshop; client loaders `bemuse/src/music-collection`, `bemuse/src/custom-song-loader`.
 
+## Getting samples
+
+- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): `bemuse-example-music-server-index.json` (13-song `index.json` fixture of the Bemuse repo, AGPL-3.0) and `derived-aoi-olivia-bemuse-song.json` (one of its song objects without `id`/`path`).
+- **Live URL, not hashable, fetch manually** (not in the manifest): the production `https://bemuse.ninja/music/index.json` (42 songs on 2026-11-09, with `bmssearch_id`, `readme`, `duration`, `youtube_url`, `replaygain`).
+- **More**: `index.json` of any Bemuse music server (`https://bemuse.ninja/?server=<url>`); a stand-alone `bemuse-song.json` is written by the Bemuse Song Workshop ("Scan charts"); the production server did not serve `<song>/bemuse-song.json` (HTTP 404 checked for `[flicknote]onlylove_remix`), so no real single-song file was obtained.
+
 ## Sources
 
 - https://github.com/bemusic/bemuse (commit `4bf3e7d98a44841b323741cc403ecb7b41618ade`): `packages/bemuse-types/index.d.ts`, `packages/bemuse-indexer/src/index.ts` + `types.ts`, `website/docs/song-workshop.md`, `website/docs/music-server.md`

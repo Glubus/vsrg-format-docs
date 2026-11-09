@@ -1,0 +1,37 @@
+*---------------------- HEADER FIELD
+* Hand-written synthetic chart (CC0 / public domain) built from the BMS fiche of vsrg-format-docs.
+* .bml: long notes only in the #LNOBJ notation (strict BML); 7 keys + scratch; the terminator id is ZZ (uppercase).
+
+#PLAYER 1
+#GENRE Test
+#TITLE Synthetic BML
+#SUBTITLE [LNOBJ]
+#ARTIST vsrg-format-docs
+#BPM 170
+#PLAYLEVEL 6
+#RANK 3
+#TOTAL 280
+#DIFFICULTY 2
+#LNOBJ ZZ
+
+#WAV01 bgm.ogg
+#WAV02 tap.wav
+#WAV03 scratch.wav
+#WAVZZ empty.wav
+
+*---------------------- MAIN DATA FIELD
+
+#00001:01
+* measure 0: long notes on key 2 (channel 12: slots 0 to 4 of 8), on key 6 (channel 18: slots 2 to 6) and on the scratch (channel 16: slot 4 to slot 0 of the next measure)
+#00012:02000000ZZ000000
+#00018:000002000000ZZ00
+#00016:0000000003000000
+#00116:ZZ00000000000000
+
+* measure 1: three taps on key 4 (channel 14) and one on key 7 (channel 19)
+#00114:0000020002000200
+#00119:0000000000000002
+
+* measure 2: two simultaneous long notes on keys 1 and 3
+#00211:020000ZZ
+#00213:020000ZZ

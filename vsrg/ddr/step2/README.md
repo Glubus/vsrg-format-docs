@@ -47,6 +47,12 @@ Not read by ROX.
 
 Unknown ("DDR Utility" exported it).
 
+## Getting samples
+
+Manifest (fetched to `samples-local/vsrg/ddr/step2/`, [`SOURCES.md`](samples/SOURCES.md)): three real STEP2 files from the RhythmCodex test suite (commit `6c60e9b710150c6ca4adf9b7d93e51c2ad39b2ee`, `Step2/`): `single.step2` (3,088 bytes), `double.step2` (5,620), `couple.step2` (5,620), each in a ZIP; DDR 1st Mix data, so not committed. They are tiny: ideal to reverse the layout.
+
+More: the format occurs only in DDR 1st Mix (upstream note in [SaxxonPike/rhythm-game-formats `ddr/step2.md`](https://github.com/SaxxonPike/rhythm-game-formats/blob/master/ddr/step2.md)); get it from your own 1st Mix data via "DDR Utility".
+
 ## Sources
 
 - https://github.com/SaxxonPike/rhythm-game-formats/blob/master/ddr/step2.md

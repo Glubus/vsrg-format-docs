@@ -47,6 +47,12 @@ Not read by ROX.
 
 rCubed (ActionScript).
 
+## Getting samples
+
+- Committed: [samples/](samples/): `synthetic-level.swf`, a hand-built audio-less SWF whose DoAction sets `_root.beatBox` (15 beats); verified with a Python port of rCubed's `Beatbox.parseBeatbox`, not with Flash.
+- Manifest: none. Real FFR levels (`level_<level_id>.swf`, built by rCubed as `engine.songURL + "level_" + level_id + ".swf"`) embed the song's MP3 and are the property of their charters/artists; no verified, plain-`curl` download with a redistribution right was found (the FFR forum pages return HTTP 403 to scripted reads).
+- How to get one: in the FFR client (R^3, source https://github.com/flashflashrevolution/rCubed, AGPL-3.0) add an alternate engine playlist (Options, "engine playlist"), whose XML gives `songURL`; the level SWFs are then loaded from that URL [from rCubed `ChartFFRLegacy.as`; the FFR FAQ https://ffr.fandom.com/wiki/FAQ describes the playlist option]. Extract `beatBox` with a SWF decompiler or with rCubed's `Beatbox.parseBeatbox`.
+
 ## Sources
 
 - https://github.com/flashflashrevolution/rCubed (src/classes/chart/parse/ChartFFRLegacy.as, src/com/flashfla/media/Beatbox.as, classes/chart/Note.as)

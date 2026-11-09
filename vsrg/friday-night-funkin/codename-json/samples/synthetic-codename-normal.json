@@ -1,0 +1,50 @@
+{
+  "codenameChart": true,
+  "chartVersion": "1.6.0",
+  "stage": "stage",
+  "scrollSpeed": 2.0,
+  "noteTypes": ["Hurt Note"],
+  "strumLines": [
+    {
+      "type": 0,
+      "position": "dad",
+      "characters": ["dad"],
+      "visible": true,
+      "keyCount": 4,
+      "notes": [
+        { "time": 0, "id": 0, "type": 0, "sLen": 0 },
+        { "time": 500, "id": 1, "type": 0, "sLen": 0 },
+        { "time": 1000, "id": 2, "type": 0, "sLen": 250 },
+        { "time": 1500, "id": 3, "type": 1, "sLen": 0 },
+        { "time": 2000, "id": 0, "type": 0, "sLen": 0 },
+        { "time": 2000, "id": 3, "type": 0, "sLen": 0 },
+        { "time": 3000, "id": 2, "type": 0, "sLen": 0 },
+        { "time": 4000, "id": 1, "type": 0, "sLen": 600 }
+      ]
+    },
+    {
+      "type": 1,
+      "position": "boyfriend",
+      "characters": ["bf"],
+      "visible": true,
+      "keyCount": 6,
+      "notes": [
+        { "time": 250, "id": 0, "type": 0, "sLen": 0 },
+        { "time": 750, "id": 1, "type": 0, "sLen": 0 },
+        { "time": 1250, "id": 2, "type": 0, "sLen": 0 },
+        { "time": 1750, "id": 3, "type": 0, "sLen": 0 },
+        { "time": 2250, "id": 4, "type": 0, "sLen": 500 },
+        { "time": 2750, "id": 5, "type": 0, "sLen": 0 },
+        { "time": 3500, "id": 0, "type": 1, "sLen": 0 },
+        { "time": 4500, "id": 2, "type": 0, "sLen": 1000 }
+      ]
+    },
+    { "type": 2, "position": "girlfriend", "characters": ["gf"], "visible": false, "keyCount": 4, "notes": [] }
+  ],
+  "events": [
+    { "name": "Camera Movement", "time": 0, "params": [0] },
+    { "name": "Camera Movement", "time": 2000, "params": [1] },
+    { "name": "BPM Change", "time": 4000, "params": [150] },
+    { "name": "Play Animation", "time": 4200, "params": [1, "hey", true] }
+  ]
+}

@@ -95,6 +95,12 @@ Illustrative, hand-built from `Song.hx` (not a real file):
 - Kade Engine (Haxe): https://github.com/Kade-github/Kade-Engine
 - Moonchart `FNFKade` (Haxe): https://github.com/MaybeMaru/moonchart
 
+## Getting samples
+
+- Committed: [samples/](samples/): a synthetic KE1 chart with `eventObjects` and its `_meta.json`-style companion.
+- Manifest: four charts of the Kade-github/Kade-Engine repository (commit `b1fe905d9cfdcd10705f48ff47d62d1165d6c63a`, Apache-2.0 code; base-game charts not redistributed). They carry NO `chartVersion` and no `eventObjects` [observed], i.e. they are the unconverted layout the engine converts at load; a real KE1 file (with `eventObjects`) was NOT found in any public repository.
+- How to get a real KE1 file: run Kade Engine (build from the repository), open its chart editor and save a song; the engine writes `songs/<songId>/<songId><difficulty>.json` [inference from `Song.hx` as described above]. Kade releases are listed on https://github.com/Kade-github/Kade-Engine (not opened).
+
 ## Sources
 
 - https://raw.githubusercontent.com/Kade-github/Kade-Engine/master/source/{Song,Section,TimingStruct,PlayState}.hx

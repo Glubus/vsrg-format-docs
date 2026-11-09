@@ -90,6 +90,10 @@ Not read by ROX. A reader would need the (unpublished here) Blowfish key to reac
 
 None found. DDR-oriented SSQ tools: [`skogaby/ddr-chart-tools`](https://github.com/skogaby/ddr-chart-tools) (Rust, SSQ <-> SSC; does **not** read `.gen`), [`sbruder/brd`](https://github.com/sbruder/brd) (Rust, SSQ -> osu!mania).
 
+## Getting samples
+
+No `.gen` file is committed or in the manifest: none is in the tool repositories ([skogaby/ddr-chart-tools](https://github.com/skogaby/ddr-chart-tools), commit `a733404f43427bfc7b9dea3cae67710149767993`, whose tests build their fixtures in code; [sbruder/brd](https://github.com/sbruder/brd), commit `06eda30017023064a6312ae4025939251078d0f2`, 27 files, no fixtures) and real files are Konami content bought in-app. How: install DDR S+ on an iOS device, buy/download a song in-app, and copy the downloaded `.gen` out of the app's data container (exact path Unknown here); then unpack with `brd` or `ddr-chart-tools` and compare the embedded SSQ with the manifest SSQ fixtures in [`../ssq`](../ssq/samples/SOURCES.md).
+
 ## Sources
 
 - https://github.com/SaxxonPike/rhythm-game-formats/blob/master/ios/gen.md

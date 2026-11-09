@@ -40,6 +40,12 @@ Not read by ROX.
 ## Parsers & tools
 RMEssentials (C++/Qt): https://github.com/Fsu0413/RMEssentials ; rmstZ.
 
+## Getting samples
+
+- Committed in [`samples/`](samples/SOURCES.md): 4 valid `existnotes_*.imd.json` and 19 deliberately incomplete/invalid `fromjson/*.json` from RMEssentials (AGPL-3.0).
+- Manifest: `crunch_5k_hd.imd.json` (imdjson 1.2.2, 60 KB) and `reai105dudeni_5k_hd.imd.json` from the same repository (pinned commit).
+- More: convert any `.imd` with RMEssentials (https://github.com/Fsu0413/RMEssentials, `RmeChart::toJson`); the RMEssentials test tree also has `canonrock_4k_hd.imd.json`, `legend_5k_hd.imd.json`, `caiyilinbeast_6k_hd.imd.json`, `friend01_4k_nm.imd.json` (200 KB class, not taken). Whether the WeChat mini program uses this schema is unverified.
+
 ## Sources
 - https://raw.githubusercontent.com/Fsu0413/RMEssentials/master/src/librmessentials/src/rmechart.cpp
 - https://raw.githubusercontent.com/Fsu0413/RMEssentials/master/WHATSNEW

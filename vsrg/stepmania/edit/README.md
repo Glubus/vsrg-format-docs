@@ -5,7 +5,7 @@ Doc status: complete · ROX: decode only (reads, never writes) · Category: vsrg
 
 ## Overview
 
-A `.edit` file is a **single-chart simfile fragment** that attaches an "Edit"-difficulty chart to a song that already exists on the machine. It is not a distinct grammar: it is the MSD/`.sm`/`.ssc` syntax with a `#SONG` tag that names the target song, followed by exactly one chart. StepMania (3.9 onwards, and forks: ITG, Etterna, ITGmania, OutFox) loads these from the profile's `Edits/` folder (so edits follow a player's USB profile/memory card, as in the arcade games) and from the song folder itself. The repo has no `.edit` sample; the real `.ssc` sample [`../ssc/samples/Tokimeki Experience.ssc`](../ssc/samples/Tokimeki%20Experience.ssc) contains an inline `Edit` chart (`#DESCRIPTION:terstedit STRING lolol .,-.a;`, the same chart syntax).
+A `.edit` file is a **single-chart simfile fragment** that attaches an "Edit"-difficulty chart to a song that already exists on the machine. It is not a distinct grammar: it is the MSD/`.sm`/`.ssc` syntax with a `#SONG` tag that names the target song, followed by exactly one chart. StepMania (3.9 onwards, and forks: ITG, Etterna, ITGmania, OutFox) loads these from the profile's `Edits/` folder (so edits follow a player's USB profile/memory card, as in the arcade games) and from the song folder itself. The repo has no real `.edit` sample (three synthetic ones are in [`samples/`](samples/SOURCES.md)); the real `.ssc` sample [`../ssc/samples/Tokimeki Experience.ssc`](../ssc/samples/Tokimeki%20Experience.ssc) contains an inline `Edit` chart (`#DESCRIPTION:terstedit STRING lolol .,-.a;`, the same chart syntax).
 
 ## Container & encoding
 
@@ -97,6 +97,12 @@ Read by Prism (`docs/game.md` "Formats de danse"): the scan finds the song on th
 ## Parsers & tools
 
 - StepMania: [NotesLoaderSM.cpp `LoadEditFromFile/LoadEditFromMsd`](https://github.com/stepmania/stepmania/blob/master/src/NotesLoaderSM.cpp), [NotesLoaderSSC.cpp `LoadEditFromMsd`](https://github.com/stepmania/stepmania/blob/master/src/NotesLoaderSSC.cpp), [NotesWriterSSC.cpp `GetEditFileContents`](https://github.com/stepmania/stepmania/blob/master/src/NotesWriterSSC.cpp), [SongManager.cpp `LoadStepEditsFromProfileDir`](https://github.com/stepmania/stepmania/blob/master/src/SongManager.cpp), [Song.cpp `LoadEditsFromSongDir`](https://github.com/stepmania/stepmania/blob/master/src/Song.cpp) (C++).
+
+## Getting samples
+
+Committed in [`samples/`](samples/SOURCES.md): three **synthetic** (hand-written, CC0) edits targeting the bundled song `StepMania 5/Springtime` (committed as `../ssc/samples/Springtime.ssc`): SSC layout (`#NOTEDATA`) single, SM layout (`#NOTES` with six parameters), SSC layout `dance-double`. They carry taps, a jump, a hold, a roll, a mine, a lift and a fake.
+
+No real open-licensed `.edit` was found: edits live in a player's profile (`<profile>/Edits/`, see Container & encoding), and the repositories checked (StepMania, ITGmania, Etterna, simfile, simfile-parser) contain none. To get real ones: in StepMania 5 open the Edit mode on a song, create a chart and save; the game writes `Edits/<translit title> - <description>.edit` (writer `NotesWriterSSC::GetEditFileContents`). Edit-sharing sites for ITG/DDR edits distribute them as `.edit` files [inference]. Another real example of the same content is the inline `Edit` chart of `../ssc/samples/Tokimeki Experience.ssc`.
 
 ## Sources
 

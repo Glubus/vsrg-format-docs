@@ -38,10 +38,11 @@ Top level: `format_version` (uint), `meta`, `beat`, optional `gauge`, `note`, `a
 `format_version` 1 (spec 1.0.0 -> 1.0.2). KSH `ver=200` marks charts converted from kson. Unknown/unsupported KSH options are preserved in `compat.ksh_unknown`.
 
 ## Quirks & pitfalls
+- [observed in samples/oracle.kson, samples/effects.kson] Files written by the VOXL4DD3R converter's dialect deviate from the spec text read here: `meta.difficulty` as an object `{"idx":2,"name":"exhaust"}` (spec: `uint|string`), a 3-element `ButtonNote` `[0,480,"r"]` and a 4-element `LaserSection` `[0,[...],1,{"effect":"hp"}]` (spec: sizes 2 and 2-3). A strict reader may reject them; they are not KSM reference output.
 No nulls; defaults for missing keys; graphs use `[v, vf]` immediate-change pairs; relative pulses inside laser sections; `difficulty` may be a string.
 
 ## Example
-Not copied (the spec has no complete sample chart in the sections consulted). Shape (illustrative, hand-built from the field tables above):
+Real and synthetic files are in [samples/](samples/SOURCES.md) (`Gram_ex.kson` is a complete real chart; `oracle.kson` is a small synthetic one with BPM/time-signature changes, stop, slams and camera graphs). The spec has no complete sample chart in the sections consulted. Shape (illustrative, hand-built from the field tables above):
 ```json
 {"format_version":1,"meta":{"title":"T","artist":"A","chart_author":"me","difficulty":3,"level":15,"disp_bpm":"140"},
  "beat":{"bpm":[[0,140.0]],"time_sig":[[0,[4,4]]]},
@@ -53,6 +54,11 @@ Not read by ROX.
 
 ## Parsers & tools
 libkson (C++): https://github.com/kshootmania/libkson · kson (Rust): https://lib.rs/crates/kson · kshoot (TS): https://www.npmjs.com/package/kshoot · ksm2sdvx (KSON -> VOX v13): https://github.com/Foahh/ksm2sdvx · VOXL4DD3R (KSH/KSON -> VOX v13): https://github.com/ooznon/VOXL4DD3R
+
+## Getting samples
+- **Committed** ([`samples/`](samples/SOURCES.md)): `Gram_ex.kson` (a complete real chart converted by libkson) and four small synthetic fixtures from the VOXL4DD3R converter (BPM/time-signature changes, stop, scroll-speed curves, slam events, camera graphs, audio-effect definitions).
+- **Manifest**: three tiny synthetic fixtures of `Foahh/ksm2sdvx` (`minimal`, `notes`, `camera`), pinned to a commit (that repository has no licence file, so they are fetched, not committed).
+- **More**: convert any KSH chart with libkson's `tool/ksh2kson.cpp` (https://github.com/kshootmania/libkson) or the `ksh2kson` example of https://github.com/Drewol/kson-rs (`kson/examples/ksh2kson.rs`, MIT); `kson-rs` also contains a KSON chart editor and game. KSM v2 (https://github.com/kshootmania/ksm-v2) is the reference player; the format site is https://kson.dev/. [inference] KSON charts found in the wild are almost all conversions of `.ksh`, so the KSH sources in [ksh](../ksh/README.md#getting-samples) apply.
 
 ## Sources
 https://github.com/kshootmania/ksm-chart-format (`kson_format.md`) · https://kson.dev/

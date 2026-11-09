@@ -76,6 +76,11 @@ Not read by ROX (ZIP of fluXis maps; ROX has no fluXis reader).
 
 fluXis (C#): [`FluXisImport.cs`](https://github.com/InventiveRhythm/fluXis/blob/master/fluXis/Import/FluXisImport.cs), [`MapImporter.cs`](https://github.com/InventiveRhythm/fluXis/blob/master/fluXis/Import/MapImporter.cs) (`CreatePackage`), converters `fluXis.Import.osu`, `fluXis.Import.Quaver`, `fluXis.Import.Stepmania`.
 
+## Getting samples
+
+- **Committed**: none (no `.fms` is published in the fluXis repository, and a real `.fms` contains the audio and cover of the map, which cannot be redistributed; an audio-less rebuilt zip would need a real `.fsc`, which could not be obtained either, see [`fsc`](../fsc/#getting-samples)).
+- **How to get a real one**: download a mapset from the fluXis map list (https://fluxis.flux.moe) or export it from the game (export name `"{Title} - {Artist} [{Mapper}].fms"` in `MapStore.cs`); the file is a ZIP (open with any unzip tool, entries listed in the Structure section above). Converters of the repo (osu!, Quaver) also create `.fms` packages from other games' maps (`MapImporter.CreatePackage`). Online availability without a login was not tested.
+
 ## Sources
 
 - https://github.com/InventiveRhythm/fluXis (commit `4187865461e9bf7d1b8201843b0a522229f87699`): `fluXis/Import/FluXisImport.cs`, `fluXis/Import/MapImporter.cs`, `fluXis/Import/ImportManager.cs`, `fluXis/Map/MapStore.cs`, `fluXis.Desktop/FileExtensionHelper.cs`, `fluXis.Android/MainActivity.cs`

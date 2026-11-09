@@ -94,6 +94,11 @@ Not read by ROX. Only `scroll-multiply`, `laneswitch` and `time-offset` have gam
 
 fluXis (C#): https://github.com/InventiveRhythm/fluXis (`fluXis/Map/MapEvents.cs`, `Map/Structures/Events/**`), built-in editor, converter `fluXis.Import.Quaver`.
 
+## Getting samples
+
+- **Committed**: none (see [`fsc`](../fsc/#getting-samples): the fluXis repository ships no map files; no hand-written `.ffx` was added because the event class key names are only partly attribute-named and the legacy text form is undocumented outside the source).
+- **How to get a real one**: unzip any `.fms` mapset; maps with effects contain a `<timestamp>.ffx` (the game names new effect files `<unix timestamp>.ffx`, `MapStore.cs`) referenced by `EffectFile` in the `.fsc`. Effects are authored in the fluXis map editor (event placement UI), or by the Quaver importer for converted maps [inference: the importer's effect output was not read].
+
 ## Sources
 
 - https://github.com/InventiveRhythm/fluXis (commit `4187865461e9bf7d1b8201843b0a522229f87699`): `fluXis/Map/MapEvents.cs`, `fluXis/Map/Structures/Events/**`, `fluXis/Map/MapInfo.cs` (`GetMapEvents`), `fluXis/Map/MapStore.cs`, `fluXis.Import.Quaver/QuaverImport.cs`

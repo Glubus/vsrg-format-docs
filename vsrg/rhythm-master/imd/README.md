@@ -71,6 +71,12 @@ Read by ROX since Prism's addition of `rox::formats::imd` (decode only): `ImdDec
 - rmstZ: https://lrfasd.github.io/rmstZ/ (closed source converter; lists imd read+write)
 - RhythmMasterResource (classic-mode chart dump): https://github.com/GirlKiller512/RhythmMasterResource
 
+## Getting samples
+
+- Committed in [`samples/`](samples/SOURCES.md): five tiny deliberately invalid files from the RMEssentials tests (AGPL-3.0) and `synthetic_4k_hd.imd`, a valid hand-built 4-key file (CC0).
+- Manifest: four official classic-mode charts (4k easy, 5k hard, 6k normal; GirlKiller512/RhythmMasterResource, pinned commit, no licence) and two RMEssentials song fixtures (AGPL repo).
+- More: https://github.com/GirlKiller512/RhythmMasterResource holds 4134 `.imd` files (all songs, 3 key counts x 3 difficulties) of the closed classic mode; https://github.com/nladuo/RM2Malody holds more (e.g. `keluodiya_4k_hd.imd`); fan charts at https://www.dreamimd.com; the Malody RM guide https://m.mugzone.net/wiki/2368 describes importing. Official/fan charts have unclear licences: keep them local.
+
 ## Sources
 - https://raw.githubusercontent.com/Fsu0413/RMEssentials/master/src/librmessentials/src/rmechart.cpp , rmechart.h
 - https://raw.githubusercontent.com/nladuo/RM2Malody/master/imd_helper.py

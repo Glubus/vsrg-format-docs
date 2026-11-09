@@ -104,6 +104,11 @@ Not read by ROX (ROX lists Clone Hero as planned, not implemented).
 - Any SMF library; chart-aware readers: Clone Hero, YARG (https://github.com/YARC-Official/YARG), Phase Shift, FoFiX, Editor on Fire, Moonscraper (convert through `.chart`/`.mid`).
 - Documentation: https://github.com/TheNathannator/GuitarGame_ChartFormats (CC0), site https://thenathannator.github.io/GuitarGame_ChartFormats/.
 
+## Getting samples
+- Committed in [`samples/`](samples/SOURCES.md): `synthetic-gh1.mid` (tracks `T1 GEMS`, `ANIM`, `EVENTS`; per-difficulty star power and Face-Off markers, GH1 text events) and `synthetic-gh2.mid` (`PART GUITAR`, `PART BASS`, `EVENTS`; big-note marker, left-hand positions, GH2 character events), both hand-built CC0 from the https://github.com/TheNathannator/GuitarGame_ChartFormats GH1/2 docs (commit `3d3640574821e1f7f0ec4be70627893aa88fdff6`), 480 tpqn. They are not real game data.
+- Manifest: none. The real charts are inside the commercial Guitar Hero / Guitar Hero II discs; no open, licensed extraction was found, and no extraction procedure is described in the sources consulted (Unknown). Community conversions of these songs circulate as Clone Hero/Phase Shift charts (modern layout, not this one) and cannot be redistributed.
+- To get more: own the disc and extract the game archive with a tool that supports it [inference: the archive format/tool was not verified in this pass], then read the song's `.mid` with any SMF library.
+
 ## Sources
 
 - https://github.com/TheNathannator/GuitarGame_ChartFormats (commit `3d3640574821e1f7f0ec4be70627893aa88fdff6`): `docs/Implementation-Specific/Guitar-Hero-1-and-2/MIDI-Tracks/{Guitar,Global-Events,Venue,Practice-Sections}.md`, `docs/Chart-File-Formats/mid-format/Technical-Details.md`

@@ -62,5 +62,12 @@ Read by Prism (`docs/game.md` "BanG Dream"): listed by that rule, playable on th
 ## Parsers & tools
 ayachan (Go): https://github.com/6QHTSK/ayachan · bestdori-api-go: https://github.com/WindowsSov8forUs/bestdori-api-go · BanGConverter: https://github.com/loader3229/BanGConverter · bangbangboom-editor: https://github.com/K024/bangbangboom-editor · AAO-Editor: https://github.com/wuqiongjin/AAO-Editor · BanGDreamChartRender: https://github.com/WindowsSov8forUs/BanGDreamChartRender
 
+## Getting samples
+
+- Committed in [`samples/`](samples/SOURCES.md): `synthetic-bestdori-v2.json` (hand-written CC0: BPM changes, `Single` with skill/flick/charge, `Long`, `Slide` with hidden node, `Directional`).
+- Manifest: none, because every real source is live and un-hashable (see SOURCES.md): official charts at `https://bestdori.com/api/charts/<songId>/<easy|normal|hard|expert|special>.json` are public and need no login (checked: song 1 easy/expert, 3 special, 200 and 400 expert all returned 200); community charts are in `https://bestdori.com/api/post/details?id=<id>` (`post.chart`).
+- Observed in those official files [observed in Bestdori API charts 1/expert, 3/special, 200/expert; not committed]: besides BPM/Single/Long/Slide/Directional there is a `System` object (`{"type":"System","data":"bgm001.wav","beat":0}`) and `skill`/`charge` flags on singles; `Directional` carries `direction` ("Right") and `width`; BPM changes appear as extra `BPM` objects (3 in song 200, 5 in song 400).
+- More: the Bestdori chart editor and BanGDreamChartRender / bestdori-api-go fetch the same endpoints.
+
 ## Sources
 https://pkg.go.dev/github.com/6QHTSK/ayachan/model/bestdoriChart · https://raw.githubusercontent.com/6QHTSK/ayachan/master/model/bestdoriChart/bestdoriV2.go · https://github.com/K024/bangbangboom-editor/issues/3 · https://github.com/loader3229/BanGConverter

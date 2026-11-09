@@ -73,6 +73,16 @@ Not applicable / not read by ROX. Keysound extraction would require a 2DX9 reade
 - https://github.com/Gi-z/popntowav (`twodx.js`, JS)
 - https://github.com/SaxxonPike/iidx-datatools (`2dxfix`)
 
+## Getting samples
+
+No sample is committed and none is in `samples.manifest.json`: a `.2dx` file is a container of the game's copyrighted keysound audio (and this repository does not accept audio); no open-licensed `.2dx` was found (the extractor repositories 2dx_extract, 2dxTools, iidx-datatools and popntowav were checked and ship no `.2dx` fixture). Writing one by hand is not meaningful here (it would need audio payloads).
+
+How to obtain real files (you need your own copy of the game):
+
+- IIDX: iidx2bms (https://github.com/Glebsin/iidx2bms, commit 893a6a94b0bc442356be88852188cd5e05fe1b8e, `conversion.py`) looks for `<id>.2dx` and `<id>_pre.2dx` (preview) next to `<id>.1` in `\contents\data\sound\<id>\`, either loose or inside `<id>.ifs` (unpack with mon/ifstools); newer games use `<id>.s3p` instead of `<id>.2dx` for the main audio (same code: it requires `.1` + `.s3p` + `_pre.2dx`). It bundles `2dx_extract` to split the container into WAV files.
+- pop'n music: `popntowav.js` (Gi-z/popntowav, commit 469b6de82c6e5654eae42d130341d4c4d8b963a9) runs `ifstools` on a game `.ifs` and then reads `<ifsname>_ifs/<ifsname>.2dx` (lines 21-22), so the `.2dx` is inside the pop'n `.ifs` archive of each song.
+- Tools that read it: iDestyKK/2dx_extract, mon/2dxTools (`2dxDump`), SaxxonPike/iidx-datatools `2dxfix`.
+
 ## Sources
 
 - https://raw.githubusercontent.com/iDestyKK/2dx_extract/master/README.md

@@ -131,6 +131,11 @@ Not read by ROX. Wide notes, slides with eases, guides, damage notes and layers 
 - `rg-converters` (C++ core + Python): https://github.com/UntitledCharts/rg_converters (`cpp/src/converters/mmws/loader.cpp`, `exporter.cpp`, `detector.cpp`, `cpp/include/rg/converters/mmw_io.hpp`, `mmws.hpp`).
 - Editors: MikuMikuWorld and forks (see [`../mmws`](../mmws/README.md)).
 
+## Getting samples
+
+- Committed / manifest: none (no public repository ships a `.ccmmws`/`.unchmmws`; checked the MMW4CC/EX/ForProsekaR forks' file trees).
+- How to get one: use MikuMikuWorld for Chart Cyanvas (MMW4CC) or for Untitled Charts (MMW4UC, https://github.com/UntitledCharts/MikuMikuWorld4UC) and save: they write `.ccmmws` / `.unchmmws`. Convert a SUS/USC with `rg-converters convert in.sus out.ccmmws --to ccmmws` ([inference] from the README's API `ccmmws.export`). Charts on untitledcharts.com / Chart Cyanvas are authored by the community; ask for permission before redistributing.
+
 ## Sources
 
 - https://github.com/UntitledCharts/rg_converters (commit `673710dcc441aea97ac89e113f811d5c169763d4`): `README.md`, `cpp/src/converters/mmws/*.cpp`, `cpp/include/rg/converters/mmw_io.hpp`

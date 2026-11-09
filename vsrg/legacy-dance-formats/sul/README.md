@@ -47,6 +47,10 @@ Not read by ROX.
 
 D2REDIT reads it (closed, not hosted anymore).
 
+## Getting samples
+
+No sample and no grammar: `.sul` was the chart format of the earlier D2R (before 2ndMIX). D2REDIT reads `.sul` (its Japanese readme: "files that load normally are the D2R chart files (`*.d2r` / `*.sul`)") and the D2R official site offered a `d2r2sul` converter (named in the same readme). To get real files: run D2REDIT from the Wayback archive https://web.archive.org/web/20031219024931id_/http://paramax.hypermart.net/d2redit.zip (224,948 bytes) and a `.d2r` through `d2r2sul` (not found online), or find old D2R charts; both unverified here. The one-character duration symbols of `.sul` are listed in [`d2r`](../d2r/README.md).
+
 ## Sources
 
 - http://web.archive.org/web/20030807133410/http://paramax.hypermart.net/d2r.html

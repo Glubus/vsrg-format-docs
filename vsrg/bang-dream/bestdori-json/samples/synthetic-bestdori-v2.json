@@ -1,0 +1,12 @@
+[{"type":"BPM","bpm":150,"beat":0},
+ {"type":"System","data":"synthetic.wav","beat":0},
+ {"type":"Single","lane":3,"beat":4},
+ {"type":"Single","lane":1,"beat":5,"skill":true},
+ {"type":"Single","lane":5,"beat":6,"flick":true},
+ {"type":"Single","lane":2,"beat":6.5,"charge":true},
+ {"type":"Long","connections":[{"lane":0,"beat":8},{"lane":0,"beat":10}]},
+ {"type":"Long","connections":[{"lane":6,"beat":8},{"lane":6,"beat":9.5,"flick":true}]},
+ {"type":"Slide","connections":[{"lane":2,"beat":12},{"lane":3,"beat":12.5,"hidden":true},{"lane":4,"beat":13},{"lane":5,"beat":14,"flick":true}]},
+ {"type":"BPM","bpm":170,"beat":16},
+ {"type":"Directional","lane":3,"beat":16,"direction":"Left","width":2},
+ {"type":"Directional","lane":4,"beat":18,"direction":"Right","width":1}]

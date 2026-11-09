@@ -1,0 +1,51 @@
+{
+  "song": {
+    "song": "Synthetic Troll",
+    "bpm": 120,
+    "speed": 2.0,
+    "needsVoices": true,
+    "player1": "bf",
+    "player2": "dad",
+    "gfVersion": "gf",
+    "stage": "stage",
+    "keyCount": 4,
+    "hudSkin": "default",
+    "splashSkin": "noteSplashes",
+    "arrowSkin": "NOTE_assets",
+    "offset": 0,
+    "metadata": { "songName": "Synthetic Troll", "artist": "Synthetic", "charter": "Synthetic" },
+    "tracks": { "inst": ["Inst"], "player": ["Voices-bf"], "opponent": ["Voices-dad"] },
+    "extraTracks": [],
+    "events": [],
+    "validScore": true,
+    "notes": [
+      {
+        "lengthInSteps": 16,
+        "mustHitSection": true,
+        "altAnim": false,
+        "changeBPM": false,
+        "bpm": 120,
+        "sectionNotes": [
+          [0, 0, 0, ""],
+          [500, 1, 0, "Mine"],
+          [1000, 2, 500, "Roll"],
+          [1500, 3, 0, ""],
+          [1750, 4, 0, ""]
+        ]
+      },
+      {
+        "lengthInSteps": 16,
+        "mustHitSection": false,
+        "altAnim": false,
+        "changeBPM": true,
+        "bpm": 150,
+        "sectionNotes": [
+          [2000, 0, 0, ""],
+          [2400, 5, 0, "Mine"],
+          [2800, 2, 400, ""],
+          [3200, 7, 0, ""]
+        ]
+      }
+    ]
+  }
+}

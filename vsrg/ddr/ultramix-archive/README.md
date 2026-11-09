@@ -118,6 +118,10 @@ Not read by ROX.
 
 [`skogaby/ddr-chart-tools`](https://github.com/skogaby/ddr-chart-tools) (Rust, with `scripts/extract_ultramix_data.py` and `src/wavm`, `src/ssq_legacy`): extraction + legacy SSQ -> SSC/DDR conversion. TCRF documents offsets of known content using the same "relative to `x_data_US.bin`" phrasing (per the spec).
 
+## Getting samples
+
+No sample: the archive is a 100+ MB Xbox asset pack (`x_data_US.bin`, `music_US.sng`) of a commercial game and the tool repository has no fixture. How (from the cited document): rip the Ultramix (Xbox, US release) disc, take `default.xbe`, `x_data_US.bin` and `music_US.sng`, and run `scripts/extract_ultramix_data.py` of [skogaby/ddr-chart-tools](https://github.com/skogaby/ddr-chart-tools) (commit `a733404f43427bfc7b9dea3cae67710149767993`) to get the `<id>_all.ssq` charts; the EU release uses different offsets and Ultramix 2/3/4 are not investigated.
+
 ## Sources
 
 - https://github.com/skogaby/ddr-chart-tools/blob/main/docs/ultramix_archive_formats.md

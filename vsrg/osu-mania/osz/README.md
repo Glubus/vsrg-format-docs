@@ -55,7 +55,7 @@ All resources are plain files addressed by file name from the `.osu`/`.osb`; nam
 
 ## Versions & variants
 
-- `.osz` (osu!stable and lazer export). lazer additionally handles `.olz` (`BeatmapImporter.HandledExtensions = { ".osz", ".olz" }`). The archive format itself did not change; the `.osu` inside has `osu file format v14` currently (see the `.osu` doc for the version history).
+- `.osz` (osu!stable and lazer export). lazer additionally handles `.olz` (`BeatmapImporter.HandledExtensions = { ".osz", ".olz" }`). `.olz` is a distinct extension: lazer's own export, see [`../olz`](../olz/README.md); lazer can still export legacy-compatible `.osz` (`LegacyBeatmapExporter`, `FileExtension = ".osz"`, ppy/osu @ bb37f05). [observed in samples/ppy-osu_japanese-filename.osz] a real `.osz` may contain 0-byte audio entries. The archive format itself did not change; the `.osu` inside has `osu file format v14` currently (see the `.osu` doc for the version history).
 - The old online variant **osz2** (an encrypted/streamed package used by the stable updater and `osu!direct`) is not an `.osz`; it is outside this page. [inference: mentioned from general knowledge, not from the sources consulted]
 
 ## Quirks & pitfalls
@@ -67,7 +67,7 @@ All resources are plain files addressed by file name from the `.osu`/`.osb`; nam
 
 ## Example
 
-No sample in the repo. Illustrative, hand-built listing of a typical mania set (names invented):
+Real audio-less archives are in [`samples/`](samples/). Illustrative, hand-built listing of a typical mania set (names invented):
 
 ```
 Artist - Title (Mapper) [4K Easy].osu
@@ -84,6 +84,12 @@ Not read by ROX: ROX opens an individual `.osu` file (mode 3 only, see [`../osu`
 
 - osu!lazer (C#): [`BeatmapImporter.cs`](https://github.com/ppy/osu/blob/master/osu.Game/Beatmaps/BeatmapImporter.cs), [`ZipArchiveReader.cs`](https://github.com/ppy/osu/blob/master/osu.Game/IO/Archives/ZipArchiveReader.cs), [`RealmArchiveModelImporter.cs`](https://github.com/ppy/osu/blob/master/osu.Game/Database/RealmArchiveModelImporter.cs).
 - Any ZIP library. Converters that emit `.osz`: [`brd`](https://github.com/sbruder/brd) (`ddr2osu` writes DDR SSQ+XWB into an `.osz` container, Rust).
+
+## Getting samples
+
+- **Committed** in [`samples/`](samples/) (see [`SOURCES.md`](samples/SOURCES.md)): an audio-less real mapset pair from Prelude's tests (5 and 10 mania 4K difficulties), lazer's 816-byte `japanese-filename.osz` (0-byte audio entries, CP932 entry-name test), and `built-mania-key-counts-audioless.osz`, built here (CC0 container) from MIT lazer test maps (4K/7K/10K + a v5 slider file + an `.osb`).
+- **Manifest**: three lazer test archives (two tiny ones with `.ogg`/`.png`, and `241526 Soleily - Renatus_virtual_quick.osz` with 12 difficulties of all four modes plus a jpg and `__MACOSX` entries), pinned to ppy/osu @ bb37f05.
+- **How to get more**: download from https://osu.ppy.sh/beatmaps or mirrors; osu!stable *File > Export package...* writes into `Exports`, lazer exports `.osz` (legacy-compatible, `LegacyBeatmapExporter`, Shift-JIS entry names) or [`.olz`](../olz/README.md) (lazer-native). The osu! installer also bundles mapsets, listed in `BundledBeatmapDownloader.cs` (names such as `241526 Soleily - Renatus.osz`, served from `assets.ppy.sh/client-resources/bundled/<id>.osz`; not fetched here). A mapset only needs to be unzipped to get its charts; audio and images in it are copyrighted and must not be redistributed.
 
 ## Sources
 

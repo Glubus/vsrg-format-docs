@@ -115,6 +115,12 @@ Not read by ROX. It is a 12-lane layout with wide notes, flicks/traces, slides w
 - `rg-converters` (C++ core with Python bindings): https://github.com/UntitledCharts/rg_converters (`cpp/src/converters/pjsk/loader.cpp`, `exporter.cpp`, `detector.cpp`; PyPI `rg-converters`).
 - `susc-converter` (credited base): https://github.com/Kyonkrnk/susc-converter
 
+## Getting samples
+
+- Committed in [`samples/`](samples/SOURCES.md): `synthetic-12lane.pjsk.json`, hand-written CC0, plain JSON, taps/flick/trace/slide chain/guide.
+- Manifest: `empurple_append.pjsk.json` (427 KB, real dump, 1004 notes) from the `rg_converters` fixtures at commit `57610afe5cee8e913664ca5f384c82fbd7c8d473` (GPL-3.0 repo; official chart data, so not committed).
+- More: the in-game score maker's class JSON is what rg_converters reads (`pjsk.load`); upstream also has `88s_append.pjsk.json` and `intense_voice_full_append.pjsk.json`. Files in the game's server format are `base64(gzip(json))`; obtaining official ones needs the game's asset bundles (Unity AssetStudio-style extraction; [inference]).
+
 ## Sources
 
 - https://github.com/UntitledCharts/rg_converters (commit `673710dcc441aea97ac89e113f811d5c169763d4`): `README.md`, `cpp/src/converters/pjsk/*.cpp`, `cpp/include/rg/converters/pjsk.hpp`

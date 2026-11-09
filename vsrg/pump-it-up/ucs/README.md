@@ -109,6 +109,12 @@ Not read by ROX. A decoder would map `Single` -> 5 columns (ROX has 5-column pum
 
 - [infhyroyage/PIUUCSMaker](https://github.com/infhyroyage/PIUUCSMaker) (TypeScript, MIT; GitHub Pages editor), [VainUCS](https://piuforge.com/tools/vain-ucs) (web), Andamiro StepEdit Lite (official), [piulin/piured](https://github.com/piulin/piured) (web-based PIU simulator, not verified to read UCS).
 
+## Getting samples
+
+Manifest (fetched to `samples-local/vsrg/pump-it-up/ucs/`, [`SOURCES.md`](samples/SOURCES.md)): five real `.ucs` files from [StepMania-AMX/micro](https://github.com/StepMania-AMX/micro) (commit `fae7828e7e7e5f20fea67060d0bc5d6fef8a415e`; `step/1001/`: single level 12, double level 14, a `DP`-prefixed and an `SP`-prefixed performance chart, single level 3; `:Format=1`, CRLF). The same folder holds 3,124 `.ucs` files for 549 song ids (names like `S12_12.ucs`, `D14_14.ucs`, `DP50_2PEOPLE.ucs`). No licence file there, so nothing is committed.
+
+More: the official UCS sites listed above (e.g. https://xx.piugame.com/bbs/board.php?bo_table=ucs, https://www.pumpproplus.com/ucs-base-list.aspx: user-made charts for Andamiro songs; log-in/terms were not tested); the editors that write `.ucs`: StepEdit Lite (official), [PIUUCSMaker](https://github.com/infhyroyage/PIUUCSMaker) (browser editor, no sample files in the repo), converters [valius/UCSConverterTool](https://github.com/valius/UCSConverterTool) (`.not`/`.stx`/... to `.ucs`) and [rilegoat/Step2UCS](https://github.com/rilegoat/Step2UCS) (needs an official sample `.ucs`). StepMania AMX reads `.ucs` directly.
+
 ## Sources
 
 - https://piuforge.com/ (tool descriptions: VainUCS "create, edit, and export .ucs step charts")

@@ -30,6 +30,11 @@ Not read by ROX.
 ## Parsers & tools
 rmstZ (closed source): https://lrfasd.github.io/rmstZ/
 
+## Getting samples
+
+- Committed / manifest: none. No public sample or parser source exists (rmstZ is closed source).
+- How to get one: install 乐动时代 (Music Times, http://www.ydsd.com/) from an older client (later clients reportedly encrypt charts, see Overview), locate its downloaded `.xml` chart and open it in rmstZ (https://lrfasd.github.io/rmstZ/) which lists it as readable and writable. [inference] on exact paths.
+
 ## Sources
 - https://lrfasd.github.io/rmstZ/
 - http://www.redatoms.com/games/ydsd/

@@ -1,0 +1,7 @@
+#TITLE: 難易度つきテスト曲
+#L1LABEL: やさしい
+#L1FILE: easy.dtx
+#L2LABEL: ふつう
+#L2FILE: normal.dtx
+#L3LABEL: むずかしい
+#L3FILE: hard.dtx

@@ -1,0 +1,32 @@
+﻿* Standard nine buttons with long notes in the #LNTYPE 1 notation: buttons 1..9 = 11 12 13 14 15 22 23 24 25; long-note channels follow the same mapping (51-55, 62-65).
+* UTF-8 with BOM and CRLF line ends on purpose.
+* Hand-written synthetic chart (CC0 / public domain) built from the BMS and PMS fiches of vsrg-format-docs.
+
+#PLAYER 3
+#GENRE Test
+#TITLE Synthetic PMS long notes
+#SUBTITLE [9 buttons, LN]
+#ARTIST vsrg-format-docs
+#BPM 130
+#PLAYLEVEL 10
+#RANK 2
+#TOTAL 300
+#LNTYPE 1
+
+#WAV01 bgm.ogg
+#WAV02 tap.wav
+
+#00001:01
+
+* measure 0: long notes on button 1 (channel 51), button 5 (channel 55), button 6 (channel 62) and button 9 (channel 65); head slot 0, tail slot 4 of 8
+#00051:0200000002000000
+#00055:0200000002000000
+#00062:0200000002000000
+#00065:0200000002000000
+
+* measure 1: taps on buttons 2, 3, 4, 7, 8 (channels 12 13 14 23 24)
+#00112:0200000000000000
+#00113:0002000000000000
+#00114:0000020000000000
+#00123:0000000200000000
+#00124:0000000002000000

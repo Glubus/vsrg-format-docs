@@ -1,0 +1,31 @@
+{
+  "version": "2.2.4",
+  "songName": "Synthetic V-Slice",
+  "artist": "Synthetic",
+  "charter": "Synthetic",
+  "offsets": { "instrumental": 0 },
+  "playData": {
+    "songVariations": [],
+    "difficulties": ["erect", "nightmare"],
+    "characters": {
+      "player": "bf",
+      "girlfriend": "gf",
+      "opponent": "dad",
+      "instrumental": "erect",
+      "altInstrumentals": [],
+      "opponentVocals": ["dad"],
+      "playerVocals": ["bf"]
+    },
+    "stage": "mainStage",
+    "noteStyle": "funkin",
+    "ratings": { "erect": 4, "nightmare": 5 },
+    "album": "volume1",
+    "previewStart": 0,
+    "previewEnd": 6000
+  },
+  "generatedBy": "hand-built synthetic sample",
+  "timeFormat": "ms",
+  "timeChanges": [
+    { "t": 0, "b": 0, "bpm": 120, "n": 4, "d": 4, "bt": [4, 4, 4, 4] }
+  ]
+}

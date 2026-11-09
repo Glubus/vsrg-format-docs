@@ -119,6 +119,12 @@ Not read by ROX. A decoder would need: definition/chart part split, duration ali
 
 D2R itself (closed, http://gauss.takamatsu-nct.ac.jp/~iguchi/ddr/ddr2.htm, "D2R公式サイト", archive not retrievable), D2REDIT/SLOEDIT (~200 KB each, from the chart-search site), no open-source parser known.
 
+## Getting samples
+
+Committed in [`samples/`](samples/SOURCES.md): one **synthetic** (hand-written, CC0, ASCII) `.d2r` built from the rules of this page: definition part, a BASIC single chart and a MANIAC double chart with all duration symbols and a tempo change.
+
+No real file was found. The "D2R譜面サーチ" site (paramax.hypermart.net) listed user charts but "does not host any copyrighted data"; its editor archives are still on Wayback: D2REDIT (reads `.d2r`/`.sul`/`.ddr`, writes `.d2r`) at https://web.archive.org/web/20031219024931id_/http://paramax.hypermart.net/d2redit.zip (224,948 bytes; D2REDIT.exe + a Japanese readme) and SLOEDIT (`.slo`) at https://web.archive.org/web/20031219024931id_/http://paramax.hypermart.net/sloedit.zip (176,632 bytes; SloEdit.exe, readme.txt, slohead.txt). Neither archive holds a sample chart. To get real `.d2r`: run D2REDIT (Windows, `*.exe`) and save a new chart, or look for D2R 2ndMIX charts that fans uploaded to their own pages [inference].
+
 ## Sources
 
 - http://web.archive.org/web/20030807133410/http://paramax.hypermart.net/d2r.html (format, Japanese; translated above)

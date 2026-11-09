@@ -1,0 +1,50 @@
+{
+  "song": {
+    "song": "Synthetic NMV 5K",
+    "bpm": 120,
+    "speed": 2.4,
+    "needsVoices": false,
+    "keys": 5,
+    "lanes": 2,
+    "player1": "bf",
+    "player2": "dad",
+    "gfVersion": "gf",
+    "stage": "stage",
+    "arrowSkins": ["default", "default"],
+    "format": "nmv2",
+    "notes": [
+      {
+        "sectionBeats": 4,
+        "sectionNotes": [
+          [0, 0, 0],
+          [250, 1, 0],
+          [500, 2, 0],
+          [750, 3, 0],
+          [1000, 4, 500],
+          [1000, 9, 0]
+        ],
+        "mustHitSection": true,
+        "gfSection": false,
+        "altAnim": false,
+        "changeBPM": false,
+        "bpm": 120
+      },
+      {
+        "sectionBeats": 4,
+        "sectionNotes": [
+          [2000, 5, 0],
+          [2250, 6, 0],
+          [2500, 7, 0],
+          [2750, 8, 0],
+          [3000, 0, 0]
+        ],
+        "mustHitSection": false,
+        "gfSection": false,
+        "altAnim": false,
+        "changeBPM": false,
+        "bpm": 120
+      }
+    ],
+    "events": []
+  }
+}

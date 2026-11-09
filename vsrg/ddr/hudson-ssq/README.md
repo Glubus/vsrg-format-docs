@@ -117,6 +117,10 @@ Not read by ROX (no SSQ support). Converting would require dropping gimmick item
 
 [`skogaby/ddr-chart-tools`](https://github.com/skogaby/ddr-chart-tools) (Rust): converts Hudson/legacy SSQs into SSC or modern SSQ (gimmicks off).
 
+## Getting samples
+
+No file is committed or in the manifest: the format is documented from reverse engineering of the DDR Hottest Party 1 disc (52 songs / 211 charts) and no chart extract is public. The tests of [skogaby/ddr-chart-tools](https://github.com/skogaby/ddr-chart-tools) (commit `a733404f43427bfc7b9dea3cae67710149767993`, `tests/hudson_legacy_to_ddr.rs` ...) build their data in code. How: dump the Hottest Party 1 (Wii) or Mario Mix (GameCube) disc you own, locate the song `.ssq` containers (type-9 step chunks, see this page) and parse them with `ddr-chart-tools`. The container itself is the standard SSQ: see the manifest SSQ files in [`../ssq`](../ssq/samples/SOURCES.md).
+
 ## Sources
 
 - https://github.com/skogaby/ddr-chart-tools/blob/main/docs/hudson_ssq_format.md (commit `a733404f43427bfc7b9dea3cae67710149767993` of the cloned repo)

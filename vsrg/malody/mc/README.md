@@ -163,6 +163,12 @@ ROX source: `src/formats/mc/{types,decoder,encoder}.rs`.
 - Malody Creative / mce (Cryville, .mc editor): https://www.cryville.world/Projects/A007
 - Official: Malody Store API: https://github.com/Mugzone/Malody_Store_API, editor plugin docs: https://github.com/Mugzone/Documents
 
+## Getting samples
+
+- **Committed** in [`samples/`](samples/) (see [`SOURCES.md`](samples/SOURCES.md)): the 10 existing community charts (origin unknown: Key 4/5 columns, Ring 8 columns), 3 Key-mode charts from Quaver.API's Malody-conversion tests (MPL-2.0), the 2 Taiko-mode (mode 5) charts of LuiCat/mc2tja (MIT), and 3 hand-written CC0 Key charts (7K, 9K compact, 6K with UTF-8 BOM; holds, keysound, BPM change, `effect.scroll`, `$ver`).
+- **Manifest**: none (no redistributable or immutably hosted file found).
+- **How to get more**: Malody (and Malody V) downloads charts from its store as packages (see [mcz](../mcz/README.md)); the store protocol is documented in https://github.com/Mugzone/Malody_Store_API (`/api/store/download` returns the file URLs and MD5s; it needs a client `uid`/`key`, so the plain website host answered with HTML in a test). kangalioo's "Malody Converts" packs on the EtternaOnline forum (4K-10K, 280 MB-1 GB each) are converted for Etterna, i.e. `.sm` rather than `.mc` [inference]. For modes other than Key (Catch 3, Pad 4, Slide 7, Live 8, Cube 9) no sample was found: obtain one by installing Malody, switching the store to that mode and downloading a chart, or by creating one in the in-game editor. Searching GitHub for `"mode_ext"` / `"column"` `.mc` files finds converters' test charts.
+
 ## Sources
 
 - https://github.com/Mugzone/Malody_Store_API (mode definition table)

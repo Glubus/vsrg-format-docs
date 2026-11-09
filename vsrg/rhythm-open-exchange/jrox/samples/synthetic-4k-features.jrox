@@ -1,0 +1,246 @@
+{
+  "version": 3,
+  "key_count": 4,
+  "metadata": {
+    "chart_id": 1001,
+    "chartset_id": 77,
+    "title": "Synthetic Features",
+    "artist": "ROX Samples",
+    "creator": "BmsAux",
+    "difficulty_name": "Hyper",
+    "difficulty_value": 7.5,
+    "audio_file": "audio.ogg",
+    "background_file": "bg.jpg",
+    "audio_offset_us": -25000,
+    "preview_time_us": 4000000,
+    "preview_duration_us": 10000000,
+    "source": "Hand-written sample",
+    "genre": "Test",
+    "language": "en",
+    "tags": [
+      "synthetic",
+      "all-note-types",
+      "bpm-change"
+    ],
+    "is_coop": false
+  },
+  "timing_points": [
+    {
+      "type": "Bpm",
+      "data": {
+        "time_us": 0,
+        "bpm": 180.0,
+        "signature": 4
+      }
+    },
+    {
+      "type": "Sv",
+      "data": {
+        "time_us": 4000000,
+        "scroll_speed": 0.5
+      }
+    },
+    {
+      "type": "Sv",
+      "data": {
+        "time_us": 6000000,
+        "scroll_speed": 1.0
+      }
+    },
+    {
+      "type": "Bpm",
+      "data": {
+        "time_us": 8000000,
+        "bpm": 150.0,
+        "signature": 3
+      }
+    }
+  ],
+  "notes": [
+    {
+      "time_us": 1000000,
+      "note_type": {
+        "type": "Tap"
+      },
+      "hitsound_index": null,
+      "column": 0
+    },
+    {
+      "time_us": 1000000,
+      "note_type": {
+        "type": "Tap"
+      },
+      "hitsound_index": null,
+      "column": 3
+    },
+    {
+      "time_us": 1333000,
+      "note_type": {
+        "type": "Tap"
+      },
+      "hitsound_index": null,
+      "column": 1
+    },
+    {
+      "time_us": 1666000,
+      "note_type": {
+        "type": "Tap"
+      },
+      "hitsound_index": 0,
+      "column": 2
+    },
+    {
+      "time_us": 2000000,
+      "note_type": {
+        "type": "Hold",
+        "data": {
+          "duration_us": 1000000
+        }
+      },
+      "hitsound_index": null,
+      "column": 0
+    },
+    {
+      "time_us": 2000000,
+      "note_type": {
+        "type": "Hold",
+        "data": {
+          "duration_us": 500000
+        }
+      },
+      "hitsound_index": 1,
+      "column": 3
+    },
+    {
+      "time_us": 2500000,
+      "note_type": {
+        "type": "Mine"
+      },
+      "hitsound_index": null,
+      "column": 1
+    },
+    {
+      "time_us": 3000000,
+      "note_type": {
+        "type": "Tap"
+      },
+      "hitsound_index": null,
+      "column": 2
+    },
+    {
+      "time_us": 3500000,
+      "note_type": {
+        "type": "Burst",
+        "data": {
+          "duration_us": 400000
+        }
+      },
+      "hitsound_index": null,
+      "column": 1
+    },
+    {
+      "time_us": 4000000,
+      "note_type": {
+        "type": "Tap"
+      },
+      "hitsound_index": null,
+      "column": 0
+    },
+    {
+      "time_us": 4000000,
+      "note_type": {
+        "type": "Tap"
+      },
+      "hitsound_index": null,
+      "column": 1
+    },
+    {
+      "time_us": 4000000,
+      "note_type": {
+        "type": "Tap"
+      },
+      "hitsound_index": null,
+      "column": 2
+    },
+    {
+      "time_us": 4000000,
+      "note_type": {
+        "type": "Tap"
+      },
+      "hitsound_index": null,
+      "column": 3
+    },
+    {
+      "time_us": 5000000,
+      "note_type": {
+        "type": "Hold",
+        "data": {
+          "duration_us": 2000000
+        }
+      },
+      "hitsound_index": null,
+      "column": 2
+    },
+    {
+      "time_us": 6000000,
+      "note_type": {
+        "type": "Tap"
+      },
+      "hitsound_index": null,
+      "column": 0
+    },
+    {
+      "time_us": 6500000,
+      "note_type": {
+        "type": "Mine"
+      },
+      "hitsound_index": null,
+      "column": 3
+    },
+    {
+      "time_us": 8000000,
+      "note_type": {
+        "type": "Tap"
+      },
+      "hitsound_index": null,
+      "column": 1
+    },
+    {
+      "time_us": 8400000,
+      "note_type": {
+        "type": "Tap"
+      },
+      "hitsound_index": null,
+      "column": 2
+    },
+    {
+      "time_us": 9000000,
+      "note_type": {
+        "type": "Hold",
+        "data": {
+          "duration_us": 1500000
+        }
+      },
+      "hitsound_index": null,
+      "column": 0
+    },
+    {
+      "time_us": 10500000,
+      "note_type": {
+        "type": "Tap"
+      },
+      "hitsound_index": null,
+      "column": 3
+    }
+  ],
+  "hitsounds": [
+    {
+      "file": "kick.wav",
+      "volume": null
+    },
+    {
+      "file": "snare.wav",
+      "volume": 80
+    }
+  ]
+}

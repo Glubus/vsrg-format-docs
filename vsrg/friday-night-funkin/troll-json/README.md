@@ -43,10 +43,20 @@ None (no real Troll Engine file inspected).
 
 Not read as Troll (legacy codec reads `song.notes[].sectionNotes` only; mines/rolls are note types and would decode as taps).
 
+## Observed in real files
+
+The engine's own charts have `keyCount` (4), `hudSkin`, `tracks` (`inst`/`player`/`opponent` lists), `extraTracks: []`, `splashSkin`, `arrowSkin`, `path`, and in some charts `metadata` (`songName`, `artist`, `charter`) and `offset`; note arrays have a 4th element `''` for untyped notes [observed in the manifest files troll_bopeebo.json and troll_darnell.json].
+
 ## Parsers & tools
 
 - Moonchart `FNFTroll`: https://github.com/MaybeMaru/moonchart/blob/main/src/moonchart/formats/fnf/legacy/FNFTroll.hx
 - Troll Engine: https://github.com/riconuts/FNF-Troll-Engine
+
+## Getting samples
+
+- Committed: [samples/](samples/): one synthetic chart.
+- Manifest: six files of riconuts/FNF-Troll-Engine (commit `60902619df0e1f6a4125227252b66651a6929ee4`): `default_content/base-game/songs/...` and `example_content/...`. The repository has no LICENSE file at that commit (only a README), so nothing is committed. Observed: `keyCount` 4, `hudSkin` "default", `tracks {inst, player, opponent}`, `extraTracks: []`, `metadata {songName, artist, charter}` and `offset` in some charts; note arrays with a 4th element `''`.
+- More: the repository's `default_content/` and `example_content/` folders; the engine's chart editor.
 
 ## Sources
 
