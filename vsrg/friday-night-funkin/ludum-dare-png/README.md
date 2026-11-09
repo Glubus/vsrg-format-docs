@@ -1,11 +1,11 @@
 # FNF Ludum Dare chart (one PNG per section + `<song>.json`)
 Kind: chart
 
-Doc status: stub · ROX: no · Category: vsrg · Encoding: mixed (PNG bitmaps + JSON)
+Doc status: partial · ROX: decode only · Category: vsrg · Encoding: mixed (PNG bitmaps + JSON)
 
 ## Overview
 
-Earliest FNF data layout (the game-jam build; Moonchart: "FNF (Ludum Dare)", tag `1.0.0` of FunkinCrew/Funkin, "This was a mistake."). Each section of a song is a small PNG whose pixels mark notes. Source: Moonchart's `FNFLudumDare.hx`, `BitmapFile.hx`; the original game files were not read.
+Earliest FNF data layout (the game-jam build; Moonchart: "FNF (Ludum Dare)", tag `1.0.0` of FunkinCrew/Funkin, "This was a mistake."). Each section of a song is a small PNG whose pixels mark notes. Sources: the game's own code at tag `1.0.0` (`ChartParser.hx`, `PlayState.generateSong`, `Note.hx`), Moonchart's `FNFLudumDare.hx`, `BitmapFile.hx`.
 
 ## Container & encoding
 
@@ -19,7 +19,7 @@ Each PNG is 8 pixels wide and `height` = number of steps in the section (16 in M
 
 ## Timing model
 
-One BPM from the JSON. Row `y` is step `y`; `stepCrochet = 60000 / bpm / 4`. Moonchart reads each section list twice (opponent, then player) with `time = step * stepCrochet + crochet * 8 * totalLength + crochet * sectionBeats * i`, `i = 0` opponent, `1` player. Images alternate "dad, boyfriend"; each pair spans 8 beats (4 + 4). Rows are 16 steps = 4 beats; sections of 5-8 beats count as 8 beats [as implemented in Moonchart's `getNotes`; not verified].
+One BPM from the JSON; `crochet = 60000 / bpm`, `stepCrochet = crochet / 4`. `ChartParser.parse` turns a bitmap into a list of values: per row, one value per marked pixel (`imageToCSV` tile 1: column `c` < 4 gives `c + 1`, `c` ≥ 4 gives `3 - c`, i.e. -1 to -4) or a 0 when the row has none; the step of a value is its index in the list. `PlayState.generateSong` walks every section twice, opponent (`playerCounter` 0) then player (1), with `coolSection = floor(len / 4)` raised to 4 (≤ 4) or 8 (5-8) and `time = step * stepCrochet + crochet * 8 * totalLength + crochet * coolSection * playerCounter`; `totalLength += round(coolSection / 4)` after each section. So every section is played by the opponent, then the same notes by the player `coolSection` beats later (a call and response); the next section starts 8 beats (16 for 8-beat sections) after the previous one [game code, tag 1.0.0].
 
 ## Notes
 
@@ -43,12 +43,12 @@ See [samples/SOURCES.md](samples/SOURCES.md) (tag 1.0.0) and the synthetic PNGs 
 
 ## ROX support
 
-Not read.
+Decode only (`rox::formats::fnf_ludum_dare`): the `.json` (exactly `song`, `bpm`, `sections`) with `<song lowercased>_section<N>.png` beside it; minimal PNG reader (8-bit grey/RGB/palette/grey-alpha/RGBA, not interlaced; non-white pixels are marks). The player's notes only, on 4 columns ordered as the game draws the lanes (1→third, 2→fourth, 3→second, 4→first: `Note.hx`); a hold piece extends the last note of its lane, other pieces counted. Read on disk, the music is `assets/music/<song>_Inst.mp3` of the game tree; the vocals are not mixed. `bopeebo` (52 taps) and `fresh` (122) decode, tap counts checked against an independent decode of the PNGs.
 
 ## Parsers & tools
 
 - Moonchart `FNFLudumDare` (Haxe): https://github.com/MaybeMaru/moonchart/blob/main/src/moonchart/formats/fnf/FNFLudumDare.hx
-- FNF repository tag `1.0.0` (cited by Moonchart): https://github.com/FunkinCrew/Funkin/tree/1.0.0 [not opened]
+- FNF repository tag `1.0.0`: https://github.com/FunkinCrew/Funkin/tree/1.0.0 (`source/ChartParser.hx`, `source/PlayState.hx`, `source/Note.hx`)
 
 ## Getting samples
 
