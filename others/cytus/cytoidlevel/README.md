@@ -69,9 +69,8 @@ Cytoid (C#, Unity): <https://github.com/Cytoid/Cytoid>; PCtyx can generate `leve
 
 ## Getting samples
 
-- **Committed**: 2 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
-- **Manifest**: 1 entry in `samples.manifest.json` (downloaded by `tools/fetch-samples.sh` into `samples-local/`; listed in [`samples/SOURCES.md`](samples/SOURCES.md))
-- **More samples**: Cytoid levels are published on https://cytoid.io (CytoidDB) as `.cytoidlevel` zips (a zip with `level.json`, charts, audio, images, optional storyboard). The Cytoid repo bundles `io.cytoid.8bit_adventurer.cytoidlevel` (9.7 MB, manifest). Community level licences vary (Cytoid content rules: https://cytoid.wiki/en/reference/community/content-rule); the committed package is an audio-less build of the editor test level by chovvy (GPL-3.0 repo).
+- **Committed**: container-only format: no package is committed. Loose `level.json` of the editor test level and the `level.json`/storyboard files of the bundled `8bit_adventurer` level are in [`samples/`](samples/); their charts are in [`../c2-json/samples/`](../c2-json/samples/). Layout [observed]: zip with `level.json` (schema_version 2, `charts[]`), chart files (`.json`/`.txt`), music, preview, background, optional storyboards. Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **More samples**: levels are published on https://cytoid.io; the Cytoid repo bundles `io.cytoid.8bit_adventurer.cytoidlevel`; content rules: https://cytoid.wiki/en/reference/community/content-rule.
 
 ## Sources
 

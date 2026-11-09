@@ -1,0 +1,64 @@
+{
+ "version": "2.2.4",
+ "songName": "Lit Up Erect",
+ "artist": "seal",
+ "charter": "Blakey_2",
+ "divisions": 96,
+ "looped": false,
+ "offsets": {
+  "instrumental": 0,
+  "altInstrumentals": {  },
+  "vocals": {  },
+  "altVocals": {  }
+ },
+ "playData": {
+  "songVariations": [
+   "erect"
+  ],
+  "difficulties": [],
+  "characters": {
+   "player": "pico-playable",
+   "girlfriend": "nene",
+   "opponent": "darnell",
+   "instrumental": "",
+   "altInstrumentals": [],
+   "opponentVocals": [
+    "darnell"
+   ],
+   "playerVocals": [
+    "pico-playable"
+   ]
+  },
+  "stage": "phillyStreetsErect",
+  "noteStyle": "funkin",
+  "ratings": {
+   "easy": 2,
+   "erect": 0,
+   "normal": 5,
+   "hard": 4
+  },
+  "album": "volume3",
+  "previewStart": 0,
+  "previewEnd": 0
+ },
+ "generatedBy": "Friday Night Funkin' - v0.8.0",
+ "timeFormat": "ms",
+ "timeChanges": [
+  {
+   "t": 0,
+   "b": 0,
+   "bpm": 176,
+   "n": 4,
+   "d": 4,
+   "bt": [4, 4, 4, 4]
+  },
+  {
+   "t": 9890.5062,
+   "b": 29.0122,
+   "bpm": 176,
+   "n": 4,
+   "d": 4,
+   "bt": [4, 4, 4, 4]
+  }
+ ]
+}

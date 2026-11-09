@@ -64,9 +64,8 @@ Not read as FPS Plus: a `fpsplus_1` chart has no `song.notes[].sectionNotes`, so
 
 ## Getting samples
 
-- Committed: [samples/](samples/): synthetic `fpsplus_1` chart, events, meta, plus a legacy-layout chart that FPS Plus converts.
-- Manifest: six files of ThatRozebudDude/FPS-Plus-Public (commit `8cc8ddac5f6f922686e8fd6741df8113e6249ad1`, `assets/data/songs/<song>/chart-<diff>.json`, `events.json`, `meta.json`). Not committed: its README grants non-commercial use only, forbids generative-AI use, and defers FNF assets to the funkin.assets licence.
-- IMPORTANT, observed in these files and in `source/Chart.hx`: the current FPS Plus format is `fpsplus_1`, NOT the legacy layout described by Moonchart (see the correction in the Structure section).
+- Committed ([samples/](samples/) and [samples/SOURCES.md](samples/SOURCES.md)): six files of ThatRozebudDude/FPS-Plus-Public (`assets/data/songs/<song>/chart-<diff>.json`, `events.json`, `meta.json`; its README grants non-commercial use only and forbids generative-AI use, the owner accepted the risk) and four synthetic files.
+- IMPORTANT, observed in these files and in `source/Chart.hx`: the current FPS Plus format is `fpsplus_1`, NOT the legacy layout described by Moonchart (see Structure / metadata).
 - More: the repository's `assets/data/songs/` has every song in this layout.
 
 ## Sources

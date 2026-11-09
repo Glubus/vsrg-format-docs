@@ -16,12 +16,15 @@ All files are UTF-8 without BOM, LF line endings (bytes unchanged from the sourc
 - `oracle.kson`, `curve-scroll.kson`, `speed-curve.kson`, `effects.kson` write `meta.difficulty` as an object `{"idx": 2, "name": "exhaust"}`; the spec text read says `uint|string`.
 - `effects.kson` has a 3-element `ButtonNote` (`[0, 480, "r"]`) and a 4-element `LaserSection` (`[0, [...], 1, {"effect":"hp"}]`); the spec states "The array size of `ButtonNote` MUST be 2" and `LaserSection` size 2 or 3. These files come from a converter's dialect (VOXL4DD3R), not from the KSM reference tools.
 
-## Fetched by tools/fetch-samples.sh (not committed; listed in samples.manifest.json)
-
-| Target file | URL | Licence note | What it exercises |
-| --- | --- | --- | --- |
-| `ksm2sdvx_minimal.kson` | https://raw.githubusercontent.com/Foahh/ksm2sdvx/50bf1d358ba41aafd4c217b4da1571c2a3c40c95/tests/fixtures/kson/minimal.kson | No licence file found in the repository (only `LICENSES/` of third-party components) | Smallest document (256 B): `meta` (`difficulty` 2) + `beat.bpm` only, pretty-printed with one array element per line. |
-| `ksm2sdvx_notes.kson` | https://raw.githubusercontent.com/Foahh/ksm2sdvx/50bf1d358ba41aafd4c217b4da1571c2a3c40c95/tests/fixtures/kson/notes.kson | same | 1.6 KB: bare-uint chip notes next to `[y,length]` notes in `bt`/`fx`, a 2x-wide laser section (`w`=2), a laser point with curve control points, BPM change `[960,180]`, 3/4 measure change, one `spin` slam event. |
-| `ksm2sdvx_camera.kson` | https://raw.githubusercontent.com/Foahh/ksm2sdvx/50bf1d358ba41aafd4c217b4da1571c2a3c40c95/tests/fixtures/kson/camera.kson | same | 1.2 KB: `camera.cam.body.zoom_top`/`zoom_bottom` graphs with `[v, vf]` immediate pairs and a curve point, `camera.tilt` mixing numbers and the names `"normal"`/`"bigger"` (inside a `[v, vf]` pair as well). |
-
 More KSON files: any `.ksh` converted with `ksh2kson` (libkson `tool/ksh2kson.cpp`) or the kson-rs `ksh2kson` example; see the `Getting samples` section of the fiche.
+
+## Real charts downloaded from public sources (snapshots, fetched 2026-11-09)
+
+Downloaded with curl on 2026-11-09 and committed byte for byte (charts only: no audio, video, images or archives).
+
+| File | Source URL | Date fetched | sha256 (of the downloaded file) | Author | Licence / terms as known | What it exercises / remarks |
+|---|---|---|---|---|---|---|
+| `ksm2sdvx_camera.kson` | https://raw.githubusercontent.com/Foahh/ksm2sdvx/50bf1d358ba41aafd4c217b4da1571c2a3c40c95/tests/fixtures/kson/camera.kson | 2026-11-09 | bb82aa26f1daf093490a2516efcc502a6294767cece2f8251be24e9fb4d5b29c | Foahh/ksm2sdvx (repository; chart author see file) | no licence file in the source repository | Synthetic ksm2sdvx test fixture: camera zoom and tilt graphs |
+| `ksm2sdvx_minimal.kson` | https://raw.githubusercontent.com/Foahh/ksm2sdvx/50bf1d358ba41aafd4c217b4da1571c2a3c40c95/tests/fixtures/kson/minimal.kson | 2026-11-09 | 535f02f804b286c981ee6d167898c15fb8fabb6a37435626a5bca0cf1f3ad92a | Foahh/ksm2sdvx (repository; chart author see file) | no licence file in the source repository | Synthetic ksm2sdvx test fixture: smallest KSON document |
+| `ksm2sdvx_notes.kson` | https://raw.githubusercontent.com/Foahh/ksm2sdvx/50bf1d358ba41aafd4c217b4da1571c2a3c40c95/tests/fixtures/kson/notes.kson | 2026-11-09 | 9447cc5808319a3aaeef39b6b528a5c11419c8a8d0b2d39bb9bf6fbdf6a0fe8e | Foahh/ksm2sdvx (repository; chart author see file) | no licence file in the source repository | Synthetic ksm2sdvx test fixture: chip/long notes, lasers, BPM and time-signature change |
+| `kson-rs_Gram_ex.json` | https://raw.githubusercontent.com/Drewol/kson-rs/9880e2444aa85c30ea0e849354782ec715dee11a/kson/src/tests/assets/Gram_ex.json | 2026-11-09 | 928eaabfa976c31b104d4e532090b42d48ccef268e71c49cb36d3cbf3ff37b2f | Drewol/kson-rs (conversion of "Gram" extended chart, Blast Smith / 坂本龍馬) | MIT (kson-rs `LICENSE`, Copyright (c) 2022 Emil Draws) | Second KSON serialisation of the same chart as `Gram_ex.kson`, written by the Rust `kson` crate's serializer test (`kson/src/tests/serializer.rs`); `.json` extension, `format_version` 1 document with `audio`, `beat`, `bg`, `camera`, `compat`, `editor`, `meta`, `note`; useful to compare two implementations' output. |

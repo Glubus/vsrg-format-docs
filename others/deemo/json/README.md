@@ -13,7 +13,7 @@ JSON (UTF-8), one object per difficulty. The `$id`/`$ref` keys look like Json.NE
 
 ## Structure / metadata
 
-Root: `notes` (array) and `links` (array). Other root fields (e.g. speed or BPM data) were not found in the consulted parsers. [observed in the Deenote test charts listed in samples/SOURCES.md (manifest): the root also carries `speed` (e.g. 6.0, 10.0) and, in `finale.hard.json`, `oriVMin`, `oriVMax`, `remapVMin`, `remapVMax`; notes there also carry `speed`, `eventID` and a duplicate `time` next to `_time`.]
+Root: `notes` (array) and `links` (array). Other root fields (e.g. speed or BPM data) were not found in the consulted parsers. [observed in samples/deenote_finale.hard.json and samples/deenote_12.Magnolia.hard.txt: the root also carries `speed` (e.g. 6.0, 10.0) and, in `finale.hard.json`, `oriVMin`, `oriVMax`, `remapVMin`, `remapVMax`; notes there also carry `speed`, `eventID` and a duplicate `time` next to `_time`.]
 
 Note (`DSNote` in sonolus-deemo-engine):
 
@@ -76,9 +76,8 @@ Not read by ROX.
 
 ## Getting samples
 
-- **Committed**: 1 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
-- **Manifest**: 4 entries in `samples.manifest.json` (downloaded by `tools/fetch-samples.sh` into `samples-local/`; listed in [`samples/SOURCES.md`](samples/SOURCES.md))
-- **More samples**: extracted game charts circulate: https://github.com/LibrarristShalinward/Deemo-I-Charts (JSON per song and difficulty, manifest) and the Deenote editor test charts (Chlorie/Deenote, `Assets/Dev/TestCharts/`, manifest). To extract them yourself use deemo-extract / disunity as listed in the fiche. No licence was found for any, so only a synthetic file is committed.
+- **Committed**: 4 real chart files (two Deemo I charts from LibrarristShalinward/Deemo-I-Charts, two Deenote test charts) plus 1 synthetic in [`samples/`](samples/). Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **More samples**: https://github.com/LibrarristShalinward/Deemo-I-Charts has ~450 interactive-chart and ~1300 original-chart JSON files (and two zips under `下载/`); extraction tools: deemo-extract, disunity.
 
 ## Sources
 

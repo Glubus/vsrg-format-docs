@@ -1,0 +1,24 @@
+{
+  "name": "少女A",
+  "author": "椎名もた",
+  "bpm": "130",
+  "scene": "scene_10",
+  "levelDesigner": "Young Boy [C]",
+  "levelDesigner1": "Cactus☆",
+  "levelDesigner2": "Cactus",
+  "levelDesigner3": "Young Boy [C]",
+  "levelDesigner4": "Cactus",
+  "difficulty1": "5",
+  "difficulty2": "8",
+  "difficulty3": "11",
+  "difficulty4": "0",
+  "unlockLevel": "0",
+  "searchTags": [
+    "Rin",
+    "Len",
+    "Vocaloid"
+  ],
+  "hideBmsMode": "CLICK",
+  "hideBmsDifficulty": "0",
+  "name_romanized": "Young Girl A"
+}

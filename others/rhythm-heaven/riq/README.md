@@ -61,9 +61,8 @@ Not read by ROX 0.8.1; RIQ is an event timeline, not a lane chart.
 
 ## Getting samples
 
-- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): `synthetic-no-audio.riq`, a zip with `.meta` and `Charts/chart0.json` built from the Jukebox serialisation code (MIT), CC0; no audio.
-- Manifest: nothing: real remixes contain their music, and the places that host them are live personal sites or Discord (e.g. https://kitsting.com/misc/remixes/, listed in search results; not hashable).
-- More: the Heaven Studio editor (https://rheavenstudio.itch.io/heaven-studio) saves `.riq`; its Discord "level-showcase" forum and video descriptions link remix files (search results); Jukebox has code to extract and pack `.riq`.
+- Container only: this folder holds no archive. A `.riq` is a zip with `.meta`, `Charts/chart<index>.json` (the RIQ beatmap JSON described above) and `Music/`. No real `.riq` could be fetched without its audio, and the extracted chart JSON has no format folder of its own.
+- More: the Heaven Studio editor (https://rheavenstudio.itch.io/heaven-studio) saves `.riq`; remixes are shared on Discord and personal sites (e.g. https://kitsting.com/misc/remixes/, seen in search results; not downloaded); the Jukebox library has code to extract and pack `.riq`.
 
 ## Sources
 

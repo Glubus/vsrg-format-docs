@@ -49,9 +49,9 @@ Lanotalium (C#): <https://github.com/cnSchwarzer/Lanotalium> (mirror <https://gi
 
 ## Getting samples
 
-**Committed:** none. **Manifest:** none. The Lanotalium repository carries the notice "No License - Commercial use, Distribution is not permitted" and no sample chart (its tree, at `77a44cf5`, holds code, prefabs and language packs only), so nothing can be committed or listed.
+**Committed:** none. The Lanotalium repository has no chart files and says "No License - Commercial use, Distribution is not permitted"; its ChartZone web API (`lanotaliumapi.schwarzer.wang`) returned nothing when queried, and no other public chart collection was found. Source-derived structure (JSON keys `events`, `eos`, `bpm`, `scroll`) is in the fiche.
 
-**How to get one yourself**: install Lanotalium (<http://www.lanotalium.cn>, <https://github.com/cnSchwarzer/Lanotalium>) and create a chart, or load one from the in-app ChartZone (`LimChartZone` scripts, `Assets/Scripts/LimChartZone/` in the repository). Fan charts are shared through the Lanotalium/Layesta Discord servers linked in the README. Official Lanota charts are inside the game's Unity bundles (undocumented here). From the source (`Assets/Scripts/Schwarzer/Chart/Lanota/LanotaChartHandler.cs`), a chart is a JSON object with the keys `events`, `eos`, `bpm`, `scroll`; see the fiche.
+**How to get one yourself**: install Lanotalium (<https://github.com/cnSchwarzer/Lanotalium>) and create a chart, or obtain fan charts from the Lanotalium/Layesta Discord servers linked in its README; official charts are inside the game's Unity bundles.
 
 ## Sources
 

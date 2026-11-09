@@ -1,0 +1,8858 @@
+version: 3
+key_count: 4
+metadata:
+  chart_id: null
+  chartset_id: null
+  title: VANESSA
+  artist: '朱雀'
+  creator: ''
+  difficulty_name: Challenge
+  difficulty_value: 12.0
+  audio_file: VANESSA.mp3
+  background_file: bg.jpg
+  audio_offset_us: 0
+  preview_time_us: 60300000
+  preview_duration_us: 12000000
+  source: null
+  genre: null
+  language: null
+  tags: []
+  is_coop: false
+timing_points:
+- type: Bpm
+  data:
+    time_us: -590000
+    bpm: 185.0
+    signature: 4
+notes:
+- time_us: 382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 1355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 2004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 2653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 3301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 3950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 4599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 5247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 5572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 5896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 5896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 5896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 5896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 6004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 6004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 6112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 6112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 6220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 6220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 6220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 6328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 6328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 6437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 6437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 6545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 6545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 6545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 6545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 6653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 6653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 6761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 6761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 6869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 6869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 6869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 6977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 6977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 7085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 7085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 7085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 7193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 7193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 7193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 7193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 7301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 7301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 7410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 7410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 7518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 7518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 7518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 7626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 7626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 7734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 7734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 7842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 7842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 7842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 7842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 7950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 7950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 8058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 8058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 8166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 8166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 8166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 8274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 8274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 8382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 8382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 8382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 8491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 8491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 8491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 8491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 8599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 8599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 8707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 8707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 8815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 8815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 8815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 8923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 8923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 9031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 9031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 9139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 9139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 9139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 9139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 9247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 9247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 9355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 9355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 9464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 9464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 9464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 9572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 9572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 9680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 9680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 9788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 9788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 9788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 9788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 9896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 9896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 9896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 10004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 10004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 10004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 10112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 10112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 10112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 10220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 10220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 10220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 10328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 10328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 10328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 10437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 10437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 10437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 10545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 10545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 10545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 10653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 10653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 10653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 10761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 10761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 10761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 10761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 10869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 10869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 10869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 10977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 10977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 10977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 11085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 12382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 12382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 12491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 12491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 12599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 12599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 12707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 12707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 12815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 12815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 12923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 12923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 13031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 13031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 13139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 13139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 13247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 13247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 13355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 13355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 13355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 13464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 13464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 13572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 13572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 13572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 13680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 13680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 13680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 13680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 13788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 13788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 13896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 13896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 14004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 14004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 14004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 14112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 14112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 14220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 14220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 14328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 14328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 14328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 14437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 14437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 14545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 14545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 14653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 14653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 14653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 14761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 14761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 14869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 14869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 14869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 14977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 14977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 14977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 15085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 15085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 15193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 15193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 15301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 15301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 15301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 15410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 15410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 15518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 15518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 15626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 15626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 15626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 15734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 15734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 15842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 15842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 15842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 15950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 15950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 15950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 16058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 16058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 16166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 16166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 16166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 16274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 16274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 16274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 16382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 16382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 16491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 16491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 16599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 16599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 16599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 16707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 16707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 16815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 16815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 16923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 16923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 16923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 17031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 17031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 17139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 17139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 17247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 17247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 17247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 17355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 17355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 17464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 17464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 17464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 17572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 17572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 17572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 17680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 17680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 17788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 17788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 17788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 17896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 17896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 17896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 18004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 18004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 18112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 18112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 18112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 18220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 18220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 18220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 18328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 18328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 18437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 18437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 18437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 18545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 18545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 18545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 18653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 18653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 18761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 18761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 18761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 18869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 18869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 18869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 18977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 18977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 19085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 19085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 19193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 19193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 19193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 19301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 19301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 19410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 19410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 19518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 19518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 19518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 19626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 19626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 19734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 19734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 19842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 19842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 19842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 19950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 19950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 20058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 20058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 20058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 20166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 20166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 20166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 20274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 20274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 20382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 20382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 20491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 20491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 20491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 20599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 20599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 20707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 20707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 20815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 20815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 20815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 20923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 20923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 21031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 21031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 21031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 21139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 21139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 21139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 21247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 21247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 21355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 21355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 21355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 21464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 21464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 21464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 21572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 21572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 21680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 21680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 21788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 21788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 21788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 21896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 21896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 22004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 22004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 22004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 22112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 22112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 22112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 22220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 22220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 22328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 22328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 22328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 22437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 22437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 22437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 22545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 22545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 22653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 22653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 22653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 22761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 22761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 22761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 22869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 22869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 22869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 22977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 22977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 22977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 23085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 23085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 23085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 23193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 23193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 23301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 23301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 23410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 23410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 23410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 23518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 23518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 23626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 23626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 23734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 23734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 23734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 23842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 23842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 23950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 23950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 23950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 24058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 24058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 24058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 24058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 24166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 24166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 24274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 24274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 24382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 24382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 24382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 24491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 24491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 24599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 24599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 24707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 24707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 24707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 24815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 24815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 24923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 24923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 25031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 25031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 25031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 25139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 25139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 25247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 25247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 25247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 25355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 25355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 25355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 25464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 25464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 25572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 25572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 25680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 25680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 25680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 25788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 25788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 25896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 25896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 26004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 26004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 26004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 26112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 26112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 26220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 26220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 26220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 26328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 26328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 26328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 26437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 26437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 26545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 26545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 26545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 26653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 26653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 26653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 26761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 26761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 26869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 26869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 26977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 26977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 26977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 27085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 27085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 27193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 27193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 27301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 27301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 27301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 27410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 27410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 27518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 27518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 27626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 27626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 27626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 27734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 27734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 27842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 27842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 27950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 27950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 27950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 28058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 28058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 28166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 28166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 28274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 28274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 28274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 28382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 28382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 28491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 28491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 28599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 28599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 28599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 28707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 28707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 28815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 28815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 28923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 28923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 28923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 29031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 29031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 29139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 29139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 29247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 29247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 29247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 29355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 29355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 29464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 29464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 29572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 29572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 29572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 29680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 29680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 29788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 29788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 29896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 29896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 29896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 30004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 30004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 30112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 30112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 30220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 30220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 30220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 30328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 30328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 30437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 30437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 30437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 30545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 30545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 30545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 30653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 30653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 30761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 30761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 30869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 30869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 30869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 30977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 30977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 31085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 31085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 31193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 31193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 31193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 31301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 31301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 31410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 31410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 31410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 31518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 31518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 31518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 31626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 31626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 31734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 31734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 31734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 31842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 31842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 31842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 31842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 31950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 31950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 32058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 32058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 32058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 32166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 32166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 32166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 32274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 32274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 32382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 32382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 32382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 32491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 32491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 32491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 32491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 32599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 32599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 32707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 32707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 32707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 32815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 32815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 32815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 32923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 32923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 33031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 33031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 33031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 33139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 33139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 33139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 33139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 33247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 33247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 33247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 33355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 33355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 33355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 33464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 33464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 33464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 33572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 33572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 33572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 33680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 33680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 33680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 33788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 33788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 33788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 33842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 33896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 33896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 33896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 33950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 34004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 34004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 34004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 34058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 34112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 34112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 34112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 34166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 34220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 34220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 34220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 34274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 34328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 34328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 34437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 34437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 34437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 34437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 34545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 34545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 34653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 34653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 34761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 34761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 35085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 35410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 35410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 35518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 35518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 35626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 35626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 35734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 35734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 35734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 35842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 35842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 35950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 35950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 36058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 36058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 36166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 36166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 36274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 36274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 36382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 36382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 36382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 36491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 36491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 36599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 36599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 36707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 36707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 36815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 36815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 36923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 36923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 37031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 37031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 37031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 37139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 37139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 37247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 37247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 37355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 37355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 37680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 38004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 38004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 38112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 38112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 38220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 38220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 38328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 38328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 38328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 38437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 38437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 38545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 38545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 38653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 38653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 38761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 38761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 38869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 38869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 38977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 38977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 38977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 39085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 39085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 39193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 39193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 39301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 39301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 39410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 39410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 39518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 39518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 39626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 39626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 39626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 39734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 39734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 39842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 39842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 39950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 39950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 40058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 40058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 40166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 40166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 40274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 40274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 40274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 40382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 40382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 40491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 40491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 40599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 40599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 40707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 40707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 40815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 40815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 40923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 40923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 40923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 41031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 41031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 41139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 41139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 41247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 41247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 41355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 41355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 41464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 41464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 41572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 41572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 41572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 41680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 41680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 41788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 41788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 41896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 41896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 42004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 42004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 42112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 42112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 42220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 42220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 42220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 42328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 42328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 42437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 42437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 42545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 42545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 42653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 42653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 42761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 42761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 42869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 42869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 42869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 42977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 42977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 43085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 43085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 43193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 43193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 43301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 43301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 43410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 43410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 43518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 43518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 43518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 43626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 43626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 43626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 43734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 43734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 43734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 43842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 43842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 43842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 43950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 43950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 44058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 44058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 44058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 44166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 44166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 44166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 44274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 44274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 44382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 44382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 44491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 44491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 44491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 44599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 44599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 44707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 44707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 44707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 44815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 44815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 44815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 44923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 44923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 45031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 45031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 45139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 45139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 45139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 45355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 45464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 45788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 45788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 45788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 45896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 45896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 46004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 46004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 46004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 46112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 46112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 46112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 46220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 46220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 46328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 46328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 46437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 46437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 46437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 46545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 46545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 46653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 46653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 46653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 46761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 46761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 46761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 46869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 46869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 46977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 46977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 47085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 47085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 47085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 47193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 47193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 47301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 47301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 47301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 47410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 47410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 47410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 47518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 47518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 47626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 47626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 47734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 47734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 47734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 47950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 48058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 48382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 48382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 48382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 48491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 48491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 48599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 48599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 48599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 48707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 48707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 48707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 48815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 48815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 48815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 48923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 48923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 48923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 49031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 49031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 49031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 49139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 49139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 49247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 49247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 49247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 49355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 49355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 49355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 49464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 49464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 49572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 49572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 49680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 49680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 49680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 49788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 49788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 49896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 49896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 49896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 50004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 50004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 50004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 50112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 50112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 50220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 50220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 50328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 50328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 50328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 50437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 50437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 50545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 50545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 50545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 50653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 50653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 50653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 50761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 50761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 50869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 50869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 50977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 50977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 50977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 51085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 51085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 51193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 51193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 51193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 51301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 51301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 51301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 51410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 51410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 51518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 51518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 51626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 51626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 51626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 51734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 51734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 51842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 51842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 51842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 51950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 51950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 51950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 52058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 52058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 52166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 52166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 52274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 52274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 52274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 52382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 52382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 52491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 52491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 52491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 52599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 52599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 52599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 52707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 52707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 52815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 52815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 52923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 52923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 52923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 53031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 53031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 53139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 53139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 53139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 53247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 53247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 53247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 53355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 53355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 53464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 53464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 53572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 53572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 53572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 53680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 53680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 53788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 53788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 53788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 53896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 53896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 53896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 54004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 54004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 54004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 54112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 54112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 54112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 54220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 54220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 54220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 54328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 54328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 54437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 54437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 54545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 54545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 54545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 54653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 54653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 54761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 54761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 54869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 54869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 54869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 54977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 54977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 55085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 55085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 55085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 55193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 55193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 55193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 55193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 55410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 55518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 55842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 56166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 56382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 56491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 56491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 56599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 56707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 56815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 57031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 57464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 57680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 57788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 57788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 58004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 58112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 58437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 58437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 58761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 58977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 59085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 59085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 59301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 59410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 59626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 59734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 59950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 60058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 60274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 60382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 60382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 60382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 60491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 60599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 60599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 60707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 60707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 60815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 60923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 60923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 61031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 61031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 61031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 61139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 61247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 61247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 61355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 61355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 61464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 61572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 61572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 61680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 61680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 61680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 61788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 61788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 61896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 61896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 62004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 62004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 62112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 62220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 62220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 62328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 62328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 62328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 62437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 62545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 62545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 62653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 62653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 62761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 62761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 62869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 62869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 62977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 62977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 62977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 63085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 63085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 63193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 63193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 63301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 63301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 63301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 63410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 63410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 63518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 63518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 63626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 63626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 63626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 63734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 63734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 63842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 63842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 63950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 63950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 63950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 64058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 64058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 64166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 64166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 64274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 64274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 64274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 64382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 64382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 64382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 64491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 64491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 64491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 64599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 64599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 64599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 64707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 64707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 64707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 64815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 64815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 64815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 64923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 64923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 64923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 65031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 65031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 65031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 65139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 65139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 65139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 65247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 65247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 65247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 65355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 65355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 65355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 65464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 65464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 65464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 65572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 65572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 65572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 65572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 65680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 65680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 65788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 65788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 65896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 65896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 66004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 66004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 66112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 66112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 66220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 66220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 66328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 66328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 66437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 66437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 66545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 66545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 66545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 66545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 66653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 66653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 66761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 66761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 66761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 66869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 66869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 66869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 66869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 66977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 66977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 67085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 67085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 67193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 67193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 67193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 67301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 67301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 67410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 67410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 67518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 67518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 67518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 67626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 67626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 67734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 67734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 67842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 67842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 67842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 67950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 67950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 68058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 68058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 68058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 68166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 68166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 68166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 68274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 68274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 68382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 68382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 68491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 68491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 68491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 68599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 68599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 68707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 68707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 68815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 68815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 68815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 68923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 68923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 69031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 69031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 69031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 69139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 69139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 69139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 69139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 69247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 69247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 69355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 69355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 69355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 69464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 69464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 69464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 69464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 69572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 69572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 69680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 69680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 69788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 69788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 69788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 69896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 69896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 70004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 70004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 70112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 70112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 70112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 70220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 70220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 70328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 70328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 70437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 70437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 70437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 70545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 70545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 70653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 70653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 70761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 70761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 70761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 70869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 70869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 70977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 70977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 71085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 71085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 71085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 71193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 71193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 71301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 71301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 71410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 71410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 71410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 71518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 71518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 71626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 71626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 71626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 71734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 71734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 71734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 71734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 71842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 71842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 71950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 71950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 71950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 72058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 72058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 72058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 72058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 72166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 72166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 72274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 72274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 72382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 72382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 72382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 72491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 72491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 72599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 72599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 72707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 72707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 72707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 72815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 72815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 72923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 72923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 73031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 73031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 73031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 73031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 73139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 73139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 73247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 73247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 73247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 73355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 73355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 73355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 73355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 73464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 73464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 73572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 73572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 73680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 73680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 73680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 73788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 73788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 73896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 73896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 74004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 74004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 74004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 74112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 74112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 74220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 74220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 74220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 74328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 74328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 74328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 74328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 74437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 74437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 74545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 74545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 74545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 74653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 74653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 74653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 74653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 74761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 74761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 74869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 74869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 74977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 74977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 74977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 75085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 75085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 75193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 75193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 75301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 75301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 75301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 75301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 75410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 75410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 75518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 75518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 75626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 75626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 75626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 75734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 75734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 75842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 75842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 75950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 75950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 75950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 75950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 76058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 76058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 76058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 76166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 76166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 76166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 76274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 76274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 76274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 76274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 76382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 76382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 76491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 76491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 76599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 76599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 76599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 76599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 76707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 76707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 76815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 76815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 76923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 76923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 76923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 76923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 77031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 77031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 77139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 77139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 77139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 77247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 77247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 77247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 77247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 77355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 77355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 77464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 77464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 77572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 77572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 77572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 77680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 77680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 77788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 77788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 77896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 77896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 77896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 78004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 78004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 78112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 78112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 78220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 78220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 78220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 78328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 78328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 78437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 78437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 78437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 78545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 78545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 78545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 78653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 78653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 78761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 78761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 78869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 78869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 78869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 78977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 78977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 79085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 79085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 79193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 79193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 79193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 79301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 79301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 79410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 79410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 79410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 79518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 79518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 79518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 79518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 79626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 79626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 79734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 79734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 79734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 79842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 79842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 79842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 79842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 79950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 79950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 80058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 80058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 80166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 80166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 80166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 80274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 80274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 80382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 80382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 80491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 80491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 80491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 80599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 80599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 80707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 80707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 80815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 80815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 80815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 80923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 80923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 81031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 81031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 81139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 81139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 81139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 81247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 81247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 81355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 81355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 81464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 81464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 81464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 81572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 81572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 81680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 81680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 81680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 81788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 81788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 81788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 81896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 81896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 82004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 82004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 82004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 82112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 82112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 82112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 82220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 82220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 82328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 82328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 82328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 82437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 82437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 82437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 82437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 82545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 82545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 82653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 82653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 82761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 82761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 82761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 82869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 82869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 82977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 82977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 83085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 83085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 83085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 83193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 83193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 83301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 83301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 83410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 83410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 83410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 83410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 83518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 83518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 83626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 83626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 83626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 83734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 83734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 83734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 83734324
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 83842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 83842432
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 83950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 83950541
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 84058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 84058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 84058649
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 84166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 84166757
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 84274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 84274865
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 84382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 84382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 84382973
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 84491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 84491081
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 84599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 84599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 84599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 84707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 84707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 84707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 84707297
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 84815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 84815405
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 84923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 84923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 84923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 85031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 85031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 85031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 85031622
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 85139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 85139730
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 85247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 85247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 85247838
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 85355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 85355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 85355946
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 85464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 85464054
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 85572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 85572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 85572162
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 85680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 85680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 85680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 85680270
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 85788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 85788378
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 85896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 85896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 85896486
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 86004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 86004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 86004595
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 86112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 86112703
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 86220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 86220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 86220811
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 86328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 86328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 86328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 86328919
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 86437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 86437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 86437027
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 86545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 86545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 86545135
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 86653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 86653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 86653243
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 86761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 86761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 86761351
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 86869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 86869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 86869459
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 86977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 86977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 86977568
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 87085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 87085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 87085676
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 87193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 87193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 87193784
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 87301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 87301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 87301892
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 87410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 87410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 87410000
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 87518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 87518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 87518108
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 87626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 87626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 87626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 87626216
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+- time_us: 88599189
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 88923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 0
+- time_us: 88923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 1
+- time_us: 88923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 2
+- time_us: 88923514
+  note_type:
+    type: Tap
+  hitsound_index: null
+  column: 3
+hitsounds: []

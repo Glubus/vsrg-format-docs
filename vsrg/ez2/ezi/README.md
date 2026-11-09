@@ -34,7 +34,7 @@ Not read by ROX.
 EZ2BMS (https://github.com/Roganis/EZ2BMS), EZ2Tools `ez2EziConverter` (https://github.com/ben-rnd/EZ2Tools).
 
 ## Getting samples
-- **Committed / manifest: none.** Same situation as [`.ez`](../ez/README.md#getting-samples): no `.ezi` file found at an open or hashable source; EZ2BMS's fixtures contain none (`packages/chart-core/test/fixtures/README.md`).
+- **Committed: none (no real file found).** Same situation as [`.ez`](../ez/README.md#getting-samples): no `.ezi` file found at any public source reached; EZ2BMS's fixtures contain none (`packages/chart-core/test/fixtures/README.md`).
 - **How to get one**: copy the `.ezi` keysound-name files from an EZ2DJ/EZ2AC installation you own, next to the `.ez` charts of the same song; they use their own 512-byte cipher table (fiche, EZ2BMS `ez2data/crypt.ts`). Tools: https://github.com/Roganis/EZ2BMS, https://github.com/ben-rnd/EZ2Tools.
 
 ## Sources

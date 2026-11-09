@@ -19,10 +19,12 @@ Charts only: no audio, jackets or backgrounds are committed. All real charts bel
 
 Doubt (also in `/tmp/fsc-parts/doubts/ArcadePcSims.md`): the `Gram_*` charts are the sample song bundled with K-Shoot MANIA; the KSM readme states that bundled songs "are the property of the content creators" (https://github.com/kshootmania/ksm-v2 `dist_scripts/assets_win/readme_en.txt`), while libkson (same maintainer) ships them in an MIT-licensed repository. Charts only (no audio) are kept here on the strength of the repository licence.
 
-## Fetched by tools/fetch-samples.sh (not committed; listed in samples.manifest.json)
-
-| Target file | URL | Licence note | What it exercises |
-| --- | --- | --- | --- |
-| `voxl4dd3r_poly.ksh` | https://raw.githubusercontent.com/ooznon/VOXL4DD3R/ff221d86f780aabd19f2f560d441c3f271a9a1a6/testdata/poly.ksh | Repository is MIT (Copyright (c) 2026 ooznon) but the chart is a third-party fan chart ("polyriddim" in the README) with no stated permission, so it is not committed | `ver=167`, UTF-8 BOM, **LF-only** line endings, 3 `beat=` lines, 13 `zoom_top`, 24 `tilt`, 21 `fx-l`; used by that project as a KSH to VOX golden-parity input (see the VOX samples). |
-
 Many more KSH files (real SDVX fan charts) exist on Nautica and sdvx.org; see the `Getting samples` section of the fiche.
+
+## Real charts downloaded from public sources (snapshots, fetched 2026-11-09)
+
+Downloaded with curl on 2026-11-09 and committed byte for byte (charts only: no audio, video, images or archives).
+
+| File | Source URL | Date fetched | sha256 (of the downloaded file) | Author | Licence / terms as known | What it exercises / remarks |
+|---|---|---|---|---|---|---|
+| `voxl4dd3r_poly.ksh` | https://raw.githubusercontent.com/ooznon/VOXL4DD3R/ff221d86f780aabd19f2f560d441c3f271a9a1a6/testdata/poly.ksh | 2026-11-09 | be0931f27fdccf4bddd6b07bd89ae4e6af347942648eaf7a38c423bc80cd4a2e | ooznon/VOXL4DD3R (repository; chart author see file) | repository MIT; chart is a third-party fan chart | Real KSH fan chart, ver=167, UTF-8 BOM, LF-only |

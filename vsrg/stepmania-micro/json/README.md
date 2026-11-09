@@ -98,9 +98,9 @@ Not read by ROX. (`.json` is routed to the FNF decoder, so StepMania JSON would 
 
 ## Getting samples
 
-Manifest (fetched to `samples-local/vsrg/stepmania-micro/json/`, [`SOURCES.md`](samples/SOURCES.md)): the two real data files of StepMania Micro 0.3 for the song *Lost*, from the Wayback snapshot `20150110120332` (`js/steps.js` 11,723 bytes with the `noteData` tuples, `js/song.js` 64 bytes: `bpm: 148`, `addToMusicPosition: -0.03`). They are JavaScript, the "SM Micro" variant described above. Both are immutable but of unknown licence, so they are not committed.
+Committed in [`samples/`](samples/SOURCES.md): the two real data files of StepMania Micro 0.3 for the song *Lost* (Wayback snapshot `20150110120332` of the original Dropbox host: `steps.js` 11,723 bytes with the `noteData` tuples, `song.js` 64 bytes: `bpm: 148`, `addToMusicPosition: -0.03`). They are JavaScript wrappers, the "SM Micro" variant described above.
 
-Not found: any file written by `NotesWriterJson` (whole-song `.json`). To produce one: build StepMania (the writer is in `src/NotesWriterJson.cpp`) and call it from code, or use [StepMania-AMX/micro](https://github.com/StepMania-AMX/micro) (JavaScript player derived from StepMania Micro; it loads `.ucs` steps, not JSON). The original Dropbox host (`dl.dropboxusercontent.com/u/2963913/smjs-0.3/`) is gone; only Wayback copies remain.
+Not found: any file written by `NotesWriterJson` (whole-song `.json`). To produce one: build StepMania (writer in `src/NotesWriterJson.cpp`) and call it from code. [StepMania-AMX/micro](https://github.com/StepMania-AMX/micro) is a JavaScript player derived from StepMania Micro that loads `.ucs` steps, not JSON.
 
 ## Sources
 

@@ -54,9 +54,8 @@ ArcCreate (C#): <https://github.com/Arcthesia/ArcCreate> (`Compose/Project/Expor
 
 ## Getting samples
 
-- **Committed**: 2 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
-- **Manifest**: 1 entry in `samples.manifest.json` (downloaded by `tools/fetch-samples.sh` into `samples-local/`; listed in [`samples/SOURCES.md`](samples/SOURCES.md))
-- **More samples**: export a project from ArcCreate (`Compose/Project/Export/Exporter.cs` writes the package, per the fiche) or convert with EtoileResurrection / Etoile.Lite. Fan packages also circulate as `.arcpkg` files in community channels [inference]. The committed package is an audio-less rebuild; the unmodified original (with a 44 KB `base.ogg` and `base.jpg`) is in the manifest.
+- **Committed**: container-only format: no package is committed. The folder holds the loose ArcCreate project file `etoile_project.arcproj` and `etoile_sn.test/` (the `index.yml` and `project.arcproj` extracted from an EtoileResurrection test `.arcpkg`); its charts are in [`../aff/samples/etoile_sn.test/`](../aff/samples/etoile_sn.test/). Layout of the package: zip with root `index.yml` (`directory`, `identifier`, `settingsFile`, `type`) and one folder holding `project.arcproj`, `0.aff`..`4.aff`, audio and jacket [observed in the extracted files]. Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **More samples**: export a project from ArcCreate (`Compose/Project/Export/Exporter.cs`), or convert with EtoileResurrection / Etoile.Lite. No other public `.arcpkg` was found with a direct download.
 
 ## Sources
 

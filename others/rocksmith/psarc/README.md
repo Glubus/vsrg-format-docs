@@ -78,9 +78,8 @@ Not read by ROX. Only a container: decoding charts requires extracting the `.sng
 
 ## Getting samples
 
-- Committed: nothing (a PSARC embeds audio banks).
-- Manifest (`samples.manifest.json`): four real test packages of the MIT-licensed Rocksmith2014.NET (pinned commit): `rocksmith2014net_PSARC.Tests_test_p.psarc` (273 KB), `..._partially_compressed_test_p.psarc` (787 KB), `..._IntegrationTests_test_p.psarc` and `..._test_m.psarc` (1.4 MB, PC and macOS builds of one CDLC). [observed: each starts with `PSAR`, version 1.4, compression `zlib`]
-- More: official game DLC lives in the game's `.psarc` files (retail Rocksmith 2014 install; paths not verified here); custom DLC (CDLC) is built with the Rocksmith Custom Song Toolkit or DLC Builder (https://github.com/iminashi/Rocksmith2014.NET, `samples/DLCBuilder`) from the `xml` arrangements; the toolkit repository (rscustom/rocksmith-custom-song-toolkit, GPL-3.0) has more test packages in `RocksmithToolkitLib.Tests/Resources` (`Peppa-Pig_v1_p.psarc`, `CustomFont_vocals_v1_p.psarc`, ... by file name; not opened).
+- Container only: this folder holds no archive. A PSARC holds `songs/bin/generic/*.sng` (compiled arrangements) plus audio banks and `.xml`/`.json` manifests.
+- The chart payloads of real packages are committed as `.sng` in [../sng/samples/](../sng/samples/) and `.xml` in [../xml/samples/](../xml/samples/). Test packages exist in iminashi/Rocksmith2014.NET `tests/` (`test_p.psarc`, `partially_compressed_test_p.psarc`; MIT) and in rscustom/rocksmith-custom-song-toolkit `RocksmithToolkitLib.Tests/Resources`; unpack with the toolkit or Rocksmith2014.NET.
 
 ## Sources
 - https://github.com/iminashi/Rocksmith2014.NET (`src/Rocksmith2014.PSARC/{Header,Entry,Cryptography,PSARC,Utils}.fs`, `src/Rocksmith2014.Common/{Platform,Compression}.fs`, `src/Rocksmith2014.DLCProject/*`)

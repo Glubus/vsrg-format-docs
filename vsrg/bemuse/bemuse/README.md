@@ -112,9 +112,8 @@ Not read by ROX (it is a keysound container for BMS, which ROX 0.8.1 does not re
 
 ## Getting samples
 
-- **Committed** ([`samples/`](samples/)): `bemuse-test-a-metadata.json`, the `metadata.json` index of the Bemuse test fixture (AGPL-3.0).
-- **Fetched by `tools/fetch-samples.sh`** (not committed because the chunks contain audio): the two test `.bemuse` chunks (`bemuse/src/resources/test-fixtures/a|b/mp3.0.ea6087c3.bemuse`, pinned at commit `4bf3e7d98a44841b323741cc403ecb7b41618ade`). A real production pack (`metadata.json` and chunk `m4a.5.18649bde.bemuse` of `[flicknote]onlylove_remix`, CC-BY-NC) is on live URLs, not hashable, fetch manually.
-- **More**: any song of the official server `https://bemuse.ninja/music/` has `<song>/assets/metadata.json` whose `refs[].path` lists the `.bemuse` chunks next to it (`ogg.N.<hash>.bemuse`, `m4a.N.<hash>.bemuse`); the song list is `https://bemuse.ninja/music/index.json`. To produce one from your own BMS, use the Bemuse Song Workshop or `bemuse-tools` packer (see Parsers & tools).
+- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): the `metadata.json` pack index of 8 real songs from the official server `bemuse.ninja/music/<song>/assets/metadata.json`, plus the repo's test fixture index. The `.bemuse` chunks themselves are audio containers and are not stored.
+- **More**: every song of `https://bemuse.ninja/music/index.json` has `<song>/assets/metadata.json`, whose `refs[].path` names the chunks (`ogg.N.<hash>.bemuse`, `m4a.N.<hash>.bemuse`) next to it. To pack your own BMS use the Bemuse Song Workshop or `bemuse-tools`.
 
 ## Sources
 

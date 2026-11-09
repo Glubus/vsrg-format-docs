@@ -133,8 +133,9 @@ Not read by ROX. Wide notes, slides with eases, guides, damage notes and layers 
 
 ## Getting samples
 
-- Committed / manifest: none (no public repository ships a `.ccmmws`/`.unchmmws`; checked the MMW4CC/EX/ForProsekaR forks' file trees).
-- How to get one: use MikuMikuWorld for Chart Cyanvas (MMW4CC) or for Untitled Charts (MMW4UC, https://github.com/UntitledCharts/MikuMikuWorld4UC) and save: they write `.ccmmws` / `.unchmmws`. Convert a SUS/USC with `rg-converters convert in.sus out.ccmmws --to ccmmws` ([inference] from the README's API `ccmmws.export`). Charts on untitledcharts.com / Chart Cyanvas are authored by the community; ask for permission before redistributing.
+- Committed in [`samples/`](samples/): 5 `.ccmmws` and 5 `.unchmmws` files produced by rg-converters (`mmw.ccmmws.export`, `mmw.unchmmws.export`) from real charts. **Converted, not downloaded**: no public `.ccmmws`/`.unchmmws` was found. Everything is listed with origin, date and sha256 in [`samples/SOURCES.md`](samples/SOURCES.md).
+- Observed [observed in samples/rgconv_sekaibest_0001_01_easy.ccmmws, ..unchmmws]: magic `CCMMWS` + `00 04 00 06 00 27 ...` for the Chart Cyanvas variant and `UCMMWS` + `00 01 00 00 00 27 ...` for the Untitled Charts variant (same length for the same chart).
+- How to get native ones: MMW4CC / MMW4UC (https://github.com/UntitledCharts/MikuMikuWorld4UC) File > Save.
 
 ## Sources
 

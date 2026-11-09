@@ -11,7 +11,7 @@ Only this much is documented in the READMEs opened. The binary layout of the DGS
 
 ## Container & encoding
 
-Binary `.bin` ("DGSH" presumably a magic [inference from the editor wording]); the PC files are stored in AFS archives (`afs_english`) per the editor's folder name.
+Binary `.bin` with magic `DGSH` followed by a u32 LE equal to the file size [observed in samples/Noizemaker-V2_R22_SH2.BIN]; the PC files are stored in AFS archives (`afs_english`) per the editor's folder name.
 
 ## Structure / metadata
 
@@ -51,7 +51,9 @@ Not read by ROX.
 
 ## Getting samples
 
-Nothing committed (SEGA game data, no licence in the repo). The manifest lists three `fixtures/*SH.BIN` files from wigwoo1/Noizemaker-V2 pinned to a commit (the repo also holds an edited-expected set). How to get more: install Space Channel 5 Part 2 (PC), whose files sit in AFS archives (`afs_english` per Noizemaker V2's README); open an `R*_SH.BIN` file with Noizemaker / Noizemaker V2 (Hyonk-Tea/Noizemaker). The layout itself is still undocumented in this repository.
+Committed in [`samples/`](samples/): six real `*_SH.BIN` files (reports 1-1, 1-2, 2-2 variants, a vanilla backup and an edited fixture) from the Noizemaker-V2 repository. See [`samples/SOURCES.md`](samples/SOURCES.md) for every file's source URL, fetch date, sha256 and terms.
+
+Observed [observed in samples/Noizemaker-V2_*.BIN]: every file starts with the magic `DGSH`, followed by a little-endian u32 equal to the file size (e.g. 10200 for R22_SH2.BIN), then 16-bit values (`0000 0400 0800 0300`) [meaning not documented]. More: install Space Channel 5 Part 2 (PC); files are in the AFS archives per Noizemaker V2's README.
 
 ## Sources
 

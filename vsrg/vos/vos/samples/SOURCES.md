@@ -14,8 +14,10 @@ Files are tiny binary songs (MIDI arrangement + playable-note track); each embed
 
 Doubt (also in `/tmp/fsc-parts/doubts/ArcadePcSims.md`): these are community song arrangements whose original authors/licences are not stated; they are committed only because the repository carrying them is MIT-licensed.
 
-## Fetched by tools/fetch-samples.sh (not committed; listed in samples.manifest.json)
+## Real charts downloaded from public sources (snapshots, fetched 2026-11-09)
 
-| Target file | URL | Licence note | What it exercises |
-| --- | --- | --- | --- |
-| `vosdroid_Canon_in_D.vos` | https://raw.githubusercontent.com/ReVanTis/VosDroid/692f3def3293aabcd2414b4a1ff0bad6550ad5a8/android/assets/Canon%20in%20D.vos | The repository has no licence file (checked at that commit); the composition (Pachelbel) is public domain but the arrangement's authorship is unknown | Header int32 = 3 (`inf`/`mid`/`EOF` table), 66 921 B; the sample song shipped with the VosDroid Android player, i.e. the file the open parser `VosParser.java` was developed against. |
+Downloaded with curl on 2026-11-09 and committed byte for byte (charts only: no audio, video, images or archives).
+
+| File | Source URL | Date fetched | sha256 (of the downloaded file) | Author | Licence / terms as known | What it exercises / remarks |
+|---|---|---|---|---|---|---|
+| `vosdroid_Canon_in_D.vos` | https://raw.githubusercontent.com/ReVanTis/VosDroid/692f3def3293aabcd2414b4a1ff0bad6550ad5a8/android/assets/Canon%20in%20D.vos | 2026-11-09 | ee4e23be676fcfe7f78fd8ae394069e263e9f66c56ae3f3d8510ae7307aec706 | ReVanTis/VosDroid (repository; chart author see file) | no licence file in the source repository | VOS v3 song shipped with the VosDroid player file |

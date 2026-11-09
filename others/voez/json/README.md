@@ -64,7 +64,7 @@ VoezEditor (C#, Unity): <https://github.com/AndrewFM/VoezEditor>; VOEZ JSON pars
 
 ## Getting samples
 
-Committed: a synthetic mini song (info, config, hard + extra notes/tracks) built from the VoezEditor writer code ([`samples/`](samples/)). Real data: VoezEditor has no LICENSE file and no sample project; official charts are copyrighted (Rayark). To get real files: use VoezEditor's export (`README/export.html`, `usage.html` in its repository) on the Switch assets, or dump the game's AssetBundle `songs/<name>` as described in the fiche; see also the GBAtemp thread cited in Sources.
+Committed in [`samples/`](samples/): a hand-written synthetic mini song built from the VoezEditor writer code (no real file counts). No real VOEZ chart could be obtained: official charts live in the game's AssetBundles (not publicly downloadable), the VoezEditor repository has no sample project and no licence, and the only community download pointers found (voez.fandom.com blog, GBAtemp thread) are dead links or audio only. To get real files: export from VoezEditor on song assets as described in its manual, or extract the Switch/mobile AssetBundles.
 
 ## Sources
 

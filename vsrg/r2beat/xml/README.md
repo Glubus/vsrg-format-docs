@@ -37,6 +37,8 @@ Reconstructed from the TypeScript editor https://github.com/nyaruhodoo/r2beat-no
 
 Key-sound entries ("Key音") exist in official files; their element layout is Unknown.
 
+[observed in samples/r2beat-viewer_e_song926.xml] Key sounds are `<EFFECT Snd="e_song926/z.mp3" Volume="1.00"></EFFECT>` elements (6 in that file, after `LENGTH`, before the `AREA` list) and each `AREA` references one with `FxSndIndex` (0 = none, 1.. = index of the EFFECT [inference]). [observed in samples/dzsfo_Fight.xml] `BPM` entries use `OriginalBPM` only when it differs from the played BPM, a chart can hold many `BPM` entries (speed changes by `Frame`), `Coord` may be fractional (`130.5`), the declared encoding is `gb18030` there and `euc-kr` in the r2beat-viewer files, `TITLE Name` may be non-ASCII bytes in the declared encoding, and the BGM path is `<song>/<song>.mp3`.
+
 ## Timing model
 `Coord` is the position in beats: 12 coords per beat, 48 per 4/4 measure at standard spacing; 16th notes are 3 coords apart (Newton wiki). The game runs at 60 fps; `Frame = Coord * 300 / BPM` and `Coord = Frame * BPM / 300` (mcp-r2beat-note-editor README; consistent with 12 coords/beat at 60 fps). `DELAY` and `BPM Frame` are in frames. A speed change (变速) is written through the `BPM` frame entries, not through `Coord` (Newton wiki). "Manual speed adjustment" multiplies all coords and edits BPM to change the apparent speed without changing the obstacle kinds.
 
@@ -72,9 +74,8 @@ None.
 
 ## Getting samples
 
-- Committed in [`samples/`](samples/SOURCES.md): `synthetic-r2beat.xml` (hand-written CC0).
-- Manifest: none; no repository with a redistributable R2Beat chart was found (dzsfo/r2beat is a game client dump).
-- More: standalone "R2Beat single" distributions (MGHack single, "R2Noter" collections) keep `rnr_script` XML; `rnr_script\music.txt` indexes them (Newton wiki); create one with r2beat-note (https://github.com/nyaruhodoo/r2beat-note) or R2NoteEditor.
+- Committed in [`samples/`](samples/): 10 real chart XMLs (6 from tablez/r2beat-viewer's `res/note_music*` library of 5680 files, 4 from dzsfo/r2beat's `rnr_music`), plus `synthetic-r2beat.xml` (hand-written CC0). Everything is listed with origin, date and sha256 in [`samples/SOURCES.md`](samples/SOURCES.md).
+- More: tablez/r2beat-viewer (https://github.com/tablez/r2beat-viewer, GitHub Pages viewer https://r2.zako.cc) keeps `res/note_music/e_song<id>/*.xml` and `res/note_music2/<id>/<id>.xml` (5 charts per pack); dzsfo/r2beat has `rnr_music/<song>/<song>.xml` next to a `.txt` song entry; standalone "R2Beat single" distributions (Newton wiki).
 
 ## Sources
 - https://www.newton.com.tw/wiki/%E8%87%AA%E8%A3%BD%E9%9F%B3%E9%80%9F (R2Beat custom-song wiki: files, XML parts, Coord, Kind/Level, Frame, Delay)

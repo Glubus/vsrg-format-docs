@@ -87,9 +87,9 @@ Not read by ROX. A clip timeline of scored full-body moves; at most the beat gri
 
 ## Getting samples
 
-**Committed** ([`samples/`](samples/SOURCES.md)): `synthetic_tml_dance.dtape.ckd` and `synthetic_tml_karaoke.ktape.ckd` (hand-written from the documented fields, CC0). **Manifest:** none. No real tape could be redistributed: Ferris Dancing's real test files live in a private submodule (`ubiart_toolkit_test_files`), tape2json's `input/*.json` are empty `{}` placeholders, json2tape is PolyForm Strict, and real tapes are Ubisoft data.
+**Committed** ([`samples/`](samples/SOURCES.md)): two synthetic tapes (dance + karaoke). No real tape was found publicly: Ferris Dancing's test files are in a private submodule, tape2json's `input/*.json` are empty `{}`, json2tape is PolyForm Strict and ships JDN JSON, just-dance-2014-tools ships binary Just Dance 2014 `.tpl.ckd` templates (another layout), and the other community repos hold code only.
 
-**How to get real ones**: from a game install (Just Dance 2016 and later use JSON tapes with a trailing NUL), extract the `.ipk` bundles with IpkTool (<https://github.com/nkrapivin/JustDanceModTools>) or Ferris Dancing's `ipk` module (<https://github.com/Kriskras99/ferris_dancing>); the tapes are under `world/maps/<map>/timeline/` as `<map>_tml_dance.dtape.ckd` and `<map>_tml_karaoke.ktape.ckd` (paths from the README sources). Just Dance Now JSON maps can be turned into tapes with json2tape (<https://github.com/matty0004/json2tape>) or BlueStar (<https://github.com/MZommer/BlueStar>); `tape2json` converts back. Fan-made tapes for JD 2017 are edited with JD Timeline Studio.
+**How to get real ones**: extract `.ipk` bundles of a game install with IpkTool (<https://github.com/nkrapivin/JustDanceModTools>) or Ferris Dancing (<https://github.com/Kriskras99/ferris_dancing>); tapes are under `world/maps/<map>/timeline/` as `<map>_tml_dance.dtape.ckd` / `<map>_tml_karaoke.ktape.ckd`. JDN JSON converts with json2tape or BlueStar.
 
 ## Sources
 - https://github.com/Kriskras99/ferris_dancing (`ubiart_toolkit/src/cooked/tape/mod.rs`, `ubiart_toolkit/src/utils/json.rs`, `ubiart_toolkit/src/cooked/tpl/types.rs`, `ubiart_toolkit/src/msm/types.rs`, `scratchpad.md`)

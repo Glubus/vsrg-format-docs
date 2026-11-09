@@ -1,0 +1,43 @@
+{
+    "version": 0.2,
+    "sceneDisplayName": "BBKKBKK ~ Nora2r~Givo",
+    "songDisplayName": "BBKKBKK",
+    "songLocation": "Assets/bbkkbkk.ogg",
+    "songLength": 10.0,
+    "description": "wasd",
+    "songArtist": "Nora2r",
+    "mapper": "Givo",
+    "tempo": 170.0,
+    "previewTime": 0.0,
+    "maps": ["Easy"],
+    "obstacleSet": "Normal",
+    "materialPropertiesSet": "Default",
+    "enemySet": "Normal",
+    "moveMode": "Moving",
+    "customMainMenuColor": {
+        "Main": {
+            "a": 0.0,
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0
+        },
+        "Fog": {
+            "a": 0.0,
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0
+        },
+        "Glow": {
+            "a": 0.0,
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0
+        },
+        "Enemy": {
+            "a": 0.0,
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0
+        }
+    }
+}

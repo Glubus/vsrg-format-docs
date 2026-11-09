@@ -1,0 +1,717 @@
+{
+ "version": "2.0.0",
+ "scrollSpeed": { },
+ "events": [
+  {
+   "t": 0,
+   "e": "FocusCamera",
+   "v": {
+	"char": 0
+}
+  },
+  {
+   "t": 0,
+   "e": "SetCameraBop",
+   "v": {
+	"intensity": 0.89
+}
+  },
+  {
+   "t": 2727.27272727273,
+   "e": "FocusCamera",
+   "v": {
+	"char": 1
+}
+  },
+  {
+   "t": 4090.90909090909,
+   "e": "PlayAnimation",
+   "v": {
+	"force": true,
+	"anim": "laugh",
+	"target": "dad"
+}
+  },
+  {
+   "t": 4346.59090909091,
+   "e": "PlayAnimation",
+   "v": {
+	"target": "dad",
+	"anim": "laugh",
+	"force": true
+}
+  },
+  {
+   "t": 5454.54545454545,
+   "e": "ZoomCamera",
+   "v": {
+	"duration": 2.5,
+	"ease": "back",
+	"easeDir": "Out"
+}
+  },
+  {
+   "t": 5454.54545454545,
+   "e": "FocusCamera",
+   "v": {
+	"duration": 2.5,
+	"x": -130,
+	"y": 50,
+	"ease": "CLASSIC",
+	"char": 1
+}
+  },
+  {
+   "t": 5454.54545454545,
+   "e": "SetCameraBop",
+   "v": {
+	"rate": 4
+}
+  },
+  {
+   "t": 10909.0909090909,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"easeDir": "Out",
+	"zoom": 0.78
+}
+  },
+  {
+   "t": 10909.0909090909,
+   "e": "FocusCamera",
+   "v": {
+	"char": 0,
+	"easeDir": "In"
+}
+  },
+  {
+   "t": 16363.6363636364,
+   "e": "FocusCamera",
+   "v": {
+	"ease": "CLASSIC",
+	"x": 0,
+	"char": 1,
+	"y": 0
+}
+  },
+  {
+   "t": 19005.6818181818,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"zoom": 0.76
+}
+  },
+  {
+   "t": 19090.9090909091,
+   "e": "FocusCamera",
+   "v": {
+	"ease": "CLASSIC",
+	"x": 0,
+	"char": 0,
+	"y": 0
+}
+  },
+  {
+   "t": 21051.1363636364,
+   "e": "ZoomCamera",
+   "v": {
+	"duration": 11.5,
+	"ease": "back",
+	"easeDir": "Out",
+	"zoom": 1
+}
+  },
+  {
+   "t": 21818.1818181818,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"duration": 4,
+	"zoom": 0.75,
+	"easeDir": "Out"
+}
+  },
+  {
+   "t": 21818.1818181818,
+   "e": "FocusCamera",
+   "v": {
+	"char": 1,
+	"x": 0,
+	"ease": "CLASSIC",
+	"y": 0
+}
+  },
+  {
+   "t": 24545.4545454545,
+   "e": "FocusCamera",
+   "v": {
+	"char": 0,
+	"x": 0,
+	"ease": "CLASSIC",
+	"y": 0
+}
+  },
+  {
+   "t": 26931.8016545455,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"duration": 6,
+	"zoom": 0.95,
+	"easeDir": "Out"
+}
+  },
+  {
+   "t": 27272.7107454545,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"easeDir": "Out",
+	"zoom": 0.75
+}
+  },
+  {
+   "t": 27272.7107454545,
+   "e": "FocusCamera",
+   "v": {
+	"char": 1
+}
+  },
+  {
+   "t": 28806.8016545455,
+   "e": "FocusCamera",
+   "v": {
+	"char": 0,
+	"x": -250
+}
+  },
+  {
+   "t": 30000,
+   "e": "FocusCamera",
+   "v": {
+	"char": 0
+}
+  },
+  {
+   "t": 32301.1363636364,
+   "e": "ZoomCamera",
+   "v": {
+	"duration": 6,
+	"ease": "back",
+	"zoom": 0.85,
+	"easeDir": "Out"
+}
+  },
+  {
+   "t": 32727.2727272727,
+   "e": "FocusCamera",
+   "v": {
+	"x": 0,
+	"char": 1
+}
+  },
+  {
+   "t": 32727.2727272727,
+   "e": "ZoomCamera",
+   "v": {
+	"duration": 6,
+	"ease": "back",
+	"zoom": 0.75,
+	"easeDir": "Out"
+}
+  },
+  {
+   "t": 35454.5454545454,
+   "e": "FocusCamera",
+   "v": {
+	"char": 0
+}
+  },
+  {
+   "t": 37755.6818181818,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"duration": 7,
+	"zoom": 1,
+	"easeDir": "Out"
+}
+  },
+  {
+   "t": 38181.8181818182,
+   "e": "FocusCamera",
+   "v": {
+	"char": 1
+}
+  },
+  {
+   "t": 38181.8181818182,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"duration": 2.5,
+	"easeDir": "Out",
+	"zoom": 0.75
+}
+  },
+  {
+   "t": 38181.8181818182,
+   "e": "SetCameraBop",
+   "v": {
+	"rate": 4,
+	"intensity": 1.115
+}
+  },
+  {
+   "t": 40909.0743818182,
+   "e": "FocusCamera",
+   "v": {
+	"char": 0,
+	"x": -250
+}
+  },
+  {
+   "t": 43636.3636363636,
+   "e": "FocusCamera",
+   "v": {
+	"char": 0,
+	"x": 0
+}
+  },
+  {
+   "t": 46278.4090909091,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"zoom": 0.7,
+	"easeDir": "Out"
+}
+  },
+  {
+   "t": 46363.6198363636,
+   "e": "FocusCamera",
+   "v": {
+	"x": 95,
+	"char": 1
+}
+  },
+  {
+   "t": 47642.0454545454,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"zoom": 0.65,
+	"easeDir": "Out"
+}
+  },
+  {
+   "t": 49090.9090909091,
+   "e": "FocusCamera",
+   "v": {
+	"duration": 8,
+	"x": 0,
+	"char": 1
+}
+  },
+  {
+   "t": 49090.9090909091,
+   "e": "ZoomCamera",
+   "v": {
+	"duration": 2,
+	"ease": "back",
+	"easeDir": "Out",
+	"zoom": 0.75
+}
+  },
+  {
+   "t": 50426.1198363636,
+   "e": "FocusCamera",
+   "v": {
+	"x": -250,
+	"char": 0
+}
+  },
+  {
+   "t": 54545.4545454545,
+   "e": "FocusCamera",
+   "v": {
+	"x": 0,
+	"char": 0
+}
+  },
+  {
+   "t": 57272.7107454545,
+   "e": "FocusCamera",
+   "v": {
+	"x": 95,
+	"char": 1
+}
+  },
+  {
+   "t": 57272.7272727273,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"zoom": 0.65,
+	"easeDir": "Out"
+}
+  },
+  {
+   "t": 58551.1363636364,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"zoom": 0.6,
+	"easeDir": "Out"
+}
+  },
+  {
+   "t": 59999.9834727273,
+   "e": "ZoomCamera",
+   "v": {
+	"duration": 2,
+	"ease": "back",
+	"zoom": 0.75,
+	"easeDir": "Out"
+}
+  },
+  {
+   "t": 60000,
+   "e": "SetCameraBop",
+   "v": {
+	"rate": 4,
+	"intensity": 1.1
+}
+  },
+  {
+   "t": 60000,
+   "e": "FocusCamera",
+   "v": {
+	"x": 0,
+	"char": 1,
+	"duration": 2.5
+}
+  },
+  {
+   "t": 61363.6198363636,
+   "e": "FocusCamera",
+   "v": {
+	"x": -250,
+	"char": 0
+}
+  },
+  {
+   "t": 65454.5454545454,
+   "e": "FocusCamera",
+   "v": {
+	"x": 0,
+	"char": 0
+}
+  },
+  {
+   "t": 70482.9380181818,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"duration": 6,
+	"easeDir": "Out",
+	"zoom": 0.9
+}
+  },
+  {
+   "t": 70909.0743818182,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"duration": 8,
+	"easeDir": "Out",
+	"zoom": 0.75
+}
+  },
+  {
+   "t": 70909.0909090909,
+   "e": "FocusCamera",
+   "v": {
+	"char": 1
+}
+  },
+  {
+   "t": 73636.3636363636,
+   "e": "FocusCamera",
+   "v": {
+	"char": 0
+}
+  },
+  {
+   "t": 76363.6363636364,
+   "e": "FocusCamera",
+   "v": {
+	"char": 1
+}
+  },
+  {
+   "t": 79090.9090909091,
+   "e": "FocusCamera",
+   "v": {
+	"char": 0
+}
+  },
+  {
+   "t": 81392.0289272727,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"duration": 6,
+	"easeDir": "Out",
+	"zoom": 0.9
+}
+  },
+  {
+   "t": 81818.1652909091,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"duration": 8,
+	"easeDir": "Out",
+	"zoom": 0.75
+}
+  },
+  {
+   "t": 81818.1818181818,
+   "e": "SetCameraBop",
+   "v": {
+	"rate": 1,
+	"intensity": 1.025,
+	"offset": 0
+}
+  },
+  {
+   "t": 81818.1818181818,
+   "e": "FocusCamera",
+   "v": {
+	"char": 1,
+	"x": 0,
+	"duration": 1,
+	"easeDir": "In"
+}
+  },
+  {
+   "t": 84545.4380181818,
+   "e": "FocusCamera",
+   "v": {
+	"x": -250,
+	"char": 0
+}
+  },
+  {
+   "t": 86875,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"duration": 8,
+	"easeDir": "Out",
+	"zoom": 0.63
+}
+  },
+  {
+   "t": 87272.7272727273,
+   "e": "FocusCamera",
+   "v": {
+	"char": 0
+}
+  },
+  {
+   "t": 87272.7272727273,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"duration": 8,
+	"easeDir": "Out",
+	"zoom": 0.75
+}
+  },
+  {
+   "t": 88210.2272727273,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"duration": 8,
+	"zoom": 0.9,
+	"easeDir": "Out"
+}
+  },
+  {
+   "t": 89573.8636363636,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"duration": 8,
+	"zoom": 0.75,
+	"easeDir": "Out"
+}
+  },
+  {
+   "t": 90000,
+   "e": "FocusCamera",
+   "v": {
+	"char": 1,
+	"x": 95
+}
+  },
+  {
+   "t": 90937.5,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"duration": 8,
+	"zoom": 0.65,
+	"easeDir": "Out"
+}
+  },
+  {
+   "t": 92301.1363636364,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"duration": 8,
+	"zoom": 0.58,
+	"easeDir": "Out"
+}
+  },
+  {
+   "t": 92727.2727272727,
+   "e": "FocusCamera",
+   "v": {
+	"char": 1,
+	"x": -75
+}
+  },
+  {
+   "t": 92727.2727272727,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"duration": 8,
+	"zoom": 0.75,
+	"easeDir": "Out"
+}
+  },
+  {
+   "t": 98181.8181818182,
+   "e": "FocusCamera",
+   "v": {
+	"duration": 4,
+	"char": 0
+}
+  },
+  {
+   "t": 100909.090909091,
+   "e": "FocusCamera",
+   "v": {
+	"char": 1,
+	"x": 95
+}
+  },
+  {
+   "t": 103238.636363636,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"duration": 8,
+	"zoom": 0.65,
+	"easeDir": "Out"
+}
+  },
+  {
+   "t": 103636.363636364,
+   "e": "FocusCamera",
+   "v": {
+	"char": 1
+}
+  },
+  {
+   "t": 103636.363636364,
+   "e": "SetCameraBop",
+   "v": {
+	"rate": 2
+}
+  },
+  {
+   "t": 103636.363636364,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"duration": 4,
+	"zoom": 0.75,
+	"easeDir": "Out"
+}
+  },
+  {
+   "t": 105170.438018182,
+   "e": "FocusCamera",
+   "v": {
+	"x": -250,
+	"char": 0
+}
+  },
+  {
+   "t": 106363.636363636,
+   "e": "FocusCamera",
+   "v": {
+	"char": 0
+}
+  },
+  {
+   "t": 108664.772727273,
+   "e": "ZoomCamera",
+   "v": {
+	"ease": "back",
+	"duration": 6,
+	"easeDir": "Out",
+	"zoom": 0.9
+}
+  },
+  {
+   "t": 109090.909090909,
+   "e": "ZoomCamera",
+   "v": {
+	"duration": 4,
+	"ease": "back",
+	"zoom": 0.75,
+	"easeDir": "Out"
+}
+  },
+  {
+   "t": 109090.909090909,
+   "e": "FocusCamera",
+   "v": {
+	"char": 1
+}
+  },
+  {
+   "t": 111818.181818182,
+   "e": "FocusCamera",
+   "v": {
+	"char": 0
+}
+  },
+  {
+   "t": 114119.301654545,
+   "e": "ZoomCamera",
+   "v": {
+	"duration": 6,
+	"ease": "back",
+	"zoom": 0.9,
+	"easeDir": "Out"
+}
+  }
+ ],
+ "notes": {
+  "easy": [],
+  "erect": [],
+  "nightmare": []
+ },
+ "generatedBy": "Friday Night Funkin' - v0.8.0"
+}

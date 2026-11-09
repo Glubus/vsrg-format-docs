@@ -82,9 +82,8 @@ Not read by ROX.
 
 ## Getting samples
 
-- **Committed**: 4 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
-- **Manifest**: none.
-- **More samples**: the original Cytus chart text; real examples were found in ky-reflection/cyl_package_tool (`tests/resources/test_cytus1_chart.txt`, `test_c1.txt`, MIT) and we684123/Make_Cytus2 (`trytoc2*.txt`, MIT; VERSION 3 with extra tool-specific lines). The Cytoid wiki "b. Chart formats" page has a shortened sample. Official Cytus files are game data (not collected).
+- **Committed**: 5 real files (ky-reflection/cyl_package_tool test charts and Make_Cytus2 charts, MIT) plus 1 synthetic in [`samples/`](samples/). Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **More samples**: the Cytoid wiki "b. Chart formats" has a shortened sample; Cytus 1 charts themselves are game data. The Cytoid repo's bundled level stores C2 JSON in its `.txt` files (see `../c2-json/samples/8bit_adventurer/`).
 
 ## Sources
 

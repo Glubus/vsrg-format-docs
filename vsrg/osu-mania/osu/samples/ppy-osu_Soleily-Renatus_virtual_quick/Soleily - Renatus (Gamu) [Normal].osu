@@ -1,0 +1,78 @@
+osu file format v14
+
+[General]
+AudioFilename: virtual
+AudioLeadIn: 0
+PreviewTime: 164471
+Countdown: 0
+SampleSet: Soft
+StackLeniency: 0.7
+Mode: 0
+LetterboxInBreaks: 0
+WidescreenStoryboard: 0
+
+[Editor]
+Bookmarks: 956,11505,22054,24609,32604,43153,53703,64252,74802,85351,95901,106450,116999,119637,130186,140735,151285,161834,164471,175020,185570,196119,206669,209306
+DistanceSpacing: 1
+BeatDivisor: 4
+GridSize: 4
+TimelineZoom: 1
+
+[Metadata]
+Title:RenatusQuick
+TitleUnicode:Renatus
+Artist:Soleily
+ArtistUnicode:Soleily
+Creator:Gamu
+Version:Normal
+Source:
+Tags:MBC7 Unisphere 地球ヤバイEP Chikyu Yabai
+BeatmapID:557815
+BeatmapSetID:241526
+
+[Difficulty]
+HPDrainRate:3
+CircleSize:3
+OverallDifficulty:3
+ApproachRate:4
+SliderMultiplier:0.999999999999999
+SliderTickRate:2
+
+[Events]
+//Background and Video events
+0,0,"machinetop_background.jpg",0,0
+//Break Periods
+2,122474,139415
+//Storyboard Layer 0 (Background)
+//Storyboard Layer 1 (Fail)
+//Storyboard Layer 2 (Pass)
+//Storyboard Layer 3 (Foreground)
+//Storyboard Sound Samples
+
+[TimingPoints]
+956,329.67032967033,4,2,0,60,1,0
+
+[Colours]
+Combo1 : 142,199,255
+Combo2 : 255,128,128
+Combo3 : 128,255,255
+Combo4 : 128,255,128
+Combo5 : 255,187,255
+Combo6 : 255,177,140
+
+[HitObjects]
+315,234,956,6,0,L|216:224,1,99.9999999999999,4|10,1:2|0:0,0:0:0:0:
+168,216,1450,2,0,P|120:224|68:208,2,99.9999999999999,2|2|2,0:0|1:2|0:0,0:0:0:0:
+200,180,2274,2,0,P|208:132|192:80,1,99.9999999999999,0|8,1:0|0:0,0:0:0:0:
+160,48,2769,2,0,P|92:56|40:128,1,150,0|8,1:0|0:0,0:0:0:0:
+44,216,3593,6,0,L|56:332,1,99.9999999999999,0|8,1:0|0:0,0:0:0:0:
+196,264,4417,2,0,L|260:256,1,50,0|8,1:0|0:0,0:0:0:0:
+328,316,4912,2,0,P|377:319|432:308,1,99.9999999999999,0|8,1:0|0:0,0:0:0:0:
+468,280,5406,2,0,P|484:232|460:132,1,150,0|8,1:0|0:0,0:0:0:0:
+380,80,6230,5,0,1:0:0:0:
+284,108,6560,1,8,0:0:0:0:
+144,52,7054,2,0,L|84:60,1,50,0|8,1:0|0:0,0:0:0:0:
+24,128,7549,2,0,P|24:176|44:232,1,99.9999999999999,0|8,1:0|0:0,0:0:0:0:
+68,264,8043,2,0,P|136:280|196:232,1,150,0|8,1:0|0:0,0:0:0:0:
+280,180,8868,6,0,P|280:228|304:280,1,99.9999999999999,0|8,1:0|0:0,0:0:0:0:
+444,320,9692,2,0,L|456:268,1,50,0|8,1:0|0:0,0:0:0:0:

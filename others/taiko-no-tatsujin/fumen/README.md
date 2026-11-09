@@ -133,7 +133,7 @@ Not read by ROX 0.8.1 (no fumen codec in `src/formats`).
 
 ## Getting samples
 
-Nothing committed: fumen files are official game data (Bandai Namco). The manifest lists four zips from the tja2fumen test data, pinned to a commit (each zip holds `<name>_e/_h/_m/_n.bin`, i.e. easy/hard/oni/normal charts converted for the game, and the matching `.tja` is in the TJA manifest). To get more: dump an official game (the PC/Switch Taiko no Tatsujin data; see TakoTako / TaikoMods in the Sources/Parsers sections, `[MUSIC_ID]_n_2.bin`-style names per the fiche) or convert any `.tja` with `tja2fumen` (`convert_tja_to_fumen`), which writes the same files.
+Committed in [`samples/`](samples/): 30 real fumen `.bin` files in four sets (`tja2fumen_butou5`, `_hol6po`, `_linda`, `_senpac`), extracted from the zips of the tja2fumen test data (no archive kept). The matching `.tja` files are in [`../tja/samples/`](../tja/samples/). See [`samples/SOURCES.md`](samples/SOURCES.md) for every file's source URL, fetch date, sha256 and terms. Filenames follow `<id>_<e|n|h|m|x>[_1|_2].bin` (easy/normal/hard/oni/ura; `_1`/`_2` per player) [observed in samples/]. More: dump the official game data (see Parsers) or run `tja2fumen` on a `.tja`.
 
 ## Sources
 

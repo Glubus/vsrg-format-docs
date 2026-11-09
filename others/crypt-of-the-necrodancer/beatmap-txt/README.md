@@ -54,9 +54,8 @@ Not read by ROX. No notes to convert; at best a metronome grid.
 
 ## Getting samples
 
-- **Committed**: 2 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
-- **Manifest**: none.
-- **More samples**: the game writes the file itself: assign an MP3/OGG as custom music in a zone (official FAQ, https://braceyourselfgames.com/crypt-of-the-necrodancer/faq/) and the beat text file appears with the audio name + `.txt`; or run Supinic/necrodancer-custom-music (writes `<game dir>/data/custom_music/<audio>.txt`, per the fiche). No real file was found under a licence; the two committed files are synthetic. The 2017 Steam forum thread cited in the fiche contains a (millisecond) sample line that was not copied.
+- **Committed**: 1 real file (the beat list pasted in a 2017 Steam forum thread; comma-separated milliseconds) plus 2 synthetic files in [`samples/`](samples/). No other real beat file is published: they are generated locally by the game. Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **More samples**: assign an MP3/OGG as custom music in a zone (official FAQ https://braceyourselfgames.com/crypt-of-the-necrodancer/faq/) and the beat text file is written next to the audio; or run Supinic/necrodancer-custom-music. Checked and containing no beat files: Supinic/necrodancer-custom-music, SamuelDev/Necrodancer-Custom-Music-Fix, Callum-Mitchell/Waltzifier.
 
 ## Sources
 - https://braceyourselfgames.com/crypt-of-the-necrodancer/faq/ (Custom Music section)

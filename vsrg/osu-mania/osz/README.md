@@ -67,7 +67,7 @@ All resources are plain files addressed by file name from the `.osu`/`.osb`; nam
 
 ## Example
 
-Real audio-less archives are in [`samples/`](samples/). Illustrative, hand-built listing of a typical mania set (names invented):
+Charts extracted from real archives are in [`../osu/samples/`](../osu/samples/). Illustrative, hand-built listing of a typical mania set (names invented):
 
 ```
 Artist - Title (Mapper) [4K Easy].osu
@@ -87,9 +87,9 @@ Not read by ROX: ROX opens an individual `.osu` file (mode 3 only, see [`../osu`
 
 ## Getting samples
 
-- **Committed** in [`samples/`](samples/) (see [`SOURCES.md`](samples/SOURCES.md)): an audio-less real mapset pair from Prelude's tests (5 and 10 mania 4K difficulties), lazer's 816-byte `japanese-filename.osz` (0-byte audio entries, CP932 entry-name test), and `built-mania-key-counts-audioless.osz`, built here (CC0 container) from MIT lazer test maps (4K/7K/10K + a v5 slider file + an `.osb`).
-- **Manifest**: three lazer test archives (two tiny ones with `.ogg`/`.png`, and `241526 Soleily - Renatus_virtual_quick.osz` with 12 difficulties of all four modes plus a jpg and `__MACOSX` entries), pinned to ppy/osu @ bb37f05.
-- **How to get more**: download from https://osu.ppy.sh/beatmaps or mirrors; osu!stable *File > Export package...* writes into `Exports`, lazer exports `.osz` (legacy-compatible, `LegacyBeatmapExporter`, Shift-JIS entry names) or [`.olz`](../olz/README.md) (lazer-native). The osu! installer also bundles mapsets, listed in `BundledBeatmapDownloader.cs` (names such as `241526 Soleily - Renatus.osz`, served from `assets.ppy.sh/client-resources/bundled/<id>.osz`; not fetched here). A mapset only needs to be unzipped to get its charts; audio and images in it are copyrighted and must not be redistributed.
+- **No archive is stored in this repository** (charts only). Real `.osz` files were downloaded and their `.osu`/`.osb` extracted, media discarded: see [`../osu/samples/`](../osu/samples/) (subfolders `ppy-osu_*` for lazer's test archives and `yavsrg-prelude_*` for two real 4K mapsets of 5 and 10 difficulties) and [`../osb/samples/`](../osb/samples/); provenance is in the `Extracted from archives` section of their `SOURCES.md`.
+- **How to get more**: download from https://osu.ppy.sh/beatmaps or mirrors; osu!stable *File > Export package...* writes into `Exports`, lazer exports `.osz` (legacy-compatible, `LegacyBeatmapExporter`, Shift-JIS entry names) or [`.olz`](../olz/README.md). The installer bundles mapsets listed in `BundledBeatmapDownloader.cs` (served from `assets.ppy.sh/client-resources/bundled/<id>.osz`). Unzip, keep only `.osu`/`.osb`; audio and images are copyrighted.
+
 
 ## Sources
 

@@ -128,11 +128,9 @@ Read by Prism (`docs/game.md` "Formats de danse"): each `.ksf` of a folder is on
 
 ## Getting samples
 
-Committed in [`samples/`](samples/SOURCES.md): `sample.ksf`, the format example of the StepMania docs (MIT).
+Committed in [`samples/`](samples/SOURCES.md): `sample.ksf` (StepMania docs) and all 7 charts of the Kick It UP! 0.4b `Beethoven Virus` song (Easy/Hard/Crazy for 1P and 2P plus Double; from [StepMania-AMX/KickItUp](https://github.com/StepMania-AMX/KickItUp) commit `80a1e1ad36cdfb335a58afc688bdf249db55da41`). The program's licence allows free non-commercial redistribution with source and credit and is silent about song data. The repository also contains the KIU-variant note `docs/KSF-Notes.md`.
 
-Manifest (fetched to `samples-local/vsrg/kick-it-up/ksf/`): three real charts from the open-source Kick It UP! 0.4b tree ([StepMania-AMX/KickItUp](https://github.com/StepMania-AMX/KickItUp), commit `80a1e1ad36cdfb335a58afc688bdf249db55da41`, `song/Beethoven Virus/`: `Crazy_1.ksf`, `Double.ksf`, `Easy_1.ksf`; the same folder has `Crazy_2`, `Easy_2`, `Hard_1`, `Hard_2`); the licence text allows free non-commercial redistribution of the program with source but does not mention the song data, so not committed. The repository also contains the KIU-variant note `docs/KSF-Notes.md`.
-
-More: Kick It Up community song folders (Korean Pump simulators: Kick It Up, DirectMove) contain one `.ksf` per difficulty and player (`Easy_1.ksf`, `Crazy_2.ksf`, `Double.ksf`...); StepMania, Etterna and ITGmania read them (`NotesLoaderKSF.cpp`). The AMX forks [StepMania-AMX/directmove](https://github.com/StepMania-AMX/directmove) and `STX2DM` produce/convert KSF but ship no sample. The DirectMove page gives CP949/EUC-KR and CRLF as the encoding of real files; expect that when collecting (`sample.ksf` is CRLF).
+More: Kick It Up / DirectMove community song folders (one `.ksf` per difficulty and player: `Easy_1.ksf`, `Crazy_2.ksf`, `Double.ksf`...); StepMania, Etterna and ITGmania read them (`NotesLoaderKSF.cpp`); [StepMania-AMX/directmove](https://github.com/StepMania-AMX/directmove) and `STX2DM` produce/convert KSF but ship no sample. Searched archive.org 2026-11-09: no Kick It Up/DirectMove item. The DirectMove page gives CP949/EUC-KR and CRLF as the encoding of real files (`sample.ksf` is CRLF).
 
 ## Sources
 

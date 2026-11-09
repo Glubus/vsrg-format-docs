@@ -49,9 +49,8 @@ Not read by ROX.
 
 ## Getting samples
 
-- **Committed**: 6 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
-- **Manifest**: none.
-- **More samples**: `songlist` is a JSON file of the game's asset folder (not collected here); fan-made songs ship a `songlistadd.json` fragment with each chart set (six real ones are committed from the Suhri archive; they contain a single entry object without the wrapper). JSON schemas for `songlist` are in https://github.com/yojohanshinwataikei/vscode-arcaea-file-format (`json-schema/songlist.json`).
+- **Committed**: 6 real `songlistadd.json` fragments from the Suhri archive in [`samples/`](samples/). Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **More samples**: `songlist` is part of the game's assets (not collected); fan song packs ship a `songlistadd.json` entry. JSON schemas: https://github.com/yojohanshinwataikei/vscode-arcaea-file-format (`json-schema/songlist.json`).
 
 ## Sources
 

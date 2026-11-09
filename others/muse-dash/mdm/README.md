@@ -81,9 +81,7 @@ CustomAlbums (C#): <https://github.com/MDMods/CustomAlbums>; chart_manager (Lua)
 
 ## Getting samples
 
-**Committed** ([`samples/`](samples/SOURCES.md)): `info.json` of both CloneDash test albums and two audio-less `.mdm` zips built from them (only `info.json` + `map2.bms`, no `music`, no `cover.png`). **Manifest:** none: real `.mdm` files include copyrighted audio.
-
-**How to get more**: <https://mdmc.moe/charts> (MDMC chart list, search result), or the `chart_manager` tool (<https://github.com/taypexx/chart_manager>) that generates and packs MDM files from `template/` (which needs your own music and cover). CustomAlbums (<https://github.com/MDMods/CustomAlbums>) loads `.mdm` or an unpacked folder from the `Custom_Albums` folder generated in the game directory on first launch (CustomAlbums README, step 3).
+Container only: an `.mdm` is a zip (`info.json`, `mapN.bms`, cover, audio, optional video); this folder holds no archive. Extracted charts and `info.json` files are in [`../bms/samples/`](../bms/samples/SOURCES.md), one subfolder per album. More: <https://mdmc.moe/charts> (API in the BMS fiche), chart_manager (<https://github.com/taypexx/chart_manager>) to pack your own.
 
 ## Sources
 

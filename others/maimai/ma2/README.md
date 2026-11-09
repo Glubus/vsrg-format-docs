@@ -120,9 +120,7 @@ Not read by ROX 0.8.1.
 
 ## Getting samples
 
-**Committed** ([`samples/`](samples/SOURCES.md)): six small files from the CC0 `Neskol/MaichartConverterUnitTest` repository (a 1.04 connected-slide test, utage-style slides, a long-hold test, an unsynchronised-group test, a note-type matrix test). **Manifest:** eight charts from the same repository (full 1.03.00 and 1.04.00 charts with BPM changes, touch notes, `FES_MODE 1`, footers, plus two short bar excerpts), not committed because they are converted official charts or excerpts of them.
-
-**How to get more**: <https://github.com/Neskol/MaichartConverterUnitTest> has ~30 further `.ma2`/`maidata` files (`MaichartConverterUnitTest/data/`); MaichartConverter (<https://github.com/Neskol/MaichartConverter>, GPL-2) and MaiConverter (<https://github.com/donmai-me/MaiConverter>) convert simai to ma2 so any simai chart gives an `.ma2`; ma2Research (<https://github.com/Littlebluemoon/ma2Research>, Unlicense) has inline examples in `Charts.md`. Official charts are in the maimai DX game data (`.../music/musicNNNNNN/NNNNNN_0D.ma2`, see the fiche).
+**Committed** ([`samples/`](samples/SOURCES.md)): 6 small CC0 test files plus 8 downloaded files (full 1.03.00 and 1.04.00 charts with BPM changes, touch notes, `FES_MODE 1`; two short excerpts) from Neskol/MaichartConverterUnitTest. More: the same repo has about 15 more `.ma2`/`maidata` files in `MaichartConverterUnitTest/data/`; MaichartConverter and MaiConverter convert simai to ma2; ma2Research (Unlicense) has inline examples; official files are in game data (`.../music/musicNNNNNN/NNNNNN_0D.ma2`).
 
 ## Sources
 

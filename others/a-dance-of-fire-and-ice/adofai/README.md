@@ -99,9 +99,8 @@ Not read by ROX.
 
 ## Getting samples
 
-- **Committed**: 3 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
-- **Manifest**: 2 entries in `samples.manifest.json` (downloaded by `tools/fetch-samples.sh` into `samples-local/`; listed in [`samples/SOURCES.md`](samples/SOURCES.md))
-- **More samples**: levels are produced by the game's level editor (community levels are shared on the Steam Workshop [inference]); open tools that write the format and ship or generate levels: adofai-cli (`examples/demo.adofai`, MIT), ADOFAI-JS, adofaipy, SharpFAI, RhythmBase.Adofai (see Parsers & tools). The ADOFAI Expansion docs (https://learn.modrift.org/libs/level-format) show fragments only. Real levels circulate in GitHub repos (e.g. the GPL-3.0 AngleData-PathData repo has two in its build folder, listed in the manifest) but most are third-party and unlicensed, so they were not committed. Search terms: `adofai level`, `angleData`, `eventType`.
+- **Committed**: 6 real levels (adofai-cli demo, two levels from the AngleData-PathData repo, Bad Apple!! and Belupacito levels from c4r10spr02010) plus 2 synthetic ones in [`samples/`](samples/); all real files have a UTF-8 BOM and CRLF except the adofai-cli demo. Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **More samples**: levels are produced by the game's level editor; community levels are on the Steam Workshop and sites such as https://adofai.gg/levels (not scraped) [inference]. Open tools that write the format: adofai-cli, ADOFAI-JS, adofaipy, SharpFAI, RhythmBase.Adofai. GitHub repos with levels: c4r10spr02010/bad-apple-adofai, dashgd45-eng/adofai-levels (not opened). Search terms: `adofai level`, `angleData`, `eventType`.
 
 ## Sources
 - https://learn.modrift.org/libs/level-format

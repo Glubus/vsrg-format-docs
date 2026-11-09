@@ -108,7 +108,7 @@ Not read by ROX. A decoder needs per-game tick rates and meter/BPM integration; 
 
 ## Getting samples
 
-No sample is committed and none is in `samples.manifest.json`: every real `.1` file is Konami game data, and no publicly downloadable, redistributable `.1` file was found (the converters and parsers below ship no fixtures; their repositories were checked at the commits cited). A hand-written binary `.1` was not made either, because the layout is only partly verified (see Doc status).
+No sample is committed: no real file of this format could be obtained. Searches on 2026-11-09 (GitHub path search through Sourcegraph for `<id>.1`, `*_op.bin`/`*_hp.bin`/`*.ifs`; the repositories of every parser/converter named below; archive.org full-text/title search; web searches) found no public copy: the tools ship no fixtures and the only archive.org items are whole-game dumps or soundtracks (not individual chart files, and far above the 20 MB limit or audio). The data is Konami game data that exists only inside a game installation. A hand-written binary `.1` was not made either, because the layout is only partly verified (see Doc status).
 
 How to obtain real files (you need your own copy of the game):
 
@@ -124,6 +124,6 @@ How to obtain real files (you need your own copy of the game):
 - https://raw.githubusercontent.com/SaxxonPike/iidx-ps2tools/master/charttool/iidx_common.py
 - https://raw.githubusercontent.com/SaxxonPike/iidx-ps2tools/master/charttool/plugins/iidx25thac.py
 - https://github.com/SaxxonPike/iidx-ps2tools (README)
-- Zenius-I-Vanisher thread on IIDX timing (cited by the spec): https://zenius-i-vanisher.com/v5.2/viewthread.php?threadid=5233 (not fetched)
+- Zenius-I-Vanisher thread on IIDX timing (cited by the spec): https://zenius-i-vanisher.com/v5.2/viewthread.php?threadid=5233
 - iidx2bms (Getting samples): https://github.com/Glebsin/iidx2bms/tree/893a6a94b0bc442356be88852188cd5e05fe1b8e (`iidx2bms/conversion/conversion.py`, `iidx2bms/one2bme/one2bme.c`, `README.md`)
 - iidx-datatools mirror (Getting samples): https://github.com/LupinThidr/iidx-datatools/tree/a4c86e76c79f2d1f1dd9aa0c03fd97d377b314e4

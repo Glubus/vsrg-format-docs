@@ -109,7 +109,7 @@ Not read by ROX (no SSQ support).
 
 ## Getting samples
 
-No file is committed or in the manifest: same situation as [`hudson-ssq`](../hudson-ssq/README.md) (documented from the Hottest Party 4 and 5 discs: 57 songs / 1,098 charts and 121 songs / 798 charts; no public extract). How: dump a Hottest Party 4 or 5 (Wii) disc you own, extract the `.ssq` files whose chart chunks have type 16, and read them with [skogaby/ddr-chart-tools](https://github.com/skogaby/ddr-chart-tools).
+No file is committed: same situation as [`hudson-ssq`](../hudson-ssq/README.md) (documented from the Hottest Party 4 and 5 discs: 57 songs / 1,098 charts and 121 songs / 798 charts; no public extract; only multi-GB Wii disc images exist on archive.org). How: dump a Hottest Party 4 or 5 (Wii) disc you own, extract the `.ssq` files whose chart chunks have type 16, and read them with [skogaby/ddr-chart-tools](https://github.com/skogaby/ddr-chart-tools).
 
 ## Sources
 

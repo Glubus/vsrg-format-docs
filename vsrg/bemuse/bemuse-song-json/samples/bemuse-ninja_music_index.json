@@ -1,0 +1,5915 @@
+{ "songs":
+  [ { "title": "Exargon"
+    , "artist": "5argon vs encX"
+    , "genre": "DnB"
+    , "bpm": 170
+    , "artist_url": "https://soundcloud.com/5argon"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=31&event=101"
+    , "song_url": "https://soundcloud.com/5argon/encx-exargon"
+    , "youtube_url": "https://www.youtube.com/watch?v=Ccw_5c1apao"
+    , "added": "2015-08-06T00:00:00.000Z"
+    , "replaygain": "-6.41 dB"
+    , "video_url": "https://bga.bemuse.ninja/exargon.webm"
+    , "video_offset": 0
+    , "bmssearch_id": 3165
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "7e62a5af97f829c014b6432eec3df38f"
+        , "info":
+          { "title": "Exargon"
+          , "artist": "5argon vs encX"
+          , "genre": "DnB"
+          , "subtitles":
+            [ "ANOTHER"
+            ]
+          , "subartists":
+            [ "obj: flicknote / vocal: imTiNEY"
+            ]
+          , "difficulty": 4
+          , "level": 12
+          }
+        , "noteCount": 1623
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 170
+          , "min": 170
+          , "median": 170
+          , "max": 170
+          }
+        , "duration": 165.08823529411768
+        , "file": "exargon_7another.bms"
+        }
+      , { "md5": "978f45dd1f3e37c76cb99ad3a8e75859"
+        , "info":
+          { "title": "Exargon"
+          , "artist": "5argon vs encX"
+          , "genre": "DnB"
+          , "subtitles":
+            [ "BEGINNER"
+            ]
+          , "subartists":
+            [ "obj: flicknote / vocal: imTiNEY"
+            ]
+          , "difficulty": 1
+          , "level": 1
+          }
+        , "noteCount": 226
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 170
+          , "min": 170
+          , "median": 170
+          , "max": 170
+          }
+        , "duration": 165.08823529411768
+        , "file": "exargon_7beginner.bms"
+        }
+      , { "md5": "ecea6e1fb533a06171914bb8e4dbcb84"
+        , "info":
+          { "title": "Exargon"
+          , "artist": "5argon vs encX"
+          , "genre": "DnB"
+          , "subtitles":
+            [ "HYPER"
+            ]
+          , "subartists":
+            [ "obj: flicknote / vocal: imTiNEY"
+            ]
+          , "difficulty": 3
+          , "level": 10
+          }
+        , "noteCount": 1355
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 170
+          , "min": 170
+          , "median": 170
+          , "max": 170
+          }
+        , "duration": 165.08823529411768
+        , "file": "exargon_7hyper.bms"
+        }
+      , { "md5": "74a74f1c00ca457f62f1c2288b7eeb85"
+        , "info":
+          { "title": "Exargon"
+          , "artist": "5argon vs encX"
+          , "genre": "DnB"
+          , "subtitles":
+            [ "FOOMFIRE"
+            ]
+          , "subartists":
+            [ "obj: flicknote / vocal: imTiNEY"
+            ]
+          , "difficulty": 5
+          , "level": 13
+          }
+        , "noteCount": 2834
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 170
+          , "min": 170
+          , "median": 170
+          , "max": 170
+          }
+        , "duration": 165.08823529411768
+        , "file": "exargon_7insane.bms"
+        }
+      , { "md5": "17934aa805e0709874bda1b270b7dfa8"
+        , "info":
+          { "title": "Exargon"
+          , "artist": "5argon vs encX"
+          , "genre": "DnB"
+          , "subtitles":
+            [ "LIGHT"
+            ]
+          , "subartists":
+            [ "obj: flicknote / vocal: imTiNEY"
+            ]
+          , "difficulty": 2
+          , "level": 3
+          }
+        , "noteCount": 433
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 170
+          , "min": 170
+          , "median": 170
+          , "max": 170
+          }
+        , "duration": 165.08823529411768
+        , "file": "exargon_7light.bms"
+        }
+      , { "md5": "26a4f28f0cd91500e85e6afd6124c18a"
+        , "info":
+          { "title": "Exargon"
+          , "artist": "5argon vs encX"
+          , "genre": "DnB"
+          , "subtitles":
+            [ "BEMUSED.NORMAL"
+            ]
+          , "subartists":
+            [ "obj: flicknote / vocal: imTiNEY"
+            ]
+          , "difficulty": 2
+          , "level": 6
+          }
+        , "noteCount": 778
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 170
+          , "min": 170
+          , "median": 170
+          , "max": 170
+          }
+        , "duration": 165.08823529411768
+        , "file": "exargon_7normal.bms"
+        }
+      ]
+    , "warnings": []
+    , "id": "[5argon_encx]exargon"
+    , "path": "[5argon_encx]exargon"
+    }
+  , { "title": "Maid Battle"
+    , "artist": "5argon"
+    , "genre": "Jazz Fusion"
+    , "bpm": 158
+    , "artist_url": "https://soundcloud.com/5argon"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=183&event=104"
+    , "song_url": "https://soundcloud.com/5argon/maid-battle"
+    , "youtube_url": "https://www.youtube.com/watch?v=gtoCNSfJoZc"
+    , "replaygain": "-11.87 dB"
+    , "added": "2015-12-01T00:00:00.000Z"
+    , "bmssearch_id": 2477
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "fbb8cd9a867cb0e463baff6f2e0547a4"
+        , "info":
+          { "title": "Maid Battle"
+          , "artist": "5argon"
+          , "genre": "Jazz Fusion"
+          , "subtitles":
+            [ "ANOTHER"
+            ]
+          , "subartists":
+            [ "BGI: Kikansha"
+            , "obj: DJPop"
+            ]
+          , "difficulty": 4
+          , "level": 12
+          }
+        , "noteCount": 1415
+        , "bpm":
+          { "init": 158
+          , "min": 146
+          , "median": 158
+          , "max": 158
+          }
+        , "duration": 137.13499219698284
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_MaidBattle [ANOTHER].bms"
+        }
+      , { "md5": "9cbb0b20d30e6788ed0948cd324d1eef"
+        , "info":
+          { "title": "Maid Battle"
+          , "artist": "5argon"
+          , "genre": "Jazz Fusion"
+          , "subtitles":
+            [ "BEGINNER"
+            ]
+          , "subartists":
+            [ "BGI: Kikansha"
+            , "obj: flicknote"
+            ]
+          , "difficulty": 1
+          , "level": 1
+          }
+        , "noteCount": 106
+        , "bpm":
+          { "init": 146
+          , "min": 146
+          , "median": 158
+          , "max": 158
+          }
+        , "duration": 137.1662042656494
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_MaidBattle [BEGINNER].bms"
+        }
+      , { "md5": "60f727623641b4104107a1a294572f2b"
+        , "info":
+          { "title": "Maid Battle"
+          , "artist": "5argon"
+          , "genre": "Jazz Fusion"
+          , "subtitles":
+            [ "HYPER"
+            ]
+          , "subartists":
+            [ "BGI: Kikansha"
+            , "obj: flicknote"
+            ]
+          , "difficulty": 3
+          , "level": 9
+          }
+        , "noteCount": 1003
+        , "bpm":
+          { "init": 158
+          , "min": 146
+          , "median": 158
+          , "max": 158
+          }
+        , "duration": 137.13499219698284
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_MaidBattle [HYPER].bms"
+        }
+      , { "md5": "146364bf78696419ccb78b5815a6710a"
+        , "info":
+          { "title": "Maid Battle"
+          , "artist": "5argon"
+          , "genre": "Jazz Fusion"
+          , "subtitles":
+            [ "LIGHT"
+            ]
+          , "subartists":
+            [ "BGI: Kikansha"
+            , "obj: flicknote"
+            ]
+          , "difficulty": 1
+          , "level": 4
+          }
+        , "noteCount": 349
+        , "bpm":
+          { "init": 146
+          , "min": 146
+          , "median": 158
+          , "max": 158
+          }
+        , "duration": 137.1662042656494
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_MaidBattle [LIGHT].bms"
+        }
+      , { "md5": "49ad0e79d8c7261a0234d4697799de3d"
+        , "info":
+          { "title": "Maid Battle"
+          , "artist": "5argon"
+          , "genre": "Jazz Fusion"
+          , "subtitles":
+            [ "NORMAL"
+            ]
+          , "subartists":
+            [ "BGI: Kikansha"
+            , "obj: flicknote"
+            ]
+          , "difficulty": 2
+          , "level": 7
+          }
+        , "noteCount": 654
+        , "bpm":
+          { "init": 146
+          , "min": 146
+          , "median": 158
+          , "max": 158
+          }
+        , "duration": 137.1662042656494
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_MaidBattle [NORMAL].bms"
+        }
+      , { "md5": "4d9519f76991bc8be0e5aa96a4095900"
+        , "info":
+          { "title": "Maid Battle"
+          , "artist": "5argon"
+          , "genre": "Jazz Fusion"
+          , "subtitles":
+            [ "RANDOMIZER"
+            ]
+          , "subartists":
+            [ "BGI: Kikansha"
+            , "obj: flicknote"
+            ]
+          , "difficulty": 5
+          , "level": 8
+          }
+        , "noteCount": 908
+        , "bpm":
+          { "init": 146
+          , "min": 146
+          , "median": 158
+          , "max": 158
+          }
+        , "duration": 137.1662042656494
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_MaidBattle [RANDOMIZER].bms"
+        }
+      ]
+    , "warnings": []
+    , "id": "[5argon]maidbattle"
+    , "path": "[5argon]maidbattle"
+    }
+  , { "title": "Anhedonia"
+    , "artist": "Silent Spica"
+    , "genre": "Spiritual Core"
+    , "bpm": 180
+    , "alias_of": "a_hisa"
+    , "artist_url": "http://hisaweb.6.ql.bz/"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=266&event=83"
+    , "youtube_url": "https://www.youtube.com/watch?v=UkbCgtEVe-0"
+    , "added": "2015-06-07T00:00:00.000Z"
+    , "replaygain": "-9.17 dB"
+    , "bmssearch_id": 1393
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "e1362b8c041ca6c872a75e14879ff0eb"
+        , "info":
+          { "title": "Anhedonia"
+          , "artist": "Silent Spica"
+          , "genre": "Spiritual Core"
+          , "subtitles":
+            [ "BEGINNER"
+            ]
+          , "subartists":
+            [ "Obj.Triforce"
+            ]
+          , "difficulty": 1
+          , "level": 1
+          }
+        , "noteCount": 92
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 180
+          , "min": 90
+          , "median": 180
+          , "max": 180
+          }
+        , "duration": 132.1111111111111
+        , "file": "00_anhedonia_7b.bms"
+        }
+      , { "md5": "3bb1901e202f48839d580a9abbc0d768"
+        , "info":
+          { "title": "Anhedonia"
+          , "artist": "Silent Spica"
+          , "genre": "Spiritual Core [NORMAL]"
+          , "subtitles": []
+          , "subartists":
+            [ "obj:kent."
+            ]
+          , "difficulty": 2
+          , "level": 6
+          }
+        , "noteCount": 548
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 180
+          , "min": 90
+          , "median": 180
+          , "max": 180
+          }
+        , "duration": 132.1111111111111
+        , "file": "01_anhedonia_n.bms"
+        }
+      , { "md5": "f8cb9774e2854450237851455d116638"
+        , "info":
+          { "title": "Anhedonia"
+          , "artist": "Silent Spica"
+          , "genre": "Spiritual Core [HYPER]"
+          , "subtitles": []
+          , "subartists":
+            [ "obj:kent."
+            ]
+          , "difficulty": 3
+          , "level": 10
+          }
+        , "noteCount": 788
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 180
+          , "min": 90
+          , "median": 180
+          , "max": 180
+          }
+        , "duration": 132.1111111111111
+        , "file": "02_anhedonia_h.bms"
+        }
+      , { "md5": "2342c3d64ce59ef7e964953c7d3e15f2"
+        , "info":
+          { "title": "Anhedonia"
+          , "artist": "Silent Spica"
+          , "genre": "Spiritual Core [ANOTHER]"
+          , "subtitles": []
+          , "subartists":
+            [ "obj:kent."
+            ]
+          , "difficulty": 4
+          , "level": 11
+          }
+        , "noteCount": 1123
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 180
+          , "min": 90
+          , "median": 180
+          , "max": 180
+          }
+        , "duration": 132.1111111111111
+        , "file": "03_anhedonia_a.bms"
+        }
+      , { "md5": "732ae5c8c501c05dddc4d1b93b7c33c4"
+        , "info":
+          { "title": "Anhedonia"
+          , "artist": "Silent Spica"
+          , "genre": "Spiritual Core"
+          , "subtitles":
+            [ "DP NORMAL"
+            ]
+          , "subartists":
+            [ "Obj:ゆ～兎"
+            ]
+          , "difficulty": 2
+          , "level": 8
+          }
+        , "noteCount": 308
+        , "scratch": true
+        , "keys": "14K"
+        , "bpm":
+          { "init": 180
+          , "min": 90
+          , "median": 180
+          , "max": 180
+          }
+        , "duration": 132.1111111111111
+        , "file": "04_anhedonia_14n_YH.bms"
+        }
+      , { "md5": "190965b1629ceb8f69abc7ee4935ff5c"
+        , "info":
+          { "title": "Anhedonia"
+          , "artist": "Silent Spica obj : Limite"
+          , "genre": "Spiritual Core [Broken Kikai - ReObj]"
+          , "subtitles": []
+          , "subartists": []
+          , "difficulty": 5
+          , "level": 12
+          }
+        , "noteCount": 1500
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 180
+          , "min": 90
+          , "median": 180
+          , "max": 180
+          }
+        , "duration": 132.1111111111111
+        , "file": "04_anhedonia_bk_reobj.bme"
+        }
+      , { "md5": "e6edca5ce4ea9e70c78c758a2b725633"
+        , "info":
+          { "title": "Anhedonia"
+          , "artist": "Silent Spica"
+          , "genre": "Spiritual Core"
+          , "subtitles":
+            [ "DP HYPER"
+            ]
+          , "subartists":
+            [ "Obj:ゆ～兎"
+            ]
+          , "difficulty": 3
+          , "level": 10
+          }
+        , "noteCount": 507
+        , "scratch": true
+        , "keys": "14K"
+        , "bpm":
+          { "init": 180
+          , "min": 90
+          , "median": 180
+          , "max": 180
+          }
+        , "duration": 132.1111111111111
+        , "file": "05_anhedonia_14h_YH.bms"
+        }
+      , { "md5": "02cf0562e3b361e383ca066119008290"
+        , "info":
+          { "title": "Anhedonia"
+          , "artist": "Silent Spica obj:けろりん"
+          , "genre": "Spiritual Core"
+          , "subtitles":
+            [ "DP APPETITE"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 12
+          }
+        , "noteCount": 678
+        , "scratch": true
+        , "keys": "14K"
+        , "bpm":
+          { "init": 180
+          , "min": 180
+          , "median": 180
+          , "max": 180
+          }
+        , "duration": 132.11111111111111
+        , "file": "06_anhedonia_14a_kero.bms"
+        }
+      , { "md5": "4765f6b7b761f41a5bad3b9006fce733"
+        , "info":
+          { "title": "Anhedonia"
+          , "artist": "Silent Spica"
+          , "genre": "Spiritual Core"
+          , "subtitles":
+            [ "DP ANOTHER"
+            ]
+          , "subartists":
+            [ "Obj:ゆ～兎"
+            ]
+          , "difficulty": 4
+          , "level": 12
+          }
+        , "noteCount": 721
+        , "scratch": true
+        , "keys": "14K"
+        , "bpm":
+          { "init": 180
+          , "min": 90
+          , "median": 180
+          , "max": 180
+          }
+        , "duration": 132.1111111111111
+        , "file": "06_anhedonia_14a_YH.bms"
+        }
+      , { "md5": "c9187c4b058634097fbc3e20ee787ef1"
+        , "info":
+          { "title": "Anhedonia"
+          , "artist": "Silent Spica"
+          , "genre": "Spiritual Core"
+          , "subtitles": []
+          , "subartists":
+            [ "obj.XYZ"
+            ]
+          , "difficulty": 5
+          , "level": 12
+          }
+        , "noteCount": 1480
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 180
+          , "min": 90
+          , "median": 180
+          , "max": 180
+          }
+        , "duration": 132.11296420275374
+        , "file": "anhedonia_XYZ.bms"
+        }
+      ]
+    , "warnings": []
+    , "id": "[a_hisa]anhedonia"
+    , "path": "[a_hisa]anhedonia"
+    }
+  , { "title": "オリヴィアの幻術"
+    , "artist": "葵"
+    , "genre": "Sexy Dance"
+    , "bpm": 128
+    , "artist_url": "http://aoi.prismusic.net/"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=131&event=96"
+    , "song_url": "https://soundcloud.com/aoi-kakuta/mou5p223mclf"
+    , "long_url": "https://soundcloud.com/aoi-kakuta/groundbreaking-mix"
+    , "youtube_url": "https://www.youtube.com/watch?v=IUAE-nai4Vc"
+    , "replaygain": "+0.01 dB"
+    , "bmssearch_id": 2154
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "b301d67f3639cd2701c5ef7a25485a34"
+        , "info":
+          { "title": "オリヴィアの幻術"
+          , "artist": "葵"
+          , "genre": "Sexy Dance"
+          , "subtitles":
+            [ "SP Another"
+            ]
+          , "subartists":
+            [ "mov:いとう まさき"
+            ]
+          , "difficulty": 4
+          , "level": 11
+          }
+        , "noteCount": 1158
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 128
+          , "min": 128
+          , "median": 128
+          , "max": 128
+          }
+        , "duration": 146.279296875
+        , "file": "olivia_SPA.bml"
+        }
+      , { "md5": "01ee4891199f523c170677433a625592"
+        , "info":
+          { "title": "オリヴィアの幻術"
+          , "artist": "葵"
+          , "genre": "Sexy Dance"
+          , "subtitles":
+            [ "SP Hyper"
+            ]
+          , "subartists":
+            [ "mov:いとう まさき"
+            ]
+          , "difficulty": 3
+          , "level": 7
+          }
+        , "noteCount": 716
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 128
+          , "min": 128
+          , "median": 128
+          , "max": 128
+          }
+        , "duration": 146.279296875
+        , "file": "olivia_SPH.bml"
+        }
+      , { "md5": "33e4b2616c05ace330c7eb3ccc7d080a"
+        , "info":
+          { "title": "オリヴィアの幻術"
+          , "artist": "葵"
+          , "genre": "Sexy Dance"
+          , "subtitles":
+            [ "SP Normal"
+            ]
+          , "subartists":
+            [ "mov:いとう まさき"
+            ]
+          , "difficulty": 2
+          , "level": 4
+          }
+        , "noteCount": 447
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 128
+          , "min": 128
+          , "median": 128
+          , "max": 128
+          }
+        , "duration": 146.279296875
+        , "file": "olivia_SPN.bml"
+        }
+      , { "md5": "64d2a8eec9f048634ff9a32cfa064ab8"
+        , "info":
+          { "title": "オリヴィアの幻術"
+          , "artist": "葵"
+          , "genre": "Sexy Dance"
+          , "subtitles":
+            [ "Tonalite"
+            ]
+          , "subartists":
+            [ "mov:いとう まさき/obj:止ヒ糸"
+            ]
+          , "difficulty": 5
+          , "level": 8
+          }
+        , "noteCount": 1097
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 128
+          , "min": 128
+          , "median": 128
+          , "max": 128
+          }
+        , "duration": 146.279296875
+        , "file": "olivia_SPpp.bml"
+        }
+      ]
+    , "warnings": []
+    , "id": "[aoi]olivia"
+    , "path": "[aoi]olivia"
+    }
+  , { "title": "Blooming"
+    , "artist": "Trish"
+    , "genre": "New Age"
+    , "bpm": 170
+    , "artist_url": "https://soundcloud.com/chitose-yuki"
+    , "alias_of": "Chitose"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=19&event=91"
+    , "song_url": "https://soundcloud.com/chitose-yuki/blooming"
+    , "youtube_url": "https://www.youtube.com/watch?v=hP6ieXJi8YA"
+    , "added": "2015-05-21T00:00:00.000Z"
+    , "replaygain": "-15.10 dB"
+    , "bmssearch_id": 3687
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "baae9b04cdd0898e8a32ff2fe42a9953"
+        , "info":
+          { "title": "Blooming"
+          , "artist": "Trish"
+          , "genre": "New Age"
+          , "subtitles":
+            [ "[DP Alicia]"
+            ]
+          , "subartists":
+            [ "Movie:Vergil / Obj. Z_N"
+            ]
+          , "difficulty": 3
+          , "level": 11
+          }
+        , "noteCount": 568
+        , "scratch": true
+        , "keys": "14K"
+        , "bpm":
+          { "init": 170
+          , "min": 170
+          , "median": 170
+          , "max": 170
+          }
+        , "duration": 133.41176470588235
+        , "file": "Trish_Blooming_14key_Alicia.bms"
+        }
+      , { "md5": "a32ec19da96aa8391db09874ea30544f"
+        , "info":
+          { "title": "Blooming"
+          , "artist": "Trish"
+          , "genre": "New Age"
+          , "subtitles":
+            [ "[DP ANOTHER]"
+            ]
+          , "subartists":
+            [ "Movie:Vergil / Obj:ゆ～兎"
+            ]
+          , "difficulty": 4
+          , "level": 14
+          }
+        , "noteCount": 1022
+        , "scratch": true
+        , "keys": "14K"
+        , "bpm":
+          { "init": 170
+          , "min": 170
+          , "median": 170
+          , "max": 170
+          }
+        , "duration": 133.41176470588235
+        , "file": "Trish_Blooming_14key_Another_YH.bms"
+        }
+      , { "md5": "2981f0481ec485193832293599820e19"
+        , "info":
+          { "title": "Blooming"
+          , "artist": "Trish"
+          , "genre": "New Age"
+          , "subtitles":
+            [ "[DP HYPER]"
+            ]
+          , "subartists":
+            [ "Movie:Vergil / Obj:ゆ～兎"
+            ]
+          , "difficulty": 3
+          , "level": 12
+          }
+        , "noteCount": 826
+        , "scratch": true
+        , "keys": "14K"
+        , "bpm":
+          { "init": 170
+          , "min": 170
+          , "median": 170
+          , "max": 170
+          }
+        , "duration": 133.41176470588235
+        , "file": "Trish_Blooming_14key_Hyper_YH.bms"
+        }
+      , { "md5": "491db4804433deca92607db370d4333d"
+        , "info":
+          { "title": "Blooming"
+          , "artist": "Trish"
+          , "genre": "New Age"
+          , "subtitles":
+            [ "[DP NORMAL]"
+            ]
+          , "subartists":
+            [ "Movie:Vergil / Obj:ゆ～兎"
+            ]
+          , "difficulty": 2
+          , "level": 7
+          }
+        , "noteCount": 435
+        , "scratch": true
+        , "keys": "14K"
+        , "bpm":
+          { "init": 170
+          , "min": 170
+          , "median": 170
+          , "max": 170
+          }
+        , "duration": 133.41176470588235
+        , "file": "Trish_Blooming_14key_Normal_YH.bms"
+        }
+      , { "md5": "5c595c3ac30f868c58531d1198f359c4"
+        , "info":
+          { "title": "Blooming"
+          , "artist": "Trish"
+          , "genre": "New Age"
+          , "subtitles":
+            [ "[7key Another]"
+            ]
+          , "subartists":
+            [ "Movie:Vergil"
+            ]
+          , "difficulty": 4
+          , "level": 11
+          }
+        , "noteCount": 1424
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 170
+          , "min": 170
+          , "median": 170
+          , "max": 170
+          }
+        , "duration": 133.41176470588235
+        , "file": "Trish_Blooming_7key_Another.bms"
+        }
+      , { "md5": "62f6543036ffb0390c0abeb2af6ecb25"
+        , "info":
+          { "title": "Blooming [Feeling]"
+          , "artist": "Trish / obj.swa"
+          , "genre": "New Age"
+          , "subtitles":
+            [ "[7key Feeling]"
+            ]
+          , "subartists":
+            [ "Movie:Vergil"
+            ]
+          , "difficulty": 5
+          , "level": 13
+          }
+        , "noteCount": 2300
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 170
+          , "min": 170
+          , "median": 170
+          , "max": 170
+          }
+        , "duration": 133.41176470588235
+        , "file": "Trish_Blooming_7key_Feeling.bms"
+        }
+      , { "md5": "dbf71bc8344d4fd406e154e599c5c27c"
+        , "info":
+          { "title": "Blooming"
+          , "artist": "Trish"
+          , "genre": "New Age"
+          , "subtitles":
+            [ "[7key Hyper]"
+            ]
+          , "subartists":
+            [ "Movie:Vergil"
+            ]
+          , "difficulty": 3
+          , "level": 8
+          }
+        , "noteCount": 905
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 170
+          , "min": 170
+          , "median": 170
+          , "max": 170
+          }
+        , "duration": 133.41176470588235
+        , "file": "Trish_Blooming_7key_Hyper.bms"
+        }
+      , { "md5": "1084d86000522ec1e3f7136dbf4398c0"
+        , "info":
+          { "title": "Blooming"
+          , "artist": "Trish"
+          , "genre": "New Age"
+          , "subtitles":
+            [ "[7key Normal]"
+            ]
+          , "subartists":
+            [ "Movie:Vergil"
+            ]
+          , "difficulty": 2
+          , "level": 5
+          }
+        , "noteCount": 595
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 170
+          , "min": 170
+          , "median": 170
+          , "max": 170
+          }
+        , "duration": 133.41176470588235
+        , "file": "Trish_Blooming_7key_Normal.bms"
+        }
+      , { "md5": "65e2acadd0b5d17147635129ec20bea0"
+        , "info":
+          { "title": "Blooming"
+          , "artist": "Trish"
+          , "genre": "New Age"
+          , "subtitles":
+            [ "Tutorial"
+            ]
+          , "subartists":
+            [ "Movie:Vergil / Obj.Triforce"
+            ]
+          , "difficulty": 1
+          , "level": 3
+          }
+        , "noteCount": 277
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 170
+          , "min": 170
+          , "median": 170
+          , "max": 170
+          }
+        , "duration": 133.41176470588235
+        , "file": "Trish_Blooming_7key_tutorial.bms"
+        }
+      ]
+    , "warnings": []
+    , "id": "[chitose]blooming"
+    , "path": "[chitose]blooming"
+    }
+  , { "title": "Musica de Aves"
+    , "artist": "Chitose"
+    , "genre": "World/Crossover"
+    , "bpm": 182
+    , "artist_url": "https://soundcloud.com/chitose-yuki"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=174&event=96"
+    , "song_url": "https://soundcloud.com/chitose-yuki/musica-de-aves"
+    , "youtube_url": "https://www.youtube.com/watch?v=O-uGBzMv4J4"
+    , "added": "2015-05-21T00:00:00.000Z"
+    , "replaygain": "-12.21 dB"
+    , "bmssearch_id": 2237
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "087c506814ea8970695f146ff42970f6"
+        , "info":
+          { "title": "Musica de Aves"
+          , "artist": "Chitose"
+          , "genre": "World/Crossover"
+          , "subtitles":
+            [ "SP ANOTHER"
+            ]
+          , "subartists":
+            [ "(Movie:zue-row)"
+            ]
+          , "difficulty": 4
+          , "level": 11
+          }
+        , "noteCount": 1739
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 182
+          , "min": 182
+          , "median": 182
+          , "max": 182
+          }
+        , "duration": 171.11263736263734
+        , "file": "Musica_de_Aves_7A.bms"
+        }
+      , { "md5": "dca9ad52c690dde2e6ebdd9d00bc1dcb"
+        , "info":
+          { "title": "Musica de Aves"
+          , "artist": "Chitose"
+          , "genre": "World/Crossover"
+          , "subtitles":
+            [ "SP HYPER"
+            ]
+          , "subartists":
+            [ "(Movie:zue-row)"
+            ]
+          , "difficulty": 3
+          , "level": 9
+          }
+        , "noteCount": 1326
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 182
+          , "min": 182
+          , "median": 182
+          , "max": 182
+          }
+        , "duration": 171.11263736263734
+        , "file": "Musica_de_Aves_7H.bms"
+        }
+      , { "md5": "ffbde15f030fd17eeec538413573fbe4"
+        , "info":
+          { "title": "Musica de Aves"
+          , "artist": "Chitose"
+          , "genre": "World/Crossover"
+          , "subtitles": []
+          , "subartists":
+            [ "(Movie:zue-row)"
+            ]
+          , "difficulty": 2
+          , "level": 4
+          }
+        , "noteCount": 540
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 182
+          , "min": 182
+          , "median": 182
+          , "max": 182
+          }
+        , "duration": 171.11263736263734
+        , "file": "Musica_de_Aves_7N.bms"
+        }
+      , { "md5": "00be59c57df7a774b345439ff6dfae86"
+        , "info":
+          { "title": "Musica de Aves"
+          , "artist": "Chitose"
+          , "genre": "World/Crossover"
+          , "subtitles": []
+          , "subartists":
+            [ "(Movie:zue-row)"
+            ]
+          , "difficulty": 0
+          , "level": 1
+          }
+        , "noteCount": 0
+        , "scratch": false
+        , "keys": "empty"
+        , "bpm":
+          { "init": 182
+          , "min": 182
+          , "median": 182
+          , "max": 182
+          }
+        , "duration": 171.11263736263734
+        , "file": "Musica_de_Aves.bms"
+        }
+      ]
+    , "warnings": []
+    , "id": "[chitose]musica_de_aves"
+    , "path": "[chitose]musica_de_aves"
+    }
+  , { "title": "Dance Doll Dream"
+    , "artist": "daisan feat. えみゅう。"
+    , "genre": "Waltz"
+    , "bpm": 200
+    , "alias_of": "daisan"
+    , "artist_url": "http://clockxellox.sakura.ne.jp/"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=30&event=98"
+    , "youtube_url": "https://www.youtube.com/watch?v=mBTt_1bD_nY"
+    , "added": "2015-05-26T00:00:00.000Z"
+    , "replaygain": "-6.84 dB"
+    , "bmssearch_id": 2997
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "901c4759a1f4487b320cf974a8ddd8be"
+        , "info":
+          { "title": "Dance Doll Dream"
+          , "artist": "daisan feat. えみゅう。 / zue-row"
+          , "genre": "Waltz"
+          , "subtitles":
+            [ "Another"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 9
+          }
+        , "noteCount": 1319
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 200
+          , "min": 160
+          , "median": 200
+          , "max": 200
+          }
+        , "duration": 164.71860902255636
+        , "file": "ddd_A.bme"
+        }
+      , { "md5": "77877b930d547afe6e98ac4ac1e4b6ad"
+        , "info":
+          { "title": "Dance Doll Dream"
+          , "artist": "daisan feat. えみゅう。 / zue-row"
+          , "genre": "Waltz"
+          , "subtitles":
+            [ "Beginner"
+            ]
+          , "subartists": []
+          , "difficulty": 1
+          , "level": 2
+          }
+        , "noteCount": 206
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 200
+          , "min": 160
+          , "median": 200
+          , "max": 200
+          }
+        , "duration": 164.71860902255636
+        , "file": "ddd_B.bme"
+        }
+      , { "md5": "819cf57e78e6bb8f6b0c58bfd7b9bee0"
+        , "info":
+          { "title": "Dance Doll Dream"
+          , "artist": "daisan feat. えみゅう。 / zue-row"
+          , "genre": "Waltz"
+          , "subtitles":
+            [ "Hyper"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 7
+          }
+        , "noteCount": 1017
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 200
+          , "min": 160
+          , "median": 200
+          , "max": 200
+          }
+        , "duration": 164.71860902255636
+        , "file": "ddd_H.bme"
+        }
+      , { "md5": "f81d7549eef70d0da99b12212a011097"
+        , "info":
+          { "title": "Dance Doll Dream"
+          , "artist": "daisan feat. えみゅう。 / zue-row"
+          , "genre": "Waltz"
+          , "subtitles":
+            [ "Normal"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 5
+          }
+        , "noteCount": 599
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 200
+          , "min": 160
+          , "median": 200
+          , "max": 200
+          }
+        , "duration": 164.71860902255636
+        , "file": "ddd_N.bme"
+        }
+      ]
+    , "warnings": []
+    , "id": "[daisan]ddd"
+    , "path": "[daisan]ddd"
+    }
+  , { "title": "가짜 / 인형 / 술사 / 이야기"
+    , "artist": "Dr.ReB"
+    , "genre": "a/story/of/the/fake/puppet/master"
+    , "bpm": 186
+    , "artist_url": "https://soundcloud.com/dr-reb"
+    , "song_url": "https://soundcloud.com/dr-reb/pabat2015-astoryofthefakepuppetmaster"
+    , "youtube_url": "https://www.youtube.com/watch?v=qozfi10E14w"
+    , "added": "2015-06-03T00:00:00.000Z"
+    , "replaygain": "-9.03 dB"
+    , "bmssearch_id": 79
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "a178a4fd81d846cc0850dca2d52d5702"
+        , "info":
+          { "title": "가짜/인형/술사/이야기 (a/story/of/the/fake/puppet/master)"
+          , "artist": "Dr.ReB"
+          , "genre": "NO GENRE"
+          , "subtitles":
+            [ "5Keys Hyper"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 9
+          }
+        , "noteCount": 1042
+        , "scratch": true
+        , "keys": "5K"
+        , "bpm":
+          { "init": 140
+          , "min": 140
+          , "median": 186
+          , "max": 186
+          }
+        , "duration": 181.33064516129033
+        , "file": "fakepuppet-5h.bme"
+        }
+      , { "md5": "0a92e0058e44e33ed837a8e659f6fb60"
+        , "info":
+          { "title": "가짜/인형/술사/이야기 (a/story/of/the/fake/puppet/master)"
+          , "artist": "Dr.ReB"
+          , "genre": "NO GENRE"
+          , "subtitles":
+            [ "5Keys Normal"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 5
+          }
+        , "noteCount": 547
+        , "scratch": true
+        , "keys": "5K"
+        , "bpm":
+          { "init": 140
+          , "min": 140
+          , "median": 186
+          , "max": 186
+          }
+        , "duration": 181.33064516129033
+        , "file": "fakepuppet-5n.bme"
+        }
+      , { "md5": "473e5228e61791f819d05893bc9ead82"
+        , "info":
+          { "title": "가짜/인형/술사/이야기 (a/story/of/the/fake/puppet/master)"
+          , "artist": "Dr.ReB"
+          , "genre": "NO GENRE"
+          , "subtitles":
+            [ "7Keys Another"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 12
+          }
+        , "noteCount": 1837
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 140
+          , "min": 140
+          , "median": 186
+          , "max": 186
+          }
+        , "duration": 181.33064516129033
+        , "file": "fakepuppet-7a.bme"
+        }
+      , { "md5": "da4207bb56fa494aeebd2d8045077524"
+        , "info":
+          { "title": "가짜/인형/술사/이야기 (a/story/of/the/fake/puppet/master)"
+          , "artist": "Dr.ReB"
+          , "genre": "NO GENRE"
+          , "subtitles":
+            [ "7Keys Hyper"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 9
+          }
+        , "noteCount": 1120
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 140
+          , "min": 140
+          , "median": 186
+          , "max": 186
+          }
+        , "duration": 181.33064516129033
+        , "file": "fakepuppet-7h.bme"
+        }
+      , { "md5": "22ba4c94ec0dbf40d32c87660b2eeb37"
+        , "info":
+          { "title": "가짜/인형/술사/이야기 (a/story/of/the/fake/puppet/master)"
+          , "artist": "Dr.ReB"
+          , "genre": "NO GENRE"
+          , "subtitles":
+            [ "7Keys Normal"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 6
+          }
+        , "noteCount": 645
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 140
+          , "min": 140
+          , "median": 186
+          , "max": 186
+          }
+        , "duration": 181.33064516129033
+        , "file": "fakepuppet-7n.bme"
+        }
+      ]
+    , "warnings": []
+    , "id": "[drreb]fakepuppet"
+    , "path": "[drreb]fakepuppet"
+    }
+  , { "title": "BY☆MY☆SIDE"
+    , "artist": "flicknote"
+    , "genre": "Trance Core"
+    , "bpm": 178
+    , "artist_url": "https://soundcloud.com/o_ooooo"
+    , "song_url": "https://soundcloud.com/o_ooooo/by-my-side"
+    , "tutorial": 1
+    , "replaygain": "-9.11 dB"
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "006d92b8410a8683f347f2bee424d9c1"
+        , "info":
+          { "title": "BY☆MY☆SIDE"
+          , "artist": "flicknote"
+          , "genre": "Trance Core"
+          , "subtitles":
+            [ "TUTORIAL"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 0
+          }
+        , "noteCount": 511
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 178
+          , "min": 178
+          , "median": 178
+          , "max": 178
+          }
+        , "duration": 144.2696629213483
+        , "file": "ByMySide-TUTORIAL.bms"
+        }
+      ]
+    , "warnings": []
+    , "id": "[flicknote]bymyside"
+    , "path": "[flicknote]bymyside"
+    }
+  , { "title": "Only Love (Remix)"
+    , "artist": "Shannon Hurley remixed by flicknote"
+    , "genre": "Euphoric Trance"
+    , "bpm": 125
+    , "alias_of": "flicknote"
+    , "artist_url": "https://soundcloud.com/o_ooooo"
+    , "song_url": "https://soundcloud.com/o_ooooo/only-love"
+    , "youtube_url": "https://www.youtube.com/watch?v=KUoi1Hp-bzM"
+    , "replaygain": "-12.27 dB"
+    , "added": "2015-12-23T00:00:00.000Z"
+    , "bmssearch_id": 4109
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "72072a8d04eec7dd54f8b4b6ae75c422"
+        , "info":
+          { "title": "Only Love (Remix)"
+          , "artist": "Shannon Hurley remixed by flicknote"
+          , "genre": "Euphoric Trance"
+          , "subtitles":
+            [ "BEGINNER"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 1
+          }
+        , "noteCount": 67
+        , "bpm":
+          { "init": 125
+          , "min": 125
+          , "median": 125
+          , "max": 125
+          }
+        , "duration": 120.96
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "onlylove_remix_beginner.bmson"
+        }
+      , { "md5": "618611e7a25f4e6c47a5010b0af91e3b"
+        , "info":
+          { "title": "Only Love (Remix)"
+          , "artist": "Shannon Hurley remixed by flicknote"
+          , "genre": "Euphoric Trance"
+          , "subtitles":
+            [ "HYPER"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 7
+          }
+        , "noteCount": 838
+        , "bpm":
+          { "init": 125
+          , "min": 125
+          , "median": 125
+          , "max": 125
+          }
+        , "duration": 120.96
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "onlylove_remix_hyper.bmson"
+        }
+      , { "md5": "b57dd99586ceb13e9932dd189e4349d6"
+        , "info":
+          { "title": "Only Love (Remix)"
+          , "artist": "Shannon Hurley remixed by flicknote"
+          , "genre": "Euphoric Trance"
+          , "subtitles":
+            [ "NORMAL"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 4
+          }
+        , "noteCount": 405
+        , "bpm":
+          { "init": 125
+          , "min": 125
+          , "median": 125
+          , "max": 125
+          }
+        , "duration": 120.96
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "onlylove_remix_normal.bmson"
+        }
+      ]
+    , "warnings": []
+    , "id": "[flicknote]onlylove_remix"
+    , "path": "[flicknote]onlylove_remix"
+    }
+  , { "title": "L"
+    , "artist": "Ice"
+    , "genre": "RENAISSANCE PRAYER"
+    , "bpm": 155
+    , "artist_url": "https://soundcloud.com/iceloki"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=146&event=83"
+    , "song_url": "https://soundcloud.com/iceloki/l-bms-edit"
+    , "youtube_url": "https://www.youtube.com/watch?v=ZXy_1LA-RlA"
+    , "replaygain": "-12.62 dB"
+    , "bmssearch_id": 1548
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "07bde7731a578ffb1af4a27948b002ac"
+        , "info":
+          { "title": "L"
+          , "artist": "Ice"
+          , "genre": "RENAISSANCE PRAYER"
+          , "subtitles":
+            [ "LOKINOTHER"
+            ]
+          , "subartists": []
+          , "difficulty": 5
+          , "level": 12
+          }
+        , "noteCount": 1166
+        , "scratch": true
+        , "keys": "14K"
+        , "bpm":
+          { "init": 155
+          , "min": 155
+          , "median": 155
+          , "max": 155
+          }
+        , "duration": 134.70967741935482
+        , "file": "L_[DP-Lokinother].bms"
+        }
+      , { "md5": "925b52c71c25c554ee603e7a4f8ba4e8"
+        , "info":
+          { "title": "L"
+          , "artist": "Ice"
+          , "genre": "RENAISSANCE PRAYER"
+          , "subtitles":
+            [ "ANOTHER"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 12
+          }
+        , "noteCount": 893
+        , "scratch": true
+        , "keys": "14K"
+        , "bpm":
+          { "init": 155
+          , "min": 155
+          , "median": 155
+          , "max": 155
+          }
+        , "duration": 134.70967741935482
+        , "file": "L_[DPA].bms"
+        }
+      , { "md5": "d0302876b6f50419f81e367a80bb1e1f"
+        , "info":
+          { "title": "L"
+          , "artist": "Ice"
+          , "genre": "RENAISSANCE PRAYER"
+          , "subtitles":
+            [ "HYPER"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 12
+          }
+        , "noteCount": 600
+        , "scratch": true
+        , "keys": "14K"
+        , "bpm":
+          { "init": 155
+          , "min": 155
+          , "median": 155
+          , "max": 155
+          }
+        , "duration": 134.70967741935482
+        , "file": "L_[DPH].bms"
+        }
+      , { "md5": "d146b4f0a91d4432890d3feaede2da86"
+        , "info":
+          { "title": "L"
+          , "artist": "Ice"
+          , "genre": "RENAISSANCE PRAYER"
+          , "subtitles":
+            [ "NORMAL"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 8
+          }
+        , "noteCount": 355
+        , "scratch": true
+        , "keys": "14K"
+        , "bpm":
+          { "init": 155
+          , "min": 155
+          , "median": 155
+          , "max": 155
+          }
+        , "duration": 134.70967741935482
+        , "file": "L_[DPN].bms"
+        }
+      , { "md5": "35a9eb6654cd0467755b5088741da080"
+        , "info":
+          { "title": "L"
+          , "artist": "Ice"
+          , "genre": "RENAISSANCE PRAYER"
+          , "subtitles":
+            [ "AYAUTO-NORMAL"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 9
+          }
+        , "noteCount": 495
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 155
+          , "min": 155
+          , "median": 155
+          , "max": 155
+          }
+        , "duration": 134.70967741935482
+        , "file": "L_[SP-Ayauto-normal].bms"
+        }
+      , { "md5": "cc4f7f1cc6fbcaf5a1b149189066f152"
+        , "info":
+          { "title": "L"
+          , "artist": "Ice"
+          , "genre": "RENAISSANCE PRAYER"
+          , "subtitles":
+            [ "HYPER-LITE"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 10
+          }
+        , "noteCount": 999
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 155
+          , "min": 155
+          , "median": 155
+          , "max": 155
+          }
+        , "duration": 134.70967741935482
+        , "file": "L_[SP-hyper-lite].bms"
+        }
+      , { "md5": "765ced583b56843f6d20b858605a6383"
+        , "info":
+          { "title": "L"
+          , "artist": "Ice (obj Ice vs lai-)"
+          , "genre": "RENAISSANCE PRAYER"
+          , "subtitles":
+            [ "LOATHE"
+            ]
+          , "subartists": []
+          , "difficulty": 5
+          , "level": 18
+          }
+        , "noteCount": 2458
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 155
+          , "min": 155
+          , "median": 155
+          , "max": 155
+          }
+        , "duration": 134.70967741935482
+        , "file": "L_[SP-Loathe](lai-).bms"
+        }
+      , { "md5": "d15fa5e17826c126357f03aca678ccbb"
+        , "info":
+          { "title": "L"
+          , "artist": "Ice"
+          , "genre": "RENAISSANCE PRAYER"
+          , "subtitles":
+            [ "LOKINOTHER"
+            ]
+          , "subartists": []
+          , "difficulty": 5
+          , "level": 20
+          }
+        , "noteCount": 3133
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 155
+          , "min": 155
+          , "median": 155
+          , "max": 155
+          }
+        , "duration": 134.70967741935482
+        , "file": "L_[SP-Lokinother].bms"
+        }
+      , { "md5": "aadb7d00993afd10642ee637c8981e5b"
+        , "info":
+          { "title": "L"
+          , "artist": "Ice (object: XEIR)"
+          , "genre": "RENAISSANCE PRAYER"
+          , "subtitles":
+            [ "ANOTHER"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 12
+          }
+        , "noteCount": 2101
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 155
+          , "min": 155
+          , "median": 155
+          , "max": 155
+          }
+        , "duration": 134.70967741935482
+        , "file": "L_[SPA](XEIR).bme"
+        }
+      , { "md5": "20c14547a180ed2703670af5b83e12d5"
+        , "info":
+          { "title": "L"
+          , "artist": "Ice (object: XEIR)"
+          , "genre": "RENAISSANCE PRAYER"
+          , "subtitles":
+            [ "HYPER"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 11
+          }
+        , "noteCount": 1465
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 155
+          , "min": 155
+          , "median": 155
+          , "max": 155
+          }
+        , "duration": 134.70967741935482
+        , "file": "L_[SPH](XEIR).bme"
+        }
+      , { "md5": "694c89556e73ba4c667a714c51c2764a"
+        , "info":
+          { "title": "L"
+          , "artist": "Ice"
+          , "genre": "RENAISSANCE PRAYER"
+          , "subtitles":
+            [ "NORMAL"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 7
+          }
+        , "noteCount": 639
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 155
+          , "min": 155
+          , "median": 155
+          , "max": 155
+          }
+        , "duration": 134.70967741935482
+        , "file": "L_[SPN].bms"
+        }
+      ]
+    , "warnings": []
+    , "id": "[ice]l"
+    , "path": "[ice]l"
+    }
+  , { "title": "Terpsichore"
+    , "artist": "Jun Kuroda"
+    , "genre": "Artcore"
+    , "bpm": 185
+    , "artist_url": "https://soundcloud.com/jun_kuroda"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=1&event=101"
+    , "song_url": "https://soundcloud.com/jun_kuroda/12jun-kuroda-terpsichore"
+    , "added": "2015-07-28T00:00:00.000Z"
+    , "replaygain": "-13.88 dB"
+    , "bmssearch_id": 3162
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "8ee27fdf11d23e00a8d51de977068b7e"
+        , "info":
+          { "title": "Terpsichore"
+          , "artist": "Jun Kuroda"
+          , "genre": "Artcore"
+          , "subtitles":
+            [ "Another"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 12
+          }
+        , "noteCount": 1927
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 185
+          , "min": 185
+          , "median": 185
+          , "max": 185
+          }
+        , "duration": 128.43243243243242
+        , "file": "terpsichore_Another.bms"
+        }
+      , { "md5": "33f6d85d134cf7cebd0836a8aca8247f"
+        , "info":
+          { "title": "Terpsichore"
+          , "artist": "Jun Kuroda"
+          , "genre": "Artcore"
+          , "subtitles":
+            [ "Hyper"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 11
+          }
+        , "noteCount": 1249
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 185
+          , "min": 185
+          , "median": 185
+          , "max": 185
+          }
+        , "duration": 129.7297297297297
+        , "file": "terpsichore_Hyper.bms"
+        }
+      , { "md5": "ad94ff1b1f6ca7ccdf699d66d6f76fa8"
+        , "info":
+          { "title": "Terpsichore"
+          , "artist": "Jun Kuroda"
+          , "genre": "Artcore"
+          , "subtitles":
+            [ "Insane"
+            ]
+          , "subartists": []
+          , "difficulty": 5
+          , "level": 12
+          }
+        , "noteCount": 1962
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 185
+          , "min": 185
+          , "median": 185
+          , "max": 185
+          }
+        , "duration": 128.43243243243242
+        , "file": "terpsichore_Insane.bms"
+        }
+      , { "md5": "1983efc9e781daf776f85635fd202b54"
+        , "info":
+          { "title": "Terpsichore"
+          , "artist": "Jun Kuroda"
+          , "genre": "Artcore"
+          , "subtitles":
+            [ "Light"
+            ]
+          , "subartists":
+            [ "obj.flicknote"
+            ]
+          , "difficulty": 1
+          , "level": 3
+          }
+        , "noteCount": 236
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 185
+          , "min": 185
+          , "median": 185
+          , "max": 185
+          }
+        , "duration": 129.7297297297297
+        , "file": "terpsichore_Light.bms"
+        }
+      , { "md5": "9f0baa9137bf71931d9df883479b4dcc"
+        , "info":
+          { "title": "Terpsichore"
+          , "artist": "Jun Kuroda"
+          , "genre": "Artcore"
+          , "subtitles":
+            [ "Normal"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 7
+          }
+        , "noteCount": 503
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 185
+          , "min": 185
+          , "median": 185
+          , "max": 185
+          }
+        , "duration": 129.7297297297297
+        , "file": "terpsichore_Normal.bms"
+        }
+      ]
+    , "warnings": []
+    , "id": "[jun_kuroda]terpsichore"
+    , "path": "[jun_kuroda]terpsichore"
+    }
+  , { "title": "メルヘニア -malchenia-"
+    , "artist": "佐倉翔一"
+    , "genre": "Dark Malchen"
+    , "bpm": 100
+    , "alias_of": "LeaF"
+    , "artist_url": "https://soundcloud.com/leaf-7"
+    , "bms_url": "http://yaruki0.sakura.ne.jp/event/Nmumei/impression.cgi?no=27"
+    , "song_url": "https://soundcloud.com/leaf-7/malchenia"
+    , "youtube_url": "https://www.youtube.com/watch?v=KyzbSpSsNCk"
+    , "added": "2015-09-18T00:00:00.000Z"
+    , "replaygain": "-9.91 dB"
+    , "bmssearch_id": 4110
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "20daf6c408b4dd1d427efea71e194367"
+        , "info":
+          { "title": "メルヘニア -malchenia-"
+          , "artist": "音樂：佐倉翔一　譜面：七海拓哉"
+          , "genre": "Dark Malchen"
+          , "subtitles":
+            [ "ANOTHER"
+            ]
+          , "subartists":
+            [ "映像：山越矜介　原画：春見琴音"
+            ]
+          , "difficulty": 4
+          , "level": 10
+          }
+        , "noteCount": 1136
+        , "bpm":
+          { "init": 100
+          , "min": 100
+          , "median": 100
+          , "max": 100
+          }
+        , "duration": 131.75
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_another_7key.bms"
+        }
+      , { "md5": "1d6ecb9c8c6f3b7d5894ccdd90140b11"
+        , "info":
+          { "title": "メルヘニア -malchenia-"
+          , "artist": "音樂：佐倉翔一　譜面：七海拓哉"
+          , "genre": "Dark Malchen"
+          , "subtitles":
+            [ "HYPER"
+            ]
+          , "subartists":
+            [ "映像：山越矜介　原画：春見琴音"
+            ]
+          , "difficulty": 3
+          , "level": 6
+          }
+        , "noteCount": 657
+        , "bpm":
+          { "init": 100
+          , "min": 100
+          , "median": 100
+          , "max": 100
+          }
+        , "duration": 131.75
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_hyper_7key.bms"
+        }
+      , { "md5": "5eac82485a4e1a9d5a8ed50957726194"
+        , "info":
+          { "title": "メルヘニア -malchenia-"
+          , "artist": "音樂：佐倉翔一　譜面：七海拓哉"
+          , "genre": "Dark Malchen"
+          , "subtitles":
+            [ "INSANE"
+            ]
+          , "subartists":
+            [ "映像：山越矜介　原画：春見琴音"
+            ]
+          , "difficulty": 5
+          , "level": 0
+          }
+        , "noteCount": 2015
+        , "bpm":
+          { "init": 100
+          , "min": 100
+          , "median": 100
+          , "max": 100
+          }
+        , "duration": 131.75
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_insane_7key.bms"
+        }
+      , { "md5": "cac9ea3f52999b74e6f0e0fcabe57be5"
+        , "info":
+          { "title": "メルヘニア -malchenia-"
+          , "artist": "音樂：佐倉翔一　譜面：七海拓哉"
+          , "genre": "Dark Malchen"
+          , "subtitles":
+            [ "NORMAL"
+            ]
+          , "subartists":
+            [ "映像：山越矜介　原画：春見琴音"
+            ]
+          , "difficulty": 2
+          , "level": 3
+          }
+        , "noteCount": 361
+        , "bpm":
+          { "init": 100
+          , "min": 100
+          , "median": 100
+          , "max": 100
+          }
+        , "duration": 131.75
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_normal_7key.bms"
+        }
+      ]
+    , "warnings": []
+    , "id": "[leaf]malchenia"
+    , "path": "[leaf]malchenia"
+    }
+  , { "title": "Poison AND÷OR Affection"
+    , "artist": "LeaF"
+    , "genre": "DEPENDANCE MUSIC"
+    , "bpm": 120
+    , "artist_url": "https://soundcloud.com/leaf-7"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=149&event=96"
+    , "song_url": "https://soundcloud.com/leaf-7/poison-andor-affection"
+    , "long_url": "https://www.youtube.com/watch?v=zS4yjAcyxuE"
+    , "youtube_url": "https://www.youtube.com/watch?v=3C5zNU2JCdc"
+    , "added": "2015-08-26T00:00:00.000Z"
+    , "replaygain": "-10.29 dB"
+    , "bmssearch_id": 2259
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "3c5e7480d7851c75330e0266cbbf4eed"
+        , "info":
+          { "title": "Poison AND÷OR Affection"
+          , "artist": "LeaF"
+          , "genre": "DEPENDANCE MUSIC"
+          , "subtitles":
+            [ "ANOTHER"
+            ]
+          , "subartists":
+            [ "Movie:Optie"
+            ]
+          , "difficulty": 4
+          , "level": 11
+          }
+        , "noteCount": 1345
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 120
+          , "min": 120
+          , "median": 120
+          , "max": 120
+          }
+        , "duration": 123.25
+        , "file": "_A7.bms"
+        }
+      , { "md5": "97708b12f3694835ab7138bf7ecb2d29"
+        , "info":
+          { "title": "Poison AND÷OR Affection"
+          , "artist": "LeaF / obj. B_K"
+          , "genre": "DEPENDANCE MUSIC"
+          , "subtitles":
+            [ "For Mr.Entertainers"
+            ]
+          , "subartists":
+            [ "Movie:Optie"
+            ]
+          , "difficulty": 5
+          , "level": 0
+          }
+        , "noteCount": 1442
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 120
+          , "min": 120
+          , "median": 120
+          , "max": 240
+          }
+        , "duration": 123.32319418775829
+        , "file": "_FOR_mr.Entertainers.bms"
+        }
+      , { "md5": "6553c248f1e66f31e1186061ef073727"
+        , "info":
+          { "title": "Poison AND÷OR Affection"
+          , "artist": "LeaF"
+          , "genre": "DEPENDANCE MUSIC"
+          , "subtitles":
+            [ "HYPER"
+            ]
+          , "subartists":
+            [ "Movie:Optie"
+            ]
+          , "difficulty": 3
+          , "level": 7
+          }
+        , "noteCount": 836
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 120
+          , "min": 120
+          , "median": 120
+          , "max": 120
+          }
+        , "duration": 123.25
+        , "file": "_H7.bms"
+        }
+      , { "md5": "a30deb71eec250f4815ba13d68327ada"
+        , "info":
+          { "title": "Poison AND÷OR Affection"
+          , "artist": "LeaF"
+          , "genre": "DEPENDANCE MUSIC"
+          , "subtitles":
+            [ "INSANE"
+            ]
+          , "subartists":
+            [ "Movie:Optie"
+            ]
+          , "difficulty": 5
+          , "level": 0
+          }
+        , "noteCount": 1828
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 120
+          , "min": 120
+          , "median": 120
+          , "max": 120
+          }
+        , "duration": 123.25
+        , "file": "_I7.bms"
+        }
+      , { "md5": "5e37e43a1cf5c36af749613146d6ea1a"
+        , "info":
+          { "title": "Poison AND÷OR Affection"
+          , "artist": "LeaF"
+          , "genre": "DEPENDANCE MUSIC"
+          , "subtitles":
+            [ "NORMAL"
+            ]
+          , "subartists":
+            [ "Movie:Optie"
+            ]
+          , "difficulty": 2
+          , "level": 5
+          }
+        , "noteCount": 476
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 120
+          , "min": 120
+          , "median": 120
+          , "max": 120
+          }
+        , "duration": 123.25
+        , "file": "_N7.bms"
+        }
+      , { "md5": "d5ced9cf50d75901db29d0d9c417ba27"
+        , "info":
+          { "title": "Poison AND÷OR Affection"
+          , "artist": "LeaF"
+          , "genre": "DEPENDANCE MUSIC"
+          , "subtitles":
+            [ "PANDORA"
+            ]
+          , "subartists":
+            [ "Movie:Optie obj:BAECON"
+            ]
+          , "difficulty": 5
+          , "level": 21
+          }
+        , "noteCount": 2600
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 120
+          , "min": 120
+          , "median": 120
+          , "max": 120
+          }
+        , "duration": 123.25
+        , "file": "_P7.bms"
+        }
+      ]
+    , "warnings": []
+    , "id": "[leaf]pandora"
+    , "path": "[leaf]pandora"
+    }
+  , { "title": "Harmony"
+    , "artist": "Lime"
+    , "genre": "kawaiicore"
+    , "bpm": 172
+    , "artist_url": "https://soundcloud.com/kanki2"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=280&event=96"
+    , "long_url": "https://soundcloud.com/kanki2/harmonylong-ver"
+    , "added": "2015-04-29T00:00:00.000Z"
+    , "replaygain": "-12.58 dB"
+    , "bmssearch_id": 2113
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "47b7f262e3a39b404a9ec1d30b720737"
+        , "info":
+          { "title": "Harmony"
+          , "artist": "Lime / 温泉の力"
+          , "genre": "kawaiicore"
+          , "subtitles":
+            [ "Very Easy"
+            ]
+          , "subartists":
+            [ "obj: flicknote"
+            ]
+          , "difficulty": 1
+          , "level": 2
+          }
+        , "noteCount": 303
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 172
+          , "min": 172
+          , "median": 172
+          , "max": 172
+          }
+        , "duration": 133.92441860465118
+        , "file": "[sabun]7key_very_easy.bme"
+        }
+      , { "md5": "c9f2ce3912aca3fd1892c2ef461ab93c"
+        , "info":
+          { "title": "Harmony"
+          , "artist": "Lime / 温泉の力"
+          , "genre": "kawaiicore"
+          , "subtitles":
+            [ "[7key_Another]"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 12
+          }
+        , "noteCount": 1616
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 172
+          , "min": 172
+          , "median": 172
+          , "max": 172
+          }
+        , "duration": 133.92441860465118
+        , "file": "7key_another.bme"
+        }
+      , { "md5": "c2f50ba7a9fb5f44648b4a370832bb80"
+        , "info":
+          { "title": "Harmony"
+          , "artist": "Lime / 温泉の力"
+          , "genre": "kawaiicore"
+          , "subtitles":
+            [ "[7key_Beginner]"
+            ]
+          , "subartists": []
+          , "difficulty": 1
+          , "level": 4
+          }
+        , "noteCount": 404
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 172
+          , "min": 172
+          , "median": 172
+          , "max": 172
+          }
+        , "duration": 133.92441860465118
+        , "file": "7key_beginner.bme"
+        }
+      , { "md5": "8641a7fad2690d6fb409095849682e57"
+        , "info":
+          { "title": "Harmony"
+          , "artist": "Lime / 温泉の力"
+          , "genre": "kawaiicore"
+          , "subtitles":
+            [ "[7key_Hyper]"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 10
+          }
+        , "noteCount": 1202
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 172
+          , "min": 172
+          , "median": 172
+          , "max": 172
+          }
+        , "duration": 133.92441860465118
+        , "file": "7key_hyper.bme"
+        }
+      , { "md5": "f839a9882102ce2eddbe03dc9bedc850"
+        , "info":
+          { "title": "Harmony"
+          , "artist": "Lime / 温泉の力"
+          , "genre": "kawaiicore"
+          , "subtitles":
+            [ "[7key_Normal]"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 6
+          }
+        , "noteCount": 650
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 172
+          , "min": 172
+          , "median": 172
+          , "max": 172
+          }
+        , "duration": 133.92441860465118
+        , "file": "7key_normal.bme"
+        }
+      ]
+    , "warnings": []
+    , "id": "[lime]harmony"
+    , "path": "[lime]harmony"
+    }
+  , { "title": "All is fair in Rage"
+    , "artist": "litmus*"
+    , "genre": "Moombahcore"
+    , "bpm": 118
+    , "artist_url": "https://soundcloud.com/litmus_star"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=23&event=104"
+    , "song_url": "https://soundcloud.com/litmus_star/bofu2015-all-is-fair-in-rage"
+    , "youtube_url": "https://www.youtube.com/watch?v=8J8ufaISZrQ"
+    , "replaygain": "-10.82 dB"
+    , "added": "2016-01-06T00:00:00.000Z"
+    , "bmssearch_id": 2592
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "e2f2ac0becd92d7e0c0f32dc1a183b08"
+        , "info":
+          { "title": "All is fair in Rage"
+          , "artist": "litmus* / Symphonian"
+          , "genre": "Moombahcore"
+          , "subtitles":
+            [ "DP Another"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 11
+          }
+        , "noteCount": 714
+        , "bpm":
+          { "init": 118
+          , "min": 118
+          , "median": 118
+          , "max": 118
+          }
+        , "duration": 149.74576271186442
+        , "scratch": true
+        , "keys": "14K"
+        , "file": "litmus_allisfair_14a.bme"
+        }
+      , { "md5": "c709d406db225fbe90c8d5f4ddc841e0"
+        , "info":
+          { "title": "All is fair in Rage"
+          , "artist": "litmus* / Symphonian"
+          , "genre": "Moombahcore"
+          , "subtitles":
+            [ "DP Hyper"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 9
+          }
+        , "noteCount": 543
+        , "bpm":
+          { "init": 118
+          , "min": 118
+          , "median": 118
+          , "max": 118
+          }
+        , "duration": 149.74576271186442
+        , "scratch": true
+        , "keys": "14K"
+        , "file": "litmus_allisfair_14h.bme"
+        }
+      , { "md5": "891fd4a5c19cf41e1f0f87082a184ab0"
+        , "info":
+          { "title": "All is fair in Rage"
+          , "artist": "litmus* / Symphonian"
+          , "genre": "Moombahcore"
+          , "subtitles":
+            [ "DP Normal"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 3
+          }
+        , "noteCount": 152
+        , "bpm":
+          { "init": 118
+          , "min": 118
+          , "median": 118
+          , "max": 118
+          }
+        , "duration": 149.74576271186442
+        , "scratch": true
+        , "keys": "14K"
+        , "file": "litmus_allisfair_14n.bme"
+        }
+      , { "md5": "0fd57c10d093b4e4210deeb7b91afc01"
+        , "info":
+          { "title": "All is fair in Rage"
+          , "artist": "litmus*"
+          , "genre": "Moombahcore"
+          , "subtitles":
+            [ "SP Another"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 11
+          }
+        , "noteCount": 1453
+        , "bpm":
+          { "init": 118
+          , "min": 118
+          , "median": 118
+          , "max": 118
+          }
+        , "duration": 149.74576271186442
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "litmus_allisfair_7a.bme"
+        }
+      , { "md5": "5e72be4ac64c0536a7e07ff6e133cdbd"
+        , "info":
+          { "title": "All is fair in Rage"
+          , "artist": "litmus*"
+          , "genre": "Moombahcore"
+          , "subtitles":
+            [ "SP Hyper"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 9
+          }
+        , "noteCount": 950
+        , "bpm":
+          { "init": 118
+          , "min": 118
+          , "median": 118
+          , "max": 118
+          }
+        , "duration": 149.74576271186442
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "litmus_allisfair_7h.bme"
+        }
+      , { "md5": "7c4c084c0a5bceea7253bbde5bb6c054"
+        , "info":
+          { "title": "All is fair in Rage"
+          , "artist": "litmus*"
+          , "genre": "Moombahcore"
+          , "subtitles":
+            [ "SP Normal"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 3
+          }
+        , "noteCount": 279
+        , "bpm":
+          { "init": 118
+          , "min": 118
+          , "median": 118
+          , "max": 118
+          }
+        , "duration": 149.74576271186442
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "litmus_allisfair_7n.bme"
+        }
+      ]
+    , "warnings": []
+    , "id": "[litmus]allisfair"
+    , "path": "[litmus]allisfair"
+    }
+  , { "title": "Latch (Flip-Flop)"
+    , "artist": "litmus*"
+    , "genre": "Electro House"
+    , "bpm": 136
+    , "artist_url": "http://tron002.blog.me/"
+    , "bms_url": "http://k-bms.com/party_pabat/party2015.jsp?board_num=15&num=3&order=reg&odtype=a"
+    , "song_url": "https://soundcloud.com/ayano-quasar/latch-flip-flop"
+    , "added": "2015-04-30T00:00:00.000Z"
+    , "youtube_url": "https://www.youtube.com/watch?v=9C7zxHckers"
+    , "replaygain": "-9.60 dB"
+    , "bmssearch_id": 115
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "5ee748d06edbe6bbc8a15aa74c1f3ff7"
+        , "info":
+          { "title": "Latch (Flip-Flop)"
+          , "artist": "litmus*"
+          , "genre": "Electro House"
+          , "subtitles":
+            [ "Another"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 10
+          }
+        , "noteCount": 1143
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 136
+          , "min": 136
+          , "median": 136
+          , "max": 136
+          }
+        , "duration": 127.06073529205756
+        , "file": "litmus_latch_7a.bme"
+        }
+      , { "md5": "ff72b721763aa49968f7d8a8ba04f814"
+        , "info":
+          { "title": "Latch (Flip-Flop)"
+          , "artist": "litmus*"
+          , "genre": "Electro House"
+          , "subtitles":
+            [ "Hyper"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 7
+          }
+        , "noteCount": 799
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 136
+          , "min": 136
+          , "median": 136
+          , "max": 136
+          }
+        , "duration": 127.05909728094475
+        , "file": "litmus_latch_7h.bme"
+        }
+      , { "md5": "d82734e33b2ebe02eb0a64c0c5253af5"
+        , "info":
+          { "title": "Latch (Flip-Flop)"
+          , "artist": "litmus*"
+          , "genre": "Electro House"
+          , "subtitles":
+            [ "Normal"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 3
+          }
+        , "noteCount": 339
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 136
+          , "min": 136
+          , "median": 136
+          , "max": 136
+          }
+        , "duration": 127.05882352941177
+        , "file": "litmus_latch_7n.bme"
+        }
+      ]
+    , "warnings": []
+    , "id": "[litmus]latch"
+    , "path": "[litmus]latch"
+    }
+  , { "title": "Fall in Lovescream"
+    , "artist": "litmus*"
+    , "genre": "Electro"
+    , "bpm": 130
+    , "artist_url": "https://soundcloud.com/litmus_star"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=37&event=104"
+    , "song_url": "https://soundcloud.com/litmus_star/bofu2015-fall-in-lovescream"
+    , "long_url": "https://soundcloud.com/litmus_star/fall-in-lovescream"
+    , "youtube_url": "https://www.youtube.com/watch?v=VFuXSC9Jc_o"
+    , "replaygain": "-11.39 dB"
+    , "added": "2016-02-03T00:00:00.000Z"
+    , "bmssearch_id": 2524
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "b4b96c419fa0b3b60389abadb1be7af9"
+        , "info":
+          { "title": "Fall in Lovescream"
+          , "artist": "litmus*"
+          , "genre": "Electro"
+          , "subtitles":
+            [ "Another"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 9
+          }
+        , "noteCount": 1011
+        , "bpm":
+          { "init": 130
+          , "min": 130
+          , "median": 130
+          , "max": 130
+          }
+        , "duration": 119.88461538461539
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "litmus_lovescream_7a.bme"
+        }
+      , { "md5": "bba553a3eaa17fdb76efb4f529ec1775"
+        , "info":
+          { "title": "Fall in Lovescream"
+          , "artist": "litmus*"
+          , "genre": "Electro"
+          , "subtitles":
+            [ "Hyper"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 7
+          }
+        , "noteCount": 566
+        , "bpm":
+          { "init": 130
+          , "min": 130
+          , "median": 130
+          , "max": 130
+          }
+        , "duration": 119.88461538461539
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "litmus_lovescream_7h.bme"
+        }
+      , { "md5": "ccd4dab2856a2ab2d883747d9c523753"
+        , "info":
+          { "title": "Fall in Lovescream"
+          , "artist": "litmus*"
+          , "genre": "Electro"
+          , "subtitles":
+            [ "Normal"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 2
+          }
+        , "noteCount": 184
+        , "bpm":
+          { "init": 130
+          , "min": 130
+          , "median": 130
+          , "max": 130
+          }
+        , "duration": 119.88461538461539
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "litmus_lovescream_7n.bme"
+        }
+      ]
+    , "warnings": []
+    , "id": "[litmus]lovescream"
+    , "path": "[litmus]lovescream"
+    }
+  , { "title": "Scorpion Dance"
+    , "artist": "litmus*"
+    , "genre": "Electro Dance House"
+    , "bpm": 134
+    , "artist_url": "http://tron002.blog.me/"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=15&event=96"
+    , "song_url": "https://soundcloud.com/ayano-quasar/scorpion-dance"
+    , "added": "2015-04-30T00:00:00.000Z"
+    , "youtube_url": "https://www.youtube.com/watch?v=9C7zxHckers"
+    , "replaygain": "-12.96 dB"
+    , "bmssearch_id": 2224
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "350371601afb94c70fa9f5ae4f67af29"
+        , "info":
+          { "title": "Scorpion Dance"
+          , "artist": "litmus*"
+          , "genre": "Electro Dance House"
+          , "subtitles":
+            [ "SP Another"
+            ]
+          , "subartists":
+            [ "mov : litmus* & L.Ferdinant / obj : SmiGoon"
+            ]
+          , "difficulty": 4
+          , "level": 10
+          }
+        , "noteCount": 1119
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 134
+          , "min": 134
+          , "median": 134
+          , "max": 134
+          }
+        , "duration": 134.32835820895522
+        , "file": "litmus_scorpiondance_7a.bme"
+        }
+      , { "md5": "aad5e34ffc556aa954f93d2515f3ed0b"
+        , "info":
+          { "title": "Scorpion Dance"
+          , "artist": "litmus*"
+          , "genre": "Electro Dance House"
+          , "subtitles":
+            [ "SP Beginner"
+            ]
+          , "subartists":
+            [ "mov : litmus* & L.Ferdinant / obj : SmiGoon"
+            ]
+          , "difficulty": 1
+          , "level": 3
+          }
+        , "noteCount": 302
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 134
+          , "min": 134
+          , "median": 134
+          , "max": 134
+          }
+        , "duration": 134.32835820895522
+        , "file": "litmus_scorpiondance_7b.bme"
+        }
+      , { "md5": "41b91a67670cf567329abba3b459f413"
+        , "info":
+          { "title": "Scorpion Dance"
+          , "artist": "litmus*"
+          , "genre": "Electro Dance House"
+          , "subtitles":
+            [ "SP Hyper"
+            ]
+          , "subartists":
+            [ "mov : litmus* & L.Ferdinant / obj : litmus*"
+            ]
+          , "difficulty": 3
+          , "level": 9
+          }
+        , "noteCount": 836
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 134
+          , "min": 134
+          , "median": 134
+          , "max": 134
+          }
+        , "duration": 134.32835820895522
+        , "file": "litmus_scorpiondance_7h.bme"
+        }
+      , { "md5": "18f63b7267074871fe01112351323a19"
+        , "info":
+          { "title": "Scorpion Dance"
+          , "artist": "litmus*"
+          , "genre": "Electro Dance House"
+          , "subtitles":
+            [ "SP Normal"
+            ]
+          , "subartists":
+            [ "mov : litmus* & L.Ferdinant / obj : SmiGoon"
+            ]
+          , "difficulty": 2
+          , "level": 5
+          }
+        , "noteCount": 520
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 134
+          , "min": 134
+          , "median": 134
+          , "max": 134
+          }
+        , "duration": 134.32835820895522
+        , "file": "litmus_scorpiondance_7n.bme"
+        }
+      , { "md5": "cd08172d882815ec050329e414d902b9"
+        , "info":
+          { "title": "Scorpion Dance"
+          , "artist": "litmus*"
+          , "genre": "Electro Dance House"
+          , "subtitles":
+            [ "DP Another"
+            ]
+          , "subartists":
+            [ "mov : litmus & L.Ferdinant / obj. Z_N"
+            ]
+          , "difficulty": 4
+          , "level": 11
+          }
+        , "noteCount": 763
+        , "scratch": true
+        , "keys": "14K"
+        , "bpm":
+          { "init": 134
+          , "min": 134
+          , "median": 134
+          , "max": 134
+          }
+        , "duration": 134.32835820895522
+        , "file": "litmus_scorpiondance_DPA.bme"
+        }
+      , { "md5": "b5596ea5ec3c7b56fe1fc2d78c0dcaea"
+        , "info":
+          { "title": "Scorpion Dance"
+          , "artist": "litmus*"
+          , "genre": "Electro Dance House"
+          , "subtitles":
+            [ "DP Hyper"
+            ]
+          , "subartists":
+            [ "mov : litmus & L.Ferdinant / obj. Z_N"
+            ]
+          , "difficulty": 3
+          , "level": 8
+          }
+        , "noteCount": 457
+        , "scratch": true
+        , "keys": "14K"
+        , "bpm":
+          { "init": 134
+          , "min": 134
+          , "median": 134
+          , "max": 134
+          }
+        , "duration": 134.32835820895522
+        , "file": "litmus_scorpiondance_DPH.bme"
+        }
+      , { "md5": "412f3758d32dce6231d07a5589196e76"
+        , "info":
+          { "title": "Scorpion Dance"
+          , "artist": "litmus*"
+          , "genre": "Electro Dance House"
+          , "subtitles":
+            [ "DP Normal"
+            ]
+          , "subartists":
+            [ "mov : litmus & L.Ferdinant / obj. Z_N"
+            ]
+          , "difficulty": 2
+          , "level": 5
+          }
+        , "noteCount": 272
+        , "scratch": true
+        , "keys": "14K"
+        , "bpm":
+          { "init": 134
+          , "min": 134
+          , "median": 134
+          , "max": 134
+          }
+        , "duration": 134.32835820895522
+        , "file": "litmus_scorpiondance_DPN.bme"
+        }
+      , { "md5": "92534ba8547ae6943dc5a99b7ddd0728"
+        , "info":
+          { "title": "Scorpion Dance"
+          , "artist": "litmus*/obj_jakko"
+          , "genre": "Electro Dance House"
+          , "subtitles":
+            [ "INSANE"
+            ]
+          , "subartists":
+            [ "mov : litmus* & L.Ferdinant"
+            ]
+          , "difficulty": 5
+          , "level": 13
+          }
+        , "noteCount": 1801
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 134
+          , "min": 134
+          , "median": 134
+          , "max": 134
+          }
+        , "duration": 134.32835820895522
+        , "file": "litmus_scorpiondance_insane.bme"
+        }
+      ]
+    , "warnings": []
+    , "id": "[litmus]scorpiondance"
+    , "path": "[litmus]scorpiondance"
+    }
+  , { "title": "kindly breeze"
+    , "artist": "mo_no_chrome feat. Salita"
+    , "genre": "House"
+    , "bpm": 128
+    , "artist_url": "https://soundcloud.com/mo_no_chrome"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=134&event=96"
+    , "song_url": "https://soundcloud.com/mo_no_chrome/kindly-breeze-featsalita"
+    , "long_url": "https://soundcloud.com/mo_no_chrome/kindly-breeze-long_ver"
+    , "added": "2015-08-12T00:00:00.000Z"
+    , "replaygain": "-7.53 dB"
+    , "bmssearch_id": 2146
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "e4bb8b8c08a4e054390cfc0b58272563"
+        , "info":
+          { "title": "kindly breeze"
+          , "artist": "mo_no_chrome feat.Salita"
+          , "genre": "House"
+          , "subtitles": []
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 10
+          }
+        , "noteCount": 1153
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 128
+          , "min": 128
+          , "median": 128
+          , "max": 128
+          }
+        , "duration": 121.875
+        , "file": "kindly breeze_A.bms"
+        }
+      , { "md5": "f6968b20e15c06d4b76bf91211c008dd"
+        , "info":
+          { "title": "kindly breeze"
+          , "artist": "mo_no_chrome feat.Salita"
+          , "genre": "House"
+          , "subtitles":
+            [ "BEGINNER"
+            ]
+          , "subartists":
+            [ "obj.flicknote"
+            ]
+          , "difficulty": 0
+          , "level": 1
+          }
+        , "noteCount": 76
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 128
+          , "min": 128
+          , "median": 128
+          , "max": 128
+          }
+        , "duration": 121.875
+        , "file": "kindly breeze_B.bms"
+        }
+      , { "md5": "27b11d9858364cbc87459e6099403d6a"
+        , "info":
+          { "title": "kindly breeze"
+          , "artist": "mo_no_chrome feat.Salita / obj:ELIGOS"
+          , "genre": "House"
+          , "subtitles":
+            [ "ELITHER"
+            ]
+          , "subartists": []
+          , "difficulty": 5
+          , "level": 3
+          }
+        , "noteCount": 2000
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 128
+          , "min": 128
+          , "median": 128
+          , "max": 128
+          }
+        , "duration": 121.875
+        , "file": "kindly breeze_E.bms"
+        }
+      , { "md5": "36a7ebaa8dfe07edc07a73e44879c2b9"
+        , "info":
+          { "title": "kindly breeze"
+          , "artist": "mo_no_chrome feat.Salita"
+          , "genre": "House"
+          , "subtitles": []
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 9
+          }
+        , "noteCount": 819
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 128
+          , "min": 128
+          , "median": 128
+          , "max": 128
+          }
+        , "duration": 121.875
+        , "file": "kindly breeze_H.bms"
+        }
+      , { "md5": "a524ce20ebb3082cda5fda77b320c3c2"
+        , "info":
+          { "title": "kindly breeze"
+          , "artist": "mo_no_chrome feat.Salita"
+          , "genre": "House"
+          , "subtitles": []
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 4
+          }
+        , "noteCount": 161
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 128
+          , "min": 128
+          , "median": 128
+          , "max": 128
+          }
+        , "duration": 121.875
+        , "file": "kindly breeze_N.bms"
+        }
+      ]
+    , "warnings": []
+    , "id": "[mo_no_chrome]kindlybreeze"
+    , "path": "[mo_no_chrome]kindlybreeze"
+    }
+  , { "title": "Futurity"
+    , "artist": "Ryo Nakamura"
+    , "genre": "Electro House"
+    , "bpm": 130
+    , "artist_url": "https://soundcloud.com/pluck_ryo"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=260&event=96"
+    , "song_url": "https://soundcloud.com/pluck_ryo/g2r2014-futurity"
+    , "long_url": "https://soundcloud.com/pluck_ryo/groundbreaking-g2r2014-futurity-original-mix"
+    , "added": "2015-05-14T00:00:00.000Z"
+    , "replaygain": "-8.37 dB"
+    , "bmssearch_id": 2207
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "2c3e80ff3d17213ddc8cbe0ee77bde79"
+        , "info":
+          { "title": "Futurity"
+          , "artist": "Ryo Nakamura"
+          , "genre": "Electro House"
+          , "subtitles":
+            [ "Another"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 10
+          }
+        , "noteCount": 892
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 130
+          , "min": 130
+          , "median": 130
+          , "max": 130
+          }
+        , "duration": 120.00000000000001
+        , "file": "futurity_a.bms"
+        }
+      , { "md5": "e2a580cee9c150c24d59262371534fc9"
+        , "info":
+          { "title": "Futurity"
+          , "artist": "Ryo Nakamura"
+          , "genre": "Electro House"
+          , "subtitles":
+            [ "Hyper"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 8
+          }
+        , "noteCount": 704
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 130
+          , "min": 130
+          , "median": 130
+          , "max": 130
+          }
+        , "duration": 120.00000000000001
+        , "file": "futurity_h.bms"
+        }
+      , { "md5": "4205fb0b86522a04f21a09cb4eb98fd6"
+        , "info":
+          { "title": "Futurity"
+          , "artist": "Ryo Nakamura"
+          , "genre": "Electro House"
+          , "subtitles":
+            [ "Normal"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 6
+          }
+        , "noteCount": 448
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 130
+          , "min": 130
+          , "median": 130
+          , "max": 130
+          }
+        , "duration": 120.00000000000001
+        , "file": "futurity_n.bms"
+        }
+      ]
+    , "warnings": []
+    , "id": "[pluck_ryo]futurity"
+    , "path": "[pluck_ryo]futurity"
+    }
+  , { "title": "Agito"
+    , "artist": "polycube"
+    , "genre": "MUSIC"
+    , "bpm": 172
+    , "artist_url": "https://soundcloud.com/polycube"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=46&event=96"
+    , "song_url": "https://soundcloud.com/polycube/agito"
+    , "long_url": "https://soundcloud.com/polycube/polycube-agito-long"
+    , "added": "2015-05-08T00:00:00.000Z"
+    , "youtube_url": "https://www.youtube.com/watch?v=hVFwvPIbR7c"
+    , "replaygain": "-12.26 dB"
+    , "bmssearch_id": 2147
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "bb32cc9021a4dfb60c76911b977cd856"
+        , "info":
+          { "title": "Agito"
+          , "artist": "polycube × 鑓田(alpha complex)"
+          , "genre": "MUSIC"
+          , "subtitles":
+            [ "[B]"
+            ]
+          , "subartists": []
+          , "difficulty": 1
+          , "level": 1
+          }
+        , "noteCount": 108
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 172
+          , "min": 172
+          , "median": 172
+          , "max": 172
+          }
+        , "duration": 143.74273255813952
+        , "file": "[utf8]01.bme"
+        }
+      , { "md5": "485e91da9b51589a61484173ecea02c9"
+        , "info":
+          { "title": "Agito"
+          , "artist": "polycube × 鑓田(alpha complex)"
+          , "genre": "MUSIC"
+          , "subtitles":
+            [ "[N]"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 3
+          }
+        , "noteCount": 392
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 172
+          , "min": 172
+          , "median": 172
+          , "max": 172
+          }
+        , "duration": 143.74273255813952
+        , "file": "[utf8]02.bme"
+        }
+      , { "md5": "2d770604e757587b795434a4639473bf"
+        , "info":
+          { "title": "Agito"
+          , "artist": "polycube × 鑓田(alpha complex)"
+          , "genre": "MUSIC"
+          , "subtitles":
+            [ "[H]"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 7
+          }
+        , "noteCount": 691
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 172
+          , "min": 172
+          , "median": 172
+          , "max": 172
+          }
+        , "duration": 143.74273255813952
+        , "file": "[utf8]03.bme"
+        }
+      , { "md5": "4da0b15569f023721d71ee6b5ab2cc6a"
+        , "info":
+          { "title": "Agito"
+          , "artist": "polycube × 鑓田(alpha complex)"
+          , "genre": "MUSIC"
+          , "subtitles":
+            [ "[A]"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 10
+          }
+        , "noteCount": 992
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 172
+          , "min": 172
+          , "median": 172
+          , "max": 172
+          }
+        , "duration": 143.74273255813952
+        , "file": "[utf8]04.bme"
+        }
+      , { "md5": "4cd33b039b27cb76f99881ad5504f40e"
+        , "info":
+          { "title": "Agito"
+          , "artist": "polycube × 鑓田(alpha complex)"
+          , "genre": "MUSIC"
+          , "subtitles":
+            [ "[I]"
+            ]
+          , "subartists": []
+          , "difficulty": 5
+          , "level": 12
+          }
+        , "noteCount": 1881
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 172
+          , "min": 172
+          , "median": 172
+          , "max": 172
+          }
+        , "duration": 143.74273255813952
+        , "file": "[utf8]05.bme"
+        }
+      ]
+    , "warnings": []
+    , "id": "[polycube]agito"
+    , "path": "[polycube]agito"
+    }
+  , { "title": "LASTMORN"
+    , "artist": "polycube"
+    , "genre": "FARVEL"
+    , "bpm": 146
+    , "artist_url": "https://soundcloud.com/polycube"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=188&event=104"
+    , "song_url": "https://soundcloud.com/polycube/polycube-lastmorn"
+    , "youtube_url": "https://www.youtube.com/watch?v=lQKFK-rqF4o"
+    , "replaygain": "-12.15 dB"
+    , "added": "2015-12-30T00:00:00.000Z"
+    , "bmssearch_id": 2472
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "3cf15c75d18235e45f5e969cdc496b65"
+        , "info":
+          { "title": "LASTMORN"
+          , "artist": "polycube / 140"
+          , "genre": "FARVEL"
+          , "subtitles":
+            [ "[L]"
+            ]
+          , "subartists":
+            [ "obj.flicknote"
+            ]
+          , "difficulty": 2
+          , "level": 3
+          }
+        , "noteCount": 197
+        , "bpm":
+          { "init": 146
+          , "min": 146
+          , "median": 146
+          , "max": 146
+          }
+        , "duration": 136.84931506849315
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "00.bms"
+        }
+      , { "md5": "72eca5de62a5ffcf16b13b53f9df4e61"
+        , "info":
+          { "title": "LASTMORN"
+          , "artist": "polycube / 140"
+          , "genre": "FARVEL"
+          , "subtitles":
+            [ "[N]"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 6
+          }
+        , "noteCount": 377
+        , "bpm":
+          { "init": 146
+          , "min": 146
+          , "median": 146
+          , "max": 146
+          }
+        , "duration": 136.84931506849315
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "01.bme"
+        }
+      , { "md5": "9dbf8033bfb46d914beb21eb7b65a19c"
+        , "info":
+          { "title": "LASTMORN"
+          , "artist": "polycube / 140"
+          , "genre": "FARVEL"
+          , "subtitles":
+            [ "[H]"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 9
+          }
+        , "noteCount": 608
+        , "bpm":
+          { "init": 146
+          , "min": 146
+          , "median": 146
+          , "max": 146
+          }
+        , "duration": 136.84931506849315
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "02.bme"
+        }
+      , { "md5": "0baa477a3ff3e483e05cf52e9012f340"
+        , "info":
+          { "title": "LASTMORN"
+          , "artist": "polycube / 140"
+          , "genre": "FARVEL"
+          , "subtitles":
+            [ "[A]"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 11
+          }
+        , "noteCount": 768
+        , "bpm":
+          { "init": 146
+          , "min": 146
+          , "median": 146
+          , "max": 146
+          }
+        , "duration": 136.84931506849315
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "03.bme"
+        }
+      , { "md5": "a22f9f09a63f781ad674b9799a79dd77"
+        , "info":
+          { "title": "LASTMORN"
+          , "artist": "polycube / 140"
+          , "genre": "FARVEL"
+          , "subtitles":
+            [ "[I]"
+            ]
+          , "subartists": []
+          , "difficulty": 5
+          , "level": 12
+          }
+        , "noteCount": 970
+        , "bpm":
+          { "init": 146
+          , "min": 146
+          , "median": 146
+          , "max": 146
+          }
+        , "duration": 136.84931506849315
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "04.bme"
+        }
+      ]
+    , "warnings": []
+    , "id": "[polycube]lastmorn"
+    , "path": "[polycube]lastmorn"
+    }
+  , { "title": "Homura"
+    , "artist": "puru"
+    , "genre": "Future Bass"
+    , "bpm": 180
+    , "artist_url": "https://soundcloud.com/puru"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=242&event=96"
+    , "song_url": "https://soundcloud.com/puru/homura"
+    , "long_url": "https://soundcloud.com/puru/homuraextendmix"
+    , "replaygain": "-6.11 dB"
+    , "bmssearch_id": 2284
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "53b31ae4944b9d945ea976c0845cf1f8"
+        , "info":
+          { "title": "Homura"
+          , "artist": "Puru / kkkfff2"
+          , "genre": "Future Bass"
+          , "subtitles":
+            [ "A"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 10
+          }
+        , "noteCount": 1128
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 180
+          , "min": 180
+          , "median": 180
+          , "max": 180
+          }
+        , "duration": 138.66666666666666
+        , "file": "Homura(A).bms"
+        }
+      , { "md5": "68ca471bb809bc3e3266c75078d0a5eb"
+        , "info":
+          { "title": "Homura"
+          , "artist": "Puru / kkkfff2"
+          , "genre": "Future Bass"
+          , "subtitles":
+            [ "D"
+            ]
+          , "subartists": []
+          , "difficulty": 5
+          , "level": 12
+          }
+        , "noteCount": 1443
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 180
+          , "min": 180
+          , "median": 180
+          , "max": 180
+          }
+        , "duration": 138.66666666666666
+        , "file": "Homura(D).bms"
+        }
+      , { "md5": "a59425e69e2ccd8532b3e1522ff46344"
+        , "info":
+          { "title": "Homura"
+          , "artist": "Puru / kkkfff2"
+          , "genre": "Future Bass"
+          , "subtitles":
+            [ "H"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 8
+          }
+        , "noteCount": 916
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 180
+          , "min": 180
+          , "median": 180
+          , "max": 180
+          }
+        , "duration": 138.66666666666666
+        , "file": "Homura(H).bms"
+        }
+      , { "md5": "f79071d1c28b394d5f4b2516087bf28c"
+        , "info":
+          { "title": "Homura"
+          , "artist": "Puru / kkkfff2"
+          , "genre": "Future Bass"
+          , "subtitles":
+            [ "N"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 6
+          }
+        , "noteCount": 637
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 180
+          , "min": 180
+          , "median": 180
+          , "max": 180
+          }
+        , "duration": 138.66666666666666
+        , "file": "Homura(N).bms"
+        }
+      ]
+    , "warnings": []
+    , "id": "[puru]homura"
+    , "path": "[puru]homura"
+    }
+  , { "title": "Toki"
+    , "artist": "puru"
+    , "genre": "ProgressiveTrance"
+    , "bpm": 130
+    , "artist_url": "https://soundcloud.com/puru"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=101&event=83"
+    , "song_url": "https://soundcloud.com/puru/bof2012-toki-bms-ver"
+    , "long_url": "https://soundcloud.com/pineappledigital/puru-toki-original-mix-preview"
+    , "youtube_url": "https://www.youtube.com/watch?v=9hLkkNCL-yM"
+    , "replaygain": "-6.87 dB"
+    , "bmssearch_id": 1571
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "ea0ab466efb607f7429b31e8a63b09f4"
+        , "info":
+          { "title": "Toki"
+          , "artist": "puru / kkkfff2 / Obj. Z_N"
+          , "genre": "ProgressiveTrance"
+          , "subtitles":
+            [ "DP ANOTHER"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 11
+          }
+        , "noteCount": 706
+        , "scratch": true
+        , "keys": "14K"
+        , "bpm":
+          { "init": 130
+          , "min": 130
+          , "median": 130
+          , "max": 130
+          }
+        , "duration": 136.6153846153846
+        , "file": "toki_another14.bms"
+        }
+      , { "md5": "fbe734a400152f13da14ab34adc70486"
+        , "info":
+          { "title": "Toki"
+          , "artist": "puru / kkkfff2"
+          , "genre": "ProgressiveTrance"
+          , "subtitles":
+            [ "ANOTHER"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 10
+          }
+        , "noteCount": 1087
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 130
+          , "min": 130
+          , "median": 130
+          , "max": 130
+          }
+        , "duration": 136.6153846153846
+        , "file": "toki_another7.bms"
+        }
+      , { "md5": "abd8fc9eaf68907ffaeaaeb28724ef88"
+        , "info":
+          { "title": "Toki"
+          , "artist": "puru / kkkfff2"
+          , "genre": "ProgressiveTrance"
+          , "subtitles":
+            [ "BEGINNER"
+            ]
+          , "subartists": []
+          , "difficulty": 1
+          , "level": 3
+          }
+        , "noteCount": 342
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 130
+          , "min": 130
+          , "median": 130
+          , "max": 130
+          }
+        , "duration": 136.6153846153846
+        , "file": "toki_beginner7.bms"
+        }
+      , { "md5": "8f0d978c82050ba902d9247792aab764"
+        , "info":
+          { "title": "Toki"
+          , "artist": "puru / kkkfff2"
+          , "genre": "ProgressiveTrance"
+          , "subtitles":
+            [ "ClockWise"
+            ]
+          , "subartists":
+            [ "obj.sialua"
+            ]
+          , "difficulty": 5
+          , "level": 3
+          }
+        , "noteCount": 1741
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 130
+          , "min": 130
+          , "median": 130
+          , "max": 130
+          }
+        , "duration": 136.6153846153846
+        , "file": "toki_clockwise7.bms"
+        }
+      , { "md5": "82d3930443bf62cf68812f0cef08723c"
+        , "info":
+          { "title": "Toki"
+          , "artist": "puru / kkkfff2 / Obj. Z_N"
+          , "genre": "ProgressiveTrance"
+          , "subtitles":
+            [ "DP HYPER"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 9
+          }
+        , "noteCount": 505
+        , "scratch": true
+        , "keys": "14K"
+        , "bpm":
+          { "init": 130
+          , "min": 130
+          , "median": 130
+          , "max": 130
+          }
+        , "duration": 136.6153846153846
+        , "file": "toki_hyper14.bms"
+        }
+      , { "md5": "2a0ad67c104b2094009944078ff5dfe0"
+        , "info":
+          { "title": "Toki"
+          , "artist": "puru / kkkfff2"
+          , "genre": "ProgressiveTrance"
+          , "subtitles":
+            [ "HYPER"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 8
+          }
+        , "noteCount": 825
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 130
+          , "min": 130
+          , "median": 130
+          , "max": 130
+          }
+        , "duration": 136.6153846153846
+        , "file": "toki_hyper7.bms"
+        }
+      , { "md5": "6ce2114a47f2c93a78a537587b1d5554"
+        , "info":
+          { "title": "Toki"
+          , "artist": "puru / kkkfff2"
+          , "genre": "ProgressiveTrance"
+          , "subtitles":
+            [ "Grandfather's Clock"
+            ]
+          , "subartists":
+            [ "obj:K-SPIN"
+            ]
+          , "difficulty": 3
+          , "level": 11
+          }
+        , "noteCount": 916
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 130
+          , "min": 130
+          , "median": 130
+          , "max": 130
+          }
+        , "duration": 136.6153846153846
+        , "file": "toki_LN1_fix.bms"
+        }
+      , { "md5": "eb5118053664ea036ea0fe9c60d3daed"
+        , "info":
+          { "title": "Toki"
+          , "artist": "puru / kkkfff2"
+          , "genre": "ProgressiveTrance"
+          , "subtitles":
+            [ "Grandfather's Curtain"
+            ]
+          , "subartists":
+            [ "obj:K-SPIN"
+            ]
+          , "difficulty": 4
+          , "level": 12
+          }
+        , "noteCount": 1134
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 130
+          , "min": 130
+          , "median": 130
+          , "max": 130
+          }
+        , "duration": 136.6153846153846
+        , "file": "toki_LN2_fix.bms"
+        }
+      , { "md5": "6cd9cb6787509ae84a738a78cf980e8a"
+        , "info":
+          { "title": "Toki"
+          , "artist": "puru / kkkfff2"
+          , "genre": "ProgressiveTrance"
+          , "subtitles":
+            [ "NORMAL"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 6
+          }
+        , "noteCount": 485
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 130
+          , "min": 130
+          , "median": 130
+          , "max": 130
+          }
+        , "duration": 136.6153846153846
+        , "file": "toki_normal7.bms"
+        }
+      ]
+    , "warnings": []
+    , "id": "[puru]toki"
+    , "path": "[puru]toki"
+    }
+  , { "title": "LOVE THIS MOMENT"
+    , "artist": "q/stol"
+    , "genre": "Glitch Hop×electronica"
+    , "bpm": 114
+    , "artist_url": "http://qstol.web.fc2.com/"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=202&event=104"
+    , "song_url": "https://soundcloud.com/q-stol/bofu2015love-this-moment"
+    , "youtube_url": "https://www.youtube.com/watch?v=EU-YFSJCOH0"
+    , "replaygain": "-10.96 dB"
+    , "added": "2015-12-09T00:00:00.000Z"
+    , "bmssearch_id": 2776
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "8263ea0c95383b9056b8a52d386ffdea"
+        , "info":
+          { "title": "LOVE THIS MOMENT"
+          , "artist": "q/stol"
+          , "genre": "Glitch Hop×electronica"
+          , "subtitles":
+            [ "ANOTHER"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 11
+          }
+        , "noteCount": 1219
+        , "bpm":
+          { "init": 114
+          , "min": 114
+          , "median": 114
+          , "max": 114
+          }
+        , "duration": 132.82894736842107
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_utf8_love_this_moment_a.bme"
+        }
+      , { "md5": "5ef7e7173ffe037852f459b949f3e8b9"
+        , "info":
+          { "title": "LOVE THIS MOMENT"
+          , "artist": "q/stol"
+          , "genre": "Glitch Hop×electronica"
+          , "subtitles":
+            [ "HYPER"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 8
+          }
+        , "noteCount": 744
+        , "bpm":
+          { "init": 114
+          , "min": 114
+          , "median": 114
+          , "max": 114
+          }
+        , "duration": 132.82894736842107
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_utf8_love_this_moment_h.bme"
+        }
+      , { "md5": "e2ac74df5afb70ac5cdc39fd2fb4602c"
+        , "info":
+          { "title": "LOVE THIS MOMENT"
+          , "artist": "q/stol"
+          , "genre": "Glitch Hop×electronica"
+          , "subtitles":
+            [ "NORMAL"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 4
+          }
+        , "noteCount": 392
+        , "bpm":
+          { "init": 114
+          , "min": 114
+          , "median": 114
+          , "max": 114
+          }
+        , "duration": 132.82894736842107
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_utf8_love_this_moment_n.bme"
+        }
+      ]
+    , "warnings": []
+    , "id": "[q_stol]love_this_moment"
+    , "path": "[q_stol]love_this_moment"
+    }
+  , { "title": "OUT OF THE DREAM"
+    , "artist": "q/stol"
+    , "genre": "Drill'n'Bass×Schmaltz"
+    , "bpm": 188
+    , "artist_url": "http://qstol.web.fc2.com/"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=236&event=104"
+    , "song_url": "https://soundcloud.com/q-stol/bofu2015out-of-the-dream"
+    , "youtube_url": "https://www.youtube.com/watch?v=wbThGxfnuDg"
+    , "replaygain": "-12.45 dB"
+    , "added": "2015-12-09T00:00:00.000Z"
+    , "bmssearch_id": 2777
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "8a7a65823e0bc7ab263c2cbcbb8f86d5"
+        , "info":
+          { "title": "OUT OF THE DREAM"
+          , "artist": "q/stol"
+          , "genre": "Drill'n'Bass×Schmaltz"
+          , "subtitles":
+            [ "ANOTHER"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 12
+          }
+        , "noteCount": 1595
+        , "bpm":
+          { "init": 106
+          , "min": 106
+          , "median": 188
+          , "max": 188
+          }
+        , "duration": 153.46640494466396
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_utf8_out_of_the_dream_a.bms"
+        }
+      , { "md5": "23b66b3832b12b9401631089661c30fd"
+        , "info":
+          { "title": "OUT OF THE DREAM"
+          , "artist": "q/stol"
+          , "genre": "Drill'n'Bass×Schmaltz"
+          , "subtitles":
+            [ "BEGINNER"
+            ]
+          , "subartists":
+            [ "obj.flicknote"
+            ]
+          , "difficulty": 2
+          , "level": 2
+          }
+        , "noteCount": 178
+        , "bpm":
+          { "init": 106
+          , "min": 106
+          , "median": 188
+          , "max": 188
+          }
+        , "duration": 153.46640494466396
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_utf8_out_of_the_dream_b.bms"
+        }
+      , { "md5": "69d82d6672e7b9ee3aed60b011b62628"
+        , "info":
+          { "title": "OUT OF THE DREAM"
+          , "artist": "q/stol"
+          , "genre": "Drill'n'Bass×Schmaltz"
+          , "subtitles":
+            [ "HYPER"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 9
+          }
+        , "noteCount": 951
+        , "bpm":
+          { "init": 106
+          , "min": 106
+          , "median": 188
+          , "max": 188
+          }
+        , "duration": 153.46640494466396
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_utf8_out_of_the_dream_h.bms"
+        }
+      , { "md5": "f8e7a6ff760d683f9a95dfb9c78d4567"
+        , "info":
+          { "title": "OUT OF THE DREAM"
+          , "artist": "q/stol"
+          , "genre": "Drill'n'Bass×Schmaltz"
+          , "subtitles":
+            [ "NORMAL"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 5
+          }
+        , "noteCount": 378
+        , "bpm":
+          { "init": 106
+          , "min": 106
+          , "median": 188
+          , "max": 188
+          }
+        , "duration": 153.46640494466396
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_utf8_out_of_the_dream_n.bms"
+        }
+      ]
+    , "warnings": []
+    , "id": "[q_stol]out_of_the_dream"
+    , "path": "[q_stol]out_of_the_dream"
+    }
+  , { "title": "The Bass Kills You"
+    , "artist": "q/stol"
+    , "genre": "Rock×Bass Music"
+    , "bpm": 218
+    , "artist_url": "http://qstol.web.fc2.com/"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=232&event=104"
+    , "song_url": "https://soundcloud.com/q-stol/bofu2015the-bass-kills-you"
+    , "youtube_url": "https://www.youtube.com/watch?v=GmJzl12hi8s"
+    , "added": "2015-11-25T00:00:00.000Z"
+    , "replaygain": "-13.27 dB"
+    , "bmssearch_id": 2778
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "a36509938aaebdb990990ba841555be3"
+        , "info":
+          { "title": "The Bass Kills You"
+          , "artist": "q/stol"
+          , "genre": "Rock×Bass Music"
+          , "subtitles":
+            [ "ANOTHER"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 11
+          }
+        , "noteCount": 1479
+        , "bpm":
+          { "init": 218
+          , "min": 218
+          , "median": 218
+          , "max": 218
+          }
+        , "duration": 141.19266055045873
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_utf8_the_bass_kills_you_a.bms"
+        }
+      , { "md5": "bb3ae5b703674d1ed4f23071a05df151"
+        , "info":
+          { "title": "The Bass Kills You"
+          , "artist": "q/stol"
+          , "genre": "Rock×Bass Music"
+          , "subtitles":
+            [ "BEGINNER"
+            ]
+          , "subartists":
+            [ "obj.flicknote"
+            ]
+          , "difficulty": 2
+          , "level": 2
+          }
+        , "noteCount": 198
+        , "bpm":
+          { "init": 218
+          , "min": 218
+          , "median": 218
+          , "max": 218
+          }
+        , "duration": 141.19266055045873
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_utf8_the_bass_kills_you_b.bms"
+        }
+      , { "md5": "ccc34c499e8a0f846acc866198e049df"
+        , "info":
+          { "title": "The Bass Kills You"
+          , "artist": "q/stol"
+          , "genre": "Rock×Bass Music"
+          , "subtitles":
+            [ "HYPER"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 8
+          }
+        , "noteCount": 803
+        , "bpm":
+          { "init": 218
+          , "min": 218
+          , "median": 218
+          , "max": 218
+          }
+        , "duration": 141.19266055045873
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_utf8_the_bass_kills_you_h.bms"
+        }
+      , { "md5": "2c239f570f0514bc81028d3070bd2571"
+        , "info":
+          { "title": "The Bass Kills You"
+          , "artist": "q/stol"
+          , "genre": "Rock×Bass Music"
+          , "subtitles":
+            [ "NORMAL"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 4
+          }
+        , "noteCount": 472
+        , "bpm":
+          { "init": 218
+          , "min": 218
+          , "median": 218
+          , "max": 218
+          }
+        , "duration": 141.19266055045873
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_utf8_the_bass_kills_you_n.bms"
+        }
+      ]
+    , "warnings": []
+    , "id": "[q_stol]the_bass_kills_you"
+    , "path": "[q_stol]the_bass_kills_you"
+    }
+  , { "title": "僕たちの旅とエピローグ。"
+    , "artist": "ああああ"
+    , "genre": "game music"
+    , "bpm": 170
+    , "artist_url": "https://soundcloud.com/ricora"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=98&event=96"
+    , "song_url": "https://soundcloud.com/ricora/g2rbms"
+    , "replaygain": "-7.86 dB"
+    , "bmssearch_id": 2255
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "23b6aae160154b4dda9cbca7c4368c1c"
+        , "info":
+          { "title": "僕たちの旅とエピローグ。"
+          , "artist": "ああああ"
+          , "genre": "game music"
+          , "subtitles":
+            [ "another"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 12
+          }
+        , "noteCount": 1235
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 98
+          , "min": 94
+          , "median": 170
+          , "max": 185
+          }
+        , "duration": 136.0769049889287
+        , "file": "another.bms"
+        }
+      , { "md5": "c6e94c372e952a3146baf07b83e1052d"
+        , "info":
+          { "title": "僕たちの旅とエピローグ。"
+          , "artist": "ああああ"
+          , "genre": "game music"
+          , "subtitles":
+            [ "hyper"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 9
+          }
+        , "noteCount": 776
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 98
+          , "min": 94
+          , "median": 170
+          , "max": 185
+          }
+        , "duration": 136.0769049889287
+        , "file": "hyper.bms"
+        }
+      , { "md5": "aeeec7740bfde42989d477f86d5ca91e"
+        , "info":
+          { "title": "僕たちの旅とエピローグ。"
+          , "artist": "ああああ"
+          , "genre": "game music"
+          , "subtitles":
+            [ "normal"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 5
+          }
+        , "noteCount": 405
+        , "scratch": true
+        , "keys": "5K"
+        , "bpm":
+          { "init": 98
+          , "min": 94
+          , "median": 170
+          , "max": 185
+          }
+        , "duration": 136.0769049889287
+        , "file": "normal.bms"
+        }
+      ]
+    , "warnings": []
+    , "id": "[ricora]epilogue"
+    , "path": "[ricora]epilogue"
+    }
+  , { "title": "Lyzoande for sacrifice"
+    , "artist": "シア(CV:mia)×レイナ(CV:mirina) / Music:Sakamiya"
+    , "genre": "Phonicgain"
+    , "bpm": 166
+    , "alias_of": "Sakamiya"
+    , "artist_url": "http://dipathos.web.fc2.com/"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=23&event=108"
+    , "song_url": "https://soundcloud.com/user-818789960/13lyzoande-for-sacrifice"
+    , "added": "2016-06-29T00:00:00.000Z"
+    , "video_url": "https://bga.bemuse.ninja/lyzoande_for_sacrifice.webm"
+    , "video_offset": 1.445783133
+    , "replaygain": "-14.05 dB"
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "556d045957cf0c55656e82fa44e86a2b"
+        , "info":
+          { "title": "Lyzoande for sacrifice"
+          , "artist": "シア(CV:mia)×レイナ(CV:mirina) / Music:Sakamiya"
+          , "genre": "Phonicgain"
+          , "subtitles":
+            [ "[DP Normal]"
+            ]
+          , "subartists":
+            [ "mov:hrchem notes:OSR"
+            ]
+          , "difficulty": 2
+          , "level": 6
+          }
+        , "noteCount": 258
+        , "bpm":
+          { "init": 83
+          , "min": 83
+          , "median": 166
+          , "max": 166
+          }
+        , "duration": 124.33734939759036
+        , "scratch": true
+        , "keys": "14K"
+        , "file": "_utf8__Lyzoande_Dp1.bms"
+        }
+      , { "md5": "24775efb53238875108c6446ab32e6d5"
+        , "info":
+          { "title": "Lyzoande for sacrifice"
+          , "artist": "シア(CV:mia)×レイナ(CV:mirina) / Music:Sakamiya"
+          , "genre": "Phonicgain"
+          , "subtitles":
+            [ "[DP Hyper]"
+            ]
+          , "subartists":
+            [ "mov:hrchem notes:OSR"
+            ]
+          , "difficulty": 3
+          , "level": 10
+          }
+        , "noteCount": 500
+        , "bpm":
+          { "init": 83
+          , "min": 83
+          , "median": 166
+          , "max": 166
+          }
+        , "duration": 124.33734939759036
+        , "scratch": true
+        , "keys": "14K"
+        , "file": "_utf8__Lyzoande_Dp2.bms"
+        }
+      , { "md5": "e4ad74fc126683ef1dfdaf7cd7384161"
+        , "info":
+          { "title": "Lyzoande for sacrifice"
+          , "artist": "シア(CV:mia)×レイナ(CV:mirina) / Music:Sakamiya"
+          , "genre": "Phonicgain"
+          , "subtitles":
+            [ "[DP Another]"
+            ]
+          , "subartists":
+            [ "mov:hrchem notes:OSR"
+            ]
+          , "difficulty": 4
+          , "level": 12
+          }
+        , "noteCount": 828
+        , "bpm":
+          { "init": 83
+          , "min": 83
+          , "median": 166
+          , "max": 166
+          }
+        , "duration": 124.33734939759036
+        , "scratch": true
+        , "keys": "14K"
+        , "file": "_utf8__Lyzoande_Dp3.bms"
+        }
+      , { "md5": "67f371d219d7e7c0fb193ad30e4ef020"
+        , "info":
+          { "title": "Lyzoande for sacrifice"
+          , "artist": "シア(CV:mia)×レイナ(CV:mirina) / Music:Sakamiya"
+          , "genre": "Phonicgain"
+          , "subtitles":
+            [ "[Beginner]"
+            ]
+          , "subartists":
+            [ "mov:hrchem"
+            ]
+          , "difficulty": 1
+          , "level": 3
+          }
+        , "noteCount": 251
+        , "bpm":
+          { "init": 83
+          , "min": 83
+          , "median": 166
+          , "max": 166
+          }
+        , "duration": 124.33734939759036
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_utf8__Lyzoande_Lv1.bms"
+        }
+      , { "md5": "a2119da7f4eb757c03b4168a2a5e47f2"
+        , "info":
+          { "title": "Lyzoande for sacrifice"
+          , "artist": "シア(CV:mia)×レイナ(CV:mirina) / Music:Sakamiya"
+          , "genre": "Phonicgain"
+          , "subtitles":
+            [ "[Normal]"
+            ]
+          , "subartists":
+            [ "mov:hrchem"
+            ]
+          , "difficulty": 2
+          , "level": 7
+          }
+        , "noteCount": 573
+        , "bpm":
+          { "init": 83
+          , "min": 83
+          , "median": 166
+          , "max": 166
+          }
+        , "duration": 124.33734939759036
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_utf8__Lyzoande_Lv2.bms"
+        }
+      , { "md5": "9d46acfdc18f7aab0f21da8425b66410"
+        , "info":
+          { "title": "Lyzoande for sacrifice"
+          , "artist": "シア(CV:mia)×レイナ(CV:mirina) / Music:Sakamiya"
+          , "genre": "Phonicgain"
+          , "subtitles":
+            [ "[Hyper]"
+            ]
+          , "subartists":
+            [ "mov:hrchem"
+            ]
+          , "difficulty": 3
+          , "level": 10
+          }
+        , "noteCount": 1000
+        , "bpm":
+          { "init": 83
+          , "min": 83
+          , "median": 166
+          , "max": 166
+          }
+        , "duration": 124.33734939759036
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_utf8__Lyzoande_Lv3.bms"
+        }
+      , { "md5": "bb2e9a8454ea4c43869d37573d47b20f"
+        , "info":
+          { "title": "Lyzoande for sacrifice"
+          , "artist": "シア(CV:mia)×レイナ(CV:mirina) / Music:Sakamiya"
+          , "genre": "Phonicgain"
+          , "subtitles":
+            [ "[Another]"
+            ]
+          , "subartists":
+            [ "mov:hrchem"
+            ]
+          , "difficulty": 4
+          , "level": 12
+          }
+        , "noteCount": 1512
+        , "bpm":
+          { "init": 83
+          , "min": 83
+          , "median": 166
+          , "max": 166
+          }
+        , "duration": 124.33734939759036
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_utf8__Lyzoande_Lv4.bms"
+        }
+      , { "md5": "1ce2549801f4ed6a06e3d98887c315bf"
+        , "info":
+          { "title": "Lyzoande for sacrifice"
+          , "artist": "シア(CV:mia)×レイナ(CV:mirina) / Music:Sakamiya"
+          , "genre": "Phonicgain"
+          , "subtitles":
+            [ "[Tragedy]"
+            ]
+          , "subartists":
+            [ "mov:hrchem notes:7stan"
+            ]
+          , "difficulty": 5
+          , "level": 12
+          }
+        , "noteCount": 746
+        , "bpm":
+          { "init": 83
+          , "min": 83
+          , "median": 166
+          , "max": 166
+          }
+        , "duration": 124.3184165232358
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_utf8__Lyzoande_LvX.bms"
+        }
+      ]
+    , "warnings": []
+    , "id": "[sakamiya]lyzoande_for_sacrifice"
+    , "path": "[sakamiya]lyzoande_for_sacrifice"
+    }
+  , { "title": "Kreuz"
+    , "artist": "sky_delta"
+    , "genre": "IDM"
+    , "bpm": 183
+    , "artist_url": "https://soundcloud.com/sky_delta"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=89&event=96"
+    , "song_url": "https://soundcloud.com/sky_delta/kreuz"
+    , "youtube_url": "https://www.youtube.com/watch?v=lqOmjcuF-No"
+    , "replaygain": "-12.08 dB"
+    , "bmssearch_id": 2190
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "5c29aeca8a8b2f303d6587f50277c939"
+        , "info":
+          { "title": "Kreuz"
+          , "artist": "sky_delta"
+          , "genre": "IDM"
+          , "subtitles":
+            [ "Another"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 12
+          }
+        , "noteCount": 1523
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 183
+          , "min": 91.5
+          , "median": 183
+          , "max": 183
+          }
+        , "duration": 121.63934426229507
+        , "file": "kreuz_spa.bms"
+        }
+      , { "md5": "eefb650199700b7682f930b597c2c50c"
+        , "info":
+          { "title": "Kreuz"
+          , "artist": "sky_delta"
+          , "genre": "IDM"
+          , "subtitles":
+            [ "Hyper"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 9
+          }
+        , "noteCount": 891
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 183
+          , "min": 91.5
+          , "median": 183
+          , "max": 183
+          }
+        , "duration": 121.63934426229507
+        , "file": "kreuz_sph.bms"
+        }
+      , { "md5": "86e3a22472e94adda5f89b36e00389ca"
+        , "info":
+          { "title": "Kreuz"
+          , "artist": "sky_delta"
+          , "genre": "IDM"
+          , "subtitles":
+            [ "Normal"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 5
+          }
+        , "noteCount": 421
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 183
+          , "min": 91.5
+          , "median": 183
+          , "max": 183
+          }
+        , "duration": 121.63934426229508
+        , "file": "kreuz_spn.bms"
+        }
+      ]
+    , "warnings": []
+    , "id": "[sky_delta]kreuz"
+    , "path": "[sky_delta]kreuz"
+    }
+  , { "title": "Developers, Developers, Developers, Developers!"
+    , "artist": "Snack"
+    , "genre": "Tribute"
+    , "bpm": 200
+    , "artist_url": "http://korsnack.kr/"
+    , "bms_url": "http://k-bms.com/party_pabat/party2015.jsp?board_num=15&num=16&order=reg&odtype=a"
+    , "song_url": "https://soundcloud.com/korsnack/ddddevelopers"
+    , "youtube_url": "https://www.youtube.com/watch?v=ovgcVc5wb9E"
+    , "replaygain": "-10.65 dB"
+    , "bmssearch_id": 66
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "1d33d50e2d0a06e85f8eb6b5eab8ea08"
+        , "info":
+          { "title": "Developers, Developers, Developers, Developers!"
+          , "artist": "Snack"
+          , "genre": "Tribute"
+          , "subtitles":
+            [ "DP ANOTHER"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 12
+          }
+        , "noteCount": 954
+        , "scratch": true
+        , "keys": "14K"
+        , "bpm":
+          { "init": 200
+          , "min": 200
+          , "median": 200
+          , "max": 200
+          }
+        , "duration": 145.2
+        , "file": "dddd_dpa.bme"
+        }
+      , { "md5": "98ef1bd4ed2ec2aad3b9550d86a50f9e"
+        , "info":
+          { "title": "Developers, Developers, Developers, Developers!"
+          , "artist": "Snack"
+          , "genre": "Tribute"
+          , "subtitles":
+            [ "DP HYPER"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 10
+          }
+        , "noteCount": 660
+        , "scratch": true
+        , "keys": "14K"
+        , "bpm":
+          { "init": 200
+          , "min": 200
+          , "median": 200
+          , "max": 200
+          }
+        , "duration": 145.2
+        , "file": "dddd_dph.bme"
+        }
+      , { "md5": "5051253910a8b732cb07018c8b9ffa8d"
+        , "info":
+          { "title": "Developers, Developers, Developers, Developers!"
+          , "artist": "Snack"
+          , "genre": "Tribute"
+          , "subtitles":
+            [ "DP NORMAL"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 7
+          }
+        , "noteCount": 481
+        , "scratch": true
+        , "keys": "14K"
+        , "bpm":
+          { "init": 200
+          , "min": 200
+          , "median": 200
+          , "max": 200
+          }
+        , "duration": 145.2
+        , "file": "dddd_dpn.bme"
+        }
+      , { "md5": "e50d342e7ba934b97080a5b070cca22b"
+        , "info":
+          { "title": "Developers, Developers, Developers, Developers!"
+          , "artist": "Snack"
+          , "genre": "Tribute"
+          , "subtitles":
+            [ "SP ANOTHER"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 12
+          }
+        , "noteCount": 1800
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 200
+          , "min": 200
+          , "median": 200
+          , "max": 200
+          }
+        , "duration": 145.2
+        , "file": "dddd_spa.bme"
+        }
+      , { "md5": "3a513929761da3509f50560933a7b453"
+        , "info":
+          { "title": "Developers, Developers, Developers, Developers!"
+          , "artist": "Snack"
+          , "genre": "Tribute"
+          , "subtitles":
+            [ "SP HYPER"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 10
+          }
+        , "noteCount": 1400
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 200
+          , "min": 200
+          , "median": 200
+          , "max": 200
+          }
+        , "duration": 145.2
+        , "file": "dddd_sph.bme"
+        }
+      , { "md5": "1c259d92801ad4b197296ff89420d863"
+        , "info":
+          { "title": "Developers, Developers, Developers, Developers!"
+          , "artist": "Snack"
+          , "genre": "Tribute"
+          , "subtitles":
+            [ "SP NORMAL"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 7
+          }
+        , "noteCount": 990
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 200
+          , "min": 200
+          , "median": 200
+          , "max": 200
+          }
+        , "duration": 145.2
+        , "file": "dddd_spn.bme"
+        }
+      , { "md5": "fa1c8c0053054438632d1f9e647f9dba"
+        , "info":
+          { "title": "Developers, Developers, Developers, Developers!"
+          , "artist": "Snack"
+          , "genre": "Tribute"
+          , "subtitles":
+            [ "SP EXCEPTION"
+            ]
+          , "subartists": []
+          , "difficulty": 5
+          , "level": 13
+          }
+        , "noteCount": 2500
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 200
+          , "min": 200
+          , "median": 200
+          , "max": 200
+          }
+        , "duration": 145.2
+        , "file": "dddd_spx.bme"
+        }
+      ]
+    , "warnings": []
+    , "id": "[snack]dddd"
+    , "path": "[snack]dddd"
+    }
+  , { "title": "Encrux"
+    , "artist": "Sobrem"
+    , "genre": "Story"
+    , "bpm": 162
+    , "artist_url": "https://soundcloud.com/Sobrem"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=297&event=104"
+    , "song_url": "https://soundcloud.com/sobrem/encrux"
+    , "youtube_url": "https://www.youtube.com/watch?v=HF7Z0gEvhCw"
+    , "added": "2016-06-24T00:00:00.000Z"
+    , "video_url": "https://bga.bemuse.ninja/encrux.webm"
+    , "video_offset": 1.3
+    , "replaygain": "-10.98 dB"
+    , "bmssearch_id": 2663
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "d65aa7b67d31d9b20a87b47c92d02058"
+        , "info":
+          { "title": "Encrux"
+          , "artist": "Sobrem"
+          , "genre": "Story"
+          , "subtitles":
+            [ "DP"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 11
+          }
+        , "noteCount": 559
+        , "bpm":
+          { "init": 162
+          , "min": 162
+          , "median": 162
+          , "max": 162
+          }
+        , "duration": 137.59259259259258
+        , "scratch": true
+        , "keys": "14K"
+        , "file": "_encrux_d2.bme"
+        }
+      , { "md5": "efb263d319a93527a02eb71cbb6363f0"
+        , "info":
+          { "title": "Encrux"
+          , "artist": "Sobrem"
+          , "genre": "Story"
+          , "subtitles":
+            [ "normal"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 5
+          }
+        , "noteCount": 347
+        , "bpm":
+          { "init": 162
+          , "min": 162
+          , "median": 162
+          , "max": 162
+          }
+        , "duration": 137.59259259259258
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_encrux_s1.bme"
+        }
+      , { "md5": "12fce2fda1a7d310d152d27b7da9d23e"
+        , "info":
+          { "title": "Encrux"
+          , "artist": "Sobrem"
+          , "genre": "Story"
+          , "subtitles":
+            [ "hyper"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 10
+          }
+        , "noteCount": 890
+        , "bpm":
+          { "init": 162
+          , "min": 162
+          , "median": 162
+          , "max": 162
+          }
+        , "duration": 137.59259259259258
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_encrux_s2.bme"
+        }
+      , { "md5": "8bb79c20e56a7a6ee0d8a29170fdd967"
+        , "info":
+          { "title": "Encrux"
+          , "artist": "Sobrem"
+          , "genre": "Story"
+          , "subtitles":
+            [ "another"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 12
+          }
+        , "noteCount": 1428
+        , "bpm":
+          { "init": 162
+          , "min": 162
+          , "median": 162
+          , "max": 162
+          }
+        , "duration": 137.59259259259258
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_encrux_s3.bme"
+        }
+      , { "md5": "4c3b9a83e5a19d7217593195672ee5d6"
+        , "info":
+          { "title": "Encrux"
+          , "artist": "Sobrem"
+          , "genre": "Story"
+          , "subtitles":
+            [ "insane"
+            ]
+          , "subartists":
+            [ "obj. Lapis"
+            ]
+          , "difficulty": 5
+          , "level": 12
+          }
+        , "noteCount": 1806
+        , "bpm":
+          { "init": 162
+          , "min": 162
+          , "median": 162
+          , "max": 162
+          }
+        , "duration": 137.59259259259258
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_encrux_s4.bme"
+        }
+      ]
+    , "warnings": []
+    , "id": "[sobrem]encrux"
+    , "path": "[sobrem]encrux"
+    }
+  , { "title": "\"P\" stands for \"Party!\""
+    , "artist": "Sobrem"
+    , "genre": "Mashup"
+    , "bpm": 150
+    , "artist_url": "https://soundcloud.com/Sobrem"
+    , "bms_url": "http://k-bms.com/party_pabat/party2016.jsp?board_num=16&num=51"
+    , "song_url": "https://soundcloud.com/sobrem/party"
+    , "youtube_url": "https://www.youtube.com/watch?v=j_yTD3VFn1Q"
+    , "added": "2016-06-24T00:00:00.000Z"
+    , "video_url": "https://bga.bemuse.ninja/p_stands_for_party.webm"
+    , "video_offset": 1.55
+    , "replaygain": "-9.57 dB"
+    , "bmssearch_id": 616
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "b963e1f212e3783cfd566b59b5cb472d"
+        , "info":
+          { "title": "\"P\" stands for \"Party!\""
+          , "artist": "Sobrem"
+          , "genre": "Mashup"
+          , "subtitles":
+            [ "Beginner"
+            ]
+          , "subartists": []
+          , "difficulty": 1
+          , "level": 1
+          }
+        , "noteCount": 168
+        , "bpm":
+          { "init": 150
+          , "min": 150
+          , "median": 150
+          , "max": 150
+          }
+        , "duration": 138.4
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_pbc_s01.bme"
+        }
+      , { "md5": "c6c5e5e20b53983ba59252ddcc205b5b"
+        , "info":
+          { "title": "\"P\" stands for \"Party!\""
+          , "artist": "Sobrem"
+          , "genre": "Mashup"
+          , "subtitles":
+            [ "Normal"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 5
+          }
+        , "noteCount": 477
+        , "bpm":
+          { "init": 150
+          , "min": 150
+          , "median": 150
+          , "max": 150
+          }
+        , "duration": 138.4
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_pbc_s02.bme"
+        }
+      , { "md5": "8d80d1732fa4c81dcbd4ddfd1673d949"
+        , "info":
+          { "title": "\"P\" stands for \"Party!\""
+          , "artist": "Sobrem"
+          , "genre": "Mashup"
+          , "subtitles":
+            [ "Hyper"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 8
+          }
+        , "noteCount": 683
+        , "bpm":
+          { "init": 150
+          , "min": 150
+          , "median": 150
+          , "max": 150
+          }
+        , "duration": 138.4
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_pbc_s03.bme"
+        }
+      , { "md5": "b81eea46f8600fabab3e3f6bce2a2cc7"
+        , "info":
+          { "title": "\"P\" stands for \"Party!\""
+          , "artist": "Sobrem"
+          , "genre": "Mashup"
+          , "subtitles":
+            [ "Another"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 12
+          }
+        , "noteCount": 1443
+        , "bpm":
+          { "init": 150
+          , "min": 150
+          , "median": 150
+          , "max": 150
+          }
+        , "duration": 138.4
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_pbc_s04.bme"
+        }
+      ]
+    , "warnings": []
+    , "id": "[sobrem]p_stands_for_party"
+    , "path": "[sobrem]p_stands_for_party"
+    }
+  , { "title": "Upside-down"
+    , "artist": "すてらべえ"
+    , "genre": "Breakcore/Cutbreak"
+    , "bpm": 260
+    , "artist_url": "http://stellabeekun.tumblr.com/"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=8&event=101"
+    , "song_url": "https://soundcloud.com/stella_hiragana/bms-upside-down"
+    , "youtube_url": "https://www.youtube.com/watch?v=jw-4QbUTZR8"
+    , "added": "2015-08-19T00:00:00.000Z"
+    , "replaygain": "-10.93 dB"
+    , "bmssearch_id": 3161
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "0727a5a8bdeac2e655dafb7411e60c12"
+        , "info":
+          { "title": "Upside-down"
+          , "artist": "music:すてらべえ/BGA:hopkins"
+          , "genre": "Breakcore/Cutbreak"
+          , "subtitles":
+            [ "ANOTHER"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 8
+          }
+        , "noteCount": 1228
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 260
+          , "min": 260
+          , "median": 260
+          , "max": 260
+          }
+        , "duration": 150.23076923076925
+        , "file": "upside-down a.bms"
+        }
+      , { "md5": "312c0f27913fbdbcf54e1f894d8190a0"
+        , "info":
+          { "title": "Upside-down"
+          , "artist": "music:すてらべえ/BGA:hopkins"
+          , "genre": "Breakcore/Cutbreak"
+          , "subtitles":
+            [ "HARD"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 6
+          }
+        , "noteCount": 1096
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 260
+          , "min": 260
+          , "median": 260
+          , "max": 260
+          }
+        , "duration": 150.23076923076925
+        , "file": "upside-down h.bms"
+        }
+      , { "md5": "066a06fc226da4981550059ecba27809"
+        , "info":
+          { "title": "Upside-down"
+          , "artist": "music:すてらべえ/BGA:hopkins"
+          , "genre": "Breakcore/Cutbreak"
+          , "subtitles":
+            [ "NORMAL"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 5
+          }
+        , "noteCount": 1033
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 260
+          , "min": 260
+          , "median": 260
+          , "max": 260
+          }
+        , "duration": 150.23076923076925
+        , "file": "upside-down n.bms"
+        }
+      ]
+    , "warnings": []
+    , "id": "[stellabee]upsidedown"
+    , "path": "[stellabee]upsidedown"
+    }
+  , { "title": "AirTrip-SF#2-"
+    , "artist": "TiS"
+    , "genre": "PROGRESSIVE FUSION"
+    , "bpm": 266
+    , "artist_url": "https://soundcloud.com/cineraria_studio"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=154&event=96"
+    , "song_url": "https://soundcloud.com/cineraria_studio/airtrip-bms-mix"
+    , "replaygain": "-11.00 dB"
+    , "bmssearch_id": 2245
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "f14357d72c2c11081fd45dc00aa4cffa"
+        , "info":
+          { "title": "AirTrip-SF#2-"
+          , "artist": "TiS"
+          , "genre": "PROGRESSIVE FUSION"
+          , "subtitles":
+            [ "ANOTHER"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 12
+          }
+        , "noteCount": 1921
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 266
+          , "min": 266
+          , "median": 266
+          , "max": 266
+          }
+        , "duration": 136.9172932330827
+        , "file": "airtrip_a.bme"
+        }
+      , { "md5": "a43cc5cd115c32c934bed8e056362e2b"
+        , "info":
+          { "title": "AirTrip-SF#2-"
+          , "artist": "TiS"
+          , "genre": "PROGRESSIVE FUSION"
+          , "subtitles":
+            [ "HYPER"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 11
+          }
+        , "noteCount": 1506
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 266
+          , "min": 266
+          , "median": 266
+          , "max": 266
+          }
+        , "duration": 136.9172932330827
+        , "file": "airtrip_h.bme"
+        }
+      , { "md5": "2058a2b19f6e03a42799bfdf8b62dc48"
+        , "info":
+          { "title": "AirTrip-SF#2-"
+          , "artist": "TiS"
+          , "genre": "PROGRESSIVE FUSION"
+          , "subtitles":
+            [ "NORMAL"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 5
+          }
+        , "noteCount": 592
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 266
+          , "min": 266
+          , "median": 266
+          , "max": 266
+          }
+        , "duration": 136.9172932330827
+        , "file": "airtrip_n.bme"
+        }
+      ]
+    , "warnings": []
+    , "id": "[tis]airtrip"
+    , "path": "[tis]airtrip"
+    }
+  , { "title": "Caelumize"
+    , "artist": "void"
+    , "genre": "Filmscore / Neurocore"
+    , "bpm": 175
+    , "artist_url": "http://mournfinale.com/"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=389&event=88"
+    , "long_url": "https://soundcloud.com/mournfinale/void-caelumize"
+    , "youtube_url": "https://www.youtube.com/watch?v=93fA-ZVD_i4"
+    , "replaygain": "-10.81 dB"
+    , "bmssearch_id": 2081
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "dcbbecfead7fd61547c2e37910bf656f"
+        , "info":
+          { "title": "Caelumize"
+          , "artist": "void"
+          , "genre": "Filmscore / Neurocore"
+          , "subtitles": []
+          , "subartists":
+            [ "Momomi Aoyama"
+            ]
+          , "difficulty": 1
+          , "level": 3
+          }
+        , "noteCount": 348
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 175
+          , "min": 175
+          , "median": 175
+          , "max": 175
+          }
+        , "duration": 112.62857142857143
+        , "file": "01spb.bml"
+        }
+      , { "md5": "53dfc76d4bca81101f40411b6556e442"
+        , "info":
+          { "title": "Caelumize"
+          , "artist": "void"
+          , "genre": "Filmscore / Neurocore"
+          , "subtitles": []
+          , "subartists":
+            [ "Momomi Aoyama"
+            ]
+          , "difficulty": 2
+          , "level": 6
+          }
+        , "noteCount": 584
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 175
+          , "min": 175
+          , "median": 175
+          , "max": 175
+          }
+        , "duration": 112.62857142857143
+        , "file": "02spn.bml"
+        }
+      , { "md5": "4aab905d3502fc436669c84db02a1954"
+        , "info":
+          { "title": "Caelumize"
+          , "artist": "void"
+          , "genre": "Filmscore / Neurocore"
+          , "subtitles": []
+          , "subartists":
+            [ "Momomi Aoyama"
+            ]
+          , "difficulty": 3
+          , "level": 9
+          }
+        , "noteCount": 975
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 175
+          , "min": 175
+          , "median": 175
+          , "max": 175
+          }
+        , "duration": 112.62857142857143
+        , "file": "03sph.bml"
+        }
+      , { "md5": "ff9f57e9d4f55e61d90de053816fc0f4"
+        , "info":
+          { "title": "Caelumize"
+          , "artist": "void"
+          , "genre": "Filmscore / Neurocore"
+          , "subtitles": []
+          , "subartists":
+            [ "Momomi Aoyama"
+            ]
+          , "difficulty": 4
+          , "level": 11
+          }
+        , "noteCount": 1331
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 175
+          , "min": 175
+          , "median": 175
+          , "max": 175
+          }
+        , "duration": 112.62857142857143
+        , "file": "04spa.bml"
+        }
+      ]
+    , "warnings": []
+    , "id": "[void]caelumize"
+    , "path": "[void]caelumize"
+    }
+  , { "title": "CHICKEN for the WIN"
+    , "artist": "w_tre"
+    , "genre": "electro"
+    , "bpm": 128
+    , "artist_url": "http://soundcloud.com/sobrem"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=32&event=96"
+    , "song_url": "https://soundcloud.com/sobrem/c4tw"
+    , "replaygain": "-12.48 dB"
+    , "bmssearch_id": 2367
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "feadbe808a674445c759145c039036ce"
+        , "info":
+          { "title": "CHICKEN for the WIN"
+          , "artist": "innkeeper"
+          , "genre": "electro"
+          , "subtitles":
+            [ "5 ENRAGED"
+            ]
+          , "subartists":
+            [ "SmiGoon Respect CHICKEN"
+            ]
+          , "difficulty": 4
+          , "level": 10
+          }
+        , "noteCount": 973
+        , "scratch": true
+        , "keys": "5K"
+        , "bpm":
+          { "init": 128
+          , "min": 128
+          , "median": 128
+          , "max": 128
+          }
+        , "duration": 153.75
+        , "file": "chicken_5a.bms"
+        }
+      , { "md5": "2e5b7e5a4727abde6bf608c9bbf4301b"
+        , "info":
+          { "title": "CHICKEN for the WIN"
+          , "artist": "innkeeper"
+          , "genre": "electro"
+          , "subtitles":
+            [ "5 BUFFED"
+            ]
+          , "subartists":
+            [ "SmiGoon Respect CHICKEN"
+            ]
+          , "difficulty": 3
+          , "level": 7
+          }
+        , "noteCount": 682
+        , "scratch": true
+        , "keys": "5K"
+        , "bpm":
+          { "init": 128
+          , "min": 128
+          , "median": 128
+          , "max": 128
+          }
+        , "duration": 153.75
+        , "file": "chicken_5h.bms"
+        }
+      , { "md5": "fae9b6067e63a497118e695706792d07"
+        , "info":
+          { "title": "CHICKEN for the WIN"
+          , "artist": "innkeeper"
+          , "genre": "electro"
+          , "subtitles":
+            [ "5 SUMMONED"
+            ]
+          , "subartists":
+            [ "SmiGoon Respect CHICKEN"
+            ]
+          , "difficulty": 2
+          , "level": 3
+          }
+        , "noteCount": 352
+        , "scratch": true
+        , "keys": "5K"
+        , "bpm":
+          { "init": 128
+          , "min": 128
+          , "median": 128
+          , "max": 128
+          }
+        , "duration": 153.75
+        , "file": "chicken_5n.bms"
+        }
+      , { "md5": "2c41613fb1dcff6126a9b745a8ffcf74"
+        , "info":
+          { "title": "CHICKEN for the WIN"
+          , "artist": "innkeeper"
+          , "genre": "electro"
+          , "subtitles":
+            [ "7 ENRAGED"
+            ]
+          , "subartists":
+            [ "Pattern : KRX"
+            ]
+          , "difficulty": 4
+          , "level": 11
+          }
+        , "noteCount": 1332
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 128
+          , "min": 64
+          , "median": 128
+          , "max": 128
+          }
+        , "duration": 153.75
+        , "file": "chicken_7a.bme"
+        }
+      , { "md5": "deaf9009669eb8353fcf5199b6d72a2e"
+        , "info":
+          { "title": "CHICKEN for the WIN"
+          , "artist": "innkeeper"
+          , "genre": "electro"
+          , "subtitles":
+            [ "7 BUFFED"
+            ]
+          , "subartists":
+            [ "Pattern : KRX"
+            ]
+          , "difficulty": 3
+          , "level": 8
+          }
+        , "noteCount": 871
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 128
+          , "min": 128
+          , "median": 128
+          , "max": 128
+          }
+        , "duration": 153.75
+        , "file": "chicken_7h.bme"
+        }
+      , { "md5": "379ea003d006df4a6a7e250e03996b0c"
+        , "info":
+          { "title": "CHICKEN for the WIN"
+          , "artist": "innkeeper"
+          , "genre": "electro"
+          , "subtitles":
+            [ "7 SUMMONED"
+            ]
+          , "subartists":
+            [ "Pattern : KRX"
+            ]
+          , "difficulty": 2
+          , "level": 5
+          }
+        , "noteCount": 532
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 128
+          , "min": 128
+          , "median": 128
+          , "max": 128
+          }
+        , "duration": 153.75
+        , "file": "chicken_7n.bme"
+        }
+      ]
+    , "warnings": []
+    , "id": "[w_tre]chicken"
+    , "path": "[w_tre]chicken"
+    }
+  , { "title": "mom"
+    , "artist": "w_tre"
+    , "genre": "piano"
+    , "bpm": 90
+    , "artist_url": "http://soundcloud.com/sobrem"
+    , "bms_url": "http://k-bms.com/party_pabat/party2015.jsp?board_num=15&num=32&order=reg&odtype=a"
+    , "song_url": "https://soundcloud.com/sobrem/mom"
+    , "youtube_url": "https://www.youtube.com/watch?v=Ti4oRsUZ8kQ"
+    , "replaygain": "-9.22 dB"
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "9ca6f832f8d5b85549c3129e740d1705"
+        , "info":
+          { "title": "mom"
+          , "artist": "w_tre"
+          , "genre": "piano"
+          , "subtitles":
+            [ "[normal]"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 2
+          }
+        , "noteCount": 155
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 90
+          , "min": 90
+          , "median": 90
+          , "max": 90
+          }
+        , "duration": 138.29166666666666
+        , "file": "mom_s1.bme"
+        }
+      , { "md5": "557b4da440303c0421d972876600a513"
+        , "info":
+          { "title": "mom"
+          , "artist": "w_tre"
+          , "genre": "piano"
+          , "subtitles":
+            [ "[hyper]"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 5
+          }
+        , "noteCount": 434
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 90
+          , "min": 90
+          , "median": 90
+          , "max": 90
+          }
+        , "duration": 138.29166666666666
+        , "file": "mom_s2.bme"
+        }
+      , { "md5": "1444f6dfaa7fd802586af5b331bac1ca"
+        , "info":
+          { "title": "mom"
+          , "artist": "w_tre"
+          , "genre": "piano"
+          , "subtitles":
+            [ "[another]"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 9
+          }
+        , "noteCount": 925
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 90
+          , "min": 90
+          , "median": 90
+          , "max": 90
+          }
+        , "duration": 138.29166666666666
+        , "file": "mom_s3.bme"
+        }
+      , { "md5": "010492dbce773e39992651ce11a146d5"
+        , "info":
+          { "title": "mom"
+          , "artist": "w_tre"
+          , "genre": "piano"
+          , "subtitles":
+            [ "[insane]"
+            ]
+          , "subartists":
+            [ "obj. sialua"
+            ]
+          , "difficulty": 5
+          , "level": 12
+          }
+        , "noteCount": 1758
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 90
+          , "min": 90
+          , "median": 90
+          , "max": 90
+          }
+        , "duration": 138.29166666666666
+        , "file": "mom_s4.bme"
+        }
+      ]
+    , "warnings": []
+    , "id": "[w_tre]mom"
+    , "path": "[w_tre]mom"
+    }
+  , { "title": "starless"
+    , "artist": "Ym1024 feat. lamie*"
+    , "genre": "J-Pop Ballad"
+    , "bpm": 80
+    , "alias_of": "Ym1024"
+    , "artist_url": "http://yellowmapleleaf.com/"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=37&event=76"
+    , "song_url": "https://soundcloud.com/ym1024/demo-starless-feat-lamie"
+    , "long_url": "https://itunes.apple.com/jp/album/hallucination/id534062529?i=534062595"
+    , "replaygain": "-9.17 dB"
+    , "added": "2016-01-13T00:00:00.000Z"
+    , "bmssearch_id": 4111
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "b96d6716b6961c7794ee4c5ec1a5c9c0"
+        , "info":
+          { "title": "starless"
+          , "artist": "Ym1024 feat. lamie*"
+          , "genre": "J-Pop Ballad"
+          , "subtitles":
+            [ "7key Normal"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 4
+          }
+        , "noteCount": 425
+        , "bpm":
+          { "init": 80
+          , "min": 80
+          , "median": 80
+          , "max": 80
+          }
+        , "duration": 163.10714285714286
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "starless_[7-4_Normal].bme"
+        }
+      , { "md5": "c2eff6f1bfe4b1767d92a5a8b8fd676c"
+        , "info":
+          { "title": "starless"
+          , "artist": "Ym1024 feat. lamie*"
+          , "genre": "J-Pop Ballad"
+          , "subtitles":
+            [ "7key Hyper"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 6
+          }
+        , "noteCount": 619
+        , "bpm":
+          { "init": 80
+          , "min": 80
+          , "median": 80
+          , "max": 80
+          }
+        , "duration": 163.10714285714286
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "starless_[7-6_Hyper].bme"
+        }
+      , { "md5": "87d24ed15456c6406379f6afda93ff1f"
+        , "info":
+          { "title": "starless"
+          , "artist": "Ym1024 feat. lamie* obj:けろりん"
+          , "genre": "J-Pop Ballad"
+          , "subtitles":
+            [ "14keys Another"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 12
+          }
+        , "noteCount": 644
+        , "bpm":
+          { "init": 80
+          , "min": 80
+          , "median": 80
+          , "max": 80
+          }
+        , "duration": 163.10714285714286
+        , "scratch": true
+        , "keys": "14K"
+        , "file": "starless_dpa_kero.bme"
+        }
+      , { "md5": "c50beeca6719f5f04f7e1a269b0b1f15"
+        , "info":
+          { "title": "starless"
+          , "artist": "Ym1024 feat. lamie* obj:けろりん"
+          , "genre": "J-Pop Ballad"
+          , "subtitles":
+            [ "14keys Hyper"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 8
+          }
+        , "noteCount": 281
+        , "bpm":
+          { "init": 80
+          , "min": 80
+          , "median": 80
+          , "max": 80
+          }
+        , "duration": 163.10714285714286
+        , "scratch": true
+        , "keys": "14K"
+        , "file": "starless_dph_kero.bme"
+        }
+      , { "md5": "3f413ceed159211d7a0cc2db631ee061"
+        , "info":
+          { "title": "starless"
+          , "artist": "Ym1024 feat. lamie* obj:けろりん"
+          , "genre": "J-Pop Ballad"
+          , "subtitles":
+            [ "14keys Normal"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 3
+          }
+        , "noteCount": 216
+        , "bpm":
+          { "init": 80
+          , "min": 80
+          , "median": 80
+          , "max": 80
+          }
+        , "duration": 163.10714285714286
+        , "scratch": true
+        , "keys": "14K"
+        , "file": "starless_dpn_kero.bme"
+        }
+      , { "md5": "88851a0c4a3f5fc3e0412ceffb38221a"
+        , "info":
+          { "title": "starless"
+          , "artist": "Ym1024 feat. lamie*(obj.WAS)"
+          , "genre": "J-Pop Ballad"
+          , "subtitles":
+            [ "7key LuNLuN"
+            ]
+          , "subartists": []
+          , "difficulty": 5
+          , "level": 7
+          }
+        , "noteCount": 628
+        , "bpm":
+          { "init": 80
+          , "min": 80
+          , "median": 80
+          , "max": 80
+          }
+        , "duration": 163.10714285714286
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "starless_was.bml"
+        }
+      , { "md5": "f2ac4fff115ac1137bb28d8a0ece1bc4"
+        , "info":
+          { "title": "starless"
+          , "artist": "Ym1024 feat. lamie*(obj.WAS)"
+          , "genre": "J-Pop Ballad"
+          , "subtitles":
+            [ "7key LuNLuN LightversioN"
+            ]
+          , "subartists": []
+          , "difficulty": 5
+          , "level": 4
+          }
+        , "noteCount": 605
+        , "bpm":
+          { "init": 80
+          , "min": 80
+          , "median": 80
+          , "max": 80
+          }
+        , "duration": 163.10714285714286
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "starless_waslight.bml"
+        }
+      ]
+    , "warnings": []
+    , "id": "[ym1024]starless"
+    , "path": "[ym1024]starless"
+    }
+  , { "title": "Smiling"
+    , "artist": "櫟井唯 / 岡野佳"
+    , "genre": "kawaiicore"
+    , "bpm": 172
+    , "alias_of": "Lime"
+    , "artist_url": "https://soundcloud.com/kanki2"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=441&event=104"
+    , "song_url": "https://soundcloud.com/thankyou_yysk/yui_smiling"
+    , "long_url": "https://soundcloud.com/kanki2/lime-smilinglong-ver"
+    , "video_url": "https://bga.bemuse.ninja/smiling.webm"
+    , "video_offset": 1.395348838
+    , "added": "2016-06-29T00:00:00.000Z"
+    , "replaygain": "-12.63 dB"
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "645a5d8e800cbb456746a50b5a0e8282"
+        , "info":
+          { "title": "Smiling"
+          , "artist": "櫟井唯 / 岡野佳"
+          , "genre": "kawaiicore"
+          , "subtitles":
+            [ "[ANOTHER7]"
+            ]
+          , "subartists": []
+          , "difficulty": 4
+          , "level": 12
+          }
+        , "noteCount": 1865
+        , "bpm":
+          { "init": 86
+          , "min": 86
+          , "median": 172
+          , "max": 172
+          }
+        , "duration": 142.23837209302326
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_Smiling_Yui_another7.bme"
+        }
+      , { "md5": "e65c84ceb5b8c6552514568a01958d42"
+        , "info":
+          { "title": "Smiling"
+          , "artist": "櫟井唯 / 岡野佳"
+          , "genre": "kawaiicore"
+          , "subtitles":
+            [ "[EASY7]"
+            ]
+          , "subartists": []
+          , "difficulty": 1
+          , "level": 3
+          }
+        , "noteCount": 300
+        , "bpm":
+          { "init": 86
+          , "min": 86
+          , "median": 172
+          , "max": 172
+          }
+        , "duration": 142.23837209302326
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_Smiling_Yui_easy7.bme"
+        }
+      , { "md5": "cd7b67acda08f2e8c9ff61d0b613ad93"
+        , "info":
+          { "title": "Smiling"
+          , "artist": "櫟井唯 / 岡野佳"
+          , "genre": "kawaiicore"
+          , "subtitles":
+            [ "[HYPER7]"
+            ]
+          , "subartists": []
+          , "difficulty": 3
+          , "level": 10
+          }
+        , "noteCount": 1200
+        , "bpm":
+          { "init": 86
+          , "min": 86
+          , "median": 172
+          , "max": 172
+          }
+        , "duration": 142.23837209302326
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_Smiling_Yui_hyper7.bme"
+        }
+      , { "md5": "acce57c6b54a97374560556dc8b2428b"
+        , "info":
+          { "title": "Smiling"
+          , "artist": "櫟井唯 / 岡野佳"
+          , "genre": "kawaiicore"
+          , "subtitles":
+            [ "[NORMAL7]"
+            ]
+          , "subartists": []
+          , "difficulty": 2
+          , "level": 6
+          }
+        , "noteCount": 630
+        , "bpm":
+          { "init": 86
+          , "min": 86
+          , "median": 172
+          , "max": 172
+          }
+        , "duration": 142.23837209302326
+        , "scratch": true
+        , "keys": "7K"
+        , "file": "_Smiling_Yui_normal7.bme"
+        }
+      ]
+    , "warnings": []
+    , "id": "[yui_ichii]smiling"
+    , "path": "[yui_ichii]smiling"
+    }
+  , { "title": "Amusing Colorful Pudding."
+    , "artist": "yukitani"
+    , "genre": "Electro Swing Pop"
+    , "bpm": 226
+    , "artist_url": "https://soundcloud.com/yukitani"
+    , "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=147&event=96"
+    , "song_url": "https://soundcloud.com/yukitani/amusing-colorful-pudding"
+    , "replaygain": "-10.94 dB"
+    , "bmssearch_id": 2283
+    , "readme": "README.md"
+    , "charts":
+      [ { "md5": "1df76e4d513ea545bf5cadfd52731abe"
+        , "info":
+          { "title": "Amusing Colorful Pudding."
+          , "artist": "yukitani / DKN"
+          , "genre": "Electro Swing Pop"
+          , "subtitles":
+            [ "dorodoro"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 12
+          }
+        , "noteCount": 1820
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 226
+          , "min": 226
+          , "median": 226
+          , "max": 226
+          }
+        , "duration": 125.84070796460176
+        , "file": "acp.bme"
+        }
+      , { "md5": "963868a59ecc4b8f80cd1d377b17557a"
+        , "info":
+          { "title": "Amusing Colorful Pudding."
+          , "artist": "yukitani / DKN"
+          , "genre": "Electro Swing Pop"
+          , "subtitles":
+            [ "nameraca"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 10
+          }
+        , "noteCount": 1130
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 226
+          , "min": 226
+          , "median": 226
+          , "max": 226
+          }
+        , "duration": 125.84070796460176
+        , "file": "acph.bme"
+        }
+      , { "md5": "15e39902521c9012a403da7d556009de"
+        , "info":
+          { "title": "Amusing Colorful Pudding."
+          , "artist": "yukitani / DKN"
+          , "genre": "Electro Swing Pop"
+          , "subtitles":
+            [ "funwari"
+            ]
+          , "subartists": []
+          , "difficulty": 0
+          , "level": 6
+          }
+        , "noteCount": 576
+        , "scratch": true
+        , "keys": "7K"
+        , "bpm":
+          { "init": 226
+          , "min": 226
+          , "median": 226
+          , "max": 226
+          }
+        , "duration": 125.84070796460176
+        , "file": "acpn.bme"
+        }
+      ]
+    , "warnings": []
+    , "id": "[yukitani]acp"
+    , "path": "[yukitani]acp"
+    }
+  ]
+}

@@ -117,9 +117,8 @@ Not read by ROX (no Beat Saber codec in `src/formats/`: auto, fnf, mc, osu, qua,
 
 ## Getting samples
 
-- **Committed**: 12 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
-- **Manifest**: 5 entries in `samples.manifest.json` (downloaded by `tools/fetch-samples.sh` into `samples-local/`; listed in [`samples/SOURCES.md`](samples/SOURCES.md))
-- **More samples**: same sources as the `dat` fiche: BeatSaver zips (`info.dat` lowercase in old maps, `Info.dat` later), BSMG wiki snippets (`wiki/.assets/snippets/info/` versions 1.0.0, 2.0.0, 2.1.0, 4.0.0, 4.0.1) and BeatSaber-Deno fixtures (`tests/resources/empty*/v1|v2|v4/Info.dat`, real `examples/`).
+- **Committed**: 23 real `Info.dat`/`info.dat` files: BeatSaber-Deno fixtures (v1, v2.x, v4), BSMG wiki snippets (1.0.0, 2.0.0, 2.1.0, 4.0.0, 4.0.1) and the Info files of the BeatSaver map sets (`<id>_<hash8>/`, matching charts in `../dat/samples/<same set>/`). Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **More samples**: see the `dat` fiche (BeatSaver API/CDN, BeatSaber-Deno fixtures, BSMG wiki snippets).
 
 ## Sources
 - https://bsmg.wiki/mapping/map-format.html

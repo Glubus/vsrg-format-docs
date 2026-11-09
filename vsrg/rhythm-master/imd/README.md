@@ -73,9 +73,8 @@ Read by ROX since Prism's addition of `rox::formats::imd` (decode only): `ImdDec
 
 ## Getting samples
 
-- Committed in [`samples/`](samples/SOURCES.md): five tiny deliberately invalid files from the RMEssentials tests (AGPL-3.0) and `synthetic_4k_hd.imd`, a valid hand-built 4-key file (CC0).
-- Manifest: four official classic-mode charts (4k easy, 5k hard, 6k normal; GirlKiller512/RhythmMasterResource, pinned commit, no licence) and two RMEssentials song fixtures (AGPL repo).
-- More: https://github.com/GirlKiller512/RhythmMasterResource holds 4134 `.imd` files (all songs, 3 key counts x 3 difficulties) of the closed classic mode; https://github.com/nladuo/RM2Malody holds more (e.g. `keluodiya_4k_hd.imd`); fan charts at https://www.dreamimd.com; the Malody RM guide https://m.mugzone.net/wiki/2368 describes importing. Official/fan charts have unclear licences: keep them local.
+- Committed in [`samples/`](samples/): 9 real charts (7 official classic-mode files from GirlKiller512/RhythmMasterResource covering 4k/5k/6k and ez/nm/hd, 2 RMEssentials song fixtures), 5 deliberately invalid RMEssentials files and `synthetic_4k_hd.imd`. Everything is listed with origin, date and sha256 in [`samples/SOURCES.md`](samples/SOURCES.md).
+- More: https://github.com/GirlKiller512/RhythmMasterResource holds 4134 `.imd` files (all songs of the classic mode, 3 key counts x 3 difficulties) with `mrock_song_client_android.xml` as song list; https://github.com/nladuo/RM2Malody has more (e.g. `keluodiya_4k_hd.imd`); fan charts at https://www.dreamimd.com; the Malody RM guide https://m.mugzone.net/wiki/2368.
 
 ## Sources
 - https://raw.githubusercontent.com/Fsu0413/RMEssentials/master/src/librmessentials/src/rmechart.cpp , rmechart.h

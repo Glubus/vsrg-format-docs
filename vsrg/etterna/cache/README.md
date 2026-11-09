@@ -78,7 +78,7 @@ Etterna C++ only (`SongManager.cpp`, `ScreenInstallOverlay.cpp`, `NoteData.cpp`)
 
 ## Getting samples
 
-None committed or in the manifest: these files are generated artefacts of Etterna's pack tooling and are not stored in any repository checked. How to produce one: in a stock Etterna build, open the pack-export action that calls `SongManager::GenerateCachefilesForGroup` (the code path creates `Songs/<pack>/<song>/songdata.cache` and `<chartkey>.cache`, then `Cache/<pack>.zip`) [inference: the menu entry/Lua binding that calls it was not traced]. Alternatively compute a record array yourself from a committed chart (for example `../../stepmania/ssc/samples/Springtime.ssc`) with the rules above.
+None committed: these files are generated artefacts of Etterna's pack tooling and are not stored in any repository checked. How to produce one: in a stock Etterna build, open the pack-export action that calls `SongManager::GenerateCachefilesForGroup` (the code path creates `Songs/<pack>/<song>/songdata.cache` and `<chartkey>.cache`, then `Cache/<pack>.zip`) [inference: the menu entry/Lua binding that calls it was not traced]. Alternatively compute a record array yourself from a committed chart (for example `../../stepmania/ssc/samples/Springtime.ssc`) with the rules above.
 
 ## Sources
 

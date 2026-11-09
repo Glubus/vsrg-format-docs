@@ -63,7 +63,7 @@ Arcade jubeat `.eve` (this page); the same events in binary form in `.jbsq`. jub
 
 ## Example
 
-[observed in manifest sample jubeatools_Life_Without_You.eve] Real files are written with the right-aligned fields (`{time:>8},{command:<8},{value:>8}`), start with `MEASURE`, `HAKU`, `TEMPO` at tick 0 (in that order) and list simultaneous taps as consecutive `PLAY` lines with the same time (e.g. `480,PLAY,0` / `480,PLAY,3` / `480,PLAY,8`).
+[observed in samples/jubeatools_Life_Without_You.eve, jubeatools_351450202_ext.eve] Real files use CRLF line endings (the loader splits on `\n` and strips each line), are written with the right-aligned fields (`{time:>8},{command:<8},{value:>8}`), start with `MEASURE`, `HAKU`, `TEMPO` at tick 0 (in that order) and list simultaneous taps as consecutive `PLAY` lines with the same time (e.g. `480,PLAY,0` / `480,PLAY,3` / `480,PLAY,8`).
 
 A runnable hand-written file is [`samples/synthetic-example.eve`](samples/synthetic-example.eve).
 
@@ -92,9 +92,7 @@ Not read by ROX 0.8.1.
 
 ## Getting samples
 
-**Committed** ([`samples/`](samples/SOURCES.md)): `synthetic-example.eve` (hand-written, CC0; two tempos, taps, five long notes, validated against the jubeatools value rules). **Manifest:** `jubeatools_Life_Without_You.eve` (jubeatools test fixture pinned to a commit; the repository has no LICENSE, so it is not committed).
-
-**How to get more**: convert any memon/memo chart with jubeatools (loader/dumper for `eve`; the GitHub repository README now says "Moved to gitlab": <https://gitlab.com/Buggyroom/jubeatools>, not opened), or with `Jubeat-MemonEveConverter` (<https://github.com/fishguy6564/Jubeat-MemonEveConverter>). Arcade `.eve` files come from the arcade game data (one file per difficulty named `bsc`/`adv`/`ext`, per jubeatools); those are commercial. The jubeatools repository also contains `.eve` test data (see the manifest entry).
+**Committed** ([`samples/`](samples/SOURCES.md)): 3 real `.eve` files from the jubeatools test data (GitLab Buggyroom/jubeatools, mirrored on GitHub; no LICENSE file; includes CRLF-ending files) and one synthetic file. More: convert any memon/memo chart with jubeatools (<https://gitlab.com/Buggyroom/jubeatools>, GitHub copy moved) or Jubeat-MemonEveConverter (<https://github.com/fishguy6564/Jubeat-MemonEveConverter>); arcade originals (`bsc`/`adv`/`ext.eve`) are game data. No further public `.eve` collection was found.
 
 ## Sources
 

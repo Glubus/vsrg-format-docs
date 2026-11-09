@@ -1,0 +1,128 @@
+{
+  "title": "オリヴィアの幻術",
+  "artist": "葵",
+  "genre": "Sexy Dance",
+  "bpm": 128,
+  "artist_url": "http://aoi.prismusic.net/",
+  "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=131&event=96",
+  "song_url": "https://soundcloud.com/aoi-kakuta/mou5p223mclf",
+  "long_url": "https://soundcloud.com/aoi-kakuta/groundbreaking-mix",
+  "youtube_url": "https://www.youtube.com/watch?v=IUAE-nai4Vc",
+  "replaygain": "+0.01 dB",
+  "bmssearch_id": 2154,
+  "initial": true,
+  "readme": "README.md",
+  "charts": [
+    {
+      "md5": "b301d67f3639cd2701c5ef7a25485a34",
+      "info": {
+        "title": "オリヴィアの幻術",
+        "artist": "葵",
+        "genre": "Sexy Dance",
+        "subtitles": [
+          "SP Another"
+        ],
+        "subartists": [
+          "mov:いとう まさき"
+        ],
+        "difficulty": 4,
+        "level": 11
+      },
+      "noteCount": 1158,
+      "bpm": {
+        "init": 128,
+        "min": 128,
+        "median": 128,
+        "max": 128
+      },
+      "duration": 146.279296875,
+      "scratch": true,
+      "keys": "7K",
+      "file": "olivia_SPA.bml"
+    },
+    {
+      "md5": "01ee4891199f523c170677433a625592",
+      "info": {
+        "title": "オリヴィアの幻術",
+        "artist": "葵",
+        "genre": "Sexy Dance",
+        "subtitles": [
+          "SP Hyper"
+        ],
+        "subartists": [
+          "mov:いとう まさき"
+        ],
+        "difficulty": 3,
+        "level": 7
+      },
+      "noteCount": 716,
+      "bpm": {
+        "init": 128,
+        "min": 128,
+        "median": 128,
+        "max": 128
+      },
+      "duration": 146.279296875,
+      "scratch": true,
+      "keys": "7K",
+      "file": "olivia_SPH.bml"
+    },
+    {
+      "md5": "33e4b2616c05ace330c7eb3ccc7d080a",
+      "info": {
+        "title": "オリヴィアの幻術",
+        "artist": "葵",
+        "genre": "Sexy Dance",
+        "subtitles": [
+          "SP Normal"
+        ],
+        "subartists": [
+          "mov:いとう まさき"
+        ],
+        "difficulty": 2,
+        "level": 4
+      },
+      "noteCount": 447,
+      "bpm": {
+        "init": 128,
+        "min": 128,
+        "median": 128,
+        "max": 128
+      },
+      "duration": 146.279296875,
+      "scratch": true,
+      "keys": "7K",
+      "file": "olivia_SPN.bml"
+    },
+    {
+      "md5": "64d2a8eec9f048634ff9a32cfa064ab8",
+      "info": {
+        "title": "オリヴィアの幻術",
+        "artist": "葵",
+        "genre": "Sexy Dance",
+        "subtitles": [
+          "Tonalite"
+        ],
+        "subartists": [
+          "mov:いとう まさき/obj:止ヒ糸"
+        ],
+        "difficulty": 5,
+        "level": 8
+      },
+      "noteCount": 1097,
+      "bpm": {
+        "init": 128,
+        "min": 128,
+        "median": 128,
+        "max": 128
+      },
+      "duration": 146.279296875,
+      "scratch": true,
+      "keys": "7K",
+      "file": "olivia_SPpp.bml"
+    }
+  ],
+  "warnings": [
+
+  ]
+}

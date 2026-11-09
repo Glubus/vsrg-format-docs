@@ -46,7 +46,7 @@ Tap = note without `l`/`p`. Long = with `l` (duration) and `p` (tail start posit
 
 legacy (pre-0.1.0), 0.1.0, 0.2.0, 0.3.0, 1.0.0. jubeatools reads all (`memon:legacy`, `memon:v0.1.0`, … `memon:v1.0.0`) and writes them.
 
-[observed in manifest samples jubeatools_Sky_Bus_For_Hire_*.memon] Legacy `0.1.0` files have no `timing` object: metadata sits under `metadata` with the keys `song title`, `music path`, `album cover path`, `BPM` (float), `offset` (float seconds), and each chart is `{level, resolution, notes}` with notes `{n, t, l, p}` (a note without a tail is written with `l: 0, p: 0`).
+[observed in samples/jubeatools_Sky_Bus_For_Hire_*.memon] Legacy `0.1.0` files have no `timing` object: metadata sits under `metadata` with the keys `song title`, `music path`, `album cover path`, `BPM` (float), `offset` (float seconds), and each chart is `{level, resolution, notes}` with notes `{n, t, l, p}` (a note without a tail is written with `l: 0, p: 0`).
 
 ## Quirks & pitfalls
 
@@ -81,9 +81,7 @@ Not read by ROX 0.8.1.
 
 ## Getting samples
 
-**Committed** ([`samples/`](samples/SOURCES.md)): `synthetic-1.0.0.memon` (hand-written, CC0, validated against the official `schema.json` with a small checker). **Manifest:** three legacy 0.1.0 files ("Sky Bus For Hire" BSC/ADV/EXT) from the jubeatools tests and two 1.0.0 schema fixtures from the memon repo; neither repository has a LICENSE file, so they are not committed.
-
-**How to get more**: charts are written by F.E.I.S. (<https://github.com/Stepland/F.E.I.S.>) or converted from other formats by jubeatools (<https://github.com/Stepland/jubeatools>, moved to GitLab; reads and writes memon legacy/0.1.0/0.2.0/0.3.0/1.0.0); the jujube simulator (<https://github.com/Stepland/jujube>) plays them; the spec repository (<https://github.com/Stepland/memon>) has ~70 schema fixtures in `tests/data` (most are partial documents).
+**Committed** ([`samples/`](samples/SOURCES.md)): 6 real files (three legacy 0.1.0 "Sky Bus For Hire" files, a 1.0.0 "Beat Juggling Mix" chart, two memon-spec schema fixtures) from the jubeatools tests and Stepland/memon (no LICENSE files) and one synthetic 1.0.0 file. More: F.E.I.S. (<https://github.com/Stepland/F.E.I.S.>) writes memon; jubeatools converts to/from it; the spec repo <https://github.com/Stepland/memon> has about 70 schema fixtures in `tests/data`.
 
 ## Sources
 

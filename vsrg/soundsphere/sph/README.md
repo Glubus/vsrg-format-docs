@@ -118,8 +118,8 @@ rizu (Lua): https://github.com/semyon422/rizu (`chart/format/sph/`: `Sph.lua`, `
 
 ## Getting samples
 
-- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): the repository's own sample chart `sea/chart/samples/chart_1.sph` plus the seven chart strings of the rizu unit tests (sounds + volumes, velocities, expands, measure markers, visual layers, Z85 keys), all GPL-3.0 from `semyon422/rizu` at commit `cf4603379dcab949d3510b8c31d1d3e421df6ec0`.
-- **More**: run rizu / soundsphere and import any osu!mania, BMS, Quaver, StepMania, etc. chart; the engine converts charts to its own model and `ChartEncoder` writes SPH (`chart/format/sph/ChartEncoder.lua`) [inference: the editor/export path was not run]. No public archive of `.sph` files was found.
+- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): the repository's own sample chart `sea/chart/samples/chart_1.sph` plus the seven chart strings of the rizu unit tests (sounds + volumes, velocities, expands, measure markers, visual layers, Z85 keys), GPL-3.0, from `semyon422/rizu` at commit `cf4603379dcab949d3510b8c31d1d3e421df6ec0`.
+- **More**: run rizu / soundsphere and import any osu!mania, BMS, Quaver or StepMania chart; the engine writes SPH through `chart/format/sph/ChartEncoder.lua` [inference: export UI path not run]. No public archive of `.sph` files was found.
 
 ## Sources
 

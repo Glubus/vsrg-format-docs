@@ -45,7 +45,7 @@ Not read by ROX.
 - SirusDoma/O2MusicList (music list generator, archived): https://github.com/SirusDoma/O2MusicList ; CXO2 : https://github.com/SirusDoma/CXO2 ; Fadreus/Open2Jam `tools/ojn_header.pl`.
 
 ## Getting samples
-- **Committed / manifest: none.** No OJNList file was found at a public hashable URL or in the repositories scanned (CXO2, O2MusicList, open2jam, render-ojn). A binary file was not invented.
+- **Committed: none (no real file found).** No OJNList file was found in the public repositories scanned (CXO2, O2MusicList, open2jam, render-ojn). A binary file was not invented.
 - **How to get one**: copy `Image/OJNList.dat` (or `X2OJNList.dat`) from an O2Jam client you own; in client v3.10 it is inside `Playing(1).opi` (fiche; CXO2 file-format dev log https://dev.cxo2.me/o2jam-file-format lists `Image/OJNList.dat (or X2OJNList.dat for X2 client)`). Or **generate one**: https://github.com/SirusDoma/O2MusicList (MIT, archived; successor https://github.com/SirusDoma/o2jam-workshop-center) "creates or modifies OJNList files", adding OJN files to a new list in the Korean or Chinese layout (its README: File -> New, then Add). [inference] Feeding it the synthetic OJNs of [ojn samples](../ojn/samples/SOURCES.md) would give an OJNList of public-domain-like data; it was not run here (.NET Windows tool).
 
 ## Sources

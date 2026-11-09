@@ -45,7 +45,7 @@ Not read as Troll (legacy codec reads `song.notes[].sectionNotes` only; mines/ro
 
 ## Observed in real files
 
-The engine's own charts have `keyCount` (4), `hudSkin`, `tracks` (`inst`/`player`/`opponent` lists), `extraTracks: []`, `splashSkin`, `arrowSkin`, `path`, and in some charts `metadata` (`songName`, `artist`, `charter`) and `offset`; note arrays have a 4th element `''` for untyped notes [observed in the manifest files troll_bopeebo.json and troll_darnell.json].
+The engine's own charts have `keyCount` (4), `hudSkin`, `tracks` (`inst`/`player`/`opponent` lists), `extraTracks: []`, `splashSkin`, `arrowSkin`, `path`, and in some charts `metadata` (`songName`, `artist`, `charter`) and `offset`; note arrays have a 4th element `''` for untyped notes [observed in samples/troll_bopeebo.json and troll_darnell.json].
 
 ## Parsers & tools
 
@@ -54,8 +54,7 @@ The engine's own charts have `keyCount` (4), `hudSkin`, `tracks` (`inst`/`player
 
 ## Getting samples
 
-- Committed: [samples/](samples/): one synthetic chart.
-- Manifest: six files of riconuts/FNF-Troll-Engine (commit `60902619df0e1f6a4125227252b66651a6929ee4`): `default_content/base-game/songs/...` and `example_content/...`. The repository has no LICENSE file at that commit (only a README), so nothing is committed. Observed: `keyCount` 4, `hudSkin` "default", `tracks {inst, player, opponent}`, `extraTracks: []`, `metadata {songName, artist, charter}` and `offset` in some charts; note arrays with a 4th element `''`.
+- Committed ([samples/](samples/) and [samples/SOURCES.md](samples/SOURCES.md)): six files of riconuts/FNF-Troll-Engine (`default_content/base-game/songs/...` and `example_content/...`; the repository has no LICENSE file, the owner accepted the risk) and one synthetic chart. Observed: `keyCount` 4, `hudSkin` "default", `tracks {inst, player, opponent}`, `extraTracks: []`, `metadata`, `offset`; note arrays with a 4th element `''`.
 - More: the repository's `default_content/` and `example_content/` folders; the engine's chart editor.
 
 ## Sources

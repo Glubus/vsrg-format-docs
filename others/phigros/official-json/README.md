@@ -122,9 +122,8 @@ Not read by ROX.
 
 ## Getting samples
 
-- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): `synthetic-v3.json` and `synthetic-v1.json`, hand-written from the field tables above (CC0).
-- Manifest (`samples.manifest.json`): three real charts from the archived fan-site repository yuameshi/phigros-charts-repo (`Introduction_Legacy.json`, `Christmas_SP.json` are `formatVersion` 1; `Rubbish_Sorting_SP.json` is `formatVersion` 3). They are copyrighted game charts with no licence file, hence not committed.
-- More: official charts are extracted from the game's asset bundles by community tools; public mirrors exist (the fiche cites https://github.com/SonolusHaniwa/phigros-decrypted-data) as well as auto-updating dump repositories (e.g. MEMZ-Chrome/phigros-chart-tracker, whose README states the charts are copyrighted by Pigeon Games, unauthorised and to be deleted within 24 hours; not listed in the manifest for that reason). Fan tools export the same format (Phichain, https://github.com/Ivan-1f/phichain). A real v3 chart is also in 0thElement/PhiCharter `Assets/Scripts/testChart.json` (6.3 MB, MIT repository, official chart content; not listed).
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): 6 real official charts (formatVersion 1 and 3: `Introduction_Legacy`, `Christmas_SP`, `Rubbish_Sorting_SP`, `Anomaly_EZ`, `Destination_EZ`, `Winter_Cube_SP`; from the fan-site repository yuameshi/phigros-charts-repo) and two hand-written `synthetic-*` files.
+- More: official charts are extracted from the game's asset bundles by community tools; public mirrors exist (the fiche cites https://github.com/SonolusHaniwa/phigros-decrypted-data) and auto-updating dump repositories (e.g. MEMZ-Chrome/phigros-chart-tracker); fan tools export the same format (Phichain, https://github.com/Ivan-1f/phichain). Phira chart packages hold either this format or RPE (see [../rpe/](../rpe/)).
 
 ## Sources
 

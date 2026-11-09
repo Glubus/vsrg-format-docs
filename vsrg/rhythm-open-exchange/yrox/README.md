@@ -88,8 +88,8 @@ hitsounds: []
 
 ## Getting samples
 
-- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): three hand-written files (`synthetic-4k-features.yrox`, `synthetic-7k-minimal.yrox`, `synthetic-8k-coop.yrox`), CC0, same charts as the `.jrox` samples; the YAML parses to exactly the same data as the JSON twins (checked with PyYAML) but the exact scalar quoting of `serde_yaml` was not reproduced.
-- **More**: convert any supported chart with the ROX crate and write it with `YroxEncoder` (`serde_yaml::to_string`). Upstream has no `.yrox` sample.
+- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): six real charts written as `.yrox` (decoded from the real `.rox` samples by a Python script emulating `serde_yaml`; scalar quoting may differ from the Rust output) plus three hand-written synthetic files.
+- **More**: convert any supported chart with the ROX crate and write it with `YroxEncoder`.
 
 ## Sources
 

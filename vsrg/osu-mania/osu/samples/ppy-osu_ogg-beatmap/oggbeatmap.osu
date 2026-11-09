@@ -1,0 +1,10 @@
+osu file format v13
+
+[General]
+AudioFilename: track.ogg
+
+[Metadata]
+Title:BeatmapWithOgg
+Artist:osu-developers
+Creator:osu-developers
+Version:oggbeatmap

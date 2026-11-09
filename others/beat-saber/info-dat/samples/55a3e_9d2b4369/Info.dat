@@ -1,0 +1,50 @@
+{
+  "version": "4.0.1",
+  "song": {
+    "title": "Black Blue Bling Blong",
+    "subTitle": "",
+    "author": "brian boy"
+  },
+  "audio": {
+    "songFilename": "TikDownloader.io_7703194214745509140.egg",
+    "songDuration": 14.886,
+    "audioDataFilename": "AudioData.dat",
+    "bpm": 144.946,
+    "lufs": 0.0,
+    "previewStartTime": 1.5,
+    "previewDuration": 15.0
+  },
+  "songPreviewFilename": "TikDownloader.io_7703194214745509140.egg",
+  "coverImageFilename": "Island_2026-11-09_15-14-14.png",
+  "environmentNames": [
+    "DefaultEnvironment"
+  ],
+  "colorSchemes": [],
+  "difficultyBeatmaps": [
+    {
+      "characteristic": "Standard",
+      "difficulty": "ExpertPlus",
+      "beatmapAuthors": {
+        "mappers": [],
+        "lighters": []
+      },
+      "environmentNameIdx": 0,
+      "beatmapColorSchemeIdx": 0,
+      "noteJumpMovementSpeed": 21.0,
+      "noteJumpStartBeatOffset": -0.275,
+      "beatmapDataFilename": "ExpertPlusStandard.dat",
+      "lightshowDataFilename": "Lightshow.dat",
+      "customData": {
+        "difficultyLabel": "???"
+      }
+    }
+  ],
+  "customData": {
+    "editors": {
+      "lastEditedBy": "ChroMapper",
+      "ChroMapper": {
+        "version": "0.13.892"
+      }
+    }
+  }
+}

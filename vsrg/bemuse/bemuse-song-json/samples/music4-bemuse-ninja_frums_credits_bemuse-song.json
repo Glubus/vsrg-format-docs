@@ -1,0 +1,176 @@
+{
+  "bemusepack_url": "bemuse-data/sound/metadata.json",
+  "charts": [
+    {
+      "md5": "9abb4fd470b85dfaeecd6cf6bf961ecc",
+      "info": {
+        "title": "Credits",
+        "artist": "Frums",
+        "genre": "OTHER TIME",
+        "subtitles": [
+          "SEQUENCER|ORIGIN"
+        ],
+        "subartists": [],
+        "difficulty": 5,
+        "level": 12
+      },
+      "noteCount": 1581,
+      "bpm": {
+        "init": 179,
+        "min": 179,
+        "median": 179,
+        "max": 179
+      },
+      "duration": 97.20670391061452,
+      "scratch": true,
+      "keys": "5K",
+      "file": "sequencerorigin.bms"
+    },
+    {
+      "md5": "67334d4007667d7220dab9b94339479f",
+      "info": {
+        "title": "Credits",
+        "artist": "Frums",
+        "genre": "OTHER TIME",
+        "subtitles": [
+          "5K HYPER"
+        ],
+        "subartists": [
+          "obj.flicknote"
+        ],
+        "difficulty": 2,
+        "level": 7
+      },
+      "noteCount": 739,
+      "bpm": {
+        "init": 179,
+        "min": 179,
+        "median": 179,
+        "max": 179
+      },
+      "duration": 97.20670391061452,
+      "scratch": false,
+      "keys": "5K",
+      "file": "_5hyper_renote.bms"
+    },
+    {
+      "md5": "b6d72f7e2b7900c825b7c92ab48a6186",
+      "info": {
+        "title": "Credits",
+        "artist": "Frums",
+        "genre": "OTHER TIME",
+        "subtitles": [
+          "5K LIGHT"
+        ],
+        "subartists": [
+          "obj.flicknote"
+        ],
+        "difficulty": 1,
+        "level": 2
+      },
+      "noteCount": 236,
+      "bpm": {
+        "init": 179,
+        "min": 179,
+        "median": 179,
+        "max": 179
+      },
+      "duration": 97.20670391061452,
+      "scratch": true,
+      "keys": "5K",
+      "file": "_5easy_renote.bms"
+    },
+    {
+      "md5": "75aa76dcaaa6e039d81b24b74fb4c306",
+      "info": {
+        "title": "Credits",
+        "artist": "Frums",
+        "genre": "OTHER TIME",
+        "subtitles": [
+          "PLAYER"
+        ],
+        "subartists": [],
+        "difficulty": 2,
+        "level": 2
+      },
+      "noteCount": 33,
+      "bpm": {
+        "init": 179,
+        "min": 179,
+        "median": 179,
+        "max": 179
+      },
+      "duration": 97.20670391061452,
+      "scratch": true,
+      "keys": "7K",
+      "file": "player.bms"
+    },
+    {
+      "md5": "f84fda4df02dcc5901302ebf8daf86f0",
+      "info": {
+        "title": "Credits",
+        "artist": "Frums",
+        "genre": "OTHER TIME",
+        "subtitles": [
+          "SEQUENCER"
+        ],
+        "subartists": [],
+        "difficulty": 4,
+        "level": 12
+      },
+      "noteCount": 1581,
+      "bpm": {
+        "init": 179,
+        "min": 179,
+        "median": 179,
+        "max": 179
+      },
+      "duration": 97.20670391061452,
+      "scratch": true,
+      "keys": "7K",
+      "file": "sequencer.bms"
+    },
+    {
+      "md5": "5c156091b954708f5c6723d201933ef7",
+      "info": {
+        "title": "Credits",
+        "artist": "Frums",
+        "genre": "OTHER TIME",
+        "subtitles": [
+          "PERFORMER"
+        ],
+        "subartists": [],
+        "difficulty": 3,
+        "level": 9
+      },
+      "noteCount": 819,
+      "bpm": {
+        "init": 179,
+        "min": 179,
+        "median": 179,
+        "max": 179
+      },
+      "duration": 97.20670391061452,
+      "scratch": true,
+      "keys": "7K",
+      "file": "performer.bms"
+    }
+  ],
+  "title": "Credits",
+  "artist": "Frums",
+  "genre": "OTHER TIME",
+  "bpm": 179,
+  "replaygain": "0.07 dB",
+  "preview_offset": 33,
+  "preview_url": "bemuse-data/preview.mp3",
+  "song_url": "https://soundcloud.com/frums/credits",
+  "bms_url": "https://manbow.nothing.sh/event/event.cgi?action=More_def&num=113&event=104",
+  "youtube_url": "https://www.youtube.com/watch?v=EOTAWLaDa58",
+  "long_url": "https://gdbg.tv/release/2015-3-5",
+  "bmssearch_id": "OVCV5qqgbjr8dh",
+  "artist_url": "http://www.frums.xyz/",
+  "back_image_url": "bemuse-data/back_image.jpg",
+  "video_url": "bemuse-data/bga.webm",
+  "eyecatch_image_url": "bemuse-data/eyecatch_image.jpg",
+  "readme": "README.md"
+}

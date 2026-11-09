@@ -92,7 +92,7 @@ Not read by ROX 0.8.1.
 
 ## Getting samples
 
-Committed: the spec examples (Rev.1 and Rev.2.4 `.tci`/`.tcc`, plus a `.tcm` medley) from AioiLight/Open-Taiko-Chart (MIT) in [`samples/`](samples/). No real-world `.tcc` was found in the open repositories checked (Open-Taiko-Chart contains only specification pages; TJAPlayer3-f and Koioto could not be cloned anonymously). To get more: install Koioto (plugin "OpenTaikoChart") or TJAPlayer3-f and export/convert a `.tja`; OpenTaiko writes `.optktci`/`.optktcm` variants [per fiche]. Rev.3 (branches) was still unspecified in the repository README.
+Committed in [`samples/`](samples/): the five JSON examples of the specification (Rev.1 and Rev.2.4 `.tci`/`.tcc`, a `.tcm` medley) from AioiLight/Open-Taiko-Chart (MIT). No real-world `.tcc` was found: Koioto and TJAPlayer3-f could not be cloned anonymously and Open-Taiko-Chart holds only spec pages. See [`samples/SOURCES.md`](samples/SOURCES.md) for every file's source URL, fetch date, sha256 and terms. To get more: export from Koioto (plugin "OpenTaikoChart") or TJAPlayer3-f; OpenTaiko writes `.optktci`/`.optktcm`.
 
 ## Sources
 

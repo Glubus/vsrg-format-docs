@@ -59,6 +59,7 @@ Audio file inside the zip named by `AudioName`; cover by `Artwork`/`ArtworkBytes
 - Maps converted from other games (`BeatConverted`), modified (`BeatModified`) flags.
 
 ## Quirks & pitfalls
+- Files downloaded from synthriderz.com are AES-encrypted ZIPs (compression method 99) and cannot be read by plain ZIP tools or the helper [observed on 40 downloads from https://synthriderz.com/api/beatmaps].
 - `.bin` extension is JSON; BOM and CRLF.
 - Misspellings are real keys (`AudioFrecuency`, clipboard `lenght`, `Crouchs`).
 - Time keys can be floats (stored as strings in JSON); positions have small editor snap offsets.
@@ -83,7 +84,7 @@ Not read by ROX.
 
 ## Getting samples
 
-Nothing committed: `.synth` files embed copyrighted audio and have no stated licence, and no open-licensed repository with a `.synth` was found (synth_mapping_helper's tests are empty). The community site <https://synthriderz.com> offers public downloads: `GET https://synthriderz.com/api/beatmaps` returns JSON (`download_url` per map, e.g. `/api/beatmaps/391/download?hash=...`, followed by a redirect to the zip; verified downloading 1.7-4.5 MB files without login). Because the files can be updated by the uploader and the URL is live, they are not hashable and are not in the manifest. Other ways: create one with the Synth Riders Beatmap Editor (saves `.synth`), or use adosikas/synth_mapping_helper to read/write.
+No `.synth` could be committed. Downloads from the community site <https://synthriderz.com> (`GET /api/beatmaps` lists maps; `download_url` redirects to the file) are **AES-encrypted ZIPs** (entries `beatmap.meta.bin` and `track.data.json` use zip compression method 99, flag bit 1 set; checked on 40 files), so the chart cannot be extracted without the key, and the audio inside cannot be stripped. Unencrypted `.synth` files are only given out by their mappers [per the Synth_Riders_Kinematics README: "choose an unencrypted .synth file provided by its mapper. Encrypted downloads are unsupported"]. How to get one: save a map from the Synth Riders Beatmap Editor (writes an unencrypted `.synth`), or ask a mapper; `adosikas/synth_mapping_helper` reads/writes them.
 
 ## Sources
 - https://raw.githubusercontent.com/adosikas/synth_mapping_helper/main/src/synth_mapping_helper/synth_format.py

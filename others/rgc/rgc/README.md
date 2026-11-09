@@ -58,9 +58,8 @@ Not read by ROX.
 
 ## Getting samples
 
-- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): `calibration.rgc` (real SDVX calibration chart, MIT) and `synthetic-all-features.rgc` (hand-written from the spec, CC0: dimensions 0/1/2, compact and object notes, BPM and signature changes).
-- Manifest: nothing.
-- More: the library's spec (`docs/spec.md`) and converters (rgchart by R2O3, https://github.com/R2O3/rgchart; TypeScript library `@rhythm-gaming/rgc`) write the format; no other public `.rgc` collection was found (the rgc repository itself has only `test/chart/sdvx/calibration.rgc`).
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): `calibration.rgc` (real SDVX calibration chart, MIT) and `synthetic-all-features.rgc` (hand-written from the spec).
+- More: no other public `.rgc` collection was found (the rgc repository itself has only `test/chart/sdvx/calibration.rgc`; the rgchart repository by R2O3 has test maps in other formats); the library `@rhythm-gaming/rgc` and converters write the format.
 
 ## Sources
 

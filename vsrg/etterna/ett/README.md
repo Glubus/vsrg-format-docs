@@ -69,7 +69,7 @@ Etterna C++ (writer only): [NotesWriterETT.cpp](https://github.com/etternagame/e
 
 ## Getting samples
 
-No `.ett` file is committed or in the manifest: none exists in any repository checked (Etterna, ITGmania, StepMania, parser fixtures), and the only way to produce one is to build Etterna from source and call `Song::SaveToETTFile(path, false)` from code, since no menu, Lua binding or other caller was found [inference from a source search at commit `2d706147cc4bcf95a8ceb24dc4f4129be207f803`]. Useful starting points to obtain real data of the same family: the `#CHARTKEY`/`#MSDVALUES` tagged `.ssc` cache files (see [`cache`](../cache/README.md)) produced by stock Etterna.
+No `.ett` file is committed: none exists in any repository checked (Etterna, ITGmania, StepMania, parser fixtures), and the only way to produce one is to build Etterna from source and call `Song::SaveToETTFile(path, false)` from code, since no menu, Lua binding or other caller was found [inference from a source search at commit `2d706147cc4bcf95a8ceb24dc4f4129be207f803`]. Useful starting points to obtain real data of the same family: the `#CHARTKEY`/`#MSDVALUES` tagged `.ssc` cache files (see [`cache`](../cache/README.md)) produced by stock Etterna.
 
 ## Sources
 

@@ -109,7 +109,9 @@ Not read by ROX. Pump `pump-single` 5-column charts map to ROX (the `.sm` loader
 
 ## Getting samples
 
-No `.stx` file is committed or in the manifest: none is stored in the converters' repositories ([StepMania-AMX/STX2DM](https://github.com/StepMania-AMX/STX2DM), commit `10890ab97927ba7e861a09073d957dda915f8e40`: 15 source files; [valius/UCSConverterTool](https://github.com/valius/UCSConverterTool): no fixtures) and real files are Andamiro game data. How: take the `.stx` of a song from the Pump It Up data you own (the file starts with `STF4`; one file per song holding all modes, per this page), open it with STX2DM (Windows, converts to KSF) or UCSConverterTool (to `.ucs`). Where in the install the files live is Unknown here.
+Committed in [`samples/`](samples/SOURCES.md): 12 real `.STX` files (magic `STF4`) from the PC disc image "Pump It Up: The Prex 3" (archive.org item `prex-pc`, `STEP/*.STX`, 73 files; 12 spread over the song range were extracted from the 403 MB ISO, which is not kept). [observed in `samples/prex3-pc_101.STX`: header `STF4`, 56 zero bytes, a 64-byte title field at offset 60 (here `Ignition Starts!`), and at offset 252 an ascending table of nine absolute chart offsets (288, 547, 802, ...)], matching this page's header layout.
+
+More: the other 61 `.STX` of that ISO (extract with 7-Zip, `7z x PREX_PC.ISO "STEP/*.STX"`); later Pump It Up PC/arcade data (archive.org has Pump It Up PRO/Infinity/Prime packs as multi-GB `.rar`/`.7z`, not inspected); converters [StepMania-AMX/STX2DM](https://github.com/StepMania-AMX/STX2DM) and [valius/UCSConverterTool](https://github.com/valius/UCSConverterTool).
 
 ## Sources
 

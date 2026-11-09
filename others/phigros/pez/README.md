@@ -54,9 +54,9 @@ prpr / Phira (Rust): <https://github.com/Mivik/prpr>, <https://github.com/TeamFl
 
 ## Getting samples
 
-- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): `rpechart_demo.pez`, a real zip built by the MIT-licensed `rpechart` library (members `chart.json` and `info.txt` only, no audio, no picture). [observed in samples/rpechart_demo.pez: `info.txt` is a CRLF text file starting with `#` then `Name:`, `Path:`, `Song:`, `Picture:`, `Chart:`, `Level:`, `Composer:`, `Charter:` lines]
-- Manifest: nothing (real fan `.pez` packages contain music and are shared on live sites).
-- More: Phira imports a `.pez` zip (prpr README); packages are exported from Re:PhiEdit or built by tools such as rpechart (`export_pez`).
+- Container only: this folder holds no archive. A `.pez` is a zip with the chart (RPE `chart.json`, or official/PEC format), `info.yml`/`info.txt`, music and illustration. Layout observed in real packages downloaded from the Phira API: chart file named in `info.yml` (`chart:`), `info.yml`, `info.txt`, music (`.mp3`/`.ogg`), illustration, sometimes extra files (`extra.json`, `.glsl`).
+- The real charts extracted from Phira packages are committed in [../rpe/samples/](../rpe/samples/) (`phira_<id>.json`; see its SOURCES.md for the source URLs).
+- More: Phira's public API (`https://api.phira.cn/chart?page=1&pageNum=N&order=-updated`, observed 2026-11-09) lists charts with a `file` URL pointing to the `.pez`; packages are exported from Re:PhiEdit or built by tools such as rpechart (`export_pez`).
 
 ## Sources
 

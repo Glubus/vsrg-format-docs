@@ -1,0 +1,72 @@
+﻿osu file format v14
+
+[General]
+AudioFilename: virtual
+AudioLeadIn: 0
+PreviewTime: 164471
+Countdown: 0
+SampleSet: Normal
+StackLeniency: 0.7
+Mode: 1
+LetterboxInBreaks: 0
+WidescreenStoryboard: 0
+
+[Editor]
+Bookmarks: 956,53703,227767
+DistanceSpacing: 0.8
+BeatDivisor: 4
+GridSize: 4
+TimelineZoom: 2.4
+
+[Metadata]
+Title:RenatusQuick
+TitleUnicode:Renatus
+Artist:Soleily
+ArtistUnicode:Soleily
+Creator:MMzz
+Version:Futsuu
+Source:
+Tags:MBC7 Unisphere 地球ヤバイEP Chikyu Yabai
+BeatmapID:557816
+BeatmapSetID:241526
+
+[Difficulty]
+HPDrainRate:4
+CircleSize:5
+OverallDifficulty:4
+ApproachRate:5
+SliderMultiplier:1.4
+SliderTickRate:1
+
+[Events]
+//Background and Video events
+0,0,"machinetop_background.jpg",0,0
+//Break Periods
+//Storyboard Layer 0 (Background)
+//Storyboard Layer 1 (Fail)
+//Storyboard Layer 2 (Pass)
+//Storyboard Layer 3 (Foreground)
+//Storyboard Sound Samples
+
+[TimingPoints]
+956,329.67032967033,4,1,0,90,1,0
+
+[HitObjects]
+200,152,956,5,4,0:0:0:0:
+200,152,1285,1,8,0:0:0:0:
+200,152,1945,1,8,0:0:0:0:
+200,152,2274,1,0,0:0:0:0:
+200,152,2769,1,0,0:0:0:0:
+200,152,3593,1,0,0:0:0:0:
+200,152,3923,1,8,0:0:0:0:
+200,152,4582,1,8,0:0:0:0:
+200,152,4912,1,0,0:0:0:0:
+200,152,5406,1,0,0:0:0:0:
+200,152,6230,1,0,0:0:0:0:
+200,152,6560,1,8,0:0:0:0:
+192,124,7219,1,8,0:0:0:0:
+192,124,7549,1,0,0:0:0:0:
+192,124,8043,1,0,0:0:0:0:
+192,124,8868,1,0,0:0:0:0:
+192,124,9197,1,8,0:0:0:0:
+192,124,9857,1,8,0:0:0:0:

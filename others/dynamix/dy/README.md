@@ -56,9 +56,7 @@ Dynamaker-modified: <https://github.com/jmakxd/dynamaker-modified>; DyNode: <htt
 
 ## Getting samples
 
-**Committed** ([`samples/`](samples/SOURCES.md)): `synthetic-minimal.dy`, a hand-written bundle whose `remix.music` is a generated 0.1 s silent WAV (no copyrighted audio). **Manifest:** none (a real `.dy` embeds the song as base64, so real ones are not redistributable).
-
-**How to get more**: open or create a chart in Dynamaker / dynamaker-modified (<https://github.com/jmakxd/dynamaker-modified>) and use "Save as .DY" (`saveAsDynaMaker()`, and `saveAsMinimal()` which adds `remix.isMinimal: true`; both in `app/src/Script/function.js`) or DyNode's `.dy` import/export. The Dynamaker guide documents the export (<https://github.com/TLChicken/dynamaker-guide>). Real bundles circulate in the Dynamix fanmade community with their music inside.
+**Committed** ([`samples/`](samples/SOURCES.md)): `synthetic-minimal.dy`, a hand-written bundle with a generated silent WAV. No real `.dy` was found: real bundles embed the song as base64 and circulate only in the fanmade community. More: "Save as .DY" in Dynamaker / dynamaker-modified (`saveAsDynaMaker()`, `saveAsMinimal()` in `app/src/Script/function.js`) or DyNode.
 
 ## Sources
 

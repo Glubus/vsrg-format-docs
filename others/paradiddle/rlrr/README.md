@@ -85,9 +85,8 @@ Not read by ROX. Mapping to columns would require choosing a column per instrume
 
 ## Getting samples
 
-- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): `defaultset.rlrr` (the real default drum kit of ParadiddleUtilities, GPL-3.0) and two hand-written `synthetic-example_*.rlrr` song charts (CC0) built from the v0.7 schema.
-- Manifest (`samples.manifest.json`): nothing. Community songs on ParaDB are zips that include the song audio, and the site is a live, changing page (not hashable).
-- Getting real song charts: (1) download a map zip from a map page of ParaDB (https://paradb.net/instructions: the zip unpacks to `<Song>/<Song>_Easy.rlrr`, `_Medium`, `_Hard`, `_Expert` plus `.ogg` tracks); (2) convert your own MIDI with the Paradiddle Song Creator (https://paradiddleapp.com/custom-song-guide/: output folder `ParadiddleUtilities/rlrr_files/` holds `<SongName>_<difficulty>.rlrr`); (3) community converters from Clone Hero/YARG charts exist (paradiddleTools, ParaKit; seen in search results, not tested). In the game, songs live in `Paradiddle/Saved/Songs/` (PC) and kits in `Paradiddle/Saved/DrumLayouts/` (guide).
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): 16 real files: the default drum kit (`defaultset.rlrr`, GPL-3.0) and 15 song charts (6 community maps from ParaDB, several with Easy/Medium/Hard/Expert), plus 2 hand-written `synthetic-*` charts. The song audio and covers of the ParaDB zips were not kept.
+- More: ParaDB (https://paradb.net) lists maps; the API `https://paradb.net/api/maps?limit=N` returns the list and `https://paradb.net/api/maps/<id>/download` redirects to `https://maps.paradb.net/maps/<id>.zip` (observed 2026-11-09). Make your own with the Paradiddle Song Creator (https://paradiddleapp.com/custom-song-guide/). In the game, songs live in `Paradiddle/Saved/Songs/` (PC) and kits in `Paradiddle/Saved/DrumLayouts/`.
 
 ## Sources
 - https://paradiddleapp.com/custom-song-guide/

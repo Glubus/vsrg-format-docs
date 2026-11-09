@@ -1,0 +1,10 @@
+osu file format v13
+
+[General]
+AudioFilename: track.ogg
+
+[Metadata]
+Title:BeatmapWithConflictingFilenames
+Artist:osu-developers
+Creator:osu-developers
+Version:conflicting-filenames

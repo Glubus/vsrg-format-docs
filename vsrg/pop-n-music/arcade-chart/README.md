@@ -80,7 +80,7 @@ Not read by ROX.
 
 ## Getting samples
 
-No sample is committed and none is in `samples.manifest.json`: official pop'n music chart data is Konami game data, and no publicly downloadable, redistributable file was found (Gi-z/popntowav ships no fixtures; its repository tree at commit 469b6de82c6e5654eae42d130341d4c4d8b963a9 holds only `.js`, `package.json`, `README.md`). A hand-written binary was not made: the layout is unverified (Doc status: stub).
+No sample is committed: no real file of this format could be obtained. Searches on 2026-11-09 (GitHub path search through Sourcegraph for `*.2dx`, `<id>.1`, `*_op.bin`/`*_hp.bin`/`*.ifs`; the repositories of every parser/converter named below; archive.org full-text/title search; web searches) found no public copy: the tools ship no fixtures and the only archive.org items are whole-game dumps or soundtracks (not individual chart files, and far above the 20 MB limit or audio). The data is Konami game data that exists only inside a game installation. A hand-written binary was not made: the layout is unverified (Doc status: stub).
 
 How to obtain real files (you need your own copy of the game):
 

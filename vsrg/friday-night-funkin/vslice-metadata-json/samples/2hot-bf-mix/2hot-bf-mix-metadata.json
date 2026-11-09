@@ -1,0 +1,48 @@
+{
+ "version": "2.2.4",
+ "songName": "2hot (BF Mix)",
+ "artist": "KawaiiSprite (Mix by Pishoow)",
+ "charter": "Pishoow",
+ "offsets": { },
+ "playData": {
+  "difficulties": [
+   "easy",
+   "normal",
+   "hard"
+  ],
+  "characters": {
+   "player": "bf",
+   "girlfriend": "gf",
+   "opponent": "darnell",
+   "opponentVocals": [
+    "dad"
+   ],
+   "playerVocals": [
+    "bf"
+   ]
+  },
+  "stage": "phillyStreets",
+  "noteStyle": "funkin",
+  "ratings": {
+   "easy": 0,
+   "normal": 0,
+   "hard": 8
+  },
+  "previewEnd": 0
+ },
+ "generatedBy": "Friday Night Funkin' - v0.8.4",
+ "timeChanges": [
+  {
+   "t": 0,
+   "b": 0,
+   "bpm": 184,
+   "bt": [4, 4, 4, 4]
+  },
+  {
+   "t": 97670,
+   "b": 299.5213,
+   "bpm": 184,
+   "bt": [4, 4, 4, 4]
+  }
+ ]
+}

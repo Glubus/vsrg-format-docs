@@ -155,7 +155,7 @@ ROX source `src/formats/qua` (parser: `serde_yaml`, UTF-8, 100 MiB):
 ## Getting samples
 
 - **Committed** in [`samples/`](samples/) (see [`SOURCES.md`](samples/SOURCES.md)): 82 real and test maps: Quaver.API's test resources (MPL-2.0: `sample`, `keysounds`, `sound-effects`, SV regression and "normalized" pairs, `stable-sorting` with CRLF, `cheat`/`symphony` large maps, converted osu! maps `megalovania` 7K and `Camellia - Backbeat Maniac` with thousands of timing points, 29 AutoMod inputs including one with a UTF-8 BOM), Quaver's built-in maps (Offset Calibrator and the 8 Princess of Winter difficulties; CC-BY-NC 4.0) and two hand-written CC0 charts covering `HasScratchKey`, mines (`QuaVersion: 1`), `TimingGroups`/`ScrollSpeedFactors`, Keys10, layers and bookmarks (features the upstream test files here do not contain).
-- **Manifest**: none for bare `.qua`; the three Quaver default `.qp` mapsets of the manifest (see [qp](../qp/README.md)) contain 4-6 real difficulties each.
+- **Also**: the seven real default `.qp` mapsets committed in [qp](../qp/README.md) contain 4-7 real difficulties each.
 - **How to get more**: Quaver's editor writes `.qua` into the Songs folder; every mapset on https://quavergame.com is a `.qp` (a ZIP, so unzip it); Quaver converts `.osz`, `.sm` and `.mcz` on import (`MapsetImporter.AcceptedMapType`), which also produces `.qua`; the Quaver repository ships 11 default `.qp` under `Quaver.Resources/Quaver.Resources/DefaultMaps/`. Newest features (scratch, mines, timing groups) only appear in recent community maps or in the current Quaver.API tests (the pinned a921d56 snapshot has none).
 
 ## Sources

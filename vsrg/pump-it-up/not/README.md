@@ -96,7 +96,9 @@ UCSConverterTool (Dart/Flutter): https://github.com/valius/UCSConverterTool (`li
 
 ## Getting samples
 
-No `.not`/`.not5` file is committed or in the manifest: the only open code that reads them ([valius/UCSConverterTool](https://github.com/valius/UCSConverterTool), commit `bc9298390ace230499480a65ccdf8c2f3dc92ef0`) has no fixtures in its tree (a search for `.not`, `.stx`, `.ucs`, `sample`, `test` finds only Flutter boilerplate), and real files are Andamiro game data. Exactly how: the files are the per-chart step files of Pump It Up arcade/PC data (the converter's README calls the older ones ".NOT files (pre-NOT5)"); extract them from the data folder of a Pump It Up installation you own (exact path/archive layout is Unknown here), then check the header: `pump 5.0` = NOT5, anything else = NOT4 (XOR-obfuscated). Convert with UCSConverterTool to `.ucs` to compare with the [`.ucs` manifest samples](../ucs/samples/SOURCES.md).
+Committed in [`samples/`](samples/SOURCES.md): 12 real old-style `.NOT` files (`fusion-3rd/{EASY,HARD,DOUBLE,REMIX}/`) from the PC release "Pump It Up: The Fusion (3rd Dance Floor)" (archive.org item `piupc3rd`, `DATA/STEP/`, 251 `.NOT` files in total; read with HTTP range requests, the disc's mp3/avi/bmp members were not fetched). No `pump 5.0` (NOT5) file was found: the converter repository [valius/UCSConverterTool](https://github.com/valius/UCSConverterTool) has no fixtures. The same site holds the 1st/2nd Dance Floor disc (`pump-it-up-fusion-1st-2nd-dance-floor`) whose 155 `.stf` step files are obfuscated and are a different extension.
+
+More: the other 239 `.NOT` in `piupc3rd`; NOT5 files come from later Andamiro PC/arcade data (exact path Unknown here) and convert with UCSConverterTool to `.ucs` (see [`../ucs`](../ucs/samples/SOURCES.md)).
 
 ## Sources
 

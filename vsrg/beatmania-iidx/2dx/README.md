@@ -75,7 +75,7 @@ Not applicable / not read by ROX. Keysound extraction would require a 2DX9 reade
 
 ## Getting samples
 
-No sample is committed and none is in `samples.manifest.json`: a `.2dx` file is a container of the game's copyrighted keysound audio (and this repository does not accept audio); no open-licensed `.2dx` was found (the extractor repositories 2dx_extract, 2dxTools, iidx-datatools and popntowav were checked and ship no `.2dx` fixture). Writing one by hand is not meaningful here (it would need audio payloads).
+No sample is committed: no real file of this format could be obtained. Searches on 2026-11-09 (GitHub path search through Sourcegraph for `*.2dx`, `<id>.1`, `*_op.bin`/`*_hp.bin`/`*.ifs`; the repositories of every parser/converter named below; archive.org full-text/title search; web searches) found no public copy: the tools ship no fixtures and the only archive.org items are whole-game dumps or soundtracks (not individual chart files, and far above the 20 MB limit or audio). The data is Konami game data that exists only inside a game installation. A `.2dx` is a container of copyrighted keysound audio, which this repository does not accept anyway.
 
 How to obtain real files (you need your own copy of the game):
 

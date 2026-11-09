@@ -90,9 +90,8 @@ Not read by ROX. Target grid and enemy scripts do not map to columns; a decoder 
 
 ## Getting samples
 
-- Committed: nothing (no licence on the level library, and every level zip carries an `.ogg`).
-- Manifest (`samples.manifest.json`): three pinned zips from https://gitlab.com/pwcl/custom-levels (commit ac0a0bb46434d67accd554cde34ad92132d802e5): `10_Second_Test_Level.zip` (145 KB, Easy), `CTRL.zip` (6.9 MB, Hard) and `Lily.zip` (18 MB, Hard). The listing of CTRL.zip shows `Hard.pw_beat`, `Hard.pw_geo` (28 MB unzipped), `Hard.pw_koreo`, `Hard.pw_sec`, `level.pw`, `CTRL.ogg`, `poster.png`.
-- More: other levels in the same repository (Archangel, Monster, DEVORA - Fist Fight, You're gonna find a way out); the PWCL editor (https://gitlab.com/pwcl/editor) and docs (https://pwcl.givo.xyz/). Official Pistol Mix levels use `level.pw` + `.pw_event` + `.pw_art` on mod.io (pages are JavaScript-rendered; not examined).
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): 7 community levels from gitlab.com/pwcl/custom-levels, each in its own subfolder (`level.pw`, `Hard.pw_beat`, `Hard.pw_koreo`, `Hard.pw_sec` and, for the two smallest levels, `.pw_geo`); the `.ogg` songs and posters were not kept, and the `.pw_geo` files larger than 20 MB were skipped (listed in SOURCES.md).
+- More: the PWCL editor (https://gitlab.com/pwcl/editor) and docs (https://pwcl.givo.xyz/). Official Pistol Mix levels use `level.pw` + `.pw_event` + `.pw_art` on mod.io (pages are JavaScript-rendered; not examined).
 
 ## Sources
 - https://gitlab.com/pwcl/mod (`Pistol Whip Custom Levels/AllTheClasses.cs`, `CustomLevels.cs`)

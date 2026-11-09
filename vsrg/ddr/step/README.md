@@ -49,9 +49,9 @@ Not read by ROX.
 
 ## Getting samples
 
-Manifest (fetched to `samples-local/vsrg/ddr/step/`, [`SOURCES.md`](samples/SOURCES.md)): three real STEP files from the RhythmCodex test suite (commit `6c60e9b710150c6ca4adf9b7d93e51c2ad39b2ee`, `Step1/`): `2nd.step` (12,256 bytes), `picky.step` (8,456), `solo.step` (29,408, Solo mix), each in a ZIP; real DDR 2nd-3rd Mix-era data, so not committed. The page's own gap (extension, header, endianness "not documented upstream") can be filled by inspecting these three files with a hex editor.
+Committed in [`samples/`](samples/SOURCES.md): three real STEP files from the RhythmCodex test suite (`2nd.step` 12,256 bytes, `picky.step` 8,456, `solo.step` 29,408 (Solo mix); commit `6c60e9b710150c6ca4adf9b7d93e51c2ad39b2ee`, `Step1/`; extracted from the fixture zips). The page's own gap (extension, header, endianness "not documented upstream") can be filled by inspecting these files with a hex editor. No other public source was found (searched GitHub parser repos and archive.org 2026-11-09).
 
-More: obtain the file with the "DDR Utility" export from your own DDR 2nd Mix to 3rd Mix Plus / Solo Bass Mix / Solo 2000 data, per the upstream note ([SaxxonPike/rhythm-game-formats `ddr/step.md`](https://github.com/SaxxonPike/rhythm-game-formats/blob/master/ddr/step.md)); RhythmCodex reads it.
+More: the "DDR Utility" export of your own DDR 2nd Mix to 3rd Mix Plus / Solo Bass Mix / Solo 2000 data, per the upstream note ([SaxxonPike/rhythm-game-formats `ddr/step.md`](https://github.com/SaxxonPike/rhythm-game-formats/blob/master/ddr/step.md)); RhythmCodex reads it.
 
 ## Sources
 

@@ -96,8 +96,8 @@ fluXis (C#): https://github.com/InventiveRhythm/fluXis (`fluXis/Map/MapEvents.cs
 
 ## Getting samples
 
-- **Committed**: none (see [`fsc`](../fsc/#getting-samples): the fluXis repository ships no map files; no hand-written `.ffx` was added because the event class key names are only partly attribute-named and the legacy text form is undocumented outside the source).
-- **How to get a real one**: unzip any `.fms` mapset; maps with effects contain a `<timestamp>.ffx` (the game names new effect files `<unix timestamp>.ffx`, `MapStore.cs`) referenced by `EffectFile` in the `.fsc`. Effects are authored in the fluXis map editor (event placement UI), or by the Quaver importer for converted maps [inference: the importer's effect output was not read].
+- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): six real `.ffx` JSON effect files extracted from public fluXis mapsets (laneswitch, flash, shaders, playfield and camera events...), downloaded 2026-11-09.
+- **How to get more**: unzip any mapset from `https://fluxis.flux.moe/api/mapsets/<id>/download`; the `.ffx` named by `EffectFile` in a `.fsc` is in the ZIP. The legacy line format was not seen in these sets.
 
 ## Sources
 

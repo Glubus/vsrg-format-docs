@@ -97,9 +97,8 @@ Not read by ROX.
 
 ## Getting samples
 
-- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): three synthetic RPE charts (`RPEVersion` 113, 160, 170) from the MIT-licensed `rpechart` fixtures: layered events, extended events, father lines, fake notes, all four note types.
-- Manifest (`samples.manifest.json`): nothing. A real `.pez` zip with an RPE chart is in [../pez/samples/](../pez/samples/).
-- More: Re:PhiEdit writes `chart.json`; Phira imports it inside a `.pez`; `rpechart` can generate charts from a small `spec.json` (https://github.com/kamilhzn/rpechart).
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): 8 real RPE charts downloaded from the Phira public chart API (`RPEVersion` 160 and 170, 2-5 MB each, extracted from their `.pez` packages) and 3 MIT synthetic fixtures from the `rpechart` library (`RPEVersion` 113, 160, 170).
+- More: browse https://api.phira.cn/chart (observed 2026-11-09: JSON list, field `file` = package URL); Re:PhiEdit writes `chart.json`; `rpechart` can generate charts from a small `spec.json` (https://github.com/kamilhzn/rpechart).
 
 ## Sources
 

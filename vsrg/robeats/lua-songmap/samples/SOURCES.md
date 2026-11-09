@@ -7,3 +7,8 @@
 | `TestingMap.lua` | same repo/commit, `Workspace/SongMaps/TestingMap.lua` | spotco | same | Short debug map (9 taps written as explicit `rtv.HitObjects[#rtv.HitObjects + 1] = { Time=...; Type=1; Track=...; }` table literals instead of helper calls, tracks 1..4, `BeatLength = 500`). |
 
 The song ("Monday Night Monsters", FinnMK) is the template's own sample; the author says the mp3 may be used for anything. Only the Lua maps are committed (no audio). Licence caveat noted in the doubts file.
+
+## Real charts downloaded from public sources (snapshots, fetched 2026-11-09)
+| File | Source URL | Date fetched | sha256 (of the downloaded file) | Author | Licence / terms as known | What it exercises / remarks |
+|---|---|---|---|---|---|---|
+| `pastebin-EkQrkfUL_robeats_script.lua` | https://pastebin.com/raw/EkQrkfUL | 2026-11-09 | `6abbdf5a211a743fa6983789767aca193c1334c71ac7c4c266ed011a55347d84` | anonymous Pastebin user (map "Kuusou Mesorogiwi", converted) | Pastebin paste, no licence stated | Robeats songmap converted from osu: placeholder AudioAssetId, `note`/`hold` helpers, long TimingPoints list |

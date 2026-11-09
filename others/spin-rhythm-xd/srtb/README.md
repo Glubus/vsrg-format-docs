@@ -112,7 +112,9 @@ Not read by ROX. Wheel positions and spins do not map to columns; a decoder woul
 
 ## Getting samples
 
-Committed: the MIT editor template `Custom.srtb` ([`samples/`](samples/)). Manifest: two larger SRTBEditor templates (an official-track chart and a fan chart; not committed). Real custom charts: SpinShare (<https://spinsha.re>) serves each chart as a backup zip at `https://spinsha.re/api/song/<songID>/download` (verified downloading without login for ids 1024, 12000, 1500, 8000; zips of 0.3-9 MB containing the `.srtb`, audio and cover) [observed; live URL, not hashable, so not in the manifest]. Authors' licences are not stated. In-game, the editor's "backup" button creates the same zips.
+Committed in [`samples/`](samples/): nine real files - three templates from SRTBEditor (MIT: an empty-ish `Custom`, plus the `Inertia` and `CUTIEMARKS` charts) and six community charts extracted from SpinShare backup zips (no archive or audio kept). See [`samples/SOURCES.md`](samples/SOURCES.md) for every file's source URL, fetch date, sha256 and terms.
+
+SpinShare serves a chart's backup zip at `https://spinsha.re/api/song/<songID>/download` without login (zip = `.srtb` + `AlbumArt/` + `AudioClips/`); metadata at `https://spinsha.re/api/song/<id>`, newest at `/api/songs/new`.
 
 ## Sources
 - https://www.spinrhythmgame.com/editor-guide

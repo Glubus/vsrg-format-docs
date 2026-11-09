@@ -1,0 +1,316 @@
+{
+  "title": "L",
+  "artist": "Ice",
+  "genre": "RENAISSANCE PRAYER",
+  "bpm": 155,
+  "artist_url": "https://soundcloud.com/iceloki",
+  "bms_url": "http://manbow.nothing.sh/event/event.cgi?action=More_def&num=146&event=83",
+  "song_url": "https://soundcloud.com/iceloki/l-bms-edit",
+  "youtube_url": "https://www.youtube.com/watch?v=ZXy_1LA-RlA",
+  "replaygain": "-12.62 dB",
+  "bmssearch_id": 1548,
+  "initial": true,
+  "readme": "README.md",
+  "charts": [
+    {
+      "md5": "07bde7731a578ffb1af4a27948b002ac",
+      "info": {
+        "title": "L",
+        "artist": "Ice",
+        "genre": "RENAISSANCE PRAYER",
+        "subtitles": [
+          "LOKINOTHER"
+        ],
+        "subartists": [
+
+        ],
+        "difficulty": 5,
+        "level": 12
+      },
+      "noteCount": 1166,
+      "bpm": {
+        "init": 155,
+        "min": 155,
+        "median": 155,
+        "max": 155
+      },
+      "duration": 134.70967741935482,
+      "scratch": true,
+      "keys": "14K",
+      "file": "L_[DP-Lokinother].bms"
+    },
+    {
+      "md5": "925b52c71c25c554ee603e7a4f8ba4e8",
+      "info": {
+        "title": "L",
+        "artist": "Ice",
+        "genre": "RENAISSANCE PRAYER",
+        "subtitles": [
+          "ANOTHER"
+        ],
+        "subartists": [
+
+        ],
+        "difficulty": 4,
+        "level": 12
+      },
+      "noteCount": 893,
+      "bpm": {
+        "init": 155,
+        "min": 155,
+        "median": 155,
+        "max": 155
+      },
+      "duration": 134.70967741935482,
+      "scratch": true,
+      "keys": "14K",
+      "file": "L_[DPA].bms"
+    },
+    {
+      "md5": "d0302876b6f50419f81e367a80bb1e1f",
+      "info": {
+        "title": "L",
+        "artist": "Ice",
+        "genre": "RENAISSANCE PRAYER",
+        "subtitles": [
+          "HYPER"
+        ],
+        "subartists": [
+
+        ],
+        "difficulty": 3,
+        "level": 12
+      },
+      "noteCount": 600,
+      "bpm": {
+        "init": 155,
+        "min": 155,
+        "median": 155,
+        "max": 155
+      },
+      "duration": 134.70967741935482,
+      "scratch": true,
+      "keys": "14K",
+      "file": "L_[DPH].bms"
+    },
+    {
+      "md5": "d146b4f0a91d4432890d3feaede2da86",
+      "info": {
+        "title": "L",
+        "artist": "Ice",
+        "genre": "RENAISSANCE PRAYER",
+        "subtitles": [
+          "NORMAL"
+        ],
+        "subartists": [
+
+        ],
+        "difficulty": 2,
+        "level": 8
+      },
+      "noteCount": 355,
+      "bpm": {
+        "init": 155,
+        "min": 155,
+        "median": 155,
+        "max": 155
+      },
+      "duration": 134.70967741935482,
+      "scratch": true,
+      "keys": "14K",
+      "file": "L_[DPN].bms"
+    },
+    {
+      "md5": "35a9eb6654cd0467755b5088741da080",
+      "info": {
+        "title": "L",
+        "artist": "Ice",
+        "genre": "RENAISSANCE PRAYER",
+        "subtitles": [
+          "AYAUTO-NORMAL"
+        ],
+        "subartists": [
+
+        ],
+        "difficulty": 2,
+        "level": 9
+      },
+      "noteCount": 495,
+      "bpm": {
+        "init": 155,
+        "min": 155,
+        "median": 155,
+        "max": 155
+      },
+      "duration": 134.70967741935482,
+      "scratch": true,
+      "keys": "7K",
+      "file": "L_[SP-Ayauto-normal].bms"
+    },
+    {
+      "md5": "cc4f7f1cc6fbcaf5a1b149189066f152",
+      "info": {
+        "title": "L",
+        "artist": "Ice",
+        "genre": "RENAISSANCE PRAYER",
+        "subtitles": [
+          "HYPER-LITE"
+        ],
+        "subartists": [
+
+        ],
+        "difficulty": 3,
+        "level": 10
+      },
+      "noteCount": 999,
+      "bpm": {
+        "init": 155,
+        "min": 155,
+        "median": 155,
+        "max": 155
+      },
+      "duration": 134.70967741935482,
+      "scratch": true,
+      "keys": "7K",
+      "file": "L_[SP-hyper-lite].bms"
+    },
+    {
+      "md5": "765ced583b56843f6d20b858605a6383",
+      "info": {
+        "title": "L",
+        "artist": "Ice (obj Ice vs lai-)",
+        "genre": "RENAISSANCE PRAYER",
+        "subtitles": [
+          "LOATHE"
+        ],
+        "subartists": [
+
+        ],
+        "difficulty": 5,
+        "level": 18
+      },
+      "noteCount": 2458,
+      "bpm": {
+        "init": 155,
+        "min": 155,
+        "median": 155,
+        "max": 155
+      },
+      "duration": 134.70967741935482,
+      "scratch": true,
+      "keys": "7K",
+      "file": "L_[SP-Loathe](lai-).bms"
+    },
+    {
+      "md5": "d15fa5e17826c126357f03aca678ccbb",
+      "info": {
+        "title": "L",
+        "artist": "Ice",
+        "genre": "RENAISSANCE PRAYER",
+        "subtitles": [
+          "LOKINOTHER"
+        ],
+        "subartists": [
+
+        ],
+        "difficulty": 5,
+        "level": 20
+      },
+      "noteCount": 3133,
+      "bpm": {
+        "init": 155,
+        "min": 155,
+        "median": 155,
+        "max": 155
+      },
+      "duration": 134.70967741935482,
+      "scratch": true,
+      "keys": "7K",
+      "file": "L_[SP-Lokinother].bms"
+    },
+    {
+      "md5": "aadb7d00993afd10642ee637c8981e5b",
+      "info": {
+        "title": "L",
+        "artist": "Ice (object: XEIR)",
+        "genre": "RENAISSANCE PRAYER",
+        "subtitles": [
+          "ANOTHER"
+        ],
+        "subartists": [
+
+        ],
+        "difficulty": 4,
+        "level": 12
+      },
+      "noteCount": 2101,
+      "bpm": {
+        "init": 155,
+        "min": 155,
+        "median": 155,
+        "max": 155
+      },
+      "duration": 134.70967741935482,
+      "scratch": true,
+      "keys": "7K",
+      "file": "L_[SPA](XEIR).bme"
+    },
+    {
+      "md5": "20c14547a180ed2703670af5b83e12d5",
+      "info": {
+        "title": "L",
+        "artist": "Ice (object: XEIR)",
+        "genre": "RENAISSANCE PRAYER",
+        "subtitles": [
+          "HYPER"
+        ],
+        "subartists": [
+
+        ],
+        "difficulty": 3,
+        "level": 11
+      },
+      "noteCount": 1465,
+      "bpm": {
+        "init": 155,
+        "min": 155,
+        "median": 155,
+        "max": 155
+      },
+      "duration": 134.70967741935482,
+      "scratch": true,
+      "keys": "7K",
+      "file": "L_[SPH](XEIR).bme"
+    },
+    {
+      "md5": "694c89556e73ba4c667a714c51c2764a",
+      "info": {
+        "title": "L",
+        "artist": "Ice",
+        "genre": "RENAISSANCE PRAYER",
+        "subtitles": [
+          "NORMAL"
+        ],
+        "subartists": [
+
+        ],
+        "difficulty": 2,
+        "level": 7
+      },
+      "noteCount": 639,
+      "bpm": {
+        "init": 155,
+        "min": 155,
+        "median": 155,
+        "max": 155
+      },
+      "duration": 134.70967741935482,
+      "scratch": true,
+      "keys": "7K",
+      "file": "L_[SPN].bms"
+    }
+  ],
+  "warnings": [
+
+  ]
+}

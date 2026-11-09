@@ -21,7 +21,7 @@ UTF-8 JSON `{ "song": { ... } }`. File-name candidates (`formatFile`): only the 
 
 `FNFMaruSection`: `sectionNotes` (legacy notes `[time, lane, sustain]`), `sectionEvents` (array of events), `mustHitSection`, `bpm`, `changeBPM`. No `lengthInSteps`, `typeOfSection` or `altAnim` in the typedef.
 
-`sectionEvents[i]` = `[time, name, values]` (`values` an array). Event names are not listed in the source read: Unknown.
+`sectionEvents[i]` = `[time, name, values]` (`values` an array). Event names are not listed in the Moonchart source; `addZoom` is seen in a real chart (see Observed in real files).
 
 ## Timing model
 
@@ -63,10 +63,15 @@ Not read as Maru; the legacy codec needs `song.notes[].sectionNotes` and would r
 
 - Moonchart `FNFMaru` (Haxe): https://github.com/MaybeMaru/moonchart/blob/main/src/moonchart/formats/fnf/FNFMaru.hx
 
+## Observed in real files
+
+Real Maru charts are `songs/<song>/charts/<difficulty>.json` with a `songMeta.json` next to them; the song object has `offsets: [0,0]`, `players: [bf, dad, gf]` (e.g. `["GudBF","danny","gf"]`) and `stage`; sections without notes are `{}` (all defaults removed); events look like `[22500, "addZoom", ["0.075", "0.05"]]` and note sustains can be fractional (`931.928571428571`) [observed in samples/vs-danny/easy.json and samples/returnal/hard.json].
+
 ## Getting samples
 
-- Committed: [samples/](samples/) holds one hand-written chart, see [samples/SOURCES.md](samples/SOURCES.md).
-- Manifest: none. No real Maru Funkin' chart or engine repository was found; the engine is described as dead by Moonchart. To get one, find a mod built on Maru Funkin' (community sites such as GameBanana; search "Maru Funkin'") and copy its song JSON [inference].
+- Committed ([samples/](samples/) and [samples/SOURCES.md](samples/SOURCES.md)): real Maru Funkin' charts: `vs-danny/easy.json` (mod Vs Danny, Maru port), `returnal/hard.json` (mod RETURNAL) and four chart files shipped with the engine itself (`maru-engine-assets/`, FNF base-game charts in the Maru layout `songs/<song>/charts/<diff>.json`), extracted from GameBanana zips, plus one synthetic file.
+- Observed: charts live in `songs/<song>/charts/<difficulty>.json` (+ `songMeta.json`), empty sections are `{}`, events are `[time, "addZoom", ["0.075", "0.05"]]` [observed in samples/returnal/hard.json].
+- More: GameBanana mods built on Maru Funkin' (search `Maru Funkin`, e.g. mods 466972, 508895).
 
 ## Sources
 

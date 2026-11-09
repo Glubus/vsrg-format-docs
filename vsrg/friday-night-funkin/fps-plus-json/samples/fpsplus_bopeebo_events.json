@@ -1,0 +1,262 @@
+{
+	"events": [
+		{
+			"tag": "camFocusDad;0;0",
+			"lane": 0,
+			"time": 0
+		},
+		{
+			"tag": "setBopFreq;bf;1",
+			"lane": 2,
+			"time": 0
+		},
+		{
+			"tag": "setBopFreq;dad;1",
+			"lane": 3,
+			"time": 0
+		},
+		{
+			"tag": "camFocusBf;0;0",
+			"lane": 0,
+			"time": 2400
+		},
+		{
+			"tag": "playAnim;bf;hey;false",
+			"lane": 1,
+			"time": 4200
+		},
+		{
+			"tag": "camFocusDad;0;0",
+			"lane": 0,
+			"time": 4800
+		},
+		{
+			"tag": "camFocusBf;0;0",
+			"lane": 0,
+			"time": 7200
+		},
+		{
+			"tag": "playAnim;bf;hey;false",
+			"lane": 1,
+			"time": 9000
+		},
+		{
+			"tag": "camFocusDad;0;0",
+			"lane": 0,
+			"time": 9600
+		},
+		{
+			"tag": "camFocusBf;0;0",
+			"lane": 0,
+			"time": 12000
+		},
+		{
+			"tag": "playAnim;bf;hey;false",
+			"lane": 1,
+			"time": 13800
+		},
+		{
+			"tag": "camFocusDad;0;0",
+			"lane": 0,
+			"time": 14400
+		},
+		{
+			"tag": "camFocusBf;0;0",
+			"lane": 0,
+			"time": 16800
+		},
+		{
+			"tag": "playAnim;bf;hey;false",
+			"lane": 1,
+			"time": 18600
+		},
+		{
+			"tag": "camFocusDad;0;0",
+			"lane": 0,
+			"time": 19200
+		},
+		{
+			"tag": "camFocusBf;0;0",
+			"lane": 0,
+			"time": 21600
+		},
+		{
+			"tag": "playAnim;bf;hey;false",
+			"lane": 1,
+			"time": 23400
+		},
+		{
+			"tag": "camFocusDad;0;0",
+			"lane": 0,
+			"time": 24000
+		},
+		{
+			"tag": "camFocusBf;0;0",
+			"lane": 0,
+			"time": 26400
+		},
+		{
+			"tag": "playAnim;bf;hey;false",
+			"lane": 1,
+			"time": 28200
+		},
+		{
+			"tag": "playAnim;bf;hey;false",
+			"lane": 1,
+			"time": 28500
+		},
+		{
+			"tag": "camFocusDad;0;0",
+			"lane": 0,
+			"time": 28800
+		},
+		{
+			"tag": "camFocusBf;0;0",
+			"lane": 0,
+			"time": 31200
+		},
+		{
+			"tag": "playAnim;bf;hey;false",
+			"lane": 1,
+			"time": 33000
+		},
+		{
+			"tag": "camFocusDad;0;0",
+			"lane": 0,
+			"time": 33600
+		},
+		{
+			"tag": "camFocusBf;0;0",
+			"lane": 0,
+			"time": 36000
+		},
+		{
+			"tag": "playAnim;bf;hey;false",
+			"lane": 1,
+			"time": 37800
+		},
+		{
+			"tag": "camFocusDad;0;0",
+			"lane": 0,
+			"time": 38400
+		},
+		{
+			"tag": "camFocusBf;0;0",
+			"lane": 0,
+			"time": 40800
+		},
+		{
+			"tag": "playAnim;bf;hey;false",
+			"lane": 1,
+			"time": 42600
+		},
+		{
+			"tag": "camFocusDad;0;0",
+			"lane": 0,
+			"time": 43200
+		},
+		{
+			"tag": "camFocusBf",
+			"lane": 0,
+			"time": 45600
+		},
+		{
+			"tag": "camFocusDad;0;0",
+			"lane": 0,
+			"time": 48000
+		},
+		{
+			"tag": "camFocusBf;0;0",
+			"lane": 0,
+			"time": 50400
+		},
+		{
+			"tag": "playAnim;bf;hey;false",
+			"lane": 1,
+			"time": 52200
+		},
+		{
+			"tag": "camFocusDad;0;0",
+			"lane": 0,
+			"time": 52800
+		},
+		{
+			"tag": "camFocusBf;0;0",
+			"lane": 0,
+			"time": 55200
+		},
+		{
+			"tag": "playAnim;bf;hey;false",
+			"lane": 1,
+			"time": 57000
+		},
+		{
+			"tag": "camFocusDad;0;0",
+			"lane": 0,
+			"time": 57600
+		},
+		{
+			"tag": "camFocusBf;0;0",
+			"lane": 0,
+			"time": 60000
+		},
+		{
+			"tag": "playAnim;bf;hey;false",
+			"lane": 1,
+			"time": 61800
+		},
+		{
+			"tag": "camFocusDad;0;0",
+			"lane": 0,
+			"time": 62400
+		},
+		{
+			"tag": "camFocusBf;0;0",
+			"lane": 0,
+			"time": 64800
+		},
+		{
+			"tag": "playAnim;bf;hey;false",
+			"lane": 1,
+			"time": 66600
+		},
+		{
+			"tag": "playAnim;bf;hey;false",
+			"lane": 1,
+			"time": 66900
+		},
+		{
+			"tag": "camFocusDad;0;0",
+			"lane": 0,
+			"time": 67200
+		},
+		{
+			"tag": "camFocusBf;0;0",
+			"lane": 0,
+			"time": 69600
+		},
+		{
+			"tag": "playAnim;bf;hey;false",
+			"lane": 1,
+			"time": 71400
+		},
+		{
+			"tag": "camFocusDad;0;0",
+			"lane": 0,
+			"time": 72000
+		},
+		{
+			"tag": "camFocusBf;0;0",
+			"lane": 0,
+			"time": 74400
+		},
+		{
+			"tag": "playAnim;bf;hey;false",
+			"lane": 1,
+			"time": 76200
+		}
+	],
+	"meta": {
+		"format": "fpsplus_1"
+	}
+}

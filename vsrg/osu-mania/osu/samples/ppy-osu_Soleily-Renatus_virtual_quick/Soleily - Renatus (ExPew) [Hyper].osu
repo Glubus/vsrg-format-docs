@@ -1,0 +1,111 @@
+osu file format v14
+
+[General]
+AudioFilename: virtual
+AudioLeadIn: 0
+PreviewTime: 164471
+Countdown: 0
+SampleSet: Soft
+StackLeniency: 0.7
+Mode: 3
+LetterboxInBreaks: 0
+SpecialStyle: 0
+WidescreenStoryboard: 1
+
+[Editor]
+Bookmarks: 966,227777
+DistanceSpacing: 0.8
+BeatDivisor: 4
+GridSize: 32
+TimelineZoom: 1.2
+
+[Metadata]
+Title:RenatusQuick
+TitleUnicode:Renatus
+Artist:Soleily
+ArtistUnicode:Soleily
+Creator:ExPew
+Version:Hyper
+Source:
+Tags:MBC7 Unisphere 地球ヤバイEP Chikyu Yabai
+BeatmapID:557813
+BeatmapSetID:241526
+
+[Difficulty]
+HPDrainRate:7.5
+CircleSize:7
+OverallDifficulty:7.5
+ApproachRate:5
+SliderMultiplier:1.4
+SliderTickRate:1
+
+[Events]
+//Background and Video events
+0,0,"machinetop_background.jpg",0,0
+//Break Periods
+//Storyboard Layer 0 (Background)
+//Storyboard Layer 1 (Fail)
+//Storyboard Layer 2 (Pass)
+//Storyboard Layer 3 (Foreground)
+//Storyboard Sound Samples
+
+[TimingPoints]
+956,329.67032967033,4,2,0,40,1,0
+
+[HitObjects]
+256,192,956,5,0,0:0:0:0:
+36,192,956,1,0,0:0:0:100:Kick.wav
+475,192,956,1,4,0:0:0:0:
+329,192,1120,1,0,0:0:0:0:
+402,192,1285,1,0,0:0:0:0:
+182,192,1285,1,0,0:0:0:70:Snare.wav
+475,192,1450,1,0,0:0:0:0:
+36,192,1780,1,0,0:0:0:100:Kick.wav
+402,192,1780,1,0,0:0:0:0:
+182,192,1945,1,0,0:0:0:70:Snare.wav
+329,192,2109,1,0,0:0:0:0:
+36,192,2274,1,0,0:0:0:100:Kick.wav
+475,192,2274,1,2,0:0:0:0:
+182,192,2604,1,0,0:0:0:70:Snare.wav
+36,192,2769,1,0,0:0:0:100:Kick.wav
+402,192,2769,1,2,0:0:0:0:
+36,192,3098,1,0,0:0:0:100:Kick.wav
+182,192,3263,1,0,0:0:0:70:Snare.wav
+402,192,3263,1,2,0:0:0:0:
+329,192,3593,1,2,0:0:0:0:
+36,192,3593,1,0,0:0:0:100:Kick.wav
+182,192,3923,1,0,0:0:0:70:Snare.wav
+329,192,4087,1,2,0:0:0:0:
+36,192,4417,1,0,0:0:0:100:Kick.wav
+182,192,4582,1,0,0:0:0:70:Snare.wav
+329,192,4582,1,2,0:0:0:0:
+36,192,4912,1,0,0:0:0:100:Kick.wav
+402,192,4912,1,2,0:0:0:0:
+182,192,5241,1,0,0:0:0:70:Snare.wav
+36,192,5406,1,0,0:0:0:100:Kick.wav
+402,192,5406,1,2,0:0:0:0:
+36,192,5736,1,0,0:0:0:100:Kick.wav
+402,192,5901,1,2,0:0:0:0:
+182,192,5901,1,0,0:0:0:70:Snare.wav
+36,192,6230,1,0,0:0:0:100:Kick.wav
+329,192,6230,1,2,0:0:0:0:
+182,192,6560,1,0,0:0:0:70:Snare.wav
+475,192,6725,1,2,0:0:0:0:
+36,192,7054,1,0,0:0:0:100:Kick.wav
+475,192,7219,1,2,0:0:0:0:
+182,192,7219,1,0,0:0:0:70:Snare.wav
+36,192,7549,1,0,0:0:0:100:Kick.wav
+475,192,7549,1,2,0:0:0:0:
+182,192,7879,1,0,0:0:0:70:Snare.wav
+36,192,8043,1,0,0:0:0:100:Kick.wav
+402,192,8043,1,2,0:0:0:0:
+36,192,8373,1,0,0:0:0:100:Kick.wav
+402,192,8538,1,2,0:0:0:0:
+182,192,8538,1,0,0:0:0:70:Snare.wav
+36,192,8868,1,0,0:0:0:100:Kick.wav
+475,192,8868,1,2,0:0:0:0:
+182,192,9197,1,0,0:0:0:70:Snare.wav
+329,192,9362,1,2,0:0:0:0:
+36,192,9692,1,0,0:0:0:100:Kick.wav
+329,192,9857,1,2,0:0:0:0:
+182,192,9857,1,0,0:0:0:70:Snare.wav

@@ -18,11 +18,11 @@ lazer's `client.realm` database is **not** a chart format: it is a Realm metadat
 
 - A standard ZIP written with SharpCompress `ZipWriter`, deflate (`LegacyArchiveExporter.ExportToStream`). Entries are written with the file names stored in the database, directly at the archive root, one entry per file; duplicate names raise an error.
 - **Entry names are UTF-8** (`ArchiveEncoding { Default = Encoding.UTF8 }` when `UseFixedEncoding` is false), whereas `.osz` exports force Shift-JIS (CP932) like osu!stable (`ZipArchiveReader.DEFAULT_ENCODING`).
-- [observed in samples/legacy-export-stability-test.olz and decimal-timing-beatmap.olz] the three lazer test archives are ordinary ZIPs with deflated `.osu` entries only; one (`fractional-coordinates.olz`) also carries a macOS `__MACOSX/._*.osu` resource-fork entry, so it was probably repacked on macOS and is not a pure lazer export [inference].
+- [observed in the original archives legacy-export-stability-test.olz and decimal-timing-beatmap.olz, extracted to ../osu/samples/] the three lazer test archives are ordinary ZIPs with deflated `.osu` entries only; one (`fractional-coordinates.olz`) also carries a macOS `__MACOSX/._*.osu` resource-fork entry, so it was probably repacked on macOS and is not a pure lazer export [inference].
 
 ## Structure / metadata
 
-No manifest. Each `.osu` is self-describing. File names inside are free (`Artist - Title (Creator) [Version].osu` by convention).
+No package manifest. Each
 
 ## Timing model
 
@@ -38,8 +38,8 @@ Referenced by name from the `.osu` files, as in `.osz`.
 
 ## Versions & variants
 
-- The `.osu` files inside keep lazer's own format version: all three samples start with `osu file format v128` [observed in samples/decimal-timing-beatmap.olz], where stable writes `v14`. The `.osu` doc describes v128 as lazer's version.
-- lazer-only data allowed in those files include non-integer times and coordinates [observed in samples/decimal-timing-beatmap.olz: object time `28520.019209251084`; samples/fractional-coordinates.olz: `3.0517578E-05,1.5258789E-05,3120`], which stable cannot parse as integers.
+- The `.osu` files inside keep lazer's own format version: all three samples start with `osu file format v128` [observed in ../osu/samples/decimal-timing-beatmap/], where stable writes `v14`. The `.osu` doc describes v128 as lazer's version.
+- lazer-only data allowed in those files include non-integer times and coordinates [observed in ../osu/samples/decimal-timing-beatmap/: object time `28520.019209251084`; ../osu/samples/fractional-coordinates/: `3.0517578E-05,1.5258789E-05,3120`], which stable cannot parse as integers.
 
 ## Quirks & pitfalls
 
@@ -62,9 +62,10 @@ Not read by ROX; unzip the archive and read the `.osu` files ([`.osu`](../osu/RE
 
 ## Getting samples
 
-- **Committed** in [`samples/`](samples/) (see [`SOURCES.md`](samples/SOURCES.md)): the three `.olz` archives of the ppy/osu test suite (`decimal-timing-beatmap.olz`, `fractional-coordinates.olz`, `legacy-export-stability-test.olz`; MIT; 20 KB total, `.osu` only, no audio).
-- **Manifest**: none.
-- **How to get more**: install osu!lazer, select a beatmap set and use its export action (the exporter writes `.olz`; the option that exports for stable writes `.osz`) [inference on the UI label; the file extensions are from the source]. The exported file goes to lazer's `exports` folder [inference]. Any mapset you own can be exported this way; audio and images inside must not be redistributed.
+- **No archive is stored in this repository.** The three `.olz` of the ppy/osu test suite were extracted: their v128 `.osu` files are in [`../osu/samples/`](../osu/samples/) (`decimal-timing-beatmap/`, `fractional-coordinates/`, `legacy-export-stability-test/`), see the `Extracted from archives` section of its `SOURCES.md`.
+- Only these three real `.olz` are public as far as searched (user exports sit in GitHub issues and forums that cannot be listed without the API or a login).
+- **How to get more**: in osu!lazer's editor use *File > Export > Export as .olz* (osu! forum, "How to export beatmaps created in osu!lazer in android?", topic 1890255, and the Aspire 6 contest thread, topic 2216418); the osu! site cannot host `.olz`. Audio and images inside must not be redistributed.
+
 
 ## Sources
 
@@ -74,4 +75,4 @@ Not read by ROX; unzip the archive and read the `.osu` files ([`.osu`](../osu/RE
 - https://github.com/ppy/osu/blob/bb37f0541894e46460fe8cdb5ec495d0fb0ac7f2/osu.Game/Beatmaps/BeatmapImporter.cs
 - https://github.com/ppy/osu/blob/bb37f0541894e46460fe8cdb5ec495d0fb0ac7f2/osu.Game/OsuGameBase.cs (`CLIENT_DATABASE_FILENAME`)
 - https://github.com/ppy/osu/blob/bb37f0541894e46460fe8cdb5ec495d0fb0ac7f2/osu.Game/Database/RealmFileStore.cs
-- Repo samples: vsrg/osu-mania/olz/samples/
+- Extracted charts: vsrg/osu-mania/osu/samples/ (olz subfolders)

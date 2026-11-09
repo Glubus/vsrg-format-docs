@@ -110,9 +110,7 @@ Not read by ROX 0.8.1.
 
 ## Getting samples
 
-**Committed** ([`samples/`](samples/SOURCES.md)): four synthetic files, one per generation (`synthetic-srt.srt`, `-szt.szt`, `-sct.sct`, `-sdt.sdt`), hand-written from donmai's column description and accepted by the SXT reader of MaiConverter. **Manifest:** none: no real classic chart (`.srt`..`.sdt`) is published in any repository found.
-
-**How to get real ones**: from maimai classic game data (commercial; encrypted counterparts `.srb/.szb/.scb/.sdb` can be decrypted with MaiConverter's `decrypt`, which needs the game key, not provided here); MaiConverter (<https://github.com/donmai-me/MaiConverter>) converts ma2/simai *to* sdt-family text, so any chart can be turned into an `.sdt` (commands `ma2tosdt`, `simaitosdt`, `simaifiletosdt` in its README). The format write-up is <https://listed.to/@donmai/18173/the-four-chart-formats-of-maimai-classic>.
+**Committed** ([`samples/`](samples/SOURCES.md)): four synthetic files, one per generation (SRT, SZT, SCT, SDT), accepted by MaiConverter's SXT reader. No real classic chart is public (maimai classic data is game data, encrypted as `.srb/.szb/.scb/.sdb`; searched GitHub, MaiConverter, Neskol repos, gists). More: MaiConverter converts ma2/simai to sdt (`ma2tosdt`, `simaitosdt`); format write-up <https://listed.to/@donmai/18173/the-four-chart-formats-of-maimai-classic>.
 
 ## Sources
 

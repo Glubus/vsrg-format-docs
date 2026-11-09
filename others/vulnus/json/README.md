@@ -35,7 +35,7 @@ Not read by ROX.
 
 ## Getting samples
 
-Committed: a synthetic map (meta + two difficulties) following the keys read by the Sound Space Plus importer ([`samples/`](samples/)). Real Vulnus maps are folders with audio and `cover.png` shared by the community (no stated licence); no stable public archive was identified, so none is listed. Vulnus itself is on itch.io (ducc); Rhythia/SS+ can import Vulnus folders (`load_from_vulnus_map` in `Song.gd`).
+Committed in [`samples/`](samples/): a hand-written synthetic map (meta + two difficulties) following the keys read by the Sound Space Plus importer. No real Vulnus map was found: the community maps are exchanged on Discord and the converters found on GitHub (Vulnus-Multi-Tool, osu_to_vulnus_converter, Vulnus-to-Sound-Space-Converter) ship no sample maps. To get real files: install Vulnus (itch.io, ducc) and copy a folder from its `maps` directory, or convert an `.osu` with the converters.
 
 ## Sources
 - https://raw.githubusercontent.com/Rhythia/sound-space-plus/HEAD/scripts/content/game/Song.gd

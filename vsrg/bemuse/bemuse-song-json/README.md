@@ -125,9 +125,8 @@ Not read by ROX (it is a catalogue of BMS songs; ROX has no BMS reader in 0.8.1)
 
 ## Getting samples
 
-- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): `bemuse-example-music-server-index.json` (13-song `index.json` fixture of the Bemuse repo, AGPL-3.0) and `derived-aoi-olivia-bemuse-song.json` (one of its song objects without `id`/`path`).
-- **Live URL, not hashable, fetch manually** (not in the manifest): the production `https://bemuse.ninja/music/index.json` (42 songs on 2026-11-09, with `bmssearch_id`, `readme`, `duration`, `youtube_url`, `replaygain`).
-- **More**: `index.json` of any Bemuse music server (`https://bemuse.ninja/?server=<url>`); a stand-alone `bemuse-song.json` is written by the Bemuse Song Workshop ("Scan charts"); the production server did not serve `<song>/bemuse-song.json` (HTTP 404 checked for `[flicknote]onlylove_remix`), so no real single-song file was obtained.
+- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): the production `https://bemuse.ninja/music/index.json` (42 songs), the repo's 13-song `index.json` fixture, and 6 real single-song `bemuse-song.json` files from `https://music4.bemuse.ninja/songs/<song>/bemuse-song.json`, plus one derived song object.
+- **More**: the same `music4.bemuse.ninja/songs/<id>/bemuse-song.json` URL works for every id of the index (e.g. `[snack]dddd`); other servers publish their own `index.json` (`https://bemuse.ninja/?server=<url>`).
 
 ## Sources
 

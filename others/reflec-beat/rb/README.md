@@ -64,8 +64,8 @@ None found for the chart payload. Blowfish decryption routines exist in communit
 
 ## Getting samples
 
-- Committed: nothing. Manifest: nothing. No `.rb` package could be obtained: Reflec Beat plus is a commercial Konami iOS game (the package scheme is documented in SaxxonPike/rhythm-game-formats `ios/jbt-rb-orb.md`) and every entry inside is Blowfish-encrypted with keys that the repository says it will not disclose, so even a package would give no readable chart.
-- How a person could get one [inference]: obtain the package from a device or backup that still has the game installed, unzip a song `.rb` (a plain zip with entries `info`, `bgm`, `pre`, `note_bas`, `note_med`, `note_har`, ...) and decrypt the entries with keys recovered from the app binary, as the repository describes (key = md5 of an un-obfuscated string table). The chart payload layout after decryption is Unknown.
+- Committed: nothing. No `.rb` package or decoded chart could be obtained: Reflec Beat plus is a commercial Konami iOS game and every entry of its packages is Blowfish-encrypted with keys that the documenting repository (SaxxonPike/rhythm-game-formats `ios/jbt-rb-orb.md`) does not disclose; no public copy was found.
+- How a person could get one [inference]: obtain the package from a device or backup that still has the game, unzip a song `.rb` (entries `info`, `bgm`, `pre`, `note_bas`, `note_med`, `note_har`, ...) and decrypt the entries with keys recovered from the app binary as the repository describes. The decoded chart layout is Unknown.
 
 ## Sources
 

@@ -35,6 +35,10 @@ Normal, star (filled, obsolete flag), hold (with duration), exclamation (obsolet
 
 SIFTrain 2.0 made `rank_info`, `notes_speed`, `Filled` and `Exclamation` obsolete. The game's own live JSON and livesim2's native beatmap formats were not read.
 
+## Game raw live JSON
+
+[observed in samples/npps4_Live_0001.json, npps4_Live_s0719.json, depls_dwr.json] The SIF game's own beatmap (used by NPPS4, honoka-chan and livesim2 as "raw SIF beatmap") is a bare JSON array of note objects `{"timing_sec", "notes_attribute", "notes_level", "effect", "effect_value", "position"}`: `timing_sec` in seconds, `position` 1-9, `effect` 1 = normal, 3 = hold with `effect_value` = hold length in seconds (values 2, 4, 11, 13 also occur; their meaning is not documented in the sources read), `notes_attribute` 1/2/3 = smile/pure/cool colour [inference from the game] (10 occurs in `depls_1154_mod.json`), `notes_level` 1. Compact one-line and indented layouts both exist.
+
 ## Quirks & pitfalls
 
 Position 1 is the **rightmost** circle; simultaneous flags are redundant data that parsers should recompute; hold `effect_value` is seconds.
@@ -60,9 +64,7 @@ SIFTrain (kbz): <https://github.com/kbz/SIFTrain>; livesim2 (Lua/LOVE): <https:/
 
 ## Getting samples
 
-**Committed** ([`samples/`](samples/SOURCES.md)): `synthetic-siftrain.json` (hand-written from the SIFTrain wiki description, CC0). **Manifest:** none: no repository with real SIFTrain beatmaps under a clear licence was found (SIFTrain is MIT but its tree contains no beatmap files).
-
-**How to get more**: SIFTrain (<https://github.com/kbz/SIFTrain>) reads beatmaps from `/beatmaps` with songs in `/beatmaps/soundfiles`; LLP2ST (<https://github.com/Piranhaplant/LLP2ST>) converts LLPractice charts into SIFTrain beatmaps; livesim2 (<https://github.com/DarkEnergyProcessor/livesim2_async>, zlib licence) loads many beatmap formats and documents its own in `docs/livesim2_beatmap_format.txt`; LLBeatmapConvert (<https://github.com/DarkEnergyProcessor/LLBeatmapConvert>, MIT) converts between formats. The SIF game's own live JSON is game data and not redistributable. The SKUFES! project (<https://github.com/skufes>) collects SIF in-game data (search result, not opened).
+**Committed** ([`samples/`](samples/SOURCES.md)): 8 real beatmaps in the SIF game's own raw live JSON (6 from DarkEnergyProcessor/NPPS4 `beatmaps/`, a repository of ~1900 such files; 2 from RayFirefist/DEPLS `test/`) and one synthetic SIFTrain-format file. The real files use `notes_attribute`, `notes_level`, `effect`, `effect_value`, `position`, `timing_sec` (see the fiche). More: `Live_*.json` in <https://github.com/DarkEnergyProcessor/NPPS4/tree/master/beatmaps> and <https://github.com/YumeMichi/honoka-chan> (`assets/serverdata/beatmaps/`); SIFTrain (<https://github.com/kbz/SIFTrain>) and livesim2 read them.
 
 ## Sources
 

@@ -51,6 +51,7 @@ NumPackages=<n>
 
 - `Version` must equal `1`, otherwise the control file is ignored.
 - `Packages` lists the package directories contained in the archive (backslash separated, as produced by `GetPackageDirectory`); the installer uses them to offer **uninstalling older copies** of the same package before extracting (it checks that each directory exists and passes `IsValidPackageDirectory`).
+- Observed layout of real files (written by smpackage, CRLF): the `[Packages]` block comes **first**, `NumPackages=<n>` is the **last line of that block** (after the entries), then a blank line and `[SMZIP]` / `Version=1` **last**; entries are `N=Songs\<Group>\<Song>` and, in the 98-package StepMix 1.0 file, listed in string order (`0`, `1`, `10`, `11`, ...) rather than numeric order [observed in `samples/stepmix-1.0_smzip.ctl`, `samples/Songs_InTheGroove_Zodiac.smzip.ctl`]. The real StepMix 1.0 package stores entries with forward slashes (`Songs/StepMix 1.0/<song>/...`, `smzip.ctl` first, no zip comment), member dates 2006-03-21 [observed in the package; archive not kept].
 - The game itself (`InstallSmzip`) does not read `smzip.ctl`: it just skips files with extension `ctl`.
 
 ## Timing model
@@ -81,7 +82,7 @@ Everything (audio, banners, backgrounds, videos) is carried as ordinary files in
 
 ## Example
 
-Illustrative, hand-built from the `smpackage` export code (`SmpackageExportDlg.cpp`), for an archive holding one song `Songs/My Pack/Song A/`:
+Illustrative, hand-built from the `smpackage` export code (`SmpackageExportDlg.cpp`), for an archive holding one song `Songs/My Pack/Song A/` (the block order differs from real files, see Structure: real files put `[Packages]` first and `[SMZIP]` last):
 
 ```
 smzip.ctl:
@@ -103,9 +104,9 @@ Not read by ROX (ROX opens individual `.sm`/`.ssc` files, not archives).
 
 ## Getting samples
 
-Committed in [`samples/`](samples/SOURCES.md): two **synthetic, audio-less** rebuilds (Python `zipfile`): a plain-ZIP pack with the Springtime chart only, and an `smpackage`-style archive with `smzip.ctl`, backslash entry names, the Springtime chart and `Courses/Default/Jupiter.crs`. They cannot be played (no music).
+**Container only: this folder holds no archive** (the repository keeps charts only). It holds four REAL `smzip.ctl` control files (text) extracted from smpackage-built packages: the 98-song StepMix 1.0 package and three 2006 song packages of the StepMania Complete disc; see [`samples/SOURCES.md`](samples/SOURCES.md). The charts of those packages were extracted to [`../sm/samples`](../sm/samples/SOURCES.md) (`stepmix-1.0/`, `stepmania-complete-disc/`) and [`../../dwi/dwi/samples`](../../dwi/dwi/samples/SOURCES.md).
 
-Not in the manifest: no small open real `.smzip` has an immutable URL. Candidates observed on 2026-11-09: `PNEXT2.smzip` (6 MB theme package, live at `https://download.stepmania.amx.io/PNEXT2.smzip`, no Wayback copy; its entries are **WinZip-AES encrypted** (ZIP method 99, flag bits 0x801), including `smzip.ctl` and `smzip.sig`, zip comment `PNEXT2`), `PiuSMNX2_RDX.smzip` (114 MB), and StepMix 1.0 (`stepmix-1.0.smzip`, 256 MB, hosted by [simfilearchive.dev](https://simfilearchive.dev/), mixed per-song licences). To get one: build it with the Windows `smpackage` tool shipped with StepMania 3.9-5.x (Export As Smzip: pick a song folder, answer the comment prompt), or zip a `Songs/<Group>/<Song>/` tree yourself (any `.zip` works); real song packs are listed at [simfilearchive.dev](https://simfilearchive.dev/).
+Where to get real packages: archive.org item `step-mania-complete` (StepMania Complete.iso: `StepMania/Packages/*.smzip`, announcers, backgrounds, song packs, `Songs_StepMix1.smzip` 272 MB); https://simfilearchive.dev/files/stepmix-1.0.smzip (the same StepMix 1.0 package, 268 MB); SourceForge `OldFiles` (https://sourceforge.net/projects/stepmania/files/OldFiles/: `SMMAX2*.smzip`, `Ez2Support9OCT2003.smzip`: themes/noteskins only); StepMania AMX's https://download.stepmania.amx.io/ (`PNEXT2.smzip`, `PiuSMNX2_RDX.smzip`: WinZip-AES encrypted theme packages). Or build one with the Windows `smpackage` tool (Export As Smzip) or zip a `Songs/<Group>/<Song>/` tree.
 
 ## Sources
 

@@ -93,8 +93,9 @@ Not read by ROX. The model (wide free-position notes on a 24-unit board, slides 
 
 ## Getting samples
 
-- Committed / manifest: none. The only implementation is the `rg_converters` BDON loader (loading only); no sample `.bdon`/`.json.gz` is in its repository (test files are SUS and PJSK JSON).
-- How to get one: export a chart from the game BanG Dream! Our Notes (format name per the rg_converters README); the loader accepts gzip or plain JSON. [inference] No public download source is known; ask in the UntitledCharts community, whose converter library supports it.
+- Committed in [`samples/`](samples/): 6 real score files (4 JP, 2 Intl) from https://github.com/haneoka-gakuen/ournotes-charts (byte-exact `original/*.bytes`, which are plain JSON). Everything is listed with origin, date and sha256 in [`samples/SOURCES.md`](samples/SOURCES.md).
+- Observed [observed in samples/ournotes-jp_0003_02.json]: besides `score.notes` and `score.events.{bpm,skill,fever}` described above, the files hold `meta.version` (100), `events.sig` (`{"t":0,"sig":[4,4]}`) and `events.call` (`{"t":0,"timing":[0,1,0,1]}`); notes without `type` are taps (`t`, `pos`, `size`), long/guide notes have `node` arrays; ticks are in 1/480-beat units [matches fiche]; chart file names are `<4-digit music id>_<2-digit difficulty>`. Compact JSON, no BOM, no gzip.
+- More: the same repository has 20 `original/` and `scores/` (pretty-printed) files per server plus `tables/` with MasterLiveMusic; `ryougishiiki/our-notes-chartdb` builds a normalised database; the official CDN is the source.
 
 ## Sources
 

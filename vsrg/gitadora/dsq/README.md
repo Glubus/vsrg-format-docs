@@ -37,7 +37,7 @@ Not read by ROX.
 gitadora-customs plugins: https://github.com/fisyher/gitadora-customs/tree/master/plugins
 
 ## Getting samples
-- **Committed / manifest: none.** No public `.dsq`/`.gsq` file found; gitadora-customs ships plugins (`dsq`, `dsq0`, `dsq05`, `dsq1`, `dsq15`, `dsq2`, `gsq`, `gsq1`, `gsq15`, `gsq2`, `gsq3`) but no test data.
+- **Committed: none (no real file found).** No public `.dsq`/`.gsq` file found; gitadora-customs ships plugins (`dsq`, `dsq0`, `dsq05`, `dsq1`, `dsq15`, `dsq2`, `gsq`, `gsq1`, `gsq15`, `gsq2`, `gsq3`) but no test data.
 - **How to get one**: extract from the data of the matching older GuitarFreaks/DrumMania game you own; the plugin names suggest one reader per game generation (which game maps to which is Unknown in the fiche). Convert with https://github.com/fisyher/gitadora-customs (`seqtool.py`). RAintN22/gitadora-tools (named in the game README) is another tool; only its releases were seen.
 
 ## Sources

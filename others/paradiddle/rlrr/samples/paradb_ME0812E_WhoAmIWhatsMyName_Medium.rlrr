@@ -1,0 +1,7250 @@
+{
+    "version": 0.7,
+    "authoringTool": "ParadiddleUtilities MidiConverter",
+    "recordingMetadata": {
+        "title": "WhoAmIWhatsMyName",
+        "description": "",
+        "coverImagePath": "album.jpg",
+        "artist": "Snoop Dogg",
+        "creator": "Undietaker",
+        "length": 250.85111111111112,
+        "complexity": 2
+    },
+    "audioFileData": {
+        "songTracks": [
+            "guitar.ogg",
+            "rhythm.ogg",
+            "vocals.ogg",
+            "song.ogg"
+        ],
+        "drumTracks": [
+            "drums_1.ogg",
+            "drums_2.ogg",
+            "drums_3.ogg"
+        ],
+        "songPreview": "",
+        "calibrationOffset": 0
+    },
+    "instruments": [
+        {
+            "name": "BP_HiHat_C_1",
+            "class": "BP_HiHat_C",
+            "location": [
+                17.22353,
+                -34.08699,
+                94.211975
+            ],
+            "rotation": [
+                15.416171,
+                19.771341,
+                6.125736
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "class": "BP_Kick_C",
+            "location": [
+                -69.758492,
+                60.319191,
+                34.294422
+            ],
+            "rotation": [
+                -96.766594,
+                2.265444,
+                38.000126
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "BP_Crash15_C_1",
+            "class": "BP_Crash15_C",
+            "location": [
+                27.7938,
+                -37.487892,
+                132.343323
+            ],
+            "rotation": [
+                17.085356,
+                39.032425,
+                -19.564053
+            ],
+            "scale": [
+                1.000001,
+                1.000001,
+                1.0
+            ]
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "class": "BP_Crash17_C",
+            "location": [
+                26.813931,
+                52.215088,
+                135.513931
+            ],
+            "rotation": [
+                -10.405132,
+                44.075054,
+                25.513369
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "BP_FloorTom_C_1",
+            "class": "BP_FloorTom_C",
+            "location": [
+                -1.75137,
+                42.720551,
+                61.630424
+            ],
+            "rotation": [
+                1.261108,
+                28.997799,
+                73.703827
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "BP_Ride17_C_1",
+            "class": "BP_Ride17_C",
+            "location": [
+                -14.226593,
+                61.129753,
+                105.472443
+            ],
+            "rotation": [
+                -27.074295,
+                19.200071,
+                15.730481
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "BP_Ride20_C_1",
+            "class": "BP_Ride20_C",
+            "location": [
+                -13.356556,
+                77.818153,
+                138.67569
+            ],
+            "rotation": [
+                18.895599,
+                42.784584,
+                101.073982
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "class": "BP_Snare_C",
+            "location": [
+                17.106194,
+                -1.370838,
+                68.553436
+            ],
+            "rotation": [
+                3.194685,
+                15.114579,
+                1.082093
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "BP_Tom1_C_1",
+            "class": "BP_Tom1_C",
+            "location": [
+                40.340771,
+                -2.559204,
+                95.154297
+            ],
+            "rotation": [
+                -40.931034,
+                37.27087,
+                -55.179005
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "class": "BP_Tom2_C",
+            "location": [
+                30.543972,
+                33.849445,
+                93.909325
+            ],
+            "rotation": [
+                14.762558,
+                52.847816,
+                50.355915
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    ],
+    "events": [
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "4.8852"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "5.3416"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "5.7981"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "6.2545"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "6.7109"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "7.1674"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "7.6238"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "8.0803"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "8.5367"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "9.1453"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "9.4496"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "9.7539"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "9.7539"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "10.0716"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "10.3893"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "10.3893"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "10.7071"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "11.0248"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "11.0248"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "11.3425"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "11.6602"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "11.6602"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "11.9779"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "12.2957"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "12.2957"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "12.6018"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "12.9080"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "12.9080"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "13.2142"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "13.5204"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "13.5204"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "13.8266"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "14.1328"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "14.1328"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "14.4389"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "14.7451"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "14.7451"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "15.0531"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "15.3612"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "15.3612"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "15.6692"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "15.9772"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "15.9772"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "16.2853"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "16.5933"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "16.5933"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "16.9013"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "17.2094"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "17.2094"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "17.5202"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "17.8311"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "17.8311"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "18.1420"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "18.4528"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "18.4528"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "18.7637"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "19.0746"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "19.3854"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "19.6963"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "19.6963"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "20.0049"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "20.3136"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "20.3136"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "20.6222"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "20.9309"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "20.9309"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "21.2395"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "21.5481"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "21.5481"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "21.8568"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "22.1654"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "22.1654"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "22.4752"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "22.7850"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "22.7850"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "23.0948"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "23.4046"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "23.4046"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "23.7144"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "24.0242"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "24.0242"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "24.3340"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "24.6437"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "24.6437"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "24.9553"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "25.2668"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "25.2668"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "25.5783"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "25.8899"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "25.8899"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "26.2014"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "26.5129"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "26.5129"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "26.8245"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "27.1360"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "27.1360"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "27.4474"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "27.7588"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "27.7588"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "28.0702"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "28.3817"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "28.3817"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "28.6931"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "29.0045"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "29.3159"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "29.6273"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "29.6273"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "29.9350"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "30.2426"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "30.2426"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "30.5503"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "30.8579"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "30.8579"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "31.1656"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "31.4732"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "31.4732"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "31.7809"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "32.0886"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "32.0886"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "32.3984"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "32.7083"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "32.7083"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "33.0182"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "33.3281"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "33.3281"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "33.6380"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "33.9479"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "33.9479"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "34.2578"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "34.5676"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "34.5676"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "34.8769"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "35.1862"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "35.1862"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "35.4955"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "35.8048"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "35.8048"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "36.1141"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "36.4234"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "36.4234"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "36.7327"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "37.0420"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "37.0420"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "37.3528"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "37.6636"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "37.6636"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "37.9744"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "38.2852"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "38.2852"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "38.5960"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "38.9068"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "39.2176"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "39.5284"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "39.5284"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "39.8380"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "40.1476"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "40.1476"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "40.4573"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "40.7669"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "40.7669"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "41.0765"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "41.3862"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "41.3862"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "41.6958"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "42.0054"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "42.0054"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "42.3159"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "42.6264"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "42.6264"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "42.9369"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "43.2474"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "43.2474"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "43.5579"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "43.8684"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "43.8684"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "44.1789"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "44.4894"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "44.4894"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "44.7991"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "45.1088"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "45.1088"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "45.4185"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "45.7282"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "45.7282"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "46.0379"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "46.3477"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "46.3477"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "46.6574"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "46.9671"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "46.9671"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "47.2759"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "47.5847"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "47.5847"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "47.8935"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "48.2024"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "48.2024"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "48.5112"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "48.8200"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "49.1288"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "49.4376"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "49.4376"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "49.7500"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "50.0624"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "50.0624"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "50.3747"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "50.6871"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "50.6871"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "50.9995"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "51.3118"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "51.3118"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "51.6242"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "51.9365"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "51.9365"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "52.2441"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "52.5516"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "52.5516"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "52.8592"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "53.1667"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "53.1667"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "53.4742"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "53.7818"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "53.7818"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "54.0893"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "54.3968"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "54.3968"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "54.7082"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "55.0195"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "55.0195"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "55.3308"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "55.6422"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "55.6422"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "55.9535"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "56.2648"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "56.2648"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "56.5762"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "56.8875"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "57.1940"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "57.5006"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "57.6539"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "58.1137"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "58.7268"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "59.3399"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "59.3399"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "59.6526"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "59.9653"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "59.9653"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "60.2781"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "60.5908"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "60.5908"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "60.9036"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "60.9036"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "61.2163"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "61.2163"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "61.5290"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "61.8418"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "61.8418"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "62.1514"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "62.4611"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "62.4611"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "62.7707"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "63.0804"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "63.0804"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "63.3900"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "63.6997"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "64.0093"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "64.3190"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "64.3190"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "64.6316"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "64.9442"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "64.9442"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "65.2568"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "65.5694"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "65.5694"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "65.8820"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "66.1946"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "66.1946"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "66.5072"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "66.8198"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "66.8198"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "67.1254"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "67.4309"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "67.4309"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "67.7365"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "68.0420"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "68.0420"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "68.3476"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "68.6532"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "68.9587"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "69.2643"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "69.2643"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "69.5760"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "69.8878"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "69.8878"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "70.1996"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "70.5113"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "70.5113"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "70.8231"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "71.1349"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "71.1349"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "71.4466"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "71.7584"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "71.7584"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "72.0665"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "72.3745"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "72.3745"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "72.6826"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "72.9906"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "72.9906"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "73.2987"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "73.6068"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "73.6068"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "73.9148"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "74.2229"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "74.2229"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "74.5343"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "74.8457"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "74.8457"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "75.1571"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "75.4685"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "75.4685"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "75.7799"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "76.0913"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "76.0913"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "76.4027"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "76.7141"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "76.7141"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "77.0251"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "77.3362"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "77.3362"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "77.6473"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "77.9583"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "77.9583"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "78.2694"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "78.5805"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "78.5805"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "78.8916"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "79.2026"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "79.2026"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "79.5115"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "79.8204"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "79.8204"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "80.1292"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "80.4381"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "80.4381"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "80.7470"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "81.0559"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "81.0559"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "81.3647"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "81.6736"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "81.6736"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "81.9823"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "82.2909"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "82.2909"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "82.5996"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "82.9083"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "82.9083"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "83.2169"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "83.5256"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "83.5256"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "83.8343"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "84.1429"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "84.1429"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "84.4553"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "84.7676"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "84.7676"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "85.0799"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "85.3923"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "85.3923"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "85.7046"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "86.0169"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "86.0169"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "86.3293"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "86.6416"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "86.6416"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "86.9510"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "87.2603"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "87.2603"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "87.5696"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "87.8790"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "87.8790"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "88.1883"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "88.4976"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "88.4976"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "88.8070"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "89.1163"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "89.1163"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "89.4251"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "89.7339"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "89.7339"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "90.0426"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "90.3514"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "90.3514"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "90.6602"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "90.9690"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "90.9690"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "91.2777"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "91.5865"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "91.5865"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "91.8983"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "92.2100"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "92.2100"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "92.5217"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "92.8335"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "92.8335"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "93.1452"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "93.4570"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "93.4570"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "93.7687"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "94.0804"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "94.0804"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "94.3923"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "94.7041"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "94.7041"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "95.0160"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "95.3278"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "95.3278"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "95.6397"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "95.9515"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "95.9515"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "96.2634"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "96.5752"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "96.5752"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "96.8806"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "97.1860"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "97.1860"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "97.4913"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "97.7967"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "97.7967"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "98.1020"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "98.4074"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "98.7127"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "99.0181"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "99.0181"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "99.3292"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "99.6404"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "99.6404"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "99.9515"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "100.2626"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "100.2626"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "100.5737"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "100.8849"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "100.8849"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "101.1960"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "101.5071"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "101.5071"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "101.8175"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "102.1278"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "102.1278"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "102.4381"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "102.7484"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "102.7484"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "103.0588"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "103.3691"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "103.6794"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "103.9898"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "103.9898"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "104.3004"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "104.6109"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "104.6109"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "104.9215"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "105.2321"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "105.2321"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "105.5427"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "105.8533"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "105.8533"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "106.1639"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "106.4745"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "106.4745"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "106.7792"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "107.0839"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "107.0839"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "107.3886"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "107.6933"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "107.6933"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "107.9980"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "108.3027"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "108.3027"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "108.6074"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "108.9121"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "108.9121"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "109.2273"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "109.5425"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "109.5425"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "109.8577"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "110.1730"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "110.1730"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "110.4882"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "110.8034"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "110.8034"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "111.1186"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "111.4338"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "111.4338"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "111.7451"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "112.0564"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "112.0564"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "112.3676"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "112.6789"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "112.6789"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "112.9902"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "113.3014"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "113.3014"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "113.6127"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "113.9239"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "113.9239"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "114.2341"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "114.5442"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "114.5442"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "114.8544"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "115.1645"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "115.1645"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "115.4747"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "115.7848"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "115.7848"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "116.0950"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "116.4051"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "116.4051"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "116.7134"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "117.0216"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "117.0216"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "117.3299"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "117.6381"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "117.6381"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "117.9464"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "118.2546"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "118.5629"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "118.8712"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "118.8712"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "119.1840"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "119.4969"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "119.4969"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "119.8098"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "120.1227"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "120.1227"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "120.4355"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "120.7484"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "120.7484"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "121.0613"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "121.3742"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "121.3742"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "121.6823"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "121.9905"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "121.9905"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "122.2987"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "122.6069"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "122.6069"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "122.9151"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "123.2233"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "123.2233"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "123.5315"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "123.8397"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "123.8397"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "124.1502"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "124.4608"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "124.4608"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "124.7713"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "125.0818"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "125.0818"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "125.3924"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "125.7029"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "125.7029"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "126.0135"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "126.3240"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "126.3240"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "126.6319"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "126.9398"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "126.9398"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "127.2477"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "127.5556"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "127.5556"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "127.8635"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "128.1715"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "128.4794"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "128.7873"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "128.7873"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "129.0963"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "129.4053"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "129.4053"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "129.7143"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "130.0233"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "130.0233"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "130.3323"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "130.6413"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "130.6413"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "130.9503"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "131.2593"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "131.2593"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "131.5716"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "131.8839"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "131.8839"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "132.1961"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "132.5084"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "132.5084"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "132.8206"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "133.1329"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "133.1329"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "133.4452"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "133.7574"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "133.7574"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "134.0643"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "134.3712"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "134.3712"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "134.6780"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "134.9849"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "134.9849"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "135.2918"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "135.5987"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "135.5987"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "135.9056"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "136.2124"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "136.2124"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "136.5240"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "136.8356"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "136.8356"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "137.1471"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "137.4587"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "137.4587"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "137.7703"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "138.0818"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "138.3934"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "138.7049"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "138.7049"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "139.0133"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "139.3216"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "139.3216"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "139.6299"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "139.9382"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "139.9382"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "140.2465"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "140.5549"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "140.5549"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "140.8632"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "141.1715"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "141.1715"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "141.4836"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "141.7957"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "141.7957"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "142.1079"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "142.4200"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "142.4200"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "142.7321"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "143.0443"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "143.0443"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "143.3564"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "143.6685"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "143.6685"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "143.9751"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "144.2816"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "144.2816"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "144.5882"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "144.8947"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "144.8947"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "145.2013"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "145.5079"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "145.5079"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "145.8144"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "146.1210"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "146.1210"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "146.4313"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "146.7416"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "146.7416"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "147.0519"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "147.3622"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "147.3622"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "147.6725"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "147.9829"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "147.9829"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "148.2932"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "148.6035"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "148.6035"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "148.9136"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "149.2238"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "149.2238"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "149.5340"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "149.8441"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "149.8441"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "150.1543"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "150.4644"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "150.4644"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "150.7746"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "151.0847"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "151.0847"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "151.3973"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "151.7098"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "151.7098"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "152.0224"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "152.3349"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "152.3349"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "152.6475"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "152.9600"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "152.9600"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "153.2725"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "153.5851"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "153.5851"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "153.8947"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "154.2043"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "154.2043"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "154.5139"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "154.8235"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "154.8235"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "155.1331"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "155.4427"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "155.4427"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "155.7523"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "156.0619"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "156.3705"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "156.6791"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "156.8334"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "157.2962"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "157.6048"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "157.9134"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "158.2220"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "158.5305"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "158.5305"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "158.8413"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "159.1521"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "159.1521"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "159.4629"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "159.7737"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "159.7737"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "160.0845"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "160.3953"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "160.3953"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "160.7061"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "161.0169"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "161.0169"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "161.3266"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "161.6363"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "161.6363"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "161.9461"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "162.2558"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "162.2558"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "162.5656"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "162.8753"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "162.8753"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "163.1850"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "163.4948"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "163.4948"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "163.8052"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "164.1157"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "164.1157"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "164.4261"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "164.7366"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "164.7366"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "165.0471"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "165.3575"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "165.3575"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "165.6680"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "165.9784"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "165.9784"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "166.2874"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "166.5964"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "166.5964"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "166.9055"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "167.2145"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "167.2145"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "167.5235"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "167.8325"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "168.1415"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "168.4505"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "168.4505"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "168.7616"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "169.0728"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "169.0728"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "169.3839"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "169.6950"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "169.6950"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "170.0062"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "170.3173"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "170.3173"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "170.6284"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "170.9395"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "170.9395"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "171.2471"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "171.5546"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "171.5546"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "171.8622"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "172.1697"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "172.1697"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "172.4772"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "172.7848"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "172.7848"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "173.0923"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "173.3998"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "173.3998"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "173.7123"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "174.0248"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "174.0248"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "174.3373"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "174.6497"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "174.6497"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "174.9622"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "175.2747"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "175.2747"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "175.5871"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "175.8996"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "175.8996"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "176.2077"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "176.5159"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "176.5159"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "176.8240"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "177.1321"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "177.1321"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "177.7483"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "177.7483"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "178.3646"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "178.3646"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "178.9876"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "178.9876"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "179.6107"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "179.6107"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "180.2338"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "180.2338"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "180.8569"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "180.8569"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "181.4734"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "181.4734"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "182.0900"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "182.0900"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "182.7066"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "182.7066"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "183.3231"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "183.3231"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "183.9447"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "183.9447"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "184.5662"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "184.8769"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "185.1877"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "185.1877"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "185.8092"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "185.8092"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "186.1183"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "186.4273"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "186.4273"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "186.7363"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "187.0454"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "187.0454"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "187.3544"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "187.6635"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "187.9725"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "188.2815"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "188.2815"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "188.5920"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "188.9025"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "188.9025"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "189.2130"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "189.5235"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "189.5235"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "189.8340"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "190.1445"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "190.1445"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "190.4550"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "190.7655"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "190.7655"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "191.0745"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "191.3835"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "191.3835"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "191.6925"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "192.0015"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "192.0015"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "192.3106"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "192.6196"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "192.6196"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "192.9286"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "193.2376"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "193.2376"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "193.5520"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "193.8664"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "193.8664"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "194.1809"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "194.4953"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "194.4953"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "194.8097"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "195.1241"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "195.1241"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "195.4385"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "195.7529"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "195.7529"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "196.0617"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "196.3705"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "196.3705"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "196.6793"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "196.9881"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "197.6057"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "197.9146"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "198.2234"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "198.2234"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "198.5299"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "198.8365"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "198.8365"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "199.1431"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "199.4497"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "199.4497"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "199.7562"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "200.0628"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "200.0628"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "200.3694"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "200.6760"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "200.6760"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "200.9874"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "201.2989"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "201.2989"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "201.6104"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "201.9218"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "201.9218"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "202.2333"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "202.5448"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "202.5448"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "202.8562"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "203.1677"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "203.1677"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "203.4756"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "203.7836"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "203.7836"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "204.0915"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "204.3995"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "204.3995"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "204.7074"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "205.0154"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "205.0154"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "205.3233"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "205.6313"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "205.9383"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "206.2453"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "206.3987"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "206.8592"
+        },
+        {
+            "name": "BP_Ride17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "207.1662"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "207.4732"
+        },
+        {
+            "name": "BP_Ride17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "207.6267"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "208.0871"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "208.0871"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "208.7153"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "208.7153"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "209.0293"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "209.3434"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "209.3434"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "209.6575"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "209.9715"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "209.9715"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "210.2856"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "210.5997"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "210.5997"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "210.9102"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "211.2208"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "211.2208"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "211.5313"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "211.8418"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "211.8418"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "212.1524"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "212.4629"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "212.4629"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "212.7735"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "213.0840"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "213.0840"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "213.3923"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "213.7006"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "213.7006"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "214.0089"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "214.3171"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "214.3171"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "214.6254"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "214.9337"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "214.9337"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "215.2420"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "215.5502"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "215.5502"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "215.8615"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "216.1728"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "216.1728"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "216.4841"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "216.7954"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "216.7954"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "217.1067"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "217.4180"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "217.7292"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "218.0405"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "218.0405"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "218.3485"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "218.6565"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "218.6565"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "218.9646"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "219.2726"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "219.2726"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "219.5806"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "219.8886"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "219.8886"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "220.1966"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "220.5046"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "220.5046"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "220.8154"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "221.1262"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "221.1262"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "221.4370"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "221.7478"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "221.7478"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "222.0585"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "222.3693"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "222.6801"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "222.9909"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "222.9909"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "223.3000"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "223.6092"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "223.6092"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "223.9184"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "224.2275"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "224.2275"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "224.5367"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "224.8459"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "225.1550"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "225.4642"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "225.7740"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "226.0838"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "226.2387"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "226.7034"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "227.3230"
+        },
+        {
+            "name": "BP_Tom1_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "227.6328"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "227.9427"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "227.9427"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "228.5708"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "228.5708"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "229.1989"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "229.1989"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "229.5130"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "229.8270"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "229.8270"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "230.1411"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "230.4552"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "230.4552"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "230.7629"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "231.0705"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "231.0705"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "231.3782"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "231.6859"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "231.6859"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "231.9936"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "232.3013"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "232.3013"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "232.6090"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "232.9167"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "232.9167"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "233.2264"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "233.5361"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "233.5361"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "233.8459"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "234.1556"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "234.1556"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "234.4653"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "234.7750"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "234.7750"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "235.0848"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "235.3945"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "235.3945"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "235.7050"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "236.0156"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "236.0156"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "236.3262"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "236.6368"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "236.9473"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "236.9473"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "237.2579"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "237.5685"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "237.8790"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "237.8790"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "238.4982"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "238.4982"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "238.8077"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "239.1173"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "239.1173"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "239.4269"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "239.7364"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "239.7364"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "240.0460"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "240.3556"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "240.3556"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "240.6667"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "240.9778"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "240.9778"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "241.2889"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "241.6000"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "241.6000"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "241.9111"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "242.2222"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "242.5333"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "242.8444"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "242.8444"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "243.1539"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "243.4635"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "243.4635"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "243.7730"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "244.0826"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "244.0826"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "244.3921"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "244.7017"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "244.7017"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "245.0112"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "245.3208"
+        },
+        {
+            "name": "BP_HiHat_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "245.3208"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "245.6314"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "245.9420"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "246.2525"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "246.5631"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "246.8737"
+        },
+        {
+            "name": "BP_Snare_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "247.1843"
+        },
+        {
+            "name": "BP_Tom2_C_2",
+            "vel": 100,
+            "loc": 0,
+            "time": "247.4949"
+        },
+        {
+            "name": "BP_Kick_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "247.8055"
+        },
+        {
+            "name": "BP_Crash17_C_1",
+            "vel": 100,
+            "loc": 0,
+            "time": "247.8055"
+        }
+    ],
+    "bpmEvents": [
+        {
+            "bpm": 97.9999836666694,
+            "time": 0.0
+        },
+        {
+            "bpm": 98.5144028056902,
+            "time": 2.4489799999999997
+        },
+        {
+            "bpm": 98.58837873054317,
+            "time": 4.885171999999999
+        },
+        {
+            "bpm": 94.4224649928711,
+            "time": 9.753899999999998
+        },
+        {
+            "bpm": 97.98125945110898,
+            "time": 12.295667999999997
+        },
+        {
+            "bpm": 97.39311106061098,
+            "time": 14.745115999999998
+        },
+        {
+            "bpm": 96.50429283262618,
+            "time": 17.209355999999996
+        },
+        {
+            "bpm": 97.19983476028091,
+            "time": 19.696291999999996
+        },
+        {
+            "bpm": 96.83995099898479,
+            "time": 22.165431999999996
+        },
+        {
+            "bpm": 96.2987572645375,
+            "time": 24.643747999999995
+        },
+        {
+            "bpm": 96.33385460652437,
+            "time": 27.135991999999995
+        },
+        {
+            "bpm": 97.5124572164094,
+            "time": 29.627327999999995
+        },
+        {
+            "bpm": 96.80979456961592,
+            "time": 32.08855199999999
+        },
+        {
+            "bpm": 96.99446484920594,
+            "time": 34.56763999999999
+        },
+        {
+            "bpm": 96.52664939912161,
+            "time": 37.04200799999999
+        },
+        {
+            "bpm": 96.88842813058622,
+            "time": 39.528367999999986
+        },
+        {
+            "bpm": 96.62146929047634,
+            "time": 42.00544399999998
+        },
+        {
+            "bpm": 96.86308886704089,
+            "time": 44.48936399999998
+        },
+        {
+            "bpm": 97.1445964937277,
+            "time": 46.96708799999998
+        },
+        {
+            "bpm": 96.04179739022423,
+            "time": 49.43763199999998
+        },
+        {
+            "bpm": 97.54939657569102,
+            "time": 51.93654399999998
+        },
+        {
+            "bpm": 96.36031047292035,
+            "time": 54.39683599999998
+        },
+        {
+            "bpm": 97.86443492259738,
+            "time": 56.887487999999976
+        },
+        {
+            "bpm": 95.92602185194778,
+            "time": 59.33985999999997
+        },
+        {
+            "bpm": 96.88342179327984,
+            "time": 61.84178799999997
+        },
+        {
+            "bpm": 95.96867582421098,
+            "time": 64.31899199999997
+        },
+        {
+            "bpm": 98.18087207523273,
+            "time": 66.81980799999997
+        },
+        {
+            "bpm": 96.22647864012741,
+            "time": 69.26427599999997
+        },
+        {
+            "bpm": 97.38236210657526,
+            "time": 71.75839199999997
+        },
+        {
+            "bpm": 96.34019650188746,
+            "time": 74.22290399999997
+        },
+        {
+            "bpm": 96.44178050815174,
+            "time": 76.71407599999998
+        },
+        {
+            "bpm": 97.12698381864449,
+            "time": 79.20262399999997
+        },
+        {
+            "bpm": 97.19274942089321,
+            "time": 81.67361599999997
+        },
+        {
+            "bpm": 96.05071477740246,
+            "time": 84.14293599999996
+        },
+        {
+            "bpm": 96.98176581166464,
+            "time": 86.64161599999996
+        },
+        {
+            "bpm": 97.15796752009146,
+            "time": 89.11630799999996
+        },
+        {
+            "bpm": 96.23404118816963,
+            "time": 91.58651199999996
+        },
+        {
+            "bpm": 96.2000962000962,
+            "time": 94.08043199999996
+        },
+        {
+            "bpm": 98.24485565374583,
+            "time": 96.57523199999996
+        },
+        {
+            "bpm": 96.42349197676194,
+            "time": 99.01810799999996
+        },
+        {
+            "bpm": 96.67175267498796,
+            "time": 101.50712799999995
+        },
+        {
+            "bpm": 96.58880535745907,
+            "time": 103.98975599999996
+        },
+        {
+            "bpm": 98.45976113661948,
+            "time": 106.47451599999995
+        },
+        {
+            "bpm": 95.17072041062994,
+            "time": 108.91205999999995
+        },
+        {
+            "bpm": 96.38198106736618,
+            "time": 111.43384399999995
+        },
+        {
+            "bpm": 96.72848154017537,
+            "time": 113.92393599999996
+        },
+        {
+            "bpm": 97.321390917319,
+            "time": 116.40510799999996
+        },
+        {
+            "bpm": 95.88539777258221,
+            "time": 118.87116399999995
+        },
+        {
+            "bpm": 97.34207465163705,
+            "time": 121.37415199999995
+        },
+        {
+            "bpm": 96.60637891920004,
+            "time": 123.83968399999995
+        },
+        {
+            "bpm": 97.43075109366018,
+            "time": 126.32399199999995
+        },
+        {
+            "bpm": 97.08486511676072,
+            "time": 128.78727999999995
+        },
+        {
+            "bpm": 96.07424617744593,
+            "time": 131.25934399999994
+        },
+        {
+            "bpm": 97.75839989051059,
+            "time": 133.75741199999993
+        },
+        {
+            "bpm": 96.28902112581123,
+            "time": 136.21244399999992
+        },
+        {
+            "bpm": 97.30182051706187,
+            "time": 138.7049399999999
+        },
+        {
+            "bpm": 96.11426063304056,
+            "time": 141.17149199999992
+        },
+        {
+            "bpm": 97.86156177266433,
+            "time": 143.66851999999992
+        },
+        {
+            "bpm": 96.67611407136953,
+            "time": 146.1209639999999
+        },
+        {
+            "bpm": 96.72489505348886,
+            "time": 148.6034799999999
+        },
+        {
+            "bpm": 95.98725289281583,
+            "time": 151.08474399999992
+        },
+        {
+            "bpm": 96.89672101496086,
+            "time": 153.5850759999999
+        },
+        {
+            "bpm": 97.22156957742645,
+            "time": 156.0619399999999
+        },
+        {
+            "bpm": 96.52727056272181,
+            "time": 158.53052799999992
+        },
+        {
+            "bpm": 96.85667794508872,
+            "time": 161.01687199999992
+        },
+        {
+            "bpm": 96.6312727788094,
+            "time": 163.49475999999993
+        },
+        {
+            "bpm": 97.08392257880787,
+            "time": 165.97842799999992
+        },
+        {
+            "bpm": 96.42349197676194,
+            "time": 168.45051599999994
+        },
+        {
+            "bpm": 97.54876218749848,
+            "time": 170.93953599999995
+        },
+        {
+            "bpm": 96.00875599854707,
+            "time": 173.39984399999994
+        },
+        {
+            "bpm": 97.36466311826561,
+            "time": 175.89961599999995
+        },
+        {
+            "bpm": 96.29705716193313,
+            "time": 178.36457599999994
+        },
+        {
+            "bpm": 97.31286735607426,
+            "time": 180.85686399999994
+        },
+        {
+            "bpm": 96.5376762415952,
+            "time": 183.32313599999995
+        },
+        {
+            "bpm": 97.0741840914827,
+            "time": 185.80921199999995
+        },
+        {
+            "bpm": 96.62146929047634,
+            "time": 188.28154799999996
+        },
+        {
+            "bpm": 97.08125215399028,
+            "time": 190.76546799999997
+        },
+        {
+            "bpm": 95.41666070312537,
+            "time": 193.23762399999998
+        },
+        {
+            "bpm": 97.14821417295296,
+            "time": 195.752908
+        },
+        {
+            "bpm": 97.85501800532332,
+            "time": 198.22335999999999
+        },
+        {
+            "bpm": 96.31885393406333,
+            "time": 200.67596799999998
+        },
+        {
+            "bpm": 97.41857025259011,
+            "time": 203.167692
+        },
+        {
+            "bpm": 97.72575871835924,
+            "time": 205.63128799999998
+        },
+        {
+            "bpm": 95.52086732947535,
+            "time": 208.08713999999998
+        },
+        {
+            "bpm": 96.60544564897123,
+            "time": 210.59967999999998
+        },
+        {
+            "bpm": 97.31428784593201,
+            "time": 213.08401199999997
+        },
+        {
+            "bpm": 96.37501445625217,
+            "time": 215.55024799999998
+        },
+        {
+            "bpm": 97.39880264405284,
+            "time": 218.04052
+        },
+        {
+            "bpm": 96.53006589785832,
+            "time": 220.504616
+        },
+        {
+            "bpm": 97.03681900369064,
+            "time": 222.990888
+        },
+        {
+            "bpm": 96.83354313934346,
+            "time": 225.464176
+        },
+        {
+            "bpm": 95.52177976180052,
+            "time": 227.942656
+        },
+        {
+            "bpm": 97.50104813626747,
+            "time": 230.455172
+        },
+        {
+            "bpm": 96.86027421143629,
+            "time": 232.916684
+        },
+        {
+            "bpm": 96.59704702827234,
+            "time": 235.39448000000002
+        },
+        {
+            "bpm": 96.9100238883209,
+            "time": 237.879028
+        },
+        {
+            "bpm": 96.4304655984314,
+            "time": 240.35555200000002
+        },
+        {
+            "bpm": 96.91597223680449,
+            "time": 242.84439200000003
+        },
+        {
+            "bpm": 96.58880535745907,
+            "time": 245.32076400000003
+        }
+    ]
+}

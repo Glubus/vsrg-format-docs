@@ -52,7 +52,15 @@ Not in the CSV (ACB/HCA audio, handled by libcgss).
 
 ## Example
 
-Unknown.
+Real first rows, 8-column variant without the witch columns [observed in samples/mishiro-score-viewer_8039-1.csv]:
+
+```
+id,sec,type,startPos,finishPos,status,sync,groupId
+1,0,100,0,0,116,0,0
+2,0,91,,,,0,0
+3,2.926829,1,1,2,0,0,0
+4,4.390244,1,4,5,0,0,0
+```
 
 ## ROX support
 
@@ -64,7 +72,9 @@ DereTore (C#, authoring toolkit): <https://github.com/OpenCGSS/DereTore>; libcgs
 
 ## Getting samples
 
-No sample was obtained. The CSV blobs come from the game's data (copyright Bandai Namco) and the DereInfo project's `tw/original/` data repository (named in its README) is not available as a public clone. How to get them: per the DereInfo README, extract the game's SQLite `.bdb` beatmap databases from the downloaded data bundle (the app does this) and read the `beatmaps` blobs; DereTore / DereGuide / StarlightDirector are the open-source tools that read and write beatmaps. I did not verify a public file URL.
+Committed in [`samples/`](samples/): eight real beatmap CSVs (`<musicId>-<difficulty>.csv`) from the mishiro-score-viewer repository (data from the game). See [`samples/SOURCES.md`](samples/SOURCES.md) for every file's source URL, fetch date, sha256 and terms.
+
+Observed [observed in samples/mishiro-score-viewer_*.csv]: these files have the 8-column header `id,sec,type,startPos,finishPos,status,sync,groupId` (no `visible`/`size`/`distance` witch columns); `type` values found: 1, 2, 3, 91, 92 and 100 (the first rows are a `100` and a `91` at sec 0 with status e.g. 46). The mapping of 91/92/100 is not in the fiche sources. More: extract `.bdb` databases from the game data (DereInfo, DereTore).
 
 ## Sources
 

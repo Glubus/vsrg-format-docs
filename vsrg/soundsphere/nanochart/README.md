@@ -99,9 +99,8 @@ rizu (Lua): https://github.com/semyon422/rizu (`chart/transform/NanoChart.lua`, 
 
 ## Getting samples
 
-- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): `rizu-test-v1-positive-delay.nanochart` (bytes of the rizu unit test, GPL-3.0) and two synthetic files (`synthetic-v2-roundtrip.nanochart`, `synthetic-v2-negative-delay.nanochart`) produced with a Python port of `NanoChart:encode` checked against the repository's exact-byte test vectors and decoded back with a port of `NanoChart:decode`.
-- **Not found**: no real `.nanochart` file is published in the repositories searched.
-- **To get a real one**: the rizu editor has an exporter, `rizu/editor/exports/NanoChartExporter.lua` (observed in the repo tree at commit `cf4603379dcab949d3510b8c31d1d3e421df6ec0`); run the game from source (https://github.com/semyon422/rizu), open a chart in the editor and use that export [inference: UI path not run]. The module can also be called directly: `NanoChart:encode(hash, inputs, notes)`.
+- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): the bytes of one rizu unit test (version 1), five version-2 files encoding real charts (the note events of real ROX charts, built with a Python port of `NanoChart:encode`, decoded back and compared), and two synthetic files.
+- **No genuine export found**: the format is written by the rizu editor (`rizu/editor/exports/NanoChartExporter.lua`) and embedded in replays; run rizu from source (https://github.com/semyon422/rizu), open a chart in the editor and export [inference: UI path not run].
 
 ## Sources
 

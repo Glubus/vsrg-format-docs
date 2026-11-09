@@ -1,0 +1,208 @@
+{
+  "title": "Developers, Developers, Developers, Developers!",
+  "artist": "Snack",
+  "genre": "Tribute",
+  "bpm": 200,
+  "artist_url": "http://korsnack.kr/",
+  "bms_url": "http://k-bms.com/party_pabat/party2015.jsp?board_num=15&num=16&order=reg&odtype=a",
+  "song_url": "https://soundcloud.com/korsnack/ddddevelopers",
+  "youtube_url": "https://www.youtube.com/watch?v=ovgcVc5wb9E",
+  "replaygain": "-10.65 dB",
+  "bmssearch_id": 66,
+  "initial": true,
+  "readme": "README.md",
+  "charts": [
+    {
+      "md5": "1d33d50e2d0a06e85f8eb6b5eab8ea08",
+      "info": {
+        "title": "Developers, Developers, Developers, Developers!",
+        "artist": "Snack",
+        "genre": "Tribute",
+        "subtitles": [
+          "DP ANOTHER"
+        ],
+        "subartists": [
+
+        ],
+        "difficulty": 4,
+        "level": 12
+      },
+      "noteCount": 954,
+      "bpm": {
+        "init": 200,
+        "min": 200,
+        "median": 200,
+        "max": 200
+      },
+      "duration": 145.2,
+      "scratch": true,
+      "keys": "14K",
+      "file": "dddd_dpa.bme"
+    },
+    {
+      "md5": "98ef1bd4ed2ec2aad3b9550d86a50f9e",
+      "info": {
+        "title": "Developers, Developers, Developers, Developers!",
+        "artist": "Snack",
+        "genre": "Tribute",
+        "subtitles": [
+          "DP HYPER"
+        ],
+        "subartists": [
+
+        ],
+        "difficulty": 3,
+        "level": 10
+      },
+      "noteCount": 660,
+      "bpm": {
+        "init": 200,
+        "min": 200,
+        "median": 200,
+        "max": 200
+      },
+      "duration": 145.2,
+      "scratch": true,
+      "keys": "14K",
+      "file": "dddd_dph.bme"
+    },
+    {
+      "md5": "5051253910a8b732cb07018c8b9ffa8d",
+      "info": {
+        "title": "Developers, Developers, Developers, Developers!",
+        "artist": "Snack",
+        "genre": "Tribute",
+        "subtitles": [
+          "DP NORMAL"
+        ],
+        "subartists": [
+
+        ],
+        "difficulty": 2,
+        "level": 7
+      },
+      "noteCount": 481,
+      "bpm": {
+        "init": 200,
+        "min": 200,
+        "median": 200,
+        "max": 200
+      },
+      "duration": 145.2,
+      "scratch": true,
+      "keys": "14K",
+      "file": "dddd_dpn.bme"
+    },
+    {
+      "md5": "e50d342e7ba934b97080a5b070cca22b",
+      "info": {
+        "title": "Developers, Developers, Developers, Developers!",
+        "artist": "Snack",
+        "genre": "Tribute",
+        "subtitles": [
+          "SP ANOTHER"
+        ],
+        "subartists": [
+
+        ],
+        "difficulty": 4,
+        "level": 12
+      },
+      "noteCount": 1800,
+      "bpm": {
+        "init": 200,
+        "min": 200,
+        "median": 200,
+        "max": 200
+      },
+      "duration": 145.2,
+      "scratch": true,
+      "keys": "7K",
+      "file": "dddd_spa.bme"
+    },
+    {
+      "md5": "3a513929761da3509f50560933a7b453",
+      "info": {
+        "title": "Developers, Developers, Developers, Developers!",
+        "artist": "Snack",
+        "genre": "Tribute",
+        "subtitles": [
+          "SP HYPER"
+        ],
+        "subartists": [
+
+        ],
+        "difficulty": 3,
+        "level": 10
+      },
+      "noteCount": 1400,
+      "bpm": {
+        "init": 200,
+        "min": 200,
+        "median": 200,
+        "max": 200
+      },
+      "duration": 145.2,
+      "scratch": true,
+      "keys": "7K",
+      "file": "dddd_sph.bme"
+    },
+    {
+      "md5": "1c259d92801ad4b197296ff89420d863",
+      "info": {
+        "title": "Developers, Developers, Developers, Developers!",
+        "artist": "Snack",
+        "genre": "Tribute",
+        "subtitles": [
+          "SP NORMAL"
+        ],
+        "subartists": [
+
+        ],
+        "difficulty": 2,
+        "level": 7
+      },
+      "noteCount": 990,
+      "bpm": {
+        "init": 200,
+        "min": 200,
+        "median": 200,
+        "max": 200
+      },
+      "duration": 145.2,
+      "scratch": true,
+      "keys": "7K",
+      "file": "dddd_spn.bme"
+    },
+    {
+      "md5": "fa1c8c0053054438632d1f9e647f9dba",
+      "info": {
+        "title": "Developers, Developers, Developers, Developers!",
+        "artist": "Snack",
+        "genre": "Tribute",
+        "subtitles": [
+          "SP EXCEPTION"
+        ],
+        "subartists": [
+
+        ],
+        "difficulty": 5,
+        "level": 13
+      },
+      "noteCount": 2500,
+      "bpm": {
+        "init": 200,
+        "min": 200,
+        "median": 200,
+        "max": 200
+      },
+      "duration": 145.2,
+      "scratch": true,
+      "keys": "7K",
+      "file": "dddd_spx.bme"
+    }
+  ],
+  "warnings": [
+
+  ]
+}

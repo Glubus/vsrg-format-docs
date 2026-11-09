@@ -1,0 +1,19 @@
+{
+  "name": "ロキ",
+  "name_romanized": "ROKI",
+  "author": "鏡音リン/みきとP",
+  "bpm": "150",
+  "scene": "scene_01",
+  "levelDesigner": "白龙",
+  "levelDesigner1": "白龙",
+  "levelDesigner2": "白龙",
+  "levelDesigner3": "白龙",
+  "difficulty1": "0",
+  "difficulty2": "10",
+  "difficulty3": "0",
+  "unlockLevel": "0",
+  "searchTags": [
+    "mdcp",
+    "convert"
+  ]
+}

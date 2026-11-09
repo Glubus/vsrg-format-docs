@@ -94,9 +94,8 @@ ROX source `src/formats/taiko`:
 
 ## Getting samples
 
-- Committed: 15 `Mode: 1` charts in [samples/](samples/) (see [samples/SOURCES.md](samples/SOURCES.md)): format v9, v12 and v14; Kantan to Inner Oni difficulties of one song; drum rolls (`slider` lines with a length), swells (`spinner` lines), a hand-written synthetic mini map. Sources: kionell/osu-taiko-stable (MIT), ekgame/beatmap-analyzer (GPL-3.0), MaxOhn/rosu-pp (MIT), ppy/osu (MIT), N0zoM1z0/osu-reverse-engineering (MIT).
-- Manifest (`samples.manifest.json`): nothing for this format.
-- More: any osu! mapset (`.osz`) with taiko difficulties has `.osu` files with `Mode: 1`; download from osu.ppy.sh needs an account [inference: the site shows "Sign In To Proceed" to anonymous visitors]. Converted maps (standard -> taiko) are NOT stored as taiko files: the conversion is done by the client at load time (see Overview), so only native taiko difficulties are samples. Parser test folders: kionell/osu-taiko-stable `tests/Files/Taiko/Beatmaps`, ekgame/beatmap-analyzer `test_maps/taiko`, MaxOhn/rosu-pp `resources/`.
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): 15 `Mode: 1` charts (v9, v12, v14; Kantan to Inner Oni difficulties of one song; drum rolls; swells; one hand-written mini map) from kionell/osu-taiko-stable (MIT), ekgame/beatmap-analyzer (GPL-3.0), MaxOhn/rosu-pp (MIT), ppy/osu (MIT), N0zoM1z0/osu-reverse-engineering (MIT).
+- More: any osu! mapset (`.osz`) with taiko difficulties has `.osu` files with `Mode: 1`; converted maps (standard -> taiko) are not stored as taiko files (the client converts at load time). Fixture folders: kionell/osu-taiko-stable `tests/Files/Taiko/Beatmaps`, ekgame/beatmap-analyzer `test_maps/taiko`.
 
 ## Sources
 

@@ -67,8 +67,8 @@ Read by ROX (`SongIni::parse`, `rox::formats::clone_hero`; decode only): `name`,
 YARG.Core (C#): https://github.com/YARC-Official/YARG.Core · FoFiX (Python) · Moonscraper.
 
 ## Getting samples
-- Committed in [`samples/`](samples/SOURCES.md): three hand-written CC0 `song.ini` files (full tag range with `[song]`/spaced `=`; CRLF/unspaced `key=value` with `;`/`#` comments and `five_lane_drums`; `.mid` tags `delay`, `multiplier_note`, `sysex_*`, `pro_drums`).
-- Manifest: none. Every Clone Hero/YARG song folder carries a `song.ini` next to `notes.chart`/`notes.mid`, so any chart source in [chart](../chart/README.md) and [mid](../mid/README.md) provides more; the full tag lists are in https://github.com/TheNathannator/GuitarGame_ChartFormats (`docs/Chart-File-Formats/song-ini/Standard-Tags.md`, `docs/Implementation-Specific/Clone-Hero/song-ini-Tags.md`, `docs/Implementation-Specific/Phase Shift/song-ini-Tags.md`, CC0). The Festival-MIDI-Extractor tool writes a `song.ini` (difficulty ratings, year, genre, charter, preview start) beside the extracted `notes.mid` per its README (https://github.com/yotolo2354/Festival-MIDI-Extractor).
+- Committed in [`samples/`](samples/SOURCES.md): 6 real `song.ini` files (from Stickheadz32's GitHub chart repository, each beside a committed `.chart`) and 3 synthetic CC0 files (full tag range, CRLF/unspaced `key=value` with comments and `five_lane_drums`, `.mid` parser tags `delay`/`multiplier_note`/`sysex_*`).
+- More: every Clone Hero/YARG song folder carries a `song.ini`; Chorus Encore stores the same keys as `.sng` metadata (see [sng](../sng/README.md)). Tag lists: https://github.com/TheNathannator/GuitarGame_ChartFormats (`docs/Chart-File-Formats/song-ini/Standard-Tags.md`, Clone Hero and Phase Shift tag pages, CC0).
 
 ## Sources
 https://thenathannator.github.io/GuitarGame_ChartFormats/ (song-ini/Format-Overview, Standard-Tags; Implementation-Specific/Clone-Hero, Phase-Shift, Frets-on-Fire-X song-ini tags) · https://wiki.yarg.in/wiki/Song.ini

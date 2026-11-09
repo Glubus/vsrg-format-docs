@@ -1,0 +1,52 @@
+{
+  "version": "4.0.1",
+  "song": {
+    "title": "Horse Kicks Tree, Farts On Dog Then Runs Away",
+    "subTitle": "",
+    "author": "Yukon"
+  },
+  "audio": {
+    "songFilename": "Horse.ogg.egg",
+    "songDuration": 22.911,
+    "audioDataFilename": "AudioData.dat",
+    "bpm": 100.0,
+    "lufs": 0.0,
+    "previewStartTime": 12.0,
+    "previewDuration": 10.0
+  },
+  "songPreviewFilename": "Horse.ogg.egg",
+  "coverImageFilename": "Horse1.png.jpg",
+  "environmentNames": [
+    "LinkinParkEnvironment"
+  ],
+  "colorSchemes": [],
+  "difficultyBeatmaps": [
+    {
+      "characteristic": "Standard",
+      "difficulty": "Easy",
+      "beatmapAuthors": {
+        "mappers": [
+          "ButterBat/Goob2"
+        ],
+        "lighters": []
+      },
+      "environmentNameIdx": 0,
+      "beatmapColorSchemeIdx": 0,
+      "noteJumpMovementSpeed": 2.0,
+      "noteJumpStartBeatOffset": 0.0,
+      "beatmapDataFilename": "EasyStandard.dat",
+      "lightshowDataFilename": "Lightshow.dat",
+      "customData": {
+        "difficultyLabel": "Huh?"
+      }
+    }
+  ],
+  "customData": {
+    "editors": {
+      "lastEditedBy": "ChroMapper",
+      "ChroMapper": {
+        "version": "0.13.892"
+      }
+    }
+  }
+}

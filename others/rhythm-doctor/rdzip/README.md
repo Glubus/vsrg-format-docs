@@ -40,9 +40,9 @@ Not read by ROX.
 
 ## Getting samples
 
-- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): `rebuilt-internet-overdose-no-audio.rdzip`, an audio-less package BUILT from an AGPL-3.0 level: a zip with only `main.rdlevel` at its root (the level refers to `music.ogg` and two images that are not included).
-- Manifest (`samples.manifest.json`): two real `.rdzip` files of HyperHaxStudios/RD-Levels (pinned commit): `HyperHax_-_Corrupted.rdzip` (4.8 MB) and `HyperHax_-_Nowhere_(EDM_Remix).rdzip` (3 MB). [observed by listing them: `main.rdlevel`, one `.ogg` and one cover image (`Album.jpg` / `Album.png`), all at the zip root]
-- More: custom levels from the Rhythm Cafe database or the in-game level browser/Steam Workshop [inference]; "Export" in the level editor produces the zip.
+- Container only: this folder holds no archive. An `.rdzip` is a zip whose root holds `main.rdlevel` plus audio (`.ogg`) and images (observed by listing real archives: `main.rdlevel`, one `.ogg`, a cover image; two-player levels may add a second `.rdlevel`, e.g. `LosingYou 2P.rdlevel`).
+- The real `main.rdlevel` files extracted from `.rdzip` levels are committed in [../rdlevel/samples/](../rdlevel/samples/) (each row there names the archive URL it came from).
+- More: Rhythm Cafe level database (https://datasette.rhythm.cafe/, JSON API with `rdzip_url`), HyperHaxStudios/RD-Levels.
 
 ## Sources
 - https://fileinfo.com/extension/rdzip

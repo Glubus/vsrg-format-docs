@@ -113,9 +113,8 @@ Not read by ROX.
 
 ## Getting samples
 
-- **Committed**: 14 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
-- **Manifest**: none.
-- **More samples**: fan charts are plain text and are made with ArcCreate (project folders with `0.aff`..`3.aff`, exported as `.arcpkg`) or other editors; the largest open collection found is the WTFPL-licensed archive https://github.com/lzwd66/Suhri-s-Charts-Archive (one folder per song with the `.aff` files, `base.ogg` and a `songlistadd.json`; the audio was not committed). Test projects of EtoileResurrection (GPL-3.0) give tiny charts. Official charts are game data and were not collected.
+- **Committed**: 19 real `.aff` files in [`samples/`](samples/): the WTFPL Suhri fan-chart archive (10 charts) and EtoileResurrection test charts (4 loose plus the `etoile_sn.test/` set extracted from an `.arcpkg`). Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **More samples**: fan charts are plain text and are made with ArcCreate (project folders `0.aff`..`3.aff`, exported as `.arcpkg`); the Suhri archive https://github.com/lzwd66/Suhri-s-Charts-Archive has more (Phigros charts too). Official charts are game data and were not collected.
 
 ## Sources
 

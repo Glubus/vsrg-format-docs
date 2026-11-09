@@ -9,11 +9,11 @@ SCP is the Sonolus Collection Package file format used between Sonolus app versi
 
 ## Container & encoding
 
-ZIP archive. Per the converter source, entries are `sonolus/<type>/list`, `sonolus/<type>/<item name>` (item JSON) and `repository/<ResourceType>/<hash>` (e.g. `EffectData`, `EffectClip`/`EffectAudio`, level data); types: levels, skins, backgrounds, effects, particles, engines [observed in https://github.com/sevenc-nanashi/scp-converter `src/index.ts`, not in a real file].
+ZIP archive (deflate). In the 0.6.0 layout, entries are `sonolus/package` (JSON), `sonolus/info`, `sonolus/<type>/info`, `sonolus/<type>/list`, `sonolus/<type>/<item name>` (item JSON) and `sonolus/repository/<sha1>` (resources: gzip JSON such as engine data, PNG images, ZIP audio) for types levels, skins, backgrounds, effects, particles, engines, playlists, posts, replays [observed in two real packages, `engine.scp` and `engine_next_sekai.scp` of https://github.com/endoretic/om2pjsk-usc]. The 0.5.13 layout read by scp-converter uses a top-level `repository/<ResourceType>/<hash>` directory next to the type directories [from https://github.com/sevenc-nanashi/scp-converter `src/index.ts`; not seen in a real file].
 
 ## Structure / metadata
 
-Unknown.
+Item JSON and `list` files follow the Sonolus server `ItemList` / `ItemDetails` shapes (`items[]`, `item`) [from scp-converter]. A level's LevelData is a gzip blob in `sonolus/repository/` referenced by the level item (see [`../level-data/`](../level-data/README.md)).
 
 ## Timing model
 
@@ -49,7 +49,7 @@ scp-converter: <https://github.com/sevenc-nanashi/scp-converter>; Sonolus free p
 
 ## Getting samples
 
-Nothing committed or listed: no `.scp` was found at an immutable URL, and building one would require knowledge beyond the converter source. From `scp-converter` (`src/index.ts`, MIT) the package is a ZIP whose entries are `sonolus/<type>/list`, `sonolus/<type>/<item name>` (item JSON) and `repository/<ResourceType>/<hash>` (resources such as `EffectData`, `EffectClip`/`EffectAudio`, level data), with types levels, skins, backgrounds, effects, particles, engines [observed in the converter source, not in a real file]. To obtain one: in the Sonolus app (0.5.13-0.6.0) export a collection to `.scp`, or package a static server made by `sonolus-generate-static`; the Sonolus free pack (<https://github.com/Sonolus/sonolus-free-pack>, MIT) is a source of resources.
+`.scp` is a ZIP container: no archive is stored in this repo (container-only format; charts are in [`../level-data/samples/`](../level-data/samples/)). Layout observed in two real packages (`engine.scp` and `engine_next_sekai.scp` of https://github.com/endoretic/om2pjsk-usc, MIT, 15 MB each) and in the scp-converter source: entries `sonolus/package` (JSON, e.g. `{"shouldUpdate":false}`), `sonolus/info`, `sonolus/<type>/info`, `sonolus/<type>/list`, `sonolus/<type>/<item name>` for types levels, skins, backgrounds, effects, particles, engines, playlists, posts, replays, and `sonolus/repository/<sha1>` resources (gzip JSON such as engine data; PNG images; ZIP audio) [observed in those packages and https://github.com/sevenc-nanashi/scp-converter `src/index.ts`]. A level's LevelData would be one of the gzip repository blobs referenced by the level item. Export one from the Sonolus app (0.5.13-0.6.0) or package a static server (`sonolus-generate-static`).
 
 ## Sources
 

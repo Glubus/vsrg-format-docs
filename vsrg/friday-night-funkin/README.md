@@ -30,7 +30,7 @@ Other engines exist (Forever Engine, Leather Engine, Andromeda, ...). They were 
 
 ## Samples
 
-Each variant folder has a `samples/` folder with a `SOURCES.md` (hand-written synthetic charts, committed; real FNF charts are only fetched through the manifest because the game data is not freely redistributable) and a `Getting samples` section in its README.
+Each variant folder has a `samples/` folder with a `SOURCES.md` (hand-written synthetic charts, committed; real charts are downloaded snapshots from public sources; no archives are committed) and a `Getting samples` section in its README.
 
 ## Cross-variant facts
 

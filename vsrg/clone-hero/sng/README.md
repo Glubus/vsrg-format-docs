@@ -47,7 +47,7 @@ Not applicable.
 Registered file names (lowercase): `notes.chart`, `notes.mid`, `song.ini` (reserved, not stored), `album.{png,jpg,jpeg}`, `background.*`, `highway.*`, `video.{mp4,avi,webm,vp8,ogv,mpeg}`, `guitar`, `bass`, `rhythm`, `vocals`, `vocals_1`, `vocals_2`, `drums`, `drums_1..4`, `keys`, `song`, `crowd`, `preview` with audio extensions `{mp3,ogg,opus,wav}`. File names are at most 255 bytes and exclude `<>:"/\|?*`, control characters, `..`, trailing dot/space, and Windows reserved names.
 
 ## Versions & variants
-Header `version` field (value used: Unknown from the docs consulted). YARG's `.yargsong` is a separate extension.
+Header `version` field: 1 in every file inspected [observed: 6 `.sng` packages downloaded from Chorus Encore on 2026-11-09, not committed; they hold `notes.chart` or `notes.mid`, `album.jpg`, and `.opus` audio stems such as `song.opus`, `guitar.opus`, `drums_1.opus`; SngSerializer.cs also rejects any version other than 1]. YARG's `.yargsong` is a separate extension.
 
 ## Quirks & pitfalls
 Masking: for each byte `i` of a file, `plain[i] = masked[i] XOR xorMask[i % 16] XOR (i & 0xFF)`. `contentsIndex` is relative to the start of the file, not of FileData.
@@ -65,9 +65,7 @@ Read by ROX (`SngPackage`, `rox::formats::clone_hero`; decode only): header (ver
 - Chart-Packer: https://github.com/jcub1011/Chart-Packer
 
 ## Getting samples
-- Committed in [`samples/`](samples/SOURCES.md): `synthetic-chart-audioless.sng` and `synthetic-mid-audioless.sng`, built by script from the SngFileFormat specification (version 1, XOR-masked data, metadata pairs, `notes.chart` or `notes.mid`) and re-parsed with an independent reader. They contain **no audio** and have not been opened in Clone Hero/YARG. The mdsitton/SngFileFormat repository (MIT) and YARG.Core (`YARG.Core/IO/SngHandler/`) contain no `.sng` fixtures (trees listed).
-- Manifest: none (no free real `.sng` found).
-- More: build one from any song folder with `SngCli encode` (https://github.com/mdsitton/SngFileFormat) which can also transcode audio to opus and images to JPEG; `SngCli decode` extracts existing `.sng` files back to a song folder. Chart distribution sites for Clone Hero (Chorus Encore, https://chorus.fightthe.pw/) are the place real `.sng` charts come from [inference: not verified in this pass]. Other writers/readers: Chart-Packer, parse-sng, LUA-SNG-Parser (see Parsers & tools).
+Container only: **no `.sng` file is committed** (the repository keeps chart files only). The charts that live inside `.sng` packages are committed as `notes.chart` / `notes.mid` in [chart](../chart/samples/SOURCES.md) and [mid](../mid/samples/SOURCES.md) (rows marked "extracted from ... .sng"), and the metadata pairs correspond to the [`song.ini`](../ini/README.md) tags. To get real packages: Chorus Encore serves them directly (`https://files.enchor.us/<md5>.sng`, found via `POST https://api.enchor.us/search`), or build one with `SngCli encode` (https://github.com/mdsitton/SngFileFormat); `SngCli decode` extracts them. The format is documented byte by byte in the Container & encoding / Structure sections above.
 
 ## Sources
 https://github.com/mdsitton/SngFileFormat (README: specification, registry)

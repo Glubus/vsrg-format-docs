@@ -116,9 +116,9 @@ Not read by ROX. Stick-steered traces, branching sections and four player slots 
 
 ## Getting samples
 
-**Committed:** none. **Manifest:** none. No `.CHC` file is published in any open repository (Gitaroo-Man-File-Reader and gitarootools contain code and tool test data only, no CHC; checked at `a3bb1daf`/`22e6b0a5`), and the charts are commercial game data. The synthetic route was rejected because the header and junk fields cannot be verified without a real file.
+**Committed:** none. No `.CHC` file is published anywhere I could reach (Gitaroo-Man-File-Reader, gitarootools and erinxocon/gitaroo-man-native contain code and tool test data only; the game ISO on archive.org is a commercial full-game image over 20 MB). A synthetic file was rejected because the header and junk fields cannot be verified.
 
-**How to get one yourself**: own a copy of Gitaroo Man (PS2) or Gitaroo Man Lives! (PSP), unpack the game archives with gitarootools (`gm-xgmunpack` for XGM, `gm-pakunpack` for PAK of Gitaroo Man Lives; <https://github.com/boringhexi/gitarootools>), look for the per-stage `*.CHC` files (stage number in characters 3-4 of the file name, from `CHC.cpp`) and open them with Gitaroo Man File Reader (<https://github.com/sonicfind/Gitaroo-Man-File-Reader>, GPL-3; it can round-trip `.CHC` and export to Clone Hero `.chart`). Which archive holds the `.CHC` files is not stated in the sources read [inference: the game's data archives]. The Gitaroo Pals Discord linked from both READMEs is the community channel for help.
+**How to get one yourself**: own Gitaroo Man (PS2) or Gitaroo Man Lives! (PSP), unpack the archives with gitarootools (`gm-xgmunpack`, `gm-pakunpack`; <https://github.com/boringhexi/gitarootools>), find the `*.CHC` stage files (stage number in characters 3-4 of the name) and open them with Gitaroo Man File Reader (<https://github.com/sonicfind/Gitaroo-Man-File-Reader>). Which archive holds them is not stated in the sources read [inference]. Community help: the Gitaroo Pals Discord.
 
 ## Sources
 - https://github.com/sonicfind/Gitaroo-Man-File-Reader (`README.md`, `GitarooFileReader/CHC/CHC.cpp`, `CHC.h`, `CH_Export.cpp`)

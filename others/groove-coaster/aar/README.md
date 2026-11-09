@@ -52,9 +52,9 @@ Not read by ROX.
 
 ## Getting samples
 
-**Committed:** none. **Manifest:** none. The archives hold the game's music and chart scripts (commercial), and no open repository ships a real `.aar`; only `Mod-The-Coaster/guide-files/Bgm-dummy.zip` (a dummy BGM, not a chart) exists.
+**Committed:** none. No `.aar` or chart script is published in any open repository found (Mod-The-Coaster, Brolijah/groove-coaster-modding, Groove-Coaster-Converter and qwerfd2/Groove_Coaster_2_Server hold tools, docs and `.pak` servers files only).
 
-**How to get one yourself**: install *Groove Coaster for Steam* (Steam app 744060, per the Steam thread linked in the README) or use the arcade/Switch data, then unpack the `.aar` files with Mod The Coaster (<https://github.com/nemonaii/Mod-The-Coaster>, MIT; first decompress ALLZ-prefixed files with Aqualead_LZSS, <https://github.com/Brolijah/Aqualead_LZSS>). Brolijah's note `ALAR_decode_encode/song .aar file layout.txt` (<https://github.com/Brolijah/groove-coaster-modding>, GPL-3) shows one song archive containing, per difficulty, three `.dat` files (`ac_shiva_easy.dat`, `ac_shiva_easy_clip.dat`, `ac_shiva_easy_ext.dat`, likewise `_normal` and `_hard`) next to two `.asn` audio files; the `.dat` files are presumably the chart scripts [inference]. The song list is `TableTune.aar`.
+**How to get one yourself**: install Groove Coaster for Steam (app 744060) or use arcade/Switch data, decompress ALLZ files with Aqualead_LZSS and unpack the `.aar` with Mod The Coaster (<https://github.com/nemonaii/Mod-The-Coaster>). Brolijah's `ALAR_decode_encode/song .aar file layout.txt` (<https://github.com/Brolijah/groove-coaster-modding>) shows a song archive with, per difficulty, three `.dat` files (`ac_shiva_easy.dat`, `_clip.dat`, `_ext.dat`) plus `.asn` audio; the `.dat` files are presumably the chart scripts [inference]. The mobile game's stage files are delivered as `.pak`/zip by servers such as <https://github.com/qwerfd2/Groove_Coaster_2_Server> (its `various-tools/pak file/` has a packer/unpacker).
 
 ## Sources
 

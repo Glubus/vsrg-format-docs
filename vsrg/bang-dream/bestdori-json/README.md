@@ -64,10 +64,9 @@ ayachan (Go): https://github.com/6QHTSK/ayachan · bestdori-api-go: https://gith
 
 ## Getting samples
 
-- Committed in [`samples/`](samples/SOURCES.md): `synthetic-bestdori-v2.json` (hand-written CC0: BPM changes, `Single` with skill/flick/charge, `Long`, `Slide` with hidden node, `Directional`).
-- Manifest: none, because every real source is live and un-hashable (see SOURCES.md): official charts at `https://bestdori.com/api/charts/<songId>/<easy|normal|hard|expert|special>.json` are public and need no login (checked: song 1 easy/expert, 3 special, 200 and 400 expert all returned 200); community charts are in `https://bestdori.com/api/post/details?id=<id>` (`post.chart`).
-- Observed in those official files [observed in Bestdori API charts 1/expert, 3/special, 200/expert; not committed]: besides BPM/Single/Long/Slide/Directional there is a `System` object (`{"type":"System","data":"bgm001.wav","beat":0}`) and `skill`/`charge` flags on singles; `Directional` carries `direction` ("Right") and `width`; BPM changes appear as extra `BPM` objects (3 in song 200, 5 in song 400).
-- More: the Bestdori chart editor and BanGDreamChartRender / bestdori-api-go fetch the same endpoints.
+- Committed in [`samples/`](samples/): 7 official charts (`/api/charts/<songId>/<difficulty>.json`, byte-exact) and 6 community charts (`post.chart` extracted from `/api/post/details?id=<id>`, re-serialised compactly), plus a synthetic example. Everything is listed with origin, date and sha256 in [`samples/SOURCES.md`](samples/SOURCES.md).
+- Observed [observed in samples/bestdori-official_song003_special.json]: besides BPM/Single/Long/Slide/Directional there is a `System` object (`{"type":"System","data":"bgm001.wav","beat":0}`), `skill`/`charge` flags on singles, and `Directional` with `direction` ("Right") and `width`; BPM changes are extra `BPM` objects (3 in song 200, 5 in song 400). Official files are compact one-line JSON; `hidden` connection flags appear in song 3 special.
+- More: `https://bestdori.com/api/songs/all.5.json` lists songs; any `<songId>/<easy|normal|hard|expert|special>`; community chart ids via the site's post pages.
 
 ## Sources
 https://pkg.go.dev/github.com/6QHTSK/ayachan/model/bestdoriChart · https://raw.githubusercontent.com/6QHTSK/ayachan/master/model/bestdoriChart/bestdoriV2.go · https://github.com/K024/bangbangboom-editor/issues/3 · https://github.com/loader3229/BanGConverter

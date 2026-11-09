@@ -1,0 +1,9409 @@
+{
+    "NameArtist": "Black Sabbath",
+    "NameSong": "Paranoid",
+    "NameCharter": "JStill.sKs",
+    "FilePath": "",
+    "SongOffsetSeconds": 0.0,
+    "SongTiming": [
+        {
+            "beat": 0,
+            "timer": 0.0
+        },
+        {
+            "beat": 1,
+            "timer": 0.3669724770642202
+        },
+        {
+            "beat": 450,
+            "timer": 165.1376146788991
+        }
+    ],
+    "SongPhases": [
+        {
+            "beat": 0.0,
+            "phase": 1,
+            "power": 0.6,
+            "phaseName": "Intro"
+        },
+        {
+            "beat": 16.0,
+            "phase": 2,
+            "power": 0.7,
+            "phaseName": "Verse"
+        },
+        {
+            "beat": 80.0,
+            "phase": 4,
+            "power": 0.9,
+            "phaseName": "CHORUS"
+        },
+        {
+            "beat": 144.0,
+            "phase": 2,
+            "power": 0.7,
+            "phaseName": "Verse"
+        },
+        {
+            "beat": 208.0,
+            "phase": 4,
+            "power": 0.9,
+            "phaseName": "CHORUS"
+        },
+        {
+            "beat": 272.0,
+            "phase": 6,
+            "power": 0.85,
+            "phaseName": "Solo"
+        },
+        {
+            "beat": 336.0,
+            "phase": 4,
+            "power": 0.9,
+            "phaseName": "CHORUS"
+        },
+        {
+            "beat": 400.0,
+            "phase": 7,
+            "power": 0.7,
+            "phaseName": "Outro"
+        }
+    ],
+    "ChartEasy": [
+        {
+            "Beat": 25.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 28.375,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 32.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 35.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 39.375,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 43.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 46.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 50.375,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 54.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 58.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 62.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 66.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 70.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 74.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 78.125,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 82.125,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 86.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 88.0,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 91.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 95.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 99.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 103.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 107.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 110.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 114.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 118.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 122.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 126.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 130.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 133.875,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 137.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 140.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 144.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 148.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 152.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 156.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 160.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 163.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 166.5,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 168.0,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 171.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 174.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 178.375,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 182.375,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 186.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 190.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 194.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 197.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 201.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 204.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 208.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 212.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 216.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 220.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 224.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 228.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 232.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 236.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 240.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 244.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 248.5,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 252.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 256.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 260.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 264.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 268.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 271.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 274.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 278.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 281.5,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 284.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 288.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 292.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 296.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 300.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 304.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 307.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 312.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 316.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 320.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 324.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 328.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 332.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 336.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 340.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 344.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 348.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 352.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 356.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 360.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 364.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 368.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 371.75,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 375.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 379.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 383.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 387.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 391.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 395.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 398.75,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 402.25,
+            "Strength": 0,
+            "Id": 2
+        },
+        {
+            "Beat": 406.25,
+            "Strength": 0,
+            "Id": 2
+        },
+        {
+            "Beat": 410.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 413.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 416.75,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 420.25,
+            "Strength": 0,
+            "Id": 2
+        },
+        {
+            "Beat": 424.25,
+            "Strength": 0,
+            "Id": 2
+        },
+        {
+            "Beat": 428.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 432.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 435.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 440.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 444.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 448.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 451.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 456.25,
+            "Strength": 2,
+            "Id": 2
+        }
+    ],
+    "ChartNormal": [
+        {
+            "Beat": 25.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 27.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 30.375,
+            "Strength": 1,
+            "Id": 3
+        },
+        {
+            "Beat": 32.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 35.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 38.375,
+            "Strength": 2,
+            "Id": 3
+        },
+        {
+            "Beat": 40.875,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 43.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 46.375,
+            "Strength": 1,
+            "Id": 3
+        },
+        {
+            "Beat": 48.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 51.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 54.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 57.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 60.125,
+            "Strength": 1,
+            "Id": 3
+        },
+        {
+            "Beat": 62.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 65.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 68.125,
+            "Strength": 1,
+            "Id": 3
+        },
+        {
+            "Beat": 70.625,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 73.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 76.125,
+            "Strength": 2,
+            "Id": 3
+        },
+        {
+            "Beat": 79.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 82.125,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 84.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 87.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 88.0,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 90.125,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 92.625,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 95.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 98.125,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 101.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 104.125,
+            "Strength": 2,
+            "Id": 3
+        },
+        {
+            "Beat": 107.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 110.125,
+            "Strength": 1,
+            "Id": 3
+        },
+        {
+            "Beat": 112.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 115.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 118.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 121.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 124.125,
+            "Strength": 1,
+            "Id": 3
+        },
+        {
+            "Beat": 126.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 129.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 132.125,
+            "Strength": 1,
+            "Id": 3
+        },
+        {
+            "Beat": 134.5,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 137.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 140.125,
+            "Strength": 1,
+            "Id": 3
+        },
+        {
+            "Beat": 142.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 143.0,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 143.0,
+            "Strength": 1,
+            "Id": 3
+        },
+        {
+            "Beat": 145.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 148.125,
+            "Strength": 1,
+            "Id": 3
+        },
+        {
+            "Beat": 151.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 153.625,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 156.125,
+            "Strength": 1,
+            "Id": 3
+        },
+        {
+            "Beat": 158.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 160.875,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 163.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 166.5,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 167.0,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 168.0,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 169.0,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 171.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 174.375,
+            "Strength": 1,
+            "Id": 3
+        },
+        {
+            "Beat": 176.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 179.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 182.375,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 185.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 188.25,
+            "Strength": 2,
+            "Id": 3
+        },
+        {
+            "Beat": 190.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 193.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 195.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 198.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 201.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 203.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 206.25,
+            "Strength": 1,
+            "Id": 3
+        },
+        {
+            "Beat": 208.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 211.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 214.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 217.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 220.25,
+            "Strength": 1,
+            "Id": 3
+        },
+        {
+            "Beat": 222.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 225.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 228.25,
+            "Strength": 1,
+            "Id": 3
+        },
+        {
+            "Beat": 230.75,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 233.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 236.25,
+            "Strength": 2,
+            "Id": 3
+        },
+        {
+            "Beat": 238.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 241.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 244.25,
+            "Strength": 2,
+            "Id": 3
+        },
+        {
+            "Beat": 246.5,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 249.5,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 252.25,
+            "Strength": 2,
+            "Id": 3
+        },
+        {
+            "Beat": 254.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 257.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 260.25,
+            "Strength": 2,
+            "Id": 3
+        },
+        {
+            "Beat": 262.75,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 265.625,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 268.25,
+            "Strength": 2,
+            "Id": 3
+        },
+        {
+            "Beat": 270.375,
+            "Strength": 1,
+            "Id": 3
+        },
+        {
+            "Beat": 272.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 275.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 278.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 281.5,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 284.25,
+            "Strength": 2,
+            "Id": 3
+        },
+        {
+            "Beat": 286.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 289.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 292.25,
+            "Strength": 2,
+            "Id": 3
+        },
+        {
+            "Beat": 294.75,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 297.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 300.25,
+            "Strength": 2,
+            "Id": 3
+        },
+        {
+            "Beat": 302.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 305.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 307.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 310.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 313.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 316.25,
+            "Strength": 2,
+            "Id": 3
+        },
+        {
+            "Beat": 318.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 321.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 324.25,
+            "Strength": 2,
+            "Id": 3
+        },
+        {
+            "Beat": 326.75,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 329.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 332.25,
+            "Strength": 1,
+            "Id": 3
+        },
+        {
+            "Beat": 334.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 337.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 340.25,
+            "Strength": 1,
+            "Id": 3
+        },
+        {
+            "Beat": 342.75,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 345.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 348.25,
+            "Strength": 1,
+            "Id": 3
+        },
+        {
+            "Beat": 350.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 353.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 356.25,
+            "Strength": 1,
+            "Id": 3
+        },
+        {
+            "Beat": 358.75,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 361.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 364.25,
+            "Strength": 2,
+            "Id": 3
+        },
+        {
+            "Beat": 367.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 370.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 372.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 375.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 378.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 380.5,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 381.0,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 383.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 386.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 389.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 392.25,
+            "Strength": 2,
+            "Id": 3
+        },
+        {
+            "Beat": 395.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 398.25,
+            "Strength": 0,
+            "Id": 3
+        },
+        {
+            "Beat": 400.75,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 403.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 406.25,
+            "Strength": 0,
+            "Id": 2
+        },
+        {
+            "Beat": 409.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 412.25,
+            "Strength": 0,
+            "Id": 3
+        },
+        {
+            "Beat": 414.75,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 417.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 420.25,
+            "Strength": 0,
+            "Id": 3
+        },
+        {
+            "Beat": 422.75,
+            "Strength": 0,
+            "Id": 2
+        },
+        {
+            "Beat": 425.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 428.25,
+            "Strength": 2,
+            "Id": 3
+        },
+        {
+            "Beat": 430.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 433.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 435.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 438.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 441.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 444.25,
+            "Strength": 2,
+            "Id": 3
+        },
+        {
+            "Beat": 446.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 449.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 451.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 454.25,
+            "Strength": 2,
+            "Id": 1
+        }
+    ],
+    "ChartHard": [
+        {
+            "Beat": 25.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 26.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 26.375,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 27.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 28.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 28.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 29.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 30.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 30.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 31.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 32.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 33.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 34.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 34.375,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 35.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 36.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 36.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 37.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 38.375,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 38.375,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 39.375,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 40.375,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 40.375,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 41.375,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 42.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 42.375,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 43.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 44.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 44.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 45.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 46.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 46.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 47.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 48.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 48.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 49.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 50.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 50.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 51.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 52.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 52.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 53.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 54.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 54.75,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 56.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 56.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 58.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 58.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 59.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 60.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 60.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 61.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 62.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 62.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 63.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 64.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 64.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 65.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 66.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 66.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 67.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 68.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 68.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 69.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 70.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 70.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 72.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 72.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 73.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 74.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 74.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 75.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 76.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 76.125,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 77.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 78.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 78.125,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 79.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 80.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 80.125,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 81.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 82.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 82.125,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 83.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 84.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 84.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 85.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 86.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 87.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 88.0,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 88.0,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 89.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 90.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 90.125,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 91.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 92.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 92.125,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 93.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 94.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 94.125,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 95.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 96.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 96.125,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 97.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 98.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 98.125,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 99.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 100.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 100.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 101.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 102.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 103.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 104.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 104.125,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 105.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 106.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 106.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 107.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 108.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 108.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 109.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 110.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 110.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 111.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 112.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 112.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 113.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 114.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 114.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 115.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 116.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 116.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 117.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 118.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 118.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 120.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 120.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 121.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 122.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 122.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 123.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 124.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 124.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 125.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 126.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 126.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 127.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 128.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 128.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 129.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 130.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 130.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 131.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 132.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 132.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 133.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 134.5,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 134.5,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 135.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 135.875,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 137.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 138.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 138.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 139.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 140.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 140.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 141.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 142.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 142.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 143.0,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 144.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 144.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 145.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 146.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 146.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 147.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 148.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 148.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 149.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 150.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 150.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 151.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 152.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 152.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 153.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 154.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 154.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 155.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 156.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 156.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 157.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 158.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 158.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 159.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 160.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 160.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 161.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 162.5,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 162.5,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 164.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 164.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 165.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 166.5,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 167.0,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 167.5,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 168.0,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 168.5,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 169.0,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 170.5,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 170.5,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 172.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 172.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 173.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 174.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 174.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 175.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 176.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 176.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 177.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 178.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 178.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 179.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 180.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 180.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 181.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 182.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 182.375,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 184.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 184.375,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 185.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 187.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 188.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 188.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 189.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 190.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 190.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 191.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 192.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 192.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 193.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 194.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 195.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 196.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 197.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 198.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 198.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 200.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 200.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 202.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 202.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 203.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 204.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 204.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 205.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 206.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 206.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 207.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 208.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 208.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 209.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 210.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 210.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 211.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 212.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 212.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 213.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 214.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 214.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 216.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 216.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 217.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 218.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 218.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 219.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 220.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 220.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 221.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 222.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 222.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 223.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 224.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 224.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 225.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 226.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 226.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 227.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 228.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 228.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 229.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 230.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 230.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 232.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 232.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 233.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 234.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 234.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 235.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 236.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 236.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 237.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 238.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 238.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 239.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 240.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 240.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 241.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 242.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 242.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 243.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 244.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 244.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 245.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 246.5,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 246.5,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 248.5,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 248.5,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 249.5,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 251.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 252.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 252.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 253.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 254.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 254.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 255.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 256.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 256.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 257.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 258.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 258.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 259.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 260.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 260.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 261.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 262.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 262.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 264.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 264.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 265.625,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 267.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 268.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 268.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 269.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 270.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 270.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 271.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 272.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 272.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 273.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 274.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 274.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 275.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 276.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 276.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 277.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 278.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 278.75,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 280.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 280.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 281.5,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 283.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 284.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 284.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 285.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 286.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 286.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 287.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 288.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 288.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 289.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 290.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 290.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 291.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 292.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 292.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 293.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 294.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 294.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 296.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 296.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 297.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 298.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 298.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 299.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 300.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 300.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 301.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 302.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 302.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 303.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 304.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 304.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 305.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 306.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 306.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 307.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 308.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 309.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 310.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 310.75,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 312.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 312.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 313.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 314.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 314.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 315.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 316.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 316.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 317.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 318.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 318.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 319.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 320.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 320.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 321.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 322.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 322.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 323.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 324.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 324.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 325.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 326.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 328.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 328.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 329.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 330.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 330.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 331.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 332.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 332.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 333.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 334.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 334.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 335.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 336.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 336.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 337.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 338.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 338.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 339.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 340.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 340.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 341.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 342.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 342.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 344.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 344.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 345.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 346.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 346.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 347.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 348.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 348.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 349.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 350.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 350.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 351.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 352.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 352.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 353.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 354.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 354.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 355.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 356.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 356.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 357.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 358.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 358.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 360.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 360.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 361.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 362.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 362.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 363.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 364.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 364.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 365.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 366.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 366.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 367.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 368.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 368.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 370.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 370.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 371.75,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 373.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 374.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 374.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 375.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 376.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 376.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 377.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 378.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 378.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 379.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 380.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 380.5,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 381.0,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 382.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 382.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 383.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 384.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 384.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 385.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 386.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 386.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 387.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 389.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 390.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 391.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 392.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 392.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 393.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 394.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 394.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 395.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 396.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 396.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 397.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 398.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 398.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 399.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 400.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 400.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 401.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 402.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 402.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 403.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 404.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 404.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 405.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 406.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 406.25,
+            "Strength": 0,
+            "Id": 2
+        },
+        {
+            "Beat": 408.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 408.25,
+            "Strength": 0,
+            "Id": 2
+        },
+        {
+            "Beat": 409.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 410.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 411.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 412.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 412.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 413.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 414.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 414.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 415.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 416.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 416.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 417.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 418.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 418.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 419.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 420.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 420.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 421.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 422.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 422.25,
+            "Strength": 0,
+            "Id": 2
+        },
+        {
+            "Beat": 424.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 424.25,
+            "Strength": 0,
+            "Id": 2
+        },
+        {
+            "Beat": 425.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 426.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 426.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 427.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 428.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 428.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 429.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 430.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 430.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 431.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 432.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 432.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 433.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 434.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 435.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 436.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 437.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 438.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 438.75,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 440.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 440.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 441.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 442.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 442.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 443.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 444.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 444.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 445.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 446.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 446.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 447.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 448.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 448.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 449.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 450.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 450.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 451.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 452.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 452.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 453.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 454.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 456.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 456.25,
+            "Strength": 2,
+            "Id": 2
+        }
+    ],
+    "ChartExtreme": [
+        {
+            "Beat": 25.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 26.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 26.375,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 27.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 27.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 28.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 28.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 28.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 29.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 29.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 30.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 30.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 30.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 31.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 31.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 32.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 32.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 32.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 33.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 33.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 34.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 34.375,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 34.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 35.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 35.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 36.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 36.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 36.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 37.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 37.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 38.375,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 38.375,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 39.375,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 39.375,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 40.375,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 40.375,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 40.875,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 41.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 41.375,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 41.875,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 42.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 42.375,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 43.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 43.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 44.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 44.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 44.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 45.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 45.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 46.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 46.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 46.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 47.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 47.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 48.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 48.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 48.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 49.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 49.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 50.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 50.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 50.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 51.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 51.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 52.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 52.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 52.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 53.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 53.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 54.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 54.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 54.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 54.75,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 56.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 56.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 57.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 58.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 58.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 59.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 59.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 60.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 60.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 60.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 61.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 61.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 62.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 62.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 62.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 63.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 63.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 64.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 64.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 64.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 65.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 65.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 66.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 66.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 66.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 67.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 67.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 68.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 68.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 68.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 69.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 69.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 70.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 70.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 70.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 70.625,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 72.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 72.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 73.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 74.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 74.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 75.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 75.125,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 76.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 76.125,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 76.625,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 77.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 77.125,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 78.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 78.125,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 79.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 79.125,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 80.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 80.125,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 81.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 81.125,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 82.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 82.125,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 83.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 83.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 84.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 84.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 84.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 85.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 85.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 86.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 87.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 87.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 88.0,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 88.0,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 88.625,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 88.875,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 89.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 89.625,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 90.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 90.125,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 91.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 91.125,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 92.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 92.125,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 92.625,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 93.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 93.125,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 94.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 94.125,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 95.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 95.125,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 96.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 96.125,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 97.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 97.125,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 98.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 98.125,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 99.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 99.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 99.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 100.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 100.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 101.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 102.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 103.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 103.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 104.125,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 104.125,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 104.625,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 104.875,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 105.125,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 105.625,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 106.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 106.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 107.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 107.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 108.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 108.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 108.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 109.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 109.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 110.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 110.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 110.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 111.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 111.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 112.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 112.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 112.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 113.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 113.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 114.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 114.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 114.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 115.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 115.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 116.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 116.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 116.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 117.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 117.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 118.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 118.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 118.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 118.625,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 120.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 120.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 121.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 122.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 122.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 123.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 123.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 124.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 124.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 124.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 125.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 125.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 126.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 126.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 126.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 127.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 127.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 128.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 128.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 128.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 129.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 129.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 130.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 130.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 130.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 131.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 131.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 132.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 132.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 132.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 133.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 133.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 133.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 133.875,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 134.5,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 134.5,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 135.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 135.875,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 137.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 138.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 138.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 139.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 139.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 140.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 140.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 140.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 141.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 141.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 142.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 142.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 142.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 143.0,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 143.0,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 144.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 144.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 144.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 145.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 145.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 146.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 146.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 147.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 147.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 148.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 148.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 148.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 149.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 149.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 150.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 150.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 151.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 151.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 152.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 152.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 152.625,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 152.875,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 153.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 153.625,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 154.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 154.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 155.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 155.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 156.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 156.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 156.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 157.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 157.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 158.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 158.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 158.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 159.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 159.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 160.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 160.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 160.625,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 160.875,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 161.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 161.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 161.625,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 162.5,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 162.5,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 163.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 163.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 164.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 164.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 164.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 165.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 165.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 166.5,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 166.75,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 167.0,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 167.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 167.5,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 167.75,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 168.0,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 168.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 168.5,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 168.75,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 169.0,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 169.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 169.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 170.5,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 170.5,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 171.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 171.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 172.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 172.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 172.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 173.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 173.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 174.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 174.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 174.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 175.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 175.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 176.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 176.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 176.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 177.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 177.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 178.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 178.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 178.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 179.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 179.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 180.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 180.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 180.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 181.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 181.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 182.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 182.375,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 182.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 182.875,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 184.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 184.375,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 185.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 186.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 186.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 187.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 187.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 188.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 188.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 188.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 189.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 189.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 190.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 190.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 190.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 191.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 191.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 192.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 192.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 192.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 193.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 193.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 194.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 194.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 194.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 195.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 195.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 195.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 196.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 196.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 196.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 197.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 197.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 197.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 198.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 198.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 198.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 198.75,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 200.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 200.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 201.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 202.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 202.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 203.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 203.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 204.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 204.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 204.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 205.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 205.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 206.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 206.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 206.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 207.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 207.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 208.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 208.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 208.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 209.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 209.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 210.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 210.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 210.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 211.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 211.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 212.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 212.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 212.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 213.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 213.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 214.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 214.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 214.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 214.75,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 216.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 216.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 217.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 217.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 218.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 218.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 219.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 219.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 220.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 220.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 220.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 221.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 221.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 222.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 222.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 222.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 223.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 223.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 224.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 224.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 224.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 225.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 225.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 226.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 226.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 226.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 227.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 227.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 228.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 228.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 228.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 229.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 229.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 230.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 230.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 230.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 230.75,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 232.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 232.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 233.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 233.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 234.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 234.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 235.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 235.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 236.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 236.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 236.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 237.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 237.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 238.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 238.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 238.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 239.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 239.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 240.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 240.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 240.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 241.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 241.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 242.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 242.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 242.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 243.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 243.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 244.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 244.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 244.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 245.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 245.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 246.5,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 246.5,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 247.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 247.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 248.5,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 248.5,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 249.5,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 249.5,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 250.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 250.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 251.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 251.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 252.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 252.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 252.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 253.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 253.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 254.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 254.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 254.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 255.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 255.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 256.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 256.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 256.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 257.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 257.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 258.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 258.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 258.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 259.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 259.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 260.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 260.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 260.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 261.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 261.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 262.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 262.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 262.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 262.75,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 264.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 264.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 265.625,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 265.625,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 266.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 266.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 267.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 267.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 268.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 268.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 268.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 269.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 269.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 270.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 270.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 270.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 271.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 271.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 272.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 272.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 272.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 273.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 273.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 274.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 274.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 274.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 275.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 275.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 276.375,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 276.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 276.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 277.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 277.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 278.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 278.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 278.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 278.75,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 280.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 280.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 281.5,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 282.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 282.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 283.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 283.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 284.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 284.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 284.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 285.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 285.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 286.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 286.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 286.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 287.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 287.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 288.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 288.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 288.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 289.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 289.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 290.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 290.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 290.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 291.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 291.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 292.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 292.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 292.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 293.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 293.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 294.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 294.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 294.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 294.75,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 296.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 296.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 297.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 297.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 298.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 298.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 299.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 299.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 300.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 300.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 300.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 301.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 301.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 302.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 302.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 302.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 303.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 303.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 304.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 304.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 304.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 305.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 305.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 306.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 306.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 307.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 307.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 307.875,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 308.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 308.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 308.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 309.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 309.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 309.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 310.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 310.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 310.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 310.75,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 312.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 312.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 313.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 313.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 314.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 314.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 315.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 315.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 316.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 316.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 316.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 317.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 317.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 318.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 318.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 318.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 319.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 319.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 320.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 320.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 320.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 321.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 321.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 322.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 322.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 323.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 323.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 324.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 324.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 325.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 325.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 325.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 326.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 326.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 326.75,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 328.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 328.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 329.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 330.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 330.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 331.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 331.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 332.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 332.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 332.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 333.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 333.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 334.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 334.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 334.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 335.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 335.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 336.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 336.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 336.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 337.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 337.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 338.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 338.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 338.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 339.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 339.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 340.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 340.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 340.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 341.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 341.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 342.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 342.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 342.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 342.75,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 344.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 344.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 345.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 346.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 346.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 347.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 347.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 348.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 348.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 348.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 349.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 349.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 350.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 350.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 350.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 351.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 351.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 352.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 352.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 352.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 353.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 353.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 354.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 354.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 354.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 355.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 355.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 356.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 356.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 356.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 357.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 357.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 358.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 358.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 358.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 358.75,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 360.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 360.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 361.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 362.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 362.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 363.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 363.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 364.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 364.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 364.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 365.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 365.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 366.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 366.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 367.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 367.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 368.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 368.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 368.625,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 368.875,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 369.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 370.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 370.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 371.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 371.125,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 371.75,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 371.75,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 372.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 372.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 373.125,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 373.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 373.625,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 374.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 374.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 375.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 375.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 376.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 376.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 377.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 377.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 378.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 378.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 379.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 379.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 380.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 380.5,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 380.75,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 381.0,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 381.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 382.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 382.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 383.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 383.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 384.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 384.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 385.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 385.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 386.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 386.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 387.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 387.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 388.125,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 388.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 389.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 389.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 390.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 391.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 391.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 392.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 392.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 393.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 393.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 394.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 394.25,
+            "Strength": 1,
+            "Id": 2
+        },
+        {
+            "Beat": 395.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 395.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 396.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 396.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 396.75,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 397.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 397.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 398.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 398.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 398.75,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 399.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 399.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 400.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 400.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 400.75,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 401.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 401.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 402.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 402.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 402.75,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 403.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 403.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 404.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 404.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 404.75,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 405.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 405.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 406.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 406.25,
+            "Strength": 0,
+            "Id": 2
+        },
+        {
+            "Beat": 406.75,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 406.75,
+            "Strength": 0,
+            "Id": 2
+        },
+        {
+            "Beat": 408.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 408.25,
+            "Strength": 0,
+            "Id": 2
+        },
+        {
+            "Beat": 409.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 410.125,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 410.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 411.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 411.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 412.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 412.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 412.75,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 413.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 413.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 414.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 414.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 414.75,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 415.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 415.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 416.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 416.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 416.75,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 417.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 417.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 418.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 418.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 418.75,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 419.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 419.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 420.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 420.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 420.75,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 421.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 421.25,
+            "Strength": 0,
+            "Id": 4
+        },
+        {
+            "Beat": 422.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 422.25,
+            "Strength": 0,
+            "Id": 2
+        },
+        {
+            "Beat": 422.75,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 422.75,
+            "Strength": 0,
+            "Id": 2
+        },
+        {
+            "Beat": 424.25,
+            "Strength": 0,
+            "Id": 0
+        },
+        {
+            "Beat": 424.25,
+            "Strength": 0,
+            "Id": 2
+        },
+        {
+            "Beat": 425.25,
+            "Strength": 0,
+            "Id": 1
+        },
+        {
+            "Beat": 426.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 426.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 427.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 427.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 428.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 428.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 428.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 429.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 429.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 430.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 430.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 430.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 431.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 431.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 432.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 432.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 432.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 433.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 433.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 434.375,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 434.375,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 434.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 435.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 435.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 435.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 436.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 436.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 436.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 437.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 437.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 437.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 438.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 438.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 438.75,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 440.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 440.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 441.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 442.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 442.25,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 443.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 443.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 444.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 444.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 444.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 445.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 445.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 446.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 446.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 446.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 447.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 447.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 448.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 448.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 448.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 449.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 449.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 449.75,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 450.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 450.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 451.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 451.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 451.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 452.25,
+            "Strength": 1,
+            "Id": 0
+        },
+        {
+            "Beat": 452.25,
+            "Strength": 2,
+            "Id": 4
+        },
+        {
+            "Beat": 453.25,
+            "Strength": 1,
+            "Id": 1
+        },
+        {
+            "Beat": 453.25,
+            "Strength": 1,
+            "Id": 4
+        },
+        {
+            "Beat": 453.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 454.25,
+            "Strength": 2,
+            "Id": 1
+        },
+        {
+            "Beat": 454.75,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 454.75,
+            "Strength": 2,
+            "Id": 2
+        },
+        {
+            "Beat": 456.25,
+            "Strength": 2,
+            "Id": 0
+        },
+        {
+            "Beat": 456.25,
+            "Strength": 2,
+            "Id": 2
+        }
+    ]
+}

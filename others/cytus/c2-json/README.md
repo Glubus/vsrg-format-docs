@@ -92,9 +92,8 @@ Not read by ROX.
 
 ## Getting samples
 
-- **Committed**: 6 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
-- **Manifest**: none.
-- **More samples**: charts come from Cytoid levels (`chart.json`, `chart-extreme.json`; `.txt` names also occur: the bundled 8bit_adventurer level stores C2 JSON in `ez.txt`/`hd.txt`/`ex.txt`), from the editors Cytoid Chart Editor and PCtyx, or from cyl_package_tool's test resources (MIT). Official Cytus II charts are encrypted (decryption notes: https://gist.github.com/HoLLy-HaCKeR/84bda48aa565c6214d1803a49fd6f5b7) and were not collected.
+- **Committed**: 8 real charts: Cytoid Chart Editor test chart, cyl_package_tool fixtures and the three charts of the bundled Cytoid level `8bit_adventurer/` (`ez.txt`, `hd.txt`, `ex.txt`, extracted from `io.cytoid.8bit_adventurer.cytoidlevel`), plus 1 synthetic in [`samples/`](samples/). Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **More samples**: Cytoid levels at https://cytoid.io (`services.cytoid.io/levels` lists them; their package download needs a login or an unknown path, not scraped); Cytoid Chart Editor and PCtyx write the format.
 
 ## Sources
 

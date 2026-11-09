@@ -79,9 +79,9 @@ sonolus-pjsekai-engine (TypeScript): <https://github.com/NonSpicyBurrito/sonolus
 
 ## Getting samples
 
-- Committed in [`samples/`](samples/SOURCES.md): `synthetic-12lane.usc`, hand-written CC0 (bpm/timeScale, taps with direction/trace/critical, slides with ease/hidden/attach, fractional `lane`/`size`).
-- Manifest: nothing. No real `.usc` with a redistributable licence was found; `sonolus-pjsekai-engine` (MIT, `0f6f37fc9b512b9d156ec4c00d998fe3916b157d`) contains `shared/src/level/data/append.json`, a 1.2 MB Sonolus LevelData (not USC; converted chart of unstated origin, so not taken).
-- More: convert any SUS with `susToUSC` (sonolus-pjsekai-engine `lib/src/sus/convert.ts`) or `rg-converters convert chart.sus chart.usc --to usc`; MMW4CC-family editors export USC (per the fiche); the Sonolus level data on untitledcharts.com / Chart Cyanvas can be turned back into USC by rg_converters. Check each chart's author licence.
+- Committed in [`samples/`](samples/): `susc-converter_ccmmw.usc` and `.json` (real MMW4CC-style USC written by Kyonkrnk's tool tests, MIT); 5 `rgconv_*.usc` files = real PJSK/PJSK-engine charts converted by rg-converters (labelled "Converted" in SOURCES.md); `synthetic-12lane.usc` (hand-written CC0). Everything is listed with origin, date and sha256 in [`samples/SOURCES.md`](samples/SOURCES.md).
+- Observed [observed in samples/susc-converter_ccmmw.usc]: the editors' file is wrapped as `{"usc":{"objects":[...]}}` (compact, keys alphabetical), has a `timeScaleGroup` object (`{"changes":[{"beat","timeScale"}],"type":"timeScaleGroup"}`) and every note carries `timeScaleGroup` (index) next to `lane`, `size`, `critical`, `trace`.
+- More: convert any SUS with rg-converters or `susToUSC`; Sonolus servers serve LevelData rather than USC. No public repository with raw `.usc` charts was found besides susc-converter's tests.
 
 ## Sources
 

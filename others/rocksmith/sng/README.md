@@ -42,9 +42,8 @@ Rocksmith Custom Song Toolkit (C#): https://github.com/rscustom/rocksmith-custom
 
 ## Getting samples
 
-- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): six `.sng` test files from Rocksmith2014.NET (MIT): one unpacked, PC and macOS packed variants, and the packed instrumental / vocals / technique-test arrangements. No decoder was run on them here.
-- Manifest: nothing beyond the PSARC test packages listed in [../psarc/README.md](../psarc/README.md).
-- More: every Rocksmith 2014 `.psarc` holds `songs/bin/generic/*.sng` (overview above); unpack it with the Rocksmith Custom Song Toolkit or Rocksmith2014.NET; build `.sng` from `.xml` with the toolkit's `sng2014` CLI (`RocksmithToolkitCLI/sng2014/Program.cs`, cited in Sources). The toolkit repository has two more `.sng` (`generalscripts/25or6to4_lead.sng`, `..._vocals.sng`, not opened; likely a commercial song's arrangement, so not committed) and `RocksmithToolkitLib/Resources/VOCALS_RS2.sng`.
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): six `.sng` test files from Rocksmith2014.NET (MIT): one unpacked, PC and macOS packed variants, packed instrumental / vocals / technique-test arrangements. No decoder was run on them here.
+- More: every Rocksmith 2014 `.psarc` holds `songs/bin/generic/*.sng`; unpack it with the Rocksmith Custom Song Toolkit or Rocksmith2014.NET; build `.sng` from `.xml` with the toolkit's `sng2014` CLI (`RocksmithToolkitCLI/sng2014/Program.cs`).
 
 ## Sources
 https://github.com/jermn007/rs2ir-converter · https://github.com/rscustom/rocksmith-custom-song-toolkit/blob/master/RocksmithToolkitCLI/sng2014/Program.cs · https://deepwiki.com/byrongamatos/slopsmith/2.4-psarc-and-file-format-support

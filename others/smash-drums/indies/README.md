@@ -74,7 +74,7 @@ Clone Hero mapping used by the editor: Smash Hi-hat to CH pad 2 (yellow cymbal, 
 
 ## Versions & variants
 - Native `.indies` versus standalone `meta.json`; Clone Hero `.chart` (`[ExpertDrums]` etc., with `[SyncTrack]`), Paradiddle `.rlrr` and `.json` are import paths of the editor, not game formats.
-- No version key observed.
+- No version key observed. Real files may add `"anchored": true` to `SongTiming` entries [observed in samples/indiesdb_Come_Out_And_Play_28034dfe/meta.json].
 
 ## Quirks & pitfalls
 - Integer-only `SongTiming.beat`.
@@ -109,7 +109,11 @@ Not read by ROX. A decoder could map Ids 0..5 to six columns (BPM from `SongTimi
 
 ## Getting samples
 
-Committed: one synthetic standalone `meta.json` ([`samples/`](samples/)). The manifest lists the author's 746-byte synthetic `.indies` test fixture from JStillxSKS/Indies-DB (no LICENSE file in that repo, so not committed). Real `.indies` packages contain full songs: get them from the community database Indies-DB (`indies-db.vercel.app`, named by the editor project; live, not hashable) or create one with the Smash Drums Editor (<https://github.com/JStillxSKS/SmashDrumsEditor>) which exports `.indies`; the game imports them via its Indies update.
+Committed in [`samples/`](samples/): six real community charts from the Indies-DB database (`<set>/meta.json`, the chart member of each `.indies` package; the audio, cover and preview of the packages are not kept, and no `.indies` archive is stored) plus one hand-written synthetic `synthetic-meta.json`. See [`samples/SOURCES.md`](samples/SOURCES.md) for every file's source URL, fetch date, sha256 and terms.
+
+Observed in the real files [observed in samples/indiesdb_*/meta.json]: all four charts are filled (108-1387 notes); ids 0-4 used (Clapfire 5 not seen), `Strength` 0/1/2 all occur; `SongTiming` can hold hundreds of anchors (432 and 694 in two live-recorded songs) against 1-4 for constant-tempo songs; anchors may carry an extra `"anchored": true` key; `SongOffsetSeconds` is 0 in all six.
+
+More: Indies-DB (`https://indies-db.vercel.app`; its public Supabase storage URLs follow `.../storage/v1/object/public/indies/maps/<mapper>/<id>.indies`) or the Smash Drums Editor export. `.indies` is a ZIP container (`meta.json`, `audio.ogg`, `cover.png`, `preview.wav`); only the chart member is kept here.
 
 ## Sources
 - https://github.com/JStillxSKS/SmashDrumsEditor (`README.md`, `docs/FILE_FORMATS.md`)

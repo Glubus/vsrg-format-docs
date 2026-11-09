@@ -91,9 +91,8 @@ Read by ROX as a Project SEKAI chart (`rox::formats::sekai::SusDecoder`, see [`.
 
 ## Getting samples
 
-- **Committed**: 1 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
-- **Manifest**: 2 entries in `samples.manifest.json` (downloaded by `tools/fetch-samples.sh` into `samples-local/`; listed in [`samples/SOURCES.md`](samples/SOURCES.md))
-- **More samples**: SUS files are produced by Ched and read by Project Sekai tooling; the repos found with real fixtures are PurplePalette/sonolus-pjsekai-engine-extended (MIT, one file committed) and UntitledCharts/sonolus-level-converters (GPL-3.0, `test_files/*.sus`, two listed in the manifest). UMIGURI can import SUS (https://umgr.inonote.jp/docs/others/chart-sus).
+- **Committed**: 6 real SUS files written by Ched (Project Sekai dialect): one from sonolus-pjsekai-engine-extended (MIT) and five fixtures from sonolus-level-converters (GPL-3.0; CR CR LF line endings). Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **More samples**: Ched writes SUS; UMIGURI can import it (https://umgr.inonote.jp/docs/others/chart-sus); UntitledCharts/chart-downloader fetches PJSK charts. No CHUNITHM-specific licensed `.sus` was found.
 
 ## Sources
 

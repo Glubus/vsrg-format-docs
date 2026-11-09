@@ -67,9 +67,8 @@ Not read by ROX.
 
 ## Getting samples
 
-- **Committed**: 1 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
-- **Manifest**: none.
-- **More samples**: nothing could be obtained legally: the charts are inside the GameCube game image (`files/Score/*.mid`, per the Donkey Konga 2 modding guide https://gist.github.com/ImJustSpirit/67626bbc3844703c2cc202e54cffdcc9). How: dump your own disc/ISO and extract the filesystem (the fiche lists Dolphin for extraction), then copy the `.mid` files named by `FILENAME=` in `Resource/SongInfo.res`. Custom charts are made with REAPER or the Konga Beat editor (https://kongabeat.com); no public custom-chart file with a licence was found. The committed MIDI is hand-built from the documented note numbers and not validated in the game.
+- **Committed**: 3 real score MIDI files and the `SongInfo` text entry of the custom Donkey Konga 2 track "Turbo Killer" (GameBanana mod 633998; the 12.dsp audio was not kept), plus 1 synthetic in [`samples/`](samples/). The mod's other 133-byte MIDI files (empty charts for unused slots) were not committed. Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **More samples**: Konga Beat/Launcher (https://kongabeat.com) say custom tracks are shared on GameBanana; the Donkey Konga 2 game page there (https://gamebanana.com/games/23415) listed only this track mod. Official charts are `files/Score/*.mid` in a dumped game image (modding guide https://gist.github.com/ImJustSpirit/67626bbc3844703c2cc202e54cffdcc9).
 
 ## Sources
 

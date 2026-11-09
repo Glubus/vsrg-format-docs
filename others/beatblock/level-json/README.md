@@ -51,10 +51,10 @@ Demo (0.4.x) versus early access (format v15+). Dev-only events (Init Object, Si
 - MP3 audio no longer loads.
 
 ## Unknown
-Resolved by real packages [observed in the packages listed in samples/SOURCES.md, format versions 12 to 14]: `level.json` has top-level keys `properties` (`speed`, `offset`, `formatversion`, `loadBeat`/`startBeat`/`startingBeat`) and `events` (`play`, `setBPM`, `setColor`, `setBgColor`, `ease`, `deco`, `paddles`, `tag`, `bookmark`, `showResults`, ...), and sometimes `metadata`; the chart is a separate JSON array of note objects with `time` (beats), `angle` and `type` (`block`, `inverse`, `side`, `hold`, `mineHold`, `mine`, `extraTap`; holds add `angle2`, `duration`; also `tap`, `startTap`, `endTap`, `speedMult`, `spinEase`, `holdEase`, `segments`, `order`); `manifest.json` has `metadata`, `properties`, `variants[]` (`display`, `difficulty`, `charter`, `name`) and `defaultVariant`, and the chart file is named `chart-<variant name>.json` (or plain `chart.json`). Still Unknown: version history, the exact semantics of most event fields, any checksum.
+Resolved by real packages [observed in samples/*/level.json, format versions 12 to 14]: `level.json` has top-level keys `properties` (`speed`, `offset`, `formatversion`, `loadBeat`/`startBeat`/`startingBeat`) and `events` (`play`, `setBPM`, `setColor`, `setBgColor`, `ease`, `deco`, `paddles`, `tag`, `bookmark`, `showResults`, ...), and sometimes `metadata`; the chart is a separate JSON array of note objects with `time` (beats), `angle` and `type` (`block`, `inverse`, `side`, `hold`, `mineHold`, `mine`, `extraTap`; holds add `angle2`, `duration`; also `tap`, `startTap`, `endTap`, `speedMult`, `spinEase`, `holdEase`, `segments`, `order`); `manifest.json` has `metadata`, `properties`, `variants[]` (`display`, `difficulty`, `charter`, `name`) and `defaultVariant`, and the chart file is named `chart-<variant name>.json` (or plain `chart.json`). Still Unknown: version history, the exact semantics of most event fields, any checksum.
 
 ## Example
-Real levels are listed in `samples/SOURCES.md` (manifest, not committed because they embed copyrighted audio and have no licence). A tiny hand-written level in the observed layout is committed as `samples/synthetic-level.json`, `samples/synthetic-chart-Synthetic.json` and `samples/synthetic-manifest.json`. The single-event sample above is the only quoted fragment.
+Real level sets are committed in `samples/<set>/` (audio and images dropped; see `samples/SOURCES.md`). A tiny hand-written level in the observed layout is committed as `samples/synthetic-level.json`, `samples/synthetic-chart-Synthetic.json` and `samples/synthetic-manifest.json`. The single-event sample above is the only quoted fragment.
 
 ## ROX support
 Not read by ROX. Radial angle model with scripted VFX; mapping to columns would discard `angle` and most events.
@@ -66,9 +66,8 @@ Not read by ROX. Radial angle model with scripted VFX; mapping to columns would 
 
 ## Getting samples
 
-- **Committed**: 3 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
-- **Manifest**: 6 entries in `samples.manifest.json` (downloaded by `tools/fetch-samples.sh` into `samples-local/`; listed in [`samples/SOURCES.md`](samples/SOURCES.md))
-- **More samples**: levels are written by the in-game editor into the custom levels folder (paths in Overview) and shared as `.zip` via Steam Workshop, the Beatblock Browser site (https://beatblockbrowser.me/, unreachable with TLS errors during collection) and Discord. Open GitHub downloads: https://github.com/ItsBritex/beatblock-levels has nine level zips (`levels/downloads/`; no licence, six listed in the manifest). Real packages observed there (formats 12-14): `level.json` (`properties`, `events`, optionally `metadata`), a chart file that is a JSON array of notes (`chart.json` or `chart-<variant>.json`), optional `manifest.json`, `backup/`, `tags/`, spritesheet `.png` + `.json`.
+- **Committed**: 6 real level sets (one subfolder each: `level.json`, chart JSON, `manifest.json`, `tags/`, spritesheet JSON, backups; audio and images dropped) from https://github.com/ItsBritex/beatblock-levels plus 3 synthetic files in [`samples/`](samples/). Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **More samples**: levels are written by the in-game editor into the custom levels folder (paths in Overview) and shared as `.zip` via the Steam Workshop, https://beatblockbrowser.me/ (unreachable with TLS errors when checked) and Discord. Observed layout (formats 12-14): `level.json` (`properties`, `events`, optionally `metadata`), a chart file that is a JSON array of notes (`chart.json` or `chart-<variant>.json`), optional `manifest.json`, `backup/`, `tags/`.
 
 ## Sources
 - https://docs.google.com/document/d/1myd85jpTYQCtE1Mlu6fJEm3fJEIN_-7Q1TFcB1OcrT4 (Editor Guide, exported as text)

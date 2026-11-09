@@ -95,7 +95,7 @@ Not read by ROX. Pitch-based, no lanes; at best a lossy projection onto columns 
 
 ## Getting samples
 
-Committed: three MIT test charts from TromboneCharter plus one synthetic full-field chart ([`samples/`](samples/)). Official tracks are copyrighted and not included. Custom tracks are distributed as folders (`song.tmb` + `song.ogg`) by the community: TootTally (<https://toottally.com/>, its song pages follow `https://toottally.com/song/<id>/` per TootTallySongDownloader source; its `api/songs/` endpoint did not answer from here) and the Trombone Champ Modding Discord; Thunderstore hosts only mods (86 packages checked, none are charts). Tools that write `.tmb`: TromboneCharter, Midi2TromboneChamp, the TootMaker editor.
+Committed in [`samples/`](samples/): three MIT test charts from TromboneCharter, one synthetic full-field chart, and seven real custom-track charts (`<title>_<id>/song.tmb`) extracted from the TromboneDB mirror (zips at `https://db.trombone.fyi/<id>.zip`; audio/background not kept, no archive stored). See [`samples/SOURCES.md`](samples/SOURCES.md) for every file's source URL, fetch date, sha256 and terms. The index of all ~5800 charts is `https://tc-mods.github.io/TromboneDB/` (`docs/data/db.json` in tc-mods/TromboneDB). Observed [observed in samples/*/song.tmb]: tempo 105-137, timesig 2 or 4, 136-486 notes.
 
 ## Sources
 - https://raw.githubusercontent.com/NyxTheShield/TrombLoader/master/CustomTracks/CustomTrackData.cs

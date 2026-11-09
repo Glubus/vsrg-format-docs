@@ -89,9 +89,8 @@ Not read by ROX. Executable script, not a chart; a decoder would need to emulate
 
 ## Getting samples
 
-- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): `synthetic-spaceball.tickflow`, hand-written from the Tickompiler docs (not run through the compiler).
-- Manifest: nothing. The compiled `.bin` files are game data of Rhythm Heaven Megamix (Nintendo/TNX) and no open `.tickflow` source collection was found in the Tickompiler repository (file list checked: no `.tickflow` file).
-- How a person could get real ones: with a retail copy of Rhythm Heaven Megamix, extract the game's tickflow `.bin` files and decompile them with Tickompiler (`DecompileCommand`, see Sources); Doc's Remix Templates (listed on https://rhmodding.github.io/resources-and-guides/, found by search, not opened) are described as "thoroughly commented examples for a custom remix's tickflow" and are the most likely open source of `.tickflow` text. A documentation archive of the game's engines/subs is at https://rhmodding.github.io/rhm-docs-archive/ (per the Tickompiler README seen in search).
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): 17 real `.tickflow` source files (`1-1.tickflow` ... `4-4.tickflow`, ...) from the RHYTHM HEAVEN RE:MEGAMIX modpack repository (viviancherry9) and one hand-written `synthetic-spaceball.tickflow`. Compiled `.bin`/`.tempo` files were not kept.
+- More: the same repository has more files and compiled output in `tickflow/Compiled/`; with a retail Rhythm Heaven Megamix, decompile the game's `.bin` files with Tickompiler (`DecompileCommand`); "Doc's Remix Templates" are linked from https://rhmodding.github.io/resources-and-guides/ (Google Drive, not fetched).
 
 ## Sources
 - https://github.com/rhmodding/Tickompiler (docs `basic_syntax.rst`, `concepts.rst`, `engines.rst`, `functions.rst`, sources `decompiler/Decompiler.kt`, `compiler/Compiler.kt`, `cli/CompileCommand.kt`, `cli/DecompileCommand.kt`)

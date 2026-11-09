@@ -34,9 +34,8 @@ Not read by ROX.
 
 ## Getting samples
 
-- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): a synthetic `info.dat` + `Easy.dat` + `Hard.dat` (CC0), built from the Edda source (GPL-3.0); files are renamed with a `synthetic-` prefix (`info.dat` must be named exactly so in a real folder).
-- Manifest (`samples.manifest.json`): nothing: maps on RagnaCustoms are third-party works shipped with audio and the download needs the site/app (live, not hashable).
-- More: install the RagnaCustoms app (https://ragnacustoms.com/getting-started), download maps, and look in the `CustomSongs` folder you configured (`Documents\Ragnarock\CustomSongs` or `...\Steam\steamapps\common\Ragnarock\Ragnarock\CustomSongs`; Quest: `Android/data/com.wanadev.ragnarockquest/files/UE4Game/Ragnarock/Ragnarock/Saved/CustomSongs`, all from the site FAQ). Create maps with Edda (https://pkbeam.github.io/Edda/), which writes exactly these files.
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): 8 real maps from RagnaCustoms (`info.dat` + every difficulty `.dat`, prefixed `ragnacustoms<id>_`) and 3 hand-written `synthetic-*` files built from the Edda source. Audio and covers were not kept.
+- More: `https://ragnacustoms.com/songs/ddl/<id>` returns the map zip (observed 2026-11-09, ids up to about 6600; some ids answer 403); the site FAQ (https://ragnacustoms.com/getting-started) describes the app and the `CustomSongs` folder (`Documents\Ragnarock\CustomSongs` or the Steam folder; Quest `Android/data/com.wanadev.ragnarockquest/files/UE4Game/Ragnarock/Ragnarock/Saved/CustomSongs`). Create maps with Edda (https://pkbeam.github.io/Edda/). [observed in samples/ragnacustoms6608_info.dat: `_version` is `"1.0.0"`, not `"1"` as Edda writes]
 
 ## Sources
 - https://pkbeam.github.io/Edda/

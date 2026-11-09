@@ -1,0 +1,54 @@
+{
+  "_version": "2.0.0",
+  "_songName": "Girlschool",
+  "_songSubName": "",
+  "_songAuthorName": "Britny Fox",
+  "_levelAuthorName": "Watsu",
+  "_beatsPerMinute": 132.97999572753906,
+  "_shuffle": 0,
+  "_shufflePeriod": 0.5,
+  "_previewStartTime": 0,
+  "_previewDuration": 0,
+  "_songFilename": "song.ogg",
+  "_coverImageFilename": "cover.jpg",
+  "_environmentName": "Hellfest",
+  "_songTimeOffset": 0,
+  "_customData": {
+    "_contributors": [],
+    "_editors": {
+      "Edda": {
+        "version": "2.0.4b"
+      },
+      "_lastEditedBy": "Edda V2",
+      "MMA2": {
+        "version": "4.8.4"
+      }
+    }
+  },
+  "_difficultyBeatmapSets": [
+    {
+      "_beatmapCharacteristicName": "Standard",
+      "_difficultyBeatmaps": [
+        {
+          "_difficulty": "Easy",
+          "_difficultyRank": 5,
+          "_beatmapFilename": "Easy.dat",
+          "_noteJumpMovementSpeed": 25,
+          "_noteJumpStartBeatOffset": 0,
+          "_customData": {
+            "_editorOldOffset": 0,
+            "_editorGridSpacing": 2,
+            "_editorGridDivision": 2,
+            "_warnings": [],
+            "_information": [],
+            "_suggestions": [],
+            "_requirements": [],
+            "_editorOffset": 0
+          }
+        }
+      ]
+    }
+  ],
+  "_explicit": "false",
+  "_songApproximativeDuration": 247
+}

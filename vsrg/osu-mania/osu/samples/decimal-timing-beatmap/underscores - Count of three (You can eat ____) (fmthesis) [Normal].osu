@@ -1,0 +1,59 @@
+﻿osu file format v128
+
+[General]
+AudioFilename: audio.ogg
+AudioLeadIn: 0
+PreviewTime: 27637
+Countdown: 1
+SampleSet: Normal
+StackLeniency: 0.7
+Mode: 0
+LetterboxInBreaks: 0
+WidescreenStoryboard: 1
+SamplesMatchPlaybackRate: 1
+
+[Editor]
+DistanceSpacing: 1.1
+BeatDivisor: 4
+GridSize: 4
+TimelineZoom: 1
+
+[Metadata]
+Title: Count of three (You can eat $#@!)
+TitleUnicode: Count of three (You can eat $#@!)
+Artist: underscores
+ArtistUnicode: underscores
+Creator: fmthesis
+Version: Normal
+Tags: english pop rock indie alternative
+
+[Difficulty]
+HPDrainRate: 3
+CircleSize: 3.2
+OverallDifficulty: 4
+ApproachRate: 5
+SliderMultiplier: 1.3999999687075613
+SliderTickRate: 1
+
+[Events]
+0,0,"bg.jpg",0,0
+
+[TimingPoints]
+284.7250972614238,441.1764705882353,4,1,0,50,1,0
+725.9015678496592,-111.11111111111111,4,1,0,50,0,0
+14402.372158832899,-100,4,1,0,50,0,0
+28520.019214908483,-100,4,1,0,50,0,1
+54990.6074502026,-100,4,1,0,50,0,0
+84990.6074502026,-100,4,1,0,50,0,1
+111461.19568549673,-100,4,1,0,50,0,0
+127343.54862667319,-100,4,1,0,50,0,1
+140578.84274432025,-100,4,1,0,50,0,0
+141461.19568549673,-100,4,1,0,50,0,1
+155578.84274432025,-100,4,1,0,50,0,0
+
+[Colours]
+Combo1: 255,182,161,255
+Combo2: 215,204,177,255
+
+[HitObjects]
+224,64,28520.019209251084,6,0,P|303.99997:59.999992|375.99997:91.99999,1,140,0|0,1:0|1:0,1:0:0:0:

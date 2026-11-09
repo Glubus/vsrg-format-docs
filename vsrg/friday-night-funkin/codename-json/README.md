@@ -92,7 +92,7 @@ Not read by ROX: the `.json` extension is routed to the legacy FNF codec, which 
 
 ## Observed in real files
 
-`chartVersion` is `"1.6.0"` in the shipped Codename charts; `noteTypes` can be `["No Anim Note"]`; a real events.json uses `{ name: "Play Animation", time, params: [1, "hey", true] }`; `meta.json` carries `color` (hex string) [observed in the manifest files cne_bopeebo_*.json].
+`chartVersion` is `"1.6.0"` in the shipped Codename charts; `noteTypes` can be `["No Anim Note"]`; a real events.json uses `{ name: "Play Animation", time, params: [1, "hey", true] }`; `meta.json` carries `color` (hex string) [observed in samples/cne_bopeebo_*.json].
 
 ## Parsers & tools
 
@@ -101,9 +101,8 @@ Not read by ROX: the `.json` extension is routed to the legacy FNF codec, which 
 
 ## Getting samples
 
-- Committed: [samples/](samples/): synthetic chart, meta.json and events.json.
-- Manifest: base-game songs shipped in FNF-CNE-Devs/CodenameEngine (`assets/songs/<song>/charts/normal.json`, `meta.json`, `events.json`), commit `29c2fab0b4466b0419ecd799f72d2c7a59dce119`, Apache-2.0 code (Real base-game charts are fetched, not committed: FNF's data is owned by The Funkin Crew Inc. (https://github.com/FunkinCrew/funkin.assets/blob/main/LICENSE.md: all rights reserved; the Funkin repository `LICENSE.md` says only the source code is Apache-2.0).). Observed: `chartVersion` "1.6.0", `noteTypes: ["No Anim Note"]`, 3 strumlines (dad type 0, boyfriend type 1, hidden girlfriend type 2), event `Play Animation` with params `[1, "hey", true]`, `meta.json` with `color` like `#9271FD`.
-- More: engine site https://codename-engine.com/ (named in its README); Codename mods ship `songs/<song>/charts/*.json`; the in-engine song editor writes them.
+- Committed ([samples/](samples/) and [samples/SOURCES.md](samples/SOURCES.md)): base-game songs shipped in FNF-CNE-Devs/CodenameEngine (`assets/songs/<song>/charts/normal.json`, `meta.json`, `events.json`; FNF base-game data belongs to The Funkin Crew Inc. (funkin.assets LICENSE.md: all rights reserved; Funkin `LICENSE.md`: only the source code is Apache-2.0); the owner accepted that risk, so the charts are committed as downloaded snapshots.), a community chart (`megumin-tool_suitmation-trials-*`) and synthetic files. Observed: `chartVersion` "1.6.0", `noteTypes: ["No Anim Note"]`, 3 strumlines (dad type 0, boyfriend type 1, hidden girlfriend type 2), event `Play Animation` with params `[1, "hey", true]`, `meta.json` with `color` like `#9271FD`.
+- More: https://codename-engine.com/ (named in its README); Codename mods ship `songs/<song>/charts/*.json`; the in-engine song editor writes them.
 
 ## Sources
 

@@ -81,9 +81,9 @@ Read, decode only: `rox::formats::fnf_vslice::FnfcPackage` (`open`, `song_id`, `
 
 ## Getting samples
 
-- Committed: [samples/](samples/): `synthetic-vslice.fnfc`, a ZIP built from the synthetic V-Slice JSON files; it has no `Inst.ogg` (audio is never committed), so the game would reject it: it only exercises the container.
-- Manifest: none. No public, redistributable, directly downloadable `.fnfc` was found (community charts are on GameBanana, gated; they contain copyrighted audio).
-- How to get one: open the in-game Chart Editor (V-Slice) and save: it writes `.fnfc` ([modding docs, Creating a Chart](https://funkincrew.github.io/funkin-modding-docs/02-custom-songs-and-custom-levels/02-01-creating-a-chart.html)); or ZIP `manifest.json` + `<songid>-metadata.json` + `<songid>-chart.json` + `Inst.ogg` yourself following [docs/FNFC-SPEC.md](https://github.com/FunkinCrew/Funkin/blob/main/docs/FNFC-SPEC.md) and rename to `.fnfc`. File-type page: https://fileinfo.com/extension/fnfc.
+- `.fnfc` is a ZIP container, so NO archive is committed here (owner rule: charts only). The chart members of real `.fnfc` exports are committed as `-chart.json` / `-metadata.json` in [../vslice-chart-json/samples/](../vslice-chart-json/samples/) and [../vslice-metadata-json/samples/](../vslice-metadata-json/samples/), one subfolder per set, with the download URL of each package in their SOURCES.md; see [samples/SOURCES.md](samples/SOURCES.md).
+- Real packages come from GameBanana (e.g. mod 631833 `17bucksfull`, 619290 `Can't Hold Us`, 651119 Lit Up erect, 520484 four charts; search https://gamebanana.com/apiv11/Util/Search/Results?_sSearchString=fnfc&_idGameRow=8694) and from https://github.com/MeguminBOT/fnf-chart-info-tool (`test_charts/vslice/thorns-erect.fnfc`). Each real package contains `manifest.json` (`{"version": "1.0.0", "songId": ...}`), `<songid>-metadata.json`, `<songid>-chart.json`, `Inst.ogg` [observed].
+- Make your own: in the in-game Chart Editor (V-Slice) save, or ZIP the files above yourself per [docs/FNFC-SPEC.md](https://github.com/FunkinCrew/Funkin/blob/main/docs/FNFC-SPEC.md) and rename to `.fnfc`.
 
 ## Sources
 

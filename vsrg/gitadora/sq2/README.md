@@ -37,7 +37,7 @@ Not read by ROX.
 gitadora-customs `plugins/sq2.py`: https://github.com/fisyher/gitadora-customs
 
 ## Getting samples
-- **Committed / manifest: none.** No public `.sq2` file or test data found (gitadora-customs holds only the plugin `plugins/sq2.py`).
+- **Committed: none (no real file found).** No public `.sq2` file or test data found (gitadora-customs holds only the plugin `plugins/sq2.py`).
 - **How to get one**: GuitarFreaks & DrumMania V-series/XG data you own, extracted from the game's archives; `fisyher/gitadora-customs` reads `.sq2` (and `seqtool.py` is its front end, see [sq3](../sq3/README.md#getting-samples)); its `plugins/sq2.py` is the source of the fiche. Whether a DTX chart can be written to `.sq2` was not checked (the README lists "DTX (input, output)" generally, not per generation).
 
 ## Sources

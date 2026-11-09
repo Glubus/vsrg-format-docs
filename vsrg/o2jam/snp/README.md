@@ -48,7 +48,7 @@ Not read by ROX.
 Open2Jam SNPParser (Java): https://github.com/open2jamorg/open2jam/blob/master/parsers/src/org/open2jam/parsers/SNPParser.java ; Raindrop's NoteLoaderOJN.cpp is the other link in the original README (it only loads OJN, not SNP: verified by reading it).
 
 ## Getting samples
-- **Committed / manifest: none.** No `.snp` archive could be fetched: KrazyRain is a closed Korean game, and the research repository https://github.com/sebastian-heinz/Arrowgene.KrazyRain (MIT) states that it "does not distribute any game related assets"; its `Files/` folder only holds a launcher and `KrazyRain_OfflinePatch.zip`. The scanned Open2Jam trees contain none.
+- **Committed: none (no real file found).** No `.snp` archive could be fetched: KrazyRain is a closed Korean game, and the research repository https://github.com/sebastian-heinz/Arrowgene.KrazyRain (MIT) states that it "does not distribute any game related assets"; its `Files/` folder only holds a launcher and `KrazyRain_OfflinePatch.zip`. The scanned Open2Jam trees contain none.
 - **How to get one**: install KrazyRain (the game assets are `*.SNP` files under its `Data` folder, e.g. `DATA.SNP`: Arrowgene README); extract or inspect with the `vdisk-extract` / `vdisk-extract-all` commands of Arrowgene.KrazyRain.Cmd (documented in that README, which also gives the 24-byte header and 145-byte entry layout), or read them with Open2Jam's `SNPParser.java`.
 
 ## Sources

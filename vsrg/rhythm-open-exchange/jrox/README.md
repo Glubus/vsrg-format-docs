@@ -94,8 +94,8 @@ Illustrative, hand-built from the type definitions and serde attributes above (t
 
 ## Getting samples
 
-- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): three hand-written files (`synthetic-4k-features.jrox`, `synthetic-7k-minimal.jrox`, `synthetic-8k-coop.jrox`), CC0, validated against the serde model and the validation rules of ROX 0.8.1.
-- **More**: any `.osu`, `.qua`, `.sm`, `.bms`, ... chart converted with the ROX crate and written with `JroxEncoder` (`serde_json::to_vec_pretty`) or `auto_encode(&chart, "x.jrox")` [inference: `auto_encode` picks the codec from the extension, as in `examples/auto_conversion.rs` for `.rox`]. Upstream has no `.jrox` sample.
+- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): six real charts written as `.jrox` (decoded from the real `.rox` samples by a Python decoder that emulates `serde_json::to_vec_pretty`, not by the Rust codec) plus three hand-written synthetic files.
+- **More**: convert any supported chart with the ROX crate and write it with `JroxEncoder` or `auto_encode(&chart, "x.jrox")` [inference: extension picks the codec].
 
 ## Sources
 

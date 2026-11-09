@@ -88,9 +88,7 @@ CustomAlbums (C#, `BmsLoader.cs`): <https://github.com/MDMods/CustomAlbums>; MDB
 
 ## Getting samples
 
-**Committed** ([`samples/`](samples/SOURCES.md)): three hand-made MIT-licensed test charts from CloneDash (`TestCharts/`), covering every object id and effect channel. **Manifest:** none.
-
-**How to get more**: MDMC publishes custom charts at <https://mdmc.moe/charts> (listing page seen in a search; downloads are `.mdm` zips with copyrighted music, so not listed); rename an `.mdm` to `.zip` and take `map1.bms`..`map5.bms`. The chart_manager template (`template/main/map2.bms`, <https://github.com/taypexx/chart_manager>, MIT) gives an empty header-only skeleton with `%s` placeholders; editors are MDBMSC and iBMSC. The official in-game charts are Unity assets, not BMS files.
+**Committed** ([`samples/`](samples/SOURCES.md)): 16 real `mapN.bms` charts in per-album subfolders: three hand-made CloneDash test charts (MIT) and 13 community charts from six MDMC albums (`mdmc_*`: several difficulties, BPM changes, hold/masher/boss objects), extracted from `.mdm` downloads with `info.json`; audio, covers and video were dropped and the archives are not kept. More: <https://mdmc.moe/charts>; the site API lists charts at `https://api.mdmc.moe/v3/charts?page=N` and serves `.mdm` zips at `/v3/charts/<id>/download` (as used by themadadder/MDMC-Bulk-Downloader).
 
 ## Sources
 

@@ -1,0 +1,1717 @@
+{
+  "version": 0.7,
+  "authoringTool": "ParadiddleUtilities WebConverter",
+  "recordingMetadata": {
+    "title": "I Can't Handle Change",
+    "description": "",
+    "coverImagePath": "86eac16150d4253239ce012c6375b1e0.jpg",
+    "artist": "Roar",
+    "creator": "elanistuff",
+    "length": 45.505208333333336,
+    "complexity": 3
+  },
+  "audioFileData": {
+    "songTracks": [
+      "audio [music].ogg"
+    ],
+    "drumTracks": [
+      "audio [drums].ogg"
+    ],
+    "songPreview": "",
+    "calibrationOffset": 0
+  },
+  "instruments": [
+    {
+      "name": "BP_HiHat_C_1",
+      "class": "BP_HiHat_C",
+      "location": [
+        17.22353,
+        -34.08699,
+        94.211975
+      ],
+      "rotation": [
+        15.416171,
+        19.771341,
+        6.125736
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "BP_Kick_C_1",
+      "class": "BP_Kick_C",
+      "location": [
+        -69.758492,
+        60.319191,
+        34.294422
+      ],
+      "rotation": [
+        -96.766594,
+        2.265444,
+        38.000126
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "BP_Crash15_C_1",
+      "class": "BP_Crash15_C",
+      "location": [
+        27.7938,
+        -37.487892,
+        132.343323
+      ],
+      "rotation": [
+        17.085356,
+        39.032425,
+        -19.564053
+      ],
+      "scale": [
+        1.000001,
+        1.000001,
+        1
+      ]
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "class": "BP_Crash17_C",
+      "location": [
+        26.813931,
+        52.215088,
+        135.513931
+      ],
+      "rotation": [
+        -10.405132,
+        44.075054,
+        25.513369
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "class": "BP_FloorTom_C",
+      "location": [
+        -1.75137,
+        42.720551,
+        61.630424
+      ],
+      "rotation": [
+        1.261108,
+        28.997799,
+        73.703827
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "BP_Ride17_C_1",
+      "class": "BP_Ride17_C",
+      "location": [
+        -14.226593,
+        61.129753,
+        105.472443
+      ],
+      "rotation": [
+        -27.074295,
+        19.200071,
+        15.730481
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "BP_Ride20_C_1",
+      "class": "BP_Ride20_C",
+      "location": [
+        -13.356556,
+        77.818153,
+        138.67569
+      ],
+      "rotation": [
+        18.895599,
+        42.784584,
+        101.073982
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "class": "BP_Snare_C",
+      "location": [
+        17.106194,
+        -1.370838,
+        68.553436
+      ],
+      "rotation": [
+        3.194685,
+        15.114579,
+        1.082093
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "class": "BP_Tom1_C",
+      "location": [
+        40.340771,
+        -2.559204,
+        95.154297
+      ],
+      "rotation": [
+        -40.931034,
+        37.27087,
+        -55.179005
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "BP_Tom2_C_2",
+      "class": "BP_Tom2_C",
+      "location": [
+        30.543972,
+        33.849445,
+        93.909325
+      ],
+      "rotation": [
+        14.762558,
+        52.847816,
+        50.355915
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "0.0000"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "0.0000"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "3.0000"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 25,
+      "loc": 0,
+      "time": "3.0000"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 25,
+      "loc": 0,
+      "time": "3.2500"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "3.3750"
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 25,
+      "loc": 0,
+      "time": "3.5000"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 25,
+      "loc": 0,
+      "time": "3.5000"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "3.7500"
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "3.7500"
+    },
+    {
+      "name": "BP_Ride20_C_1",
+      "vel": 25,
+      "loc": 0,
+      "time": "3.7500"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 25,
+      "loc": 0,
+      "time": "3.7500"
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "4.0000"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 25,
+      "loc": 0,
+      "time": "4.0000"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "4.1250"
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "4.2500"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 25,
+      "loc": 0,
+      "time": "4.2500"
+    },
+    {
+      "name": "BP_Ride20_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "4.5000"
+    },
+    {
+      "name": "BP_Ride20_C_1",
+      "vel": 25,
+      "loc": 0,
+      "time": "4.5000"
+    },
+    {
+      "name": "BP_Kick_C_1",
+      "vel": 25,
+      "loc": 0,
+      "time": "4.5000"
+    },
+    {
+      "name": "BP_Ride20_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "4.7500"
+    },
+    {
+      "name": "BP_Kick_C_1",
+      "vel": 25,
+      "loc": 0,
+      "time": "4.8750"
+    },
+    {
+      "name": "BP_Ride20_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "5.0000"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "5.2500"
+    },
+    {
+      "name": "BP_Ride20_C_1",
+      "vel": 25,
+      "loc": 0,
+      "time": "5.2500"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 25,
+      "loc": 0,
+      "time": "5.2500"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 25,
+      "loc": 0,
+      "time": "5.2500"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 25,
+      "loc": 0,
+      "time": "5.5000"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "5.6250"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 25,
+      "loc": 0,
+      "time": "5.6250"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 25,
+      "loc": 0,
+      "time": "5.7500"
+    },
+    {
+      "name": "BP_HiHat_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "6.0000"
+    },
+    {
+      "name": "BP_HiHat_C_1",
+      "vel": 25,
+      "loc": 0,
+      "time": "6.0000"
+    },
+    {
+      "name": "BP_HiHat_C_1",
+      "vel": 25,
+      "loc": 0,
+      "time": "6.2500"
+    },
+    {
+      "name": "BP_HiHat_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "6.3750"
+    },
+    {
+      "name": "BP_HiHat_C_1",
+      "vel": 25,
+      "loc": 0,
+      "time": "6.5000"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "6.7500"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 26,
+      "loc": 0,
+      "time": "6.7500"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 26,
+      "loc": 0,
+      "time": "6.7500"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 27,
+      "loc": 0,
+      "time": "7.0000"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "7.2500"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 27,
+      "loc": 0,
+      "time": "7.2500"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 28,
+      "loc": 0,
+      "time": "7.5000"
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "7.7500"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 28,
+      "loc": 0,
+      "time": "7.7500"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 29,
+      "loc": 0,
+      "time": "7.8750"
+    },
+    {
+      "name": "BP_HiHat_C_1",
+      "vel": 29,
+      "loc": 0,
+      "time": "8.2500"
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "8.5000"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 30,
+      "loc": 0,
+      "time": "8.5000"
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 30,
+      "loc": 0,
+      "time": "8.7500"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "9.0000"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "9.0000"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "9.2500"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "9.3750"
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "9.5000"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "9.5000"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "9.7500"
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "9.7500"
+    },
+    {
+      "name": "BP_Ride20_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "9.7500"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "9.7500"
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "10.0000"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "10.0000"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "10.1250"
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "10.2500"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "10.2500"
+    },
+    {
+      "name": "BP_Ride20_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "10.5000"
+    },
+    {
+      "name": "BP_Ride20_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "10.5000"
+    },
+    {
+      "name": "BP_Kick_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "10.5000"
+    },
+    {
+      "name": "BP_Ride20_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "10.7500"
+    },
+    {
+      "name": "BP_Kick_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "10.8750"
+    },
+    {
+      "name": "BP_Ride20_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "11.0000"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "11.2500"
+    },
+    {
+      "name": "BP_Ride20_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "11.2500"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "11.2500"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "11.2500"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "11.5000"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "11.6250"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "11.6250"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "11.7500"
+    },
+    {
+      "name": "BP_HiHat_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "12.0000"
+    },
+    {
+      "name": "BP_HiHat_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "12.0000"
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "12.0000"
+    },
+    {
+      "name": "BP_HiHat_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "12.2500"
+    },
+    {
+      "name": "BP_HiHat_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "12.3750"
+    },
+    {
+      "name": "BP_HiHat_C_1",
+      "vel": 33,
+      "loc": 0,
+      "time": "12.3750"
+    },
+    {
+      "name": "BP_HiHat_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "12.6250"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "12.7500"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 34,
+      "loc": 0,
+      "time": "12.7500"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 34,
+      "loc": 0,
+      "time": "12.7500"
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "12.7500"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "13.0000"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 35,
+      "loc": 0,
+      "time": "13.0000"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "13.1250"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 36,
+      "loc": 0,
+      "time": "13.1250"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 36,
+      "loc": 0,
+      "time": "13.1250"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "13.3750"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "13.3750"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "13.5000"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "13.5000"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "14.0000"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "14.5000"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "14.5000"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "15.0000"
+    },
+    {
+      "name": "BP_Kick_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "15.0000"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "15.0000"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "15.2500"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "15.2500"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "15.2500"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "15.5000"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "15.5000"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "15.5000"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "15.5000"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "16.0000"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "16.0000"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "16.5000"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "16.5000"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "16.5000"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "16.8333"
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "16.8333"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "16.8333"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "17.1693"
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "17.1693"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "17.1693"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "17.5026"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "17.5026"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "18.0026"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "18.5026"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "18.5026"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "19.0026"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "19.5026"
+    },
+    {
+      "name": "BP_Kick_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "19.5026"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "19.5026"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "20.0026"
+    },
+    {
+      "name": "BP_Kick_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "20.0026"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "20.0026"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "20.5026"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "20.5026"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "20.7526"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "21.0026"
+    },
+    {
+      "name": "BP_HiHat_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "21.0026"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "21.5026"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "21.5026"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "22.0026"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "22.5026"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "22.5026"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "23.0026"
+    },
+    {
+      "name": "BP_Kick_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "23.0026"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "23.0026"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "23.2526"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "23.2526"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "23.2526"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "23.5026"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "23.5026"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "23.5026"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "23.5026"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "24.0026"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "24.0026"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "24.5026"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "24.5026"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "24.5026"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "24.8359"
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "24.8359"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "24.8359"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "25.1719"
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "25.1719"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "25.1719"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "25.5052"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "25.5052"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "26.0052"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "26.5052"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "26.5052"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "27.0052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "27.5052"
+    },
+    {
+      "name": "BP_Kick_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "27.5052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "27.5052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "28.0052"
+    },
+    {
+      "name": "BP_Kick_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "28.0052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "28.0052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "28.5052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "28.5052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "28.7552"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "29.0052"
+    },
+    {
+      "name": "BP_HiHat_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "29.0052"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "29.5052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "29.5052"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "30.0052"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "30.2552"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "30.5052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "30.5052"
+    },
+    {
+      "name": "BP_Kick_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "31.0052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "31.0052"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "31.2552"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "31.2552"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "31.5052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "31.5052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "31.5052"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "32.0052"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "32.2552"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "32.5052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "32.5052"
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "33.0052"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "33.0052"
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "33.2552"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "33.2552"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "33.5052"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "34.5052"
+    },
+    {
+      "name": "BP_Kick_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "35.5052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "35.5052"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "36.0052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "36.0052"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "36.2552"
+    },
+    {
+      "name": "BP_HiHat_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "36.5052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "36.5052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "36.7552"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "37.0052"
+    },
+    {
+      "name": "BP_HiHat_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "37.0052"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "37.5052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "37.5052"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "38.0052"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "38.2552"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "38.5052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "38.5052"
+    },
+    {
+      "name": "BP_Kick_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "39.0052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "39.0052"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "39.2552"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "39.2552"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "39.5052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "39.5052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "39.5052"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "40.0052"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "40.2552"
+    },
+    {
+      "name": "BP_Snare_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "40.5052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "40.5052"
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "41.0052"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "41.0052"
+    },
+    {
+      "name": "BP_Crash17_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "41.2552"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "41.2552"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "41.5052"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "42.5052"
+    },
+    {
+      "name": "BP_Kick_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "43.5052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "43.5052"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "44.0052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "44.0052"
+    },
+    {
+      "name": "BP_FloorTom_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "44.2552"
+    },
+    {
+      "name": "BP_HiHat_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "44.5052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "44.5052"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "44.7552"
+    },
+    {
+      "name": "BP_Tom1_C_1",
+      "vel": 37,
+      "loc": 0,
+      "time": "45.0052"
+    },
+    {
+      "name": "BP_HiHat_C_1",
+      "vel": 31,
+      "loc": 0,
+      "time": "45.0052"
+    }
+  ],
+  "bpmEvents": [
+    {
+      "bpm": 60,
+      "time": 0
+    }
+  ]
+}

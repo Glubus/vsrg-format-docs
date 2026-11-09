@@ -22,7 +22,7 @@ XML (UTF-8). Dynamaker saves `<MapID> <date>.xml`. DyNode imports `.xml`, `.dyn`
 | Element | Meaning |
 |---|---|
 | `m_path` | song path/id (map id minus its last 2 chars) |
-| `m_mapID` | map id (ends with the difficulty letter) |
+| `m_mapID` | map id (ends with the difficulty letter; real files: `_map_<m_path>_<letter>`, e.g. `_map_Sound Souler - Paradise_H` [observed in samples/camberloid__map_Sound_Souler_-_Paradise.xml]) |
 | `m_barPerMin` | tempo in **bars per minute** |
 | `m_timeOffset` | time offset |
 | `m_leftRegion`, `m_rightRegion` | `PAD` or `MIXER` for the side areas |
@@ -94,12 +94,7 @@ Not read by ROX.
 
 ## Getting samples
 
-**Committed** ([`samples/`](samples/SOURCES.md)): `dynode-old-xml-import-test.xml` (dialect B `DynamixMap`, the MIT-licensed test fixture of DyNode) and `synthetic-cmap.xml` (dialect A `CMap`, hand-written, CC0, checked against DyNode's importer). **Manifest:** none. No real song chart of either dialect was found under a redistributable licence; the two committed files are test/synthetic charts, not Dynamix song charts.
-
-**How to get more**
-- Write them: the Dynamaker editor saves `<MapID> <date>.xml` ("Save as XML", versus "Save as .DY" for the bundle; dialect A) [dynamaker-modified `function.js`, Dynamaker guide `Old Guide v1.0.txt`]. DyNode imports `.xml`, `.dyn`, `.dy` and `.osu` and exports `.xml` (DyNode `DyCore/src/project/format/xml.cpp`, <https://dyn.iorinn.moe/en/guide/import.html>), so any chart opened in DyNode can be exported to dialect A (and, with its "dym" option, to the form with `m_argument/m_bpmchange`).
-- Fan charts: the Dynamix wiki lists the community "Dynamix Fanmade" scene and charters (<https://dynamixc4cat.fandom.com/wiki/Charters>, search result, not opened); fan charts are normally shared as `.xml`/`.dy` together with copyrighted music, so they are not redistributable here. Search terms: `Dynamix fanmade chart xml`, `Dynamaker chart download`.
-- Official in-game charts: where the Dynamix app stores them was not found in any source read. Unknown.
+**Committed** ([`samples/`](samples/SOURCES.md)): 3 real charts (two community fanmade dialect A charts `camberloid_*.xml` from CamberLoid/DynamixFanmade, WTFPL; the DyNode test fixture in dialect B) and one synthetic dialect A file. More: Dynamaker saves `<MapID> <date>.xml` ("Save as XML"); DyNode imports `.xml`, `.dyn`, `.dy`, `.osu` and exports `.xml` (<https://dyn.iorinn.moe/en/guide/import.html>); the old fanmade site dye.omegapigame.com (named in the DynamixFanmade README) is dead; fan charts normally travel with copyrighted music on community servers/Discord. Official in-game charts: location unknown.
 
 ## Sources
 

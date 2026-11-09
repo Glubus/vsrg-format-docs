@@ -63,9 +63,8 @@ The official game (Mod Menu); Polymod: https://github.com/larsiusprime/polymod [
 
 ## Getting samples
 
-- Committed: [samples/](samples/): `synthetic.fnfmod`, a ZIP in the documented mod layout (`_polymod_meta.json` + `data/songs/...`), no audio. Its `.fnfmod`-specific content is a guess (the format's own schema is Unknown), so treat it as a layout example only.
-- Manifest: none. Test builds with the Mod Menu are on Google Drive links in the blog post (not plain-curl downloadable, not verified) and example mods are on GameBanana (gated).
-- How to get one: install a build with the Mod Menu (v0.9 Feature Preview, per the blog https://funkin.me/blog/2026-08-03/), then ZIP a mod folder and rename it to `.fnfmod` [inference: the blog says the game accepts zip files with that extension]. `_polymod_meta.json` fields: https://polymod.io/docs/mod-metadata/.
+- `.fnfmod` is a ZIP container, so NO archive is committed here. No real `.fnfmod` file could be found (the extension was announced in the blog of 2026-08-03; GameBanana mods found are plain `.zip` mod folders). The chart files of a real V-Slice mod package (`2hot BF Mix`, mod 689352, `_polymod_meta.json` api_version 0.8.4, license "CC BY 4.0,MIT") are committed in [../vslice-chart-json/samples/2hot-bf-mix/](../vslice-chart-json/samples/2hot-bf-mix/) and [../vslice-metadata-json/samples/2hot-bf-mix/](../vslice-metadata-json/samples/2hot-bf-mix/); see [samples/SOURCES.md](samples/SOURCES.md).
+- How to get one: install a build with the Mod Menu (v0.9 Feature Preview, per the blog https://funkin.me/blog/2026-08-03/), ZIP a mod folder and rename it to `.fnfmod` [inference: the blog says the game accepts zip files with that extension]. `_polymod_meta.json` fields: https://polymod.io/docs/mod-metadata/.
 
 ## Sources
 

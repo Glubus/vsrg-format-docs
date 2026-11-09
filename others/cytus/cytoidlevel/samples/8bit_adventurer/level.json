@@ -1,0 +1,44 @@
+{
+  "version": 2,
+  "schema_version": 2,
+  "id": "io.cytoid.8bit_adventurer",
+  "title": "8bit Adventurer",
+  "artist": "Lime",
+  "artist_source": "https://soundcloud.com/kanki2/8bit-adventurer",
+  "illustrator": "Frantzz",
+  "illustrator_source": "https://twitter.com/Iriss_frantzz",
+  "charter": "TAR1412 vs HUNTER",
+  "storyboarder": "TAR1412",
+  "music": {
+    "path": "music.mp3"
+  },
+  "music_preview": {
+    "path": "preview.mp3"
+  },
+  "background": {
+    "path": "bg.jpg"
+  },
+  "charts": [
+    {
+      "type": "easy",
+      "difficulty": 4,
+      "path": "ez.txt",
+      "storyboard": {
+        "path": "storyboard_ez.json"
+      }
+    },
+    {
+      "type": "hard",
+      "difficulty": 8,
+      "path": "hd.txt",
+      "storyboard": {
+        "path": "storyboard_ez.json"
+      }
+    },
+    {
+      "type": "extreme",
+      "difficulty": 14,
+      "path": "ex.txt"
+    }
+  ]
+}

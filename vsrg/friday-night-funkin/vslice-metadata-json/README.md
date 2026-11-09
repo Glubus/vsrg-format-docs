@@ -122,9 +122,9 @@ Read, decode only, together with the chart file (`VSliceDecoder`): `timeChanges`
 
 ## Getting samples
 
-- Committed: [samples/](samples/): synthetic default and erect metadata.
-- Manifest: five metadata files from FunkinCrew/funkin.assets (commit `724eba9de9e76761d9cefd52169926bc51c760a5`, proprietary licence, fetched only): single tempo (bopeebo), 14 `timeChanges` (monster), a 2-entry BPM change (eggnog erect), fractional BPM 111.5 (spaghetti). Observed: version `2.2.4`, `generatedBy` "Friday Night Funkin' - v0.8.1", `bt` [4, 4, 4, 4], `b` in beats.
-- More: the same folder holds `-metadata-erect.json` / `-metadata-pico.json` variations for most songs.
+- Committed ([samples/](samples/) and [samples/SOURCES.md](samples/SOURCES.md)): five metadata files from FunkinCrew/funkin.assets (FNF base-game data belongs to The Funkin Crew Inc. (funkin.assets LICENSE.md: all rights reserved; Funkin `LICENSE.md`: only the source code is Apache-2.0); the owner accepted that risk, so the charts are committed as downloaded snapshots.) (single tempo, 14 `timeChanges` in monster, a 2-entry BPM change, fractional BPM 111.5), metadata of real community `.fnfc` exports / mods (subfolders per set, versions 2.2.3 and 2.2.4), the thorns-erect test metadata and two synthetic files.
+- Observed: version `2.2.4`, `generatedBy` "Friday Night Funkin' - v0.8.1", `bt` [4, 4, 4, 4], `b` in beats; community exports also carry `2.2.3`.
+- More: GameBanana `.fnfc` mods; the same funkin.assets folder holds `-metadata-erect.json` / `-metadata-pico.json` variations.
 
 ## Sources
 

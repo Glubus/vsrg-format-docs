@@ -124,7 +124,6 @@ Read by ROX since Prism's addition of `rox::formats::o2jam` (decode only: ROX do
 
 ## Getting samples
 - **Committed** ([`samples/`](samples/SOURCES.md)): ten real community OJN files (existing, origin unknown; from the "Server Two Music Pack Unofficial Songs", see `samples/README.md`) and ten tiny **synthetic** OJN seeds from djzmo/render-ojn (GPL-3.0): chart edge cases (five-way subdivision, measure fraction, BPM/channel order, count mismatch, truncated header) and five variants of the encrypted `new` wrapper.
-- **Manifest**: none (all candidate URLs found are Google Drive / site downloads that cannot be hashed with plain `curl`).
 - **More**: the music pack linked in `samples/README.md` (https://drive.google.com/file/d/1r5Be6-WLte8w2AbUgvnDwASEtHYvN7bJ/view; http://o2jam.intgamerz.net/index.php?p=songpack); an O2Jam client's `Music/o2ma<id>.ojn` (CXO2 dev log https://dev.cxo2.me/o2jam-file-format shows the client folder layout `Music/`, `Image/OJNList.dat`); the official ranking site https://rank.o2jam.com lists the song catalogue. Encrypted retail OJN files (header `new`) are decrypted by https://github.com/SirusDoma/O2MusicList (archived; "encrypting / decrypting OJN files") and CXO2. Other OJN readers/converters to test with: https://github.com/djzmo/render-ojn, https://github.com/sumiyuki727/O2Lazer, https://github.com/ar-nim/recomp2jam, https://github.com/SaxxonPike/OJN2BMS. None of them ships retail OJN files (scanned trees contain none).
 
 ## Sources

@@ -110,10 +110,9 @@ Not a ROX format of its own, but `.json` is routed to the FNF (legacy) codec, [.
 
 ## Getting samples
 
-- Committed: [samples/](samples/): four synthetic files (psych_v1, pre-1.0 with event pseudo-notes, bare object, events.json).
-- Manifest: base-game charts from ShadowMario/FNF-PsychEngine (Apache-2.0 code), pinned: tag `0.6.3` (`eb0ade39e8d1c5437db2166a9ddb6eb3c05956e1`, pre-1.0 layout with `player3` and event pseudo-notes in `events.json`), tag `0.7.3` (`2dfa27773a3668e0c1b043a3fb4348942c8a6fb3`), main (`5c67ced49e5a98535298a6daa3f8f4ec79ac8399`, `assets/base_game/shared/data/`). Real base-game charts are fetched, not committed: FNF's data is owned by The Funkin Crew Inc. (https://github.com/FunkinCrew/funkin.assets/blob/main/LICENSE.md: all rights reserved; the Funkin repository `LICENSE.md` says only the source code is Apache-2.0).
-- Observed: the charts shipped in main carry `"format": "psych_v1_convert"` (the loader converts lanes on load), not `psych_v1`; `picospeaker.json` is a bare object without the `song` wrapper; note arrays have a 4th element only for typed notes (`No Animation`).
-- More: any Psych mod keeps charts in `mods/<mod>/data/<song>/`; the in-engine Chart Editor writes them; tags of the repository list every release.
+- Committed ([samples/](samples/) and [samples/SOURCES.md](samples/SOURCES.md)): base-game charts of ShadowMario/FNF-PsychEngine at tags `0.6.3`, `0.7.3` and main (Apache-2.0 code; FNF base-game data belongs to The Funkin Crew Inc. (funkin.assets LICENSE.md: all rights reserved; Funkin `LICENSE.md`: only the source code is Apache-2.0); the owner accepted that risk, so the charts are committed as downloaded snapshots.), four community charts from MeguminBOT/fnf-chart-info-tool (`megumin-tool_*`: a bare psych object, a Psych-fork chart, an `everlasting` 0.6-era chart, an events file) and four synthetic files.
+- Observed: the charts shipped in main carry `"format": "psych_v1_convert"` (the loader converts lanes on load), not `psych_v1`; `picospeaker.json` and `megumin-tool_wizdomiot-chart.json` are bare objects without the `song` wrapper; in 0.6.3 the events are negative-lane pseudo-notes in sectionNotes.
+- More: any Psych mod keeps charts in `mods/<mod>/data/<song>/`; GameBanana has thousands of Psych mods; the repository tags list every release.
 
 ## Sources
 

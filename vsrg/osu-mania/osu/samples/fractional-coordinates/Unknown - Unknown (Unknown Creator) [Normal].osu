@@ -1,0 +1,46 @@
+osu file format v128
+
+[General]
+AudioFilename: audio.mp3
+AudioLeadIn: 0
+PreviewTime: 47463
+Countdown: 0
+SampleSet: Normal
+StackLeniency: 0
+Mode: 0
+LetterboxInBreaks: 0
+WidescreenStoryboard: 1
+
+[Editor]
+DistanceSpacing: 1
+BeatDivisor: 4
+GridSize: 32
+TimelineZoom: 1
+
+[Metadata]
+Title: Unknown
+Artist: Unknown
+Creator: Unknown Creator
+Version: Normal
+
+[Difficulty]
+HPDrainRate: 5
+CircleSize: 5
+OverallDifficulty: 5
+ApproachRate: 5
+SliderMultiplier: 1.3999999687075613
+SliderTickRate: 1
+
+[Events]
+0,0,"a.png",0,0
+2,5945.000058673324,25920
+
+[TimingPoints]
+120,750,4,1,0,100,1,0
+
+
+[HitObjects]
+0,0,245,6,0,L|192:0|512:0,1,490,0|0,1:0|1:0,1:0:0:0:
+3.0517578E-05,1.5258789E-05,3120,2,0,L|191.99991:-1.5258789E-05|511.99997:-1.5258789E-05,1,490,0|0,1:0|1:0,1:0:0:0:
+512,384,27120,5,0,1:0:0:0:
+512,383.99997,27307.5,5,0,1:0:0:0:

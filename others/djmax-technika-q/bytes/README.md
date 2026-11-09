@@ -41,9 +41,8 @@ DMTQ-Tools https://github.com/CHN-WolF/DMTQ-Tools ; upstream https://github.com/
 
 ## Getting samples
 
-- **Committed**: none.
-- **Manifest**: none.
-- **More samples**: nothing could be obtained legally: the charts are game data of DJMAX Technika Q (mobile). How a person could get one: with the game files, the patterns are `<song>_<diff>_.bytes` files next to the song `.ogg` files (oliverchang/technika_q README: "the directory with all the .ogg files (and the corresponding songname_e_.bytes file)"); `.fpk` packs are unpacked with `fpk_tool` from DMTQ-Tools (https://github.com/samnyan/DMTQ-Tools), and `bytes_to_text` converts `.bytes` to text; `pt_to_text` converts Arcade `.pt` charts and the README says combining both ports an Arcade song. How the files come out of the Android/iOS package (e.g. `.unity3d` bundles) was not read in a source [inference]. The repos contain no sample `.bytes` file.
+- **Committed**: 6 real pattern files from the private-server archive https://github.com/UrsulaProject/DMTQResearch (`DMTQ-server/dmtq/dmqglb.mb.pmang.com/DMQ/Patterns/<patternId>`, 2,634 files in the repo; headers match this fiche: zero word, offset to song info, 64 tracks, 192 positions per measure). `SongList.json` in that repo maps song and pattern ids; `_EARPHONE` suffix = earphone-mode pattern. Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **More samples**: take more files from the same `Patterns/` folder; samnyan/DMTQ-Localserver reads `Patterns.zip` with the same naming (files named by pattern id); DMTQ-Tools (`bytes_to_text`) converts them to text.
 
 ## Sources
 - https://raw.githubusercontent.com/CHN-WolF/DMTQ-Tools/master/bytes-format.md

@@ -32,7 +32,7 @@ rmstZ (closed source, https://lrfasd.github.io/rmstZ/) lists it; RMEssentials on
 
 ## Getting samples
 
-- Committed / manifest: none. The only `.mde` found is RMEssentials' `src/librmessentials/test/tst_rmeutils/existnotes/existnotes_Papa_Normal.mde`, which is a 0-byte placeholder (checked at commit `8945cab60ec58aec2f3bf08966e7c75f2f0d1bca`).
+- Committed: none. The only `.mde` found is RMEssentials' `src/librmessentials/test/tst_rmeutils/existnotes/existnotes_Papa_Normal.mde`, which is a 0-byte placeholder (checked at commit `8945cab60ec58aec2f3bf08966e7c75f2f0d1bca`).
 - How to get one: the star motion mode (星动模式) of Rhythm Master; RMEssentials treats `.mde` as a chart file name pattern (`existnotes_<song>_<Difficulty>.mde`, `existnotes` test); fan charts of that mode circulate on https://www.dreamimd.com ([inference]); rmstZ reads and writes it.
 
 ## Sources

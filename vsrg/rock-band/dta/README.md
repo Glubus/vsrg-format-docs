@@ -31,6 +31,7 @@ Not applicable.
 `songs.dta` for RB1/2/3, GH and custom songs; extra keys differ per game (Unknown).
 
 ## Quirks & pitfalls
+- Real files mix several dialects [observed in samples/]: RB3 Deluxe uses `(master 1)`, `#ifndef ... #define ... #endif` preprocessor blocks and multi-line parenthesised `(tracks ((drum (0 1)) ...))` [observed in samples/rock-band-3-deluxe_songs.dta, samples/rock-band-3-deluxe_songs_dx.dta]; Onyx's resource file quotes every symbol (`('21guns' ('song_length' 327727) ...)`) [observed in samples/missing_song_data.dta]; Guitar Hero 2 customs embed `{do {set $songalbum "..."}}` script blocks inside `(artist ...)` and use `(caption performed_by)` [observed in samples/gh2-customs_songs.dta].
 Compiled `.dtb` must be decompiled; keys vary per game version.
 
 ## Example
@@ -53,9 +54,8 @@ Not read by ROX.
 dtab (Haskell, Data.DTA.Serialize.RB3): https://hackage.haskell.org/package/dtab-1.0/docs/Data-DTA-Serialize-RB3.html · Onyx: https://github.com/mtolly/onyx · YARG.Core · Rock Band Customs Project guides.
 
 ## Getting samples
-- Committed in [`samples/`](samples/SOURCES.md): `synthetic-songs.dta`, two fictional entries written strictly from the layout in this fiche (CC0).
-- Manifest: `missing_song_data.dta` from the Onyx repository (186,793 bytes, GPL-3.0 repo). Observed there: a lighter DTA dialect with quoted symbols (`('21guns' ('song' ('vocal_parts' 3)) ('song_length' 327727) ('format' 10) ('game_origin' 'rb1_dlc') ...)`) and only a few keys per entry (no `tracks`/`midi_file`).
-- More: any Rock Band 3 DLC/custom package extracted as a folder contains `songs/songs.dta` (structure: https://wiki.yarg.in/wiki/Songs, "ex-CON"/"ex-PKG"); the Rock Band Customs Project explains how to author one (https://rock-band-customs.gitlab.io/authoring-dtas.html); Onyx (https://github.com/mtolly/onyx) writes `songs.dta` when building RB3 packages. Commercial `songs.dta` files are not redistributable; compiled `.dtb` files need decompiling.
+- Committed in [`samples/`](samples/SOURCES.md): 5 real `.dta` files and 1 synthetic. Real: Rock Band 3 Deluxe `songs.dta` (173,946 bytes), `songs_dx.dta` and `rb1_songs.dta` (https://github.com/hmxmilohax/rock-band-3-deluxe, `_ark/songs/`), Onyx `missing_song_data.dta`, and the Guitar Hero 2 customs `config/songs.dta` (https://github.com/Milohax-archive/gh2-customs). The synthetic file follows the fiche layout exactly.
+- More: ex-CON/PKG song folders contain `songs/songs.dta` (https://wiki.yarg.in/wiki/Songs); Rock Band Customs Project guide https://rock-band-customs.gitlab.io/authoring-dtas.html; Onyx writes `songs.dta` when building RB3 packages.
 
 ## Sources
 https://milo.ipg.pw/index.php/Songs.dta (via search excerpts; page not reachable directly) · https://new.tcrf.net/Rock_Band_(PlayStation_2)/Debug_Songs · https://hackage.haskell.org/package/dtab-1.0/docs/Data-DTA-Serialize-RB3.html · https://rock-band-customs.gitlab.io/authoring-dtas.html · https://wiki.yarg.in/wiki/Songs

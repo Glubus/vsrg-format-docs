@@ -45,7 +45,7 @@ Not read by ROX.
 
 ## Getting samples
 
-Committed: three single-line maps bundled with Sound Space Plus (MIT) in [`samples/`](samples/) [observed: first item is a numeric id, then `x|y|ms` triples]. More: the Roblox-era Sound Space community archives (GitHub lists named in the Overview) and any `.sspm` converted with pysspm `NOTES2TEXT`.
+Committed in [`samples/`](samples/): 21 real single-line maps - three built-in maps of Sound Space Plus (MIT), 13 maps from `nruv/sound-space` and five from `CotixGD/SS-Archive` (community maps by Robineesti11, some without extension in the repo; `.txt` added). See [`samples/SOURCES.md`](samples/SOURCES.md) for every file's source URL, fetch date, sha256 and terms. [observed: first item is a numeric id, then `x|y|ms` triples].
 
 ## Sources
 - https://raw.githubusercontent.com/Rhythia/sound-space-plus/HEAD/scripts/content/game/Song.gd

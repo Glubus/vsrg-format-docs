@@ -80,6 +80,7 @@ Embedded audio (MP3 or OGG) and PNG cover; flags and pointers say whether presen
 - SS+ also imports Sound Space `.txt` maps and Vulnus JSON, see [txt](../txt/README.md), [vulnus](../../vulnus/json/README.md).
 
 ## Quirks & pitfalls
+- Real v2 files from SSQE end with a trailing length-prefixed string (`SSQE Export - <version>`) after the marker block and may store a 0-byte custom data block with offset 0 [observed in samples/rhythia_11871_v2.sspm]; the stored marker hash did not match SHA-1(definitions + markers) in the files checked.
 - Use pointers to seek (audio/cover blocks may be absent); do not read sequentially after metadata.
 - Strings in old SS+ files may not be valid UTF-8; pysspm falls back to latin-1.
 - `ms` is u32; the "last marker ms" field is not trusted by all readers.
@@ -108,7 +109,11 @@ Not read by ROX.
 
 ## Getting samples
 
-Committed: two hand-built, audio-less synthetic files (v1 and v2) in [`samples/`](samples/). Real maps embed audio (and cover) of third-party songs and carry no licence, so none is committed or listed: the community site named by sspm-player's README, `https://sspm.paada.fr`, did not answer from here, and live map sites are not hashable. How to get more: download `.sspm` from the Rhythia / Sound Space Plus map sites ("Download maps" section of <https://github.com/lolopada/sspm-player>), install Sound Space Plus (itch.io, chedski) and look in its maps folder, or export from the editor SSQE. Old `.txt` maps are documented in [`../txt/`](../txt/README.md).
+Committed in [`samples/`](samples/): eight real maps downloaded from the Rhythia server (four SSPM v1, four v2; served as `rhythia-legacy-*.sspm`) plus two hand-built synthetic files. The real maps were rewritten by me with the audio and cover blocks removed (flags and pointers updated, markers, custom data and trailing string kept). See [`samples/SOURCES.md`](samples/SOURCES.md) for every file's source URL, fetch date, sha256 and terms.
+
+Observed [observed in samples/rhythia_*_v2.sspm]: the Rhythia API `POST https://production.rhythia.com/api/getBeatmaps` with `{"page":N,"session":""}` lists maps (13208 at fetch time) with `beatmapFile` URLs; old pages are legacy `.sspm`, newest uploads are `.rhm`. Real v2 files exported by SSQE end with a length-prefixed trailer string such as `SSQE Export - 2.3.3.1`, can have a custom-data block of 0 bytes (offset 0) and their stored marker hash is not equal to SHA-1(definitions + markers) as computed by pysspm.
+
+More: Rhythia / SS+ map sites, `%appdata%/soundspaceplus/maps`, the Rhythia-DB bulk downloader (<https://github.com/Varomine/Rhythia-DB>). Old Roblox maps are in [`../txt/`](../txt/README.md).
 
 ## Sources
 - https://raw.githubusercontent.com/basils-garden/types/main/sspm/v1.md

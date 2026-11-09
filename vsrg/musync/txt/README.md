@@ -38,7 +38,7 @@ rmstZ (JavaScript, web): https://lrfasd.github.io/rmstZ/ · KeyTap (JS/C# mod): 
 
 ## Getting samples
 
-- Committed / manifest: none. Searched: dream486/keytap-chart-recorder (its `charts/*.json` is its own JSON for MUSYNX, `{version, keys, title, bpm, duration, notes[{time, lane}]}`, a different format) and bnfour/mx-mods (game mods only); neither contains a `.txt` chart.
+- Committed: none. Searched: dream486/keytap-chart-recorder (its `charts/*.json` is its own JSON for MUSYNX, `{version, keys, title, bpm, duration, notes[{time, lane}]}`, a different format) and bnfour/mx-mods (game mods only); neither contains a `.txt` chart.
 - How to get one: the game MUSYNX (Steam / Switch) stores per-chart `.txt` files inside its asset data (plaintext and encrypted variants per the original format list); extract them with a Unity asset tool and open with rmstZ (https://lrfasd.github.io/rmstZ/) [inference]. KeyTap (https://github.com/dream486/keytap-chart-recorder) advertises a MUSYNX integration; see its README for what it writes.
 
 ## Sources

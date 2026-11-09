@@ -39,8 +39,7 @@ Rocksmith Custom Song Toolkit (C#): https://github.com/rscustom/rocksmith-custom
 ## Getting samples
 
 - Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): eleven XML files from the test projects of Rocksmith2014.NET (MIT): Lead/Bass/chords-only/notes-only arrangements (versions 7 and 8, a 12-level dynamic-difficulty file, a capo/tuning variant), vocals, Japanese vocals and two showlights files.
-- Manifest: nothing.
-- More: arrangements are authored in EOF and post-processed by DDC (the XML comments in the samples name both), then packed with the Rocksmith Custom Song Toolkit or DLC Builder; converters such as RocksmithToTab and rs2ir-converter read them (links above). Official arrangements exist only as compiled `.sng` inside retail `.psarc` files [inference].
+- More: arrangements are authored in EOF and post-processed by DDC (the XML comments in the samples name both), then packed with the Rocksmith Custom Song Toolkit or DLC Builder; converters such as RocksmithToTab and rs2ir-converter read them. Official arrangements exist only as compiled `.sng` inside retail `.psarc` files [inference].
 
 ## Sources
 https://github.com/rscustom/rocksmith-custom-song-toolkit/issues/147 · https://github.com/rscustom/rocksmith-custom-song-toolkit/blob/master/RocksmithToolkitCLI/sng2014/Program.cs · https://github.com/jermn007/rs2ir-converter

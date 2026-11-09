@@ -85,9 +85,8 @@ Not read by ROX.
 
 ## Getting samples
 
-- **Committed**: 4 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
-- **Manifest**: 1 entry in `samples.manifest.json` (downloaded by `tools/fetch-samples.sh` into `samples-local/`; listed in [`samples/SOURCES.md`](samples/SOURCES.md))
-- **More samples**: the game's tools let players export `.audica` files (Harmonix blog, "Introducing Community Maps in Audica Update 0.1.5!"); octoberU/AudicaConverter converts osu! beatmaps (`.osz`) to `.audica` and keeps a `template.audica` in its repo (manifest); the community mirror project https://github.com/Zingabopp/AudicaDownloader downloads published custom songs (its GitHub description: "Simple program to download all available Audica custom songs"). A `.audica` is a zip: unzip it to get `song.desc`, `*.cues` (`expert.cues`, ...), `song.mid`.
+- **Committed**: container-only format: no `.audica` is committed. The chart members of one package (`expert.cues`, `song.desc`, `song.mid`, `song.moggsong`, extracted from AudicaConverter's `template.audica`, MIT) are in [`samples/`](samples/); only `expert.cues` is a chart. Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **More samples**: the game's tools export `.audica` files (Harmonix blog "Introducing Community Maps in Audica Update 0.1.5!"); octoberU/AudicaConverter converts osu! beatmaps (`.osz`) to `.audica`; https://github.com/Zingabopp/AudicaDownloader downloads published custom songs. Unzip a `.audica` to get `song.desc`, `*.cues`, `song.mid`.
 
 ## Sources
 - https://raw.githubusercontent.com/octoberU/Audica-.NET-Tools/main/AudicaTools/Audica.cs

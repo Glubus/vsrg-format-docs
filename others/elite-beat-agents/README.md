@@ -10,7 +10,7 @@ iNiS touch-screen rhythm games (*Osu! Tatakae! Ouendan* 2005, *Elite Beat Agents
 
 ## Getting samples
 
-No sample is committed, none is in the manifest, and no format folder exists. Nothing public documents the DS chart data (see Formats above); the only chart-like files around are the PC `.osu` descendants of the gameplay. To obtain the real data one would have to own the NDS cartridge/ROM of *Osu! Tatakae! Ouendan*, *Elite Beat Agents* or *Ouendan 2* and locate the beatmap data inside its file system; no source read says where it is or how it is encoded [inference: it would have to be reverse-engineered, e.g. starting from the VG Resource wiki page linked below, which only lists graphics/model formats]. If a format is reverse-engineered, add `elite-beat-agents/<format>/` with a fiche and samples/manifest.
+No sample is committed and no format folder exists. Nothing public documents the DS chart data (see Formats above); the only chart-like files around are the PC `.osu` descendants of the gameplay. To obtain the real data one would have to own the NDS cartridge/ROM of *Osu! Tatakae! Ouendan*, *Elite Beat Agents* or *Ouendan 2* and locate the beatmap data inside its file system; no source read says where it is or how it is encoded [inference: it would have to be reverse-engineered, e.g. starting from the VG Resource wiki page linked below, which only lists graphics/model formats]. If a format is reverse-engineered, add `elite-beat-agents/<format>/` with a fiche and samples/manifest.
 
 ## Links
 

@@ -1,0 +1,50 @@
+{
+  "_version": "1",
+  "_songName": "After Pain",
+  "_songSubName": "",
+  "_songAuthorName": "Muu - MILGRAM",
+  "_levelAuthorName": "Sereza",
+  "_explicit": "false",
+  "_beatsPerMinute": 137.0,
+  "_shuffle": 0,
+  "_shufflePeriod": 0.5,
+  "_previewStartTime": 0,
+  "_previewDuration": 0,
+  "_songApproximativeDuration": 218,
+  "_songFilename": "song.ogg",
+  "_coverImageFilename": "cover.jpg",
+  "_environmentName": "Muspelheim",
+  "_songTimeOffset": 0,
+  "_customData": {
+    "_contributors": [],
+    "_editors": {
+      "Edda": {
+        "version": "1.2.5"
+      },
+      "_lastEditedBy": "Edda"
+    }
+  },
+  "_difficultyBeatmapSets": [
+    {
+      "_beatmapCharacteristicName": "Standard",
+      "_difficultyBeatmaps": [
+        {
+          "_difficulty": "Easy",
+          "_difficultyRank": 3,
+          "_beatmapFilename": "Easy.dat",
+          "_noteJumpMovementSpeed": 15.0,
+          "_noteJumpStartBeatOffset": 0,
+          "_customData": {
+            "_editorOldOffset": 0,
+            "_editorGridSpacing": 2.0,
+            "_editorGridDivision": 4,
+            "_warnings": [],
+            "_information": [],
+            "_suggestions": [],
+            "_requirements": []
+          }
+        }
+      ]
+    }
+  ]
+}

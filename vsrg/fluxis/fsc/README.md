@@ -98,7 +98,7 @@ Pure **millisecond** times; there are no measures/beats in the file: `TimingPoin
 
 ## Quirks & pitfalls
 
-- Properties without `[JsonProperty]` (e.g. `AudioFile`, `HitObjects`, `TimingPoints`, `AccuracyDifficulty`) have no explicit name in the source; the serialiser helpers (`Serialize()`/`Deserialize<T>()`) come from the external `flustix.Midori` NuGet package, whose naming policy was **not verified** here. A reader should accept case-insensitive keys. [inference]
+- Properties without `[JsonProperty]` (e.g. `AudioFile`, `HitObjects`, `TimingPoints`, `AccuracyDifficulty`) have no explicit name in the source; the serialiser helpers (`Serialize()`/`Deserialize<T>()`) come from the external `flustix.Midori` NuGet package, whose naming policy (PascalCase for unattributed properties, observed in real `.fsc` files) was therefore not read from source; the observed PascalCase names are exact [observed in samples/fluxis-1240_1780684194.fsc].
 - `lane` is 1-based and, in `Separate` dual mode, spans both fields.
 - `holdtime` and `visual-lane` are omitted when zero (`DefaultValueHandling.Ignore`).
 - Times are doubles (ms); do not assume integers.
@@ -106,7 +106,7 @@ Pure **millisecond** times; there are no measures/beats in the file: `TimingPoin
 
 ## Example
 
-No sample in the repo; hand-built from the documented fields (illustrative; key names with explicit attributes are exact, the PascalCase names are unverified):
+No sample in the repo; hand-built from the documented fields (illustrative; key names with explicit attributes are exact, the PascalCase names were confirmed on real maps [observed in samples/fluxis-1240_1780684194.fsc]):
 
 ```json
 {
@@ -133,8 +133,9 @@ Not read by ROX. The model is a close fit to ROX (key columns, tap/hold/mine = L
 
 ## Getting samples
 
-- **Committed**: none. The `InventiveRhythm/fluXis` repository (MIT, commit `4187865461e9bf7d1b8201843b0a522229f87699`, `LICENSE` read) contains no `.fsc`, `.fms` or `.ffx` file (checked on the full file tree), and no hand-written file was added because the JSON key names of properties without `[JsonProperty]` (`AudioFile`, `HitObjects`, `TimingPoints`, ...) depend on the external Midori serialiser and could not be verified. The old pre-2025 Haxe client in `InventiveRhythm/fluXis-archive` uses a different format (`.fluxsc`/`.fluxsm`), not `.fsc`.
-- **How to get a real one**: (1) install fluXis (https://github.com/InventiveRhythm/fluXis), get any mapset as `.fms` (maps from the game's online map list, https://fluxis.flux.moe, or exported from the editor; the file name on export is `"{Title} - {Artist} [{Mapper}].fms"` per `MapStore.cs`), rename to `.zip` (it is a ZIP archive) and read the `*.fsc` entries; (2) import an osu!mania or Quaver map with the importers shipped in the repo (`fluXis.Import.osu`, `fluXis.Import.Quaver`) and let the game save it as fluXis maps; (3) the game's data folder is opened from Settings -> General -> Folders -> Open fluXis folder (Windows: `C:\Users\{username}\AppData\Roaming\fluXis\`, per https://fluxis.flux.moe/wiki/skinning); the map files live under it [inference: sub-folder names not read]. Whether the online map download needs a login was not tested.
+- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): nine real `.fsc` difficulties extracted from public fluXis mapsets (4K-8K, long notes, SVs, effects/storyboard references, maps converted from osu! and native ones), downloaded 2026-11-09 from fluxis.flux.moe.
+- **How to get more**: the public site serves any mapset ZIP without login at `https://fluxis.flux.moe/api/mapsets/<id>/download` (set ids and metadata at `https://fluxis.flux.moe/api/mapsets/<id>`; the browse page `https://fluxis.flux.moe/maps` lists ids); unzip and take the `*.fsc` entries. Or install fluXis (https://github.com/InventiveRhythm/fluXis) and import osu!/Quaver maps with the repo's importers.
+- Observed: the top-level JSON keys are PascalCase for `AudioFile`, `HitObjects`, `TimingPoints`, `ScrollVelocities`, `HitSoundFades`, `AccuracyDifficulty`, `HealthDifficulty` and kebab-case for `ls-v2`, `force-169`, `editor-time`, `extra-playfields`, `visualization-enabled` [observed in samples/fluxis-1240_1780684194.fsc].
 
 ## Sources
 

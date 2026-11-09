@@ -103,7 +103,7 @@ Not read by ROX. Mapping would be 7 columns from `keyboard` with MIDI-derived ti
 
 ## Getting samples
 - **Committed** ([`samples/`](samples/SOURCES.md)): five real `.vos` files from the MIT-licensed test folder of https://github.com/rhythmus-emulator/rparser: two **version-2** files (header int32 2, file-name field `Vosctemp.trk`, tags `VOS022` and `VOS008`) and three **version-3** files (header int32 3, `inf`/`mid`/`EOF` segment table; one without the `VOS1` tag). Authorship of the songs is unknown (see doubts).
-- **Manifest**: `vosdroid_Canon_in_D.vos` (the song shipped with the VosDroid Android player, pinned commit; the repository has no licence file).
+- Also committed: `vosdroid_Canon_in_D.vos` (the song shipped with the VosDroid Android player; the repository has no licence file).
 - **More**: the game itself is freeware (HanseulSoft, 1999; per the fiche), and the song library is community made: the gpbeta page http://www.gpbeta.com/en/post/intro/vos-intro describes the community and the "VOS Creator" MIDI-to-VOS tool. Songs sit in the game's `Album/` folder (fiche). Each `.vos` embeds a MIDI file, so a MIDI can be turned into a `.vos` with VOS Creator [per the fiche] and VosDroid's roadmap lists a vos-to-mid conversion (https://github.com/ReVanTis/VosDroid, README: "D0.3 ... conversion from vos to mid"; its SPECIALTHANKS credits the tool vos2midi). The "000/001/006/022 versions" quoted by the original README are not documented anywhere found; the rparser samples show that `VOS022`/`VOS008` are tags of the v2 container.
 
 ## Sources

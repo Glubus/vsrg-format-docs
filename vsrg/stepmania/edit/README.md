@@ -100,9 +100,9 @@ Read by Prism (`docs/game.md` "Formats de danse"): the scan finds the song on th
 
 ## Getting samples
 
-Committed in [`samples/`](samples/SOURCES.md): three **synthetic** (hand-written, CC0) edits targeting the bundled song `StepMania 5/Springtime` (committed as `../ssc/samples/Springtime.ssc`): SSC layout (`#NOTEDATA`) single, SM layout (`#NOTES` with six parameters), SSC layout `dance-double`. They carry taps, a jump, a hold, a roll, a mine, a lift and a fake.
+Committed in [`samples/`](samples/SOURCES.md): **40 REAL `.edit` files** by Roger "Drano" Clark under `drano/` (archive.org item `StepManiaDranoEdits`, `edits_full (Drano).zip` with 440 edits; SM-style `#SONG:<title>;` + six-parameter `#NOTES`; dance-single, dance-double and dance-couple, Hard/Challenge) plus three **synthetic** hand-written files (SSC layout single, SM layout, SSC layout doubles) targeting the bundled `StepMania 5/Springtime` (synthetic files do not count as real). The Drano edits use the old SM layout only: no real SSC-layout (`#NOTEDATA`) `.edit` file was found; the SSC layout is covered by a synthetic file and by the inline `Edit` chart of `../ssc/samples/Tokimeki Experience.ssc`.
 
-No real open-licensed `.edit` was found: edits live in a player's profile (`<profile>/Edits/`, see Container & encoding), and the repositories checked (StepMania, ITGmania, Etterna, simfile, simfile-parser) contain none. To get real ones: in StepMania 5 open the Edit mode on a song, create a chart and save; the game writes `Edits/<translit title> - <description>.edit` (writer `NotesWriterSSC::GetEditFileContents`). Edit-sharing sites for ITG/DDR edits distribute them as `.edit` files [inference]. Another real example of the same content is the inline `Edit` chart of `../ssc/samples/Tokimeki Experience.ssc`.
+More: the remaining 400 Drano edits in the same zip; `AstrosEditsDanceDanceRevolution` (archive.org, 38 MB, DDR edit packs, not inspected); your own profile's `Edits/` folder after saving an edit in StepMania 5's Edit mode (`NotesWriterSSC::GetEditFileContents` writes `<translit title> - <description>.edit`).
 
 ## Sources
 

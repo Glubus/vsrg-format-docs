@@ -22,7 +22,7 @@ A `.qp` file is a Quaver mapset: "It contains an MP3 file and one or more QUA fi
 
 ## Structure / metadata
 
-There is no manifest: the mapset is defined by the set of `.qua` files (each carries `MapSetId`, `Title`, `Artist`, ...). File names inside are free; the usual contents are `<difficulty>.qua` files, `audio.mp3` (or other audio), `bg.jpg`/`banner.jpg`, and optional sample files. Exact file-name conventions of the exporter are not documented in the sources consulted: Unknown.
+There is no package manifest:
 
 ## Timing model
 
@@ -70,9 +70,9 @@ Not read by ROX: unzip first and pass each `.qua` to the `.qua` codec.
 
 ## Getting samples
 
-- **Committed** in [`samples/`](samples/) (see [`SOURCES.md`](samples/SOURCES.md)): `built-princess-of-winter-audioless.qp`, a 32 KB flat ZIP built here from the 8 CC-BY-NC Princess of Winter `.qua` of Quaver.Resources (no audio/image, so the `AudioFile` reference dangles).
-- **Manifest**: three real default mapsets of Quaver (`Lollipop - vibing oustide the supermarket at 1am.qp`, 2.0 MB; `zetoban - Flowering Night.qp`, 2.6 MB; `zetoban - Csikos Post.qp`, 2.9 MB), pinned to Quaver/Quaver @ e9b54a6 (CC-BY-NC 4.0 repository resources; contain mp3 and images, hence not committed). Listing them shows the layout: `<mapid>.qua` files + one mp3 + one jpg/png at the root.
-- **How to get more**: https://quavergame.com map pages offer `.qp` downloads; the editor's export writes a `.qp`; the other eight default packages are in the same repository folder (2-7.7 MB each).
+- **No archive is stored in this repository.** Seven real default mapsets of Quaver (Quaver/Quaver @ e9b54a6, `Quaver.Resources/DefaultMaps/*.qp`, CC-BY-NC 4.0 repository resources; song rights are the artists') were downloaded and their `.qua` extracted into [`../qua/samples/`](../qua/samples/) (`quaver-default_*/`); layout of the originals: `<mapid>.qua` files + one mp3 + one jpg/png at the root. Provenance: `Extracted from archives` in its `SOURCES.md`.
+- **How to get more**: https://quavergame.com map pages offer `.qp` downloads; the editor's export writes a `.qp`; four more default packages are in the same repository folder.
+
 
 ## Sources
 

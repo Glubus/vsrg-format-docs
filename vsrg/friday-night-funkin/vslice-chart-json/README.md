@@ -52,7 +52,7 @@ Difficulty ids: the base game uses `easy`, `normal`, `hard`, `erect`, `nightmare
 
 - Times are in `timeFormat` of the metadata: `"ms"` is the only format the FNFC spec says is supported; the source enum `SongTimeFormat` lists `ticks`, `float` and `ms` (`ms` = `'ms'` is the default). Notes carry no beat/step: step positions are computed by the game from the time and the metadata `timeChanges` (cached `_stepTime`).
 - BPM, time signature and beat tuplets: only in the metadata `timeChanges` ([../vslice-metadata-json/README.md](../vslice-metadata-json/README.md)), so a chart cannot be placed on a beat grid without its metadata.
-- Scroll speed is per difficulty (`scrollSpeed`), not per section. A draft RFC of the chart format (`rfc/chart-format/chartformat-7.jsonc` in the Funkin repository) mentions a `SetScrollSpeed` event [seen only in a search-result snippet; the RFC itself was not read]. The shipped charts use an event named `ScrollSpeed` with `v` = `{ absolute, duration, ease, scroll, strumline }` [observed in the manifest file tutorial-chart.json]; `FocusCamera` has a bare integer `v` (strumline index) in `bopeebo-chart.json`.
+- Scroll speed is per difficulty (`scrollSpeed`), not per section. A draft RFC of the chart format (`rfc/chart-format/chartformat-7.jsonc` in the Funkin repository) mentions a `SetScrollSpeed` event [seen only in a search-result snippet; the RFC itself was not read]. The shipped charts use an event named `ScrollSpeed` with `v` = `{ absolute, duration, ease, scroll, strumline }` [observed in samples/tutorial-chart.json]; `FocusCamera` has a bare integer `v` (strumline index) in `bopeebo-chart.json`.
 
 ## Notes
 
@@ -117,9 +117,9 @@ Read, decode only: `rox::formats::fnf_vslice::VSliceDecoder` (`variants`, `decod
 
 ## Getting samples
 
-- Committed: [samples/](samples/): a synthetic default-variation chart and an erect-variation chart.
-- Manifest: eight charts from FunkinCrew/funkin.assets (`preload/data/songs/<song>/<song>-chart[-<variation>].json`, commit `724eba9de9e76761d9cefd52169926bc51c760a5`). Licence: proprietary (funkin.assets LICENSE.md, all rights reserved), so fetched only. Observed: events use `ScrollSpeed` (`{absolute, duration, ease, scroll, strumline}`, the fiche guessed `SetScrollSpeed`), `FocusCamera` carries a bare int `v` (1/0) in `bopeebo-chart.json`, `ZoomCamera`, `SetCameraBop`, `PlayAnimation` objects; note kinds like `noanim`; a difficulty may be an empty list (`ugh-chart-erect.json`: `normal` has 0 notes); `stress-chart.json` has an extra `picospeaker` difficulty.
-- More: the game's `preload/data/songs/` tree (every song has `-chart.json`, `-chart-erect.json`, `-chart-pico.json`/`-bf.json` variations); the in-game Chart Editor writes `.fnfc` files (unzip them).
+- Committed ([samples/](samples/) and [samples/SOURCES.md](samples/SOURCES.md)): eight charts from FunkinCrew/funkin.assets (`preload/data/songs/...`; FNF base-game data belongs to The Funkin Crew Inc. (funkin.assets LICENSE.md: all rights reserved; Funkin `LICENSE.md`: only the source code is Apache-2.0); the owner accepted that risk, so the charts are committed as downloaded snapshots.), real community charts extracted from `.fnfc` exports and mod packages downloaded from GameBanana (one subfolder per set: `17bucksfull/`, `nonsense-theme/`, `cant-hold-us/`, `lit-up/` (with the erect variation), `love-me/`, `mesmerizer/`, `phony/`, `tengoku-he-ikou/`, `guns-pico-remix/`, `2hot-bf-mix/`, `thorns-erect-fnfc/`), the MeguminBOT/fnf-chart-info-tool thorns-erect test charts and two synthetic charts. The archives themselves are not committed.
+- Observed: the shipped events use `ScrollSpeed` (`{absolute, duration, ease, scroll, strumline}`, the fiche had guessed `SetScrollSpeed`); `FocusCamera` carries a bare int `v` in `bopeebo-chart.json`; a difficulty may be an empty list (`ugh-chart-erect.json`, community `nonsense-theme-chart.json`: `normal` has 0 notes); `stress-chart.json` has an extra `picospeaker` difficulty; community exports often contain several empty difficulties.
+- More: `.fnfc` exports on GameBanana (search `fnfc`, https://gamebanana.com/apiv11/Util/Search/Results?_sSearchString=fnfc&_idGameRow=8694); the game's `preload/data/songs/` tree; the in-game Chart Editor.
 
 ## Sources
 

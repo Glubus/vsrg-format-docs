@@ -49,9 +49,9 @@ rCubed (ActionScript).
 
 ## Getting samples
 
-- Committed: [samples/](samples/): `synthetic-level.swf`, a hand-built audio-less SWF whose DoAction sets `_root.beatBox` (15 beats); verified with a Python port of rCubed's `Beatbox.parseBeatbox`, not with Flash.
-- Manifest: none. Real FFR levels (`level_<level_id>.swf`, built by rCubed as `engine.songURL + "level_" + level_id + ".swf"`) embed the song's MP3 and are the property of their charters/artists; no verified, plain-`curl` download with a redistribution right was found (the FFR forum pages return HTTP 403 to scripted reads).
-- How to get one: in the FFR client (R^3, source https://github.com/flashflashrevolution/rCubed, AGPL-3.0) add an alternate engine playlist (Options, "engine playlist"), whose XML gives `songURL`; the level SWFs are then loaded from that URL [from rCubed `ChartFFRLegacy.as`; the FFR FAQ https://ffr.fandom.com/wiki/FAQ describes the playlist option]. Extract `beatBox` with a SWF decompiler or with rCubed's `Beatbox.parseBeatbox`.
+- Committed ([samples/](samples/) and [samples/SOURCES.md](samples/SOURCES.md)): seven real FFR level SWFs downloaded from the public R^3 song endpoint `https://www.flashflashrevolution.com/game/r3/r3-songLoad.php?id=<playhash>` (the `playhash` values come from the public playlist https://www.flashflashrevolution.com/game/r3/r3-playlist.php, a JSON array of about 3600 songs with `level`, `playhash`, `arrows`, `author`, `stepauthor`), rewritten WITHOUT audio, images and fonts (only the DoAction/SetBackgroundColor/FileAttributes/ShowFrame/End tags are kept), and one synthetic SWF.
+- Observed: the downloads are zlib-compressed SWFs (`CWS`, version 6) or plain `FWS`; a level has several DoAction tags (one holds `_root.beatBox`); `beatBox` entries are `[frame, direction, colour]` or `[frame, direction, colour, ms]`; the number of beats equals `arrows` of the playlist entry [observed in samples/].
+- More: any `playhash` of the playlist works with the same URL (free songs); the legacy engines load `level_<level_id>.swf` from the engine's `songURL` (rCubed `ChartFFRLegacy.songUrl`).
 
 ## Sources
 

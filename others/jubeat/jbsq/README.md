@@ -77,9 +77,7 @@ Not read by ROX 0.8.1.
 
 ## Getting samples
 
-**Committed:** none. **Manifest:** none. No `.jbsq` file exists in any public repository found (jubeatools ships only the Kaitai description `jubeatools/formats/konami/jbsq/jbsq.ksy`, no sample). A synthetic binary was not written because the 96-byte header contains padding and fields whose real-world content is unknown (`../README.md`).
-
-**How to get one**: jubeatools can *write* `.jbsq` from any other jubeat format (it has a loader and a dumper, per the README), which produces a conforming file from a memon/eve/memo chart; real ones come from arcade game data (commercial) and, for the jubeat plus family, from `.jbt` archives (encrypted `seq_*` entries, see the iOS note by SaxxonPike: <https://github.com/SaxxonPike/rhythm-game-formats/blob/master/ios/jbt-rb-orb.md>).
+**Committed:** none. No `.jbsq` is public (jubeatools ships only the Kaitai description `jbsq.ksy`). A synthetic binary was not written because the 96-byte header has padding and fields of unknown real content. jubeatools can write `.jbsq` from other formats; originals are arcade data, and jubeat plus `.jbt` archives hold encrypted `seq_*` entries (<https://github.com/SaxxonPike/rhythm-game-formats/blob/master/ios/jbt-rb-orb.md>).
 
 ## Sources
 

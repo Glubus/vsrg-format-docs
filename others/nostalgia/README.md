@@ -12,7 +12,7 @@ Possible future leads (not opened): Konami's chart data in the arcade data tree,
 
 ## Getting samples
 
-No sample is committed, none is in the manifest, and no format folder exists: no public specification, parser or chart file of the arcade game was found. The only code found, `sleepily/nostalgia` (tree checked at `84351aa1`), is a clone whose README says it parses osu! beatmaps; its tree holds no `.osu` or other chart file, so it gives no NOSTALGIA data. Obtaining real data would require arcade game data (commercial) and reverse-engineering; no source read says where the charts are stored [inference]. If a format is documented, add `nostalgia/<format>/` with a fiche and samples/manifest.
+No sample is committed and no format folder exists: no public specification, parser or chart file of the arcade game was found. The only code found, `sleepily/nostalgia` (tree checked at `84351aa1`), is a clone whose README says it parses osu! beatmaps; its tree holds no `.osu` or other chart file, so it gives no NOSTALGIA data. Obtaining real data would require arcade game data (commercial) and reverse-engineering; no source read says where the charts are stored [inference]. If a format is documented, add `nostalgia/<format>/` with a fiche and samples/manifest.
 
 ## Links
 

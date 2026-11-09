@@ -57,7 +57,7 @@ libkson (C++): https://github.com/kshootmania/libkson · kson (Rust): https://li
 
 ## Getting samples
 - **Committed** ([`samples/`](samples/SOURCES.md)): `Gram_ex.kson` (a complete real chart converted by libkson) and four small synthetic fixtures from the VOXL4DD3R converter (BPM/time-signature changes, stop, scroll-speed curves, slam events, camera graphs, audio-effect definitions).
-- **Manifest**: three tiny synthetic fixtures of `Foahh/ksm2sdvx` (`minimal`, `notes`, `camera`), pinned to a commit (that repository has no licence file, so they are fetched, not committed).
+- Also committed: `kson-rs_Gram_ex.json` (the same real chart serialised by the Rust `kson` crate, MIT) and three tiny synthetic fixtures of `Foahh/ksm2sdvx` (`ksm2sdvx_minimal.kson`, `_notes`, `_camera`; that repository has no licence file).
 - **More**: convert any KSH chart with libkson's `tool/ksh2kson.cpp` (https://github.com/kshootmania/libkson) or the `ksh2kson` example of https://github.com/Drewol/kson-rs (`kson/examples/ksh2kson.rs`, MIT); `kson-rs` also contains a KSON chart editor and game. KSM v2 (https://github.com/kshootmania/ksm-v2) is the reference player; the format site is https://kson.dev/. [inference] KSON charts found in the wild are almost all conversions of `.ksh`, so the KSH sources in [ksh](../ksh/README.md#getting-samples) apply.
 
 ## Sources

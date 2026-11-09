@@ -97,9 +97,9 @@ Illustrative, hand-built from `Song.hx` (not a real file):
 
 ## Getting samples
 
-- Committed: [samples/](samples/): a synthetic KE1 chart with `eventObjects` and its `_meta.json`-style companion.
-- Manifest: four charts of the Kade-github/Kade-Engine repository (commit `b1fe905d9cfdcd10705f48ff47d62d1165d6c63a`, Apache-2.0 code; base-game charts not redistributed). They carry NO `chartVersion` and no `eventObjects` [observed], i.e. they are the unconverted layout the engine converts at load; a real KE1 file (with `eventObjects`) was NOT found in any public repository.
-- How to get a real KE1 file: run Kade Engine (build from the repository), open its chart editor and save a song; the engine writes `songs/<songId>/<songId><difficulty>.json` [inference from `Song.hx` as described above]. Kade releases are listed on https://github.com/Kade-github/Kade-Engine (not opened).
+- Committed ([samples/](samples/) and [samples/SOURCES.md](samples/SOURCES.md)): six real Kade Engine KE1 charts (`perkedel_*.json`, from the Kade fork Perkedel/Kaded-fnf-mods, GPL-3.0 repository; they carry `chartVersion` `KE1` and `eventObjects`, one has chartVersion `1`), four unconverted charts of the Kade-github/Kade-Engine repository (no `chartVersion`/`eventObjects`) and a synthetic KE1 chart with its `_meta`-style companion.
+- Observed in the Perkedel files: note arrays of 3, 5 or 6 elements (`[time, lane, sustain, isAlt, beat, 0]`), event objects with extra `value2`/`value3` fields, many mod-specific song fields (`videoPath`, `hasVideo`, `isCreditRoll`, `sectionLengths`...), 34 BPM-change events in `perkedel_heartbreaking.json`.
+- More: https://github.com/Perkedel/Kaded-fnf-mods (`assets/preload/data/songs/`, about 200 more JSON files, many with `chartVersion`); run Kade Engine and save from its chart editor.
 
 ## Sources
 

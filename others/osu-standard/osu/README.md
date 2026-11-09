@@ -109,9 +109,8 @@ Not read by ROX: `OsuDecoder` calls `peek_mode` on the header and returns `Inval
 
 ## Getting samples
 
-- Committed: 38 charts in [samples/](samples/) (see [samples/SOURCES.md](samples/SOURCES.md)), spanning format versions v3 to v14 and v128 (lazer): sliders of all four curve types (`B`, `L`, `P`, `C`), spinners, combo colours, timing points, UTF-8 BOM and CRLF files, from ppy/osu test resources (MIT), kionell/osu-taiko-stable (MIT), MaxOhn/rosu-pp (MIT) and the four default-track charts of ppy/osu-resources (CC-BY-NC-4.0, non-commercial).
-- Manifest (`samples.manifest.json`): nothing for this format.
-- More: any osu! mapset (`.osz`, a zip of `.osu` files + audio) carries `.osu` files (file name pattern `Artist - Title (Creator) [Difficulty].osu`, see the committed names); download from osu.ppy.sh needs an account [inference: the site shows "Sign In To Proceed" to anonymous visitors]. Respect content permissions (https://osu.ppy.sh/wiki/en/Rules/Content_usage_permissions). Other parser repositories carry fixtures too (observed file lists): MaxOhn/rosu-map `resources/` (a copy of the ppy/osu `osu.Game.Tests/Resources` maps), ekgame/beatmap-analyzer `test_maps/osu/` (GPL-3.0), ppy/osu `osu.Game.Rulesets.Osu.Tests/Resources/Testing/Beatmaps`.
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): 38 charts, format versions v3 to v14 and v128 (lazer), slider curve types `B`, `L`, `P` and `C`, spinners, combo colours, UTF-8 BOM and CRLF files, from ppy/osu test resources (MIT), kionell/osu-taiko-stable (MIT), MaxOhn/rosu-pp (MIT) and four default-track charts of ppy/osu-resources (CC-BY-NC-4.0, non-commercial).
+- More: any osu! mapset (`.osz`, a zip of `.osu` files + audio) carries `.osu` files named `Artist - Title (Creator) [Difficulty].osu`; download from osu.ppy.sh needs an account [inference: the site shows "Sign In To Proceed" to anonymous visitors]. Respect content permissions (https://osu.ppy.sh/wiki/en/Rules/Content_usage_permissions). Other fixture repositories: MaxOhn/rosu-map `resources/`, ekgame/beatmap-analyzer `test_maps/osu/`.
 
 ## Sources
 

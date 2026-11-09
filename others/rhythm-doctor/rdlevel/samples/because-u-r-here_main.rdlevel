@@ -1,0 +1,85 @@
+﻿{
+	"settings":
+	{
+		"version": 51, 
+		"artist": "", 
+		"song": "", 
+		"specialArtistType": "None", 
+		"artistPermission": "", 
+		"artistLinks": "", 
+		"author": "", 
+		"difficulty": "Medium", 
+		"seizureWarning": false, 
+		"previewImage": "", 
+		"syringeIcon": "", 
+		"previewSong": "", 
+		"previewSongStartTime": 0, 
+		"previewSongDuration": 10, 
+		"songNameHue": 0.3526961, 
+		"description": "", 
+		"tags": "", 
+		"separate2PLevelFilename": "", 
+		"canBePlayedOn": "OnePlayerOnly", 
+		"firstBeatBehavior": "RunNormally", 
+		"multiplayerAppearance": "HorizontalStrips", 
+		"levelVolume": 1, 
+		"rankMaxMistakes": [20, 15, 10, 5], 
+
+		"rankDescription":
+		[
+			"你这个毫无希望的实习生！",
+			"啊，你还可以做得更好",
+			"嗯，勉强还成……",
+			"咱们是黄金组合！",
+			"你的表现真给力！",
+			"惊艳绝伦的演出！！"
+		]
+	},
+	"rows":
+	[
+		{ "character": "HoodieBoy", "rowType": "Oneshot", "row": 0, "rooms": [0], "player": "P1", "pulseSound": "Kick", "pulseSoundVolume": 100, "pulseSoundPitch": 100, "pulseSoundPan": 0, "pulseSoundOffset": 0 },
+		{ "character": "Samurai", "rowType": "Classic", "row": 1, "rooms": [0], "player": "P1", "pulseSound": "Kick", "pulseSoundVolume": 100, "pulseSoundPitch": 100, "pulseSoundPan": 0, "pulseSoundOffset": 0 },
+	],
+	"decorations":
+	[
+	],
+	"events":
+	[
+		{ "bar": 1, "beat": 1, "y": 0, "type": "SetTheme", "rooms": [0], "preset": "OrientalTechno" },
+		{ "bar": 1, "beat": 1, "y": 0, "type": "PlaySong", "filename": "urhere.ogg", "volume": 69, "pitch": 100, "pan": 0, "offset": 21, "bpm": 150, "loop": false },
+		{ "bar": 1, "beat": 1, "y": 1, "type": "SetRowXs", "row": 1, "pattern": "-xx-xx" },
+		{ "bar": 1, "beat": 1, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.3333333, "swing": 0, "hold": 0 },
+		{ "bar": 1, "beat": 5, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.5, "swing": 0, "hold": 0 },
+		{ "bar": 2, "beat": 1, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.3333333, "swing": 0, "hold": 0 },
+		{ "bar": 2, "beat": 5, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.5, "swing": 0, "hold": 0 },
+		{ "bar": 3, "beat": 1, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.3333333, "swing": 0, "hold": 0 },
+		{ "bar": 3, "beat": 5, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.5, "swing": 0, "hold": 0 },
+		{ "bar": 4, "beat": 1, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.3333333, "swing": 0, "hold": 0 },
+		{ "bar": 4, "beat": 5, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.5, "swing": 0, "hold": 0 },
+		{ "bar": 5, "beat": 1, "y": 1, "type": "SetRowXs", "row": 1, "pattern": "------" },
+		{ "bar": 5, "beat": 3, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 1, "swing": 0, "hold": 0 },
+		{ "bar": 6, "beat": 3, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 1, "swing": 0, "hold": 0 },
+		{ "bar": 7, "beat": 3, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 1, "swing": 0, "hold": 0 },
+		{ "bar": 8, "beat": 3, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 1, "swing": 0, "hold": 0 },
+		{ "bar": 9, "beat": 1, "y": 1, "type": "SetRowXs", "row": 1, "pattern": "-x-x-x" },
+		{ "bar": 9, "beat": 1, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.5, "swing": 0, "hold": 0 },
+		{ "bar": 9, "beat": 5, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.5, "swing": 0, "hold": 0 },
+		{ "bar": 10, "beat": 1, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.5, "swing": 0, "hold": 0 },
+		{ "bar": 10, "beat": 5, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.5, "swing": 0, "hold": 0 },
+		{ "bar": 11, "beat": 1, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.5, "swing": 0, "hold": 0 },
+		{ "bar": 11, "beat": 5, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.5, "swing": 0, "hold": 0 },
+		{ "bar": 12, "beat": 1, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.5, "swing": 0, "hold": 0 },
+		{ "bar": 12, "beat": 5, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.5, "swing": 0, "hold": 0 },
+		{ "bar": 13, "beat": 1, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.5, "swing": 0, "hold": 0 },
+		{ "bar": 13, "beat": 5, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.5, "swing": 0, "hold": 0 },
+		{ "bar": 14, "beat": 1, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.5, "swing": 0, "hold": 0 },
+		{ "bar": 14, "beat": 5, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.5, "swing": 0, "hold": 0 },
+		{ "bar": 15, "beat": 1, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.5, "swing": 0, "hold": 0 },
+		{ "bar": 15, "beat": 5, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.5, "swing": 0, "hold": 0 },
+		{ "bar": 16, "beat": 1, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.5, "swing": 0, "hold": 0 },
+		{ "bar": 16, "beat": 5, "y": 1, "type": "AddClassicBeat", "row": 1, "tick": 0.5, "swing": 0, "hold": 0 },
+	],
+	"conditionals":
+	[
+	]
+}

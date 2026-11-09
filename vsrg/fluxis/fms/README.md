@@ -78,8 +78,8 @@ fluXis (C#): [`FluXisImport.cs`](https://github.com/InventiveRhythm/fluXis/blob/
 
 ## Getting samples
 
-- **Committed**: none (no `.fms` is published in the fluXis repository, and a real `.fms` contains the audio and cover of the map, which cannot be redistributed; an audio-less rebuilt zip would need a real `.fsc`, which could not be obtained either, see [`fsc`](../fsc/#getting-samples)).
-- **How to get a real one**: download a mapset from the fluXis map list (https://fluxis.flux.moe) or export it from the game (export name `"{Title} - {Artist} [{Mapper}].fms"` in `MapStore.cs`); the file is a ZIP (open with any unzip tool, entries listed in the Structure section above). Converters of the repo (osu!, Quaver) also create `.fms` packages from other games' maps (`MapImporter.CreatePackage`). Online availability without a login was not tested.
+- **Container only, nothing committed** (an `.fms` is a ZIP with audio and images; the repository stores charts only): the chart members of real sets are committed in [`../fsc/samples/`](../fsc/samples/) and [`../ffx/samples/`](../ffx/samples/).
+- **How to get one**: `https://fluxis.flux.moe/api/mapsets/<id>/download` returns the `.fms` ZIP without login (ids from `https://fluxis.flux.moe/maps`); or export from the game (`"{Title} - {Artist} [{Mapper}].fms"`, `MapStore.cs`). Observed members of real sets: `<unix timestamp>.fsc`, `.ffx`, `.fsb` storyboards, or osu!-converted `<Artist - Title (mapper) [Diff]>.osu.fsc`, plus audio/images/video.
 
 ## Sources
 

@@ -10,7 +10,7 @@ Doc status: complete (gameplay tracks); venue/trigger tracks partial · ROX: no 
 ## Container & encoding
 
 - Standard MIDI File: header chunk `MThd`, track chunks `MTrk`, big-endian numbers, variable-length delta times (see the MIDI specification and TheNathannator's `Technical-Details.md`).
-- **Resolution 480 ticks per quarter note** ("all Harmonix GH games use a resolution of 480").
+- **Resolution 480 ticks per quarter note** ("all Harmonix GH games use a resolution of 480"). Fan-made GH2 customs may differ: 2 of the 6 committed customs use 480 and 4 use 960 ticks per quarter note [observed in samples/gh2-customs_allalone.mid, samples/gh2-customs_allday.mid].
 - Track names are given by the Track Name meta event (`FF 03`).
 - Text events are meta events (`FF 01`) with bracketed text like `[verse]`.
 
@@ -105,9 +105,8 @@ Not read by ROX (ROX lists Clone Hero as planned, not implemented).
 - Documentation: https://github.com/TheNathannator/GuitarGame_ChartFormats (CC0), site https://thenathannator.github.io/GuitarGame_ChartFormats/.
 
 ## Getting samples
-- Committed in [`samples/`](samples/SOURCES.md): `synthetic-gh1.mid` (tracks `T1 GEMS`, `ANIM`, `EVENTS`; per-difficulty star power and Face-Off markers, GH1 text events) and `synthetic-gh2.mid` (`PART GUITAR`, `PART BASS`, `EVENTS`; big-note marker, left-hand positions, GH2 character events), both hand-built CC0 from the https://github.com/TheNathannator/GuitarGame_ChartFormats GH1/2 docs (commit `3d3640574821e1f7f0ec4be70627893aa88fdff6`), 480 tpqn. They are not real game data.
-- Manifest: none. The real charts are inside the commercial Guitar Hero / Guitar Hero II discs; no open, licensed extraction was found, and no extraction procedure is described in the sources consulted (Unknown). Community conversions of these songs circulate as Clone Hero/Phase Shift charts (modern layout, not this one) and cannot be redistributed.
-- To get more: own the disc and extract the game archive with a tool that supports it [inference: the archive format/tool was not verified in this pass], then read the song's `.mid` with any SMF library.
+- Committed in [`samples/`](samples/SOURCES.md): 6 real GH2-style customs (`gh2-customs_*.mid`, from the Milohax-archive "GH2 customs" GitHub collection: tracks `PART GUITAR`, `PART BASS`, `BAND BASS/DRUMS/SINGER`, `EVENTS`, `TRIGGERS`) and 2 synthetic CC0 files (`synthetic-gh1.mid` with `T1 GEMS`/`ANIM`, `synthetic-gh2.mid`) built from the https://github.com/TheNathannator/GuitarGame_ChartFormats GH1/2 docs. Real GH1 `T1 GEMS` files were not found publicly; the original game charts sit inside the commercial discs.
+- More: the same collection has ~190 more songs (https://github.com/Milohax-archive/gh2-customs, folders `GH2CUSTOMSREPO/songs/<name>/<name>.mid`), and its `config/songs.dta` is committed under [rock-band/dta](../../rock-band/dta/samples/SOURCES.md). Onyx can export GH2 customs (https://github.com/mtolly/onyx).
 
 ## Sources
 

@@ -1,0 +1,48 @@
+﻿osu file format v128
+
+[General]
+AudioLeadIn: 0
+PreviewTime: -1
+Countdown: 1
+SampleSet: Normal
+StackLeniency: 0.7
+Mode: 0
+LetterboxInBreaks: 0
+WidescreenStoryboard: 1
+SamplesMatchPlaybackRate: 1
+
+[Editor]
+DistanceSpacing: 1
+BeatDivisor: 4
+GridSize: 4
+TimelineZoom: 1
+
+[Metadata]
+Title: stability test
+TitleUnicode: stability test
+Artist: legacy export
+ArtistUnicode: legacy export
+Creator: spaceman_atlas
+Version: 
+
+[Difficulty]
+HPDrainRate: 5
+CircleSize: 5
+OverallDifficulty: 5
+ApproachRate: 5
+SliderMultiplier: 1.4
+SliderTickRate: 1
+
+[Events]
+
+[TimingPoints]
+1234.56,779.2207792207793,4,1,0,100,1,0
+2793.0015584415587,-100,4,1,0,100,0,1
+3961.8327272727274,-100,4,1,0,100,0,0
+
+
+[HitObjects]
+194.61414,99.97041,1818.9755844155843,5,0,1:0:0:0:
+171.84198,110.36641,2208.585974025974,1,0,1:0:0:0:
+261.9406,143.03954,2598.1963636363635,1,0,1:0:0:0:
+112.93176,47.000397,2987.806753246753,2,0,P|99.56549:211.85118|B|278.77264:217.2967|286.69342:53.436005|427.28687:54.921143|L|467.88074:180.6632|P|374.81183:311.85077|68.3775:313.83093|37.189514:302.44482,1,1190,0|0,1:0|1:0,1:0:0:0:

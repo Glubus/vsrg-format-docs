@@ -98,8 +98,9 @@ Not read by ROX. 12-lane board with wide notes, flicks, slides with eases/bezier
 
 ## Getting samples
 
-- Committed / manifest: none. The only open implementations (rg_converters `holodori_sus` loader; HolodoriDB/holodori-scores, MIT, which only reads such files) ship no sample file (tree of holodori-scores checked at `cdd1a71e0686083f58c89570e15a95139145bc1b`). Writing one by hand would rely on an unverified dialect reading.
-- How to get one: the game hololive Dreams (holodori) stores charts as this SUS dialect; `holodori-asset-tools` (https://github.com/HolodoriDB/holodori-asset-tools, GPL-3.0) can `holodori download` / `holodori extract` the game's assets without the game installed (README), and holodori.best (HolodoriDB) is the community database. Official charts are the game's copyright; the game also has an in-game custom chart feature whose exports would be the best candidates for redistributable samples.
+- Committed in [`samples/`](samples/): 6 official hololive Dreams charts downloaded from the game's CDN with HolodoriDB/holodori-asset-tools (`holodori download --filter '^chart_...\.sus$'`; catalog revision 110: about 1600 `chart_m<music id>_<easy|normal|hard|expert>.sus` resources). Everything is listed with origin, date and sha256 in [`samples/SOURCES.md`](samples/SOURCES.md).
+- More: run `pip install holodori-asset-tools` then `holodori download ./out --filter '^chart_m0.*\.sus$'` (no game or login needed, per its README); community database https://holodori.best.
+- Observed [observed in samples/holodori_chart_m0367_normal.sus]: files are CRLF and start with `#CREATE_APP_VERSION`, `#CREATE_DATE`, `#MUSIC_ID`, `#SCORE_LEVEL`, `#MEASURE_COUNT`, `#FULL_COMBO_NOTE_COUNT`, `#TOTAL_NOTE_COUNT` and per-type counts (`#NORMAL_NOTE_COUNT`, `#FLICK_NOTE_COUNT`, `#LONG_START_NOTE_COUNT`, `#LONG_END_NOTE_COUNT`, `#LONG_FLICK_END_NOTE_COUNT`, `#LONG_RELAY_NOTE_COUNT`, `#LONG_CONTINUE_NOTE_COUNT`, `#DAMAGE_NOTE_COUNT`, `#GHOST_NOTE_COUNT`), then `#WAVEOFFSET`, `#BASEBPM`, `#REQUEST "ticks_per_beat" 0`; data lines have no space after the colon (`#00002:4`, `#00008:01`) and use `0x03` empty runs (`#0063b0:0x0323`).
 
 ## Sources
 

@@ -32,7 +32,7 @@ rmstZ (closed source): https://lrfasd.github.io/rmstZ/ ; no open-source parser f
 
 ## Getting samples
 
-- Committed / manifest: none. No public repository with a downloadable chart under a redistributable licence was found.
+- Committed: none. No public repository with a downloadable chart under a redistributable licence was found.
 - Leads found: the 2013 iOS client of 乐动达人 keeps charts as `config.xml` / `config4.xml` (3-key / 4-key) in each song pack `1200XX.zip` of the IPA, with `type` cells of the form `N`, `N$N`, `N_N` (hold, N ms), `N_N$N`...; the browser port https://github.com/chuxue2777/yuedongdr2012web (README.dev.md, no licence) documents this and embeds the data in `js/songs.js` (not XML, ripped from the game). [inference] Relation to the `.xml` of rmstZ not verified.
 - How to get one: obtain the iOS app package of 乐动达人 (RedAtoms), unzip the song pack and read `config.xml`; or open an existing chart with rmstZ (https://lrfasd.github.io/rmstZ/, closed-source converter) which reads/writes it.
 

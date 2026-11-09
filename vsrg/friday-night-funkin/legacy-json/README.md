@@ -89,7 +89,7 @@ The vanilla format never carried a version field (Psych adds `format`, Kade adds
 - `sectionNotes` can contain lanes outside 0-7 or negative lanes (events in engine charts).
 - Holds with `sustainLength` shorter than one step produce no sustain piece in vanilla (floor).
 - `bpm` fields are ints in vanilla; fractional BPM were rounded by that type, engines changed to float.
-- Trailing garbage after the final `}` appears in real charts: the vanilla charts of tag v0.2.7.1 end with thousands of NUL bytes after the closing brace [observed in the manifest file funkin-v0.2.7.1_bopeebo.json]; a strict JSON parser fails on them.
+- Trailing garbage after the final `}` appears in real charts: the vanilla charts of tag v0.2.7.1 end with thousands of NUL bytes after the closing brace [observed in samples/funkin-v0.2.7.1_bopeebo.json]; a strict JSON parser fails on them.
 
 ## Example
 
@@ -144,10 +144,9 @@ ROX source `src/formats/fnf` (`FnfDecoder`/`FnfEncoder`, extension `json`, so ev
 
 ## Getting samples
 
-- Committed: [samples/](samples/): two synthetic charts and ROX's MIT test chart ([samples/SOURCES.md](samples/SOURCES.md)).
-- Manifest (`samples.manifest.json`): five vanilla charts of FunkinCrew/Funkin tag `v0.2.7.1` (`assets/data/<song>/<song>[-hard].json`), pinned to commit `50fccded66742a8117c898deb59bb0c2f14fb22d`. Real base-game charts are fetched, not committed: FNF's data is owned by The Funkin Crew Inc. (https://github.com/FunkinCrew/funkin.assets/blob/main/LICENSE.md: all rights reserved; the Funkin repository `LICENSE.md` says only the source code is Apache-2.0).
-- More: the same tag has every week song (easy/normal/hard); Kade Engine and Psych Engine repositories ship base-game charts in this layout (`assets/preload/data/songs/` in Kade, `assets/base_game/shared/data/` in Psych). Community mods carry `data/<song>/<song>-<diff>.json` (GameBanana is gated, not used). Converters (Moonchart, https://github.com/MaybeMaru/moonchart) can also write it.
-- Observed in the fetched files: four of five vanilla charts end with thousands of NUL bytes after the closing brace (e.g. 4192 in `funkin-v0.2.7.1_bopeebo.json`); bpm is an int; every note array has 3 elements.
+- Committed ([samples/](samples/) and [samples/SOURCES.md](samples/SOURCES.md)): five vanilla charts of FunkinCrew/Funkin tag `v0.2.7.1` (`assets/data/<song>/<song>[-hard].json`), ROX's MIT test chart, and two synthetic charts. FNF base-game data belongs to The Funkin Crew Inc. (funkin.assets LICENSE.md: all rights reserved; Funkin `LICENSE.md`: only the source code is Apache-2.0); the owner accepted that risk, so the charts are committed as downloaded snapshots.
+- Observed: four of five vanilla charts end with thousands of NUL bytes after the closing brace (e.g. 4192 in `funkin-v0.2.7.1_bopeebo.json`); bpm is an int; every note array has 3 elements.
+- More: the same tag has every week song (easy/normal/hard); the Kade and Psych repositories ship base-game charts in this layout (`assets/preload/data/songs/` in Kade, `assets/base_game/shared/data/` in Psych); community mods carry `data/<song>/<song>-<diff>.json` (GameBanana submissions, e.g. https://gamebanana.com/apiv11/Util/Search/Results?_sSearchString=...). Moonchart (https://github.com/MaybeMaru/moonchart) can also write it.
 
 ## Sources
 

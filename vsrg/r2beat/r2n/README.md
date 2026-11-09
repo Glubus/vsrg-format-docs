@@ -32,7 +32,7 @@ rmstZ (closed source).
 
 ## Getting samples
 
-- Committed / manifest: none, and no public source for the package structure was found. The R2Beat chart XML is documented in [`../xml`](../xml/README.md) (sample there).
+- Committed: none, and no public source for the package structure was found. The R2Beat chart XML is documented in [`../xml`](../xml/README.md) (sample there).
 - How to get one: [inference] `.r2n` appears in the rmstZ list only as a package to extract resources from (https://lrfasd.github.io/rmstZ/); obtain one from a QQ Speed (R2Beat) standalone/"自制音速" distribution and open it with rmstZ.
 
 ## Sources

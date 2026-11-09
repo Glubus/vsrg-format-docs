@@ -76,9 +76,8 @@ Not read by ROX: `OsuDecoder` returns `InvalidFormat("Not a mania beatmap (mode=
 
 ## Getting samples
 
-- Committed: 21 `Mode: 2` charts in [samples/](samples/) (see [samples/SOURCES.md](samples/SOURCES.md)): 15 from the osu!catch test folder of ppy/osu (MIT), 4 from kionell/osu-taiko-stable (MIT), 1 from MaxOhn/rosu-pp (MIT), 1 minimal sample map; format v14 only. Standard maps used to test conversion to catch are in [../../osu-standard/osu/samples/](../../osu-standard/osu/samples/).
-- Manifest (`samples.manifest.json`): nothing for this format.
-- More: any osu! mapset (`.osz`, a zip of `.osu` files + audio) contains `.osu` files; the catch ones have `Mode: 2` in `[General]`. Mapset download from osu.ppy.sh needs an account [inference: the site shows "Sign In To Proceed" to anonymous visitors]; maps must be used under the mapper's/artist's permission (see https://osu.ppy.sh/wiki/en/Rules/Content_usage_permissions). Parser test folders with catch maps: ppy/osu `osu.Game.Rulesets.Catch.Tests/Resources/Testing/Beatmaps`, kionell/osu-taiko-stable `tests/Files/Catch/Beatmaps` (and its sibling repos by the same author, not opened), MaxOhn/rosu-pp `resources/`.
+- Committed ([samples/](samples/), see [samples/SOURCES.md](samples/SOURCES.md)): 21 `Mode: 2` charts (ppy/osu catch tests, kionell/osu-taiko-stable, MaxOhn/rosu-pp); format v14 only. Standard maps used to test conversion to catch are in [../../osu-standard/osu/samples/](../../osu-standard/osu/samples/).
+- More: any osu! mapset (`.osz`) with catch difficulties has `.osu` files with `Mode: 2`; download from osu.ppy.sh needs an account [inference]. Fixture folders: ppy/osu `osu.Game.Rulesets.Catch.Tests/Resources/Testing/Beatmaps`, kionell/osu-taiko-stable `tests/Files/Catch/Beatmaps`.
 
 ## Sources
 

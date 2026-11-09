@@ -146,9 +146,9 @@ Not read by ROX. ROX has no BMS support in 0.8.1 (planned); an `.ibmsc` reader w
 
 ## Getting samples
 
-- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): two hand-built `.ibmsc` files (`synthetic-minimal.ibmsc`, `synthetic-features.ibmsc`) produced by following the pBMSC reader/writer and verified only with a mirrored Python reader (not opened in iBMSC).
-- **Not found anywhere**: the `aqtq314/iBMSC` and `Shimi9999/pBMSC` repositories contain no sample project and no LICENSE file; nobody publishes `.ibmsc` files because they are an editor save format (BMS charts are published as `.bms`/`.bme`).
-- **To get a real one**: install iBMSC, uBMSC or pBMSC (Windows, .NET), open or draw any chart and use *Save* with the `.ibmsc` filter (`SaveiBMSC` in `iBMSC/ChartIO.vb`); or open any `.bms` in the editor and save it as `.ibmsc`. Real files also contain the editor's undo/redo history.
+- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): five `.ibmsc` projects converted from real BMS charts (5K, 7K, 14K, long notes, custom measure lengths) by a script that follows the pBMSC writer, plus two hand-built synthetic files. They were never opened in iBMSC (only checked by a Python reader mirroring `OpeniBMSC`).
+- **No genuine editor-saved file was found**: `aqtq314/iBMSC`, `Shimi9999/pBMSC`, `zardoru/iBMSC`, `RM-801/iBMSC-electron` and `asdfghjkoiuy/iBMSCPP` contain none and nobody publishes them (BMS charts are published as `.bms`).
+- **To get a genuine one**: install iBMSC, uBMSC or pBMSC (Windows, .NET), open any `.bms` and save with the `.ibmsc` filter (`SaveiBMSC` in `iBMSC/ChartIO.vb`).
 
 ## Sources
 

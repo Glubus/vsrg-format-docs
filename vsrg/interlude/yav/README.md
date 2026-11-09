@@ -69,8 +69,8 @@ None. ROX has no Interlude codec; a converter would need the key count, BPM and 
 
 ## Getting samples
 
-- **Committed** in [`samples/`](samples/) (see [`SOURCES.md`](samples/SOURCES.md)): one 114-byte hand-built CC0 blob (4 keys, holds, 2 BPM, 3 SV) written from the source and read back with an independent decoder.
-- **Manifest**: none. The 7 real charts decoded for this page (4K, 6K, 7K, 9K; 1.5-17.8 KB) come from the live CDN, which is not immutable (most listed hashes already 404), so they are not hashed; reproduce with `curl -L https://cdn.yavsrg.net/<HASH>` for the hashes of `backbeat/archive/charts.json` whose `Keys` you want (e.g. `10998A892E0891DDF16AD36EFE15340F08A45D3827BF03A89383D0A64F9ED912`, 4K, 1537 bytes, at the time of writing); check the response is not the 94-byte JSON error.
+- **Committed** in [`samples/`](samples/) (see [`SOURCES.md`](samples/SOURCES.md)): 7 real charts downloaded from the Interlude CDN (4K x3, 6K, 7K x2, 9K; 1.5-17.8 KB; sources/authors recorded) and one 114-byte hand-built CC0 blob (4 keys, holds, 2 BPM, 3 SV) read back with an independent decoder.
+- **Also**: the CDN is a live site; most hashes listed in `backbeat/archive/charts.json` already answer HTTP 404 (JSON body, not a chart), so only these 7 could be downloaded on 2026-11-09. Fetch more with `curl -L https://cdn.yavsrg.net/<HASH>` and check the response is not the 94-byte error.
 - **How to get more**: install Interlude (https://www.yavsrg.net), import any osu!mania/StepMania/Quaver library (Options > Library); the charts land in the SQLite `charts` table as `Chart` BLOBs (location of the database file: Unknown here), which you can extract with any SQLite tool; legacy folders of `.yav` files exist only in Interlude builds before the "Chart database" change [inference, changelog gives no version here].
 
 ## Sources

@@ -1,12 +1,3 @@
 # Samples: Rocksmith 2014 package (`.psarc`)
 
-## Fetched by tools/fetch-samples.sh (not committed; listed in samples.manifest.json)
-
-| Target file | URL | Licence note | What it exercises |
-|---|---|---|---|
-| `rocksmith2014net_PSARC.Tests_test_p.psarc` | https://raw.githubusercontent.com/iminashi/Rocksmith2014.NET/4cf3325174e13f1dc5ce997e7663b2851c6afcce/tests/Rocksmith2014.PSARC.Tests/test_p.psarc | MIT (iminashi/Rocksmith2014.NET repository `LICENSE`); package may embed audio banks | PC PSARC fixture of the PSARC unit tests (273 KB, zlib blocks, encrypted table of contents); not committed: a PSARC holds audio/WEM banks and its content could not be listed without decrypting the table of contents |
-| `rocksmith2014net_PSARC.Tests_partially_compressed_test_p.psarc` | https://raw.githubusercontent.com/iminashi/Rocksmith2014.NET/4cf3325174e13f1dc5ce997e7663b2851c6afcce/tests/Rocksmith2014.PSARC.Tests/partially_compressed_test_p.psarc | MIT (iminashi/Rocksmith2014.NET repository `LICENSE`); package may embed audio banks | PC PSARC fixture with only some entries compressed (787 KB); not committed: a PSARC holds audio/WEM banks and its content could not be listed without decrypting the table of contents |
-| `rocksmith2014net_IntegrationTests_test_p.psarc` | https://raw.githubusercontent.com/iminashi/Rocksmith2014.NET/4cf3325174e13f1dc5ce997e7663b2851c6afcce/tests/Rocksmith2014.IntegrationTests/psarc/test_p.psarc | MIT (iminashi/Rocksmith2014.NET repository `LICENSE`); package may embed audio banks | PC CDLC test package used by the importer integration test (1.4 MB); not committed: a PSARC holds audio/WEM banks and its content could not be listed without decrypting the table of contents |
-| `rocksmith2014net_IntegrationTests_test_m.psarc` | https://raw.githubusercontent.com/iminashi/Rocksmith2014.NET/4cf3325174e13f1dc5ce997e7663b2851c6afcce/tests/Rocksmith2014.IntegrationTests/psarc/test_m.psarc | MIT (iminashi/Rocksmith2014.NET repository `LICENSE`); package may embed audio banks | macOS variant (_m) of the same CDLC test package (1.4 MB); not committed: a PSARC holds audio/WEM banks and its content could not be listed without decrypting the table of contents |
-
-Notes: nothing is committed (PSARC files hold WEM audio banks). All four files start with the bytes `50 53 41 52 00 01 00 04 7a 6c 69 62` (`PSAR`, version 1.4, `zlib`) as the fiche describes; their entries were not listed.
+Container only: this folder holds no archive. The compiled arrangements and XML of CDLC packages are in [../../sng/samples/](../../sng/samples/) and [../../xml/samples/](../../xml/samples/).

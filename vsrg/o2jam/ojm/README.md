@@ -112,7 +112,7 @@ Read by ROX since Prism's addition of `rox::formats::o2jam::OjmContainer` (M30 f
 
 ## Getting samples
 - **Committed** ([`samples/`](samples/SOURCES.md)): eleven tiny **synthetic** containers from djzmo/render-ojn (GPL-3.0): M30 with flags 0/16/32 and malformed variants, an `OJM\0` file with a zero-length PCM slot and one with trailing empty OGG records. They carry no real audio.
-- **Not committed**: real OJM files hold the game's audio (copyright); none is listed in the manifest. No `OMC\0` example is available.
+- **Not committed**: real OJM files hold the game's audio (an OJM cannot be stripped of it), so only the synthetic containers are kept. No `OMC\0` example is available.
 - **How to get real ones**: every OJN has a sibling `o2ma<id>.ojm` in the client's `Music/` folder (and the client's `BGM.ojm`, `BgEffect.ojm`, `Planet.ojm`, `O2PlanetNPC.ojm`, fiche); the Server Two music pack in [ojn samples](../ojn/samples/README.md) is the community source of OJN+OJM pairs. Extract with https://github.com/SirusDoma/CXO2 (`OjmArchive`, `OmcArchive`, `M30Archive` headers), the Open2Jam `OJMParser.java`, or `render-ojn` (renders OJN+OJM to audio). The render-ojn private-fixture notes report that real packs mix M30 (most), OMC and OJM variants.
 
 ## Sources

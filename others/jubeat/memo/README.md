@@ -44,7 +44,7 @@ The chart is a series of **frames**: left, 4 text lines (one per panel row) of 4
 
 Frames/sections are measured in beats; `b` = beats per section (4 default); tempo `t` and offset `o` (ms). Each timing symbol maps to a beat fraction (`1/4` beat per symbol index for `#memo`). Absolute time = integral of tempo over the beats + `o`/1000. `#memo` is the original; `#memo1` forbids BPM changes within a bar. jubeatools notes that for decimal-length sections (not multiple of 1/4) the last frame's duration is mis-computed ("wrong for the last frame").
 
-[observed in manifest samples jubeatools_MTC_Mimi_EXT.txt, jubeatools_MTC_Nageki_no_Ki_EXT.txt, jubeatools_RorataJin_example.txt, jubeatools_Booths_of_Fighters_memo.txt] Real files use CRLF; `#memo2` frames look like `□□①□　　　|①−−−|` (4 panel cells, then the timing column); community files declare their own timing symbols with `*01:0`, `*02:0.25`, `*a2:0.166667` lines (symbol name, beat position), set `#holdbyarrow=1`, put `//` comment headers (which may be in a non-Shift-JIS encoding such as EUC-KR) before `t=`/`m=`/`o=`, and a `#memo` file may separate its frames with `--------` lines.
+[observed in samples/jubeatools_MTC_Mimi_EXT.txt, jubeatools_MTC_Nageki_no_Ki_EXT.txt, jubeatools_RorataJin_example.txt, jubeatools_Booths_of_Fighters_memo.txt] Real files use CRLF; `#memo2` frames look like `□□①□　　　|①−−−|` (4 panel cells, then the timing column); community files declare their own timing symbols with `*01:0`, `*02:0.25`, `*a2:0.166667` lines (symbol name, beat position), set `#holdbyarrow=1`, put `//` comment headers (which may be in a non-Shift-JIS encoding such as EUC-KR) before `t=`/`m=`/`o=`, and a `#memo` file may separate its frames with `--------` lines.
 
 ## Notes
 
@@ -90,9 +90,7 @@ Not read by ROX 0.8.1.
 
 ## Getting samples
 
-**Committed:** none (no source with a clear licence was found; see [`samples/SOURCES.md`](samples/SOURCES.md)). **Manifest:** four jubeatools test files (`#memo2`, two community "MTC" charts with custom symbols and non-Shift-JIS bytes, and a `#memo` single-column file), pinned to a jubeatools commit; the repository has no LICENSE.
-
-**How to get more**: jubeat analyser charts are community-written `.txt` files; the jubeat analyser site (<https://yuisin.com/jubeat/analyser/jubeatmemo_use.html>, quoted in the README) documents the format, and F.E.I.S. / jubeatools can convert memon to the memo dialects (jubeatools writes `memo`, `memo1`, `memo2`, `mono-column`, `youbeat`, `boogie`). Community charts for the Windows simulator circulate on Japanese jubeat analyser sites and Korean communities (the MTC fixtures are by "Mintice", 2019) [inference from the fixtures]; their licence is rarely stated.
+**Committed** ([`samples/`](samples/SOURCES.md)): 8 real files from the jubeatools test data (`#memo2`, `#memo`, `#memo2` with `#circlefree`, community "MTC" charts with custom symbols and non-Shift-JIS bytes, two yubiosi texts); no LICENSE in that repository. More: the jubeat analyser site (<https://yuisin.com/jubeat/analyser/jubeatmemo_use.html>; needs a browser User-Agent) documents the format; jubeatools writes the memo dialects from memon; community charts for the Windows simulator circulate on Japanese/Korean fan sites (licence rarely stated) [inference].
 
 ## Sources
 

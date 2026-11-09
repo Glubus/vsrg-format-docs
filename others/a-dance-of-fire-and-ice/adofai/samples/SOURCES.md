@@ -1,16 +1,19 @@
 # Samples: ADOFAI level (`.adofai`)
 
-## Committed
+## Committed (synthetic, hand-written)
 
-| File | Origin (URL, pinned commit if any) | Author | Licence | What it exercises |
+| File | Origin | Author | Licence | What it exercises |
 |---|---|---|---|---|
-| `adofai-cli_demo.adofai` | https://github.com/3289david/adofai-cli/blob/878bc764cc07e445ebd093322ad120f149ab6dad/examples/demo.adofai | danwoo (adofai-cli) | MIT (repo LICENSE, "Copyright (c) 2026 danwoo") | Tiny demo level shipped with a terminal ADOFAI engine: `angleData` (32 tiles, 0/45/90/180/270/315), `settings` version 13, events Twirl, SetSpeed (absolute BPM), Flash, ShakeScreen; LF line endings, array values on one line |
 | `synthetic-angledata.adofai` | hand-written from the fiche (angleData, 999 midspin, Twirl, SetSpeed Multiplier/Bpm, Checkpoint, trailing commas) | OthersA | CC0 / public domain (hand-written for this repository) | synthetic. `angleData` with a 999 midspin tile, Twirl, SetSpeed in both Multiplier and Bpm forms, Checkpoint, trailing commas before `]`/`}`, tab indentation; no audio referenced |
 | `synthetic-pathdata.adofai` | hand-written from the fiche (legacy `pathData`, absolute letters and `!` midspin, ADOFAI Expansion table) | OthersA | CC0 / public domain (hand-written for this repository) | synthetic. Legacy `pathData` string "RRUULLDDRR!ETo" (R=0, U=90, L=180, D=270, `!`=999 midspin, E=45, T=60, o=75); `settings.version` value is a placeholder (version history Unknown); trailing commas |
 
-## Fetched by tools/fetch-samples.sh (not committed; listed in samples.manifest.json)
+## Real charts downloaded from public sources (snapshots, fetched 2026-11-09)
 
-| Target file | URL | Licence note | What it exercises |
-|---|---|---|---|
-| `anglepath_backup_level.adofai` | https://raw.githubusercontent.com/xiaohuihui1022/AngleData-PathData/fe964a2763c63c13e55f55f022f2a93f81380ab1/ATPCliMode/bin/Debug/backup_level.adofai | File sits in a GPL-3.0 repo (build output folder), but is a third-party community level: authorship/licence unclear, not committed | Real level: UTF-8 BOM + CRLF, tab indentation, angleData with many 999 midspin tiles (0,150,999 triplets) (2148 bytes) |
-| `anglepath_before.adofai` | https://raw.githubusercontent.com/xiaohuihui1022/AngleData-PathData/fe964a2763c63c13e55f55f022f2a93f81380ab1/AngleDataToPathData/bin/Debug/before.adofai | File sits in a GPL-3.0 repo (build output folder), but is a third-party community level (artist field kry.exe): authorship/licence unclear, not committed | Real 211 KB level, settings.version 11, CRLF, rich settings/actions/decorations (large event set) (211689 bytes) |
+| File | Source URL | Date fetched | sha256 (of the downloaded file) | Author | Licence / terms as known | What it exercises / remarks |
+|---|---|---|---|---|---|---|
+| `adofai-cli_demo.adofai` | https://github.com/3289david/adofai-cli/blob/878bc764cc07e445ebd093322ad120f149ab6dad/examples/demo.adofai | 2026-11-09 | 4c49f4e54dbb3aae5d5a40f612739ff327d9410799a98c5769739bf57fb39bf0 | danwoo (adofai-cli) | MIT (repo LICENSE, "Copyright (c) 2026 danwoo") | Tiny demo level shipped with a terminal ADOFAI engine: `angleData` (32 tiles, 0/45/90/180/270/315), `settings` version 13, events Twirl, SetSpeed (absolute BPM), Flash, ShakeScreen; LF line endings, array values on one line |
+| `anglepath_backup_level.adofai` | https://raw.githubusercontent.com/xiaohuihui1022/AngleData-PathData/fe964a2763c63c13e55f55f022f2a93f81380ab1/ATPCliMode/bin/Debug/backup_level.adofai | 2026-11-09 | ee4c19f218cb2c4a70590a3db01aa6b90ea53307c97a136ee4134533253811c5 | see remarks | File sits in a GPL-3.0 repo (build output folder), but is a third-party community level: authorship/licence unclear, not committed | Real level: UTF-8 BOM + CRLF, tab indentation, angleData with many 999 midspin tiles (0,150,999 triplets) |
+| `anglepath_before.adofai` | https://raw.githubusercontent.com/xiaohuihui1022/AngleData-PathData/fe964a2763c63c13e55f55f022f2a93f81380ab1/AngleDataToPathData/bin/Debug/before.adofai | 2026-11-09 | c2851755c259ba303c6eb6690586f6a01f2142000ea5833549d7fdfc33380cf8 | see remarks | File sits in a GPL-3.0 repo (build output folder), but is a third-party community level (artist field kry.exe): authorship/licence unclear, not committed | Real 211 KB level, settings.version 11, CRLF, rich settings/actions/decorations (large event set) |
+| `bad-apple-adofai_bad_apple.adofai` | https://github.com/c4r10spr02010/bad-apple-adofai/blob/b15894fceb430ed9769b527646ec885fc780f491/bad%20apple%21%21/bad%20apple%21%21.adofai | 2026-11-09 | 74d29a01d0bda119fc8482360b013e8b0cbbb32c4872e510fde21904ceaf82f2 | c4r10spr02010 | no licence in repo; accepted risk | real community level (10669 bytes), UTF-8 BOM + CRLF; main level file |
+| `bad-apple-adofai_sub1.adofai` | https://github.com/c4r10spr02010/bad-apple-adofai/blob/b15894fceb430ed9769b527646ec885fc780f491/bad%20apple%21%21/sub1.adofai | 2026-11-09 | 0944e2d56172e0a3ff8b4ba9f8c081417233d4a956927234389293df8916cc34 | c4r10spr02010 | no licence in repo; accepted risk | real community level (1910 bytes), UTF-8 BOM + CRLF; auxiliary level file |
+| `belupacito-adofai-beta_beludofai.adofai` | https://github.com/c4r10spr02010/belupacito-adofai-beta/blob/6410504c72c59947cf5a51c817313fbf012f9e7a/belupacito/beludofai.adofai | 2026-11-09 | aae70069834315a81fa614c4c0566acd9a4320aa3f6bb8713436d85e7179b12f | c4r10spr02010 | no licence in repo; accepted risk | real community level (100809 bytes), UTF-8 BOM + CRLF |

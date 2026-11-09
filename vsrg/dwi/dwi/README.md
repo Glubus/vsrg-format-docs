@@ -152,11 +152,9 @@ Read by Prism (`docs/game.md` "Formats de danse"): one entry per playable chart;
 
 ## Getting samples
 
-Committed in [`samples/`](samples/SOURCES.md): one **synthetic** (hand-written, CC0) file covering `#GAP`, `#CHANGEBPM`, `#FREEZE`, `#DISPLAYBPM`, `#SINGLE/#DOUBLE/#SOLO/#COUPLE`, `( )` `[ ]` groups, `<..>` jumps and `!` holds.
+Committed in [`samples/`](samples/SOURCES.md) (48 REAL files plus one synthetic; per-file origin/sha256 in `SOURCES.md`): the official sample song of DWI (`dwi-official_notmybattle.dwi`, extracted from `NotMyBattle.zip` on dwi.ddruk.com); the four DWI files bundled with StepMania 0.95 (`stepmania-0.95_*.dwi`, `#FILE` with Windows paths); 31 `.dwi` of the StepMix 1.0 pack (`stepmix-1.0/`); five from StepMania-Complete-disc packages (`stepmania-complete-disc/`); DDR 3rdMix/5thMix charts as DWI from noahm/simfile-parser (`ddr-*`), and a community `02 Ants.dwi` (`bhop-ball_`). They cover `#CHANGEBPM`, `#FREEZE`, `#SOLO/#COUPLE/#DOUBLE`, CRLF and LF files. `synthetic-demo.dwi` is hand-written (CC0) and does not count.
 
-Manifest (fetched to `samples-local/vsrg/dwi/dwi/`): three real `.dwi` files from the parser test packs of [noahm/simfile-parser](https://github.com/noahm/simfile-parser) at commit `f7ff6e3c754a9a04aa705b8129dc89523fd4b02f` (DDR 3rdMix and 5thMix charts converted to DWI, and a community pack's `02 Ants.dwi`); the repository has no licence, so not committed. The pack folders hold 38 (3rdMix) and 40 (5thMix) `.dwi` files in total.
-
-More: the official sample song of Dance With Intensity, `NotMyBattle.zip` (GunDrill, 2.1 MB; contains `notmybattle.dwi` with tempo changes and holds, mp3, png), downloadable from http://dwi.ddruk.com/downloads.php (live; its only Wayback copy is truncated to 1 MiB so it is not in the manifest; no licence statement seen). Songs from DWI-era packs: `.dwi` files sit next to the audio in each song folder. StepMania can also *write* `.dwi` (`NotesWriterDWI`), so any `.sm` can be exported to test a reader.
+More: archive.org (searched 2026-11-09): `DWIExtremeT1`..`T9`, `DWIExtremeF1`..`F9`, `DWIExtremeS1`..`S9`, `DWIExtremeL4`, `DWIExtremeIV`, `dwi-extreme-all` (4.9 GB complete collection of the DWI Extreme song packs; each pack zip holds ~20 `.dwi` + mp3), `DWI-2-50-00` (DWI 2.50.00 and the sample song), `dance-with-intensity` (all DWI program releases: no songs). Also the `packs/3rdMix`, `packs/5thMix` folders of simfile-parser (38 and 40 `.dwi`). StepMania can also *write* `.dwi` (`NotesWriterDWI`).
 
 ## Sources
 

@@ -134,9 +134,9 @@ This is the reference implementation (`RoxNativeCodec`, extensions `["rox"]`): r
 
 ## Getting samples
 
-- **Committed**: none. `.rox` is an rkyv archive inside a zstd frame; it can only be produced by the Rust codec, and building anything was not allowed for this corpus, so no file was fabricated by hand. The upstream repository `Glubus/rhythm-open-exchange` (MIT) ships no `.rox` fixture either (checked at commit `cbceffbc3bf2987170f412992cc43c5ee9b62c00`: its `assets/` folder holds `.osu`, `.qua`, `.sm`, `.fnf`/`.json`, `.bms/.bme/.pms/.bmson` sources only).
-- **How to get one**: decode any supported chart and re-encode it. With the crate (`rhythm-open-exchange` 0.8.1, library name `rox`): `let chart = auto_decode(path)?; auto_encode(&chart, "output.rox")?;` (this is the repo's `examples/auto_conversion.rs`, using `assets/osu/mania_7k.osu`). The text twins [`.jrox`](../jrox/) and [`.yrox`](../yrox/) of the same model have committed samples in their folders, and hold the same data (a `.rox` is the same `RoxChart`).
-- Note: the Prism repository keeps `.rox` files as test fixtures, but they come from community maps (their metadata names third-party packs), so they are not redistributable here.
+- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): nine real `.rox` files (community 4K maps converted by Prism: chordjack, jack, hold-heavy, many-BPM charts), byte-exact copies. All are 4K; no genuine non-4K file was available (the Prism demo charts are synthetic demo data, not committed).
+- **More**: decode any supported chart and re-encode it. With the crate (`rhythm-open-exchange` 0.8.1, library `rox`): `let chart = auto_decode(path)?; auto_encode(&chart, "output.rox")?;` (the repo's `examples/auto_conversion.rs`). Upstream `Glubus/rhythm-open-exchange` ships no `.rox`.
+- Layout verified on these files [observed in samples/]: the zstd payload is an rkyv root that sits at the end of the buffer (200 bytes for `RoxChart`: `version`, `key_count`, `Metadata` at offset 8, the three vector headers last); notes are 32-byte records with delta-encoded `time_us`.
 
 ## Sources
 

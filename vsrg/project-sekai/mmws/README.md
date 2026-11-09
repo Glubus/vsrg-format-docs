@@ -49,8 +49,9 @@ rg_converters (Python/C++): <https://github.com/UntitledCharts/rg_converters>; M
 
 ## Getting samples
 
-- Committed / manifest: none. No `.mmws` file exists in any of the MikuMikuWorld repositories checked (Eyelove3rd, serseraph, vewaxio, Choccodrize, GuanYixuan forks: no `.mmws` in their trees; crash5band/MikuMikuWorld and sevenc-nanashi/MikuMikuWorld4CC were not retrievable anonymously from here). A binary file cannot be hand-written safely without a verified decoder.
-- How to get one: install MikuMikuWorld (https://github.com/crash5band/MikuMikuWorld releases), create a chart (or open a `.sus`) and use File > Save: it writes `.mmws`. Community charts are shared as `.mmws` in the Untitled Sekai / Chart Cyanvas Discord communities and on their sites (check the author's licence). rg_converters lists `.mmws/.ccmmws/.unchmmws` as fully supported (read and write) in its README, so it can convert SUS/USC to `.mmws`.
+- Committed in [`samples/`](samples/): 5 `rgconv_*.mmws` files, produced by rg-converters (`mmw.mmws.export`) from real official/engine charts. **They are converted, not downloaded**: no `.mmws` file is published anywhere I could reach (checked the MikuMikuWorld fork repos, the Chart Cyanvas and Untitled Charts tooling). Everything is listed with origin, date and sha256 in [`samples/SOURCES.md`](samples/SOURCES.md).
+- Observed [observed in samples/rgconv_sekaibest_0001_01_easy.mmws]: file starts with the magic `MMWS` followed by `00 04 00 00 00` ...
+- How to get a native one: install MikuMikuWorld (crash5band) or a fork, open a `.sus` and File > Save.
 
 ## Sources
 

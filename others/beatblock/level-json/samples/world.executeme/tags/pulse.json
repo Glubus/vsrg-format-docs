@@ -1,0 +1,42 @@
+[
+    {
+        "angle": 22.5,
+        "time": 0,
+        "var": "vfx.canvPos.sx",
+        "type": "ease",
+        "duration": 0,
+        "value": 1.01,
+        "repeats": 7,
+        "repeatDelay": 1
+    },
+    {
+        "angle": 33.75,
+        "time": 0,
+        "var": "vfx.canvPos.sy",
+        "type": "ease",
+        "duration": 0,
+        "value": 1.01,
+        "repeats": 7,
+        "repeatDelay": 1
+    },
+    {
+        "angle": 33.75,
+        "time": 0.0625,
+        "var": "vfx.canvPos.sy",
+        "type": "ease",
+        "duration": 0.25,
+        "value": 1,
+        "repeats": 7,
+        "repeatDelay": 1
+    },
+    {
+        "angle": 22.5,
+        "time": 0.0625,
+        "var": "vfx.canvPos.sx",
+        "type": "ease",
+        "duration": 0.25,
+        "value": 1,
+        "repeats": 7,
+        "repeatDelay": 1
+    }
+]

@@ -111,9 +111,8 @@ Not read by ROX 0.8.1.
 
 ## Getting samples
 
-- **Committed**: 4 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
-- **Manifest**: none.
-- **More samples**: UGC files are written by the Margrete editor (the header comment of every committed file says "Created with Margrete vX"); MuConvert (LGPL-3.0) keeps example UGC files in `tests/chu/testset/自制谱/`; the UMIGURI documentation (https://umgr.inonote.jp/) explains how songs and charts are added. Charts are shared by the CHUNITHM simulator community [inference].
+- **Committed**: 10 real UGC files from Margrete: 4 from MuConvert tests and 6 fan charts from https://github.com/mitsuhira/UMIGURI_charts (all `@VER 8` except one `@VER 6`). Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **More samples**: UGC files are written by the Margrete editor; the same UMIGURI_charts repo also has `.mgxc` files for every chart; UMIGURI docs (https://umgr.inonote.jp/) explain adding songs.
 
 ## Sources
 

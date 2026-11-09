@@ -146,9 +146,8 @@ Not read by ROX. No Beat Saber codec in ROX 0.8.1.
 
 ## Getting samples
 
-- **Committed**: 16 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
-- **Manifest**: 19 entries in `samples.manifest.json` (downloaded by `tools/fetch-samples.sh` into `samples-local/`; listed in [`samples/SOURCES.md`](samples/SOURCES.md))
-- **More samples**: Beat Saber maps are on BeatSaver (https://beatsaver.com; public API `https://api.beatsaver.com/search/text/0?q=<term>` and `https://api.beatsaver.com/maps/id/<id>`, zips at `https://cdn.beatsaver.com/<hash>.zip`). Uploaders sometimes state a licence in the description: searching for `cc0` found the goldcray maps committed here (mapping CC0 per the description). The official schema snippets for every file version are in https://github.com/bsmg/wiki (`wiki/.assets/snippets/`, CC BY-NC-SA, manifest), and BeatSaber-Deno (MIT) has v1-v4 fixtures (`tests/resources/`). Search ideas: `Standard`, `Lawless`, `360Degree`, `Noodle Extensions`, `Chroma` for variant files.
+- **Committed**: 51 real files: BeatSaber-Deno fixtures (v1-v4, MIT) and larger community fixtures, the official BSMG wiki snippets (`bsmgwiki_*.dat`, versions 1.5.0 to 4.1.0 for beatmap, lightshow and audio), and one subfolder per BeatSaver map set (`<id>_<hash8>/`: CC0 goldcray maps, a CC BY music map, and recent v2/v4 maps) extracted from BeatSaver zips; audio and covers were dropped. Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **More samples**: BeatSaver (https://beatsaver.com; API `https://api.beatsaver.com/search/text/0?q=<term>`, `https://api.beatsaver.com/maps/latest`, zips at `https://cdn.beatsaver.com/<hash>.zip`). Searching `cc0` finds maps whose author states a licence. BeatSaber-Deno (`tests/resources/`) has more fixtures.
 
 ## Sources
 - https://bsmg.wiki/mapping/map-format.html

@@ -1,0 +1,164 @@
+[
+    {
+        "type": "deco",
+        "time": 0,
+        "id": "lyr0",
+        "y": 20,
+        "angle": 0,
+        "sprite": "lyrics#116",
+        "order": -1
+    },
+    {
+        "type": "deco",
+        "time": 0,
+        "id": "lyr1",
+        "y": 35,
+        "angle": 348.75,
+        "sprite": "lyrics#116",
+        "order": -1
+    },
+    {
+        "type": "deco",
+        "time": 0,
+        "id": "lyr2",
+        "y": 50,
+        "sprite": "lyrics#116",
+        "angle": 337.5,
+        "order": -1
+    },
+    {
+        "type": "deco",
+        "time": 0,
+        "id": "lyr5",
+        "y": 95,
+        "sprite": "lyrics#116",
+        "angle": 303.75,
+        "order": -1
+    },
+    {
+        "type": "deco",
+        "time": 0,
+        "angle": 326.25,
+        "y": 65,
+        "sprite": "lyrics#116",
+        "id": "lyr3",
+        "order": -1
+    },
+    {
+        "type": "deco",
+        "time": 0,
+        "sprite": "lyrics#116",
+        "y": 80,
+        "id": "lyr4",
+        "angle": 315,
+        "order": -1
+    },
+    {
+        "type": "deco",
+        "time": 0,
+        "angle": 281.25,
+        "y": 125,
+        "id": "lyr7",
+        "sprite": "lyrics#116",
+        "order": -1
+    },
+    {
+        "type": "deco",
+        "time": 0,
+        "angle": 292.5,
+        "y": 110,
+        "sprite": "lyrics#116",
+        "id": "lyr6",
+        "order": -1
+    },
+    {
+        "type": "deco",
+        "time": 0,
+        "id": "lyr8",
+        "y": 140,
+        "angle": 270,
+        "sprite": "lyrics#116",
+        "order": -1
+    },
+    {
+        "type": "deco",
+        "time": 0,
+        "sprite": "lyrics#116",
+        "y": 155,
+        "angle": 258.75,
+        "id": "lyr9",
+        "order": -1
+    },
+    {
+        "type": "deco",
+        "time": 0,
+        "sprite": "lyrics#116",
+        "y": 170,
+        "angle": 258.75,
+        "id": "lyr10",
+        "order": -1
+    },
+    {
+        "type": "deco",
+        "time": 0,
+        "sprite": "lyrics#116",
+        "y": 185,
+        "angle": 258.75,
+        "id": "lyr11",
+        "order": -1
+    },
+    {
+        "type": "deco",
+        "time": 0,
+        "sprite": "lyrics#116",
+        "y": 200,
+        "angle": 258.75,
+        "id": "lyr12",
+        "order": -1
+    },
+    {
+        "type": "deco",
+        "time": 0,
+        "sprite": "lyrics#116",
+        "y": 215,
+        "angle": 258.75,
+        "id": "lyr13",
+        "order": -1
+    },
+    {
+        "type": "deco",
+        "time": 0,
+        "sprite": "lyrics#116",
+        "y": 230,
+        "angle": 258.75,
+        "id": "lyr14",
+        "order": -1
+    },
+    {
+        "type": "deco",
+        "time": 0,
+        "sprite": "lyrics#116",
+        "y": 245,
+        "angle": 258.75,
+        "id": "lyr15",
+        "order": -1
+    },
+    {
+        "type": "deco",
+        "time": 0,
+        "sprite": "lyrics#116",
+        "y": 260,
+        "angle": 258.75,
+        "id": "lyr16",
+        "order": -1
+    },
+    {
+        "type": "deco",
+        "time": 0,
+        "sprite": "lyrics#116",
+        "y": 275,
+        "angle": 258.75,
+        "id": "lyr17",
+        "order": -1
+    }
+]

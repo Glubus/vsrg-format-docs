@@ -13,11 +13,11 @@ Doc status: stub · ROX: no · Category: vsrg · Encoding: archive
 
 ## Container & encoding
 - ZIP archive (standard deflate/store). Evidence that it is a normal zip: malody2osu simply renames `.mcz` to `.zip` and calls Python `zipfile.ZipFile(...).extractall(...)`; MorePracticeMalodyServer opens a chart pack with .NET `ZipFile.OpenRead` and reads a named `.mc` entry.
-- Inside: `.mc` file(s) (JSON, may begin with a UTF-8 BOM, see the mc doc), audio (the `type:1` note's `sound`, typically `.ogg`), background (`meta.background`), optional video (`meta.video`), per-note keysound files. Exact directory layout (flat vs one directory per chart) is Unknown; the samples seen name the files by id/timestamp.
+- Inside: `.mc` file(s) (JSON, may begin with a UTF-8 BOM, see the mc doc), audio (the `type:1` note's `sound`, typically `.ogg`), background (`meta.background`), optional video (`meta.video`), per-note keysound files. Directory layout: Malody Chart Forge's exports put everything in a folder `0/` (`0/<tier>--<difficulty>.mc`, `0/audio.ogg`, `0/background.png|jpg`) [observed in samples/forge-demo_toy-vwp.noaudio.mcz]; the PayToUse zips use a `<name>/` folder (one has a nested `<name>/<name>/`) [observed in samples/malody-custom-charts_bee.noaudio.mcz upstream listing]; other layouts may exist.
 - The Store API (`/api/store/download`) returns, per chart, a list of `{name, hash, file}` items: file name, MD5 and URL; a client downloads these files individually and (as [inference]) can store them as a package. The server `sid`/`cid` identify song/chart; chart `.mc` `meta.id` / `meta.song.id` carry the same ids.
 
 ## Structure / metadata
-No package-level manifest known. Metadata is read from each `.mc` (`meta.song.title`, `artist`, `id`, `mode`, `version`, ...), see [mc](../mc/README.md). MorePractice's server additionally reads non-standard `meta.song.file` and `meta.song.bpm` fields from a server-side `.mc` (class `SongMeta`), which are not present in the downloaded sample `.mc` files in this repo.
+No package-level manifest known [observed in the original forge-demo toy-vwp package, extracted to ../mc/samples/forge-demo_toy-vwp/: members `0/<tier>--<difficulty>.mc`, `0/audio.ogg`, `0/background.jpg`].
 
 ## Timing model
 Not applicable (see mc).
@@ -48,9 +48,10 @@ Not read by ROX (no archive support in `src/formats/`; ROX reads the extracted `
 
 ## Getting samples
 
-- **Committed** in [`samples/`](samples/) (see [`SOURCES.md`](samples/SOURCES.md)): two audio-less packages built here with Python `zipfile`: `built-quaver-api-malody-audioless.mcz` (3 Key charts, MPL-2.0 sources) and `built-mc2tja-taiko-audioless.mcz` (2 Taiko charts, MIT sources). Their flat layout is an [inference]: no real `.mcz` could be downloaded.
-- **Manifest**: none.
-- **How to get more**: Malody's in-game store downloads and its editor's export write `.mcz`; malody2osu accepts dragged `.mcz`/`.zip` files and renames them to `.zip` (see Parsers & tools); the community also shares `.mcz` on the Malody forum and Discord [inference, not checked]. Since an `.mcz` is a ZIP, unzip it to see the real layout.
+- **No archive is stored in this repository.** Real packages (5 Malody Chart Forge demo exports, 3 zips of PayToUse/malody-custom-charts) were downloaded and their `.mc` extracted: [`../mc/samples/`](../mc/samples/) (`forge-demo_*/` and `malody-custom-charts_*.mc`); provenance in the `Extracted from archives` section of its `SOURCES.md`. Observed layouts: Chart Forge puts `0/<tier>--<difficulty>.mc`, `0/audio.ogg`, `0/background.png|jpg` in a folder `0/`; the PayToUse zips use `<name>/` (one nested `<name>/<name>/`).
+- The Malody store needs a login (`cgi/chart/download` answers `{"code":-1000}`), so no store package was fetched.
+- **How to get more**: Malody's in-game store and its editor's export write `.mcz`; malody2osu accepts dragged `.mcz`/`.zip`. Unzip to see the real layout and keep only the `.mc`.
+
 
 ## Sources
 - https://fileinfo.com/extension/mcz

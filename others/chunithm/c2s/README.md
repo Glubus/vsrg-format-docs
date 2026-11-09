@@ -121,9 +121,8 @@ Not read by ROX 0.8.1 (no chunithm codec). Mapping to ROX would need a 16-column
 
 ## Getting samples
 
-- **Committed**: 3 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
-- **Manifest**: 4 entries in `samples.manifest.json` (downloaded by `tools/fetch-samples.sh` into `samples-local/`; listed in [`samples/SOURCES.md`](samples/SOURCES.md))
-- **More samples**: official `.c2s` files sit in the CHUNITHM data (not collected); MuNET-OSS/MuConvert (LGPL-3.0) keeps a test set with four official charts (listed in the manifest) and three community-made ones (committed), including a UTF-16LE-with-BOM file (VERSION 1.08.00) and versions 1.10.01, 1.11.00 and 1.14.00. UMIGURI/Margrete (`.ugc`/`.mgxc`) charts can be converted to c2s with MuConvert or Margrete2S (see Parsers & tools).
+- **Committed**: 7 real `.c2s` files from the LGPL-3.0 MuConvert test set: 4 official charts (VERSION 1.08.00 UTF-16LE with BOM, 1.10.01, 1.11.00) and 3 community charts (1.14.00). Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **More samples**: official `.c2s` files are CHUNITHM game data; MuConvert and Margrete2S convert UGC/MGXC to c2s; https://github.com/mitsuhira/UMIGURI_charts holds `.mgxc`/`.ugc` charts that can be converted.
 
 ## Sources
 

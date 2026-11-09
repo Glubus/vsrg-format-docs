@@ -42,7 +42,7 @@ Not in the chart. `arrowSkins` names note skins (e.g. `default`; the repository 
 
 ## Quirks & pitfalls
 
-- The conversion test is an exact string comparison (`format != 'psych_v1' && format != 'nmv2'`), so a Psych chart carrying `psych_v1_convert` (as the Psych repository's base-game charts do, [observed in the manifest file psych_bopeebo.json]) is converted again by NMV [inference from the two string tests].
+- The conversion test is an exact string comparison (`format != 'psych_v1' && format != 'nmv2'`), so a Psych chart carrying `psych_v1_convert` (as the Psych repository's base-game charts do, [observed in samples/psych_bopeebo.json]) is converted again by NMV [inference from the two string tests].
 - `keys`/`lanes` default to 4/2: a reader that ignores them mis-assigns every note of a 5K+ chart.
 - The chart loader rejects V-Slice and Codename charts, so those need conversion first.
 
@@ -70,11 +70,14 @@ Not read as NMV. `.json` goes to the legacy FNF codec ([../legacy-json/README.md
 - NightmareVision (Haxe): https://github.com/NMVTeam/NightmareVision (`source/funkin/data/Chart.hx`, `Song.hx`, `source/funkin/states/editors/ChartEditorState.hx`, `ChartConverterState.hx`)
 - Moonchart `FNFNmv`: https://github.com/MaybeMaru/moonchart/blob/main/src/moonchart/formats/fnf/legacy/FNFNmv.hx
 
+## Observed in real files
+
+Charts made with NightmareVision on GameBanana (e.g. `gb_childs-play.json`) have `keys: 4`, `lanes: 2` and the singular `arrowSkin` / `splashSkin` fields, tab-indented, and no `format` / `arrowSkins` field [observed in samples/gb_childs-play.json, gb_withstand-hard.json, gb_faker.json]; so the plural `arrowSkins` of the current `Song.hx` is newer than those files (Chart.hx fills it at load).
+
 ## Getting samples
 
-- Committed: [samples/](samples/) holds two hand-written `nmv2` charts (4K and 5K, `synthetic-*`), see [samples/SOURCES.md](samples/SOURCES.md).
-- Manifest: the engine's embedded `test` chart (format-less, converted at load), not committed (FNF test content inside an Apache-2.0 repository).
-- More: no real `nmv2` chart was found in a public repository. Mods "that run on NightmareVision" are listed on the FNF wiki category page https://fridaynightfunking.fandom.com/wiki/Category:Mods_that_run_on_NightmareVision (listed by search, not opened); the engine's chart editor (`ChartEditorState.hx`) writes the format [inference from the file name].
+- Committed ([samples/](samples/) and [samples/SOURCES.md](samples/SOURCES.md)): real NightmareVision-made charts from GameBanana (subfolders `withstand/`, `childs-play-charted/`, `faker-lavved/`, extracted from the mod zips) and the engine's embedded test chart, plus two synthetic `nmv2` files. Real `format: nmv2` files with `arrowSkins` were not found (see Observed in real files).
+- More: mods listed by https://gamebanana.com/apiv11/Util/Search/Results?_sSearchString=NightmareVision&_idGameRow=8694 and the FNF wiki category https://fridaynightfunking.fandom.com/wiki/Category:Mods_that_run_on_NightmareVision.
 
 ## Sources
 

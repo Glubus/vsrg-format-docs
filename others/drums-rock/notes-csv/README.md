@@ -16,7 +16,7 @@ A Drums Rock custom song is a folder of four files (five for the Steam Workshop)
 ```
 Song Name,Author Name,Difficulty,Song Duration in seconds,Song Map
 ```
-Second line: title, artist (`Author Name` is the song artist in EoF), difficulty number (0 Easy, 1 Medium, 2 Hard, 3 Extreme), duration in whole seconds, `Song Map` = `0` as written by EoF [meaning not documented].
+Second line: title, artist (`Author Name` is the song artist in EoF), difficulty number (0 Easy, 1 Medium, 2 Hard, 3 Extreme), duration in whole seconds, `Song Map` = `0` as written by EoF [meaning not documented; real community files carry 0 or 2, observed in samples/*_info.csv].
 
 `notes.csv` header (the official/community headers differ slightly in spelling):
 ```
@@ -79,9 +79,8 @@ Not read by ROX. A decoder could map the 6 drum colors to 6 columns, with double
 
 ## Getting samples
 
-- **Committed**: 2 file(s) in [`samples/`](samples/) (see samples/SOURCES.md for origin, author and licence of each).
-- **Manifest**: none.
-- **More samples**: Steam Workshop items (Drums Rock supports custom songs; `notes.csv` + `info.csv` + `.ogg`) and the official template folder `TemplateSong` created by the game in `C:\Users\<you>/AppData/LocalLow/Garage 51/Drums Rock/CustomSongs` (official page https://garage51.es/drumsrock/custom_songs.html); the official Google Drive folders linked on that page (not downloadable without a browser session) hold the template spreadsheet. Editor on Fire (C; `src/dr.c`) exports the folder from a chart; drumsrockmidiparser converts MIDI. No real notes.csv with a licence was found, so the committed files are synthetic.
+- **Committed**: 12 real files: `notes.csv` + `info.csv` of six community songs (Alice in Chains, Audioslave, Bon Jovi, Finger Eleven, Splatoon 2, Weezer) taken from Google Drive zips linked in the Steam guide "Direct song downloads" (audio not kept), plus 2 synthetic in [`samples/`](samples/). Observed: header uses `Nº Enemies`, and `info.csv` `Song Map` is 0 or 2 in these files (the fiche says EoF writes 0). Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **More samples**: the guide https://steamcommunity.com/sharedfiles/filedetails/?id=3284235843 links ~140 Drive folders and files of community songs; the official template is on https://garage51.es/drumsrock/custom_songs.html; Editor on Fire exports the format.
 
 ## Sources
 - https://garage51.es/drumsrock/custom_songs.html
