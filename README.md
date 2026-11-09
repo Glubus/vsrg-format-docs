@@ -111,13 +111,13 @@ Archives that carry charts with their audio and images. No page or sample of the
 | [`.sq3`](vsrg/gitadora/sq3/) GITADORA sequence (SEQP/SQ3T) | GITADORA | vsrg | partial | No | [`vsrg/gitadora/sq3`](vsrg/gitadora/sq3/) |
 | [`.mid`](vsrg/guitar-hero/gh12-mid/) Guitar Hero 1/2 MIDI chart | Guitar Hero / Guitar Hero II (Harmonix) | vsrg | complete | Decode only (by content; `T1 GEMS` as the guitar) | [`vsrg/guitar-hero/gh12-mid`](vsrg/guitar-hero/gh12-mid/) |
 | [`.qb`](vsrg/guitar-hero/qb-chart/) Neversoft Guitar Hero chart (QB) | Guitar Hero III / World Tour (Neversoft) | vsrg | partial | No | [`vsrg/guitar-hero/qb-chart`](vsrg/guitar-hero/qb-chart/) |
-| [`.yav`](vsrg/interlude/yav/) Interlude binary chart (legacy file, now database/CDN blob) | Interlude (YAVSRG) | vsrg | partial | No | [`vsrg/interlude/yav`](vsrg/interlude/yav/) |
+| [`.yav`](vsrg/interlude/yav/) Interlude binary chart (legacy file, now database/CDN blob) | Interlude (YAVSRG) | vsrg | partial | Decode only (`.yav`; a headless blob with its key count given) | [`vsrg/interlude/yav`](vsrg/interlude/yav/) |
 | [`.ksf`](vsrg/kick-it-up/ksf/) Kick It Up step file (+Direct Move) | Kick It Up / Direct Move (Pump) | vsrg | complete | Decode only (single, halfdouble, double) | [`vsrg/kick-it-up/ksf`](vsrg/kick-it-up/ksf/) |
 | [`.d2r`](vsrg/legacy-dance-formats/d2r/) Dazzle Dazzle Realization chart | Dazzle Dazzle Realization | vsrg | partial | No | [`vsrg/legacy-dance-formats/d2r`](vsrg/legacy-dance-formats/d2r/) |
 | [`directmove`](vsrg/legacy-dance-formats/directmove/) Direct Move (extended KSF) | Direct Move | vsrg | partial | Decode only | [`vsrg/legacy-dance-formats/directmove`](vsrg/legacy-dance-formats/directmove/) |
 | [`.ftb`](vsrg/legacy-dance-formats/ftb/) Raindrop FTB chart | Raindrop (origin unknown) | vsrg | partial | No | [`vsrg/legacy-dance-formats/ftb`](vsrg/legacy-dance-formats/ftb/) |
 | [`.slo`](vsrg/legacy-dance-formats/slo/) SLOEDIT chart | D2R / SLOEDIT editor | vsrg | stub | No | [`vsrg/legacy-dance-formats/slo`](vsrg/legacy-dance-formats/slo/) |
-| [`.step`](vsrg/legacy-dance-formats/step/) pyDDR/pydance .step | pydance | vsrg | stub | No | [`vsrg/legacy-dance-formats/step`](vsrg/legacy-dance-formats/step/) |
+| [`.step`](vsrg/legacy-dance-formats/step/) pyDDR/pydance .step | pydance | vsrg | partial | Decode only (by content, as `.dance`) | [`vsrg/legacy-dance-formats/step`](vsrg/legacy-dance-formats/step/) |
 | [`.sul`](vsrg/legacy-dance-formats/sul/) D2R legacy chart | Dazzle Dazzle Realization (older version) | vsrg | stub | No | [`vsrg/legacy-dance-formats/sul`](vsrg/legacy-dance-formats/sul/) |
 | [`.mc`](vsrg/malody/mc/) Malody chart (JSON) | Malody / Malody V (Key, Catch, Pad, Taiko, Ring, Slide, Live, Cube) | vsrg | partial | Yes (read + write) | [`vsrg/malody/mc`](vsrg/malody/mc/) |
 | [`.xml`](vsrg/music-master/xml/) Music Master chart | Music Master (乐动达人) | vsrg | stub | No | [`vsrg/music-master/xml`](vsrg/music-master/xml/) |
@@ -140,7 +140,7 @@ Archives that carry charts with their audio and images. No page or sample of the
 | [`.not / .not5`](vsrg/pump-it-up/not/) Pump It Up NOT/NOT5 step file | Pump It Up (Andamiro) | vsrg | partial | No | [`vsrg/pump-it-up/not`](vsrg/pump-it-up/not/) |
 | [`.stx`](vsrg/pump-it-up/stx/) Pump It Up STX step file (STF4) | Pump It Up (Andamiro) | vsrg | partial | No | [`vsrg/pump-it-up/stx`](vsrg/pump-it-up/stx/) |
 | [`.ucs`](vsrg/pump-it-up/ucs/) Pump It Up User Custom Step | Pump It Up | vsrg | partial | No | [`vsrg/pump-it-up/ucs`](vsrg/pump-it-up/ucs/) |
-| [`.dance`](vsrg/pydance/dance/) pydance step file | pydance | vsrg | complete | No | [`vsrg/pydance/dance`](vsrg/pydance/dance/) |
+| [`.dance`](vsrg/pydance/dance/) pydance step file | pydance | vsrg | complete | Decode only | [`vsrg/pydance/dance`](vsrg/pydance/dance/) |
 | [`.xml`](vsrg/qq-dance/xml/) QQ Dance mobile chart | QQ Dance mobile (QQ炫舞手游) | vsrg | partial | No | [`vsrg/qq-dance/xml`](vsrg/qq-dance/xml/) |
 | [`.qua`](vsrg/quaver/qua/) Quaver map (YAML) | Quaver | vsrg | complete | Yes (read + write) | [`vsrg/quaver/qua`](vsrg/quaver/qua/) |
 | [`.r2n`](vsrg/r2beat/r2n/) R2Beat chart package | R2Beat | vsrg | stub | No | [`vsrg/r2beat/r2n`](vsrg/r2beat/r2n/) |

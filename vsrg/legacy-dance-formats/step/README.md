@@ -1,7 +1,7 @@
 # pyDDR / pydance `.step` (and other "step" files)
 Kind: chart
 
-Doc status: stub · ROX: no · Category: vsrg · Encoding: Unknown (text probably)
+Doc status: partial · ROX: decode only · Category: vsrg · Encoding: text (line-based)
 
 ## Overview
 
@@ -47,7 +47,7 @@ Unknown.
 
 ## ROX support
 
-Not read by ROX.
+Decode only (`rox::formats::pydance::PyddrStepDecoder`, told from DDR's binary STEP by `looks_like_pyddr_step`: the first line is a header key). Read as the `.dance` it became: header `file` = `filename`, `song` = `title`, `group` = `artist`, `offset` = `gap` (ms); sections `<MODE>` / `<DIFFICULTY> <feet>` / steps / `end`; `whole`/`halfn`/`qurtr`/`eight` = 4/2/1/1/2 beats; panel code `08` = a note, `00` none (other codes unknown: dropped, counted); `delay x` = x beats; `ready`, `lyric`, `trans` show things. The mapping is inferred from the corpus and checked: `6jan.step` gives exactly the notes of `6jan.dance` (BASIC 155, TRICK 217, same times). Holds: never seen.
 
 ## Parsers & tools
 

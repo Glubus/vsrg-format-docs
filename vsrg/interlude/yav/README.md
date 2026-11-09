@@ -1,7 +1,7 @@
 # Interlude binary chart (`.yav`, "headless" chart blob)
 Kind: chart
 
-Doc status: partial · ROX: no · Category: vsrg · Encoding: binary (little-endian, .NET `BinaryWriter`)
+Doc status: partial · ROX: decode only · Category: vsrg · Encoding: binary (little-endian, .NET `BinaryWriter`)
 
 ## Overview
 
@@ -60,7 +60,7 @@ No version field. `CALC_VERSION` in `DbCharts.fs` versions the cached pattern/ra
 
 ## ROX support
 
-None. A converter would need the key count, BPM and SV lists (hold bodies are redundant with head/tail).
+Decode only (`rox::formats::yav::YavDecoder`): `decode_headless(data, keys)` for a database/CDN blob (the key count is the caller's; a set bit beyond it refuses the chart), and a `.yav` file (`auto_decode*`: key byte, .NET-string JSON header, headless chart; `Title`, `Artist`, `Creator`, `DiffName`, `PreviewTime`, `Tags`, and `AudioFile`/`BackgroundFile` when they are plain strings). Holds from head/tail (bodies ignored; orphans counted); BPM from ms per beat and meter; SV multipliers (non-finite skipped). All 7 CDN samples decode with the key count of their name (no broken hold; the corpus probe cannot, `.bin` has no format), the synthetic one too. No real `.yav` file exists to test.
 
 ## Parsers & tools
 

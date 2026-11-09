@@ -1,7 +1,7 @@
 # pydance step file (`.dance`)
 Kind: chart
 
-Doc status: complete · ROX: no · Category: vsrg · Encoding: text (UTF-8, no BOM)
+Doc status: complete · ROX: decode only · Category: vsrg · Encoding: text (UTF-8, no BOM)
 
 ## Overview
 
@@ -149,7 +149,7 @@ end
 
 ## ROX support
 
-Not read by ROX. A decoder needs beat accumulation from letters, `B/S/W/D` commands, `gap` baked into times, game-mode to key count (3/4/5/6/8/9 and doubles) and a hold rule for `3`.
+Decode only (`rox::formats::pydance::DanceDecoder`): one variant per step section (`<MODE> <DIFFICULTY>`), columns = the button string's length (first player's string for `…COUPLE`). Time as pydance's `Steps`: start `startat - gap/1000` s, letters in beats (`q` = 1), `D` beats, `W` seconds, `B` BPM, `S` stop (the next notes play at the stop's start, as pydance does). Digits as bits: 1 tap, 2 hold (ended by the column's next non-zero digit, which is no note), 4 secret (dropped, counted). All 6 corpus files decode (SINGLE, 6PANEL, 8PANEL).
 
 ## Parsers & tools
 
