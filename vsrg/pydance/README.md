@@ -1,0 +1,9 @@
+# pydance (pyDDR)
+
+Category: **vsrg**: a Python/pygame DDR/Pump/EZ2Dancer-style simulator; notes scroll vertically along fixed panel columns.
+
+pydance (formerly **pyDDR**, home page icculus.org/pyddr; source later mirrored as [mbenkmann/pydance](https://github.com/mbenkmann/pydance) and [ewindisch/pydance](https://github.com/ewindisch/pydance), both "Import from SVN") is an open-source dance game for Linux/macOS/Windows in Python (pygame). It lets one play DDR, Pump It Up, EZ2Dancer and similar games on a keyboard, gamepad or dance pad (the `.dance` spec defines 3-, 4-, 5-, 6-, 8- and 9-panel modes). Its developers designed an easily parsed text format, **`.dance`**, evidently because MSD/DWI were painful to parse (the project's own `docs/dwi-hall-of-shame.txt` begins "For those of us who hate the DWI format (which is everyone who ever tried to write a parser for it)"). Since 0.7.0 pydance loads `.dance` (native), `.step` (its old format, superseded), DWI and SM ([FAQ](https://icculus.org/pyddr/faq.php)), and `fileparsers.py` (`SongItem.formats`) also handles KSF (`song.ogg|mp3|wav` marks a KSF folder). The ORIGINAL_README's pydance links ([description](https://github.com/stepmania/stepmania/blob/master/Docs/SimfileFormats/misc.txt), [format](https://github.com/stepmania/stepmania/blob/master/Docs/SimfileFormats/dance-spec.txt), [implementation](https://github.com/mbenkmann/pydance)) are the sources of the [`dance/`](dance/README.md) page. The old `.step` format has a stub under [legacy-dance-formats/step](../legacy-dance-formats/step/README.md).
+
+Related: [StepMania family](../stepmania/README.md), [DWI](../dwi/README.md), [Kick It Up](../kick-it-up/README.md).
+
+Links: https://icculus.org/pyddr/ (site, manual, FAQ), https://github.com/mbenkmann/pydance, [Text Text Revolution](https://ttr.sourceforge.net/) (an ncurses DDR clone that plays pydance `.step` files).
