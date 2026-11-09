@@ -1,7 +1,7 @@
 # BDON - BanG Dream! Our Notes chart (`.bdon` / `.json` / `.json.gz`)
 Kind: chart
 
-Doc status: partial · ROX: no · Category: vsrg (lane/board-based vertical highway) · Encoding: json (optionally gzip)
+Doc status: partial · ROX: decode only · Category: vsrg (lane/board-based vertical highway) · Encoding: json (optionally gzip)
 
 ## Overview
 
@@ -85,7 +85,7 @@ Illustrative, hand-built from the loader's field list (not a real chart):
 
 ## ROX support
 
-Not read by ROX. Wide free-position notes on a 24-unit board, slides with eased edges and guides do not fit ROX columns; only taps would convert cleanly.
+Decode only, `rox::formats::sekai` (`BdonDecoder`, `DetectedFormat::Bdon`; a `.json` is told by a top-level `score` key). One chart per file on the 12 columns of the Project SEKAI model: the 24-unit board maps onto 12 lanes as in `rg-converters` (leftmost lane `pos / 2`, width `size / 2`, a half lane floored and counted). Taps and flicks are taps; a `long` note is one hold from its first node to its last (relays dropped and counted, the lateral path lost); traces, hidden notes, guides, skill and fever events are dropped and counted. 480 ticks per beat; 120 BPM before the first `bpm` event. A gzipped file is refused.
 
 ## Parsers & tools
 

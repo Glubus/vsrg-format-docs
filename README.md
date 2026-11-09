@@ -56,7 +56,7 @@ Archives that carry charts with their audio and images. No page or sample of the
 
 | Format (extension) | Game(s) | Category | Doc status | Read by ROX | Folder |
 |---|---|---|---|---|---|
-| [`.bdon / .json`](vsrg/bang-dream/bdon/) BDON (BanG Dream! Our Notes) chart | BanG Dream! Our Notes | vsrg | partial | No | [`vsrg/bang-dream/bdon`](vsrg/bang-dream/bdon/) |
+| [`.bdon / .json`](vsrg/bang-dream/bdon/) BDON (BanG Dream! Our Notes) chart | BanG Dream! Our Notes | vsrg | partial | Decode only (12 lanes; `.json` by content) | [`vsrg/bang-dream/bdon`](vsrg/bang-dream/bdon/) |
 | [`.json`](vsrg/bang-dream/bestdori-json/) Bestdori chart (v2 JSON) | BanG Dream! Girls Band Party (Bestdori) | vsrg | partial | Decode only (by content, any `.json` name) | [`vsrg/bang-dream/bestdori-json`](vsrg/bang-dream/bestdori-json/) |
 | [`.txt`](vsrg/bang-dream/txt/) BanG! Simulator chart (txt) | BanG Dream! (BanG! Simulator) | vsrg | complete | Decode only (by content) | [`vsrg/bang-dream/txt`](vsrg/bang-dream/txt/) |
 | [`.1`](vsrg/beatmania-iidx/1/) beatmania IIDX arcade chart archive (.1) | beatmania IIDX (arcade, 9th style onward) | vsrg | partial | No | [`vsrg/beatmania-iidx/1`](vsrg/beatmania-iidx/1/) |
