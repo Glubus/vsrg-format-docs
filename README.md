@@ -2,7 +2,7 @@
 
 A reference of the chart / map file formats of rhythm games: how each file is encoded, how time is
 represented, how notes, holds and special objects are stored, and where the public knowledge
-comes from. It started as a link list ([`ORIGINAL_README.md`](ORIGINAL_README.md)) and was completed
+comes from. It started as a link list (the upstream `README.md` of commit `503382a`, in this repository's history) and was completed
 for Prism, whose map library [ROX](https://github.com/Glubus/rhythm-open-exchange)
 (`rhythm-open-exchange` 0.8.1) needs to know which formats are worth reading. It is also a corpus of real chart samples:
 see [Samples](#samples).
@@ -76,7 +76,7 @@ Edge cases are placed by gameplay, not by the platform. Borderline games are fla
 | Format (extension) | Game(s) | Category | Doc status | Read by ROX | Folder |
 |---|---|---|---|---|---|
 | [`.bdon / .json`](vsrg/bang-dream/bdon/) BDON (BanG Dream! Our Notes) chart | BanG Dream! Our Notes | vsrg | partial | No | [`vsrg/bang-dream/bdon`](vsrg/bang-dream/bdon/) |
-| [`.json`](vsrg/bang-dream/bestdori-json/) Bestdori chart (v2 JSON) | BanG Dream! Girls Band Party (Bestdori) | vsrg | partial | Decode only (a Bestdori name AND content) | [`vsrg/bang-dream/bestdori-json`](vsrg/bang-dream/bestdori-json/) |
+| [`.json`](vsrg/bang-dream/bestdori-json/) Bestdori chart (v2 JSON) | BanG Dream! Girls Band Party (Bestdori) | vsrg | partial | Decode only (by content, any `.json` name) | [`vsrg/bang-dream/bestdori-json`](vsrg/bang-dream/bestdori-json/) |
 | [`.txt`](vsrg/bang-dream/txt/) BanG! Simulator chart (txt) | BanG Dream! (BanG! Simulator) | vsrg | complete | Decode only (by content) | [`vsrg/bang-dream/txt`](vsrg/bang-dream/txt/) |
 | [`.1`](vsrg/beatmania-iidx/1/) beatmania IIDX arcade chart archive (.1) | beatmania IIDX (arcade, 9th style onward) | vsrg | partial | No | [`vsrg/beatmania-iidx/1`](vsrg/beatmania-iidx/1/) |
 | [`.2dx`](vsrg/beatmania-iidx/2dx/) beatmania IIDX keysound archive (2DX9 container) | beatmania IIDX (and other Konami games with the same engine) | vsrg | partial | No | [`vsrg/beatmania-iidx/2dx`](vsrg/beatmania-iidx/2dx/) |
@@ -137,7 +137,7 @@ Edge cases are placed by gameplay, not by the platform. Borderline games are fla
 | [`.mid`](vsrg/guitar-hero/gh12-mid/) Guitar Hero 1/2 MIDI chart | Guitar Hero / Guitar Hero II (Harmonix) | vsrg | complete | No | [`vsrg/guitar-hero/gh12-mid`](vsrg/guitar-hero/gh12-mid/) |
 | [`.qb`](vsrg/guitar-hero/qb-chart/) Neversoft Guitar Hero chart (QB) | Guitar Hero III / World Tour (Neversoft) | vsrg | partial | No | [`vsrg/guitar-hero/qb-chart`](vsrg/guitar-hero/qb-chart/) |
 | [`.yav`](vsrg/interlude/yav/) Interlude binary chart (legacy file, now database/CDN blob) | Interlude (YAVSRG) | vsrg | partial | No | [`vsrg/interlude/yav`](vsrg/interlude/yav/) |
-| [`.ksf`](vsrg/kick-it-up/ksf/) Kick It Up step file (+Direct Move) | Kick It Up / Direct Move (Pump) | vsrg | complete | Decode only | [`vsrg/kick-it-up/ksf`](vsrg/kick-it-up/ksf/) |
+| [`.ksf`](vsrg/kick-it-up/ksf/) Kick It Up step file (+Direct Move) | Kick It Up / Direct Move (Pump) | vsrg | complete | Decode only (single, halfdouble, double) | [`vsrg/kick-it-up/ksf`](vsrg/kick-it-up/ksf/) |
 | [`.d2r`](vsrg/legacy-dance-formats/d2r/) Dazzle Dazzle Realization chart | Dazzle Dazzle Realization | vsrg | partial | No | [`vsrg/legacy-dance-formats/d2r`](vsrg/legacy-dance-formats/d2r/) |
 | [`directmove`](vsrg/legacy-dance-formats/directmove/) Direct Move (extended KSF) | Direct Move | vsrg | partial | Decode only | [`vsrg/legacy-dance-formats/directmove`](vsrg/legacy-dance-formats/directmove/) |
 | [`.ftb`](vsrg/legacy-dance-formats/ftb/) Raindrop FTB chart | Raindrop (origin unknown) | vsrg | partial | No | [`vsrg/legacy-dance-formats/ftb`](vsrg/legacy-dance-formats/ftb/) |
@@ -394,7 +394,7 @@ Edge cases are placed by gameplay, not by the platform. Borderline games are fla
 
 ## Coverage of the original list
 
-Every entry of [`ORIGINAL_README.md`](ORIGINAL_README.md) has a page:
+Every entry of the upstream list (`README.md` at commit `503382a`) has a page:
 
 | Original entry | Where |
 |---|---|
@@ -453,7 +453,7 @@ Investigated, no public format found, so no folder: osu!stream (`.osc`/`.osz2`),
 
 History of what this repository adds to the upstream list (Glubus/vsrg-format-docs at `503382ad`, 2020-12-09):
 
-- The upstream `README.md` is kept as is in [`ORIGINAL_README.md`](ORIGINAL_README.md); this `README.md` is the index of every format.
+- The upstream `README.md` (a link list) is in the history at commit `503382a`; this `README.md` is the index of every format.
 - The former `*-samples/` and `ojn-docs/` folders moved to `vsrg/<game>/<format>/samples/` (or `docs/`) and
   `others/<game>/<format>/samples/`. Their content is unchanged byte for byte.
 - `.gitattributes` follows the new layout (`**/samples/** -text`): line endings of sample files must never be normalised.

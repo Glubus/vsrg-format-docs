@@ -226,4 +226,4 @@ More: community archives (TJADB `https://tjadataba.se/`, taiko-web song lists, J
 - <https://raw.githubusercontent.com/vivaria/tja2fumen/main/README.md> and `src/tja2fumen/parsers.py` / `constants.py` (opened)
 - <https://deepwiki.com/Yonokid/PyTaiko/4.1-tja-chart-file-processing>, <https://deepwiki.com/Yonokid/YataiDON/4.1-tja-chart-format> (search results only)
 - <https://wikiwiki.jp/jiro/太鼓さん次郎> and <https://web.archive.org/web/20190914085205/https://aioilight.space/taiko/tjap3/doc/tja/> (cited by the above, not opened)
-- Repo samples: `samples/*.tja`; `ORIGINAL_README.md` line "tja: Taiko Jiro chart, including taiko and jube modes"
+- Repo samples: `samples/*.tja`; upstream list (`README.md` at commit `503382a`) line "tja: Taiko Jiro chart, including taiko and jube modes"

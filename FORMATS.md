@@ -4,11 +4,15 @@ One row per format of the [README index](README.md), with what is true today (20
 
 - **Real charts / Synthetic**: from [SAMPLES-STATUS.md](SAMPLES-STATUS.md) (real = published for actual play or a real test; synthetic = written here, CC0).
 - **ROX read / write**: [rhythm-open-exchange](https://github.com/Glubus/rhythm-open-exchange) as vendored in Prism on 2026-11-09 (read = a decoder reached from the file; write = an encoder).
+Regenerate the tables with `python3 tools/gen_formats.py decode.tsv`, where `decode.tsv` is the output of `cargo run --release -p game-core --example corpus_decode -- <this repo>` in the Prism repository; the introduction and the gaps below are written by hand.
+
 - **Corpus decoded**: sample files of the folder that `game_core::decode_chart_file` read into a playable chart (at least one variant on a layout the game has), over the files tried; run on 2026-11-09 without the scan's audio requirement. `—` when ROX has no reader.
 - **In Prism**: whether the game lists and plays it. The library scan also needs the chart's audio file for `.osu`, `.qua`, `.sm`/`.ssc` (this repository holds no audio).
 - **What is missing**: why a format has fewer than 5 real charts (details and how to get more in its page's "Getting samples" and in SAMPLES-STATUS.md), and VSRG formats with no ROX reader.
 
-Totals: 204 formats (122 VSRG). ROX reads 42 VSRG formats and writes 9; Prism plays 28. Real charts: 116 formats with at least 5, 18 with 1 to 4, 50 with none, 20 container formats (their charts are in another folder).
+<!-- BEGIN GENERATED (tools/gen_formats.py) -->
+
+Totals: 204 formats (122 VSRG). ROX reads 42 VSRG formats and writes 9; Prism plays 29. Real charts: 116 formats with at least 5, 18 with 1 to 4, 50 with none, 20 container formats (their charts are in another folder).
 
 ## VSRG
 
@@ -16,7 +20,7 @@ Totals: 204 formats (122 VSRG). ROX reads 42 VSRG formats and writes 9; Prism pl
 |---|---|---:|---:|---|---|---:|---|---|
 | [`.bdon / .json`](vsrg/bang-dream/bdon/) BDON (BanG Dream! Our Notes) chart | BanG Dream! Our Notes | 6 | 0 | No | No | — | No | no ROX reader |
 | [`.json`](vsrg/bang-dream/bestdori-json/) Bestdori chart (v2 JSON) | BanG Dream! Girls Band Party (Bestdori) | 13 | 1 | Yes (by content, any `.json` name) | No | 14/14 | Plays |  |
-| [`.txt`](vsrg/bang-dream/txt/) BanG! Simulator chart (txt) | BanG Dream! (BanG! Simulator) | 9 | 7 | Yes | No | 15/16 | Plays |  |
+| [`.txt`](vsrg/bang-dream/txt/) BanG! Simulator chart (txt) | BanG Dream! (BanG! Simulator) | 9 | 7 | Yes (by content) | No | 15/16 | Plays |  |
 | [`.1`](vsrg/beatmania-iidx/1/) beatmania IIDX arcade chart archive (.1) | beatmania IIDX (arcade, 9th style onward) | 0 | 0 | No | No | — | No | Konami arcade data exists only inside a game install (contents/data/sound/<id>/<id>.1 or <id>.ifs); no ROX reader |
 | [`.2dx`](vsrg/beatmania-iidx/2dx/) beatmania IIDX keysound archive (2DX9 container) | beatmania IIDX (and other Konami games with the same engine) | 0 | 0 | No | No | — | No | Copyrighted keysound audio container exists only inside a game install and is audio, which the repo does not accept; no ROX reader |
 | [`.bemuse`](vsrg/bemuse/bemuse/) Bemuse sound pack (+ metadata.json) | Bemuse (web BMS player) | 9 | 0 | No | No | — | No | no ROX reader |
@@ -61,12 +65,12 @@ Totals: 204 formats (122 VSRG). ROX reads 42 VSRG formats and writes 9; Prism pl
 | [`.fnfc`](vsrg/friday-night-funkin/fnfc/) FNF chart package (V-Slice) | Friday Night Funkin' (0.3+, V-Slice) | 0 | 0 | Yes | No | — | Container: charts live in vsrg/friday-night-funkin/vslice-chart-json and vslice-metadata-json |  |
 | [`.fnfmod`](vsrg/friday-night-funkin/fnfmod/) FNF mod package | Friday Night Funkin' (official mod menu) | 0 | 0 | No | No | — | Container: charts live in vsrg/friday-night-funkin/vslice-chart-json and vslice-metadata-json |  |
 | [`.json`](vsrg/friday-night-funkin/fps-plus-json/) FNF FPS Plus chart + meta/events | Friday Night Funkin' (FPS Plus) | 6 | 4 | Partial (read by the FNF codec) | No | 1/10 | Decoded, not listed (the scan lists V-Slice only) |  |
-| [`.json`](vsrg/friday-night-funkin/kade-json/) FNF Kade Engine chart (KE1) | Friday Night Funkin' (Kade Engine) | 10 | 2 | Partial | No | 8/12 | Decoded, not listed (the scan lists V-Slice only) |  |
+| [`.json`](vsrg/friday-night-funkin/kade-json/) FNF Kade Engine chart (KE1) | Friday Night Funkin' (Kade Engine) | 10 | 2 | Partial (legacy `.json` layout only) | No | 8/12 | Decoded, not listed (the scan lists V-Slice only) |  |
 | [`.json`](vsrg/friday-night-funkin/legacy-json/) FNF legacy week chart (song.notes[].sectionNotes) | Friday Night Funkin' (≤0.2.x, Kade/Psych-compatible) | 6 | 2 | Yes | Yes | 7/8 | Decoded, not listed (the scan lists V-Slice only) |  |
 | [`.png`](vsrg/friday-night-funkin/ludum-dare-png/) FNF Ludum Dare chart (PNG per section) | Friday Night Funkin' (Ludum Dare jam build) | 33 | 5 | No | No | — | No | no ROX reader |
 | [`.json`](vsrg/friday-night-funkin/maru-json/) FNF Maru Funkin' chart | Friday Night Funkin' (Maru Funkin', dead engine) | 6 | 1 | Partial (read by the FNF codec) | No | 6/7 | Decoded, not listed (the scan lists V-Slice only) |  |
 | [`.json`](vsrg/friday-night-funkin/nmv-json/) FNF Nightmare Vision chart (nmv2) | Friday Night Funkin' (NightmareVision) | 5 | 2 | Partial (read by the FNF codec) | No | 6/7 | Decoded, not listed (the scan lists V-Slice only) |  |
-| [`.json`](vsrg/friday-night-funkin/psych-json/) FNF Psych Engine chart (psych_v1) | Friday Night Funkin' (Psych Engine) | 15 | 4 | Partial | No | 12/19 | Decoded, not listed (the scan lists V-Slice only) |  |
+| [`.json`](vsrg/friday-night-funkin/psych-json/) FNF Psych Engine chart (psych_v1) | Friday Night Funkin' (Psych Engine) | 15 | 4 | Partial (legacy `.json` layout; `psych_v1` lane rule read since 2026-10-28) | No | 12/19 | Decoded, not listed (the scan lists V-Slice only) |  |
 | [`.json`](vsrg/friday-night-funkin/troll-json/) FNF Troll Engine chart | Friday Night Funkin' (Troll Engine) | 6 | 1 | Partial (read by the FNF codec) | No | 6/7 | Decoded, not listed (the scan lists V-Slice only) |  |
 | [`.json`](vsrg/friday-night-funkin/vslice-chart-json/) FNF V-Slice chart data (-chart.json) | Friday Night Funkin' (0.3+, V-Slice) | 22 | 2 | Yes | No | 0/24 | Plays (needs its `-metadata.json` beside it) |  |
 | [`.json`](vsrg/friday-night-funkin/vslice-metadata-json/) FNF V-Slice song metadata (-metadata.json) | Friday Night Funkin' (0.3+, V-Slice) | 18 | 2 | Yes | No | 0/20 | Part of a V-Slice chart |  |
@@ -122,7 +126,7 @@ Totals: 204 formats (122 VSRG). ROX reads 42 VSRG formats and writes 9; Prism pl
 | [`.yrox`](vsrg/rhythm-open-exchange/yrox/) ROX YAML | Rhythm Open Exchange | 0 | 9 | Yes | Yes | 9/9 | Plays | no upstream .yrox exists |
 | [`.lua`](vsrg/robeats/lua-songmap/) RoBeats custom-server song map (Lua ModuleScript) | RoBeats (Roblox) | 4 | 0 | No | No | — | No | robeats-cs-legacy/robeats-cs-maps repos private/removed, Wayback has no capture, Sourcegraph/grep.app blocked by bot checks, archive.org partly offline; no ROX reader |
 | [`.dta`](vsrg/rock-band/dta/) Rock Band songs.dta database | Rock Band / Guitar Hero (Harmonix engine) | 5 | 1 | No | No | — | No | no ROX reader |
-| [`.ksh`](vsrg/sound-voltex/ksh/) K-Shoot MANIA chart (text) | K-Shoot MANIA / Unnamed SDVX Clone / SOUND VOLTEX fan charts | 12 | 2 | Yes | No | 14/14 | Plays |  |
+| [`.ksh`](vsrg/sound-voltex/ksh/) K-Shoot MANIA chart (text) | K-Shoot MANIA / Unnamed SDVX Clone / SOUND VOLTEX fan charts | 12 | 2 | Yes (6 columns; lasers not supported for now: dropped; by content) | No | 14/14 | Plays |  |
 | [`.kson`](vsrg/sound-voltex/kson/) K-Shoot MANIA JSON chart | K-Shoot MANIA / Unnamed SDVX Clone (Rust rewrite) | 17 | 7 | No | No | — | No | no ROX reader |
 | [`.vox`](vsrg/sound-voltex/vox/) SOUND VOLTEX arcade chart | SOUND VOLTEX (arcade, Konami) | 12 | 6 | No | No | — | No | no ROX reader |
 | [`.nanochart`](vsrg/soundsphere/nanochart/) NanoChart (rizu compact note stream) | rizu (soundsphere) | 1 | 7 | No | No | — | No | only 1 genuine file (rizu test vector); no ROX reader |
@@ -139,7 +143,7 @@ Totals: 204 formats (122 VSRG). ROX reads 42 VSRG formats and writes 9; Prism pl
 
 ## Other games
 
-None is played by Prism (except CHUNITHM `.sus`, read as a Project SEKAI chart); listed for the sample counts.
+Not played by Prism except CHUNITHM `.sus` (read as a Project SEKAI chart); listed for the sample counts.
 
 | Format | Game | Real charts | Synthetic | ROX read | ROX write | Corpus decoded | In Prism | What is missing |
 |---|---|---:|---:|---|---|---:|---|---|
@@ -153,7 +157,7 @@ None is played by Prism (except CHUNITHM `.sus`, read as a Project SEKAI chart);
 | [`Info.dat`](others/beat-saber/info-dat/) Beat Saber Info (v1 info.json, v2, v4) | Beat Saber | 23 | 0 | No | No | — | No |  |
 | [`level.json`](others/beatblock/level-json/) Beatblock level (JSON events) | Beatblock | 41 | 3 | No | No | — | No |  |
 | [`.c2s`](others/chunithm/c2s/) C2S (CHUNITHM chart) | CHUNITHM (arcade) | 7 | 0 | No | No | — | No |  |
-| [`.sus`](others/chunithm/sus/) SUS (Sliding Universal Score) | Seaurchin, UMIGURI, ched, Project Sekai tooling | 6 | 0 | Yes | No | 6/6 | Plays (12K, as a Project SEKAI chart) |  |
+| [`.sus`](others/chunithm/sus/) SUS (Sliding Universal Score) | Seaurchin, UMIGURI, ched, Project Sekai tooling | 6 | 0 | Yes (as a Project SEKAI chart) | No | 6/6 | Plays (12K, as a Project SEKAI chart) |  |
 | [`.ugc`](others/chunithm/ugc/) UMIGURI Chart v8 | UMIGURI / Margrete (CHUNITHM simulator) | 10 | 0 | No | No | — | No |  |
 | [`.txt (<song>.mp3.txt)`](others/crypt-of-the-necrodancer/beatmap-txt/) Crypt of the NecroDancer custom music beat file | Crypt of the NecroDancer | 1 | 2 | No | No | — | No | only one real beat list is published (2017 Steam forum post) |
 | [`.txt`](others/cytus/c1-txt/) Cytus 1 chart ("Rayark v2 modified") | Cytus (Cytoid) | 5 | 1 | No | No | — | No |  |
@@ -225,6 +229,8 @@ None is played by Prism (except CHUNITHM `.sus`, read as a Project SEKAI chart);
 | [`.json`](others/voez/json/) VOEZ chart set (info / note / track JSON) | VOEZ | 0 | 6 | No | No | — | No | no real VOEZ chart publicly reachable (official charts only in game AssetBundles |
 | [`.json`](others/vulnus/json/) Vulnus map (meta.json + difficulty json) | Vulnus | 0 | 3 | No | No | — | No | no real Vulnus map found (maps shared on Discord |
 | [`.mer`](others/wacca/mer/) MER (WACCA / Mercury chart) | WACCA (arcade) | 8 | 0 | No | No | — | No |  |
+
+<!-- END GENERATED -->
 
 ## Known reader gaps on these files
 

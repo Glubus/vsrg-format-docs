@@ -6,7 +6,7 @@ StepMania AMX (SMA) is a fork of StepMania 3.9 "focused in improving the gamepla
 
 Format folder: [`sma/`](sma/README.md).
 
-The ORIGINAL_README also mentions **DirectMove** with a link to the StepMania Wikia page for StepMania AMX ("Found on the StepMania Wikia page for StepMania AMX"); DirectMove is a Pump simulator with KSF files and is documented in [kick-it-up](../kick-it-up/README.md) and [legacy-dance-formats/directmove](../legacy-dance-formats/directmove/README.md). The fandom page itself could not be fetched (HTTP 403).
+The upstream list (`README.md` at commit `503382a`) also mentions **DirectMove** with a link to the StepMania Wikia page for StepMania AMX ("Found on the StepMania Wikia page for StepMania AMX"); DirectMove is a Pump simulator with KSF files and is documented in [kick-it-up](../kick-it-up/README.md) and [legacy-dance-formats/directmove](../legacy-dance-formats/directmove/README.md). The fandom page itself could not be fetched (HTTP 403).
 
 Related: [StepMania family](../stepmania/README.md), [Kick It Up `.ksf`](../kick-it-up/ksf/README.md).
 

@@ -5,7 +5,7 @@ Doc status: stub · ROX: no · Category: vsrg · Encoding: text (probably)
 
 ## Overview
 
-`.sul` is the chart format of the **earlier version of Dazzle Dazzle Realization** (before 2ndMIX). The D2R format page says the single-character duration symbols are "the symbols used by the previous version's charts (`*.sul`). They can still be used in the new version, but should not be used much". D2REDIT (D2R chart editor) can read `*.sul` files. The ORIGINAL_README entry for `.sul` is the root URL of that site (`paramax.hypermart.net`, archived 2004-02-05). Nothing else is documented.
+`.sul` is the chart format of the **earlier version of Dazzle Dazzle Realization** (before 2ndMIX). The D2R format page says the single-character duration symbols are "the symbols used by the previous version's charts (`*.sul`). They can still be used in the new version, but should not be used much". D2REDIT (D2R chart editor) can read `*.sul` files. The upstream list's entry for `.sul` (commit `503382a`) is the root URL of that site (`paramax.hypermart.net`, archived 2004-02-05). Nothing else is documented.
 
 ## Container & encoding
 

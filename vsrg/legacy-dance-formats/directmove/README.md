@@ -56,4 +56,4 @@ No `.ksf` with DirectMove extensions was found in the open. [StepMania-AMX/direc
 - https://github.com/stepmania/stepmania/blob/master/src/NotesLoaderKSF.cpp
 - https://github.com/syspro86/directmove
 - https://github.com/StepMania-AMX/STX2DM
-- ORIGINAL_README.md (DirectMove line)
+- Upstream list, `README.md` at commit `503382a` (DirectMove line)

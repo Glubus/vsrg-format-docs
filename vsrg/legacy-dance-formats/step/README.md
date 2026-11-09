@@ -5,7 +5,7 @@ Doc status: stub · ROX: no · Category: vsrg · Encoding: Unknown (text probabl
 
 ## Overview
 
-The ORIGINAL_README has a bare `.step:` line. The extension is used by at least these dance-game formats:
+The upstream list (`README.md` at commit `503382a`) has a bare `.step:` line. The extension is used by at least these dance-game formats:
 
 1. **pyDDR/pydance `.step`**: the format of pydance's early versions ("`.step` (its old format)", "pydance supports loading .dance (its native format), .step (its old format), DWI, and SM files" since 0.7.0; FAQ). The pydance format spec says: "The dance format is basically the step format, but generalized, smaller, and more readable. A script to convert .step files to .dance files is forthcoming" (`dance-spec.txt`). The ncurses DDR clone **Text Text Revolution** "supports pydance's (formerly pyDDR) .step file format (which has now been superceeded by the .dance format)" and (2-25-2003 changelog) "just plays back .step files". This is the most plausible meaning of the README line.
 2. **DDR "STEP"** (not a file extension known to be `.step`): the binary data of DDR 2nd..3rd Mix Plus exported by "DDR Utility" ([ddr/step](../../ddr/step/README.md)).
