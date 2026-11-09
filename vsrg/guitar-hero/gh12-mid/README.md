@@ -1,7 +1,7 @@
 # Guitar Hero 1 / Guitar Hero 2 MIDI chart (`.mid`, Harmonix)
 Kind: chart
 
-Doc status: complete (gameplay tracks); venue/trigger tracks partial · ROX: no · Category: vsrg (5-lane note highway: notes travel down fixed lanes toward a strum line) · Encoding: binary (Standard MIDI File, format 1)
+Doc status: complete (gameplay tracks); venue/trigger tracks partial · ROX: decode only · Category: vsrg (5-lane note highway: notes travel down fixed lanes toward a strum line) · Encoding: binary (Standard MIDI File, format 1)
 
 ## Overview
 
@@ -96,7 +96,7 @@ delta 0    Note Off ch0 note 98
 
 ## ROX support
 
-Not read by ROX (Clone Hero is planned, not implemented).
+Decode only, by the Clone Hero `.mid` reader (`rox::formats::clone_hero::MidDecoder::guitar_hero_variants`, `decode_guitar_hero`): a `.mid` not named `notes.mid` is a Guitar Hero 1/2 chart when it holds a 5-lane instrument track (`looks_like_guitar_hero_mid`, the whole file is parsed); `T1 GEMS` is then read as the guitar. Same rules as a `notes.mid` (variants per instrument and difficulty, sustains shorter than `resolution / 3` are taps, star power/face-off/big-note/mouth notes ignored); the GH1 170-tick HOPO threshold and the 10-tick chord snap are not applied. No `song.ini`: the title is the file stem. The audio (`.vgs`) is not read. The 6 GH2 customs decode (guitar and bass, 4 difficulties each).
 
 ## Parsers & tools
 

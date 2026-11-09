@@ -109,7 +109,7 @@ Archives that carry charts with their audio and images. No page or sample of the
 | [`.dsq/.gsq`](vsrg/gitadora/dsq/) Older DrumMania/GuitarFreaks sequences | GuitarFreaks/DrumMania (early) | vsrg | stub | No | [`vsrg/gitadora/dsq`](vsrg/gitadora/dsq/) |
 | [`.sq2`](vsrg/gitadora/sq2/) GuitarFreaks/DrumMania sequence | GF/DM V-series / XG | vsrg | stub | No | [`vsrg/gitadora/sq2`](vsrg/gitadora/sq2/) |
 | [`.sq3`](vsrg/gitadora/sq3/) GITADORA sequence (SEQP/SQ3T) | GITADORA | vsrg | partial | No | [`vsrg/gitadora/sq3`](vsrg/gitadora/sq3/) |
-| [`.mid`](vsrg/guitar-hero/gh12-mid/) Guitar Hero 1/2 MIDI chart | Guitar Hero / Guitar Hero II (Harmonix) | vsrg | complete | No | [`vsrg/guitar-hero/gh12-mid`](vsrg/guitar-hero/gh12-mid/) |
+| [`.mid`](vsrg/guitar-hero/gh12-mid/) Guitar Hero 1/2 MIDI chart | Guitar Hero / Guitar Hero II (Harmonix) | vsrg | complete | Decode only (by content; `T1 GEMS` as the guitar) | [`vsrg/guitar-hero/gh12-mid`](vsrg/guitar-hero/gh12-mid/) |
 | [`.qb`](vsrg/guitar-hero/qb-chart/) Neversoft Guitar Hero chart (QB) | Guitar Hero III / World Tour (Neversoft) | vsrg | partial | No | [`vsrg/guitar-hero/qb-chart`](vsrg/guitar-hero/qb-chart/) |
 | [`.yav`](vsrg/interlude/yav/) Interlude binary chart (legacy file, now database/CDN blob) | Interlude (YAVSRG) | vsrg | partial | No | [`vsrg/interlude/yav`](vsrg/interlude/yav/) |
 | [`.ksf`](vsrg/kick-it-up/ksf/) Kick It Up step file (+Direct Move) | Kick It Up / Direct Move (Pump) | vsrg | complete | Decode only (single, halfdouble, double) | [`vsrg/kick-it-up/ksf`](vsrg/kick-it-up/ksf/) |
