@@ -1,7 +1,7 @@
 # R2Beat note chart (`.xml`)
 Kind: chart
 
-Doc status: partial · ROX: no · Category: vsrg · Encoding: xml (euc-kr or gb18030 declared; see below)
+Doc status: partial · ROX: decode only · Category: vsrg · Encoding: xml (euc-kr or gb18030 declared; see below)
 
 ## Overview
 
@@ -71,7 +71,7 @@ BGM paths are relative to `rnr_music\`. Encoding is a legacy Korean/Chinese code
 
 ## ROX support
 
-Not read by ROX.
+Decode only (`rox::formats::r2beat::R2BeatDecoder`, told by content: a `TITLE` root with `BPM Frame` entries). 4 columns, the arrow keys left/down/up/right: Kind 18/17/16/19 taps, diagonals 20-23 two keys, long kinds holds; platform (24), stars (26, 27), random (161) dropped and counted. Time as r2beat-note's `MusicPlayer.vue`: tempo point `i` at `(Frame + DELAY) / 60` s (the first also from 0), `Coord` grows by `BPM / 5` a second from 0 [observed in source: `bpmTimePoints`, `calculatedCoord`; a note's time `(frame + delay) / 60`]. Title decoded with the declared code page; audio = the file name of `BGM`. All 10 corpus charts and the synthetic one decode. Note: r2beat-note's `note.ts` names 18 "rightSpike" and 19 "leftSpike" (the side of the obstacle); the key mapping follows this page's table (18 left, 19 right).
 
 ## Parsers & tools
 - r2beat-note (Vue/TypeScript editor): https://github.com/nyaruhodoo/r2beat-note
