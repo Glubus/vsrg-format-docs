@@ -75,7 +75,7 @@ Archives that carry charts with their audio and images. No page or sample of the
 | [`.gen`](vsrg/ddr/gen/) DDR S+ song container (iOS) | Dance Dance Revolution S+ (iOS) | vsrg | stub | No | [`vsrg/ddr/gen`](vsrg/ddr/gen/) |
 | [`.ssq (chunk 9)`](vsrg/ddr/hudson-ssq/) Hudson SSQ type 9 step chunk | DDR Mario Mix / DDR Hottest Party 1 (Wii/GC) | vsrg | complete | No | [`vsrg/ddr/hudson-ssq`](vsrg/ddr/hudson-ssq/) |
 | [`.ssq (chunk 16)`](vsrg/ddr/hudson-ssq-lane/) Hudson SSQ type 16 lane-format chunk | DDR Hottest Party 4/5 (Wii) | vsrg | complete | No | [`vsrg/ddr/hudson-ssq-lane`](vsrg/ddr/hudson-ssq-lane/) |
-| [`.msd`](vsrg/ddr/msd/) MSD step script | DDR'99 (PC simulator) | vsrg | partial | No | [`vsrg/ddr/msd`](vsrg/ddr/msd/) |
+| [`.msd`](vsrg/ddr/msd/) MSD step script | DDR'99 (PC simulator) | vsrg | partial | Decode only (DWI grammar) | [`vsrg/ddr/msd`](vsrg/ddr/msd/) |
 | [`.sdf`](vsrg/ddr/sdf/) Pocket DDR chart | Pocket DDR | vsrg | partial | No | [`vsrg/ddr/sdf`](vsrg/ddr/sdf/) |
 | [`.ssq`](vsrg/ddr/ssq/) DDR SSQ step data | Dance Dance Revolution (Konami) | vsrg | complete | Decode only | [`vsrg/ddr/ssq`](vsrg/ddr/ssq/) |
 | [`step`](vsrg/ddr/step/) DDR STEP (1st-3rd Mix, DDR Utility) | Dance Dance Revolution | vsrg | stub | No | [`vsrg/ddr/step`](vsrg/ddr/step/) |

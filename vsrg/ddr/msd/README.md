@@ -1,7 +1,7 @@
 # MSD step script (`.msd`)
 Kind: chart
 
-Doc status: partial · ROX: no · Category: vsrg · Encoding: text (Shift-JIS-era Japanese origin; charset undeclared)
+Doc status: partial · ROX: decode only · Category: vsrg · Encoding: text (Shift-JIS-era Japanese origin; charset undeclared)
 
 ## Overview
 
@@ -75,7 +75,7 @@ Hand-built from the translated rules (the spec has no sample):
 
 ## ROX support
 
-Not read by ROX ([`src/formats/auto/detect.rs`](https://github.com/Glubus/rhythm-open-exchange/blob/main/src/formats/auto/detect.rs) has no `.msd` handling; `sm/msd.rs` is only the shared `#TAG:param;` tokenizer for `.sm/.ssc`). A decoder would be a trimmed DWI decoder without holds.
+Decode only, `rox::formats::dwi` (`MsdDecoder`, `DetectedFormat::Msd`): the DWI reader in its MSD dialect. Every playable `#SINGLE`/`#DOUBLE`/`#SOLO` tag is a variant (`#COUPLE` is skipped, as for `.dwi`); a tag whose first parameter is a number and second is not is read in the spec's level-first order, otherwise mode first as the real files write it. `#GAP` is not applied (the simulator's dots, not milliseconds; warned). Text is Shift-JIS when it is not UTF-8.
 
 ## Parsers & tools
 
