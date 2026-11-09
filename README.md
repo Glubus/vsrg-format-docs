@@ -7,16 +7,32 @@ for Prism, whose map library [ROX](https://github.com/Glubus/rhythm-open-exchang
 (`rhythm-open-exchange` 0.8.1) needs to know which formats are worth reading. It is also a corpus of real chart samples:
 see [Samples](#samples).
 
-**197 formats** documented over **100 games**.
+**204 formats** documented over **102 games**.
 
-- VSRG: 115 formats: 44 complete, 44 partial, 27 stub.
+- VSRG: 122 formats: 44 complete, 50 partial, 28 stub.
 - Others: 82 formats: 18 complete, 42 partial, 22 stub.
 
 Every format has its own page, `<category>/<game>/<format>/README.md`, with the same sections:
 overview, container and encoding, structure and metadata, timing model, notes, audio and images,
 versions and variants, quirks, example, ROX support, parsers and tools, sources. Each game has an
-overview page, `<category>/<game>/README.md`. Sample files, when the original repository had some,
-sit in `<format>/samples/` (never modify them: line endings are significant, see `.gitattributes`).
+overview page, `<category>/<game>/README.md`. Real sample charts sit in `<format>/samples/` (never modify them: line endings
+and encodings are significant, see `.gitattributes`); see [Samples](#samples).
+
+## Samples
+
+Every format page ends with a `Getting samples` section. Real chart files live next to the page, in `<category>/<game>/<format>/samples/`,
+with a `samples/SOURCES.md` that gives, for each file, its origin (URL, pinned commit), author, licence and what it exercises.
+Only charts are stored: no audio, video or images.
+
+| What | Where |
+|---|---|
+| Committed samples | `<category>/<game>/<format>/samples/`, listed in the `SOURCES.md` of that folder. Never modify them: line endings and encodings are significant (see `.gitattributes`). |
+| Samples that cannot be redistributed here (licence, size) but can be downloaded | [`samples.manifest.json`](samples.manifest.json) (format path, URL, sha256, size, licence note, target name). `sh tools/fetch-samples.sh` downloads them into `samples-local/<format path>/` (gitignored), checks size and sha256, and is idempotent. `sh tools/fetch-samples.sh vsrg/quaver` fetches one prefix only. Needs POSIX `sh`, `curl`, `sha256sum`, `awk`. |
+| Status per format | [`SAMPLES-STATUS.md`](SAMPLES-STATUS.md): committed count, manifest count, how to get more (every format of the index). |
+
+What may be committed: files whose licence allows redistribution (open-source game or parser test assets, spec examples, hand-written
+`synthetic-*` files declared public domain, files whose author explicitly allows sharing). Everything else public goes to the manifest.
+A file is never committed with its audio, even when the original package contains it.
 
 ## Rules of this reference
 
@@ -92,6 +108,8 @@ Edge cases are placed by gameplay, not by the platform. Borderline games are fla
 | [`.gda`](vsrg/dtxmania/gda/) DTXMania older chart (GDA) | GuitarFreaks/DrumMania via DTXMania | vsrg | stub | No | [`vsrg/dtxmania/gda`](vsrg/dtxmania/gda/) |
 | [`set.def`](vsrg/dtxmania/set-def/) DTXMania song set descriptor | DTXMania | vsrg | complete | No | [`vsrg/dtxmania/set-def`](vsrg/dtxmania/set-def/) |
 | [`.dwi`](vsrg/dwi/dwi/) Dance With Intensity step file | Dance With Intensity | vsrg | complete | Decode only | [`vsrg/dwi/dwi`](vsrg/dwi/dwi/) |
+| [`.cache`](vsrg/etterna/cache/) Etterna chart cache (`<chartkey>.cache`, `songdata.cache`) | Etterna | vsrg | partial | No | [`vsrg/etterna/cache`](vsrg/etterna/cache/) |
+| [`.ett`](vsrg/etterna/ett/) Etterna song file (write-only) | Etterna | vsrg | partial | No | [`vsrg/etterna/ett`](vsrg/etterna/ett/) |
 | [`.ez`](vsrg/ez2/ez/) EZ2DJ/EZ2AC chart (EZFF) | EZ2DJ / EZ2AC | vsrg | partial | No | [`vsrg/ez2/ez`](vsrg/ez2/ez/) |
 | [`.ezi`](vsrg/ez2/ezi/) EZ2AC keysound index | EZ2DJ / EZ2AC | vsrg | partial | No | [`vsrg/ez2/ezi`](vsrg/ez2/ezi/) |
 | [`.swf`](vsrg/flash-flash-revolution/swf/) FFR legacy level SWF (beatBox) | Flash Flash Revolution | vsrg | partial | No | [`vsrg/flash-flash-revolution/swf`](vsrg/flash-flash-revolution/swf/) |
@@ -106,6 +124,8 @@ Edge cases are placed by gameplay, not by the platform. Borderline games are fla
 | [`.json`](vsrg/friday-night-funkin/kade-json/) FNF Kade Engine chart (KE1) | Friday Night Funkin' (Kade Engine) | vsrg | partial | Partial (legacy `.json` layout only) | [`vsrg/friday-night-funkin/kade-json`](vsrg/friday-night-funkin/kade-json/) |
 | [`.json`](vsrg/friday-night-funkin/legacy-json/) FNF legacy week chart (song.notes[].sectionNotes) | Friday Night Funkin' (≤0.2.x, Kade/Psych-compatible) | vsrg | complete | Yes (read + write) | [`vsrg/friday-night-funkin/legacy-json`](vsrg/friday-night-funkin/legacy-json/) |
 | [`.png`](vsrg/friday-night-funkin/ludum-dare-png/) FNF Ludum Dare chart (PNG per section) | Friday Night Funkin' (Ludum Dare jam build) | vsrg | stub | No | [`vsrg/friday-night-funkin/ludum-dare-png`](vsrg/friday-night-funkin/ludum-dare-png/) |
+| [`.json`](vsrg/friday-night-funkin/maru-json/) FNF Maru Funkin' chart | Friday Night Funkin' (Maru Funkin', dead engine) | vsrg | stub | No | [`vsrg/friday-night-funkin/maru-json`](vsrg/friday-night-funkin/maru-json/) |
+| [`.json`](vsrg/friday-night-funkin/nmv-json/) FNF Nightmare Vision chart (nmv2) | Friday Night Funkin' (NightmareVision) | vsrg | partial | No | [`vsrg/friday-night-funkin/nmv-json`](vsrg/friday-night-funkin/nmv-json/) |
 | [`.json`](vsrg/friday-night-funkin/psych-json/) FNF Psych Engine chart (psych_v1) | Friday Night Funkin' (Psych Engine) | vsrg | complete | Partial (legacy `.json` layout; `psych_v1` lane rule read since 2026-10-28) | [`vsrg/friday-night-funkin/psych-json`](vsrg/friday-night-funkin/psych-json/) |
 | [`.json`](vsrg/friday-night-funkin/troll-json/) FNF Troll Engine chart | Friday Night Funkin' (Troll Engine) | vsrg | stub | No | [`vsrg/friday-night-funkin/troll-json`](vsrg/friday-night-funkin/troll-json/) |
 | [`.json`](vsrg/friday-night-funkin/vslice-chart-json/) FNF V-Slice chart data (-chart.json) | Friday Night Funkin' (0.3+, V-Slice) | vsrg | complete | Decode only | [`vsrg/friday-night-funkin/vslice-chart-json`](vsrg/friday-night-funkin/vslice-chart-json/) |
@@ -115,6 +135,7 @@ Edge cases are placed by gameplay, not by the platform. Borderline games are fla
 | [`.sq3`](vsrg/gitadora/sq3/) GITADORA sequence (SEQP/SQ3T) | GITADORA | vsrg | partial | No | [`vsrg/gitadora/sq3`](vsrg/gitadora/sq3/) |
 | [`.mid`](vsrg/guitar-hero/gh12-mid/) Guitar Hero 1/2 MIDI chart | Guitar Hero / Guitar Hero II (Harmonix) | vsrg | complete | No | [`vsrg/guitar-hero/gh12-mid`](vsrg/guitar-hero/gh12-mid/) |
 | [`.qb`](vsrg/guitar-hero/qb-chart/) Neversoft Guitar Hero chart (QB) | Guitar Hero III / World Tour (Neversoft) | vsrg | partial | No | [`vsrg/guitar-hero/qb-chart`](vsrg/guitar-hero/qb-chart/) |
+| [`.yav`](vsrg/interlude/yav/) Interlude binary chart (legacy file, now database/CDN blob) | Interlude (YAVSRG) | vsrg | partial | No | [`vsrg/interlude/yav`](vsrg/interlude/yav/) |
 | [`.ksf`](vsrg/kick-it-up/ksf/) Kick It Up step file (+Direct Move) | Kick It Up / Direct Move (Pump) | vsrg | complete | Decode only | [`vsrg/kick-it-up/ksf`](vsrg/kick-it-up/ksf/) |
 | [`.d2r`](vsrg/legacy-dance-formats/d2r/) Dazzle Dazzle Realization chart | Dazzle Dazzle Realization | vsrg | partial | No | [`vsrg/legacy-dance-formats/d2r`](vsrg/legacy-dance-formats/d2r/) |
 | [`directmove`](vsrg/legacy-dance-formats/directmove/) Direct Move (extended KSF) | Direct Move | vsrg | partial | Decode only | [`vsrg/legacy-dance-formats/directmove`](vsrg/legacy-dance-formats/directmove/) |
@@ -133,6 +154,7 @@ Edge cases are placed by gameplay, not by the platform. Borderline games are fla
 | [`.snp`](vsrg/o2jam/snp/) KrazyRain package (VDISK1.0) | KrazyRain | vsrg | partial | No | [`vsrg/o2jam/snp`](vsrg/o2jam/snp/) |
 | [`.txt`](vsrg/o2jam/txt/) O2Jam - Music & Game chart | O2Jam - Music & Game (mobile) | vsrg | stub | No | [`vsrg/o2jam/txt`](vsrg/o2jam/txt/) |
 | [`.xnt`](vsrg/o2jam/xnt/) KrazyRain chart (XNOT) | KrazyRain | vsrg | partial | No | [`vsrg/o2jam/xnt`](vsrg/o2jam/xnt/) |
+| [`.olz`](vsrg/osu-mania/olz/) osu!lazer beatmap archive (lazer-native export) | osu!mania (osu!lazer) | vsrg | partial | No | [`vsrg/osu-mania/olz`](vsrg/osu-mania/olz/) |
 | [`.osb`](vsrg/osu-mania/osb/) osu! storyboard file | osu! (storyboards of osu!mania mapsets) | vsrg | partial | No | [`vsrg/osu-mania/osb`](vsrg/osu-mania/osb/) |
 | [`.osu`](vsrg/osu-mania/osu/) osu! beatmap (mode 3, osu!mania) | osu!mania (osu!) | vsrg | complete | Yes (read + write) | [`vsrg/osu-mania/osu`](vsrg/osu-mania/osu/) |
 | [`.osz`](vsrg/osu-mania/osz/) osu! beatmap archive | osu!mania (et autres modes osu!) | vsrg | complete | No | [`vsrg/osu-mania/osz`](vsrg/osu-mania/osz/) |
@@ -151,6 +173,7 @@ Edge cases are placed by gameplay, not by the platform. Borderline games are fla
 | [`.qp`](vsrg/quaver/qp/) Quaver mapset package | Quaver | vsrg | partial | No | [`vsrg/quaver/qp`](vsrg/quaver/qp/) |
 | [`.qua`](vsrg/quaver/qua/) Quaver map (YAML) | Quaver | vsrg | complete | Yes (read + write) | [`vsrg/quaver/qua`](vsrg/quaver/qua/) |
 | [`.r2n`](vsrg/r2beat/r2n/) R2Beat chart package | R2Beat | vsrg | stub | No | [`vsrg/r2beat/r2n`](vsrg/r2beat/r2n/) |
+| [`.xml`](vsrg/r2beat/xml/) R2Beat note chart | R2Beat | vsrg | partial | No | [`vsrg/r2beat/xml`](vsrg/r2beat/xml/) |
 | [`.imd`](vsrg/rhythm-master/imd/) Rhythm Master classic chart | Rhythm Master (节奏大师) | vsrg | complete | Decode only | [`vsrg/rhythm-master/imd`](vsrg/rhythm-master/imd/) |
 | [`.json`](vsrg/rhythm-master/json/) Rhythm Master imdjson (BNDQ) | Rhythm Master (节奏大师) / WeChat mini program | vsrg | partial | No | [`vsrg/rhythm-master/json`](vsrg/rhythm-master/json/) |
 | [`.mde`](vsrg/rhythm-master/mde/) Rhythm Master star motion chart | Rhythm Master (节奏大师) | vsrg | stub | No | [`vsrg/rhythm-master/mde`](vsrg/rhythm-master/mde/) |
@@ -276,12 +299,14 @@ Edge cases are placed by gameplay, not by the platform. Borderline games are fla
 | [DTXMania](vsrg/dtxmania/) | vsrg | Drum/guitar/bass lanes with vertical notes. | [`.dtx`](vsrg/dtxmania/dtx/), [`.gda`](vsrg/dtxmania/gda/), [`.g2d`](vsrg/dtxmania/g2d/), [`set.def`](vsrg/dtxmania/set-def/) |
 | [Dance With Intensity](vsrg/dwi/) | vsrg | Panel steps scroll vertically along fixed columns. | [`.dwi`](vsrg/dwi/dwi/) |
 | [EZ2DJ / EZ2AC](vsrg/ez2/) | vsrg | 5K/7K/14K lanes with turntable and pedal; vertical notes. | [`.ez`](vsrg/ez2/ez/), [`.ezi`](vsrg/ez2/ezi/) |
+| [Etterna](vsrg/etterna/) | vsrg | StepMania 5.0 fork; vertical columns scrolling to a receptor row (charts are plain `.sm`/`.ssc`; own derived files below). | [`.ett`](vsrg/etterna/ett/), [`.cache`](vsrg/etterna/cache/) |
 | [Flash Flash Revolution](vsrg/flash-flash-revolution/) | vsrg | Panel steps scroll vertically along fixed columns. | [`.swf`](vsrg/flash-flash-revolution/swf/) |
 | [fluXis](vsrg/fluxis/) | vsrg | Lane-based vertical game with key columns and scroll velocities. | [`.fsc`](vsrg/fluxis/fsc/), [`.ffx`](vsrg/fluxis/ffx/), [`.fms`](vsrg/fluxis/fms/) |
 | [Fortnite Festival](vsrg/fortnite-festival/) | vsrg | Five fixed lanes toward a strike line, Rock Band style. | [`.mid`](vsrg/fortnite-festival/mid/) |
-| [Friday Night Funkin'](vsrg/friday-night-funkin/) | vsrg | Four arrow lanes per side scrolling vertically. | [`.json`](vsrg/friday-night-funkin/legacy-json/), [`.json`](vsrg/friday-night-funkin/psych-json/), [`.json`](vsrg/friday-night-funkin/kade-json/), [`.json`](vsrg/friday-night-funkin/codename-json/), [`.json`](vsrg/friday-night-funkin/fps-plus-json/), [`.json`](vsrg/friday-night-funkin/troll-json/), [`.fnfc`](vsrg/friday-night-funkin/fnfc/), [`.json`](vsrg/friday-night-funkin/vslice-chart-json/), [`.json`](vsrg/friday-night-funkin/vslice-metadata-json/), [`.png`](vsrg/friday-night-funkin/ludum-dare-png/), [`.fnfmod`](vsrg/friday-night-funkin/fnfmod/) |
+| [Friday Night Funkin'](vsrg/friday-night-funkin/) | vsrg | Four arrow lanes per side scrolling vertically. | [`.json`](vsrg/friday-night-funkin/legacy-json/), [`.json`](vsrg/friday-night-funkin/psych-json/), [`.json`](vsrg/friday-night-funkin/kade-json/), [`.json`](vsrg/friday-night-funkin/codename-json/), [`.json`](vsrg/friday-night-funkin/fps-plus-json/), [`.json`](vsrg/friday-night-funkin/troll-json/), [`.fnfc`](vsrg/friday-night-funkin/fnfc/), [`.json`](vsrg/friday-night-funkin/vslice-chart-json/), [`.json`](vsrg/friday-night-funkin/vslice-metadata-json/), [`.png`](vsrg/friday-night-funkin/ludum-dare-png/), [`.fnfmod`](vsrg/friday-night-funkin/fnfmod/), [`.json`](vsrg/friday-night-funkin/nmv-json/), [`.json`](vsrg/friday-night-funkin/maru-json/) |
 | [GITADORA](vsrg/gitadora/) | vsrg | Fixed drum and guitar/bass lanes. | [`.sq3`](vsrg/gitadora/sq3/), [`.sq2`](vsrg/gitadora/sq2/), [`.dsq/.gsq`](vsrg/gitadora/dsq/) |
 | [Guitar Hero](vsrg/guitar-hero/) | vsrg | Five-lane note highway. | [`.mid`](vsrg/guitar-hero/gh12-mid/), [`.qb`](vsrg/guitar-hero/qb-chart/) |
+| [Interlude](vsrg/interlude/) | vsrg | Fixed 3-10 lanes, vertical scrolling (`Chart.CheckForErrors` accepts 3..10 keys). | [`.yav`](vsrg/interlude/yav/) |
 | [Kick It Up](vsrg/kick-it-up/) | vsrg | Panel steps scroll vertically along fixed columns. | [`.ksf`](vsrg/kick-it-up/ksf/) |
 | [Legacy dance formats](vsrg/legacy-dance-formats/) | vsrg | Old Japanese/PC dance simulators: panel steps along fixed columns. | [`.d2r`](vsrg/legacy-dance-formats/d2r/), [`.slo`](vsrg/legacy-dance-formats/slo/), [`.sul`](vsrg/legacy-dance-formats/sul/), [`.step`](vsrg/legacy-dance-formats/step/), [`.ftb`](vsrg/legacy-dance-formats/ftb/), [`directmove`](vsrg/legacy-dance-formats/directmove/) |
 | [Malody](vsrg/malody/) | vsrg | Key mode (the bulk of charts) is a fixed-column vertical scroller; other modes share the container but are not column-based. | [`.mc`](vsrg/malody/mc/), [`.mcz`](vsrg/malody/mcz/) |
@@ -289,14 +314,14 @@ Edge cases are placed by gameplay, not by the platform. Borderline games are fla
 | [Music Times](vsrg/music-times/) | vsrg | Lane-based vertical-scroll mobile game. | [`.xml`](vsrg/music-times/xml/) |
 | [Musync / MUSYNX](vsrg/musync/) | vsrg | Fixed key lanes (4K/6K) with falling notes. | [`.txt`](vsrg/musync/txt/) |
 | [O2Jam](vsrg/o2jam/) | vsrg | Seven fixed lanes with vertical-falling notes. | [`.ojn`](vsrg/o2jam/ojn/), [`.ojm`](vsrg/o2jam/ojm/), [`OJNList.dat`](vsrg/o2jam/ojnlist-dat/), [`.snp`](vsrg/o2jam/snp/), [`.xnt`](vsrg/o2jam/xnt/), [`.txt`](vsrg/o2jam/txt/) |
-| [osu!mania](vsrg/osu-mania/) | vsrg | Fixed-column vertical charts (4K..10K+). | [`.osz`](vsrg/osu-mania/osz/), [`.osu`](vsrg/osu-mania/osu/), [`.osb`](vsrg/osu-mania/osb/) |
+| [osu!mania](vsrg/osu-mania/) | vsrg | Fixed-column vertical charts (4K..10K+). | [`.osz`](vsrg/osu-mania/osz/), [`.osu`](vsrg/osu-mania/osu/), [`.osb`](vsrg/osu-mania/osb/), [`.olz`](vsrg/osu-mania/olz/) |
 | [pop'n music](vsrg/pop-n-music/) | vsrg | Nine fixed button columns toward a judgement line. | [`(unknown)`](vsrg/pop-n-music/arcade-chart/) |
 | [Project SEKAI](vsrg/project-sekai/) | vsrg | 12 fixed lanes on an integer lane/width grid, notes falling to a fixed line (borderline, like BanG Dream). | [`.pjsk / .json / .json.gz`](vsrg/project-sekai/pjsk/), [`.mmws / .ccmmws / .unchmmws`](vsrg/project-sekai/ccmmws/), [`.sus`](vsrg/project-sekai/holodori-sus/), [`.sus`](vsrg/project-sekai/sus/), [`.usc`](vsrg/project-sekai/usc/), [`.mmws`](vsrg/project-sekai/mmws/) |
 | [Pump It Up](vsrg/pump-it-up/) | vsrg | Panel steps scroll vertically along 5 or 10 fixed columns. | [`.stx`](vsrg/pump-it-up/stx/), [`.not / .not5`](vsrg/pump-it-up/not/), [`.ucs`](vsrg/pump-it-up/ucs/) |
 | [pydance](vsrg/pydance/) | vsrg | Panel steps scroll vertically along fixed columns. | [`.dance`](vsrg/pydance/dance/) |
 | [QQ Dance (mobile)](vsrg/qq-dance/) | vsrg | Star motion and traditional modes are lane-based; other modes are free-position but share the schema. | [`.xml`](vsrg/qq-dance/xml/) |
 | [Quaver](vsrg/quaver/) | vsrg | Fixed 1-10 lanes (4K/7K mainly) scrolling vertically. | [`.qua`](vsrg/quaver/qua/), [`.qp`](vsrg/quaver/qp/) |
-| [R2Beat](vsrg/r2beat/) | vsrg | Believed to be a vertical-lane game [inference]. | [`.r2n`](vsrg/r2beat/r2n/) |
+| [R2Beat](vsrg/r2beat/) | vsrg | Racing/rhythm hybrid (obstacle kinds up/down/left/right/diagonal/long); not lane-based, kept in vsrg as the closest category [inference]. Corrects the earlier "vertical-lane" guess (Newton wiki). | [`.xml`](vsrg/r2beat/xml/), [`.r2n`](vsrg/r2beat/r2n/) |
 | [Rhythm Master](vsrg/rhythm-master/) | vsrg | 4/5/6 vertical lanes. | [`.imd`](vsrg/rhythm-master/imd/), [`.mde`](vsrg/rhythm-master/mde/), [`.json`](vsrg/rhythm-master/json/) |
 | [Rhythm Open Exchange (ROX)](vsrg/rhythm-open-exchange/) | vsrg | Interchange format for column-based VSRG charts; fixed key count. | [`.rox`](vsrg/rhythm-open-exchange/rox/), [`.jrox`](vsrg/rhythm-open-exchange/jrox/), [`.yrox`](vsrg/rhythm-open-exchange/yrox/) |
 | [RoBeats](vsrg/robeats/) | vsrg | Four fixed tracks scrolling vertically. | [`.lua`](vsrg/robeats/lua-songmap/) |
@@ -414,7 +439,7 @@ Every entry of [`ORIGINAL_README.md`](ORIGINAL_README.md) has a page:
 
 Games with a page but no chart-format folder: [NOSTALGIA](others/nostalgia/), [Osu! Tatakae! Ouendan / Elite Beat Agents](others/elite-beat-agents/) (no public chart format found), [Rhythia](others/rhythia/) (shares Sound Space's [`.sspm`](others/sound-space/sspm/)).
 
-Investigated, no public format found, so no folder: osu!stream (`.osc`/`.osz2`), Unplugged (`.usm` is a third-party manager archive), Audition Online (only the undocumented `.arp` replay), KeyboardMania, Pump It Up arcade `.pak`/`.nxa`, DDR Freestyle, Dance Dance Immolation, `.pump`/`.nx`/`.ddr`, Interlude/YAVSRG (a future `.yav` is only mentioned), Funky Friday, Taptap Heroes, Dancing Line, Rhythm Cat, Tone Sphere, Beat Fever, Ensemble Stars, Uta no Prince, D4DJ, Girls Band Cry, Geometry Dash, Soundboxing, BoxVR/FitXR. Historic BMS dialects (MGQ, MBM, EMS, KMS) are listed in [`vsrg/bms/README.md`](vsrg/bms/) without a spec. `.fnfm` was requested but no such format was found (nearest: [`.fnfc`](vsrg/friday-night-funkin/fnfc/), [`.fnfmod`](vsrg/friday-night-funkin/fnfmod/)). Not investigated: Tap Tap Revolution, Rhythm Hive, Rhythm Game Maker, Raindrop `.dcf`, the FNF engines Forever / Leather / Andromeda.
+Investigated, no public format found, so no folder: osu!stream (`.osc`/`.osz2`), Unplugged (`.usm` is a third-party manager archive), Audition Online (only the undocumented `.arp` replay), KeyboardMania, Pump It Up arcade `.pak`/`.nxa`, DDR Freestyle, Dance Dance Immolation, `.pump`/`.nx`/`.ddr`, Funky Friday, Taptap Heroes, Dancing Line, Rhythm Cat, Tone Sphere, Beat Fever, Ensemble Stars, Uta no Prince, D4DJ, Girls Band Cry, Geometry Dash, Soundboxing, BoxVR/FitXR. Historic BMS dialects (MGQ, MBM, EMS, KMS) are listed in [`vsrg/bms/README.md`](vsrg/bms/) without a spec. `.fnfm` was requested but no such format was found (nearest: [`.fnfc`](vsrg/friday-night-funkin/fnfc/), [`.fnfmod`](vsrg/friday-night-funkin/fnfmod/)). Not investigated: Tap Tap Revolution, Rhythm Hive, Rhythm Game Maker, Raindrop `.dcf`, the FNF engines Forever / Leather / Andromeda.
 
 ## Conventions for new pages
 
@@ -435,3 +460,11 @@ History of what this repository adds to the upstream list (Glubus/vsrg-format-do
 - The pages `vsrg/bms/*` and the other formats read by ROX describe the ROX decoder in their "ROX support" section.
 - Hand-written, public-domain sample charts identical to the ROX test assets: `vsrg/bms/bms/samples/synthetic-features.bms`,
   `vsrg/bms/pms/samples/synthetic-nine-buttons.pms`, `vsrg/bms/bmson/samples/synthetic-features.bmson`.
+- Sample corpus: 838 real or synthetic chart files committed under `<category>/<game>/<format>/samples/` (each folder has a `SOURCES.md`
+  with origin, author, licence and purpose per file), 443 more files listed in [`samples.manifest.json`](samples.manifest.json)
+  (url, sha256, size, licence) and fetched by [`tools/fetch-samples.sh`](tools/fetch-samples.sh); every format page has a `Getting samples`
+  section and [`SAMPLES-STATUS.md`](SAMPLES-STATUS.md) lists all 204 formats with their counts.
+- New format pages: `vsrg/etterna/{ett,cache}`, `vsrg/interlude/yav`, `vsrg/osu-mania/olz`, `vsrg/r2beat/xml`,
+  `vsrg/friday-night-funkin/{nmv-json,maru-json}`. The osu!lazer `client.realm` database is documented as not being a chart format
+  (`vsrg/osu-mania/README.md`).
+- Page corrections made while reading real files are tagged `[observed in ...]`.
