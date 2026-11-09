@@ -28,4 +28,4 @@ Historic BMS-derived extensions named by the hitkey memo (no spec found, no fold
 
 ROX status: none of these formats is read by ROX 0.8.1 (BMS is "planned" in the ROX README).
 
-Added format pages: [`ibmsc/`](ibmsc/README.md) (iBMSC project file), [`bms-table/`](bms-table/README.md) (BMS difficulty table `header.json`/`data.json`); Bemuse's web layer is in [`../bemuse`](../bemuse/README.md).
+Added format pages: [`ibmsc/`](ibmsc/README.md) (iBMSC project file); Bemuse's web layer is in [`../bemuse`](../bemuse/README.md).

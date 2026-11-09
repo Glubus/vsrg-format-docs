@@ -11,7 +11,7 @@ osu!standard is the original osu! game mode (`Mode: 0`). Circles, sliders and sp
 
 ## Packaged in
 
-- Packaged in [`osz`](../../../vsrg/osu-mania/osz/).
+- Shipped in: `.osz` (zip of a beatmap set: one `.osu` per difficulty, audio, background, optional video, `.osb` storyboard, hitsounds).
 
 ## Container & encoding
 

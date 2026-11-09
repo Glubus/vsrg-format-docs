@@ -9,7 +9,7 @@ Chart format of **Re:PhiEdit (RPE)**, the community Phigros chart editor by cmdy
 
 ## Packaged in
 
-- Packaged in [`pez`](../pez/).
+- Shipped in: `.pez` (Phira / PhiZone zip: a chart file, music, illustration, `info.yml`).
 
 ## Container & encoding
 

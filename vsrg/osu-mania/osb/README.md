@@ -9,7 +9,7 @@ Doc status: partial · ROX: no · Category: vsrg (it accompanies mania maps; it 
 
 ## Packaged in
 
-- Packaged in [`osz`](../osz/).
+- Shipped in: `.osz` (zip of a beatmap set: one `.osu` per difficulty, audio, background, optional video, `.osb` storyboard, hitsounds).
 
 ## Container & encoding
 
@@ -57,7 +57,7 @@ Not read by ROX.
 
 - **Committed** in [`samples/`](samples/) (see [`SOURCES.md`](samples/SOURCES.md)): 14 tiny `.osb` decoder test files from ppy/osu @ bb37f05 (MIT): animation loops/types, `[Variables]` (self-reference, suffix), video events with upper/lower-case extensions, out-of-order start times.
 - **Also committed**: 7 real storyboards of the osu-file-parser tests (`osu-file-parser_*.osb`; 0.3-76 KB), see `samples/SOURCES.md`; upstream has no LICENSE file.
-- **How to get more**: a mapset's `.osb` sits at the root of the `.osz` next to the `.osu` files (see [osz](../osz/README.md)); the storyboard section of the osu! wiki and any ranked set with storyboard (https://osu.ppy.sh/beatmaps, filter "Has storyboard") provide real ones; the editor writes the shared storyboard to `<set>/<Artist - Title (Creator)>.osb`.
+- **How to get more**: a mapset's `.osb` sits at the root of the `.osz` next to the `.osu` files; the storyboard section of the osu! wiki and any ranked set with storyboard (https://osu.ppy.sh/beatmaps, filter "Has storyboard") provide real ones; the editor writes the shared storyboard to `<set>/<Artist - Title (Creator)>.osb`.
 
 ## Sources
 

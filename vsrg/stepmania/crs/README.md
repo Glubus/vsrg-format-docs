@@ -9,7 +9,7 @@ A `.crs` file is a **course**: an ordered playlist of song entries ("play these 
 
 ## Packaged in
 
-- Packaged in [`smzip`](../smzip/).
+- Shipped in: `.smzip` (zip with install-relative paths `Songs/<Group>/<Song>/` holding `.sm`/`.ssc` and audio, optional `smzip.ctl`; plain `.zip` packs have the same layout).
 
 ## Container & encoding
 

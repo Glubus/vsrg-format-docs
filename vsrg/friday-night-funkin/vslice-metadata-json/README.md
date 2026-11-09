@@ -5,12 +5,12 @@ Doc status: complete · ROX: decode only (with the chart file) · Category: vsrg
 
 ## Overview
 
-The song-level data file of Friday Night Funkin' 0.3+ ("V-Slice"): name, artist, tempo map, play data (difficulties, characters, stage...), audio offsets. It is what the game caches for menus (Freeplay) while the heavy note data ([`-chart.json`](../vslice-chart-json/README.md)) stays unloaded until a song is played. Packed in an `.fnfc` ZIP ([../fnfc/README.md](../fnfc/README.md)) or stored loose at `data/songs/<songid>/<songid>-metadata.json` (the registry scans `songs/` for files ending in `-metadata.json`). Source: `docs/FNFC-SPEC.md` (metadata 2.2.2 at the time of writing 2024-04-29), `SongData.hx` classes `SongMetadata`, `SongTimeChange`, `SongOffsets`, `SongPlayData`, `SongCharacterData`; `SongRegistry.SONG_METADATA_VERSION = '2.2.4'` (rule `2.2.x`) on the main branch.
+The song-level data file of Friday Night Funkin' 0.3+ ("V-Slice"): name, artist, tempo map, play data (difficulties, characters, stage...), audio offsets. It is what the game caches for menus (Freeplay) while the heavy note data ([`-chart.json`](../vslice-chart-json/README.md)) stays unloaded until a song is played. Packed in an `.fnfc` ZIP (../fnfc/README.md) or stored loose at `data/songs/<songid>/<songid>-metadata.json` (the registry scans `songs/` for files ending in `-metadata.json`). Source: `docs/FNFC-SPEC.md` (metadata 2.2.2 at the time of writing 2024-04-29), `SongData.hx` classes `SongMetadata`, `SongTimeChange`, `SongOffsets`, `SongPlayData`, `SongCharacterData`; `SongRegistry.SONG_METADATA_VERSION = '2.2.4'` (rule `2.2.x`) on the main branch.
 
 ## Packaged in
 
-- Packaged in [`fnfc`](../fnfc/).
-- Packaged in [`fnfmod`](../fnfmod/).
+- Shipped in: `.fnfc` (zip saved by the V-Slice Chart Editor: `-metadata.json`, `-chart.json` and the audio).
+- Shipped in: `.fnfmod` (zip of a whole FNF mod from the official Mod Menu: songs as V-Slice chart/metadata files, characters, stages).
 
 ## Container & encoding
 

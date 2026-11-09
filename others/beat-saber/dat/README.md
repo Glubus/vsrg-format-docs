@@ -8,7 +8,7 @@ One JSON file per beatmap (characteristic x difficulty), named in `Info.dat` (`_
 
 ## Packaged in
 
-- Packaged in [`beatsaver-zip`](../beatsaver-zip/).
+- Shipped in: BeatSaver `.zip` (map folder: `Info.dat`, one difficulty `.dat` each, audio, cover).
 
 ## Container & encoding
 JSON text, UTF-8. Possibly gzip-deflated (game accepts; OST uses it from 1.34.5). Coordinates and times are floats; fields at default may be omitted (game fills defaults since 1.31.0; the Official Editor always writes them; ChroMapper has a toggle). v4: a file with only `{ "version": "4.0.0" }` is valid, but NPS/note counts on the selection screen need `colorNotes`, `bombNotes`, `obstacles` all present. `customData` / `_customData` blocks hold mod data (Chroma, Noodle, ...) and are not vanilla.

@@ -7,7 +7,7 @@ Doc status: complete · ROX: decode only · Category: vsrg · Encoding: text
 `song.ini` is the metadata companion file of `notes.mid` and (nowadays) `notes.chart` charts, used by Clone Hero, YARG, Phase Shift, FoFiX / Frets on Fire and Rock Band-style custom song tools. It does not contain notes; some tags change how the chart is parsed. Metadata here overrides the `[Song]` section of a `.chart`.
 
 ## Container & encoding
-INI text, a single `[song]` (or `[Song]`) section header, then `key = value` lines. Keys can be in any order and with inconsistent capitalization; pad the `=` with spaces (recommended; some programs fail without). Comments with `;` or `#` (usually full lines only; support varies). Values may contain formatting tags such as `<color=#00FF00>` that should be stripped if unused. Encoding is not specified in the docs. The `.sng` container converts the tags into its metadata pairs (see [sng](../sng/README.md)).
+INI text, a single `[song]` (or `[Song]`) section header, then `key = value` lines. Keys can be in any order and with inconsistent capitalization; pad the `=` with spaces (recommended; some programs fail without). Comments with `;` or `#` (usually full lines only; support varies). Values may contain formatting tags such as `<color=#00FF00>` that should be stripped if unused. Encoding is not specified in the docs. The `.sng` container converts the tags into its metadata pairs.
 
 ## Structure / metadata
 Value types: number (-1 can mean unset), float, string (no quotes unless stated), boolean (`True/False`, `true/false`, `0/1`), file name, MIDI note, MIDI velocity.
@@ -68,7 +68,7 @@ YARG.Core (C#): https://github.com/YARC-Official/YARG.Core · FoFiX (Python) · 
 
 ## Getting samples
 - Committed in [`samples/`](samples/SOURCES.md): 15 real `song.ini` files (6 from Stickheadz32's GitHub chart repository, each beside a committed `.chart`; 9 by TheGreatNi, CC BY 4.0, from https://archive.org/details/YoungDublinersAshleyFalls.7z, each beside a committed `notes.mid`) and 3 synthetic CC0 files (full tag range, CRLF/unspaced `key=value` with comments and `five_lane_drums`, `.mid` parser tags `delay`/`multiplier_note`/`sysex_*`).
-- More: every Clone Hero/YARG song folder carries a `song.ini`; Chorus Encore stores the same keys as `.sng` metadata (see [sng](../sng/README.md)). Tag lists: https://github.com/TheNathannator/GuitarGame_ChartFormats (`docs/Chart-File-Formats/song-ini/Standard-Tags.md`, Clone Hero and Phase Shift tag pages, CC0).
+- More: every Clone Hero/YARG song folder carries a `song.ini`; Chorus Encore stores the same keys as `.sng` metadata (see sng). Tag lists: https://github.com/TheNathannator/GuitarGame_ChartFormats (`docs/Chart-File-Formats/song-ini/Standard-Tags.md`, Clone Hero and Phase Shift tag pages, CC0).
 
 ## Sources
 https://thenathannator.github.io/GuitarGame_ChartFormats/ (song-ini/Format-Overview, Standard-Tags; Implementation-Specific/Clone-Hero, Phase-Shift, Frets-on-Fire-X song-ini tags) · https://wiki.yarg.in/wiki/Song.ini

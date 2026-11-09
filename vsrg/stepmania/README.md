@@ -27,7 +27,7 @@ Format documents in this repo:
 - [`sm`](sm/README.md): the `.sm` simfile (3.x/4/5; basis of everything).
 - [`ssc`](ssc/README.md): StepMania 5 `.ssc` (per-chart timing).
 - [`edit`](edit/README.md): `.edit` single-chart fragments.
-- Etterna extras: [`../etterna`](../etterna/README.md) ([`ett`](../etterna/ett/README.md), [`cache`](../etterna/cache/README.md)).
+- Etterna extras: [`../etterna`](../etterna/README.md) ([`ett`](../etterna/ett/README.md)).
 - Imports: [`../dwi`](../dwi/README.md), [`../kick-it-up`](../kick-it-up/README.md), [`../stepmania-amx`](../stepmania-amx/README.md), [`../pydance`](../pydance/README.md), [`../stepmania-micro`](../stepmania-micro/README.md), [`../ddr`](../ddr/README.md) (`.msd`, `.sdf`, `.ssq`), [`../pump-it-up`](../pump-it-up/README.md), [`../legacy-dance-formats`](../legacy-dance-formats/README.md).
 
 ## `.sm` vs `.ssc` at a glance
@@ -133,4 +133,4 @@ ROX 0.8.1 reads **and writes** `.sm` and `.ssc` ([ROX source: src/formats/sm/](h
 - https://github.com/stepmania/stepmania/blob/master/Docs/SimfileFormats/DWI/DWI.txt (CRS/LRC)
 - ROX source: `rhythm-open-exchange/src/formats/sm/`
 
-Added format pages: [`crs/`](crs/README.md) (`.crs` course files), [`smzip/`](smzip/README.md) (`.smzip` packages).
+Added format pages: [`crs/`](crs/README.md) (`.crs` course files).

@@ -9,7 +9,7 @@ The native chart format of Phigros (Pigeon Games). The game stores one JSON file
 
 ## Packaged in
 
-- Packaged in [`pez`](../pez/).
+- Shipped in: `.pez` (Phira / PhiZone zip: a chart file, music, illustration, `info.yml`).
 
 ## Container & encoding
 

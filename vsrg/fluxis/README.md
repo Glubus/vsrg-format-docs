@@ -7,7 +7,6 @@ fluXis (https://github.com/InventiveRhythm/fluXis, C#, osu!framework) is a commu
 Format folders:
 - [`fsc/`](fsc/README.md): `.fsc` map (JSON): timing points, SVs, hit objects.
 - [`ffx/`](ffx/README.md): `.ffx` effects/events (JSON, legacy text variant).
-- [`fms/`](fms/README.md): `.fms` mapset package (ZIP).
 
 Not documented: `.fsb` storyboard (JSON `Storyboard` class) and `.fsk` skin package.
 

@@ -7,6 +7,5 @@ Category: **others**: game-agnostic entity container (entities of engine-defined
 Formats documented:
 
 - [`level-data/`](level-data/README.md) - LevelData (gzip JSON), the chart payload of a Sonolus level.
-- [`scp/`](scp/README.md) - Sonolus Collection Package (`.scp`) (stub).
 
 Links: <https://wiki.sonolus.com/>, <https://github.com/Sonolus/sonolus-wiki>, <https://github.com/NonSpicyBurrito/sonolus-wiki>.

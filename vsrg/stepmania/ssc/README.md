@@ -11,7 +11,7 @@ See also: [family overview](../README.md), [`.sm`](../sm/README.md), [`.edit`](.
 
 ## Packaged in
 
-- Packaged in [`smzip`](../smzip/).
+- Shipped in: `.smzip` (zip with install-relative paths `Songs/<Group>/<Song>/` holding `.sm`/`.ssc` and audio, optional `smzip.ctl`; plain `.zip` packs have the same layout).
 
 ## Container & encoding
 

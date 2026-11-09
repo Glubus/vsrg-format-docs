@@ -5,12 +5,12 @@ Doc status: complete · ROX: decode only (with the metadata file) · Category: v
 
 ## Overview
 
-The note/event data file of Friday Night Funkin' 0.3+ ("V-Slice", official game by The Funkin' Crew Inc.). It replaces the legacy `{song: {...}}` file ([../legacy-json/README.md](../legacy-json/README.md)). It contains ONLY the notes of every difficulty of one "variation" and the song events; the song-level data (title, BPM, characters, stage...) is in the companion [`-metadata.json`](../vslice-metadata-json/README.md). Both files are packed by the chart editor into an `.fnfc` ZIP ([../fnfc/README.md](../fnfc/README.md)); the shipped game stores them loose (`data/songs/<songid>/<songid>-chart.json`). Source: `source/funkin/data/song/SongData.hx` (class `SongChartData`), `SongRegistry.hx`, `docs/FNFC-SPEC.md`.
+The note/event data file of Friday Night Funkin' 0.3+ ("V-Slice", official game by The Funkin' Crew Inc.). It replaces the legacy `{song: {...}}` file ([../legacy-json/README.md](../legacy-json/README.md)). It contains ONLY the notes of every difficulty of one "variation" and the song events; the song-level data (title, BPM, characters, stage...) is in the companion [`-metadata.json`](../vslice-metadata-json/README.md). Both files are packed by the chart editor into an `.fnfc` ZIP (../fnfc/README.md); the shipped game stores them loose (`data/songs/<songid>/<songid>-chart.json`). Source: `source/funkin/data/song/SongData.hx` (class `SongChartData`), `SongRegistry.hx`, `docs/FNFC-SPEC.md`.
 
 ## Packaged in
 
-- Packaged in [`fnfc`](../fnfc/).
-- Packaged in [`fnfmod`](../fnfmod/).
+- Shipped in: `.fnfc` (zip saved by the V-Slice Chart Editor: `-metadata.json`, `-chart.json` and the audio).
+- Shipped in: `.fnfmod` (zip of a whole FNF mod from the official Mod Menu: songs as V-Slice chart/metadata files, characters, stages).
 
 ## Container & encoding
 

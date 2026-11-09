@@ -9,7 +9,7 @@ Doc status: partial · ROX: no · Category: vsrg · Encoding: json (legacy text 
 
 ## Packaged in
 
-- Packaged in [`fms`](../fms/).
+- Shipped in: `.fms` (zip of a fluXis mapset: `.fsc` difficulties, `.ffx` effects, audio, background, video, hitsounds).
 
 ## Container & encoding
 

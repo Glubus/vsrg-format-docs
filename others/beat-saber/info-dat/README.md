@@ -8,7 +8,7 @@ Doc status: complete · ROX: no · Category: others · Encoding: json
 
 ## Packaged in
 
-- Packaged in [`beatsaver-zip`](../beatsaver-zip/).
+- Shipped in: BeatSaver `.zip` (map folder: `Info.dat`, one difficulty `.dat` each, audio, cover).
 
 ## Container & encoding
 - JSON text (UTF-8). All metadata files are JSON; any extension may be used for them, **except the info file, which must be named exactly `Info.dat`** (BSMG, map-format).

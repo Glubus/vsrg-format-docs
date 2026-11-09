@@ -7,7 +7,6 @@ Category: **others**. Notes sit at arbitrary x positions on a page, the "judgeme
 Formats documented:
 
 - [`c1-txt/`](c1-txt/README.md) - Cytus 1 text chart (`.txt`, "Rayark v2 modified": `VERSION 2` header + `NOTE` / `LINK` lines).
-- [`cytoidlevel/`](cytoidlevel/README.md) - Cytoid level package (stub).
 - [`c2-json/`](c2-json/README.md) - Cytus II / Cytoid "C2" JSON chart.
 
 Sources: <https://cytoid.wiki/en/reference/chart/c2-format>, <https://sites.google.com/site/cytoidcommunity/charting/chart-format>, <https://github.com/Cytoid/Cytoid/wiki/b.-Chart-formats>.

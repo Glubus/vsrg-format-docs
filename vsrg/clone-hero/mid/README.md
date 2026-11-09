@@ -8,8 +8,8 @@ Harmonix designed Guitar Hero 1/2 and Rock Band to store charts as Standard MIDI
 
 ## Packaged in
 
-- Packaged in [`sng`](../sng/).
-- Packaged in [`yargsong`](../../yarg/yargsong/).
+- Shipped in: `.sng` (Clone Hero / YARG single-file package: a masked container with the song folder, i.e. chart, audio, images, video, plus a metadata key/value table).
+- Shipped in: `.yargsong` (YARG single-file song package from the YARC Launcher; internal layout Unknown).
 
 ## Container & encoding
 - Standard MIDI File format type 1 (multi-track), **ticks per quarter note** resolution (480 is common [inference]; the docs only state "ticks-per-quarter"). Format 0/2 and SMPTE division are not supported.

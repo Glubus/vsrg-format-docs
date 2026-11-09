@@ -2,8 +2,8 @@
 
 Real chart files per format of the [README index](README.md), all committed under `<format>/samples/` (charts only: no audio, video, images, and no archive or package of any kind; archives were opened and only their chart files kept). Origin URL, fetch date, author and licence/terms of every file are in the `samples/SOURCES.md` of each format; the "Getting samples" section of each format page says how to get more.
 
-- Formats: **204**. With at least 5 real charts: **116**. With 1 to 4 real charts: **18**. With no real chart: **70** (20 are container-only formats whose charts live in another format folder, 50 have no public copy).
-- Committed files: **2447** (including `SOURCES.md`-listed synthetic and converted files; the "Real" column below counts only real charts).
+- Formats: **182** (chart formats only; packages such as `.osz`, `.qp`, `.fnfc` are listed in the README, section Packages). With at least 5 real charts: **115**. With 1 to 4 real charts: **18**. With no real chart: **49** (no public copy).
+- Committed files: **2426** (including `SOURCES.md`-listed synthetic and converted files; the "Real" column below counts only real charts).
 - "Real" = a chart written by a game, a tool or a person for actual play or for a real test, downloaded from a public source. "Synthetic" = hand-written or script-written here (CC0). Converted files (made by running a converter on a real chart) are not counted as real unless the SOURCES.md says the converter output was published by someone else.
 - The 33 `.png` files of `vsrg/friday-night-funkin/ludum-dare-png` are the chart data itself (one tiny PNG per section, 12 rows high, no artwork); they are the only images in the repo.
 
@@ -21,14 +21,12 @@ Real chart files per format of the [README index](README.md), all committed unde
 | [`vsrg/bms/bme`](vsrg/bms/bme/) `.bme` Be-Music Extend (BME) chart, 7 keys + scratch | 55 | 0 | Same sources; 7K IIDX-style packs, iidx2bms output; bemusic/music has 87 .bme (41 committed) |
 | [`vsrg/bms/bml`](vsrg/bms/bml/) `.bml` Be-Music Longnote (BML) chart | 13 | 1 | Same sources; any pack, search for *.bml or #LNOBJ (all 10 bemusic/music .bml are committed) |
 | [`vsrg/bms/bms`](vsrg/bms/bms/) `.bms` Be-Music Source (BMS) chart | 99 | 6 | BMS Search, BMS of Fighters/manbow event pages, GENOSIDE starter packs, github.com/bemusic/music (221 charts, 62 more not yet committed), GenerationMania repo holds BOF packs |
-| [`vsrg/bms/bms-table`](vsrg/bms/bms-table/) `header.json / data.json` BMS difficulty table | 8 | 2 | any table page: meta name=bmstable -> header.json -> data_url |
 | [`vsrg/bms/bmson`](vsrg/bms/bmson/) `.bmson` bmson 1.0.0 (JSON BMS successor) | 5 | 1 | more bmson only via Bemuse server (only onlylove_remix) or converters bms2bmson-python/bms-rs |
 | [`vsrg/bms/ibmsc`](vsrg/bms/ibmsc/) `.ibmsc` iBMSC project file | 0 | 7 | no genuine editor-saved .ibmsc is public; the 5 committed files are real BMS charts converted to .ibmsc by a script (never opened in iBMSC); save any .bms as .ibmsc from iBMSC/uBMSC/pBMSC (rechecked: zardoru/iBMSC, RM-801/iBMSC-electron, asdfghjkoiuy/iBMSCPP, c0linw/BMSdori, Pulsus contain no .ibmsc) |
 | [`vsrg/bms/pms`](vsrg/bms/pms/) `.pms` feeling-PoMu Script (PMS), 9-button BMS dialect | 23 | 59 | PMS Database releases (github.com/pmsdatabase/pmsdatabase.github.io/releases: bofu2016pms 21.7 MB, bofxv19pms, bofxvipms, bofxviipms, bofetpms, bofntpms, bofttpms, bof21pms not yet committed) |
 | [`vsrg/clone-hero/chart`](vsrg/clone-hero/chart/) `.chart` Clone Hero / Moonscraper chart | 9 | 4 | Chorus Encore API (api.enchor.us) + files.enchor.us .sng downloads; Stickheadz32 and other GitHub chart repos; archive.org items with Clone Hero charts |
 | [`vsrg/clone-hero/ini`](vsrg/clone-hero/ini/) `.ini` Clone Hero song.ini metadata | 15 | 3 | song.ini ships beside every chart folder; archive.org TheGreatNi charts, GitHub chart repos |
 | [`vsrg/clone-hero/mid`](vsrg/clone-hero/mid/) `.mid` Rock Band / Clone Hero MIDI chart (notes.mid) | 17 | 0 | Chorus Encore .sng notes.mid, Onyx repo songs-*/ folders, archive.org TheGreatNi's Guitar Hero Charts, YARG.Core test fixtures |
-| [`vsrg/clone-hero/sng`](vsrg/clone-hero/sng/) `.sng` SNG song package (Clone Hero) | 0 | 0 | container only: charts live in vsrg/clone-hero/chart and vsrg/clone-hero/mid; Chorus Encore files.enchor.us/<md5>.sng; SngCli encode/decode (mdsitton/SngFileFormat) |
 | [`vsrg/ddr/gen`](vsrg/ddr/gen/) `.gen` DDR S+ song container (iOS) | 0 | 0 | every .gen embeds Blowfish-encrypted full-song and preview MP3 (audio) and the only public copies are 3 in the DDR S+ Lite IPA on archive.org; none in tool repos; download DanceDanceRevolution S Lite (US) IPA from archive.org item ios-ipa-com.konami.ddrslite and unzip Payload/DDRSPlusUS.app/*.gen; or buy songs in the DDR S+ app |
 | [`vsrg/ddr/hudson-ssq`](vsrg/ddr/hudson-ssq/) `.ssq (chunk 9)` Hudson SSQ type 9 step chunk | 0 | 0 | only multi-GB Wii/GameCube disc images exist publicly (archive.org) and no chart extract or fixture is published; dump an owned Hottest Party 1 / Mario Mix disc and read type-9 SSQ chunks with skogaby/ddr-chart-tools |
 | [`vsrg/ddr/hudson-ssq-lane`](vsrg/ddr/hudson-ssq-lane/) `.ssq (chunk 16)` Hudson SSQ type 16 lane-format chunk | 0 | 0 | only multi-GB Wii disc images exist publicly (archive.org) and no chart extract or fixture is published; dump an owned Hottest Party 4/5 disc and read type-16 SSQ chunks with skogaby/ddr-chart-tools |
@@ -45,18 +43,14 @@ Real chart files per format of the [README index](README.md), all committed unde
 | [`vsrg/dtxmania/gda`](vsrg/dtxmania/gda/) `.gda` DTXMania older chart (GDA) | 18 | 1 | ~358 .gda in the smaller packs of archive.org raredtxgda/raredtxgda2 (RAR, extract with bsdtar) |
 | [`vsrg/dtxmania/set-def`](vsrg/dtxmania/set-def/) `set.def` DTXMania song set descriptor | 15 | 3 | more packs in archive.org items raredtxgda/raredtxgda2 (RAR per charter, 64 set.def counted in the smaller ones) |
 | [`vsrg/dwi/dwi`](vsrg/dwi/dwi/) `.dwi` Dance With Intensity step file | 48 | 1 | archive.org DWIExtreme* items (dwi-extreme-all 4.9 GB), simfile-parser packs, the other pack folders of dwi.ddruk.com |
-| [`vsrg/etterna/cache`](vsrg/etterna/cache/) `.cache` Etterna chart cache (`<chartkey>.cache`, `songdata.cache`) | 0 | 0 | generated artefact of Etterna pack tooling; no copy in any repository or archive reachable; build/run Etterna and call SongManager::GenerateCachefilesForGroup (pack export) to produce songdata.cache and <chartkey>.cache |
 | [`vsrg/etterna/ett`](vsrg/etterna/ett/) `.ett` Etterna song file (write-only) | 0 | 0 | write-only format with no caller in the Etterna source; no file exists anywhere reachable; build Etterna from source and call Song::SaveToETTFile from code |
 | [`vsrg/ez2/ez`](vsrg/ez2/ez/) `.ez` EZ2DJ/EZ2AC chart (EZFF) | 11 | 0 | archive.org items 19990420_, 20000807_, 20020728_ (RARs of PC EZ2DJ editions: only the first 40-45 MB were read, i.e. 3 songs; later songs need the whole 1-2 GB RAR) and the 7-13 GB HDD images |
 | [`vsrg/ez2/ezi`](vsrg/ez2/ezi/) `.ezi` EZ2AC keysound index | 11 | 0 | same RARs as .ez |
 | [`vsrg/flash-flash-revolution/swf`](vsrg/flash-flash-revolution/swf/) `.swf` FFR legacy level SWF (beatBox) | 7 | 1 | any playhash of https://www.flashflashrevolution.com/game/r3/r3-playlist.php via r3-songLoad.php (audio stripped) |
 | [`vsrg/fluxis/ffx`](vsrg/fluxis/ffx/) `.ffx` fluXis effects file | 6 | 0 | unzip any mapset from fluxis.flux.moe/api/mapsets/<id>/download |
-| [`vsrg/fluxis/fms`](vsrg/fluxis/fms/) `.fms` fluXis mapset package | 0 | 0 | container only: charts live in fluxis/fsc and fluxis/ffx; same download endpoint returns .fms ZIPs |
 | [`vsrg/fluxis/fsc`](vsrg/fluxis/fsc/) `.fsc` fluXis map | 9 | 0 | https://fluxis.flux.moe/api/mapsets/<id>/download then unzip (ids from /maps) |
 | [`vsrg/fortnite-festival/mid`](vsrg/fortnite-festival/mid/) `.mid` Fortnite Festival chart MIDI | 0 | 0 | charts are encrypted in the game data; no public decrypted .mid found (extractor tools and stems-only archive.org items); Festival-MIDI-Extractor or Fest2CH on your own account |
 | [`vsrg/friday-night-funkin/codename-json`](vsrg/friday-night-funkin/codename-json/) `.json` FNF Codename Engine chart + meta.json | 8 | 3 | Codename mods on GameBanana, engine assets/songs |
-| [`vsrg/friday-night-funkin/fnfc`](vsrg/friday-night-funkin/fnfc/) `.fnfc` FNF chart package (V-Slice) | 0 | 0 | container only: charts live in vsrg/friday-night-funkin/vslice-chart-json and vslice-metadata-json; GameBanana .fnfc packages, in-game Chart Editor |
-| [`vsrg/friday-night-funkin/fnfmod`](vsrg/friday-night-funkin/fnfmod/) `.fnfmod` FNF mod package | 0 | 0 | container only: charts live in vsrg/friday-night-funkin/vslice-chart-json and vslice-metadata-json; no real .fnfmod found; Mod Menu preview builds |
 | [`vsrg/friday-night-funkin/fps-plus-json`](vsrg/friday-night-funkin/fps-plus-json/) `.json` FNF FPS Plus chart + meta/events | 6 | 4 | FPS-Plus-Public assets/data/songs (all songs) |
 | [`vsrg/friday-night-funkin/kade-json`](vsrg/friday-night-funkin/kade-json/) `.json` FNF Kade Engine chart (KE1) | 10 | 2 | Perkedel/Kaded-fnf-mods has about 200 more Kade charts |
 | [`vsrg/friday-night-funkin/legacy-json`](vsrg/friday-night-funkin/legacy-json/) `.json` FNF legacy week chart (song.notes[].sectionNotes) | 6 | 2 | Funkin tag v0.2.7.1 assets/data, Kade/Psych repos, GameBanana mods |
@@ -81,20 +75,16 @@ Real chart files per format of the [README index](README.md), all committed unde
 | [`vsrg/legacy-dance-formats/step`](vsrg/legacy-dance-formats/step/) `.step` pyDDR/pydance .step | 2 | 0 | only 2 .step URLs were captured by Wayback (0forkbomb, 6jan); pydance 0.7/0.8 tarballs are 404 in Wayback; older pyDDR releases, Text Text Revolution songs |
 | [`vsrg/legacy-dance-formats/sul`](vsrg/legacy-dance-formats/sul/) `.sul` D2R legacy chart | 0 | 0 | no .sul file found anywhere reachable; run D2REDIT on charts of the earlier D2R, or convert .d2r with d2r2sul (tool not found online) |
 | [`vsrg/malody/mc`](vsrg/malody/mc/) `.mc` Malody chart (JSON) | 32 | 3 | Malody store (login required) or editor; GitHub repos with .mc |
-| [`vsrg/malody/mcz`](vsrg/malody/mcz/) `.mcz` Malody chart package (ZIP) | 0 | 0 | container only: charts live in vsrg/malody/mc/samples (forge-demo_*); Malody store/editor export; Malody Chart Forge demos |
 | [`vsrg/music-master/xml`](vsrg/music-master/xml/) `.xml` Music Master chart | 0 | 0 | No public copy found: charts only inside the 2013 iOS IPA (config.xml in song packs); no repo hosts XML (chuxue2777's web port embeds data in JS); Unzip the iOS IPA song packs; rmstZ reads the XML |
 | [`vsrg/music-times/xml`](vsrg/music-times/xml/) `.xml` Music Times chart | 0 | 0 | No public copy found anywhere; later clients encrypt charts; rmstZ is closed source; Old client download folder + rmstZ |
 | [`vsrg/musync/txt`](vsrg/musync/txt/) `.txt` MUSYNX (Musync) chart (txt) | 0 | 0 | No public copy found; game data is binary/encrypted and no repo hosts txt charts (KeyTap uses its own JSON); Extract from MUSYNX game data (Steam), rmstZ handles both plaintext and encrypted |
 | [`vsrg/o2jam/ojm`](vsrg/o2jam/ojm/) `.ojm` O2Jam music/sample container (M30 / OMC / OJM) | 0 | 11 | OJM files are audio containers (they carry the game audio and cannot be stripped), so no real file is committed; only 11 synthetic M30/OJM seeds from render-ojn; Copy o2ma<id>.ojm next to an OJN from an own client Music/ folder or the Server Two music pack; extract with CXO2/Open2Jam/render-ojn |
 | [`vsrg/o2jam/ojn`](vsrg/o2jam/ojn/) `.ojn` O2Jam note file | 21 | 11 | archive.org item o2jam_musicpack (3 700 per-song zips by server), o-2-mania, own client Music/o2ma*.ojn |
 | [`vsrg/o2jam/ojnlist-dat`](vsrg/o2jam/ojnlist-dat/) `OJNList.dat` O2Jam client music list | 1 | 0 | only one OJNList.dat reachable: other client folders sit beyond the first 45 MB of 1-2 GB RARs (O2Mania.rar, o2jam_setup.exe is an installer); download the whole O2Mania.rar (1.1 GB) from archive.org item o-2-mania or o2jam_setup.exe and extract Image/OJNList.dat |
-| [`vsrg/o2jam/snp`](vsrg/o2jam/snp/) `.snp` KrazyRain package (VDISK1.0) | 0 | 0 | container only: charts live in o2jam/xnt; no .snp file is public (closed game KrazyRain, Arrowgene.KrazyRain ships no assets, open2jam holds none); install KrazyRain and extract Data/*.SNP with Arrowgene.KrazyRain vdisk-extract |
 | [`vsrg/o2jam/txt`](vsrg/o2jam/txt/) `.txt` O2Jam - Music & Game chart | 0 | 0 | Format unknown and no file found: rmstZ test pack sits on a Jianguoyun share page that cannot be downloaded with curl; no repository holds an O2Jam Music & Game txt chart; export from the mobile app data or with rmstZ [unverified] |
 | [`vsrg/o2jam/xnt`](vsrg/o2jam/xnt/) `.xnt` KrazyRain chart (XNOT) | 0 | 0 | No .xnt is public: they exist only inside KrazyRain .snp archives (no public copy found; KrazyRenderer and Arrowgene.KrazyRain ship none); extract an own KrazyRain .snp with Arrowgene.KrazyRain vdisk-extract |
-| [`vsrg/osu-mania/olz`](vsrg/osu-mania/olz/) `.olz` osu!lazer beatmap archive (lazer-native export) | 0 | 0 | container only: charts live in vsrg/osu-mania/osu/samples (3 extracted olz); export a set from osu!lazer (File > Export > Export as .olz), keep only .osu |
 | [`vsrg/osu-mania/osb`](vsrg/osu-mania/osb/) `.osb` osu! storyboard file | 21 | 0 | .osb at the root of any .osz whose set has a storyboard |
 | [`vsrg/osu-mania/osu`](vsrg/osu-mania/osu/) `.osu` osu! beatmap (mode 3, osu!mania) | 107 | 0 | osu.ppy.sh/beatmaps mania maps (unzip .osz); lazer and rosu-map test resources; ROX assets/osu |
-| [`vsrg/osu-mania/osz`](vsrg/osu-mania/osz/) `.osz` osu! beatmap archive | 0 | 0 | container only: charts live in vsrg/osu-mania/osu/samples and osb/samples; osu.ppy.sh/beatmaps and mirrors; File>Export package; keep only .osu/.osb |
 | [`vsrg/pop-n-music/arcade-chart`](vsrg/pop-n-music/arcade-chart/) `(unknown)` pop'n music arcade chart events | 0 | 0 | Konami arcade data exists only inside a game install (<ifs>_op.bin / _hp.bin inside the song .ifs); no public copy found in GitHub path search, popntowav/popn-tools/popngg repos, archive.org or web search; Own a pop'n install: unpack the song .ifs with ifstools; popntowav.js reads _op.bin or _hp.bin |
 | [`vsrg/project-sekai/ccmmws`](vsrg/project-sekai/ccmmws/) `.mmws / .ccmmws / .unchmmws` MikuMikuWorld binary layout (MMWS/CCMMWS/UCMMWS) | 0 | 10 | no public .ccmmws/.unchmmws exists; the 10 committed files are real charts converted with rg-converters; Save from MMW4CC / MMW4UC; Chart Cyanvas and Untitled Charts communities |
 | [`vsrg/project-sekai/holodori-sus`](vsrg/project-sekai/holodori-sus/) `.sus` hololive Dream SUS dialect | 6 | 0 | holodori-asset-tools download --filter '^chart_m.*\.sus$' fetches all songs from the public CDN |
@@ -107,7 +97,6 @@ Real chart files per format of the [README index](README.md), all committed unde
 | [`vsrg/pump-it-up/ucs`](vsrg/pump-it-up/ucs/) `.ucs` Pump It Up User Custom Step | 8 | 0 | StepMania-AMX/micro step/ folder (3,124 .ucs); official UCS sites; PIUUCSMaker/StepEdit Lite exports |
 | [`vsrg/pydance/dance`](vsrg/pydance/dance/) `.dance` pydance step file | 6 | 0 | no other .dance exists on icculus.org Wayback CDX; Debian songs package not found |
 | [`vsrg/qq-dance/xml`](vsrg/qq-dance/xml/) `.xml` QQ Dance mobile chart | 0 | 0 | No public copy found: official xml.bytes only in old 2019 APKs; QQX5Tools has converters but no data; QQX5Tools BytesToXml on a 2019 APK; custom-chart tutorials on jianshu.com/p/cc6b74bf9520 |
-| [`vsrg/quaver/qp`](vsrg/quaver/qp/) `.qp` Quaver mapset package | 0 | 0 | container only: charts live in vsrg/quaver/qua/samples (quaver-default_*); quavergame.com downloads and 4 more default packs under Quaver.Resources/DefaultMaps |
 | [`vsrg/quaver/qua`](vsrg/quaver/qua/) `.qua` Quaver map (YAML) | 121 | 2 | quavergame.com map pages (.qp = ZIP); Quaver import of osz/sm/mcz; Quaver.API tests |
 | [`vsrg/r2beat/r2n`](vsrg/r2beat/r2n/) `.r2n` R2Beat chart package | 0 | 0 | No public copy found; no source documents the package; recorded only in rmstZ's feature list; Unknown; rmstZ lists r2n extraction |
 | [`vsrg/r2beat/xml`](vsrg/r2beat/xml/) `.xml` R2Beat note chart | 10 | 1 | tablez/r2beat-viewer res/note_music* has 5680 charts; dzsfo/r2beat rnr_music |
@@ -127,12 +116,10 @@ Real chart files per format of the [README index](README.md), all committed unde
 | [`vsrg/stepmania/crs`](vsrg/stepmania/crs/) `.crs` StepMania course file | 25 | 0 | Courses/ of any StepMania/ITGmania install |
 | [`vsrg/stepmania/edit`](vsrg/stepmania/edit/) `.edit` StepMania edit file | 40 | 3 | remaining 400 Drano edits in archive.org StepManiaDranoEdits; your own profile Edits/ folder |
 | [`vsrg/stepmania/sm`](vsrg/stepmania/sm/) `.sm` StepMania simfile | 112 | 0 | archive.org simfile packs (ZeldaYEH, Tweety, stepmaniapack 9.7 GB), simfile-parser packs, simfilearchive.dev |
-| [`vsrg/stepmania/smzip`](vsrg/stepmania/smzip/) `.smzip` StepMania package (smzip) | 0 | 4 | container only: charts live in vsrg/stepmania/sm (stepmix-1.0/, stepmania-complete-disc/) and vsrg/dwi/dwi; the folder holds 4 real smzip.ctl text files, no archive; archive.org step-mania-complete ISO (StepMania/Packages/*.smzip), simfilearchive.dev stepmix-1.0.smzip, smpackage export |
 | [`vsrg/stepmania/ssc`](vsrg/stepmania/ssc/) `.ssc` StepMania 5 simfile | 42 | 0 | remaining OutFox Serenity ssc, PIU-Simfiles repos, archive.org piu-simfiles-stepp1 |
 | [`vsrg/stepmania-amx/sma`](vsrg/stepmania-amx/sma/) `.sma` StepMania AMX simfile | 0 | 0 | no .sma file exists in any reachable repository, AMX build archive or archive.org item; the loader semantics are too loose to hand-write one; convert an .ssc with ssc2sma.amx.io or find .sma in AMX-targeted song packs |
 | [`vsrg/stepmania-micro/json`](vsrg/stepmania-micro/json/) `.json` StepMania JSON (StepMania Micro) | 2 | 0 | only the 2 StepMania Micro 0.3 data files exist (Wayback); no NotesWriterJson output published anywhere found; build StepMania and call NotesWriterJson |
 | [`vsrg/vos/vos`](vsrg/vos/vos/) `.vos` Virtual Orchestra Studio song (.vos) | 6 | 0 | VOS community song libraries, VOS Creator from MIDI |
-| [`vsrg/yarg/yargsong`](vsrg/yarg/yargsong/) `.yargsong` YARG single-file song package | 0 | 0 | container only: charts live in vsrg/clone-hero/chart and vsrg/clone-hero/mid; the only public YARG setlist 7z releases checked are password-protected; YARC Launcher setlist download; YARG.Core YARGSongFileStream.cs for the header |
 
 ## others
 
@@ -140,10 +127,8 @@ Real chart files per format of the [README index](README.md), all committed unde
 |---|---:|---:|---|
 | [`others/a-dance-of-fire-and-ice/adofai`](others/a-dance-of-fire-and-ice/adofai/) `.adofai` A Dance of Fire and Ice level | 6 | 2 | levels are mostly shared on Steam Workshop/adofai.gg (not scraped); more from GitHub repos such as dashgd45-eng/adofai-levels |
 | [`others/arcaea/aff`](others/arcaea/aff/) `.aff` Arcaea chart (AFF) | 19 | 0 | Suhri archive, ArcCreate projects, Arcaea fan community |
-| [`others/arcaea/arcpkg`](others/arcaea/arcpkg/) `.arcpkg` ArcCreate package / project | 0 | 3 | container only: charts live in others/arcaea/aff/samples/etoile_sn.test; ArcCreate export; no other public arcpkg direct download found |
 | [`others/arcaea/songlist`](others/arcaea/songlist/) `songlist` Arcaea songlist / packlist | 6 | 0 | fan song packs ship songlistadd.json |
 | [`others/audica/audica`](others/audica/audica/) `.audica` Audica map package | 7 | 39 | maudica.com API (~2150 maps) |
-| [`others/beat-saber/beatsaver-zip`](others/beat-saber/beatsaver-zip/) `.zip` BeatSaver map package | 0 | 0 | container only: charts live in others/beat-saber/dat/samples and info-dat/samples; BeatSaver |
 | [`others/beat-saber/dat`](others/beat-saber/dat/) `*.dat` Beat Saber beatmap (v2/v3/v4, Lightshow, BPMInfo) | 51 | 0 | BeatSaver API/CDN, BeatSaber-Deno fixtures, BSMG wiki |
 | [`others/beat-saber/info-dat`](others/beat-saber/info-dat/) `Info.dat` Beat Saber Info (v1 info.json, v2, v4) | 23 | 0 | BeatSaver API/CDN |
 | [`others/beatblock/level-json`](others/beatblock/level-json/) `level.json` Beatblock level (JSON events) | 41 | 3 | Beatblock Browser (TLS unreachable), Steam Workshop, other level zips in ItsBritex/beatblock-levels |
@@ -153,7 +138,6 @@ Real chart files per format of the [README index](README.md), all committed unde
 | [`others/crypt-of-the-necrodancer/beatmap-txt`](others/crypt-of-the-necrodancer/beatmap-txt/) `.txt (<song>.mp3.txt)` Crypt of the NecroDancer custom music beat file | 1 | 2 | only one real beat list is published (2017 Steam forum post); 8 other Steam threads/guides, tool repos checked and hold none; files are generated locally by the game; assign custom music in the game or use Supinic/necrodancer-custom-music |
 | [`others/cytus/c1-txt`](others/cytus/c1-txt/) `.txt` Cytus 1 chart ("Rayark v2 modified") | 5 | 1 | Cytoid wiki sample; game data |
 | [`others/cytus/c2-json`](others/cytus/c2-json/) `.json` Cytus II / Cytoid chart (C2) | 8 | 1 | cytoid.io levels (package download needs login) |
-| [`others/cytus/cytoidlevel`](others/cytus/cytoidlevel/) `.cytoidlevel` Cytoid level package | 0 | 4 | container only: charts live in others/cytus/c2-json/samples; only loose level.json files kept here; cytoid.io |
 | [`others/dancerail/drb`](others/dancerail/drb/) `.drb` DanceRail chart | 4 | 1 | only DanceRail3Viewer (4 distinct bluemelody charts) is publicly reachable; grep.app/Sourcegraph blocked, no .drb or other community pack found; DRMaker/DanceRail3 on Android |
 | [`others/deemo/json`](others/deemo/json/) `.json` Deemo chart (JSON) | 8 | 1 | Deemo-I-Charts has ~1700 more |
 | [`others/djmax-technika-q/bytes`](others/djmax-technika-q/bytes/) `.bytes` DJMAX Technika Q song | 6 | 0 | DMTQResearch Patterns folder has 2634 more |
@@ -175,7 +159,6 @@ Real chart files per format of the [README index](README.md), all committed unde
 | [`others/maimai/sdt`](others/maimai/sdt/) `.sdt` SRT / SZT / SCT / SDT (maimai classic charts) | 0 | 4 | no public real classic chart: game data is encrypted (.sdb etc.) and not hosted; only 4 synthetic files committed; 2nd pass: no public classic chart in MaiConverter, Neskol repos or gists; convert ma2/simai with MaiConverter; maimai classic data dump |
 | [`others/maimai/simai`](others/maimai/simai/) `maidata.txt` simai (maidata.txt, 'simai language') | 5 | 2 | MajdataEdit, Neskol/Maichart-Converts, converters |
 | [`others/muse-dash/bms`](others/muse-dash/bms/) `.bms` Muse Dash BMS dialect | 16 | 8 | api.mdmc.moe/v3/charts (all community albums) |
-| [`others/muse-dash/mdm`](others/muse-dash/mdm/) `.mdm` Muse Dash custom album (MDM) | 0 | 0 | container only: charts live in others/muse-dash/bms; mdmc.moe/charts API (api.mdmc.moe/v3/charts) |
 | [`others/ohshape/yml`](others/ohshape/yml/) `.yml` OhShape level (YAML) | 8 | 0 | ohshapes.com /api/maps/latest/<page> (many more maps) |
 | [`others/ongeki/ogkr`](others/ongeki/ogkr/) `.ogkr` OGKR (ONGEKI chart) | 5 | 0 | OngekiFumenEditor FumenSamples (about 138 files) |
 | [`others/osu-catch/osu`](others/osu-catch/osu/) `.osu` osu! beatmap (mode 2, osu!catch) | 21 | 0 | same, catch difficulties |
@@ -185,7 +168,6 @@ Real chart files per format of the [README index](README.md), all committed unde
 | [`others/paradigm-reboot/chart`](others/paradigm-reboot/chart/) `unknown` Paradigm: Reboot chart | 0 | 0 | commercial Unity game, format unknown, no public dump or parser found; wiki Data Mining page returns 403; see fiche Getting samples |
 | [`others/phigros/official-json`](others/phigros/official-json/) `.json` Phigros official chart | 6 | 2 | phigros-chart-tracker / decrypted-data mirrors |
 | [`others/phigros/pec`](others/phigros/pec/) `.pec` PhiEdit Chart (PEC) | 8 | 1 | more pec folders in yuameshi/phigros-charts-repo |
-| [`others/phigros/pez`](others/phigros/pez/) `.pez` Phira / PhiZone chart package | 0 | 0 | container only: charts live in others/phigros/rpe/samples |
 | [`others/phigros/phi-common-chart`](others/phigros/phi-common-chart/) `.json / protobuf` PhiCommonChart (PhiFanmade interchange model) | 0 | 0 | no file of this format exists publicly: only doc fragments at docs.nuanr-mxi.com; see fiche Getting samples |
 | [`others/phigros/rpe`](others/phigros/rpe/) `.json` Re:PhiEdit chart (RPEJSON) | 11 | 0 | api.phira.cn/chart lists ~9700 charts (file = pez URL) |
 | [`others/pistol-whip/pwcl-level`](others/pistol-whip/pwcl-level/) `.pw / .pw_beat` Pistol Whip Custom Levels folder (level.pw, .pw_beat, .pw_koreo, .pw_sec, .pw_geo) | 30 | 0 | mod.io official levels; pw_geo files over 20 MB were skipped |
@@ -194,17 +176,13 @@ Real chart files per format of the [README index](README.md), all committed unde
 | [`others/reflec-beat/rb`](others/reflec-beat/rb/) `.rb` RB package (Reflec Beat plus iOS) | 0 | 0 | commercial Konami iOS package, entries Blowfish-encrypted, no public copy found; see fiche Getting samples |
 | [`others/rgc/rgc`](others/rgc/rgc/) `.rgc` RGC (Rhythm Game Chart) | 2 | 1 | only two public .rgc found (rgc repo test, vsrg-chart-view test); rgc-bms/rgc-kshoot repos hold converters only |
 | [`others/rhythm-doctor/rdlevel`](others/rhythm-doctor/rdlevel/) `.rdlevel` Rhythm Doctor level | 16 | 0 | datasette.rhythm.cafe JSON API (~7700 levels with rdzip_url) |
-| [`others/rhythm-doctor/rdzip`](others/rhythm-doctor/rdzip/) `.rdzip` Rhythm Doctor level archive | 0 | 0 | container only: charts live in others/rhythm-doctor/rdlevel/samples |
-| [`others/rhythm-heaven/riq`](others/rhythm-heaven/riq/) `.riq` RIQ (Rhythm Heaven Studio remix) | 0 | 0 | container only: chart JSON lives inside the zip; no audio-free real .riq obtainable |
 | [`others/rhythm-heaven/tickflow`](others/rhythm-heaven/tickflow/) `.bin / .tickflow` Rhythm Heaven Megamix / DS tickflow script | 17 | 1 | more in the same repo; decompile Megamix .bin with Tickompiler |
 | [`others/rizline/chart-json`](others/rizline/chart-json/) `.json` Rizline chart (chart.json) | 1 | 1 | only the rizlib official test chart is public; Workshop charts need Steam, no GitHub collection found; see fiche Getting samples |
-| [`others/rocksmith/psarc`](others/rocksmith/psarc/) `.psarc` Rocksmith 2014 package (PSARC) | 0 | 0 | container only: charts live in others/rocksmith/sng/samples and xml/samples |
 | [`others/rocksmith/sng`](others/rocksmith/sng/) `.sng` Rocksmith 2014 SNG (binary) | 6 | 0 | unpack any psarc with the toolkit |
 | [`others/rocksmith/xml`](others/rocksmith/xml/) `.xml` Rocksmith 2014 arrangement XML | 11 | 0 | EOF/DDC authored CDLC |
 | [`others/rotaeno/chart-text`](others/rotaeno/chart-text/) `.txt` Rotaeno chart text (as read by RotaenoChartTool) | 0 | 1 | no open source holds real Rotaeno charts (only metadata/tools); game data not publicly distributed; see fiche Getting samples |
 | [`others/smash-drums/indies`](others/smash-drums/indies/) `.indies` Smash Drums Indies package | 6 | 1 | Indies-DB (public Supabase storage URLs) has hundreds more community charts; Smash Drums Editor export |
 | [`others/sonolus/level-data`](others/sonolus/level-data/) `.json (gzip)` Sonolus Level Data | 7 | 2 | any Sonolus server (untitledcharts.com has ~77k levels); rg_converters from USC/SUS |
-| [`others/sonolus/scp`](others/sonolus/scp/) `.scp` Sonolus Collection Package (SCP) | 0 | 0 | container only: charts live in sonolus/level-data; export a collection from the Sonolus app or package a static server |
 | [`others/sound-space/sspm`](others/sound-space/sspm/) `.sspm` Sound Space Plus / Rhythia map (v1, v2) | 8 | 2 | Rhythia API getBeatmaps lists 13k maps (legacy ones are .sspm); Rhythia-DB bulk downloader |
 | [`others/sound-space/txt`](others/sound-space/txt/) `.txt` Sound Space (Roblox) text map | 21 | 0 | GitHub txt map lists (nruv/sound-space, CotixGD/SS-Archive); pysspm NOTES2TEXT |
 | [`others/space-channel-5/dgsh`](others/space-channel-5/dgsh/) `.bin (DGSH)` Space Channel 5 Part 2 DGSH sequence files | 6 | 0 | extract R*_SH.BIN from Space Channel 5 Part 2 PC AFS archives |
@@ -247,7 +225,6 @@ By decision of the repository owner, real charts (community maps, official game 
 - vsrg/bms/bmson (manifest bms-rs_lostokens.bmson, bms-rs_bemusicstory_483_48K_ANOTHER.bmson): repo is Apache-2.0 but the charts are third-party; not committed.
 - vsrg/bms/bmson (manifest bemuse-ninja_onlylove_remix_*.bmson): CC-BY-NC in the files; NC terms, not committed.
 - vsrg/bms/bmson: bemusic/bmson-spec has no LICENSE file, nothing taken.
-- vsrg/bms/bms-table/samples/synthetic-data.json: entry 6 holds the md5/sha256 of vsrg/bms/bmson/samples/synthetic-features.bmson; goes stale if that file changes.
 - vsrg/bms/ibmsc/samples/synthetic-*.ibmsc: hand-built from pBMSC source, never opened in iBMSC; verified only by a mirrored Python reader (undo block written empty).
 - vsrg/bemuse/bemuse-song-json/samples/derived-aoi-olivia-bemuse-song.json: derived (id/path removed, reserialised) from the AGPL index.json fixture, not a real bemuse-song.json.
 - vsrg/robeats/lua-songmap/samples/*.lua: spotco/RobeatsCustomServerTemplate has no LICENSE file; committed on the strength of the author's devforum statement ("100% Free and open source to do anything you want with"); Monday Night Monsters note data belongs to the template author's own song.
@@ -265,12 +242,10 @@ By decision of the repository owner, real charts (community maps, official game 
 - vsrg/bms/bme/samples/BMSParser_05.bon_voyage_7hyper.bme: real chart (song Bon Voyage by Mystinia) inside an MIT-licensed parser repo; no separate licence for the song/chart
 - vsrg/friday-night-funkin/legacy-json/samples/rox-test-song.json: MIT via ROX (owner's crate), but whether the chart content is hand-made or derived from a real FNF chart is not stated
 - vsrg/friday-night-funkin/*: all real FNF charts (Funkin tag v0.2.7.1 is plain Apache-2.0 repo-wide, engines Apache-2.0) kept manifest-only because funkin.assets licence is proprietary; the v0.2.7.1 and 1.0.0 trees may be redistributable under Apache-2.0 but the parent said manifest-only
-- vsrg/friday-night-funkin/fnfmod/samples/synthetic.fnfmod: .fnfmod internal schema unknown; api_version 0.8.0 is a guess
 - vsrg/flash-flash-revolution/swf/samples/synthetic-level.swf: verified only by a Python port of rCubed Beatbox.parseBeatbox, not by Flash/rCubed
 - vsrg/clone-hero/chart/samples/yarg-core_test.chart: committed under the YARG.Core repo licence LGPL-3.0 (LICENSE read); the file is a synthetic feature-check chart ("Test" artist) but its individual author is not stated
 - vsrg/clone-hero/mid/samples/yarg-core_test.mid: same, LGPL-3.0 repo fixture with synthetic-looking tracks, individual author not stated
 - vsrg/clone-hero/mid (manifest drawntotheflame.mid): full RB-style chart, rights unclear, therefore manifest only
-- vsrg/clone-hero/sng/samples/*.sng and gh12-mid/samples/*.mid: hand-built binary files validated only against the published specs, not opened in a real game
 - vsrg/osu-mania/osu/samples/ppy-osu_*.osu: MIT repo (ppy/osu) but some fixtures (4869637, 100374, 20544) are real ranked-map derived; mapper licence unknown
 - vsrg/osu-mania/osu/samples/quaver-api_*.osu and vsrg/quaver/qua/samples/quaver-api_*.qua: MPL-2.0 repo, but Camellia/megalovania/Blue Zenith/ReEnd of a Dream/Tsukahara maps are real community maps; map licence unknown
 - vsrg/osu-mania/osu/samples/yavsrg-prelude_*.osu and osz/samples/yavsrg-prelude_*.osz: MIT repo, real community maps (DannyPX, Raveille, Overlord68_, Night Bunny 7); map licence unknown (osz are audio-less)
@@ -290,11 +265,9 @@ By decision of the repository owner, real charts (community maps, official game 
 - others/maimai/ma2 manifest 010070_03.ma2 and other converted official charts: CC0 repo licence but content derived from commercial game data, hence manifest only
 - others/ongeki/ogkr manifest ongeki-editor-bench_*.ogkr: MIT repo, but the charts (creators NaNya, MikiraSora, ...) may be fan or game charts; rights unclear, manifest only
 - others/jubeat/* manifest: Stepland/jubeatools, Stepland/memon have no LICENSE file; the GitHub jubeatools README says it moved to GitLab (not checked there)
-- others/muse-dash/mdm/samples/*.mdm: built here from CloneDash (MIT) info.json + map2.bms without audio/cover; clonedash repo is a fork (parhelia512/CloneDash), upstream chain of the test charts not verified
 - osu-standard/osu/samples/osu-resources_*.osu: extracted from CC-BY-NC-4.0 ppy/osu-resources .osz (non-commercial); kept per brief, flagged. ppy/osu fixtures: MIT repo but many are real ranked maps by third-party mappers (Soleily - Renatus, Within Temptation, 1124896-style ids) with no per-file licence; same for osu-catch/osu-taiko/osu-standard files from kionell/osu-taiko-stable, MaxOhn/rosu-pp, ekgame/beatmap-analyzer (GPL-3.0) tests.
 - others/osu-standard/osu/samples/osu-resources_*.osu: extracted from the default-track .osz of ppy/osu-resources (CC-BY-NC-4.0, non-commercial + attribution); committed per brief, audio/images dropped
 - others/osu-*/osu/samples (ppy/osu, kionell/osu-taiko-stable, MaxOhn/rosu-pp, ekgame/beatmap-analyzer GPL-3.0): code repos MIT/GPL, but most .osu are real ranked maps by third-party mappers (e.g. Soleily - Renatus, Within Temptation - The Unforgiving, Tomorrow Perfume) without a per-file licence
-- others/rhythm-doctor/rdlevel/samples/rd-nurse_internet_overdose.rdlevel and others/rhythm-doctor/rdzip/samples/rebuilt-internet-overdose-no-audio.rdzip: AGPL-3.0 repo (0f-0b/rd-nurse) test data, but the level is a third-party community level for a copyrighted song (Aiobahn feat. KOTOKO)
 - others/rocksmith/xml/samples/rocksmith2014net_*.xml and rocksmith/sng/samples/rocksmith2014net_*.sng: MIT repo test data (title/artist 'Test'); not stated whether the note content was written from scratch or transcribed from a real song
 - others/phigros/rpe/samples/rpechart_*.json, pez/samples/rpechart_demo.pez: MIT repo kamilhzn/rpechart, docstring states fixtures are synthetic and contain no third-party material
 - others/paradiddle/rlrr/samples/defaultset.rlrr: GPL-3.0 ParadiddleUtilities drum kit file (kit layout, not a song)
@@ -310,5 +283,4 @@ By decision of the repository owner, real charts (community maps, official game 
 - vsrg/stepmania/ssc/samples/outfox-serenity_*.ssc: chart licence rests on the Serenity guidelines text (CC-BY 3.0/4.0 agreement by contributors), not on per-folder files; credits.txt/license.txt cover only music and graphics
 - vsrg/stepmania/ssc/samples/outfox-serenity_Matduke*.ssc: music of those songs is "all rights reserved" (credits.txt); only the chart text is committed
 - vsrg/stepmania/{sm,ssc}/samples/{Goin' Under,Mecha-Tribe Assault,Springtime}*: StepMania README says bundled songs are CC-NC (non-commercial); committed as chart text only
-- vsrg/stepmania/smzip/samples/synthetic-*.smzip: contain the CC-NC Springtime chart
 - vsrg/stepmania/{sm,ssc}/samples/existing community files: origin and licence unknown (from upstream list), left in place

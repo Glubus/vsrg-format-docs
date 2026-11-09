@@ -8,8 +8,8 @@ Doc status: complete · ROX: decode only · Category: vsrg · Encoding: text
 
 ## Packaged in
 
-- Packaged in [`sng`](../sng/).
-- Packaged in [`yargsong`](../../yarg/yargsong/).
+- Shipped in: `.sng` (Clone Hero / YARG single-file package: a masked container with the song folder, i.e. chart, audio, images, video, plus a metadata key/value table).
+- Shipped in: `.yargsong` (YARG single-file song package from the YARC Launcher; internal layout Unknown).
 
 ## Container & encoding
 - Text, INI-like: sections in square brackets with `{ }` bodies, line based. The character encoding is not specified in the docs consulted.
@@ -138,7 +138,7 @@ Read by ROX since Prism's addition of `rox::formats::clone_hero` (decode only). 
 
 ## Getting samples
 - Committed in [`samples/`](samples/SOURCES.md): 9 real charts and 3 synthetic ones. Real: YARG.Core `yarg-core_test.chart` (all instruments incl. GHL and keys, UTF-8 BOM), five hand-made Clone Hero charts from Stickheadz32's GitHub repository (single-track and drums/bass charts, tempo changes, 192 resolution), and three charts extracted from Chorus Encore `.sng` downloads (a single-track chart, a guitar/bass/rhythm/drums chart, a Lead Guitar + Pro Drums chart with four guitar difficulties); the `.sng` containers and all audio/images are not stored. Synthetic CC0 charts cover things not found in the real files (forced/tap/open, anchors, 4-lane pro and 5-lane drums, minimal CRLF).
-- More: Chorus Encore (https://chorus.fightthe.pw/, API `https://api.enchor.us/search`, files at `https://files.enchor.us/<md5>.sng`; a `.sng` is a container, see [sng](../sng/README.md), whose `notes.chart` is this format), Custom Songs Central, RhythmVerse, YARGCharts. Moonscraper Chart Editor (https://github.com/FireFox2000000/Moonscraper-Chart-Editor, BSD-3-Clause) writes `.chart` but its repository holds no chart fixtures. Licences of community charts are normally not stated.
+- More: Chorus Encore (https://chorus.fightthe.pw/, API `https://api.enchor.us/search`, files at `https://files.enchor.us/<md5>.sng`; a `.sng` is a container, whose `notes.chart` is this format), Custom Songs Central, RhythmVerse, YARGCharts. Moonscraper Chart Editor (https://github.com/FireFox2000000/Moonscraper-Chart-Editor, BSD-3-Clause) writes `.chart` but its repository holds no chart fixtures. Licences of community charts are normally not stated.
 
 ## Sources
 - https://thenathannator.github.io/GuitarGame_ChartFormats/ (chart-format Format-Overview, Brief-History, Tracks/5-Fret-Guitar, 6-Fret-Guitar, Drums, Legacy-Tracks; Implementation-Info/Time-Conversions)

@@ -11,7 +11,7 @@ osu!taiko is the osu! mode inspired by Taiko no Tatsujin: a horizontal scroll fr
 
 ## Packaged in
 
-- Packaged in [`osz`](../../../vsrg/osu-mania/osz/).
+- Shipped in: `.osz` (zip of a beatmap set: one `.osu` per difficulty, audio, background, optional video, `.osb` storyboard, hitsounds).
 
 ## Container & encoding
 

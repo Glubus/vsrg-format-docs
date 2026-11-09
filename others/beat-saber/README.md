@@ -10,7 +10,6 @@ Category: **others**. Notes are free 3D objects placed on a 4-column x 3-row gri
 |---|---|---|
 | [info-dat/](info-dat/README.md) | `Info.dat` (v2, v4) and legacy `info.json` (v1) | Map entry point: metadata, audio/cover references, list of difficulties |
 | [dat/](dat/README.md) | `<Difficulty>.dat` (v2, v3, v4), `Lightshow.dat` (v4), `BPMInfo.dat` / `AudioData.dat` | Beatmap objects (notes, bombs, walls, arcs, chains), events and lightshow, audio BPM regions |
-| [beatsaver-zip/](beatsaver-zip/README.md) | `.zip` | Distribution package used by BeatSaver |
 
 Related: Ragnarock uses a format derived from Beat Saber v2 ([../ragnarock/](../ragnarock/README.md)).
 

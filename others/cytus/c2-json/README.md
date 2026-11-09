@@ -9,7 +9,7 @@ JSON chart format of **Cytus II** (Rayark) as used by the fan game **Cytoid** (t
 
 ## Packaged in
 
-- Packaged in [`cytoidlevel`](../cytoidlevel/).
+- Shipped in: `.cytoidlevel` (zip of a Cytoid level: `level.json`, chart text/JSON files, music, background).
 
 ## Container & encoding
 

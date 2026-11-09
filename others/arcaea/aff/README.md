@@ -9,7 +9,7 @@ The chart file of Arcaea (lowiro), one file per difficulty (`0.aff` Past, `1.aff
 
 ## Packaged in
 
-- Packaged in [`arcpkg`](../arcpkg/).
+- Shipped in: `.arcpkg` (ArcCreate zip: `index.yml`, `*.arcproj`, `.aff` charts, audio, jacket, background).
 
 ## Container & encoding
 

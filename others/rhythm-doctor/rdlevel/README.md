@@ -8,12 +8,12 @@ Doc status: partial · ROX: no · Category: others · Encoding: json
 
 ## Packaged in
 
-- Packaged in [`rdzip`](../rdzip/).
+- Shipped in: `.rdzip` (zip of an `.rdlevel` plus its audio and sprites).
 
 ## Container & encoding
 - Text file, tab-indented JSON written by the game; **not strictly valid JSON**: the real sample has trailing commas before `]` / `}` (`{ ... },\n\t],`). Parsers must tolerate trailing commas (RhythmBase, rd-schema users in VS Code use a JSON-with-comments mode). Field order is stable but not required.
 - Encoding: UTF-8 (sample contains Chinese strings) [BOM handling not confirmed for rdlevel; Unknown].
-- One file = one level. A level may reference other files (audio, sprites, a second 2-player level via `separate2PLevelFilename`, "Go to Level" event added in v1.2.0 switches `.rdlevel` files). Packaging in [rdzip](../rdzip/README.md).
+- One file = one level. A level may reference other files (audio, sprites, a second 2-player level via `separate2PLevelFilename`, "Go to Level" event added in v1.2.0 switches `.rdlevel` files). Packaging in rdzip.
 
 ## Structure / metadata
 Top-level object (rd-schema `Level`): `$schema?`, `settings`, `rows[]`, `decorations[]`, `events[]`, `conditionals[]`, `bookmarks[]`, `colorPalette[]`. The sample has `"settings"`, `"rows"`, `"decorations"`, `"events"`, `"conditionals"`.

@@ -9,7 +9,7 @@ Text chart of the original **Cytus** (Rayark, 2012), in the dialect the Cytoid w
 
 ## Packaged in
 
-- Packaged in [`cytoidlevel`](../cytoidlevel/).
+- Shipped in: `.cytoidlevel` (zip of a Cytoid level: `level.json`, chart text/JSON files, music, background).
 
 ## Container & encoding
 

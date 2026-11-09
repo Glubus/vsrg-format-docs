@@ -16,13 +16,11 @@ ROX: `.json` files are read and written as FNF by ROX (experimental), using the 
 | [codename-json](codename-json/README.md) | `charts/<diff>.json` + `meta.json` | Codename Engine (FNF-CNE-Devs) | partial | no |
 | [fps-plus-json](fps-plus-json/README.md) | legacy JSON + `meta.json` + `events.json` | FPS Plus (ThatRozebudDude) | stub | no |
 | [troll-json](troll-json/README.md) | Psych-derived JSON | Troll Engine (riconuts) | stub | no |
-| [fnfc](fnfc/README.md) | `.fnfc` ZIP | V-Slice (official, 0.3+) | complete | no |
 | [vslice-chart-json](vslice-chart-json/README.md) | `<song>-chart[-<variation>].json` | V-Slice | complete | no |
 | [vslice-metadata-json](vslice-metadata-json/README.md) | `<song>-metadata[-<variation>].json` | V-Slice | complete | no |
 | [ludum-dare-png](ludum-dare-png/README.md) | one PNG per section + `.json` | the Ludum Dare 47 jam build | stub | no |
 | [nmv-json](nmv-json/README.md) | Psych-derived JSON, `format: "nmv2"`, `keys`/`lanes` | NightmareVision (NMVTeam) | partial | no |
 | [maru-json](maru-json/README.md) | legacy-like JSON with `sectionEvents`, `offsets`, `players` | Maru Funkin' (dead engine, via Moonchart) | stub | no |
-| [fnfmod](fnfmod/README.md) | `.fnfmod` ZIP | V-Slice mod package | stub | no |
 
 `.fnfm`: no file format of this name was found in any source consulted; the closest real extensions are `.fnfc` (chart package) and `.fnfmod` (mod package, announced in the Funkin' Crew blog of 2026-08-03).
 

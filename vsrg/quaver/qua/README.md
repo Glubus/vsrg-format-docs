@@ -5,11 +5,11 @@ Doc status: complete · ROX: reads/writes (only Keys4 and Keys7; many Quaver fea
 
 ## Overview
 
-`.qua` is the map file of **Quaver**, an open-source, community-driven, 4K/7K-centred VSRG (C#, MonoGame, on Steam; developers Swan and the Quaver team, 2017-). One `.qua` file is one difficulty. The format is plain YAML, written and read by the `Qua` class of the open-source `Quaver.API` library (MPL-2.0), which is the reference implementation. Quaver imports `.osz`, `.sm`, `.mcz`/`.mc` and `.qp` and converts them to `.qua` (`Quaver.Tools` has `ConvertOsuCommand`, `ConvertSmCommand`). Files are found inside `.qp` mapset archives ([../qp/README.md](../qp/README.md)), in Quaver's `Songs/` folder, on quavergame.com and in the Quaver.API test resources.
+`.qua` is the map file of **Quaver**, an open-source, community-driven, 4K/7K-centred VSRG (C#, MonoGame, on Steam; developers Swan and the Quaver team, 2017-). One `.qua` file is one difficulty. The format is plain YAML, written and read by the `Qua` class of the open-source `Quaver.API` library (MPL-2.0), which is the reference implementation. Quaver imports `.osz`, `.sm`, `.mcz`/`.mc` and `.qp` and converts them to `.qua` (`Quaver.Tools` has `ConvertOsuCommand`, `ConvertSmCommand`). Files are found inside `.qp` mapset archives (../qp/README.md), in Quaver's `Songs/` folder, on quavergame.com and in the Quaver.API test resources.
 
 ## Packaged in
 
-- Packaged in [`qp`](../qp/).
+- Shipped in: `.qp` (zip of a Quaver mapset: one `.qua` per difficulty, audio, background, banner, hit samples).
 
 ## Container & encoding
 
@@ -155,7 +155,6 @@ ROX source `src/formats/qua` (parser: `serde_yaml`, UTF-8, 100 MiB):
 ## Getting samples
 
 - **Committed** in [`samples/`](samples/) (see [`SOURCES.md`](samples/SOURCES.md)): 82 real and test maps: Quaver.API's test resources (MPL-2.0: `sample`, `keysounds`, `sound-effects`, SV regression and "normalized" pairs, `stable-sorting` with CRLF, `cheat`/`symphony` large maps, converted osu! maps `megalovania` 7K and `Camellia - Backbeat Maniac` with thousands of timing points, 29 AutoMod inputs including one with a UTF-8 BOM), Quaver's built-in maps (Offset Calibrator and the 8 Princess of Winter difficulties; CC-BY-NC 4.0) and two hand-written CC0 charts covering `HasScratchKey`, mines (`QuaVersion: 1`), `TimingGroups`/`ScrollSpeedFactors`, Keys10, layers and bookmarks (features the upstream test files here do not contain).
-- **Also**: the seven real default `.qp` mapsets committed in [qp](../qp/README.md) contain 4-7 real difficulties each.
 - **How to get more**: Quaver's editor writes `.qua` into the Songs folder; every mapset on https://quavergame.com is a `.qp` (a ZIP, so unzip it); Quaver converts `.osz`, `.sm` and `.mcz` on import (`MapsetImporter.AcceptedMapType`), which also produces `.qua`; the Quaver repository ships 11 default `.qp` under `Quaver.Resources/Quaver.Resources/DefaultMaps/`. Newest features (scratch, mines, timing groups) only appear in recent community maps or in the current Quaver.API tests (the pinned a921d56 snapshot has none).
 
 ## Sources

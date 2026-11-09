@@ -9,7 +9,7 @@ The chart files of Muse Dash custom albums (`map1.bms`..`map5.bms`) use the BMS 
 
 ## Packaged in
 
-- Packaged in [`mdm`](../mdm/).
+- Shipped in: `.mdm` (zip of a custom album: `info.json`, `map1.bms`..`map5.bms`, cover, demo, music; a `.mdp` pack is a zip of `.mdm`).
 
 ## Container & encoding
 

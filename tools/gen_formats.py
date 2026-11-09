@@ -25,12 +25,11 @@ PRISM_NOTES = {
     "vsrg/stepmania/edit": "Plays with the song it names",
     "vsrg/clone-hero/ini": "Metadata of a `.chart`/`.mid`",
     "vsrg/o2jam/ojm": "Keysounds of an `.ojn`",
-    "vsrg/bms/bms-table": "No (difficulty table, not a chart)",
     "others/chunithm/sus": "Plays (12K, as a Project SEKAI chart)",
 }
 # FNF engine charts ROX decodes but the scan never lists (it lists V-Slice charts and `.fnfc` only).
 FNF_UNLISTED = {"legacy-json", "psych-json", "kade-json", "troll-json", "maru-json", "nmv-json", "codename-json", "fps-plus-json", "ludum-dare-png"}
-NOT_A_GAP = ("Container", "No (difficulty", "Part of", "Metadata", "Keysounds")
+NOT_A_GAP = ("Part of", "Metadata", "Keysounds")
 
 
 def esc(text):
@@ -88,8 +87,6 @@ def rox_columns(path, rox, decoded):
 
 
 def prism(path, decoded, reason):
-    if reason.startswith("container only"):
-        return "Container: " + reason.split(": ", 1)[1].split(";")[0]
     if path in PRISM_NOTES:
         return PRISM_NOTES[path]
     if path.startswith("others/"):
@@ -116,7 +113,7 @@ def main():
         played = prism(path, ok, reason)
         corpus = f"{ok}/{files}" if files and (read != "No" or ok) else "—"
         gaps = []
-        if real < 5 and not reason.startswith("container only"):
+        if real < 5:
             gaps.append(esc(reason.split("; ")[0]))
         category = path.split("/")[0]
         if category == "vsrg" and read == "No" and not played.startswith(NOT_A_GAP):
@@ -131,16 +128,14 @@ def main():
         totals["plays"] += played.startswith("Plays")
         totals["five"] += real >= 5
         totals["few"] += 0 < real < 5
-        totals["container"] += reason.startswith("container only")
-        totals["none"] += real == 0 and not reason.startswith("container only")
+        totals["none"] += real == 0
 
     header = "| Format | Game | Real charts | Synthetic | ROX read | ROX write | Corpus decoded | In Prism | What is missing |\n|---|---|---:|---:|---|---|---:|---|---|"
     generated = "\n".join([
         BEGIN,
         "",
         f"Totals: {totals['formats']} formats ({totals['vsrg']} VSRG). ROX reads {totals['rox_read']} VSRG formats and writes {totals['rox_write']}; "
-        f"Prism plays {totals['plays']}. Real charts: {totals['five']} formats with at least 5, {totals['few']} with 1 to 4, {totals['none']} with none, "
-        f"{totals['container']} container formats (their charts are in another folder).",
+        f"Prism plays {totals['plays']}. Real charts: {totals['five']} formats with at least 5, {totals['few']} with 1 to 4, {totals['none']} with none.",
         "",
         "## VSRG",
         "",

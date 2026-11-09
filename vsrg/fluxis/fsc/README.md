@@ -5,11 +5,11 @@ Doc status: partial · ROX: no · Category: vsrg · Encoding: json
 
 ## Overview
 
-`.fsc` is the **per-difficulty map file of fluXis**, a community-driven open-source vertical-scrolling rhythm game built on osu!framework (C#). One `.fsc` holds one difficulty: metadata, timing points, scroll velocities, hit objects (lane based, 1..N keys), plus references to an audio/background/cover/video file and to the companion effects file ([`.ffx`](../ffx/README.md)) and storyboard (`.fsb`). A mapset is a ZIP of several `.fsc` files and their assets, distributed as [`.fms`](../fms/README.md). fluXis has built-in importers that convert osu!, Quaver and StepMania maps into `.fsc` (`fluXis.Import.osu`, `fluXis.Import.Quaver`, `fluXis.Import.Stepmania`). The format is defined by the C# classes (`MapInfo`, `HitObject`, `TimingPoint`, `ScrollVelocity`, `HitSoundFade`), serialised with Newtonsoft.Json; there is no separate spec document, so this page is derived from the source. Property names that carry no explicit `[JsonProperty]` attribute are listed with their C# names (see Quirks).
+`.fsc` is the **per-difficulty map file of fluXis**, a community-driven open-source vertical-scrolling rhythm game built on osu!framework (C#). One `.fsc` holds one difficulty: metadata, timing points, scroll velocities, hit objects (lane based, 1..N keys), plus references to an audio/background/cover/video file and to the companion effects file ([`.ffx`](../ffx/README.md)) and storyboard (`.fsb`). A mapset is a ZIP of several `.fsc` files and their assets, distributed as `.fms`. fluXis has built-in importers that convert osu!, Quaver and StepMania maps into `.fsc` (`fluXis.Import.osu`, `fluXis.Import.Quaver`, `fluXis.Import.Stepmania`). The format is defined by the C# classes (`MapInfo`, `HitObject`, `TimingPoint`, `ScrollVelocity`, `HitSoundFade`), serialised with Newtonsoft.Json; there is no separate spec document, so this page is derived from the source. Property names that carry no explicit `[JsonProperty]` attribute are listed with their C# names (see Quirks).
 
 ## Packaged in
 
-- Packaged in [`fms`](../fms/).
+- Shipped in: `.fms` (zip of a fluXis mapset: `.fsc` difficulties, `.ffx` effects, audio, background, video, hitsounds).
 
 ## Container & encoding
 

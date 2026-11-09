@@ -66,7 +66,7 @@
 ## Notes
 
 - Not copied: `rhythm-open-exchange/assets/osu/*.osu` (the ROX project's own test assets, real third-party maps such as Agony by Fleshgod Apocalypse or Ringing Bloom by Roselia, origin unclear); the ranked-set fixtures of osu-file-parser (declared `MIT OR Apache-2.0` in `Cargo.toml`, no LICENSE file) are committed and listed in the table below.
-- The oldest real format versions are v3 and v4 (`osu-file-parser_v3.osu`, `osu-file-parser_v4.osu`, listed in the table below); v5-v14 are there too. The committed lazer fixtures cover v4, v5, v6, v7, v9, v10 and v14; the lazer-private `v128` appears only inside `.olz` archives (see [../olz/samples/](../../olz/samples/)).
+- The oldest real format versions are v3 and v4 (`osu-file-parser_v3.osu`, `osu-file-parser_v4.osu`, listed in the table below); v5-v14 are there too. The committed lazer fixtures cover v4, v5, v6, v7, v9, v10 and v14; the lazer-private `v128` appears only inside `.olz` archives (extracted from lazer `.olz` test archives).
 - Encodings seen in the committed files: LF, CRLF, UTF-8 BOM + CRLF (`Suzuki Konomi...Insane`), UTF-8 BOM + LF (`beatmap-lens_tolerant-malformed.osu`).
 
 ## Real charts downloaded from public sources (snapshots, fetched 2026-11-09)

@@ -7,7 +7,6 @@ Category: **others**. The four floor lanes alone would fit a column model, but a
 Formats documented:
 
 - [`aff/`](aff/README.md) - the `.aff` chart file (complete from parser sources).
-- [`arcpkg/`](arcpkg/README.md) - ArcCreate `.arcpkg` / project packages (stub).
 - [`songlist/`](songlist/README.md) - the `songlist` / `packlist` JSON metadata that lists songs of the game (stub).
 
 Links: <https://github.com/yojohanshinwataikei/vscode-arcaea-file-format>, <https://github.com/Arcthesia/ArcCreate>, <https://github.com/Tempestissiman/ArcadeScenecontrol>, <https://github.com/freeze-dolphin/EtoileResurrection>.

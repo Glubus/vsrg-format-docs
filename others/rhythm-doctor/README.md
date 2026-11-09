@@ -8,7 +8,6 @@ Category: **others**. The game is one-button, the gameplay is a timeline of rows
 | Folder | File | What |
 |---|---|---|
 | [rdlevel/](rdlevel/README.md) | `.rdlevel` | The level: JSON with `settings`, `rows`, `decorations`, `events`, `conditionals`, `bookmarks`, `colorPalette` |
-| [rdzip/](rdzip/README.md) | `.rdzip` | ZIP package of an `.rdlevel` and its assets (audio, images) |
 
 ## Links
 - Wiki: https://wiki.rhythm.cafe/

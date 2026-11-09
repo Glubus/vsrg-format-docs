@@ -10,7 +10,6 @@ The one **documented, open** chart format in the series' ecosystem is the **RIQ*
 
 | Folder | Format | Notes |
 |---|---|---|
-| [riq/](riq/README.md) | `.riq` Rhythm Heaven Studio remix (zip of JSON charts + audio) | documented through the open-source Jukebox library |
 | [tickflow/](tickflow/README.md) | `.bin` / `.tickflow` Rhythm Heaven Megamix (3DS) and DS game scripts | bytecode VM described by Tickompiler; cue scripts of the official games (partial) |
 
 ## Links

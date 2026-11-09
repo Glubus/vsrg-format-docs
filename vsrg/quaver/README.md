@@ -9,7 +9,6 @@ Formats:
 | Format | Folder | Status |
 |---|---|---|
 | `.qua` map (YAML), one per difficulty | [qua/](qua/README.md) | complete |
-| `.qp` mapset package (archive of `.qua` + audio/images) | [qp/](qp/README.md) | partial |
 
 Reference implementation: https://github.com/Quaver/Quaver.API (the `Qua` class); game: https://github.com/Quaver/Quaver; site and downloads: https://quavergame.com/; wiki: https://wiki.quavergame.com/.
 

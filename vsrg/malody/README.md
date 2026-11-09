@@ -6,6 +6,5 @@ Category **vsrg**: Key mode, the bulk of the charts, is a fixed-column vertical 
 
 Formats:
 - [`mc`](mc/README.md): JSON chart, one per difficulty and mode (ROX reads/writes Key mode only).
-- [`mcz`](mcz/README.md): ZIP package holding `.mc` + audio + images.
 
 Links: https://m.mugzone.net/ · https://github.com/Mugzone/Malody_Store_API · https://github.com/Mugzone/Documents

@@ -1,3 +1,0 @@
-# Samples: osu! mapset archive (`.osz`)
-
-This is a container-only format: the repository keeps NO archive. Real archives were downloaded on 2026-11-09, their chart files extracted (media discarded) and the archives deleted. The extracted charts and their provenance (source URL of the archive, date, sha256 of the original download) are listed in `osu-mania/osu/samples/ (`.osu`) and osu-mania/osb/samples/ (`.osb`)SOURCES.md`, in the section `Extracted from archives`: [../osu/samples/](../../osu/samples/) and [../osb/samples/](../../osb/samples/); subfolders: `<set name>/` subfolders named after the archive (the lazer test archives `ppy-osu_*`, the Prelude mapsets `yavsrg-prelude_*`).

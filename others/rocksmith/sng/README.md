@@ -4,11 +4,11 @@ Kind: chart
 Doc status: stub · ROX: no · Category: others · Encoding: binary (encrypted + zlib)
 
 ## Overview
-The compiled arrangement used by the game, stored under `songs/bin/generic/*.sng` inside the `.psarc` of a Rocksmith 2014 package (not related to Clone Hero's [`.sng`](../../../vsrg/clone-hero/sng/README.md) container, despite the identical extension). The Rocksmith Custom Song Toolkit converts XML to SNG (`sng2014`).
+The compiled arrangement used by the game, stored under `songs/bin/generic/*.sng` inside the `.psarc` of a Rocksmith 2014 package (not related to Clone Hero's `.sng` container, despite the identical extension). The Rocksmith Custom Song Toolkit converts XML to SNG (`sng2014`).
 
 ## Packaged in
 
-- Packaged in [`psarc`](../psarc/).
+- Shipped in: `.psarc` (PlayStation archive, encrypted table of contents: `.sng` arrangements, JSON manifests, Wwise audio, art).
 
 ## Container & encoding
 Little-endian binary; encrypted with AES-256 in a custom counter mode (each 16-byte block XORed with `AES_ECB(key, IV + i)`, IV embedded at the start of the file) and, after decryption, a 4-byte uncompressed length followed by zlib-compressed data (per the rs2ir-converter README). Keys are platform-specific and not documented here.

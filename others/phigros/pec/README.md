@@ -9,7 +9,7 @@ PEC (PhiEdit Chart) is the plain-text chart format of the older Phigros chart ed
 
 ## Packaged in
 
-- Packaged in [`pez`](../pez/).
+- Shipped in: `.pez` (Phira / PhiZone zip: a chart file, music, illustration, `info.yml`).
 
 ## Container & encoding
 

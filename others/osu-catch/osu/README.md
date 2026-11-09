@@ -11,7 +11,7 @@ osu!catch (osu!ctb) is the catching mode of osu!: fruits fall from the top, the 
 
 ## Packaged in
 
-- Packaged in [`osz`](../../../vsrg/osu-mania/osz/).
+- Shipped in: `.osz` (zip of a beatmap set: one `.osu` per difficulty, audio, background, optional video, `.osb` storyboard, hitsounds).
 
 ## Container & encoding
 

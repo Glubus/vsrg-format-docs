@@ -6,7 +6,6 @@ Category: **others**: horizontal movement toward a character, two lanes of diffe
 
 Formats documented:
 
-- [`mdm/`](mdm/README.md) - `.mdm` custom album package (zip: `info.json`, `mapN.bms`, cover, demo, music).
 - [`bms/`](bms/README.md) - the Muse Dash dialect of BMS used for `mapN.bms`.
 
 Links: <https://github.com/MDMods/CustomAlbums>, <https://mdmc.moe/>.

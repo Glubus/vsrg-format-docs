@@ -5,7 +5,7 @@ Doc status: partial · ROX: reads/writes (Key mode, `meta.mode == 0`, only) · C
 
 ## Overview
 
-`.mc` is the chart format of **Malody** / **Malody V** (Mugzone, a Chinese volunteer team; Malody has existed since 2014, first with Key mode only). One JSON file holds exactly one difficulty of one game mode. The same container is used by every Malody mode (Key, Catch, Pad, Taiko, Ring, Slide, Live, Cube); only `meta.mode`, `meta.mode_ext`, and the per-note fields change. Files are produced by the in-game editor, downloaded from the Malody chart store (the game saves them inside an `.mcz` package, see [../mcz/](../mcz/README.md)), or written by converters (osu2mc, rmstZ...).
+`.mc` is the chart format of **Malody** / **Malody V** (Mugzone, a Chinese volunteer team; Malody has existed since 2014, first with Key mode only). One JSON file holds exactly one difficulty of one game mode. The same container is used by every Malody mode (Key, Catch, Pad, Taiko, Ring, Slide, Live, Cube); only `meta.mode`, `meta.mode_ext`, and the per-note fields change. Files are produced by the in-game editor, downloaded from the Malody chart store (the game saves them inside an `.mcz` package, see ../mcz/), or written by converters (osu2mc, rmstZ...).
 
 Category: **vsrg**. The Key mode (4K–9K, up to 10K by editing) is a classic fixed-column vertical-scroll game, and it is the overwhelming majority of the charts (kangalioo scraped >10,000 4K and >1,000 5K–10K charts). The other modes (Catch = osu!catch-like, Pad = jubeat-like grid, Taiko, Ring = circular, Slide = free x-position slides, Live, Cube) are not column-based; they share this file's container and are documented here, but would be "others" if they had their own folder. The Ring sample in this repo (mode 6, 8 columns, holds) is column/index based but plays on a circle.
 
@@ -27,7 +27,7 @@ In the samples: `vsrg/malody/mc/samples/` contains 8 Key-mode files (mode 0; 4 o
 
 ## Packaged in
 
-- Packaged in [`mcz`](../mcz/).
+- Shipped in: `.mcz` (zip: one or more `.mc` charts plus audio, background, optional video and keysounds).
 
 ## Container & encoding
 
@@ -166,8 +166,8 @@ ROX source: `src/formats/mc/{types,decoder,encoder}.rs`.
 ## Getting samples
 
 - **Committed** in [`samples/`](samples/) (see [`SOURCES.md`](samples/SOURCES.md)): the 10 existing community charts (origin unknown: Key 4/5 columns, Ring 8 columns), 3 Key-mode charts from Quaver.API's Malody-conversion tests (MPL-2.0), the 2 Taiko-mode (mode 5) charts of LuiCat/mc2tja (MIT), and 3 hand-written CC0 Key charts (7K, 9K compact, 6K with UTF-8 BOM; holds, keysound, BPM change, `effect.scroll`, `$ver`).
-- **Also committed**: 7 real community charts from PayToUse/malody-custom-charts (`malody-custom-charts_*.mc`, extracted from their zips). Real packages: see [mcz](../mcz/README.md).
-- **How to get more**: Malody (and Malody V) downloads charts from its store as packages (see [mcz](../mcz/README.md)); the store protocol is documented in https://github.com/Mugzone/Malody_Store_API (`/api/store/download` returns the file URLs and MD5s; it needs a client `uid`/`key`, so the plain website host answered with HTML in a test). kangalioo's "Malody Converts" packs on the EtternaOnline forum (4K-10K, 280 MB-1 GB each) are converted for Etterna, i.e. `.sm` rather than `.mc` [inference]. For modes other than Key (Catch 3, Pad 4, Slide 7, Live 8, Cube 9) no sample was found: obtain one by installing Malody, switching the store to that mode and downloading a chart, or by creating one in the in-game editor. Searching GitHub for `"mode_ext"` / `"column"` `.mc` files finds converters' test charts.
+- **Also committed**: 7 real community charts from PayToUse/malody-custom-charts (`malody-custom-charts_*.mc`, extracted from their zips).
+- **How to get more**: Malody (and Malody V) downloads charts from its store as `.mcz` packages (see the Packages section of the root README); the store protocol is documented in https://github.com/Mugzone/Malody_Store_API (`/api/store/download` returns the file URLs and MD5s; it needs a client `uid`/`key`, so the plain website host answered with HTML in a test). kangalioo's "Malody Converts" packs on the EtternaOnline forum (4K-10K, 280 MB-1 GB each) are converted for Etterna, i.e. `.sm` rather than `.mc` [inference]. For modes other than Key (Catch 3, Pad 4, Slide 7, Live 8, Cube 9) no sample was found: obtain one by installing Malody, switching the store to that mode and downloading a chart, or by creating one in the in-game editor. Searching GitHub for `"mode_ext"` / `"column"` `.mc` files finds converters' test charts.
 
 ## Sources
 
