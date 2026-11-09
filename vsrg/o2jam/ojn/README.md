@@ -19,7 +19,7 @@ Header, 300 bytes (struct from Open2Jam `OJNParser`; confirmed field by field on
 |---|---|---|---|
 | 0 | 4 | `songid` int32 | Song id, usually equals the `o2ma<id>` in the filename |
 | 4 | 4 | `signature` | `6F 4A 4E 00` = `"ojn\0"` (Open2Jam checks int `0x006E6A6F`) |
-| 8 | 4 | `encode_version` float | OJN version, `2.9` (`9A 99 39 40`) in all samples |
+| 8 | 4 | `encode_version` float | OJN version, `2.9` (`9A 99 39 40`) in most samples; `2.0` in samples/o2ma101.ojn [observed] |
 | 12 | 4 | `genre` int32 | 0 Ballad, 1 Rock, 2 Dance, 3 Techno, 4 Hip-hop, 5 Soul/R&B, 6 Jazz, 7 Funk, 8 Classical, 9 Traditional, 10 Etc (out of range -> Etc in Open2Jam) |
 | 16 | 4 | `bpm` float | Initial BPM; display value, but Raindrop uses it as the BPM at beat 0 when no BPM event sits at 0 |
 | 20 | 8 | `level[4]` int16 | Level of Easy, Normal, Hard; 4th slot always 0 |
@@ -123,7 +123,7 @@ Read by ROX since Prism's addition of `rox::formats::o2jam` (decode only: ROX do
 - o2tools (Python): https://github.com/SweepSweep2/o2tools ; render-ojn (Node): https://github.com/djzmo/render-ojn ; O2Lazer (osu!lazer ruleset): https://github.com/sumiyuki727/O2Lazer ; Fadreus/Open2Jam `tools/ojn_header.pl`; SirusDoma/O2MusicList; o2jam-workshop-center; OJN Database https://ojn-database.kenzync.dev/
 
 ## Getting samples
-- **Committed** ([`samples/`](samples/SOURCES.md)): ten real community OJN files (existing, origin unknown; from the "Server Two Music Pack Unofficial Songs", see `samples/README.md`) and ten tiny **synthetic** OJN seeds from djzmo/render-ojn (GPL-3.0): chart edge cases (five-way subdivision, measure fraction, BPM/channel order, count mismatch, truncated header) and five variants of the encrypted `new` wrapper.
+- **Committed** ([`samples/`](samples/SOURCES.md)): eleven official O2Jam OJN files `o2ma100.ojn`..`o2ma110.ojn` (from the archive.org item `o-2-mania`, `O2Mania.rar`, read from the first 45 MB) and ten real community OJN files (existing, origin unknown; from the "Server Two Music Pack Unofficial Songs", see `samples/README.md`) and ten tiny **synthetic** OJN seeds from djzmo/render-ojn (GPL-3.0): chart edge cases (five-way subdivision, measure fraction, BPM/channel order, count mismatch, truncated header) and five variants of the encrypted `new` wrapper.
 - **More**: the music pack linked in `samples/README.md` (https://drive.google.com/file/d/1r5Be6-WLte8w2AbUgvnDwASEtHYvN7bJ/view; http://o2jam.intgamerz.net/index.php?p=songpack); an O2Jam client's `Music/o2ma<id>.ojn` (CXO2 dev log https://dev.cxo2.me/o2jam-file-format shows the client folder layout `Music/`, `Image/OJNList.dat`); the official ranking site https://rank.o2jam.com lists the song catalogue. Encrypted retail OJN files (header `new`) are decrypted by https://github.com/SirusDoma/O2MusicList (archived; "encrypting / decrypting OJN files") and CXO2. Other OJN readers/converters to test with: https://github.com/djzmo/render-ojn, https://github.com/sumiyuki727/O2Lazer, https://github.com/ar-nim/recomp2jam, https://github.com/SaxxonPike/OJN2BMS. None of them ships retail OJN files (scanned trees contain none).
 
 ## Sources

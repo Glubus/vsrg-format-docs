@@ -99,8 +99,8 @@ rizu (Lua): https://github.com/semyon422/rizu (`chart/transform/NanoChart.lua`, 
 
 ## Getting samples
 
-- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): the bytes of one rizu unit test (version 1), five version-2 files encoding real charts (the note events of real ROX charts, built with a Python port of `NanoChart:encode`, decoded back and compared), and two synthetic files.
-- **No genuine export found**: the format is written by the rizu editor (`rizu/editor/exports/NanoChartExporter.lua`) and embedded in replays; run rizu from source (https://github.com/semyon422/rizu), open a chart in the editor and export [inference: UI path not run].
+- **Committed** ([`samples/`](samples/), see [`SOURCES.md`](samples/SOURCES.md)): the bytes of one rizu unit test (version 1), five version-2 files built from real charts laid out exactly like the rizu exporter does, and two synthetic files. The real charts' note times come from real maps; the files were written by a Python port of `NanoChart:encode` (decoded back and compared), not by rizu.
+- **What the real exporter writes** (`rizu/editor/exports/NanoChartExporter.lua`, read at commit `cf4603379dcab949d3510b8c31d1d3e421df6ec0`): `<chart path>.nanochart` with version 2, an **all-zero 16-byte hash**, `inputCount` = key count, and only **key press events** (taps and hold starts, `type = 1`), sorted by time then input; next to it a zlib-compressed `<path>.nanochart_compressed` and `.preview0/.preview1` (plus `_compressed`) SPH previews. A genuine export needs the rizu editor (https://github.com/semyon422/rizu): open a chart and use the export; no genuine export file is published in any repository or CDN reached (`semyon422/soundsphere` is the same tree as rizu; `sphere`/`sphlib` repos need authentication).
 
 ## Sources
 

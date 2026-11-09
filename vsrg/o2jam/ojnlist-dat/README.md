@@ -30,6 +30,7 @@ Not applicable.
 Not applicable (only metadata, cover bytes are not stored).
 
 ## Versions & variants
+[observed in samples/o2jam-rar_OJNList.dat] Sections: `int32` 307, 307 x 300-byte headers, then **new** (3 x 16 bytes: ids 659, 637, 622, flags `0 1 0`), **premium** (152 x 16 bytes, e.g. `265, 20, 0, 0`) and a third section of 307 x 28 bytes ending exactly at end of file. In this client the 28-byte entries hold `music_id, int, 0x00455F00-like constant, 0, 0x0012FA24, 0x00452F54, -1` and **no** `yyyy-MM-dd` string at offset 4 (the table above describes a release-date layout of newer clients; the sample's section is of the older layout, Unknown). The ids are unique (100, 102, 103, ... 703).
 Per-client layouts: v3.10 (embedded in OPI), v3.82 NX (above), v2.33 X2, v5.89 / v6.65 O2Jam O2, v8.02 Classic. See CXO2 docs.
 
 ## Quirks & pitfalls
@@ -45,8 +46,8 @@ Not read by ROX.
 - SirusDoma/O2MusicList (music list generator, archived): https://github.com/SirusDoma/O2MusicList ; CXO2 : https://github.com/SirusDoma/CXO2 ; Fadreus/Open2Jam `tools/ojn_header.pl`.
 
 ## Getting samples
-- **Committed: none (no real file found).** No OJNList file was found in the public repositories scanned (CXO2, O2MusicList, open2jam, render-ojn). A binary file was not invented.
-- **How to get one**: copy `Image/OJNList.dat` (or `X2OJNList.dat`) from an O2Jam client you own; in client v3.10 it is inside `Playing(1).opi` (fiche; CXO2 file-format dev log https://dev.cxo2.me/o2jam-file-format lists `Image/OJNList.dat (or X2OJNList.dat for X2 client)`). Or **generate one**: https://github.com/SirusDoma/O2MusicList (MIT, archived; successor https://github.com/SirusDoma/o2jam-workshop-center) "creates or modifies OJNList files", adding OJN files to a new list in the Korean or Chinese layout (its README: File -> New, then Add). [inference] Feeding it the synthetic OJNs of [ojn samples](../ojn/samples/SOURCES.md) would give an OJNList of public-domain-like data; it was not run here (.NET Windows tool).
+- **Committed** ([`samples/`](samples/SOURCES.md)): one real `OJNList.dat` (307 songs, 103 192 bytes, dated 2007-09-19) from the client folder `O2Jam/Image/` of the archive.org item `o-2-jam_202506` (`O2Jam.rar`, read from the first 45 MB of the 1.7 GB RAR).
+- **More**: the archive.org item `o-2-mania` (`O2Mania.rar`, 1.1 GB, "all songs" offline pack) and the `o2jam_setup.exe` of item `o2jam-setup-client` (O2Jam official client setup v20050120, 153 MB) hold other client folders (not reached: the `Image/` folder lies beyond the first 45 MB of the former, the latter is an installer). `X2OJNList.dat` belongs to the X2 client. Tools that write the file: https://github.com/SirusDoma/O2MusicList and https://github.com/YaKiZu/O2Jam-Music-Manager.
 
 ## Sources
 - https://github.com/SirusDoma/CXO2/blob/develop/docs/file-format/FileFormat.md

@@ -159,9 +159,9 @@ Not read by ROX. A decoder would need: beat accumulation from letters, `B/S/W/D`
 
 ## Getting samples
 
-Committed in [`samples/`](samples/SOURCES.md): the three free songs of the pydance download page (`forkbomb.dance`, `6jan.dance`, `synrg.dance`; pydance's licence is MIT and the Debian copyright file says it covers the music too), downloaded from https://www.icculus.org/pyddr/download.php. Between them they show `gap` positive and negative, `bpm`, one-chart (BEGINNER with tutorial `L` text lines) and two-chart songs, and the `e q s h o D` step-line kinds.
+Committed in [`samples/`](samples/SOURCES.md): **6 REAL `.dance` files**: the three free songs of the pydance download page (`forkbomb`, `6jan`, `synrg`; pydance MIT licence, Debian says it covers the music) and three older versions of the same songs from Wayback captures of 2003-2004 (`wayback2003_6jan.dance` 9,676 bytes, `wayback2004_forkbomb.dance`, `wayback2003_synrg.dance` 19,951 bytes: more charts and a `credits` key). Plus see [`../../legacy-dance-formats/step`](../../legacy-dance-formats/step/samples/SOURCES.md) for two real pyDDR `.step` files.
 
-More: the pydance source mirror ([mbenkmann/pydance](https://github.com/mbenkmann/pydance), commit `24b987a7d73a6f6061d266e1da973c9612bb10ca`) ships no songs; the Debian/Gentoo pydance packages pull the songs of the download page ("This will also download the songs below"). pydance converts `.sm`/`.dwi` on the fly but does not write `.dance` [inference]; the spec is `docs/dance-spec.txt` in the mirror. Not found: doubles/couple `.dance` files (the format has `DOUBLE`/`COUPLE` blocks per the spec), `.step` old-style files.
+More: the pydance source mirror ([mbenkmann/pydance](https://github.com/mbenkmann/pydance)) and the icculus tarballs 0.9.0-1.1.0 ship no songs; Wayback has no other `.dance` URL under icculus.org/pyddr (checked with the CDX index 2026-11-09); `pyDance-0.8.4.dmg`/`pyDance-0.9.0.dmg`/`1.0.1.dmg` captures exist (Mac images, not opened); the spec is `docs/dance-spec.txt`.
 
 ## Sources
 

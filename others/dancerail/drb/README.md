@@ -73,7 +73,7 @@ DR3Editor (TypeScript), DanceRail3Viewer (C#), Dancerail_Import (Python).
 
 ## Getting samples
 
-- **Committed**: 3 real charts (`bluemelody.N.txt` from DanceRail3Viewer, no licence) plus 1 synthetic in [`samples/`](samples/). Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **Committed**: 4 real charts (`bluemelody.1/3/6/8.txt` from DanceRail3Viewer, no licence) plus 1 synthetic in [`samples/`](samples/). Origin, date, sha256 and terms are in [`samples/SOURCES.md`](samples/SOURCES.md). The same repo's `BACKUP/bluemelody.6.txt` is byte-identical to `SONGS/bluemelody.6.txt`.
 - **More samples**: install DanceRail3 (Android) and use the DRMaker editor (`DRmaker(3.13).exe` is in the DanceRail3Viewer repo under `Assets/Resources/`); DR3Editor (https://github.com/swordalt/DR3Editor) reads/writes the same text grammar.
 
 ## Sources

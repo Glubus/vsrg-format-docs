@@ -7,7 +7,7 @@ Doc status: stub · ROX: no · Category: vsrg · Encoding: text
 `.gda` is an older text chart format for GuitarFreaks/DrumMania that DTXMania can still load (original README: "`.gda`/`.g2d`: DTXMania chart (older format)"). The only authoritative description found is the DTXMania loader: `CDTX.tRead` sets `EType.GDA` for the `.gda` extension and then parses it with the normal DTX line parser, but replaces the 2-hex-digit channel with a 2-letter/2-digit channel name looked up in a table. Community note: the GDAmania blog converted its GDA charts to DTX ("Changed all format to DTX files"). Origin of the name/layout beyond that: Unknown.
 
 ## Container & encoding
-Text lines `#mmmcc: objects` as in [DTX](../dtx/README.md) (3-char measure number, 2-char channel, base-36 objects) [inference: shared parser path `tInput_LineAnalysis_ChipLocation`]. Charset: Unknown (probably Shift_JIS).
+Text lines `#mmmcc: objects` as in [DTX](../dtx/README.md) (3-char measure number, 2-char channel, base-36 objects) [inference: shared parser path `tInput_LineAnalysis_ChipLocation`; confirmed by real files, e.g. `#002G2:0001` in samples/mitchi_Happy_man_BSC.gda]. Charset [observed in samples/*.gda]: Shift_JIS (CP932) with CRLF in most real files (Japanese `#TITLE`/`#ARTIST`, e.g. samples/nari_konan.gda), some pure ASCII (samples/BLAST_model_dd5_hell.gda); no BOM. Header lines are `#KEY value` with a **space** instead of a colon (`#TITLE HAPPY MAN BASIC`, `#BPM 180`, `#BASEBPM 0`, `#DLEVEL 0`, `#GLEVEL 18`, `#BLEVEL 0`, `#PREVIEW Happy manpre.wav`, `#WAV02 Happy man.wav`) while data lines use a colon; the first line is usually a comment written by the editor (`;Created by GDA Creator Professional Ver.0.14`, `...Ver.0.16`, `...Ver.0.22`, `;Created by GDA Creator Ver.1.25 Rev.Final`).
 
 ## Structure / metadata
 Channel string -> DTX channel (`STGDAPARAM` table in `CDTX.cs`; also `DTXCreator CDTXInputOutput`):
@@ -24,7 +24,7 @@ Channel string -> DTX channel (`STGDAPARAM` table in `CDTX.cs`; also `DTXCreator
 | GW | 28 guitar wailing | | B1..B7 | A1..A7 bass chords |
 | 01..09, 0A..0F, 10..1F, 20 | SE01..SE32 (channels 61-69, 70-79, 80-89, 90-92) | | BW | A8 bass wailing |
 
-Header commands, resource tables (`#WAV`, ...) are assumed the same as DTX (Unknown whether GDA headers differ).
+Header commands and resource tables (`#WAV`, `#BPM`, `#DLEVEL` ...) are the same as DTX [observed in samples/*.gda]. Tempo: `#BPM` with an initial value (180, 124, 300, 161.00) or `#BPM 0` plus a `TC` data line (samples/KOUICHI_hurukawa.gda, samples/nari_konan.gda). Drum files use the channels `BD CY HH HT LT SD` only; guitar/bass files use `G0`(open, samples/mitchi_YOU_CAN'T_EXT(OPEN).gda), `G1`..`G7`, `GW`; a difficulty = one file (`... BSC/ADV/EXT.gda`) grouped by [set.def](../set-def/README.md) (`#L1FILE: bas.gda`).
 
 ## Timing model
 Same as DTX when parsed by DTXMania: 384 ticks per measure, BL = bar length, TC = tempo. See [dtx](../dtx/README.md).
@@ -42,7 +42,7 @@ Unknown (same `#WAVzz` mechanism if parsed as DTX).
 The original GDA spec is not available publicly in what I could fetch; behaviour is known only through DTXMania's code.
 
 ## Example
-No real GDA sample available; a hand-written one built from the loader table is in [samples/](samples/SOURCES.md).
+Real excerpt, samples/mitchi_Happy_man_BSC.gda (CP932, CRLF): `;Created by GDA Creator Professional Ver.0.14` / `#TITLE HAPPY MAN BASIC` / `#ARTIST ...` / `#BPM 180` / `#GLEVEL 18` / `#WAV02 Happy man.wav` / `#002G2:0001` / `#002G4:0100` / `#003G1:0100000000000000`. A hand-written file built from the loader table is also in [samples/](samples/SOURCES.md).
 
 ## ROX support
 Not read by ROX.
@@ -51,9 +51,8 @@ Not read by ROX.
 DTXmaniaNX CDTX.cs and DTXCreator `CDTXInputOutput.cs` (https://github.com/limyz/DTXmaniaNX).
 
 ## Getting samples
-- **Committed** ([`samples/`](samples/SOURCES.md)): one hand-written `synthetic-drums-guitar-bass.gda`, built from the loader's `STGDAPARAM` table (`CDTX.cs`); it demonstrates what DTXMania accepts, not a real GDA file.
-- **No real file found**: no repository, spec or open archive with a `.gda` was reachable. The GDAmania blog converted its charts to DTX (fiche), so the originals are gone from that source.
-- **How to get more**: the DrumGamer site lists "GDA Creator 2 English Version" ("Editor for GDA, DTX and BMS files", https://drumgamer.weebly.com/tools2.html) and the simulator DigiBand ("Supports GDA and DTX files", https://drumgamer.weebly.com/simulators.html): a GDA can be written with GDA Creator 2 [inference: it is an editor for the format by its description]. DTXMania itself loads `.gda` (and `.g2d`), see [dtx](../dtx/README.md).
+- **Committed** ([`samples/`](samples/SOURCES.md)): 18 real `.gda` charts of community packs from the archive.org item "Rare DTX&GDA Simfile Collection" (`raredtxgda`): guitar/bass charts (mitchi `HAPPY MAN` BSC/ADV/EXT, `YOU CAN'T DO IT` BSC/ADV/EXT plus the BASS and OPEN variants), drum charts (BLAST `konoko`, `MODEL DD5`, KOUICHI, nari) and two GUNDAM charts, written by GDA Creator Professional 0.10-0.22 and GDA Creator 1.25; plus one hand-written `synthetic-` file.
+- **More**: the item has ~358 `.gda` files in the ~95 smaller packs alone (`old era/Ready-to-Play/dmGF ONLY/`, `from GDAMANIA/`, `No BGM/` folders); each pack is a RAR: download it (`https://archive.org/download/raredtxgda/<path>`) and extract with `bsdtar`/`7z`. The GDAmania site (gdamania.net) is gone; DrumGamer lists "GDA Creator 2" and DigiBand as GDA tools (https://drumgamer.weebly.com/tools2.html).
 
 ## Sources
 - https://raw.githubusercontent.com/limyz/DTXmaniaNX/master/DTXMania/Code/Score,Song/CDTX.cs

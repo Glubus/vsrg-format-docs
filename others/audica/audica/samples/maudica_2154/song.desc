@@ -1,0 +1,100 @@
+{
+  "songID": "NotReadytoDie-Ayla",
+  "moggSong": "song.moggsong",
+  "moggMainSong": "song.mogg",
+  "title": "Not Ready to Die",
+  "artist": "Avenged Sevenfold",
+  "midiFile": "song.mid",
+  "albumArt": "song.png",
+  "fusionSpatialized": "fusion/guns/default/drums_default_spatial.fusion",
+  "fusionUnspatialized": "fusion/guns/default/drums_default_sub.fusion",
+  "targetDrums": "",
+  "sustainSongRight": "",
+  "moggSustainSongRight": "",
+  "sustainSongLeft": "",
+  "moggSustainSongLeft": "",
+  "fxSong": "song_extras.moggsong",
+  "moggFxSong": "song_extras.mogg",
+  "tempo": 150.0,
+  "songEndEvent": "event:/song_end/song_end_C#",
+  "prerollSeconds": 0.5,
+  "useMidiForCues": false,
+  "hidden": false,
+  "author": "Ayla & DeadDraco",
+  "offset": 0,
+  "previewStartSeconds": 41.53125,
+  "bookmarks": [
+    {
+      "type": 1,
+      "xPosMini": -127.3037,
+      "xPosTop": 306.897919,
+      "text": "Draco",
+      "r": 1.0,
+      "g": 0.0,
+      "b": 0.0,
+      "uiColor": 0
+    },
+    {
+      "type": 1,
+      "xPosMini": -39.2114334,
+      "xPosTop": 486.897919,
+      "text": "Ayla",
+      "r": 0.03579378,
+      "g": 0.0,
+      "b": 1.0,
+      "uiColor": 1
+    },
+    {
+      "type": 1,
+      "xPosMini": 88.0329742,
+      "xPosTop": 746.8979,
+      "text": "Draco",
+      "r": 1.0,
+      "g": 0.0,
+      "b": 0.0,
+      "uiColor": 0
+    },
+    {
+      "type": 1,
+      "xPosMini": 204.510513,
+      "xPosTop": 984.8979,
+      "text": "Fin?",
+      "r": 0.7444401,
+      "g": 0.0,
+      "b": 1.0,
+      "uiColor": 4
+    },
+    {
+      "type": 2,
+      "xPosMini": 244.641418,
+      "xPosTop": 1066.898,
+      "text": "Fure sure by here",
+      "r": 0.7444401,
+      "g": 0.0,
+      "b": 1.0,
+      "uiColor": 4
+    },
+    {
+      "type": 1,
+      "xPosMini": -223.2264,
+      "xPosTop": 110.897919,
+      "text": "Ayla",
+      "r": 0.03579378,
+      "g": 0.0,
+      "b": 1.0,
+      "uiColor": 1
+    },
+    {
+      "type": 2,
+      "xPosMini": 103.693817,
+      "xPosTop": 778.8979,
+      "text": "Restert Here",
+      "r": 1.0,
+      "g": 0.0,
+      "b": 0.0,
+      "uiColor": 0
+    }
+  ],
+  "bakedzOffset": false,
+  "customExpert": ""
+}

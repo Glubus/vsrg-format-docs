@@ -67,7 +67,7 @@ Read by ROX (`SongIni::parse`, `rox::formats::clone_hero`; decode only): `name`,
 YARG.Core (C#): https://github.com/YARC-Official/YARG.Core · FoFiX (Python) · Moonscraper.
 
 ## Getting samples
-- Committed in [`samples/`](samples/SOURCES.md): 6 real `song.ini` files (from Stickheadz32's GitHub chart repository, each beside a committed `.chart`) and 3 synthetic CC0 files (full tag range, CRLF/unspaced `key=value` with comments and `five_lane_drums`, `.mid` parser tags `delay`/`multiplier_note`/`sysex_*`).
+- Committed in [`samples/`](samples/SOURCES.md): 15 real `song.ini` files (6 from Stickheadz32's GitHub chart repository, each beside a committed `.chart`; 9 by TheGreatNi, CC BY 4.0, from https://archive.org/details/YoungDublinersAshleyFalls.7z, each beside a committed `notes.mid`) and 3 synthetic CC0 files (full tag range, CRLF/unspaced `key=value` with comments and `five_lane_drums`, `.mid` parser tags `delay`/`multiplier_note`/`sysex_*`).
 - More: every Clone Hero/YARG song folder carries a `song.ini`; Chorus Encore stores the same keys as `.sng` metadata (see [sng](../sng/README.md)). Tag lists: https://github.com/TheNathannator/GuitarGame_ChartFormats (`docs/Chart-File-Formats/song-ini/Standard-Tags.md`, Clone Hero and Phase Shift tag pages, CC0).
 
 ## Sources

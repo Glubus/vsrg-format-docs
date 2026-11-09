@@ -67,7 +67,7 @@ Not read by ROX.
 
 ## Getting samples
 
-- **Committed**: 3 real score MIDI files and the `SongInfo` text entry of the custom Donkey Konga 2 track "Turbo Killer" (GameBanana mod 633998; the 12.dsp audio was not kept), plus 1 synthetic in [`samples/`](samples/). The mod's other 133-byte MIDI files (empty charts for unused slots) were not committed. Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **Committed**: 9 real files of the custom Donkey Konga 2 track "Turbo Killer" (GameBanana mod 633998; audio not kept): 3 charted score MIDI files, 6 empty-slot MIDI files (133 bytes, no notes) and the `SongInfo` text entry, plus 1 synthetic in [`samples/`](samples/). Origin, date, sha256 and terms are in [`samples/SOURCES.md`](samples/SOURCES.md).
 - **More samples**: Konga Beat/Launcher (https://kongabeat.com) say custom tracks are shared on GameBanana; the Donkey Konga 2 game page there (https://gamebanana.com/games/23415) listed only this track mod. Official charts are `files/Score/*.mid` in a dumped game image (modding guide https://gist.github.com/ImJustSpirit/67626bbc3844703c2cc202e54cffdcc9).
 
 ## Sources

@@ -58,7 +58,7 @@ TaikoJiro (reads `.tjf`), Taikosan, TJF EDIT; no open-source parser identified.
 
 ## Getting samples
 
-Committed in [`samples/`](samples/): one hand-written synthetic file built strictly from the Taikosan readme (see `samples/SOURCES.md`). No real `.tjf` could be obtained: the Taikosan "nicover"/plusedit package by VIL ships the author's video charts as samples ("動画内で使っていた譜面もそのまんま入ってます。サンプル代わりにどうぞ", Taikosan readme) but its download pages (pointers on https://w.atwiki.jp/laser_bm/pages/72.html and https://wikiwiki.jp/taiko/) were not reachable, getuploader archives return 403, and a Wayback/archive.org search found nothing. TJF EDIT writes `.tjf`; TaikoJiro 1 also reads it.
+Committed in [`samples/`](samples/) (see `samples/SOURCES.md`): one real `.tjf`, `taikosan_syatyou.tjf`, the sample chart shipped in the Taikosan plusedit package by VIL (downloaded from the MediaFire link listed on https://w.atwiki.jp/laser_bm/pages/72.html; exe, mp3 and docs not kept), and one hand-written synthetic file built from the Taikosan readme. Observed [observed in samples/taikosan_syatyou.tjf]: Shift-JIS text, headers `TITLE`, `LEVEL`, `BPM`, `WAVE`, a blank line, `#START`, 16-symbol measure lines and the `#THREERENPU-GO` hidden command (documented as deprecated in the readme). No other real `.tjf` was found: getuploader archives answer 403 and a Wayback/archive.org search found nothing more. TJF EDIT writes `.tjf`; TaikoJiro 1 also reads it.
 
 ## Sources
 

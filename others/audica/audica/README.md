@@ -85,8 +85,8 @@ Not read by ROX.
 
 ## Getting samples
 
-- **Committed**: container-only format: no `.audica` is committed. The chart members of one package (`expert.cues`, `song.desc`, `song.mid`, `song.moggsong`, extracted from AudicaConverter's `template.audica`, MIT) are in [`samples/`](samples/); only `expert.cues` is a chart. Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
-- **More samples**: the game's tools export `.audica` files (Harmonix blog "Introducing Community Maps in Audica Update 0.1.5!"); octoberU/AudicaConverter converts osu! beatmaps (`.osz`) to `.audica`; https://github.com/Zingabopp/AudicaDownloader downloads published custom songs. Unzip a `.audica` to get `song.desc`, `*.cues`, `song.mid`.
+- **Committed**: container-only format: no `.audica` is committed. Chart members extracted from 7 packages are in [`samples/`](samples/): AudicaConverter's `template.audica` (MIT) and six Maudica community maps in `maudica_<id>/` (`expert.cues`, optional `advanced.cues`, `song.desc`, `song.mid`, `song.moggsong`, `modifiers.json`; audio and covers dropped). Origin, date, sha256 and licence of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **More samples**: https://maudica.com is the main custom-map site (API `https://maudica.com/api/maps?per_page=30&page=N`, download `https://maudica.com/maps/<id>/download`, ~2150 maps); the old list http://www.audica.wiki:5000/api/customsongs (used by Zingabopp/AudicaDownloader) no longer answered. Format wiki: https://wiki.maudica.com/files/. Unzip a `.audica` to get `song.desc`, `*.cues`, `song.mid`.
 
 ## Sources
 - https://raw.githubusercontent.com/octoberU/Audica-.NET-Tools/main/AudicaTools/Audica.cs

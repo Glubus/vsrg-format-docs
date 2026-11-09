@@ -49,7 +49,7 @@ Property keys are hashed in memory (dictionary of int hash -> value with the key
 
 ## Example
 
-Hand-written from the Jukebox converters (no real remix was opened): [samples/synthetic-no-audio.riq](samples/synthetic-no-audio.riq), whose `Charts/chart0.json` is `{"version":201,"offset":0.0,"songname":"song0","entities":[{"type":0,"version":0,"model":0,"data":{"beat":0.0,"length":4.0}},{"type":0,"version":0,"model":1,"data":{"beat":4.0,"length":1.0,"type":0}}, ...],"models":{"0":"demo/intro","1":"demo/hit","2":"demo/bop"},"types":{"0":"riq__Entity"}}` and whose `.meta` is `{"version":201,"origin":"synthetic (hand-written)","data":{"title":"Synthetic RIQ","author":"vsrg-format-docs"}}` (the datamodel names are placeholders).
+Hand-written from the Jukebox converters (no real remix was opened): a hand-written `.riq` (removed: archives are no longer stored in this repository), whose `Charts/chart0.json` is `{"version":201,"offset":0.0,"songname":"song0","entities":[{"type":0,"version":0,"model":0,"data":{"beat":0.0,"length":4.0}},{"type":0,"version":0,"model":1,"data":{"beat":4.0,"length":1.0,"type":0}}, ...],"models":{"0":"demo/intro","1":"demo/hit","2":"demo/bop"},"types":{"0":"riq__Entity"}}` and whose `.meta` is `{"version":201,"origin":"synthetic (hand-written)","data":{"title":"Synthetic RIQ","author":"vsrg-format-docs"}}` (the datamodel names are placeholders).
 
 ## ROX support
 

@@ -76,7 +76,7 @@ Not read by ROX.
 
 ## Getting samples
 
-- **Committed**: 4 real chart files (two Deemo I charts from LibrarristShalinward/Deemo-I-Charts, two Deenote test charts) plus 1 synthetic in [`samples/`](samples/). Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **Committed**: 8 real chart files (six Deemo I charts from LibrarristShalinward/Deemo-I-Charts incl. one interactive chart, two Deenote test charts) plus 1 synthetic in [`samples/`](samples/). Origin, date, sha256 and terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
 - **More samples**: https://github.com/LibrarristShalinward/Deemo-I-Charts has ~450 interactive-chart and ~1300 original-chart JSON files (and two zips under `下载/`); extraction tools: deemo-extract, disunity.
 
 ## Sources

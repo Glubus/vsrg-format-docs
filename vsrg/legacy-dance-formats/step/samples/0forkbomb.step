@@ -1,0 +1,105 @@
+version 0.61 
+file 0forkbomb.ogg 
+song Forkbomb (DDR TRAINING SONG) 
+group Pajama Crisis 
+bpm 136 
+offset 0 
+mix free
+SINGLE 
+BASIC 0 
+delay 4
+lyric Hey, look, down here!
+delay 4
+lyric Welcome to the pyDDR beginner tutorial. 
+trans (instructions will be here!)
+delay 6 
+lyric See the platform under your feet? 
+delay 6 
+lyric When moving arrows cross over the ones at the top....  
+delay 6 
+trans ....you hit corresponding arrows on the platform. 
+delay 8 
+lyric So, get ready to tap the left arrow.. 
+delay 3.75
+lyric ...Now! 
+delay 0.25 
+halfn 08 00 00 00 
+lyric Don't go back to the center; stay on the left arrow. 
+delay 4 
+lyric Now, note your "judging" in the middle. 
+delay 4 
+lyric At the end of a song, these are added up. 
+delay 4 
+lyric Your grade depends on how close to the beat you dance. 
+delay 6
+lyric Here comes another arrow. 
+delay 3 
+lyric Remember to stay on the left arrow, 
+delay 3 
+lyric then tap the right when it's covering the top arrow..
+delay 3.75 
+trans ..now! 
+delay 0.25 
+whole 00 00 00 08 
+lyric Okay, now a more tricky technique (sort of). 
+delay 6 
+lyric Let's try hitting the down and up arrow at the same time. 
+delay 6 
+lyric You will need to jump to hit two arrows at once. Ready?
+delay 3.5 
+lyric Jump!
+delay 0.5
+whole 00 08 08 00
+lyric By now you might have a combo.
+delay 4
+lyric A combo is consecutive marvelous/great/perfect steps.
+delay 6
+lyric Now let's try a "march". Here's how:
+delay 4
+lyric You will probably start standing on both left and right,
+delay 6
+lyric and then "waddle" between the two.
+delay 4
+qurtr 08 00 00 00
+qurtr 00 00 00 08
+qurtr 08 00 00 00
+qurtr 00 00 00 08
+qurtr 08 00 00 00
+qurtr 00 00 00 08
+lyric Now you can see why returning to the center....
+delay 6
+trans ..might be a bad idea.
+delay 4
+lyric Arrows can appear in any order, like these.
+delay 4
+lyric Be prepared to move a free foot to the next arrow.
+delay 6
+qurtr 00 00 08 00
+qurtr 08 00 00 00
+qurtr 00 08 00 00
+qurtr 00 00 00 08
+qurtr 00 00 08 00
+delay 4 
+lyric On a final note, some tips:
+delay 6
+lyric Remember that arrows are hit to the beat.
+delay 6
+lyric Bounce to the beat if it helps.
+delay 6
+lyric Also look at the number of bars in the song selector.
+delay 6
+lyric More bars means a harder song.
+delay 4
+lyric Try a one-bar song first.
+delay 4
+lyric Last but not least, everything is patterns, like these.
+delay 6
+lyric Recognising them is the key.
+delay 4
+qurtr 08 00 00 00
+qurtr 00 08 00 00
+qurtr 00 00 08 00
+qurtr 00 00 00 08
+delay 4
+lyric Thanks for trying pyDDR! Here comes your grade..
+end

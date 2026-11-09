@@ -32,7 +32,7 @@ From the Ver 2.0 beta 1 spec (translated):
 | `#DOUBLE:level:mode:steps1:steps2;` | double-play level, mode, steps (1P : 2P) |
 | `#COUPLE:level:mode:steps1:steps2;` | couple-play level, mode, steps (1P : 2P) |
 
-Note the parameter order **level first, then mode**; DWI reversed it (`#SINGLE:BASIC:5:...`).
+Note the parameter order **level first, then mode**; DWI reversed it (`#SINGLE:BASIC:5:...`). **Real files disagree with the spec page:** the seven real `.msd` files of the Doremi DDR fan page all write `#SINGLE:BASIC:<level>:<steps>;` (mode first, level second, like DWI) and carry a `#MSD:<author>;` credit tag, `#FILE:<name>.wav;`, a `#GAP` in plain integers (e.g. `#GAP:8`, `#GAP:-10`), CP932 text and CRLF [observed in `samples/doremi-ddr_banban.msd`, `samples/doremi-ddr_densya.msd`; they target the freeware sim Delight Delight Reduplication per the host page].
 
 Predefined mode strings: `NORMAL` and `HARD` (**removed in Version 2.0**), `BASIC` (**added in 2.0**; "the combination of Normal and Hard"), `ANOTHER`, `MANIAC`.
 
@@ -84,9 +84,9 @@ Not read by ROX (no `.msd` handling in [ROX source: src/formats/auto/detect.rs](
 
 ## Getting samples
 
-Committed in [`samples/`](samples/SOURCES.md): one **synthetic** (hand-written, CC0) `.msd` that follows this page's translated spec (level-first `#SINGLE:level:mode:steps;`, `#DOUBLE`, `#COUPLE`, 8th-note slots with `( )` and `[ ]`).
+Committed in [`samples/`](samples/SOURCES.md): **7 REAL `.msd` files** (`doremi-ddr_*.msd`: fan charts by "TAKU" for the freeware DDR simulator Delight Delight Reduplication, from the Wayback copy of http://doremi.kalin.to/ddr/ captured 2006-04-17; CP932, CRLF, `#SINGLE:BASIC:<level>:`), plus one hand-written `synthetic-demo.msd` (does not count). The real dialect differs from the translated spec in the `#SINGLE` parameter order (see Structure).
 
-No real DDR'99-era `.msd` was found: the original spec page ("MSDファイル書式 Ver2.0β1", archived 2007 copy of `doremi.kalin.to/ddr/msd_format.html`) has no sample and the simulator's files are not archived. The MSD *tokenizer* is exercised by every `.sm`/`.ssc`/`.dwi`/`.ksf` sample in this repository. To collect more: run D2REDIT (see [`../../legacy-dance-formats/d2r`](../../legacy-dance-formats/d2r/README.md); the editor page lists `*.msd` among the files it reads) on any `.msd` you find.
+More: the other Wayback captures of the same site (`doremi.kalin.to/ddr/first.html` ... `fifth.html` list the charts; only these seven `.msd` URLs were captured with status 200); the 'Delight Delight Reduplication' program by Nickle (http://nickle.hey.to/, nothing downloadable in Wayback); D2REDIT reads `*.msd` (see [`../../legacy-dance-formats/d2r`](../../legacy-dance-formats/d2r/README.md)).
 
 ## Sources
 

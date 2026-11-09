@@ -19,6 +19,7 @@ Not applicable.
 Keysound file names (`.ssf` in the game folder; `.wav` accepted).
 
 ## Versions & variants
+[observed in samples/ez2dj1st_AcidJazz_1P-ACIDJAZZ.ezi, ezdance1_3week_1p-3week.ezi] The PC editions of EZ2DJ 1st Tracks / Dance Edition ship plaintext `.ezi` files (1.3-3 KB, CRLF, one `<note> <mode> <file>` per line): `C#0 1 1-mix-1p-st.wav`, `D#0 0 0-rapa1.wav`, `E0 0 0-...`, i.e. the legacy MIDI-style note names below.
 Old charts name notes like MIDI keys: `C#0 1 mix-st.wav` (the original's `atol` reads all as note 0, EZ2BMS reads octave*12 + semitone); `ez2EziConverter` (EZ2Tools) converts such old EZI to the modern numeric ids.
 
 ## Quirks & pitfalls
@@ -34,8 +35,8 @@ Not read by ROX.
 EZ2BMS (https://github.com/Roganis/EZ2BMS), EZ2Tools `ez2EziConverter` (https://github.com/ben-rnd/EZ2Tools).
 
 ## Getting samples
-- **Committed: none (no real file found).** Same situation as [`.ez`](../ez/README.md#getting-samples): no `.ezi` file found at any public source reached; EZ2BMS's fixtures contain none (`packages/chart-core/test/fixtures/README.md`).
-- **How to get one**: copy the `.ezi` keysound-name files from an EZ2DJ/EZ2AC installation you own, next to the `.ez` charts of the same song; they use their own 512-byte cipher table (fiche, EZ2BMS `ez2data/crypt.ts`). Tools: https://github.com/Roganis/EZ2BMS, https://github.com/ben-rnd/EZ2Tools.
+- **Committed** ([`samples/`](samples/SOURCES.md)): 11 real plaintext `.ezi` files (the sidecars of the 11 `.ez` charts) from the PC editions of EZ2DJ The 1st Tracks and Dance Edition Volume One, read from the archive.org items `19990420_` and `20000807_` (see [ez](../ez/README.md#getting-samples)).
+- **More**: the same RARs hold many more songs; arcade-era `.ezi` files are encrypted like `.ez` (fiche) and come from an own game install; EZ2BMS (https://github.com/Roganis/EZ2BMS) and EZ2Tools (https://github.com/ben-rnd/EZ2Tools, `ez2EziConverter`) handle them.
 
 ## Sources
 - https://raw.githubusercontent.com/Roganis/EZ2BMS/main/packages/chart-core/src/io/ez/ezi.ts

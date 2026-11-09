@@ -43,7 +43,7 @@ Not read by ROX.
 
 ## Getting samples
 
-- **Committed**: container-only format: no zip is committed (the `samples/` folder was removed). The charts of the downloaded BeatSaver zips are in `../dat/samples/<id>_<hash8>/` and their info files in `../info-dat/samples/<id>_<hash8>/`. Layout observed in the zips: old maps are flat (no wrapper folder) with a lowercase `info.dat` and `song.egg`/`cover.jpg`; recent ones use `Info.dat`, `AudioData.dat`, `*Standard.dat` and `Lightshow.dat`. Origin, author, date, sha256 and licence/terms of each file are in [`samples/SOURCES.md`](samples/SOURCES.md).
+- **Committed**: container-only format: no zip is committed (the `samples/` folder was removed). The charts of the downloaded BeatSaver zips are in `../dat/samples/<id>_<hash8>/` and their info files in `../info-dat/samples/<id>_<hash8>/`. Layout observed in the zips: old maps are flat (no wrapper folder) with a lowercase `info.dat` and `song.egg`/`cover.jpg`; recent ones use `Info.dat`, `AudioData.dat`, `*Standard.dat` and `Lightshow.dat`. Origin, author, date, sha256 and licence/terms of each file are in `../dat/samples/SOURCES.md`.
 - **More samples**: download any map from BeatSaver (see the `dat` fiche).
 
 ## Sources

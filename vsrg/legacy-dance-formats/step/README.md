@@ -55,7 +55,9 @@ Text Text Revolution (https://ttr.sourceforge.net/): plays `.step`. pydance <= 0
 
 ## Getting samples
 
-No sample: pydance's old `.step` parser is not in the mirror ([mbenkmann/pydance](https://github.com/mbenkmann/pydance), commit `24b987a7d73a6f6061d266e1da973c9612bb10ca`; `fileparsers.py` handles `.dance`, DWI, SM, KSF) and no file was found. How to get one: install an old pydance/pyDDR release (the pydance FAQ says "pydance supports loading .dance (its native format), .step (its old format), DWI, and SM files" since 0.7.0; the old tarballs are on the SVN `http://kai.vm.bytemark.co.uk/svn/pydance/` mentioned on the download page) and look in its songs for `.step`; or get Text Text Revolution songs (https://ttr.sourceforge.net/, which loads pydance `.step`). For the unrelated binary DDR STEP data see [`../../ddr/step`](../../ddr/step/README.md) (three real STEP files committed).
+Committed in [`samples/`](samples/SOURCES.md): two REAL pyDDR `.step` files from Wayback captures of the pyDDR site (April 2003): `0forkbomb.step` (`version 0.61`) and `6jan.step` (`version 0.3`). The format is line-based text: header lines `version`, `file`, `song`, `group`, `bpm`, `offset`, `mix`; then `SINGLE`/`DOUBLE`, a `<DIFFICULTY> <feet>` line, and step lines `delay <beats>`, `ready`, `lyric`, `trans`, and note-length keywords (`eight`, `halfn`, `whole` ...) followed by four two-digit panel codes, e.g. `halfn 08 00 00 00` [observed in `samples/0forkbomb.step`, `samples/6jan.step`; not a documented grammar, the exact meaning of the keywords and codes is Unknown].
+
+More: other pre-0.9 pyDDR/pydance tarballs (`pydance-0.7.x`, `0.8.x` are captured in Wayback only as 404s); Text Text Revolution songs (https://ttr.sourceforge.net/, which loads pydance `.step`). For the unrelated binary DDR STEP data see [`../../ddr/step`](../../ddr/step/README.md).
 
 ## Sources
 

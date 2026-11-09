@@ -21,18 +21,18 @@ and encodings are significant, see `.gitattributes`); see [Samples](#samples).
 ## Samples
 
 Every format page ends with a `Getting samples` section. Real chart files live next to the page, in `<category>/<game>/<format>/samples/`,
-with a `samples/SOURCES.md` that gives, for each file, its origin (URL, pinned commit), author, licence and what it exercises.
-Only charts are stored: no audio, video or images.
+with a `samples/SOURCES.md` that gives, for each file, its source URL, the date it was fetched, author and licence or terms as far as known.
+Only chart files are stored: no audio, video or images, and no archive or package (`.osz`, `.zip`, `.qp`, `.fnfc`... are opened and only the
+chart files inside are kept, in a subfolder named after the set).
 
 | What | Where |
 |---|---|
 | Committed samples | `<category>/<game>/<format>/samples/`, listed in the `SOURCES.md` of that folder. Never modify them: line endings and encodings are significant (see `.gitattributes`). |
-| Samples that cannot be redistributed here (licence, size) but can be downloaded | [`samples.manifest.json`](samples.manifest.json) (format path, URL, sha256, size, licence note, target name). `sh tools/fetch-samples.sh` downloads them into `samples-local/<format path>/` (gitignored), checks size and sha256, and is idempotent. `sh tools/fetch-samples.sh vsrg/quaver` fetches one prefix only. Needs POSIX `sh`, `curl`, `sha256sum`, `awk`. |
-| Status per format | [`SAMPLES-STATUS.md`](SAMPLES-STATUS.md): committed count, manifest count, how to get more (every format of the index). |
+| Status per format | [`SAMPLES-STATUS.md`](SAMPLES-STATUS.md): real and synthetic file counts for every format of the index, and why a format has fewer than 5 real files. |
 
-What may be committed: files whose licence allows redistribution (open-source game or parser test assets, spec examples, hand-written
-`synthetic-*` files declared public domain, files whose author explicitly allows sharing). Everything else public goes to the manifest.
-A file is never committed with its audio, even when the original package contains it.
+Files marked `synthetic-` were written for this repository (CC0). Everything else was downloaded from a public source; the repository owner
+accepted the licence risk of redistributing those snapshots. Formats whose charts exist only inside commercial game data with no public copy
+have no sample; their page explains how to obtain one.
 
 ## Rules of this reference
 
@@ -460,10 +460,10 @@ History of what this repository adds to the upstream list (Glubus/vsrg-format-do
 - The pages `vsrg/bms/*` and the other formats read by ROX describe the ROX decoder in their "ROX support" section.
 - Hand-written, public-domain sample charts identical to the ROX test assets: `vsrg/bms/bms/samples/synthetic-features.bms`,
   `vsrg/bms/pms/samples/synthetic-nine-buttons.pms`, `vsrg/bms/bmson/samples/synthetic-features.bmson`.
-- Sample corpus: 838 real or synthetic chart files committed under `<category>/<game>/<format>/samples/` (each folder has a `SOURCES.md`
-  with origin, author, licence and purpose per file), 443 more files listed in [`samples.manifest.json`](samples.manifest.json)
-  (url, sha256, size, licence) and fetched by [`tools/fetch-samples.sh`](tools/fetch-samples.sh); every format page has a `Getting samples`
-  section and [`SAMPLES-STATUS.md`](SAMPLES-STATUS.md) lists all 204 formats with their counts.
+- Sample corpus: 2447 chart files committed under `<category>/<game>/<format>/samples/` (2057 real charts downloaded from public sources, the rest
+  synthetic or converted), each folder with a `SOURCES.md` (URL, fetch date, author, licence/terms per file). Every format page has a
+  `Getting samples` section and [`SAMPLES-STATUS.md`](SAMPLES-STATUS.md) lists all 204 formats with their counts: 116 formats with at least 5 real charts,
+  18 with 1 to 4, 70 with none (20 container-only, 50 without any public copy).
 - New format pages: `vsrg/etterna/{ett,cache}`, `vsrg/interlude/yav`, `vsrg/osu-mania/olz`, `vsrg/r2beat/xml`,
   `vsrg/friday-night-funkin/{nmv-json,maru-json}`. The osu!lazer `client.realm` database is documented as not being a chart format
   (`vsrg/osu-mania/README.md`).

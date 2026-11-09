@@ -25,7 +25,7 @@ n = 1..5 map to the difficulty list bottom to top (n=1 lowest, by convention). N
 Not applicable (indexing only).
 
 ## Versions & variants
-Not applicable.
+[observed in samples/*_set.def, *_SET.DEF] Real files from community packs: CRLF; ASCII or Shift_JIS (Japanese titles: `SGURU.J_Drum9th-helicopter_set.def`, `wes_Spitz---haru_no_uta_set.def`); the file name may be upper case (`SET.DEF`); the colon after the key is optional and spaces around it vary (`#TITLE Blue Water Blue Sky` in `XtrRyce_blue_SET.DEF`, `#TITLE : LIBERTY` / `#L1FILE : LIBERTY.dtx` in `takky_liberty_set.def`, `#L1LABEL:BASIC` without a space in `goro-j_Drum8th-Dreams_in_the_night_set.def`); the last line may lack a final newline; `#LnFILE` may name `.gda` charts (`TEKKI_Momentary-Life_SET.DEF`: `bas.gda`, `adv.gda`, `ext.gda`; `SGURU.J_...`: `heriBSC.GDA`) as well as `.dtx`; a pack may hold only one level (`XtrRyce_blue_SET.DEF`).
 
 ## Quirks & pitfalls
 When a `set.def` exists, loose `.dtx` files in the folder are ignored.
@@ -52,8 +52,8 @@ Not read by ROX. Prism does not read it either: `set.def` is never listed as a c
 DTXMania (C#): https://github.com/limyz/DTXmaniaNX
 
 ## Getting samples
-- **Committed** ([`samples/`](samples/SOURCES.md)): three hand-written `synthetic-*.def` files (single song with three levels pointing at real files of [dtx samples](../dtx/samples/SOURCES.md); a two-song file; a Shift_JIS/CRLF file with Japanese labels), written from the field table of the official page https://dtxmania.net/documents/create-setdef.
-- **No real `set.def` under an open licence** was found in the repositories scanned (DTXmaniaNX, DTXManiaCX, dtx2gp, DTXtoPNG). Real ones accompany community DTX packs: the usual archive holds the `.dtx` files plus `set.def` next to the audio (see the archive listing in [dtx samples](../dtx/samples/README.md)); DTXManiaCX's bundled practice songs use a `box.def` (a different file) at `DTXMania.Game/BundledSongs/Practice/box.def` (https://github.com/cwchanap/DTXManiaCX).
+- **Committed** ([`samples/`](samples/SOURCES.md)): 15 real `set.def` files from community DTX/GDA packs of the archive.org item "Rare DTX&GDA Simfile Collection" (`raredtxgda`, `raredtxgda2`: TEKKI, XtrRyce, ウェス, さわね, リバドラ, goro-j, Ｍ田, SGURU.J, takky, Deathfox), each extracted from its pack's RAR (only the `set.def` kept), plus three hand-written `synthetic-*.def` files (single song, two songs, Shift_JIS).
+- **More**: the same two archive.org items hold hundreds of packs (`https://archive.org/details/raredtxgda`, `https://archive.org/details/raredtxgda2`; RAR archives per charter, so download one and extract with `bsdtar`/`7z`); 64 `set.def` were counted in the ~95 smaller packs that were listed. The official documentation (https://dtxmania.net/documents/create-setdef) describes the keys; `woopsdez/dtx-syrup` generates `set.def` files.
 
 ## Sources
 - https://dtxmania.net/documents/create-setdef
