@@ -84,7 +84,7 @@ Real chart files per format of the [README index](README.md), all committed unde
 | [`vsrg/o2jam/txt`](vsrg/o2jam/txt/) `.txt` O2Jam - Music & Game chart | 0 | 0 | Format unknown and no file found: rmstZ test pack sits on a Jianguoyun share page that cannot be downloaded with curl; no repository holds an O2Jam Music & Game txt chart; export from the mobile app data or with rmstZ [unverified] |
 | [`vsrg/o2jam/xnt`](vsrg/o2jam/xnt/) `.xnt` KrazyRain chart (XNOT) | 0 | 0 | No .xnt is public: they exist only inside KrazyRain .snp archives (no public copy found; KrazyRenderer and Arrowgene.KrazyRain ship none); extract an own KrazyRain .snp with Arrowgene.KrazyRain vdisk-extract |
 | [`vsrg/osu-mania/osb`](vsrg/osu-mania/osb/) `.osb` osu! storyboard file | 21 | 0 | .osb at the root of any .osz whose set has a storyboard |
-| [`vsrg/osu-mania/osu`](vsrg/osu-mania/osu/) `.osu` osu! beatmap (mode 3, osu!mania) | 107 | 0 | osu.ppy.sh/beatmaps mania maps (unzip .osz); lazer and rosu-map test resources; ROX assets/osu |
+| [`vsrg/osu-mania/osu`](vsrg/osu-mania/osu/) `.osu` osu! beatmap (mode 3, osu!mania) | 74 | 0 | osu.ppy.sh/beatmaps mania maps (unzip .osz); lazer and rosu-map test resources; ROX assets/osu |
 | [`vsrg/pop-n-music/arcade-chart`](vsrg/pop-n-music/arcade-chart/) `(unknown)` pop'n music arcade chart events | 0 | 0 | Konami arcade data exists only inside a game install (<ifs>_op.bin / _hp.bin inside the song .ifs); no public copy found in GitHub path search, popntowav/popn-tools/popngg repos, archive.org or web search; Own a pop'n install: unpack the song .ifs with ifstools; popntowav.js reads _op.bin or _hp.bin |
 | [`vsrg/project-sekai/ccmmws`](vsrg/project-sekai/ccmmws/) `.mmws / .ccmmws / .unchmmws` MikuMikuWorld binary layout (MMWS/CCMMWS/UCMMWS) | 0 | 10 | no public .ccmmws/.unchmmws exists; the 10 committed files are real charts converted with rg-converters; Save from MMW4CC / MMW4UC; Chart Cyanvas and Untitled Charts communities |
 | [`vsrg/project-sekai/holodori-sus`](vsrg/project-sekai/holodori-sus/) `.sus` hololive Dream SUS dialect | 6 | 0 | holodori-asset-tools download --filter '^chart_m.*\.sus$' fetches all songs from the public CDN |
@@ -161,9 +161,9 @@ Real chart files per format of the [README index](README.md), all committed unde
 | [`others/muse-dash/bms`](others/muse-dash/bms/) `.bms` Muse Dash BMS dialect | 16 | 8 | api.mdmc.moe/v3/charts (all community albums) |
 | [`others/ohshape/yml`](others/ohshape/yml/) `.yml` OhShape level (YAML) | 8 | 0 | ohshapes.com /api/maps/latest/<page> (many more maps) |
 | [`others/ongeki/ogkr`](others/ongeki/ogkr/) `.ogkr` OGKR (ONGEKI chart) | 5 | 0 | OngekiFumenEditor FumenSamples (about 138 files) |
-| [`others/osu-catch/osu`](others/osu-catch/osu/) `.osu` osu! beatmap (mode 2, osu!catch) | 21 | 0 | same, catch difficulties |
-| [`others/osu-standard/osu`](others/osu-standard/osu/) `.osu` osu! beatmap (mode 0, osu!standard) | 38 | 0 | any .osz from osu.ppy.sh (account) or fixture repos |
-| [`others/osu-taiko/osu`](others/osu-taiko/osu/) `.osu` osu! beatmap (mode 1, osu!taiko) | 15 | 0 | same, taiko difficulties |
+| [`others/osu-catch/osu`](others/osu-catch/osu/) `.osu` osu! beatmap (mode 2, osu!catch) | 24 | 0 | same, catch difficulties |
+| [`others/osu-standard/osu`](others/osu-standard/osu/) `.osu` osu! beatmap (mode 0, osu!standard) | 65 | 0 | any .osz from osu.ppy.sh (account) or fixture repos |
+| [`others/osu-taiko/osu`](others/osu-taiko/osu/) `.osu` osu! beatmap (mode 1, osu!taiko) | 18 | 0 | same, taiko difficulties |
 | [`others/paradiddle/rlrr`](others/paradiddle/rlrr/) `.rlrr` Paradiddle song / kit / recording (RLRR) | 16 | 2 | paradb.net API lists many more maps (maps.paradb.net/maps/<id>.zip) |
 | [`others/paradigm-reboot/chart`](others/paradigm-reboot/chart/) `unknown` Paradigm: Reboot chart | 0 | 0 | commercial Unity game, format unknown, no public dump or parser found; wiki Data Mining page returns 403; see fiche Getting samples |
 | [`others/phigros/official-json`](others/phigros/official-json/) `.json` Phigros official chart | 6 | 2 | phigros-chart-tracker / decrypted-data mirrors |
