@@ -146,7 +146,7 @@ Archives that carry charts with their audio and images. No page or sample of the
 | [`.r2n`](vsrg/r2beat/r2n/) R2Beat chart package | R2Beat | vsrg | stub | No | [`vsrg/r2beat/r2n`](vsrg/r2beat/r2n/) |
 | [`.xml`](vsrg/r2beat/xml/) R2Beat note chart | R2Beat | vsrg | partial | Decode only (4 arrow columns; by content) | [`vsrg/r2beat/xml`](vsrg/r2beat/xml/) |
 | [`.imd`](vsrg/rhythm-master/imd/) Rhythm Master classic chart | Rhythm Master (节奏大师) | vsrg | complete | Decode only | [`vsrg/rhythm-master/imd`](vsrg/rhythm-master/imd/) |
-| [`.json`](vsrg/rhythm-master/json/) Rhythm Master imdjson (BNDQ) | Rhythm Master (节奏大师) / WeChat mini program | vsrg | partial | No | [`vsrg/rhythm-master/json`](vsrg/rhythm-master/json/) |
+| [`.json`](vsrg/rhythm-master/json/) Rhythm Master imdjson (BNDQ) | Rhythm Master (节奏大师) / WeChat mini program | vsrg | partial | Decode only (4 to 6 columns; by content) | [`vsrg/rhythm-master/json`](vsrg/rhythm-master/json/) |
 | [`.mde`](vsrg/rhythm-master/mde/) Rhythm Master star motion chart | Rhythm Master (节奏大师) | vsrg | stub | No | [`vsrg/rhythm-master/mde`](vsrg/rhythm-master/mde/) |
 | [`.jrox`](vsrg/rhythm-open-exchange/jrox/) ROX JSON | Rhythm Open Exchange | vsrg | complete | Yes (read + write) | [`vsrg/rhythm-open-exchange/jrox`](vsrg/rhythm-open-exchange/jrox/) |
 | [`.rox`](vsrg/rhythm-open-exchange/rox/) ROX native binary | Rhythm Open Exchange | vsrg | complete | Yes (read + write) | [`vsrg/rhythm-open-exchange/rox`](vsrg/rhythm-open-exchange/rox/) |

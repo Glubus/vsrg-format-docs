@@ -1,7 +1,7 @@
 # Rhythm Master "imdjson" (`.json`, signature `BNDQ`)
 Kind: chart
 
-Doc status: partial · ROX: no · Category: vsrg · Encoding: json
+Doc status: partial · ROX: decode only · Category: vsrg · Encoding: json
 
 ## Overview
 
@@ -38,7 +38,7 @@ First note of `tst_rmechart/tojson/friend01_4k_nm.imd.json` (RMEssentials test f
 ```
 
 ## ROX support
-Not read by ROX.
+Decode only (`rox::formats::imd::ImdJsonDecoder`, told by content: a `.json` whose `signature` is `BNDQ`). The file is turned into the `.imd` it stands for (RMEssentials' `toImdNote` mapping: lane = track - 3, time = `time` ms or `tick x 1250 / tempo`, `attr` 3/4 with `isEnd` and `dur` give the nine `.imd` types) and read as one, so the `.imd` rules apply: lanes from the file name (`<song>_<4|5|6>k_<ez|nm|hd>.imd.json`), chains as one hold per segment, single slides as taps. An `attr` other than 0, 3, 4 is dropped and counted.
 
 ## Parsers & tools
 RMEssentials (C++/Qt): https://github.com/Fsu0413/RMEssentials ; rmstZ.
