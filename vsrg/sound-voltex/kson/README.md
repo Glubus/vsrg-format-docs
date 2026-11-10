@@ -1,7 +1,7 @@
 # K-Shoot MANIA JSON chart (`.kson`)
 Kind: chart
 
-Doc status: partial · ROX: no · Category: vsrg · Encoding: json
+Doc status: partial · ROX: decode only · Category: vsrg · Encoding: json
 
 ## Overview
 KSON is the JSON successor of [`ksh`](../ksh/README.md), specified by the K-Shoot MANIA project (spec v1.0.2, `format_version: 1`, CC0). Notes sit on an absolute pulse grid; graphs support curves (camera, scroll speed, laser); KSH-only leftovers go in `compat`. Used by KSM v2 development, Unnamed SDVX Clone (`kson-rs`) and editors. Audio-effect tables (spec lines 235-656: `audio.audio_effect`, parameter types/lists) and camera details are only summarized.
@@ -50,7 +50,7 @@ Hand-built from the field tables (real files: [samples/](samples/SOURCES.md); th
 ```
 
 ## ROX support
-Not read by ROX.
+Decode only (`rox::formats::kson::KsonDecoder`, by the `.kson` extension). 6 columns as the `.ksh` reader: `note.bt[0..4]` BT A-D, `note.fx[0..2]` FX-L/FX-R; lasers dropped and counted. Pulses (240 a beat) to time through `beat.bpm`; `audio.bgm.offset` moves every time (as the ksh `o`; libkson copies one to the other); `time_sig` only sets the signature of the BPM points; `scroll_speed` and `stop` (scroll only) are counted. A 3-element `ButtonNote` or a 4-element `LaserSection` (converter output) is read by its first entries. 20 of the 23 `.kson` decode; the 3 others have no button note (camera, minimal and speed-curve fixtures). `kson-rs_Gram_ex.json` (a KSON chart saved as `.json` by `kson-rs`) is not read: the extension is `.kson`, and a `.json` goes to the FNF/Bestdori/BDON content checks.
 
 ## Parsers & tools
 libkson (C++): https://github.com/kshootmania/libkson · kson (Rust): https://lib.rs/crates/kson · kshoot (TS): https://www.npmjs.com/package/kshoot · ksm2sdvx (KSON -> VOX v13): https://github.com/Foahh/ksm2sdvx · VOXL4DD3R (KSH/KSON -> VOX v13): https://github.com/ooznon/VOXL4DD3R

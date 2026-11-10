@@ -36,7 +36,7 @@ REASONS = [
     ("not a chart file", re.compile(r"unsupported format: \w+$|is a MIDI file, not a Clone Hero chart")),
     ("other mode", re.compile(r"Not a mania beatmap|Malody mode|pump-couple")),
     ("needs its companion file", re.compile(r"metadata file|song of this edit")),
-    ("broken file", re.compile(r"truncated|runs past the end|size of the file is not|is not after the BPM table|mapping values are not allowed")),
+    ("broken file", re.compile(r"truncated|runs past the end|size of the file is not|is not after the BPM table|mapping values are not allowed|no `input` in the metadata|no usable tempo")),
     ("no note", re.compile(r"no playable (note|object)|aucune note", re.I)),
     ("events or metadata, not a chart", re.compile(r"FNF parse error: missing field `song`")),
 ]

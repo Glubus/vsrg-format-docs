@@ -1,7 +1,7 @@
 # SOUND VOLTEX arcade chart (`.vox`)
 Kind: chart
 
-Doc status: partial · ROX: no · Category: vsrg · Encoding: text
+Doc status: partial · ROX: decode only · Category: vsrg · Encoding: text
 
 ## Overview
 `.vox` is the chart format of the Konami arcade game SOUND VOLTEX (SDVX), stored in the game data (one `.vox` per song and difficulty, next to the `.2dx`/`.s3v` audio). Konami has not documented it; the knowledge comes from reverse engineering: zacharied's notes, m0seng's rewrite (v10/v12) and the whiteou7/vox2ksh writeup (v10/v12/v13, produced with Ghidra decompilation of `soundvoltex.dll`, partly LLM-assisted, so unverified). Converters (vox2ksh, rmstZ) turn it into [`ksh`](../ksh/README.md).
@@ -58,7 +58,7 @@ Observed: 10, 12, 13 (v10 [observed: 2198_practice_btfxcombos_1n.vox and the oth
 Hand-built from the field tables (not a real chart): `001,01,00<TAB>0<TAB>2` is a BT-A chip at measure 1 beat 1 cell 0 in `#TRACK3`. Synthetic exports are in [samples/](samples/SOURCES.md).
 
 ## ROX support
-Not read by ROX.
+Decode only (`rox::formats::vox::VoxDecoder`, told by content: the `SOUND VOLTEX OUTPUT TEXT FILE` banner or a `#FORMAT VERSION` line, since MagicaVoxel uses the extension too). 6 columns as `.ksh`: `#TRACK3`-`#TRACK6` BT A-D, `#TRACK2`/`#TRACK7` FX-L/FX-R (a row = timing + length in cells, 0 = chip); lasers dropped and counted. Timing `mmm,bb,cc` with the beat counted in the local signature's beat value, 48 cells a quarter unless `BEAT RESOLUTION`; tempo from `#BPM INFO` (the `4-` pause marker is counted, not read as a stop of the clock [inference: no sample has one]). No title, audio or offset in the file: the title is the file stem, the difficulty the `_1n`..`_5m` suffix. Versions 10 and 13 decode (no v12 sample); 15 of the 18 corpus files do, the 3 others being fixtures with no button note or no tempo.
 
 ## Parsers & tools
 vox2ksh (Python): https://github.com/whiteou7/vox2ksh · ksm2sdvx (writes VOX v13): https://github.com/Foahh/ksm2sdvx · VOXL4DD3R (KSH/KSON -> VOX v13): https://github.com/ooznon/VOXL4DD3R · rmstZ (reads/writes vox): https://lrfasd.github.io/rmstZ/ · sdvxeditor PR #3 (vox import): https://github.com/Kizuruki/sdvxeditor/pull/3

@@ -90,7 +90,7 @@ var song = { bpm: 148, addToMusicPosition: -0.03 };
 
 ## ROX support
 
-Not read. `.json` is routed to the FNF decoder, so StepMania JSON would need its own detection.
+Not read by ROX, on purpose (2026-11-10): no real `.json` written by `NotesWriterJson` exists (the two samples are StepMania Micro `.js` files with one BPM, no step type and no metadata), so a reader would rest on the C++ writer alone with nothing to check it against. `.json` is routed to the FNF decoder: it would also need its own detection.
 
 ## Parsers & tools
 

@@ -94,7 +94,7 @@ Header bytes of `samples/1.vos`: `02 00 00 00 0C 00 00 00 "Vosctemp.trk" ... "VO
 
 ## ROX support
 
-Not read by ROX. A mapping would use 7 columns from `keyboard` with MIDI-derived timing.
+Not read by ROX, on purpose (2026-11-10): two file layouts (header 2 and 3) and the only two readers disagree on the length of a note (`VosDroid` divides it by 0x2E4, `rparser` scales it with the same 0.156 as the start; the second one flags it as "not correct"); the start unit is 1/768 of a quarter note in both. A reader would have to choose between them with no file the game plays to check against.
 
 ## Parsers & tools
 

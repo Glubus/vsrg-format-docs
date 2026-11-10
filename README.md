@@ -151,13 +151,13 @@ Archives that carry charts with their audio and images. No page or sample of the
 | [`.jrox`](vsrg/rhythm-open-exchange/jrox/) ROX JSON | Rhythm Open Exchange | vsrg | complete | Yes (read + write) | [`vsrg/rhythm-open-exchange/jrox`](vsrg/rhythm-open-exchange/jrox/) |
 | [`.rox`](vsrg/rhythm-open-exchange/rox/) ROX native binary | Rhythm Open Exchange | vsrg | complete | Yes (read + write) | [`vsrg/rhythm-open-exchange/rox`](vsrg/rhythm-open-exchange/rox/) |
 | [`.yrox`](vsrg/rhythm-open-exchange/yrox/) ROX YAML | Rhythm Open Exchange | vsrg | complete | Yes (read + write) | [`vsrg/rhythm-open-exchange/yrox`](vsrg/rhythm-open-exchange/yrox/) |
-| [`.lua`](vsrg/robeats/lua-songmap/) RoBeats custom-server song map (Lua ModuleScript) | RoBeats (Roblox) | vsrg | partial | No | [`vsrg/robeats/lua-songmap`](vsrg/robeats/lua-songmap/) |
+| [`.lua`](vsrg/robeats/lua-songmap/) RoBeats custom-server song map (Lua ModuleScript) | RoBeats (Roblox) | vsrg | partial | Decode only (4 columns; by content) | [`vsrg/robeats/lua-songmap`](vsrg/robeats/lua-songmap/) |
 | [`.dta`](vsrg/rock-band/dta/) Rock Band songs.dta database | Rock Band / Guitar Hero (Harmonix engine) | vsrg | stub | No | [`vsrg/rock-band/dta`](vsrg/rock-band/dta/) |
 | [`.ksh`](vsrg/sound-voltex/ksh/) K-Shoot MANIA chart (text) | K-Shoot MANIA / Unnamed SDVX Clone / SOUND VOLTEX fan charts | vsrg | complete | Decode only (6 columns; lasers not supported for now: dropped; by content) | [`vsrg/sound-voltex/ksh`](vsrg/sound-voltex/ksh/) |
-| [`.kson`](vsrg/sound-voltex/kson/) K-Shoot MANIA JSON chart | K-Shoot MANIA / Unnamed SDVX Clone (Rust rewrite) | vsrg | partial | No | [`vsrg/sound-voltex/kson`](vsrg/sound-voltex/kson/) |
-| [`.vox`](vsrg/sound-voltex/vox/) SOUND VOLTEX arcade chart | SOUND VOLTEX (arcade, Konami) | vsrg | partial | No | [`vsrg/sound-voltex/vox`](vsrg/sound-voltex/vox/) |
+| [`.kson`](vsrg/sound-voltex/kson/) K-Shoot MANIA JSON chart | K-Shoot MANIA / Unnamed SDVX Clone (Rust rewrite) | vsrg | partial | Decode only (6 columns, lasers dropped) | [`vsrg/sound-voltex/kson`](vsrg/sound-voltex/kson/) |
+| [`.vox`](vsrg/sound-voltex/vox/) SOUND VOLTEX arcade chart | SOUND VOLTEX (arcade, Konami) | vsrg | partial | Decode only (6 columns, lasers dropped; by content) | [`vsrg/sound-voltex/vox`](vsrg/sound-voltex/vox/) |
 | [`.nanochart`](vsrg/soundsphere/nanochart/) NanoChart (rizu compact note stream) | rizu (soundsphere) | vsrg | complete | No | [`vsrg/soundsphere/nanochart`](vsrg/soundsphere/nanochart/) |
-| [`.sph`](vsrg/soundsphere/sph/) SPH chart (rizu / soundsphere) | rizu (soundsphere) | vsrg | partial | No | [`vsrg/soundsphere/sph`](vsrg/soundsphere/sph/) |
+| [`.sph`](vsrg/soundsphere/sph/) SPH chart (rizu / soundsphere) | rizu (soundsphere) | vsrg | partial | Decode only (columns of the input mode; by content) | [`vsrg/soundsphere/sph`](vsrg/soundsphere/sph/) |
 | [`.crs`](vsrg/stepmania/crs/) StepMania course file | StepMania / ITG / OutFox / NotITG | vsrg | complete | No | [`vsrg/stepmania/crs`](vsrg/stepmania/crs/) |
 | [`.edit`](vsrg/stepmania/edit/) StepMania edit file | StepMania (player edits) | vsrg | complete | Decode only | [`vsrg/stepmania/edit`](vsrg/stepmania/edit/) |
 | [`.sm`](vsrg/stepmania/sm/) StepMania simfile | StepMania 3.x/4/5, Etterna, ITG, NotITG, OutFox | vsrg | complete | Yes (read + write) | [`vsrg/stepmania/sm`](vsrg/stepmania/sm/) |

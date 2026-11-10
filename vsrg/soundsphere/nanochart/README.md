@@ -91,7 +91,7 @@ encodeNote(input 128, release, same time)            -> f4 80
 
 ## ROX support
 
-Not read by ROX. It lacks the BPM/SV/keysounds ROX stores; at best a tap/hold skeleton with a constant tempo assumption.
+Not read by ROX, on purpose (2026-11-10): the stream has no tempo, no audio and no keysounds, and the only genuine file is the rizu test vector (every other sample is a re-encoding), so a reader would invent a tempo for notes nothing plays; the `.sph` chart it is derived from is read.
 
 ## Parsers & tools
 

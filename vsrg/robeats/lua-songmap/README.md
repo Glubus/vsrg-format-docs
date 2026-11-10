@@ -1,7 +1,7 @@
 # RoBeats custom-server song map (Roblox Lua ModuleScript)
 Kind: chart
 
-Doc status: partial · ROX: no · Category: vsrg · Encoding: text (Lua source code)
+Doc status: partial · ROX: decode only · Category: vsrg · Encoding: text (Lua source code)
 
 ## Overview
 
@@ -91,7 +91,7 @@ return rtv
 
 ## ROX support
 
-Not read. Mapping would be direct: `Track - 1` -> column of a 4K chart, `Type 1` -> Tap, `Type 2` -> Hold (`Duration` ms -> us), BPM from `TimingPoints[1]`, `AudioTimeOffset` -> `audio_offset_us` (ms -> us, sign to be checked). The obstacle is the container: Lua code.
+Decode only (`rox::formats::robeats::RoBeatsDecoder`, told by content: `HitObjects` plus `AudioAssetId`/`AudioFilename`). The Lua is not run: the reader walks the subset the maps use (`rtv.Field = literal`, the local `note`/`hold` helpers read from their own table, direct `rtv.HitObjects[...] = {...}` appends and lists, `rtv.TimingPoints`); a call with a non-literal argument is counted, not read. Mapping: `Track - 1` -> column of a 4K chart, `Type 1` -> Tap, `Type 2` -> Hold (`Duration` ms -> us), BPM from the first `TimingPoints` entry (the game only shows it; 120 when absent). The game plays a note when the audio position plus `AudioTimeOffset` reaches its `Time` (`AudioManager:get_current_time_ms`, read for facts), so every note is moved by `-AudioTimeOffset` (the shipped -75 ms puts them 75 ms later on the audio) and `audio_offset_us` stays 0 [observed in source]. The audio is a Roblox asset id: no audio file. The 4 corpus maps decode.
 
 ## Parsers & tools
 

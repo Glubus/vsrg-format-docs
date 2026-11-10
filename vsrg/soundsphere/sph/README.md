@@ -1,7 +1,7 @@
 # SPH chart (`.sph`, rizu / soundsphere)
 Kind: chart
 
-Doc status: partial (parser-derived; some visual fields unverified) · ROX: no · Category: vsrg · Encoding: text
+Doc status: partial (parser-derived; some visual fields unverified) · ROX: decode only · Category: vsrg · Encoding: text
 
 ## Overview
 
@@ -104,7 +104,7 @@ input 4key
 
 ## ROX support
 
-Not read by ROX. SPH fits ROX's column model (taps/holds/keysounds) but has no BPM; a decoder would derive timing from the `=` anchors and beat counter.
+Decode only (`rox::formats::sph::SphDecoder`, told by content: a `# metadata`/`# sounds`/`# notes` section line, since NIST SPHERE audio uses the extension too). Columns = the sum of the `input` mode (`4key`, `7key1scratch`); `1` tap, `2`/`3` hold start/end per column, `4` shade dropped. No tempo in the file: the beat of a line follows the counter (plain line = next beat, `+n/d` a fraction, `^` same time) and the `=seconds` anchors give the time, linear between two anchors and prolonged by the first/last interval beyond them (`IntervalPoint:tonumber`, read for facts); one BPM point per anchor interval; fewer than two anchors on different beats is refused. Keysounds (`:`, `.`), visual layers, `x`, `e`, `#` are not read. 7 of the 8 corpus files decode; `rizu-test-sph-sounds_z85.sph` is a sounds test with no `input`, which the engine itself requires.
 
 ## Parsers & tools
 
