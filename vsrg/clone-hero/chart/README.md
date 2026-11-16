@@ -122,11 +122,13 @@ Hand-assembled from field rules and the doc's examples (the `[Song]` values mirr
 ```
 
 ## ROX support
-Read since Prism's addition of `rox::formats::clone_hero` (decode only). `ChartDecoder` gives one 5-column chart per 5-lane track with a note on the five frets (`Single`, `DoubleGuitar`, `DoubleBass`, `DoubleRhythm`, `Keyboard` × Expert/Hard/Medium/Easy; `variants`, `decode_variant`, `decode_with_ini`, `decode_with_audio_plan`, `auto_decode*` with the folder's `song.ini`).
+Read since Prism's addition of `rox::formats::clone_hero` (decode only). `ChartDecoder` gives one chart per track with a note on a column: the five-fret `Single`, `DoubleGuitar`, `DoubleBass`, `DoubleRhythm`, `Keyboard` on 5 columns, then `Drums` on 5 or 6, then `GHLGuitar`, `GHLBass`, `GHLRhythm`, `GHLCoop`, `GHLKeys` on 6, each × Expert/Hard/Medium/Easy (`variants`, `decode_variant`, `decode_with_ini`, `decode_with_audio_plan`, `auto_decode*` with the folder's `song.ini`). Drums and GHL were added on 2026-11-16 after the others, so the older variants keep their numbers.
 
 - Frets 0-4 are the columns; sustains are holds (no cutoff unless `song.ini` gives `sustain_cutoff_threshold`); `B`/`TS` make the tempo map.
+- Drums: `N 0` (kick) is column 0, `N 1`-`N 5` columns 1-5. The kit is decided once per track as in "Drums" above: `song.ini` `pro_drums` (4-lane) or `five_lane_drums` when true; else a cymbal marker makes it 4-lane Pro, a 5-lane green or a sustained note 5-lane; else 4-lane. A 4-lane kit has 5 columns and drops `N 5`, a 5-lane kit has 6. Every drum note is a tap (a 5-lane sustain is a roll). `N 32` (Expert+ kick), accents, ghosts and cymbal markers are counted, not kept.
+- GHL: black 1-3 (`N 3`, `N 4`, `N 8`) are columns 0-2 and white 1-3 (`N 0`-`N 2`) columns 3-5, the fret numbers above.
 - `[Song]` `Offset` and `song.ini` `delay` (same sign, `song.ini` wins) shift every time so times count from the audio start. Stems (reserved names and `[Song]` stream tags) are the audio plan.
-- Forced (5) and tap (6) flags and open notes (7, dropped: five columns) are counted, not kept. Star power, solos, events, lyrics, drums, GHL tracks and `SingleBass` are not read. Decisions: `src/formats/clone_hero/mod.rs` in the ROX copy.
+- Forced (5) and tap (6) flags and open notes (7, dropped: no column) are counted, not kept. Star power, solos, events, lyrics and `SingleBass` are not read. Decisions: `src/formats/clone_hero/mod.rs` in the ROX copy.
 
 ## Parsers & tools
 - Moonscraper Chart Editor (C#): https://github.com/FireFox2000000/Moonscraper-Chart-Editor

@@ -61,7 +61,7 @@ preview_start_time = 45000
 (Hand-built from the tag tables above.)
 
 ## ROX support
-Read (`SongIni::parse`, `rox::formats::clone_hero`; decode only): `name`, `artist`, `album`, `genre`, `year`, `charter`, `delay`, `song_length`, `preview_start_time`, `preview_end_time`, `sustain_cutoff_threshold`, `background`, `diff_*`. UTF-8 or Latin-1, `[song]` case-insensitive, whole-line `;`/`#` comments, formatting tags removed. Metadata beats `[Song]`, `delay` beats `Offset`. Other tags are ignored.
+Read (`SongIni::parse`, `rox::formats::clone_hero`; decode only): `name`, `artist`, `album`, `genre`, `year`, `charter`, `delay`, `song_length`, `preview_start_time`, `preview_end_time`, `sustain_cutoff_threshold`, `background`, `pro_drums` and `five_lane_drums` (since 2026-11-16: they choose the drum kit), `diff_*`. UTF-8 or Latin-1, `[song]` case-insensitive, whole-line `;`/`#` comments, formatting tags removed. Metadata beats `[Song]`, `delay` beats `Offset`. Other tags are ignored.
 
 ## Parsers & tools
 YARG.Core (C#): https://github.com/YARC-Official/YARG.Core · FoFiX (Python) · Moonscraper.
