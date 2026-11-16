@@ -33,7 +33,7 @@ COMPANIONS = {"vsrg/clone-hero/ini", "vsrg/friday-night-funkin/vslice-metadata-j
 # Why ROX did not decode a sample, from its error. All but `error` are files that are no chart of this format: `error` is a file ROX
 # should read and does not. A `not a chart file` (a README, a fuzz seed, a MIDI not named notes.mid) is not counted at all.
 REASONS = [
-    ("not a chart file", re.compile(r"unsupported format: \w+$|is a MIDI file, not a Clone Hero chart")),
+    ("not a chart file", re.compile(r"unsupported format: \w+$|is a MIDI file, not a (Clone Hero )?chart")),
     ("other mode", re.compile(r"Not a mania beatmap|Malody mode|pump-couple")),
     ("needs its companion file", re.compile(r"metadata file|song of this edit")),
     ("broken file", re.compile(r"truncated|runs past the end|size of the file is not|is not after the BPM table|mapping values are not allowed|no `input` in the metadata|no usable tempo|imdjson: ")),

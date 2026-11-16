@@ -134,7 +134,7 @@ Archives that carry charts with their audio and images. No page or sample of the
 | [`.mmws / .ccmmws / .unchmmws`](vsrg/project-sekai/ccmmws/) MikuMikuWorld binary layout (MMWS/CCMMWS/UCMMWS) | Project SEKAI (MikuMikuWorld editors and forks) | vsrg | partial | No | [`vsrg/project-sekai/ccmmws`](vsrg/project-sekai/ccmmws/) |
 | [`.sus`](vsrg/project-sekai/holodori-sus/) hololive Dream SUS dialect | hololive Dream | vsrg | partial | No | [`vsrg/project-sekai/holodori-sus`](vsrg/project-sekai/holodori-sus/) |
 | [`.mmws`](vsrg/project-sekai/mmws/) MikuMikuWorld score (MMWS) | Project SEKAI (MikuMikuWorld editor) | vsrg | stub | No | [`vsrg/project-sekai/mmws`](vsrg/project-sekai/mmws/) |
-| [`.pjsk / .json / .json.gz`](vsrg/project-sekai/pjsk/) PJSK score maker chart | Project SEKAI: Colorful Stage! | vsrg | partial | No | [`vsrg/project-sekai/pjsk`](vsrg/project-sekai/pjsk/) |
+| [`.pjsk / .json / .json.gz`](vsrg/project-sekai/pjsk/) PJSK score maker chart | Project SEKAI: Colorful Stage! | vsrg | partial | Decode only (12 columns; a `.json` by content) | [`vsrg/project-sekai/pjsk`](vsrg/project-sekai/pjsk/) |
 | [`.sus`](vsrg/project-sekai/sus/) Sliding Universal Score (SUS) | Project SEKAI (Seaurchin / Chunithm lineage) | vsrg | partial | Decode only | [`vsrg/project-sekai/sus`](vsrg/project-sekai/sus/) |
 | [`.usc`](vsrg/project-sekai/usc/) Universal Sekai Chart (USC) | Project SEKAI (Sonolus) | vsrg | partial | Decode only | [`vsrg/project-sekai/usc`](vsrg/project-sekai/usc/) |
 | [`.not / .not5`](vsrg/pump-it-up/not/) Pump It Up NOT/NOT5 step file | Pump It Up (Andamiro) | vsrg | partial | Decode only (5 or 10 columns) | [`vsrg/pump-it-up/not`](vsrg/pump-it-up/not/) |

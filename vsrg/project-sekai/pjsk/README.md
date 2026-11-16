@@ -1,7 +1,7 @@
 # PJSK score maker chart (`.pjsk` / `.json` / `.json.gz`)
 Kind: chart
 
-Doc status: partial · ROX: no · Category: vsrg (12-lane vertical note highway) · Encoding: json (usually gzip + base64 wrapped)
+Doc status: partial · ROX: decode only · Category: vsrg (12-lane vertical note highway) · Encoding: json (usually gzip + base64 wrapped)
 
 ## Overview
 
@@ -107,7 +107,7 @@ Hand-built from the exporter's field list (one tap note and one BPM event; real 
 
 ## ROX support
 
-Not read by ROX. Conversion to columns would lose slides, guides, width and critical flags.
+Decode only (`rox::formats::sekai::PjskDecoder`; `.pjsk`, or a `.json` whose start, through any of the three wrappers, holds `MusicScoreEventDataList`, or `NoteList` and `laneStart`). The chart goes onto the 12 Project SEKAI columns like a `.usc`: a wide note is one note on its leftmost lane (`laneStart`), a slide chain is one hold from its head to its last note on the head's column, flicks are taps, and traces, guides and category 14 are dropped and counted. BPM changes and the `4/4` numerator are read; time scale, `speedRatio`, `type` (critical) and `direction` are not. The title is the file name without `.pjsk` and `.json`.
 
 ## Parsers & tools
 
