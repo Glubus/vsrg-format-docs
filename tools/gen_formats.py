@@ -38,7 +38,7 @@ REASONS = [
     ("needs its companion file", re.compile(r"metadata file|song of this edit")),
     ("broken file", re.compile(r"truncated|runs past the end|size of the file is not|is not after the BPM table|mapping values are not allowed|no `input` in the metadata|no usable tempo|imdjson: ")),
     ("no note", re.compile(r"no playable (note|object)|aucune note", re.I)),
-    ("events or metadata, not a chart", re.compile(r"FNF parse error: missing field `song`")),
+    ("events or metadata, not a chart", re.compile(r"FNF parse error: missing field `song`|not a Friday Night Funkin' chart: a JSON object without `song`")),
 ]
 LAYOUT = re.compile(r"Unsupported layout: (\d+)K")
 
